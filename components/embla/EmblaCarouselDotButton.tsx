@@ -5,6 +5,7 @@ import React, {
   useState,
 } from "react";
 import { EmblaCarouselType } from "embla-carousel";
+import Image from "next/image";
 
 type UseDotButtonType = {
   selectedIndex: number;
@@ -57,6 +58,30 @@ export const DotButton: React.FC<PropType> = (props) => {
   return (
     <button type="button" {...restProps}>
       {children}
+    </button>
+  );
+};
+
+type ImageDotButtonProps = ComponentPropsWithRef<"button"> & {
+  imageSrc: string;
+  alt: string;
+  isSelected?: boolean;
+};
+
+export const ImageDotButton: React.FC<ImageDotButtonProps> = (props) => {
+  const { imageSrc, alt, isSelected = false, ...restProps } = props;
+
+  return (
+    <button
+      type="button"
+      className={`relative w-16 h-16 rounded-lg overflow-hidden border-2 transition-all ${
+        isSelected
+          ? "border-blue-500 ring-2 ring-blue-200"
+          : "border-gray-200 hover:border-gray-300"
+      }`}
+      {...restProps}
+    >
+      <Image src={imageSrc} alt={alt} fill className="object-contain p-1" />
     </button>
   );
 };

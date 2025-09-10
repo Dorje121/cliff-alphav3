@@ -207,7 +207,7 @@ const List = () => {
         {/* Header Section */}
         <div className=" mb-8 md:mb-16">
           <div className="flex mb-4 md:mb-6"></div>
-          <h1 className="text-3xl italic sm:text-4xl md:text-5xl lg:text-9xl font-semibold font-family-playfair mb-4 md:mb-6  bg-gradient-to-r from-white via-yellow-100 to-yellow-200 bg-clip-text text-transparent">
+          <h1 className="text-3xl italic sm:text-4xl md:text-5xl lg:text-9xl font-semibold font-family-playfair mb-4 md:mb-6  bg-gradient-to-r from-[#FFF9DC] via-yellow-100 to-[#FFCC00] bg-clip-text text-transparent">
             Our Products
           </h1>
           <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-3xl px-4">
