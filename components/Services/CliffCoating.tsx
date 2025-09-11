@@ -41,30 +41,40 @@ interface CoatingType {
 
 const CliffCoatings = () => {
   const [selectedCoating, setSelectedCoating] = useState<string>("nox");
-  const backgroundImageRef = useRef<HTMLDivElement>(null);
+  const [currentPhotoIndex, setCurrentPhotoIndex] = useState(0);
+  const [thumbnails, setThumbnails] = useState([0, 1, 2, 3, 4]);
 
-  useLayoutEffect(() => {
-    const ctx = gsap.context(() => {
-      // Background image continuous motion animation
-      gsap.fromTo(
-        backgroundImageRef.current,
-        {
-          scale: 1,
-          rotation: 0,
-        },
-        {
-          scale: 1.1,
-          rotation: 0.5,
-          duration: 20,
-          repeat: -1,
-          yoyo: true,
-          ease: "power2.inOut",
-        }
-      );
-    });
+  // Array of 5 photos
+  const photos = [
+    "/cliffcoating/new.png",
+    "/cliffcoating/new1.png",
+    "/cliffcoating/new2.png",
+    "/cliffcoating/new3.png",
+    "/cliffcoating/new4.png",
+    "/cliffcoating/new5.png"
+  ];
 
-    return () => ctx.revert();
-  }, []);
+  const handleThumbnailClick = (index: number) => {
+    setCurrentPhotoIndex(index);
+    // Update thumbnails to show the clicked photo and next 4 photos
+    const newThumbnails = [];
+    for (let i = 0; i < 5; i++) {
+      newThumbnails.push((index + i) % photos.length);
+    }
+    setThumbnails(newThumbnails);
+  };
+
+  const handleNext = () => {
+    const nextIndex = (currentPhotoIndex + 1) % photos.length;
+    setCurrentPhotoIndex(nextIndex);
+    handleThumbnailClick(nextIndex);
+  };
+
+  const handlePrev = () => {
+    const prevIndex = (currentPhotoIndex - 1 + photos.length) % photos.length;
+    setCurrentPhotoIndex(prevIndex);
+    handleThumbnailClick(prevIndex);
+  };
 
   const features: CoatingFeature[] = [
     {
@@ -195,128 +205,95 @@ const CliffCoatings = () => {
 
   return (
     <>
-      {/* Hero Section */}
-      <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black text-white relative overflow-hidden">
-        {/* Background Image with Overlay */}
+                  <section className="sticky top-0 min-h-screen bg-gray-50 flex flex-col z-10">
 
-        <div ref={backgroundImageRef} className="absolute inset-0">
-          <Image
-            src="/c1.jpeg"
-            alt="Cliff Coatings"
-            fill
-            className="object-cover opacity-20"
-          />
-        </div>
-
-        {/* Animated Background Elements */}
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-amber-600/20 rounded-full blur-3xl animate-pulse"></div>
-          <div
-            className="absolute bottom-20 right-10 w-96 h-96 bg-amber-500/20 rounded-full blur-3xl animate-pulse"
-            style={{ animationDelay: "-1s" }}
-          ></div>
-          <div
-            className="absolute top-1/2 left-1/2 w-80 h-80 bg-amber-700/10 rounded-full blur-3xl animate-pulse"
-            style={{ animationDelay: "-0.5s" }}
-          ></div>
-        </div>
-
-        {/* Main Content */}
-        <div className="relative z-10 container max-w-screen mx-auto px-4 py-20">
-          <div className="flex flex-col lg:flex-row items-center gap-16 min-h-screen">
-            {/* Left Content */}
-            <div className="lg:w-1/2 space-y-8">
-              {/* Service Badge */}
-              <div className="inline-flex items-center px-6 py-3 rounded-full text-black text-lg font-medium border border-yellow-300/30">
-                <span className="bg-gradient-to-r from-white via-yellow-100 to-yellow-200 bg-clip-text text-transparent">
-                  Premium Protective Coating
-                </span>
-              </div>
-
-              {/* Service Title */}
-              <h1 className="text-5xl font-family-playfair md:text-7xl font-bold leading-tight">
-                <span className="bg-gradient-to-r from-white via-yellow-100 to-yellow-200 bg-clip-text text-transparent">
-                  CLIFF
-                </span>
-                <br />
-                <span className="bg-gradient-to-r from-white via-yellow-100 to-yellow-200 bg-clip-text text-transparent">
-                  COATINGS
-                </span>
-              </h1>
-
-              {/* Service Description */}
-              <p className="text-xl md:text-2xl bg-gradient-to-r from-white via-yellow-100 to-yellow-200 bg-clip-text text-transparent leading-relaxed max-w-2xl">
-                Premium protective coatings for enhanced lens durability and
-                performance, ensuring your lenses stay crystal clear and
-                protected.
-              </p>
-
-              {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4 pt-8">
-                <button className="group relative px-8 py-4 bg-gradient-to-r from-white via-yellow-100 to-yellow-200 rounded-full text-black font-semibold text-lg hover:shadow-2xl hover:shadow-yellow-500/30 transition-all duration-300 transform hover:scale-105">
-                  <span className="relative z-10 flex items-center justify-center ">
-                    Contact Us
-                    <svg
-                      className="w-5 h-5 ml-2 transition-transform duration-300 group-hover:translate-x-1"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M17 8l4 4m0 0l-4 4m4-4H3"
+                    {/* Main Product Image */}
+                    <div className="flex justify-center items-center flex-grow mt-16">
+                      <Image
+                        src={photos[currentPhotoIndex]} // use current photo index state
+                        alt="Main Product"
+                        width={700}
+                        height={500}
+                        className="object-contain"
                       />
-                    </svg>
-                  </span>
-                </button>
-              </div>
-            </div>
-
-            {/* Right Content - Enhanced Visual */}
-            <div className="lg:w-1/2 relative">
-              <div className="relative">
-                {/* Main Image Container */}
-                <div className="relative rounded-3xl overflow-hidden border border-white/20 shadow-2xl">
-                  <Image
-                    src="/c1.jpeg"
-                    alt="Cliff Coatings Technology"
-                    width={600}
-                    height={400}
-                    className="object-cover w-full h-[400px]"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
-
-                  {/* Service Number Overlay */}
-                  <div className="absolute top-6 right-6">
-                    <span className="text-6xl font-bold text-white/30">02</span>
-                  </div>
-
-                  {/* Tech Badge */}
-                  <div className="absolute bottom-6 left-6">
-                    <div className="inline-flex items-center px-4 py-2 rounded-full bg-amber-600/80 text-white text-sm font-medium backdrop-blur-sm">
-                      <span className="w-2 h-2 bg-white rounded-full mr-2 animate-pulse"></span>
-                      Premium Coating
                     </div>
-                  </div>
-                </div>
 
-                <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-gradient-to-br from-gray-700 to-gray-800 rounded-2xl flex items-center justify-center shadow-xl border border-white/10">
-                  <div className="text-center">
-                    <div className="text-2xl font-bold text-white">100%</div>
-                    <div className="text-xs text-gray-400">Protection</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+                    {/* Thumbnails Grid - Fixed at bottom */}
+                    <div className="grid grid-cols-3 md:grid-cols-5 gap-4 py-8 max-w-4xl mx-auto">
+                      {photos.slice(1).map((image, index) => (
+                        <div 
+                          key={index} 
+                          className="flex justify-center"
+                        >
+                          <Image
+                            src={image}
+                            alt={`thumb ${index + 1}`}
+                            width={120}
+                            height={80}
+                            className={`border rounded cursor-pointer hover:opacity-80 transition-all duration-200 ${
+                              currentPhotoIndex === index ? 'border-blue-500 border-2' : 'border-gray-300'
+                            }`}
+                            onClick={() => setCurrentPhotoIndex(index)}
+                          />
+                        </div>
+                      ))}
+                    </div>
+                  </section>
+
+                  <section className="bg-black text-white -mt-0 py-24 relative z-20">
+                    <div className="max-w-6xl mx-auto p-4">
+                      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        {/* Blue Safe */}
+                        <div className="text-center">
+                          <div className="mb-6 flex justify-center">
+                            <Image
+                              src="/cliffcoating/Blue-Safe.jpg"
+                              alt="Blue Safe Coating"
+                              width={300}
+                              height={200}
+                              className="object-cover rounded-lg"
+                            />
+                          </div>
+                          <h3 className="text-2xl font-bold mb-4">Blue Safe</h3>
+                          <p className="text-gray-300">Advanced blue light filtering technology that protects your eyes from digital screen exposure while maintaining crystal clear vision.</p>
+                        </div>
+                        
+                        {/* Photo Z */}
+                        <div className="text-center">
+                          <div className="mb-6 flex justify-center">
+                            <Image
+                              src="/cliffcoating/Photo-Z.jpg"
+                              alt="Photo Z Coating"
+                              width={300}
+                              height={200}
+                              className="object-cover rounded-lg"
+                            />
+                          </div>
+                          <h3 className="text-2xl font-bold mb-4">Photo Z</h3>
+                          <p className="text-gray-300">Professional photochromic coating that automatically adjusts to changing light conditions, providing optimal vision indoors and outdoors.</p>
+                        </div>
+                        
+                        {/* Drive Safe */}
+                        <div className="text-center">
+                          <div className="mb-6 flex justify-center">
+                            <Image
+                              src="/cliffcoating/Drive-safe.jpg"
+                              alt="Drive Safe Coating"
+                              width={300}
+                              height={200}
+                              className="object-cover rounded-lg"
+                            />
+                          </div>
+                          <h3 className="text-2xl font-bold mb-4">Drive Safe</h3>
+                          <p className="text-gray-300">Specialized anti-glare coating designed for driving, reducing nighttime glare and enhancing contrast for safer road visibility.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
 
       {/* Coating Comparison Section */}
-      <div className="min-h-screen bg-transparent text-white overflow-hidden">
-        <div className="container mx-auto px-4 py-16">
+      <div className="min-h-screen bg-black text-white sticky relative z-20">
+        <div className="max-w-[1500px] mx-auto p-4 py-16">
           {/* Section Header */}
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-6xl font-bold mb-4">
@@ -332,10 +309,10 @@ const CliffCoatings = () => {
           </div>
 
           {/* Main Comparison Layout */}
-          <div className="flex flex-col lg:flex-row gap-8 max-w-screen mx-auto">
+          <div className="flex flex-col lg:flex-row gap-8 max-w-screen -ml-5">
             {/* Left Sidebar - Coating Selection */}
             <div className="lg:w-1/4">
-              <div className="bg-transparent backdrop-blur-sm  p-6">
+              <div className="bg-transparent backdrop-blur-sm p-6 sticky top-8">
                 <h3 className="text-xl font-bold mb-6 text-center">
                   Select Coating Type
                 </h3>

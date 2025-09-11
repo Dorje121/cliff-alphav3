@@ -1,5 +1,4 @@
 import CliffCoatings from "@/components/Services/CliffCoating";
-import BackToServicesButton from "@/components/Services/BackToServicesButton";
 import React from "react";
 
 const CliffCoatingsPage = () => {
@@ -7,7 +6,7 @@ const CliffCoatingsPage = () => {
     <div>
       {/* Hero Section with Service Information */}
       <CliffCoatings />
-      <BackToServicesButton />
+
     </div>
   );
 };

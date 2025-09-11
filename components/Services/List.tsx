@@ -205,94 +205,98 @@ const List = () => {
     <div className="min-h-screen bg-black text-white overflow-x-hidden">
       <div className="container max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16 relative">
         {/* Header Section */}
-        <div className=" mb-8 md:mb-16">
-          <div className="flex mb-4 md:mb-6"></div>
-          <h1 className="text-3xl italic sm:text-4xl md:text-5xl lg:text-9xl font-semibold font-family-playfair mb-4 md:mb-6  bg-gradient-to-r from-[#FFF9DC] via-yellow-100 to-[#FFCC00] bg-clip-text text-transparent">
-            Our Products
-          </h1>
-          <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-3xl px-4">
-            Discover our comprehensive range of premium optical solutions,
-            advanced lens technologies, and professional services designed to
-            enhance your vision experience.
-          </p>
-        </div>
-
-        {/* Category Filter */}
-        <div className="flex justify-center mb-8 sm:mb-12 px-4 sm:px-0">
-          <div
-            className="relative w-full max-w-xs sm:max-w-none sm:w-auto"
-            ref={dropdownRef}
-          >
-            <button
-              onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-              className="flex items-center justify-between w-full sm:w-64 px-4 sm:px-6 py-3 sm:py-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl text-white hover:bg-white/20 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-amber-400/50"
-            >
-              <span className="font-medium text-sm sm:text-base">
-                {selectedCategory === "All"
-                  ? "All Categories"
-                  : selectedCategory}
-              </span>
-              <svg
-                className={`w-4 h-4 sm:w-5 sm:h-5 transition-transform duration-300 ${
-                  isDropdownOpen ? "rotate-180" : "rotate-0"
-                }`}
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M19 9l-7 7-7-7"
-                />
-              </svg>
-            </button>
-
-            {/* Dropdown Menu */}
-            {isDropdownOpen && (
+        <div className="mb-8 md:mb-16">
+          <div className="flex flex-col mt-8 lg:flex-row lg:items-center lg:justify-between gap-6 lg:gap-8">
+            {/* Title and Description */}
+            <div className="flex-1">
+              <h1 className="text-3xl italic sm:text-4xl md:text-5xl lg:text-7xl font-semibold font-family-playfair mb-4 md:mb-6 bg-gradient-to-r from-[#FFF9DC] via-yellow-100 to-[#FFCC00] bg-clip-text text-transparent">
+                Our Products
+              </h1>
+              <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-4xl">
+                Discover our comprehensive range of premium optical solutions,
+                advanced lens technologies, and professional services designed to
+                enhance your vision experience.
+              </p>
+            </div>
+            
+            {/* Category Filter - Same Row */}
+            <div className="flex-shrink-0 mt-22">
               <div
-                className="absolute top-full left-0 right-0 mt-2 bg-black/90 backdrop-blur-md border border-white/20 rounded-xl shadow-2xl z-50 max-h-60 sm:max-h-80 overflow-y-auto scrollbar-custom"
-                onWheel={(e) => {
-                  // Allow scrolling within dropdown, but don't prevent page scroll
-                  e.stopPropagation();
-                }}
+                className="relative w-full max-w-xs sm:max-w-none sm:w-auto"
+                ref={dropdownRef}
               >
-                {categories.map((category, index) => (
-                  <button
-                    key={category}
-                    onClick={() => {
-                      setSelectedCategory(category);
-                      setIsDropdownOpen(false);
-                    }}
-                    className={`w-full px-4 sm:px-6 py-2.5 sm:py-3 text-left hover:bg-white/10 transition-all duration-200 first:rounded-t-xl last:rounded-b-xl ${
-                      selectedCategory === category
-                        ? "bg-amber-400/20 text-amber-400 border-l-4 border-amber-400"
-                        : "text-gray-300 hover:text-white"
-                    } ${index > 0 ? "border-t border-white/5" : ""}`}
+                <button
+                  onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                  className="flex items-center justify-between w-full sm:w-64 px-4 sm:px-6 py-3 sm:py-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl text-white hover:bg-white/20 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-amber-400/50"
+                >
+                  <span className="font-medium text-sm sm:text-base">
+                    {selectedCategory === "All"
+                      ? "All Categories"
+                      : selectedCategory}
+                  </span>
+                  <svg
+                    className={`w-4 h-4 sm:w-5 sm:h-5 transition-transform duration-300 ${
+                      isDropdownOpen ? "rotate-180" : "rotate-0"
+                    }`}
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
                   >
-                    <div className="flex items-center justify-between">
-                      <span className="font-medium text-sm sm:text-base">
-                        {category === "All" ? "All Categories" : category}
-                      </span>
-                      {selectedCategory === category && (
-                        <svg
-                          className="w-3 h-3 sm:w-4 sm:h-4 text-amber-400"
-                          fill="currentColor"
-                          viewBox="0 0 20 20"
-                        >
-                          <path
-                            fillRule="evenodd"
-                            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                            clipRule="evenodd"
-                          />
-                        </svg>
-                      )}
-                    </div>
-                  </button>
-                ))}
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M19 9l-7 7-7-7"
+                    />
+                  </svg>
+                </button>
+
+                {/* Dropdown Menu */}
+                {isDropdownOpen && (
+                  <div
+                    className="absolute top-full left-0 right-0 mt-2 bg-black/90 backdrop-blur-md border border-white/20 rounded-xl shadow-2xl z-50 max-h-60 sm:max-h-80 overflow-y-auto scrollbar-custom"
+                    onWheel={(e) => {
+                      // Allow scrolling within dropdown, but don't prevent page scroll
+                      e.stopPropagation();
+                    }}
+                  >
+                    {categories.map((category, index) => (
+                      <button
+                        key={category}
+                        onClick={() => {
+                          setSelectedCategory(category);
+                          setIsDropdownOpen(false);
+                        }}
+                        className={`w-full px-4 sm:px-6 py-2.5 sm:py-3 text-left hover:bg-white/10 transition-all duration-200 first:rounded-t-xl last:rounded-b-xl ${
+                          selectedCategory === category
+                            ? "bg-amber-400/20 text-amber-400 border-l-4 border-amber-400"
+                            : "text-gray-300 hover:text-white"
+                        } ${index > 0 ? "border-t border-white/5" : ""}`}
+                      >
+                        <div className="flex items-center justify-between">
+                          <span className="font-medium text-sm sm:text-base">
+                            {category === "All" ? "All Categories" : category}
+                          </span>
+                          {selectedCategory === category && (
+                            <svg
+                              className="w-3 h-3 sm:w-4 sm:h-4 text-amber-400"
+                              fill="currentColor"
+                              viewBox="0 0 20 20"
+                            >
+                              <path
+                                fillRule="evenodd"
+                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                clipRule="evenodd"
+                              />
+                            </svg>
+                          )}
+                        </div>
+                      </button>
+                    ))}
+                  </div>
+                )}
               </div>
-            )}
+            </div>
           </div>
         </div>
 

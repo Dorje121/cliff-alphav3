@@ -127,7 +127,7 @@ export default function Navbar() {
             : "text-white"
         }`}
       >
-        <div className="max-w-screen mx-auto p-4 flex items-center justify-between">
+        <div className="max-w-[1500px] mx-auto p-4 flex items-center justify-between">
           {/* Logo */}
 
           <TransitionLink

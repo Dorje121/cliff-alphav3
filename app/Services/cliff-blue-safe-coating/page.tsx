@@ -23,6 +23,16 @@ const CliffBlueSafeCoating = () => {
   const backgroundImageRef = useRef<HTMLDivElement>(null);
   const [activeFeature, setActiveFeature] = useState(0);
   const sectionRef = useRef<HTMLDivElement>(null);
+  const [activeImage, setActiveImage] = useState(0);
+
+  const images = [
+    "/cliffcoating/new.png",
+    "/cliffcoating/new1.png",
+    "/cliffcoating/new2.png",
+    "/cliffcoating/new3.png",
+    "/cliffcoating/new4.png",
+    "/cliffcoating/new5.png"
+  ];
 
   const coatingFeatures: CoatingFeature[] = [
     {
@@ -90,6 +100,42 @@ const CliffBlueSafeCoating = () => {
 
   return (
     <>
+<section className="relative min-h-screen bg-gray-50 flex flex-col">
+
+  {/* Main Product Image */}
+  <div className="flex justify-center items-center flex-grow mt-16">
+    <Image
+      src={images[activeImage]} // use active image state
+      alt="Main Product"
+      width={700}
+      height={500}
+      className="object-contain"
+    />
+  </div>
+
+  {/* Thumbnails Grid - Fixed at bottom */}
+  <div className="grid grid-cols-3 md:grid-cols-5 gap-4 py-8 max-w-4xl mx-auto">
+    {images.slice(1).map((image, index) => (
+      <div 
+        key={index} 
+        className="flex justify-center"
+      >
+        <Image
+          src={image}
+          alt={`thumb ${index + 1}`}
+          width={120}
+          height={80}
+          className={`border rounded cursor-pointer hover:opacity-80 transition-all duration-200 ${
+            activeImage === index + 1 ? 'border-blue-500 border-2' : 'border-gray-300'
+          }`}
+          onClick={() => setActiveImage(index + 1)}
+        />
+      </div>
+    ))}
+  </div>
+</section>
+
+
       {/* Hero Section with Service Information */}
       <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black text-white relative overflow-hidden">
         {/* Background Image with Overlay */}
@@ -330,7 +376,25 @@ const CliffBlueSafeCoating = () => {
                 </p>
               </div>
 
-              <div className="grid md:grid-cols-2 gap-12 items-center">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Full Width Blue Coating Image */}
+      <div className="w-full bg-black py-16 -mx-[100vw] left-1/2 right-1/2 -translate-x-1/2 -translate-y-0 ml-[50vw] mr-[50vw]">
+        <Image
+          src="/cliffcoating/bluee.png"
+          alt="Cliff Blue Coating"
+          width={1200}
+          height={800}
+          className="w-full h-[80vh] object-cover"
+        />
+      </div>
+
+      <div className="min-h-screen bg-transparent text-white relative overflow-hidden">
+        <div className="max-w-screen mx-auto px-4 py-16">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
                 {/* Before/After Comparison */}
                 <div className="relative">
                   <div className="aspect-video rounded-2xl flex items-center justify-center relative overflow-hidden">
@@ -382,8 +446,6 @@ const CliffBlueSafeCoating = () => {
                     </p>
                   </div>
                 </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
