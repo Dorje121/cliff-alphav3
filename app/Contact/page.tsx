@@ -3,6 +3,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { Send } from "lucide-react";
+import CTA from './CTA'
+import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -93,9 +95,9 @@ const Contact = () => {
           </p>
         </div>
 
-        <div className="flex justify-center">
+        <div className="flex justify-center flex-col  md:flex-row-reverse  ">
           {/* Contact Form */}
-          <div className="w-full max-w-2xl rounded-2xl p-8 ">
+          <div className=" right w-[100%] md:w-[50%] max-w-2xl rounded-2xl p-8 ">
             <h2 className="text-3xl font-bold font-ramro mb-8 text-white">
               Send us a Message
             </h2>
@@ -220,28 +222,80 @@ const Contact = () => {
               </p>
             </form>
           </div>
+          <div className="left  h-[100vh] w-[100%] md:w-[40%] pt-20">
+            <div className="parnt">
+              <div className="para">
+                Reach out today to discover how our custom gate designs can transform your property, combining security with style. We're here to help safeguard your future and create a lasting impression.
+              </div>
+
+              <div className="sociallink flex justify-start gap-8 items-center py-10">
+                <div className="box w-[40px] h-[40px]">
+                  <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill="#71717B" d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131c.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951" /></svg>
+                </div>
+                <div className="box w-[40px] h-[40px]">
+                  <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill="#71717B" d="M9.294 6.928L14.357 1h-1.2L8.762 6.147L5.25 1H1.2l5.31 7.784L1.2 15h1.2l4.642-5.436L10.751 15h4.05zM7.651 8.852l-.538-.775L2.832 1.91h1.843l3.454 4.977l.538.775l4.491 6.47h-1.843z" /></svg>
+                </div>
+                <div className="box w-[40px] h-[40px]">
+                  <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14"><g fill="none" stroke="#71717B" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"><path d="M10.333 3.644a.25.25 0 1 1 0-.5m0 .5a.25.25 0 1 0 0-.5" /><path d="M.858 3.431A2.573 2.573 0 0 1 3.431.858h6.862a2.573 2.573 0 0 1 2.573 2.573v6.862a2.573 2.573 0 0 1-2.573 2.573H3.43a2.573 2.573 0 0 1-2.573-2.573z" /><path d="M4.312 6.862a2.55 2.55 0 1 0 5.1 0a2.55 2.55 0 1 0-5.1 0" /></g></svg>
+                </div>
+              </div>
+              <div className="container  w-[100%] flex flex-col justify-center md:items-start items-center gap-5">
+
+                {/* First Box - Contact Info */}
+                <div className="box w-[90%] h-[150px] bg-[#18181B] rounded-lg flex justify-start items-center px-6">
+                  <div className="flex justify-between items-center gap-6 text-white w-full">
+
+                    {/* Phone */}
+                    <div className="flex flex-col items-center gap-3">
+                      <FaPhoneAlt className="text-zinc-500 text-2xl" />
+                      <div>
+
+                        <p className="text-[0.9rem] font-medium text-center">+1 (555) 123-4567</p>
+                      </div>
+                    </div>
+
+                    {/* Email */}
+                    <div className="flex flex-col items-center gap-3">
+                      <FaEnvelope className="text-zinc-500 text-2xl" />
+                      <div>
+
+                        <p className="text-[0.9rem] font-medium break-words break-all text-center">contact@example.com</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Second Box - Address or Message Prompt */}
+                <div className="box w-[90%] h-[150px] bg-[#18181B] rounded-lg flex justify-start items-center px-6">
+                  <div className="flex justify-between items-center gap-6 text-white w-full">
+
+                    {/* Address */}
+                    <div className="flex flex-col items-center gap-3">
+                      <FaMapMarkerAlt className="text-zinc-500 text-2xl" />
+                      <div>
+
+                        <p className="text-[0.9rem] font-medium text-center">123 Main Street, City, ZIP</p>
+                      </div>
+                    </div>
+
+                    {/* Optional: Quick Message Prompt (if needed) */}
+                    {/* You can replace this with another info block or social media icons */}
+                    <div className="flex flex-col gap-1">
+                      <p className="text-sm text-gray-400">We're here to help</p>
+                      <p className="text-[0.9rem] font-medium">Feel free to reach out anytime.</p>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
         </div>
 
-        {/* CTA Section */}
-        <div className="mt-20 text-center">
-          <div className="bg-transparent backdrop-blur-sm rounded-2xl p-12 ">
-            <h3 className="text-3xl font-bold font-ramro mb-4 text-white">
-              Ready to Experience Perfect Vision?
-            </h3>
-            <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-              Discover our complete range of premium eyewear solutions designed
-              for your lifestyle.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="/Services"
-                className="px-8 py-3 bg-gradient-to-r from-amber-400 via-amber-300 to-amber-500 text-white rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transform hover:scale-105 transition-all duration-300"
-              >
-                Explore Our Products
-              </a>
-            </div>
-          </div>
-        </div>
+
+        <CTA />
       </div>
     </div>
   );

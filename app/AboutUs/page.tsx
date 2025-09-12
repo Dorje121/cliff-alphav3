@@ -3,6 +3,8 @@ import React, { useEffect, useRef } from "react";
 import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import OurStory from './ourstory'
+import Achievement from './achievement'
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -109,8 +111,9 @@ const AboutUsPage = () => {
         </section>
 
         {/* Our Story Section */}
-        <section ref={storyRef} className="py-20 px-8 md:px-24 relative">
-          {/* Subtle border effect */}
+        <OurStory />
+        {/* <section ref={storyRef} className="py-20 px-8 md:px-24 relative">
+         
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent"></div>
 
           <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center relative">
@@ -161,7 +164,10 @@ const AboutUsPage = () => {
               </div>
             </div>
           </div>
-        </section>
+        </section>  */}
+
+
+        <Achievement />
 
         {/* Mission Statement */}
         <section ref={missionRef} className="py-20 px-8 md:px-24  relative">
@@ -183,8 +189,8 @@ const AboutUsPage = () => {
             </div>
           </div>
         </section>
-
-        {/* Core Values */}
+        {/* Core Values*/}
+        
         <section ref={valuesRef} className="py-20 px-8 md:px-24 relative">
           {/* Minimal floating elements */}
           <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
@@ -202,21 +208,17 @@ const AboutUsPage = () => {
                 <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-gray-500/5 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300"></div>
                 <div className="relative bg-gray-900/80 backdrop-blur-sm p-8 rounded-2xl border border-gray-700/50 group-hover:border-gray-500/70 transition-all duration-300">
                   <div className="w-16 h-16 bg-gradient-to-r from-gray-600 to-gray-800 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                    <svg
-                      className="w-8 h-8 text-white"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
+
+
+                    <svg className="w-6 h-6 text-white block" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M12.25 2c-5.514 0-10 4.486-10 10s4.486 10 10 10s10-4.486 10-10s-4.486-10-10-10M18 13h-6.75V6h2v5H18z" /></svg>
                   </div>
-                  <h3 className="text-2xl font-bold mb-4 text-gray-300">
+
+                  <h3 className="text-2xl font-bold mb-4 text-gray-300 group-hover:text-green-300">
                     Precision
                   </h3>
                   <p className="text-gray-300 leading-relaxed">
                     Every lens we craft meets the highest standards of optical
-                    precision, ensuring perfect vision correction for our
-                    customers.
+                    precision, ensuring perfect vision.
                   </p>
                   <div className="absolute top-4 right-4 w-2 h-2 bg-white/40 rounded-full"></div>
                 </div>
@@ -234,7 +236,7 @@ const AboutUsPage = () => {
                       <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z" />
                     </svg>
                   </div>
-                  <h3 className="text-2xl font-bold mb-4 text-green-300">
+                  <h3 className="text-2xl font-bold mb-4 group-hover:text-green-300">
                     Innovation
                   </h3>
                   <p className="text-gray-300 leading-relaxed">
@@ -257,7 +259,7 @@ const AboutUsPage = () => {
                       <path d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" />
                     </svg>
                   </div>
-                  <h3 className="text-2xl font-bold mb-4 text-gray-100">
+                  <h3 className="text-2xl font-bold mb-4 text-gray-100 group-hover:text-green-300">
                     Care
                   </h3>
                   <p className="text-gray-300 leading-relaxed">
@@ -271,12 +273,13 @@ const AboutUsPage = () => {
           </div>
         </section>
 
+
+
         {/* Team Section */}
-        <section
+        {/* <section
           ref={teamRef}
           className="py-20 px-8 md:px-24 bg-gradient-to-r from-gray-900/90 via-gray-800/50 to-gray-900/90 relative"
         >
-          {/* Neon grid background */}
           <div className="absolute inset-0 opacity-10">
             <div
               className="w-full h-full"
@@ -350,11 +353,11 @@ const AboutUsPage = () => {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* Statistics Section */}
-        <section className="py-20 px-8 md:px-24 relative">
-          {/* Animated background shapes */}
+        {/* <section className="py-20 px-8 md:px-24 relative">
+
           <div className="absolute inset-0 overflow-hidden">
             <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-full blur-3xl animate-spin-slow"></div>
             <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-r from-emerald-500/10 to-cyan-500/10 rounded-full blur-3xl animate-spin-slow-reverse"></div>
@@ -408,7 +411,7 @@ const AboutUsPage = () => {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
       </div>
     </div>
   );
