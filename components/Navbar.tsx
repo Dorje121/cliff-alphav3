@@ -20,6 +20,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
+  const [isInFirstSection, setIsInFirstSection] = useState(false);
 
   // The Navbar now only controls the audio, it does not initialize it.
   // const { play, pause, isPlaying } = useSoundStore();
@@ -114,6 +115,26 @@ export default function Navbar() {
     }
   }, []);
 
+  // Scroll detection for cliff-coatings page
+  useEffect(() => {
+    if (pathname === "/Services/cliff-coatings") {
+      const handleScroll = () => {
+        const scrollPosition = window.scrollY;
+        const firstSectionHeight = window.innerHeight * 0.9; // 90vh
+        setIsInFirstSection(scrollPosition < firstSectionHeight);
+      };
+
+      window.addEventListener('scroll', handleScroll);
+      handleScroll(); // Initial check
+
+      return () => {
+        window.removeEventListener('scroll', handleScroll);
+      };
+    } else {
+      setIsInFirstSection(false);
+    }
+  }, [pathname]);
+
   const isTestProductPage = pathname === "/testProduct";
 
   return (
@@ -122,7 +143,7 @@ export default function Navbar() {
         className={`fixed top-0 left-0 w-full z-50 transition-colors duration-300 ${
           isOpen
             ? "text-black"
-            : isTestProductPage
+            : isTestProductPage || isInFirstSection
             ? "text-white bg-black"
             : "text-white"
         }`}

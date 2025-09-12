@@ -43,6 +43,7 @@ const LandingVideo = () => {
           <h1 className="text-4xl md:text-6xl bg-gradient-to-r from-white via-yellow-100 to-yellow-200  bg-clip-text text-transparent md:text-right lg:text-9xl font-playfair font-bold leading-tight">
             Cliff lens crafted{" "}
           </h1>
+        
 
           <div className="flex flex-col md:flex-row">
             <h1 className="text-4xl bg-gradient-to-r from-white via-yellow-100 to-yellow-200 bg-clip-text text-transparent text-nowrap md:text-6xl lg:text-9xl font-playfair font-bold mb-6 leading-tight">

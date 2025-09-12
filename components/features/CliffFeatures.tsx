@@ -2,6 +2,7 @@
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import TexturedTitle from "../TexturedTitle";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -72,10 +73,7 @@ const CliffFeatures: React.FC = () => {
             trigger: ".grid-container",
             start: "top 80%",
             end: "bottom bottom",
-            // This is the key change. "reverse" on the 4th action (onLeaveBack).
-            // It means: play, none, none, reverse
             toggleActions: "play none none reverse",
-            // markers: true, // You can re-enable this for debugging trigger points
           },
         }
       );
@@ -90,25 +88,37 @@ const CliffFeatures: React.FC = () => {
       <div className="absolute inset-0 backdrop-blur-sm" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
+        {/* Textured Title */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-light font-ramro text-white mb-4">
-            Cliff lenses, crafted{" "}
-            <span className="text-yellow-400"> just for you.</span>
-          </h2>
+          <div className="mb-4">
+            <TexturedTitle
+              text="Cliff lenses, "
+              fontSize="clamp(2.5rem, 5vw, 3.5rem)"
+              fontWeight="300"
+              textureImage="/texture/texture.png" // default texture
+            />
+          </div>
+          <div>
+            <TexturedTitle
+              text="just for you."
+              fontSize="clamp(2.5rem, 5vw, 3.5rem)"
+              fontWeight="300"
+              textureImage="/texture/texture-yellow.png" // yellow texture
+            />
+          </div>
         </div>
 
+        {/* Feature Grid */}
         <div className="grid-container grid grid-cols-1 md:grid-cols-3 md:grid-rows-2 gap-8 h-auto md:h-[50rem]">
           {features.map((feature: Feature, index: number) => (
             <div
               key={index}
-              className={`
-                feature-card
-                ${getGridSpanClass(index)}
-                relative bg-white/10 backdrop-blur-md rounded-xl 
+              className={`feature-card ${getGridSpanClass(
+                index
+              )} relative bg-white/10 backdrop-blur-md rounded-xl 
                 border border-white/20 hover:border-white/40 
                 transition-all duration-300 hover:scale-[1.02] 
-                overflow-hidden group flex flex-col min-h-[300px]
-              `}
+                overflow-hidden group flex flex-col min-h-[300px]`}
             >
               <div
                 className="absolute inset-0 bg-cover bg-center transition-transform duration-300 group-hover:scale-110"

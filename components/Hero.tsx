@@ -2,6 +2,7 @@
 import React, { useEffect, useRef } from "react";
 import Image from "next/image";
 import gsap from "gsap";
+import TexturedTitle from "./TexturedTitle";
 
 const Hero = () => {
   const textRefs = useRef<HTMLSpanElement[]>([]);
@@ -31,20 +32,28 @@ const Hero = () => {
   return (
     <section className="bg-black text-white min-h-screen flex flex-col justify-center px-8 py-16 md:px-24">
       <div className="flex flex-col max-w-7xl mx-auto md:flex-row md:justify-around md:items-start">
-        <div>
-          <h1 className="text-5xl md:text-7xl font-bold font-ramro mt-20 leading-tight">
-            {["Design.", "Precision.", "Cliff Eyewear."].map((text, i) => (
-              <span
-                key={i}
-                ref={(el) => {
-                  if (el) textRefs.current[i] = el;
-                }}
-                className={`block ${i === 2 ? "text-gray-300" : "text-white"}`}
-              >
-                {text}
-              </span>
-            ))}
-          </h1>
+        <div className="mt-20">
+          <div className="mb-4">
+            <TexturedTitle 
+              text="Design." 
+              fontSize="clamp(3rem, 8vw, 5rem)"
+              className="block mb-2"
+            />
+          </div>
+          <div className="mb-4">
+            <TexturedTitle 
+              text="Precision." 
+              fontSize="clamp(3rem, 8vw, 5rem)"
+              className="block mb-2"
+            />
+          </div>
+          <div>
+            <TexturedTitle 
+              text="Cliff Eyewear." 
+              fontSize="clamp(3rem, 8vw, 5rem)"
+              className="block opacity-80"
+            />
+          </div>
         </div>
 
         <div
