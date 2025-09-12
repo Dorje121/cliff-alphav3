@@ -18,11 +18,8 @@ interface CoatingFeature {
 }
 
 const CliffBlueSafeCoating = () => {
-  const imageRef = useRef<HTMLImageElement>(null);
-  const imageMainRef = useRef<HTMLDivElement>(null);
   const backgroundImageRef = useRef<HTMLDivElement>(null);
   const [activeFeature, setActiveFeature] = useState(0);
-  const sectionRef = useRef<HTMLDivElement>(null);
   const [activeImage, setActiveImage] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
   const heroRef = useRef<HTMLDivElement>(null);
@@ -519,8 +516,8 @@ const CliffBlueSafeCoating = () => {
                 </div>
               </div>
               <p className="text-gray-300">
-                "As someone who spends 10+ hours daily in front of screens, Cliff Blue Safe has been a game-changer. 
-                My eye strain has reduced significantly, and I sleep much better now."
+                &ldquo;As someone who spends 10+ hours daily in front of screens, Cliff Blue Safe has been a game-changer. 
+                My eye strain has reduced significantly, and I sleep much better now.&rdquo;
               </p>
               <div className="flex mt-4">
                 {[1, 2, 3, 4, 5].map((star) => (
@@ -540,8 +537,8 @@ const CliffBlueSafeCoating = () => {
                 </div>
               </div>
               <p className="text-gray-300">
-                "The anti-reflective properties are exceptional. Colors appear more vibrant and true to life, 
-                which is crucial for my design work. I won't use any other coating now."
+                &ldquo;The anti-reflective properties are exceptional. Colors appear more vibrant and true to life, 
+                which is crucial for my design work. I won&apos;t use any other coating now.&rdquo;
               </p>
               <div className="flex mt-4">
                 {[1, 2, 3, 4, 5].map((star) => (
@@ -561,8 +558,8 @@ const CliffBlueSafeCoating = () => {
                 </div>
               </div>
               <p className="text-gray-300">
-                "I was skeptical at first, but after using Cliff Blue Safe for my study sessions, I've noticed 
-                significantly less eye fatigue. The hydrophobic coating also makes cleaning so much easier."
+                &ldquo;I was skeptical at first, but after using Cliff Blue Safe for my study sessions, I&apos;ve noticed 
+                significantly less eye fatigue. The hydrophobic coating also makes cleaning so much easier.&rdquo;
               </p>
               <div className="flex mt-4">
                 {[1, 2, 3, 4, 5].map((star) => (

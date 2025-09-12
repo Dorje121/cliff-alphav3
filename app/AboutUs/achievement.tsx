@@ -5,7 +5,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const achievement = () => {
+const Achievement = () => {
     const leftBoxesRef = useRef<HTMLDivElement[]>([]);
     const rightBoxesRef = useRef<HTMLDivElement[]>([]);
     const countersRef = useRef<HTMLSpanElement[]>([]);
@@ -200,4 +200,4 @@ const achievement = () => {
     );
 };
 
-export default achievement;
+export default Achievement;
