@@ -12,7 +12,7 @@ const Footer = () => {
       {/* Enhanced Overlay with gradient */}
       <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-black/40"></div>
 
-      <div className="relative z-10 w-full max-w-full mx-auto px-4 sm:px-6 md:px-8 py-8 md:py-16 flex flex-col items-center justify-center h-full">
+      <div className="relative z-10 w-full max-w-[1520px] mx-auto px-4 sm:px-6 md:px-8 py-8 md:py-16 flex flex-col items-center justify-center h-full">
         {/* Main Title */}
         <div className="text-center mb-12 md:mb-20">
           <h1 className="text-2xl sm:text-3xl md:text-6xl lg:text-8xl xl:text-9xl mt-4 md:mt-8 font-semibold font-family-playfair bg-gradient-to-r from-white via-yellow-100 to-yellow-200 bg-clip-text text-transparent text-center tracking-[0.2rem] sm:tracking-[0.5rem] md:tracking-[1rem] lg:tracking-[1.5rem] xl:tracking-[1.9rem]">
@@ -25,11 +25,11 @@ const Footer = () => {
           {/* Logo and CTA */}
           <div className="flex flex-row items-center justify-center mb-6 lg:mb-0">
             <Image
-              src="/logo.png"
+              src="/logo/FDA.png"
               alt="Cliff Eyewear Logo"
-              width={80}
-              height={80}
-              className="drop-shadow-2xl md:w-[100px] md:h-[100px]"
+              width={160}
+              height={120}
+              className="object-cover"
             />
             {/* <Link
               href="/Contact"

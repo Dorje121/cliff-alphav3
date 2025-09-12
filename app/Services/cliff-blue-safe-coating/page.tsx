@@ -100,7 +100,7 @@ const CliffBlueSafeCoating = () => {
 
   return (
     <>
-<section className="relative min-h-screen bg-gray-50 flex flex-col">
+<section className="min-h-screen bg-gray-50 flex flex-col z-4">
 
   {/* Main Product Image */}
   <div className="flex justify-center items-center flex-grow mt-16">
@@ -137,7 +137,7 @@ const CliffBlueSafeCoating = () => {
 
 
       {/* Hero Section with Service Information */}
-      <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black text-white relative overflow-hidden">
+      <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black text-white relative overflow-hidden z-20">
         {/* Background Image with Overlay */}
         <div ref={backgroundImageRef} className="absolute inset-0">
           <Image
@@ -163,7 +163,7 @@ const CliffBlueSafeCoating = () => {
         </div>
 
         {/* Main Content */}
-        <div className="relative z-10 container max-w-screen mx-auto px-4 py-20">
+        <div className="relative z-20 container max-w-screen mx-auto px-4 py-20">
           <div className="flex flex-col lg:flex-row items-center gap-16 min-h-screen">
             {/* Left Content */}
             <div className="lg:w-1/2 space-y-8">
@@ -218,7 +218,7 @@ const CliffBlueSafeCoating = () => {
             </div>
 
             {/* Right Content - Enhanced Visual */}
-            <div className="lg:w-1/2 relative">
+            <div className="lg:w-1/2 relative z-20">
               <div className="relative">
                 {/* Main Image Container */}
                 <div className="relative rounded-3xl overflow-hidden border border-white/20 shadow-2xl">
@@ -252,9 +252,12 @@ const CliffBlueSafeCoating = () => {
           </div>
         </div>
       </div>
+
+
+      {/* Section 2 */}
       <div
         ref={sectionRef}
-        className="min-h-screen bg-transparent text-white relative overflow-hidden"
+        className="min-h-screen bg-black text-white relative overflow-hidden z-20"
       >
         {/* Animated Background */}
         <div className="absolute inset-0 opacity-30">
@@ -270,7 +273,7 @@ const CliffBlueSafeCoating = () => {
         </div>
 
         {/* Hero Section */}
-        <div className="relative z-10 pt-32 pb-20">
+        <div className="relative z-30 pt-32 pb-20">
           <div className="max-w-screen mx-auto px-6">
             <div className="text-center mb-16">
               <h1 className="text-6xl md:text-8xl font-bold mb-6 bg-gradient-to-r from-white via-yellow-100 to-yellow-200 bg-clip-text text-transparent">
@@ -353,7 +356,7 @@ const CliffBlueSafeCoating = () => {
             </div>
 
             <div
-              className="h-auto opacity-100 flex items-center justify-center"
+              className="h-auto opacity-100 flex items-center z-30 justify-center"
               ref={imageMainRef}
             >
               <Image
@@ -382,17 +385,17 @@ const CliffBlueSafeCoating = () => {
       </div>
 
       {/* Full Width Blue Coating Image */}
-      <div className="w-full bg-black py-16 -mx-[100vw] left-1/2 right-1/2 -translate-x-1/2 -translate-y-0 ml-[50vw] mr-[50vw]">
+      <div className="w-full bg-black py-16 relative z-50 overflow-hidden">
         <Image
           src="/cliffcoating/bluee.png"
           alt="Cliff Blue Coating"
           width={1200}
           height={800}
-          className="w-full h-[80vh] object-cover"
+          className="w-full h-[80vh] object-cover object-bottom"
         />
       </div>
 
-      <div className="min-h-screen bg-transparent text-white relative overflow-hidden">
+      <div className="min-h-screen bg-black text-white relative overflow-hidden z-20">
         <div className="max-w-screen mx-auto px-4 py-16">
           <div className="grid md:grid-cols-2 gap-12 items-center">
                 {/* Before/After Comparison */}
