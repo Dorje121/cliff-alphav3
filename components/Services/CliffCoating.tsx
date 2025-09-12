@@ -3,6 +3,7 @@ import React, { useState, useRef, useLayoutEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { gsap } from "gsap";
+import { ArrowLeft } from "lucide-react";
 
 // Star Icon Component
 const StarIcon = () => (
@@ -43,6 +44,7 @@ const CliffCoatings = () => {
   const [selectedCoating, setSelectedCoating] = useState<string>("nox");
   const [currentPhotoIndex, setCurrentPhotoIndex] = useState(0);
   const [thumbnails, setThumbnails] = useState([0, 1, 2, 3, 4]);
+  const [isHovered, setIsHovered] = useState(false);
 
   // Array of 5 photos
   const photos = [
@@ -205,7 +207,23 @@ const CliffCoatings = () => {
 
   return (
     <>
-                  <section className="h-[90vh] bg-gray-50 flex flex-col z-10">
+                  <section className="h-[90vh] bg-gray-50 flex flex-col z-10 relative">
+                    {/* Back Button */}
+                    <div className="absolute top-18 left-9 z-50">
+                      <Link 
+                        href="/Services" 
+                        className="flex items-center justify-center bg-black/80 hover:bg-black text-white px-3 py-1.5 rounded-md transition-all duration-300 backdrop-blur-sm border border-gray-700 hover:border-gray-600 shadow-lg"
+                        onMouseEnter={() => setIsHovered(true)}
+                        onMouseLeave={() => setIsHovered(false)}
+                      >
+                        <ArrowLeft
+                          size={20}
+                          className={`transition-transform duration-300 ${
+                            isHovered ? "-translate-x-1" : ""
+                          }`}
+                        />
+                      </Link>
+                    </div>
 
                     <div className="flex flex-grow mt-48">
                       {/* Thumbnails Grid - Left Side Vertical */}
