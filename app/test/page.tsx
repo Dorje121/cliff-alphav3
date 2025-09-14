@@ -1,14 +1,14 @@
 "use client";
 import React from "react";
-import Demo from "@/components/Demo";
-import BgAttached from "@/components/bg-attachment/BgAttached";
+import Demo from "@/components/home/Demo";
+import BgAttached from "@/components/home/BgAttached";
 import Glass from "@/components/Glass";
 import MagicReveal from "@/components/MagicReveal/MagicReveal";
-import Footer from "@/components/Footer";
+import Footer from "@/components/layout/Footer";
 import Loading from "@/components/PreLoader/Loading";
-import Navbar from "@/components/Navbar";
-import LandingVideo from "@/components/LandingVideo/LandingVideo";
-import HomeList from "@/components/Services/HomeList";
+import Navbar from "@/components/layout/Navbar";
+import LandingVideo from "@/components/home/hero";
+import HomeList from "@/components/home/HomeList";
 
 const Page = () => {
   const [loading, setLoading] = React.useState(true);
