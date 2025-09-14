@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import React, { useLayoutEffect, useRef } from "react";
 import Image from "next/image";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
@@ -19,61 +19,57 @@ const OurStorySection: React.FC = () => {
         "Today, we combine traditional craftsmanship with cutting-edge technology to create lenses that don’t just correct vision—they elevate it.",
     ];
 
-    useEffect(() => {
-        if (!containerRef.current || !imageRef.current || !headingRef.current || !contentRef.current) return;
+    useLayoutEffect(() => {
+        if (!containerRef.current) return;
 
-        // Join text by line
-        contentRef.current.innerHTML = storyText
-            .map(
-                (line) =>
-                    `<p class="opacity-0 transform translate-y-6 transition-opacity transition-transform duration-700 ease-linear mb-6">${line}</p>`
-            )
+        // Inject text once
+        contentRef.current!.innerHTML = storyText
+            .map(line => `<p class="opacity-0 translate-y-6 mb-6">${line}</p>`)
             .join("");
 
-        const paragraphs = contentRef.current.querySelectorAll<HTMLParagraphElement>("p");
+        const paragraphs = contentRef.current!.querySelectorAll<HTMLParagraphElement>("p");
 
-        const tl = gsap.timeline({
-            scrollTrigger: {
-                trigger: containerRef.current,
-                start: "top top",
-                end: "+=1500",
-                scrub: true,
-                pin: true,
-            },
-        });
+        // --- Create a GSAP context scoped to this component ---
+        const ctx = gsap.context(() => {
+            const tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: containerRef.current,
+                    start: "top top",
+                    end: "+=1500",
+                    scrub: true,
+                    pin: true,
+                },
+            });
 
-        // Fade out image
-        tl.to(imageRef.current, { opacity: 0, scale: 1.05, duration: 1 }, 0);
+            tl.to(imageRef.current, { opacity: 0, scale: 1.05, duration: 1 }, 0)
+                .fromTo(
+                    headingRef.current,
+                    { opacity: 0, y: 50 },
+                    { opacity: 1, y: 0, duration: 1 },
+                    0.2
+                );
 
-        // Fade in heading
-        tl.fromTo(headingRef.current, { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 1 }, 0.2);
+            paragraphs.forEach((p, i) => {
+                tl.to(
+                    p,
+                    { opacity: 1, y: 0, duration: 0.5, ease: "power1.out" },
+                    0.5 + i * 0.2
+                );
+            });
+        }, containerRef);
 
-        // Animate paragraphs line by line (much faster than character animation)
-        paragraphs.forEach((p, i) => {
-            tl.to(
-                p,
-                { opacity: 1, y: 0, duration: 0.5, ease: "power1.out" },
-                0.5 + i * 0.2
-            );
-        });
+        // ❗ DO NOT call ScrollTrigger.refresh() or kill global triggers here
 
-        return () => {
-            ScrollTrigger.getAll().forEach((st) => st.kill());
-        };
+        return () => ctx.revert(); // cleans only animations inside this context
     }, []);
 
     return (
         <section ref={containerRef} className="relative w-full min-h-screen bg-black text-white">
-            {/* Image Layer */}
-            <div
-                ref={imageRef}
-                className="absolute inset-0 w-full h-full flex items-center justify-center overflow-hidden"
-            >
+            <div ref={imageRef} className="absolute inset-0 w-full h-full overflow-hidden">
                 <Image src="/eyetest1.jpg" alt="Cliff Lens Craftsmanship" fill className="object-cover" />
-                <div className="absolute inset-0 bg-black/30"></div>
+                <div className="absolute inset-0 bg-black/30" />
             </div>
 
-            {/* Content Layer */}
             <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-6 md:px-24">
                 <h2
                     ref={headingRef}
@@ -84,7 +80,7 @@ const OurStorySection: React.FC = () => {
                 <div
                     ref={contentRef}
                     className="text-gray-300 text-xl leading-relaxed max-w-3xl text-center whitespace-pre-wrap"
-                ></div>
+                />
             </div>
         </section>
     );
