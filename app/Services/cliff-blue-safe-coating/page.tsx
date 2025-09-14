@@ -287,8 +287,11 @@ const CliffBlueSafeCoating = () => {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="font-semibold text-white mb-1">Selective Filtering</h3>
-                    <p className="text-gray-400">Blocks harmful blue-violet light while allowing beneficial blue-turquoise light to pass through</p>
+                    <h3 className="font-semibold text-white mb-1">Anti-Reflective
+                    </h3>
+                    <p className="text-gray-400">- Eliminates reflections, increase light transmission.
+- Decrease unwanted glare.
+- Makes the lenses appear invisible.</p>
                   </div>
                 </div>
                 

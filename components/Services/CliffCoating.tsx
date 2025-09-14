@@ -225,9 +225,20 @@ const CliffCoatings = () => {
                       </Link>
                     </div>
 
-                    <div className="flex flex-grow mt-48">
-                      {/* Thumbnails Grid - Left Side Vertical */}
-                      <div className="flex flex-col gap-4 pr-4 pl-10">
+                    <div className="flex flex-col items-center mt-16">
+                      {/* Main Product Image */}
+                      <div className="flex justify-center items-center mb-6 h-[500px]">
+                        <Image
+                          src={photos[currentPhotoIndex]} // use current photo index state
+                          alt="Main Product"
+                          width={700}
+                          height={500}
+                          className="object-contain"
+                        />
+                      </div>
+
+                      {/* Thumbnails Grid - Center Bottom Horizontal */}
+                      <div className="flex flex-row gap-6 justify-center flex-wrap max-w-4xl">
                         {photos.slice(1).map((image, index) => (
                           <div 
                             key={index} 
@@ -253,17 +264,6 @@ const CliffCoatings = () => {
                             </button>
                           </div>
                         ))}
-                      </div>
-
-                      {/* Main Product Image */}
-                      <div className="flex justify-center -ml-24 -mt-10 items-center flex-grow">
-                        <Image
-                          src={photos[currentPhotoIndex]} // use current photo index state
-                          alt="Main Product"
-                          width={700}
-                          height={500}
-                          className="object-contain"
-                        />
                       </div>
                     </div>
                   </section>
@@ -484,6 +484,189 @@ const CliffCoatings = () => {
           </div>
         </div>
       </div>
+
+
+      <section className="py-20 bg-black relative overflow-hidden">
+        <div className="max-w-[1500px] mx-auto p-4 relative z-10">
+          {/* Section Header */}
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center justify-center w-16 h-16 bg-gray-800 rounded-full mb-6">
+              <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+              </svg>
+            </div>
+            <h2 className="text-5xl font-bold text-white mb-4">
+              Advanced Lens Coating Technology
+            </h2>
+            <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+              Experience cutting-edge lens protection with our specialized coating solutions
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            {/* Blue Safe Card */}
+            <div className="group relative">
+              <div className="relative bg-gray-900 border border-gray-800 rounded-2xl p-8 hover:border-gray-600 transition-all duration-300 transform hover:-translate-y-1">
+                <div className="flex items-center mb-6">
+                  <div className="flex items-center justify-center w-12 h-12 bg-gray-800 rounded-xl mr-4">
+                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                    </svg>
+                  </div>
+                  <h3 className="text-2xl font-bold text-white">Blue Safe</h3>
+                </div>
+                <p className="text-gray-400 mb-6">Complete digital eye protection with advanced blue light filtering technology</p>
+                <div className="space-y-4">
+                  <div className="flex items-center">
+                    <svg className="w-5 h-5 text-gray-400 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                    </svg>
+                    <span className="text-gray-300">UV Protection</span>
+                  </div>
+                  <div className="flex items-center">
+                    <svg className="w-5 h-5 text-gray-400 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                    </svg>
+                    <span className="text-gray-300">Scratch Resistance</span>
+                  </div>
+                  <div className="flex items-center">
+                    <svg className="w-5 h-5 text-gray-400 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                    </svg>
+                    <span className="text-gray-300">Anti-Reflective Coating</span>
+                  </div>
+                  <div className="flex items-center">
+                    <svg className="w-5 h-5 text-gray-400 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                    </svg>
+                    <span className="text-gray-300">Easy to Clean</span>
+                  </div>
+                  <div className="flex items-center">
+                    <svg className="w-5 h-5 text-gray-400 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                    </svg>
+                    <span className="text-gray-300">Blue Light Filter</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Drive Clear Card */}
+            <div className="group relative">
+              <div className="relative bg-gray-900 border border-gray-800 rounded-2xl p-8 hover:border-gray-600 transition-all duration-300 transform hover:-translate-y-1">
+                <div className="flex items-center mb-6">
+                  <div className="flex items-center justify-center w-12 h-12 bg-gray-800 rounded-xl mr-4">
+                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                  </div>
+                  <h3 className="text-2xl font-bold text-white">Drive Clear</h3>
+                </div>
+                <p className="text-gray-400 mb-6">Enhanced driving visibility with superior glare protection</p>
+                <div className="space-y-4">
+                  <div className="flex items-center">
+                    <svg className="w-5 h-5 text-gray-400 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                    </svg>
+                    <span className="text-gray-300">UV Protection</span>
+                  </div>
+                  <div className="flex items-center">
+                    <svg className="w-5 h-5 text-gray-400 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                    </svg>
+                    <span className="text-gray-300">Scratch Resistance</span>
+                  </div>
+                  <div className="flex items-center">
+                    <svg className="w-5 h-5 text-gray-400 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                    </svg>
+                    <span className="text-gray-300">Anti-Reflective Coating</span>
+                  </div>
+                  <div className="flex items-center">
+                    <svg className="w-5 h-5 text-gray-400 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                    </svg>
+                    <span className="text-gray-300">Easy to Clean</span>
+                  </div>
+                  <div className="flex items-center">
+                    <svg className="w-5 h-5 text-gray-400 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 9a1 1 0 000 2h6a1 1 0 100-2H7z" clipRule="evenodd" />
+                    </svg>
+                    <span className="text-gray-300">Partially Filters Blue Rays</span>
+                  </div>
+                  <div className="flex items-center">
+                    <svg className="w-5 h-5 text-gray-400 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                    </svg>
+                    <span className="text-gray-300">Glare Protection</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Photo-Z Card */}
+            <div className="group relative">
+              <div className="relative bg-gray-900 border border-gray-800 rounded-2xl p-8 hover:border-gray-600 transition-all duration-300 transform hover:-translate-y-1">
+                <div className="flex items-center mb-6">
+                  <div className="flex items-center justify-center w-12 h-12 bg-gray-800 rounded-xl mr-4">
+                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                    </svg>
+                  </div>
+                  <h3 className="text-2xl font-bold text-white">Photo-Z</h3>
+                </div>
+                <p className="text-gray-400 mb-6">Adaptive photochromatic lenses that adjust to light conditions</p>
+                <div className="space-y-4">
+                  <div className="flex items-center">
+                    <svg className="w-5 h-5 text-gray-400 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                    </svg>
+                    <span className="text-gray-300">UV Protection</span>
+                  </div>
+                  <div className="flex items-center">
+                    <svg className="w-5 h-5 text-gray-400 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                    </svg>
+                    <span className="text-gray-300">Scratch Resistance</span>
+                  </div>
+                  <div className="flex items-center">
+                    <svg className="w-5 h-5 text-gray-400 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                    </svg>
+                    <span className="text-gray-300">Anti-Reflective Coating</span>
+                  </div>
+                  <div className="flex items-center">
+                    <svg className="w-5 h-5 text-gray-400 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                    </svg>
+                    <span className="text-gray-300">Easy to Clean</span>
+                  </div>
+                  <div className="flex items-center">
+                    <svg className="w-5 h-5 text-gray-400 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 9a1 1 0 000 2h6a1 1 0 100-2H7z" clipRule="evenodd" />
+                    </svg>
+                    <span className="text-gray-300">Partially Filters Blue Rays</span>
+                  </div>
+                  <div className="flex items-center">
+                    <svg className="w-5 h-5 text-gray-400 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                    </svg>
+                    <span className="text-gray-300">Glare Protection</span>
+                  </div>
+                  <div className="flex items-center">
+                    <svg className="w-5 h-5 text-gray-400 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                    </svg>
+                    <span className="text-gray-300">Photochromatic Effect</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
     </>
   );
 };
