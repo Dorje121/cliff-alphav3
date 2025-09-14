@@ -2,8 +2,8 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import Footer from "@/components/Footer";
-import Navbar from "@/components//Navbar";
+import TextWithTexture from "@/components/textwithgoldentexture";
+
 
 const List = () => {
   const services = [
@@ -203,15 +203,32 @@ const List = () => {
 
   return (
     <div className="min-h-screen bg-black text-white overflow-x-hidden">
-      <div className="container max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16 relative">
+
+       <section className="w-full bg-black mt-14 flex justify-center py-4">
+              <div className="w-full max-w-[1500px] mx-auto px-4">
+                <div className="relative rounded-3xl overflow-hidden shadow-2xl h-[60vh] bg-black">
+                  <video
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    className="w-full h-full object-cover object-[50%_30%]"
+                  >
+                    <source src="/homevideo/BlueSafe-2.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+              </div>
+            </section>
+      <div className="container max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-2 sm:py-4 lg:py-8 relative">
         {/* Header Section */}
         <div className="mb-8 md:mb-16">
           <div className="flex flex-col mt-8 lg:flex-row lg:items-center lg:justify-between gap-6 lg:gap-8">
             {/* Title and Description */}
             <div className="flex-1">
-              <h1 className="text-3xl italic sm:text-4xl md:text-5xl lg:text-7xl font-semibold font-family-playfair mb-4 md:mb-6 bg-gradient-to-r from-[#FFF9DC] via-yellow-100 to-[#FFCC00] bg-clip-text text-transparent">
-                Our Products
-              </h1>
+
+              <TextWithTexture text="Our Products"  
+              className="text-3xl italic sm:text-4xl md:text-5xl lg:text-7xl font-semibold font-family-playfair mb-4 md:mb-6 bg-gradient-to-r from-[#FFF9DC] via-yellow-100 to-[#FFCC00] bg-clip-text text-transparent" /> 
               <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-4xl">
                 Discover our comprehensive range of premium optical solutions,
                 advanced lens technologies, and professional services designed to

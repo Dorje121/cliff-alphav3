@@ -1,15 +1,13 @@
 "use client";
 import React from "react";
-import Demo from "@/components/Demo";
-import BgAttached from "@/components/bg-attachment/BgAttached";
-import Footer from "@/components/Footer";
-import Navbar from "@/components/Navbar";
-import LandingVideo from "@/components/LandingVideo/LandingVideo";
-import HomeList from "@/components/Services/HomeList";
+import Demo from "@/components/home/Demo";
+import BgAttached from "@/components/home/BgAttached";
+import LandingVideo from "@/components/home/hero";
+import HomeList from "@/components/home/HomeList";
 // import MainDisplay from "@/components/test/MainDisplay";
-import CircleAttachment from "@/components/bg-attachment/CircleAttachment";
-import Blog from "@/components/BlogPost/Blog";
-import LensDemo from "@/components/magicui/Focus";
+import CircleAttachment from "@/components/home/CircleAttachment";
+import Blog from "@/components/home/Blog";
+import LensDemo from "@/components/home/Focus";
 
 const Page = () => {
   return (
@@ -20,7 +18,7 @@ const Page = () => {
         <Demo />
         <CircleAttachment />
         <HomeList />
-        <BgAttached bgImage="/Divider/bgfixed.png" />
+        <BgAttached bgVideo="/homevideo/BlueSafe-2.mp4" />
         <Blog />
         <LensDemo />
       </div>

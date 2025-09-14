@@ -3,6 +3,7 @@ import React, { useState, useRef, useLayoutEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { gsap } from "gsap";
+import { ArrowLeft } from "lucide-react";
 
 // Star Icon Component
 const StarIcon = () => (
@@ -43,6 +44,7 @@ const CliffCoatings = () => {
   const [selectedCoating, setSelectedCoating] = useState<string>("nox");
   const [currentPhotoIndex, setCurrentPhotoIndex] = useState(0);
   const [thumbnails, setThumbnails] = useState([0, 1, 2, 3, 4]);
+  const [isHovered, setIsHovered] = useState(false);
 
   // Array of 5 photos
   const photos = [
@@ -205,38 +207,64 @@ const CliffCoatings = () => {
 
   return (
     <>
-                  <section className="sticky top-0 min-h-screen bg-gray-50 flex flex-col z-10">
-
-                    {/* Main Product Image */}
-                    <div className="flex justify-center items-center flex-grow mt-16">
-                      <Image
-                        src={photos[currentPhotoIndex]} // use current photo index state
-                        alt="Main Product"
-                        width={700}
-                        height={500}
-                        className="object-contain"
-                      />
+                  <section className="h-[90vh] bg-gray-50 flex flex-col z-10 relative">
+                    {/* Back Button */}
+                    <div className="absolute top-18 left-9 z-50">
+                      <Link 
+                        href="/Services" 
+                        className="flex items-center justify-center bg-black/80 hover:bg-black text-white px-3 py-1.5 rounded-md transition-all duration-300 backdrop-blur-sm border border-gray-700 hover:border-gray-600 shadow-lg"
+                        onMouseEnter={() => setIsHovered(true)}
+                        onMouseLeave={() => setIsHovered(false)}
+                      >
+                        <ArrowLeft
+                          size={20}
+                          className={`transition-transform duration-300 ${
+                            isHovered ? "-translate-x-1" : ""
+                          }`}
+                        />
+                      </Link>
                     </div>
 
-                    {/* Thumbnails Grid - Fixed at bottom */}
-                    <div className="grid grid-cols-3 md:grid-cols-5 gap-4 py-8 max-w-4xl mx-auto">
-                      {photos.slice(1).map((image, index) => (
-                        <div 
-                          key={index} 
-                          className="flex justify-center"
-                        >
-                          <Image
-                            src={image}
-                            alt={`thumb ${index + 1}`}
-                            width={120}
-                            height={80}
-                            className={`border rounded cursor-pointer hover:opacity-80 transition-all duration-200 ${
-                              currentPhotoIndex === index ? 'border-blue-500 border-2' : 'border-gray-300'
-                            }`}
-                            onClick={() => setCurrentPhotoIndex(index)}
-                          />
-                        </div>
-                      ))}
+                    <div className="flex flex-grow mt-48">
+                      {/* Thumbnails Grid - Left Side Vertical */}
+                      <div className="flex flex-col gap-4 pr-4 pl-10">
+                        {photos.slice(1).map((image, index) => (
+                          <div 
+                            key={index} 
+                            className="flex justify-center relative z-30"
+                          >
+                            <button
+                              onClick={() => {
+                                console.log('Thumbnail clicked:', index + 1);
+                                setCurrentPhotoIndex(index + 1);
+                              }}
+                              className="border-2 rounded hover:opacity-80 transition-all duration-100 focus:outline-none focus:ring-blue-500"
+                              style={{
+                                borderColor: currentPhotoIndex === index + 1 ? '#3b82f6' : '#d1d5db'
+                              }}
+                            >
+                              <Image
+                                src={image}
+                                alt={`thumb ${index + 1}`}
+                                width={120}
+                                height={80}
+                                className="rounded"
+                              />
+                            </button>
+                          </div>
+                        ))}
+                      </div>
+
+                      {/* Main Product Image */}
+                      <div className="flex justify-center -ml-24 -mt-10 items-center flex-grow">
+                        <Image
+                          src={photos[currentPhotoIndex]} // use current photo index state
+                          alt="Main Product"
+                          width={700}
+                          height={500}
+                          className="object-contain"
+                        />
+                      </div>
                     </div>
                   </section>
 
@@ -244,55 +272,55 @@ const CliffCoatings = () => {
                     <div className="max-w-6xl mx-auto p-4">
                       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                         {/* Blue Safe */}
-                        <div className="text-center">
+                        <Link href="/Services/cliff-blue-safe-lenses" className="text-center block group cursor-pointer">
                           <div className="mb-6 flex justify-center">
                             <Image
                               src="/cliffcoating/Blue-Safe.jpg"
                               alt="Blue Safe Coating"
                               width={300}
                               height={200}
-                              className="object-cover rounded-lg"
+                              className="object-cover rounded-lg group-hover:opacity-80 transition-opacity duration-300"
                             />
                           </div>
-                          <h3 className="text-2xl font-bold mb-4">Blue Safe</h3>
-                          <p className="text-gray-300">Advanced blue light filtering technology that protects your eyes from digital screen exposure while maintaining crystal clear vision.</p>
-                        </div>
+                          <h3 className="text-2xl font-bold mb-4 group-hover:text-blue-300 transition-colors duration-300">Blue Safe</h3>
+                          <p className="text-gray-300">The Blue Safe Coating provides advanced protection against digital eye strain and harmful UV rays. Designed for durability, it features scratch-resistant properties to keep your lenses clear and long-lasting. Its anti-reflective coating minimizes glare, ensuring sharper vision in bright environments, while the easy-to-clean surface repels smudges and fingerprints effortlessly. This coating also includes a blue light filter, which blocks harmful emissions from screens, reducing fatigue and improving sleep quality. Perfect for individuals who spend hours on digital devices, the Blue Safe Coating ensures comfort and clarity throughout your day.</p>
+                        </Link>
                         
                         {/* Photo Z */}
-                        <div className="text-center">
+                        <Link href="/Services/photo-z-lenses" className="text-center block group cursor-pointer">
                           <div className="mb-6 flex justify-center">
                             <Image
                               src="/cliffcoating/Photo-Z.jpg"
                               alt="Photo Z Coating"
                               width={300}
                               height={200}
-                              className="object-cover rounded-lg"
+                              className="object-cover rounded-lg group-hover:opacity-80 transition-opacity duration-300"
                             />
                           </div>
-                          <h3 className="text-2xl font-bold mb-4">Photo Z</h3>
-                          <p className="text-gray-300">Professional photochromic coating that automatically adjusts to changing light conditions, providing optimal vision indoors and outdoors.</p>
-                        </div>
+                          <h3 className="text-2xl font-bold mb-4 group-hover:text-purple-300 transition-colors duration-300">Photo Z</h3>
+                          <p className="text-gray-300">The Photo-Z Coating adapts seamlessly to changing light conditions, offering unmatched versatility. It provides full UV protection, shielding your eyes indoors and outdoors, while its scratch-resistant surface ensures lasting clarity. The anti-reflective coating eliminates reflections, delivering sharper vision in all environments, and the easy-to-clean feature keeps lenses pristine. This coating partially filters harmful blue rays and reduces glare for enhanced comfort. Its photochromic effect, achieved through innovative technology, adjusts tint based on light intensity. Perfect for dynamic lifestyles, the Photo-Z Coating transitions effortlessly for convenience and clarity.</p>
+                        </Link>
                         
                         {/* Drive Safe */}
-                        <div className="text-center">
+                        <Link href="/Services/drive-safe-lenses" className="text-center block group cursor-pointer">
                           <div className="mb-6 flex justify-center">
                             <Image
                               src="/cliffcoating/Drive-safe.jpg"
                               alt="Drive Safe Coating"
                               width={300}
                               height={200}
-                              className="object-cover rounded-lg"
+                              className="object-cover rounded-lg group-hover:opacity-80 transition-opacity duration-300"
                             />
                           </div>
-                          <h3 className="text-2xl font-bold mb-4">Drive Safe</h3>
-                          <p className="text-gray-300">Specialized anti-glare coating designed for driving, reducing nighttime glare and enhancing contrast for safer road visibility.</p>
-                        </div>
+                          <h3 className="text-2xl font-bold mb-4 group-hover:text-green-300 transition-colors duration-300">Drive Clear</h3>
+                          <p className="text-gray-300">The Drive Clear Coating is crafted to enhance safety and comfort while driving in any lighting condition. It offers complete UV protection to shield your eyes from sunlight, paired with scratch-resistant durability for long-term use. The anti-reflective coating reduces glare from headlights, streetlights, and sunlight, providing clearer vision during both day and night drives. Its easy-to-clean feature ensures your lenses remain spotless with minimal effort. Additionally, this coating partially filters harmful blue rays and reduces glare, enhancing contrast and focus on the road. Ideal for drivers, it ensures safer and more comfortable journeys.</p>
+                        </Link>
                       </div>
                     </div>
                   </section>
 
       {/* Coating Comparison Section */}
-      <div className="min-h-screen bg-black text-white sticky relative z-20">
+      <div className="min-h-screen bg-black text-white relative z-20">
         <div className="max-w-[1500px] mx-auto p-4 py-16">
           {/* Section Header */}
           <div className="text-center mb-12">
@@ -312,37 +340,61 @@ const CliffCoatings = () => {
           <div className="flex flex-col lg:flex-row gap-8 max-w-screen -ml-5">
             {/* Left Sidebar - Coating Selection */}
             <div className="lg:w-1/4">
-              <div className="bg-transparent backdrop-blur-sm p-6 sticky top-8">
-                <h3 className="text-xl font-bold mb-6 text-center">
-                  Select Coating Type
-                </h3>
-                <div className="space-y-3">
-                  {coatings.map((coating) => (
-                    <button
-                      key={coating.id}
-                      onClick={() => setSelectedCoating(coating.id)}
-                      className={`w-full text-left p-4 cursor-pointer rounded-xl transition-all duration-300 transform hover:scale-[1.02] ${
-                        selectedCoating === coating.id
-                          ? "bg-gradient-to-r from-white via-yellow-100 to-yellow-200    text-black shadow-lg shadow-amber-500/30"
-                          : "bg-gray-800/50 text-white hover:bg-gray-700/50 border border-gray-700"
-                      }`}
-                    >
-                      <div className="flex items-center justify-between">
-                        <div>
-                          <div className="font-bold text-lg">
-                            {coating.name}
+              <div className="lg:sticky lg:top-16">
+                <div className="bg-black rounded-xl p-6 shadow-xl">
+                  <h2 className="text-xl font-bold text-white mb-6 flex items-center gap-3">
+                    <div className="w-1 h-6 bg-gradient-to-b from-amber-400 to-amber-600 rounded-full"></div>
+                    Lens Coatings
+                  </h2>
+                  
+                  <div className="space-y-3">
+                    {coatings.map((coating) => (
+                      <button
+                        key={coating.id}
+                        onClick={() => setSelectedCoating(coating.id)}
+                        className={`group relative w-full text-left p-4 rounded-xl transition-all duration-300 overflow-hidden ${
+                          selectedCoating === coating.id
+                            ? "bg-gradient-to-r from-amber-500/15 to-amber-600/10 border border-amber-500/30 text-white shadow-lg"
+                            : "bg-gray-800/40 border border-gray-700/50 text-gray-300 hover:bg-gray-700/50 hover:border-gray-600/50 hover:text-white"
+                        }`}
+                      >
+                        <div className="flex items-center justify-between relative z-10">
+                          <div className="flex items-center gap-3">
+                            <div className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                              selectedCoating === coating.id
+                                ? "bg-amber-400 shadow-lg shadow-amber-400/50"
+                                : "bg-gray-600 group-hover:bg-amber-400"
+                            }`}></div>
+                            <span className={`font-semibold transition-colors duration-300 ${
+                              selectedCoating === coating.id
+                                ? "text-amber-100"
+                                : "group-hover:text-amber-300"
+                            }`}>
+                              {coating.name}
+                            </span>
+                          </div>
+                          <div className={`text-xs font-bold px-2 py-1 rounded-full transition-all duration-300 ${
+                            selectedCoating === coating.id
+                              ? "bg-amber-500/20 text-amber-300 border border-amber-400/30"
+                              : "bg-gray-700/50 text-gray-500 group-hover:bg-amber-500/20 group-hover:text-amber-300 group-hover:border-amber-400/30"
+                          }`}>
+                            {selectedCoating === coating.id ? "SELECTED" : "SELECT"}
                           </div>
                         </div>
-                        <div
-                          className={`w-3 h-3 rounded-full transition-all ${
-                            selectedCoating === coating.id
-                              ? "bg-gray-900"
-                              : "bg-amber-400"
-                          }`}
-                        ></div>
-                      </div>
-                    </button>
-                  ))}
+                        
+                        {/* Background accent */}
+                        <div className={`absolute inset-0 bg-gradient-to-r from-amber-500/5 to-transparent opacity-0 transition-opacity duration-300 ${
+                          selectedCoating === coating.id ? "opacity-100" : "group-hover:opacity-100"
+                        }`}></div>
+                      </button>
+                    ))}
+                  </div>
+                  
+                  <div className="mt-6 pt-4 border-t border-gray-800">
+                    <p className="text-xs text-gray-500 text-center italic">
+                      Premium protection for your vision
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -355,65 +407,78 @@ const CliffCoatings = () => {
 
               {/* Features in Grid Format */}
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-6">
-                {features.map((feature) => (
-                  <div
-                    key={feature.id}
-                    className="bg-gray-900/50 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:bg-white/5 transition-all duration-300 hover:border-gray-400/30 hover:transform hover:scale-[1.02] h-full"
-                  >
-                    <div className="flex flex-col items-center text-center h-full">
-                      {/* Icon - Fixed height */}
-                      <div className="flex-shrink-0 mb-4">
-                        <Image
-                          src={feature.icon}
-                          alt={feature.name}
-                          width={80}
-                          height={80}
-                          className="rounded object-cover filter brightness-0 invert"
-                        />
-                      </div>
-
-                      {/* Content - Flexible height with minimum */}
-                      <div className="flex-grow flex flex-col justify-center space-y-2 min-h-[120px]">
-                        <h3 className="font-semibold text-white text-lg">
-                          {feature.name}
-                        </h3>
-                        <p className="text-gray-400 text-sm leading-relaxed">
-                          {feature.description}
-                        </p>
-                      </div>
-
-                      {/* Status - Fixed at bottom */}
-                      <div className="flex-shrink-0 flex flex-col items-center space-y-2 mt-4">
-                        <span
-                          className={`text-3xl transition-all duration-300 ${
-                            currentCoating.features[feature.id]
-                              ? "text-amber-400 drop-shadow-lg"
-                              : "text-gray-600"
-                          }`}
-                        >
-                          {getFeatureIcon(
-                            currentCoating.features[feature.id]
-                          ) || "—"}
-                        </span>
-                        <span
-                          className={`font-medium text-sm px-3 py-1 rounded-full ${
-                            currentCoating.features[feature.id] === "special"
-                              ? "bg-amber-500/20 text-amber-300 border border-amber-500/30"
-                              : currentCoating.features[feature.id]
-                              ? "bg-green-500/20 text-green-400 border border-green-500/30"
-                              : "bg-gray-500/20 text-gray-500 border border-gray-500/30"
-                          }`}
-                        >
-                          {currentCoating.features[feature.id] === "special"
-                            ? "Enhanced"
-                            : currentCoating.features[feature.id]
-                            ? "Available"
-                            : "Not Available"}
-                        </span>
+                {features.map((feature) => {
+                  const isAvailable = currentCoating.features[feature.id];
+                  const isSpecial = currentCoating.features[feature.id] === "special";
+                  
+                  return (
+                    <div
+                      key={feature.id}
+                      className="group relative bg-gradient-to-br from-slate-800/90 via-slate-900/80 to-slate-800/90 backdrop-blur-md rounded-2xl p-6 border border-slate-700/50 transition-all duration-300 h-full overflow-hidden"
+                    >
+                      {/* Background accent */}
+                      <div className="absolute inset-0 bg-gradient-to-r from-purple-500/5 via-transparent to-blue-500/5 opacity-0"></div>
+                      
+                      {/* Content */}
+                      <div className="relative z-10 flex flex-col h-full">
+                        {/* Header with icon */}
+                        <div className="flex items-start space-x-4 mb-4">
+                          <div className="flex-shrink-0">
+                            <div className="flex items-center justify-center">
+                              <Image
+                                src={feature.icon}
+                                alt={feature.name}
+                                width={64}
+                                height={64}
+                                className={`rounded-lg object-cover filter sepia brightness-130 saturate-180 hue-rotate-15 drop-shadow-lg ${
+                                  isSpecial ? 'brightness-150 saturate-150 hue-rotate-10' : ''
+                                }`}
+                              />
+                            </div>
+                          </div>
+                          
+                          <div className="flex-grow">
+                            <h3 className="font-bold text-white text-lg mb-1">
+                              {feature.name}
+                            </h3>
+                            <div className="flex items-center space-x-2">
+                              <span className={`text-lg transition-all duration-300 ${
+                                isAvailable ? "text-amber-400" : "text-gray-500"
+                              }`}>
+                                {getFeatureIcon(currentCoating.features[feature.id]) || "—"}
+                              </span>
+                              <span className={`text-xs font-semibold px-2 py-1 rounded-full ${
+                                isSpecial
+                                  ? "bg-amber-500/20 text-amber-300 border border-amber-500/30"
+                                  : isAvailable
+                                  ? "bg-green-500/20 text-green-400 border border-green-500/30"
+                                  : "bg-gray-600/30 text-gray-500 border border-gray-500/30"
+                              }`}>
+                                {isSpecial ? "Enhanced" : isAvailable ? "Available" : "Not Available"}
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                        
+                        {/* Description */}
+                        <div className="flex-grow">
+                          <p className="text-gray-300 text-sm leading-relaxed">
+                            {feature.description}
+                          </p>
+                        </div>
+                        
+                        {/* Bottom accent line */}
+                        <div className={`mt-4 h-px w-full ${
+                          isSpecial 
+                            ? 'bg-gradient-to-r from-transparent via-amber-500/50 to-transparent'
+                            : isAvailable
+                            ? 'bg-gradient-to-r from-transparent via-green-500/50 to-transparent'
+                            : 'bg-gray-700/50'
+                        }`}></div>
                       </div>
                     </div>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             </div>
           </div>

@@ -7,8 +7,8 @@ import CustomCursor from "@/components/CustomCursor";
 import SmoothScroller from "@/components/lenis/SmoothScroller";
 import { Suspense } from "react";
 import PageTransitionProvider from "@/components/PreLoader/PageTransitionProvider";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
 
 const montserrat = Montserrat({
   subsets: ["latin"],

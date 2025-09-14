@@ -225,7 +225,7 @@ const Contact = () => {
           <div className="left  h-[100vh] w-[100%] md:w-[40%] pt-20">
             <div className="parnt">
               <div className="para">
-                Reach out today to discover how our custom gate designs can transform your property, combining security with style. We're here to help safeguard your future and create a lasting impression.
+                Reach out today to discover how our custom gate designs can transform your property, combining security with style. We&apos;re here to help safeguard your future and create a lasting impression.
               </div>
 
               <div className="sociallink flex justify-start gap-8 items-center py-10">
@@ -281,7 +281,7 @@ const Contact = () => {
                     {/* Optional: Quick Message Prompt (if needed) */}
                     {/* You can replace this with another info block or social media icons */}
                     <div className="flex flex-col gap-1">
-                      <p className="text-sm text-gray-400">We're here to help</p>
+                      <p className="text-sm text-gray-400">We&apos;re here to help</p>
                       <p className="text-[0.9rem] font-medium">Feel free to reach out anytime.</p>
                     </div>
 
