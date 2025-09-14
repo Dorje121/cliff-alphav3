@@ -2,7 +2,6 @@
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import TexturedTitle from "../TexturedTitle";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -91,20 +90,10 @@ const CliffFeatures: React.FC = () => {
         {/* Textured Title */}
         <div className="text-center mb-16">
           <div className="mb-4">
-            <TexturedTitle
-              text="Cliff lenses, "
-              fontSize="clamp(2.5rem, 5vw, 3.5rem)"
-              fontWeight="300"
-              textureImage="/texture/texture.png" // default texture
-            />
+            <h1 className="text-white text-4xl font-bold">Cliff lenses, </h1>
           </div>
           <div>
-            <TexturedTitle
-              text="just for you."
-              fontSize="clamp(2.5rem, 5vw, 3.5rem)"
-              fontWeight="300"
-              textureImage="/texture/texture-yellow.png" // yellow texture
-            />
+            <h1 className="text-white text-4xl font-bold">just for you.</h1>
           </div>
         </div>
 

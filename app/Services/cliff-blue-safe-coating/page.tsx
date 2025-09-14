@@ -289,9 +289,7 @@ const CliffBlueSafeCoating = () => {
                   <div>
                     <h3 className="font-semibold text-white mb-1">Anti-Reflective
                     </h3>
-                    <p className="text-gray-400">- Eliminates reflections, increase light transmission.
-- Decrease unwanted glare.
-- Makes the lenses appear invisible.</p>
+                    <p className="text-gray-400">Eliminates reflections, increase light transmission. Decrease unwanted glare. Makes the lenses appear invisible.</p>
                   </div>
                 </div>
                 
@@ -302,8 +300,8 @@ const CliffBlueSafeCoating = () => {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="font-semibold text-white mb-1">Vacuum Deposition</h3>
-                    <p className="text-gray-400">Advanced application process ensures even coating and maximum durability</p>
+                    <h3 className="font-semibold text-white mb-1">Anti-Static Electricity/ Anti-Radiation</h3>
+                    <p className="text-gray-400">Alleviate digital eye strain. Stays clean, repels dust particles.</p>
                   </div>
                 </div>
                 
@@ -314,8 +312,8 @@ const CliffBlueSafeCoating = () => {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="font-semibold text-white mb-1">Multi-Layer Protection</h3>
-                    <p className="text-gray-400">Seven specialized layers provide comprehensive protection against blue light, glare, scratches, and smudges</p>
+                    <h3 className="font-semibold text-white mb-1">Anti-Smudge</h3>
+                    <p className="text-gray-400">-High contact angle, repels oil and water, makes lenses more spot resistant. Easy to clean.</p>
                   </div>
                 </div>
               </div>
@@ -332,6 +330,20 @@ const CliffBlueSafeCoating = () => {
                 />
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-12 bg-black">
+        <div className="max-w-[1500px] mx-auto p-4">
+          <div className="text-center">
+            <Image
+              src="/bluesafe/clear.png"
+              alt="Cliff Blue Safe Coating"
+              width={800}
+              height={400}
+              className="mx-auto rounded-lg shadow-lg"
+            />
           </div>
         </div>
       </section>
