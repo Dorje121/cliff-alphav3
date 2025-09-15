@@ -203,8 +203,8 @@ const HomeList = () => {
       : services.filter((service) => service.category === selectedCategory);
 
   return (
-    <div className="min-h-screen bg-transparent text-white overflow-x-hidden">
-      <div className="container mx-auto px-4 sm:px-6 md:px-6 lg:px-4 py-6 md:py-8 lg:py-16 relative">
+    <div className="min-h-screen  bg-transparent text-white overflow-x-hidden !w-full px-4">
+      <div className=" !w-[100%] !shrink-0 py-6 md:py-8 lg:py-16 relative">
         {/* Header Section */}
         <div className=" mb-8 md:mb-16">
           <div className="flex mb-4 md:mb-6"></div>
@@ -212,8 +212,8 @@ const HomeList = () => {
             text="Our Products"
             className="text-3xl italic sm:text-4xl md:text-5xl lg:text-9xl font-semibold font-family-playfair mb-4 md:mb-6  bg-gradient-to-r from-white via-yellow-100 to-yellow-200 bg-clip-text text-transparent"
           />
-          
-          <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-3xl px-4">
+
+          <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-3xl">
             Discover our comprehensive range of premium optical solutions,
             advanced lens technologies, and professional services designed to
             enhance your vision experience.
@@ -289,9 +289,8 @@ const HomeList = () => {
 
                 {/* Desktop Layout (Side by Side) */}
                 <div
-                  className={`hidden md:flex p-5 ${
-                    index % 2 === 0 ? "flex-row" : "flex-row-reverse"
-                  } items-center min-h-[300px]`}
+                  className={`   w-full hidden md:flex p-5 ${index % 2 === 0 ? "flex-row" : "flex-row-reverse"
+                    } items-center min-h-[300px]`}
                 >
                   <div className="w-1/3 text-left">
                     {/* Service Number Overlay */}
@@ -302,11 +301,10 @@ const HomeList = () => {
 
                   {/* Content Section */}
                   <div
-                    className={`w-1/3 p-8 lg:p-12 ${
-                      index % 2 === 0
-                        ? "lg:pl-12 lg:pr-16"
-                        : "lg:pr-12 lg:pl-16"
-                    }`}
+                    className={`w-1/3 p-8 lg:p-12 ${index % 2 === 0
+                      ? "lg:pl-12 lg:pr-16"
+                      : "lg:pr-12 lg:pl-16"
+                      }`}
                   >
                     {/* Category Badge */}
                     <div className="inline-flex items-center px-4 py-2 rounded-full bg-amber-400/20 text-amber-400 text-sm font-medium mb-6">

@@ -66,9 +66,9 @@ const OurStorySection: React.FC = () => {
 
     return (
         <section ref={containerRef} className="relative w-full min-h-screen bg-black text-white">
-            <div ref={imageRef} className="absolute inset-0 w-full h-full overflow-hidden">
-                <Image src="/eyetest1.jpg" alt="Cliff Lens Craftsmanship" fill className="object-cover" />
-                <div className="absolute inset-0 bg-black/30" />
+            <div ref={imageRef} className="absolute inset-0 w-full h-full overflow-hidden ">
+                <Image src="/abtimg.jpeg" alt="Cliff Lens Craftsmanship" fill className="object-cover" />
+                <div className="absolute inset-0 bg-gradient-to-b from-black to transparent " />
             </div>
 
             <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-6 md:px-24">
@@ -78,7 +78,7 @@ const OurStorySection: React.FC = () => {
                 </h2>
                 <div
                     ref={contentRef}
-                    className="text-gray-300 text-[0.9rem] sm:text-xl leading-relaxed max-w-3xl text-center whitespace-pre-wrap"
+                    className="text-gray-300 text-[1rem] sm:text-xl leading-relaxed max-w-3xl text-center whitespace-pre-wrap"
                 />
             </div>
         </section>
