@@ -5,6 +5,7 @@ import Link from "next/link";
 import React, { useRef, useLayoutEffect } from "react";
 import { gsap } from "gsap";
 import Details from "@/components/Services/Details";
+import TextWithTexture from "@/components/textwithgoldentexture";
 
 const CliffProgressiveVersatile = () => {
   const backgroundImageRef = useRef<HTMLDivElement>(null);
@@ -64,13 +65,14 @@ const CliffProgressiveVersatile = () => {
 
               {/* Service Title */}
               <h1 className="text-5xl md:text-7xl mt-12 font-bold leading-tight">
-                <span className="bg-gradient-to-r from-white via-yellow-100 to-yellow-200 bg-clip-text text-transparent whitespace-nowrap">
-                  PROGRESSIVE
-                </span>
-                <br />
-                <span className="bg-gradient-to-r from-white via-yellow-100 to-yellow-200 bg-clip-text text-transparent">
-                  VERSATILE
-                </span>
+                <TextWithTexture
+                  text="Progressive"
+                  className="text-5xl md:text-7xl mt-12 font-bold leading-tight uppercase"
+                />
+                <TextWithTexture
+                  text="VERSATILE"
+                  className="bg-gradient-to-r from-white via-yellow-100 to-yellow-200 bg-clip-text text-transparent"
+                />
               </h1>
 
               {/* Service Description */}
