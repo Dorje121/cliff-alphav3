@@ -7,6 +7,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import BackToServicesButton from "@/components/Services/BackToServicesButton";
+import TextWithTexture from "@/components/textwithgoldentexture";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -153,13 +154,14 @@ const CliffBlueSafeCoating = () => {
 
               {/* Service Title */}
               <h1 className="text-5xl md:text-7xl mt-12 font-bold leading-tight">
-                <span className="bg-gradient-to-r from-white via-yellow-100 to-yellow-200 bg-clip-text text-transparent whitespace-nowrap">
-                  CLIFF BLUE SAFE
-                </span>
-                <br />
-                <span className="bg-gradient-to-r from-white via-yellow-100 to-yellow-200 bg-clip-text text-transparent">
-                  COATING
-                </span>
+                <TextWithTexture
+                  text="Cliff Blue Safe"
+                  className="text-5xl md:text-7xl mt-12 font-bold leading-tight uppercase"
+                />
+                <TextWithTexture
+                  text="COATING"
+                  className="bg-gradient-to-r from-white via-yellow-100 to-yellow-200 bg-clip-text text-transparent"
+                />
               </h1>
 
               {/* Service Description */}
@@ -214,7 +216,7 @@ const CliffBlueSafeCoating = () => {
                   </div>
                 </div>
 
-                <div className="absolute -bottom-6 left-1/4 w-32 h-32 bg-gradient-to-br from-blue-700 to-blue-800 rounded-2xl flex items-center justify-center shadow-xl border border-white/10">
+                <div className="absolute -bottom-6 left-1/4 w-32 h-32 bg-gradient-to-br from-gray-700 to-gray-800 rounded-2xl flex items-center justify-center shadow-xl border border-white/10">
                   <div className="text-center">
                     <div className="text-2xl font-bold text-white">Blue</div>
                     <div className="text-xs text-gray-400">Safe</div>

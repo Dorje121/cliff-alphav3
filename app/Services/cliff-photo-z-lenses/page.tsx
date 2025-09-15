@@ -5,6 +5,7 @@ import Link from "next/link";
 import React, { useRef, useLayoutEffect } from "react";
 import { gsap } from "gsap";
 import Details from "@/components/Services/Details";
+import TextWithTexture from "@/components/textwithgoldentexture";
 
 const CliffPhotoZLenses = () => {
   const backgroundImageRef = useRef<HTMLDivElement>(null);
@@ -66,13 +67,14 @@ const CliffPhotoZLenses = () => {
 
               {/* Service Title */}
               <h1 className="text-5xl md:text-7xl mt-12 font-bold leading-tight">
-                <span className="bg-gradient-to-r from-white via-yellow-100 to-yellow-200 bg-clip-text text-transparent whitespace-nowrap">
-                  CLIFF PHOTO-Z
-                </span>
-                <br />
-                <span className="bg-gradient-to-r from-white via-yellow-100 to-yellow-200 bg-clip-text text-transparent">
-                  UV LENSES
-                </span>
+                <TextWithTexture
+                  text="Cliff Photo-Z"
+                  className="text-5xl md:text-7xl mt-12 font-bold leading-tight uppercase"
+                />
+                <TextWithTexture
+                  text="UV LENSES"
+                  className="bg-gradient-to-r from-white via-yellow-100 to-yellow-200 bg-clip-text text-transparent"
+                />
               </h1>
 
               {/* Service Description */}
@@ -127,7 +129,7 @@ const CliffPhotoZLenses = () => {
                   </div>
                 </div>
 
-                <div className="absolute -bottom-6 left-1/4 w-32 h-32 bg-gradient-to-br from-purple-700 to-purple-800 rounded-2xl flex items-center justify-center shadow-xl border border-white/10">
+                <div className="absolute -bottom-6 left-1/4 w-32 h-32 bg-gradient-to-br from-gray-700 to-gray-800 rounded-2xl flex items-center justify-center shadow-xl border border-white/10">
                   <div className="text-center">
                     <div className="text-2xl font-bold text-white">Auto</div>
                     <div className="text-xs text-gray-400">Adaptive</div>

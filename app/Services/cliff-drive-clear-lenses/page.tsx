@@ -4,6 +4,7 @@ import Image from "next/image";
 import React, { useRef, useLayoutEffect } from "react";
 import { gsap } from "gsap";
 import { motion } from "framer-motion";
+import TextWithTexture from "@/components/textwithgoldentexture";
 
 const CliffDriveClearLenses = () => {
   const backgroundImageRef = useRef<HTMLDivElement>(null);
@@ -143,13 +144,14 @@ const CliffDriveClearLenses = () => {
 
               {/* Service Title */}
               <h1 className="text-5xl md:text-7xl mt-12 font-bold leading-tight">
-                <span className="bg-gradient-to-r from-white via-yellow-100 to-yellow-200 bg-clip-text text-transparent whitespace-nowrap">
-                  CLIFF DRIVE
-                </span>
-                <br />
-                <span className="bg-gradient-to-r from-white via-yellow-100 to-yellow-200 bg-clip-text text-transparent">
-                  CLEAR LENSES
-                </span>
+                <TextWithTexture
+                  text="Cliff Drive"
+                  className="text-5xl md:text-7xl mt-12 font-bold leading-tight uppercase"
+                />
+                <TextWithTexture
+                  text="CLEAR LENSES"
+                  className="bg-gradient-to-r from-white via-yellow-100 to-yellow-200 bg-clip-text text-transparent"
+                />
               </h1>
 
               {/* Service Description */}
