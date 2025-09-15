@@ -19,7 +19,7 @@ const Word: React.FC<WordProps> = ({ children, progress, range }) => {
   const opacity = useTransform(progress, range, [0, 1]);
 
   return (
-    <span className="relative mt-[12px] mr-1 text-2xl text-center font-normal font-dm-sans">
+    <span className="relative mt-[12px] mr-1 text-xl sm:text-2xl text-center font-normal font-dm-sans">
       <span className="absolute opacity-20">{children}</span>
       <motion.span style={{ opacity: opacity }}>{children}</motion.span>
     </span>
@@ -33,13 +33,13 @@ export const MagicText: React.FC<MagicTextProps> = ({ text }) => {
     target: container,
     offset: ["start 0.9", "start 0.25"],
   });
-  
+
   const words = text.split(" ");
 
   return (
     <p
       ref={container}
-      className="flex flex-wrap items-center justify-center leading-[0.5] gap-1 p-4"
+      className="flex flex-wrap items-center justify-center leading-0 sm:leading-[0.5] gap-0 p-0 sm:gap-1 sm:p-4"
     >
       {words.map((word, i) => {
         const start = i / words.length;
