@@ -144,7 +144,7 @@ export default function Navbar() {
           isOpen
             ? "text-black"
             : isTestProductPage || isInFirstSection
-            ? "text-white bg-black"
+            ? "text-white"
             : "text-white"
         }`}
       >
