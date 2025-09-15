@@ -4,6 +4,7 @@ import { gsap } from "gsap";
 import BackToServicesButton from "@/components/Services/BackToServicesButton";
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "motion/react";
 
 const CliffZennSingleVision = () => {
   const backgroundImageRef = useRef<HTMLDivElement>(null);
@@ -34,45 +35,37 @@ const CliffZennSingleVision = () => {
   return (
     <>
       {/* Hero Section with Service Information */}
-      <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black text-white relative overflow-hidden">
-        {/* Background Image with Overlay */}
-        <div ref={backgroundImageRef} className="absolute inset-0">
-          <Image
+      <div className="h-[80vh] to-black text-white relative overflow-hidden">
+        <div ref={backgroundImageRef} className="absolute inset-0 h-full">
+          <img
             src="/ai0.jpg"
             alt="Cliff Zenn Single Vision Lenses"
-            fill
-            className="object-cover opacity-20"
+            className="w-full h-full object-cover opacity-70"
           />
         </div>
 
         {/* Animated Background Elements */}
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-yellow-600/20 rounded-full blur-3xl animate-pulse"></div>
+        {/* <div className="absolute inset-0 opacity-90">
+          <div className="absolute top-20 left-10 w-72 h-72 bg-blue-600/20 rounded-full blur-3xl animate-pulse"></div>
           <div
-            className="absolute bottom-20 right-10 w-96 h-96 bg-yellow-500/20 rounded-full blur-3xl animate-pulse"
+            className="absolute bottom-20 right-10 w-96 h-96 b g-blue-500/20 rounded-full blur-3xl animate-pulse"
             style={{ animationDelay: "-1s" }}
           ></div>
           <div
-            className="absolute top-1/2 left-1/2 w-80 h-80 bg-yellow-700/10 rounded-full blur-3xl animate-pulse"
+            className="absolute top-1/2 left-1/2 w-80 h-80 bg-blue-700/10 rounded-full blur-3xl animate-pulse"
             style={{ animationDelay: "-0.5s" }}
           ></div>
-        </div>
+          ></div>
+        </div> */}
 
         {/* Main Content */}
-        <div className="relative z-10 container max-w-screen mx-auto px-4 py-20">
-          <div className="flex flex-col lg:flex-row items-center gap-16 min-h-screen">
+        <div className="relative z-10 container max-w-[1490px] mx-auto px-4 py-12 h-full">
+          <div className="flex flex-col lg:flex-row items-center gap-16 h-full">
             {/* Left Content */}
-            <div className="lg:w-1/2 space-y-8">
-              {/* Service Badge */}
-              <div className="inline-flex items-center px-6 py-3 rounded-full text-lg font-medium border border-yellow-400/30">
-                <span className="bg-gradient-to-r from-white via-yellow-100 to-yellow-200 bg-clip-text text-transparent">
-                  Single Vision Collection
-                </span>
-              </div>
-
+            <div className="lg:w-1/2 space-y-4">
               {/* Service Title */}
-              <h1 className="text-5xl md:text-7xl font-bold leading-tight">
-                <span className="bg-gradient-to-r from-white via-yellow-100 to-yellow-200 bg-clip-text text-transparent">
+              <h1 className="text-5xl md:text-7xl mt-12 font-bold leading-tight">
+                <span className="bg-gradient-to-r from-white via-yellow-100 to-yellow-200 bg-clip-text text-transparent whitespace-nowrap">
                   CLIFF ZENN
                 </span>
                 <br />
@@ -88,7 +81,7 @@ const CliffZennSingleVision = () => {
               </p>
 
               {/* Key Features */}
-              <div className="space-y-4">
+              {/* <div className="space-y-4">
                 <div className="flex items-center space-x-3">
                   <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
                   <span className="text-yellow-100">
@@ -108,7 +101,7 @@ const CliffZennSingleVision = () => {
                     Optimized oblique errors for superior optics
                   </span>
                 </div>
-              </div>
+              </div> */}
 
               {/* CTA Button */}
               <div className="pt-8">
@@ -137,15 +130,15 @@ const CliffZennSingleVision = () => {
 
             {/* Right Content - Enhanced Visual */}
             <div className="lg:w-1/2 relative">
-              <div className="relative">
+              <div className="relative flex justify-center lg:justify-end lg:ml-2">
                 {/* Main Image Container */}
-                <div className="relative rounded-3xl overflow-hidden border border-white/20 shadow-2xl">
+                <div className="relative rounded-3xl overflow-hidden border border-white/20 shadow-2xl w-[28rem]">
                   <Image
                     src="/ai0.jpg"
                     alt="Cliff Zenn Single Vision Collection"
-                    width={600}
-                    height={400}
-                    className="object-cover w-full h-[400px]"
+                    width={200}
+                    height={300}
+                    className="object-contain h-[300px] w-auto"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
 
@@ -155,7 +148,7 @@ const CliffZennSingleVision = () => {
                   </div>
                 </div>
 
-                <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-gradient-to-br from-gray-700 to-gray-800 rounded-2xl flex items-center justify-center shadow-xl border border-white/10">
+                <div className="absolute -bottom-6 left-1/4 w-32 h-32 bg-gradient-to-br from-gray-700 to-gray-800 rounded-2xl flex items-center justify-center shadow-xl border border-white/10">
                   <div className="text-center">
                     <div className="text-2xl font-bold text-white">Zenn</div>
                     <div className="text-xs text-gray-400">Single Vision</div>
