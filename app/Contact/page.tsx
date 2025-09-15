@@ -5,8 +5,10 @@ import gsap from "gsap";
 import { Send } from "lucide-react";
 import CTA from './CTA'
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
+import TextWithTexture from "@/components/textwithgoldentexture";
 
 const Contact = () => {
+  const bg = "/texture/texture.png"
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -83,19 +85,21 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen bg-black text-white">
-      <div className="container mx-auto px-6 py-20 max-w-7xl">
+      <div className="container mx-auto px-6 py-16 max-w-7xl">
         {/* Hero Section */}
         <div ref={heroRef} className="text-center mb-16">
-          <h1 className="text-5xl md:text-7xl font-bold font-ramro mb-6 bg-gradient-to-r from-white via-gray-300 to-gray-500 bg-clip-text text-transparent">
-            Get in Touch
-          </h1>
+
+
+          <h2>
+            <TextWithTexture text="Get in Touch" className=" text-5xl md:text-7xl font-bold font-ramro mb-6" />
+          </h2>
           <p className="text-xl md:text-2xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
             Have questions about our eyewear? Want to learn more about our
             products? We&apos;d love to hear from you.
           </p>
         </div>
 
-        <div className="flex justify-center flex-col  md:flex-row-reverse  ">
+        <div className="flex justify-center items-start flex-col  md:flex-row-reverse  ">
           {/* Contact Form */}
           <div className=" right w-[100%] md:w-[50%] max-w-2xl rounded-2xl p-8 ">
             <h2 className="text-3xl font-bold font-ramro mb-8 text-white">
@@ -118,7 +122,7 @@ const Contact = () => {
                     value={formData.name}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 bg-gray-800/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+                    className="w-full px-4 py-3 bg-gray-800/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-yellow-500 focus:border-transparent transition-all duration-300"
                     placeholder="John Doe"
                   />
                 </div>
@@ -137,7 +141,7 @@ const Contact = () => {
                     value={formData.email}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 bg-gray-800/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+                    className="w-full px-4 py-3 bg-gray-800/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-yellow-500 focus:border-transparent transition-all duration-300"
                     placeholder="john@example.com"
                   />
                 </div>
@@ -156,7 +160,7 @@ const Contact = () => {
                   name="subject"
                   value={formData.subject}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 bg-gray-800/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+                  className="w-full px-4 py-3 bg-gray-800/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-yellow-500 focus:border-transparent transition-all duration-300"
                   placeholder="How can we help you?"
                 />
               </div>
@@ -175,7 +179,7 @@ const Contact = () => {
                   onChange={handleInputChange}
                   required
                   rows={6}
-                  className="w-full px-4 py-3 bg-gray-800/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 resize-none"
+                  className="w-full px-4 py-3 bg-gray-800/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-yellow-500  focus:border-transparent transition-all duration-300 resize-none"
                   placeholder="Tell us about your needs, questions, or feedback..."
                 />
               </div>
@@ -201,7 +205,8 @@ const Contact = () => {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-gradient-to-r from-amber-400 via-amber-300 to-amber-500 text-white cursor-pointer py-4 px-6 rounded-lg font-semibold text-lg hover:from-blue-700 hover:to-purple-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-900 transform hover:scale-[1.02] transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none flex items-center justify-center space-x-2"
+                className="w-full w- text-black  cursor-pointer py-4 px-6 rounded-lg font-semibold text-lg  flex items-center justify-center space-x-2 object-center  bg-center bg-cover" style={{ backgroundImage: `url('${bg}')` }}
+
               >
                 {isSubmitting ? (
                   <>
@@ -222,10 +227,11 @@ const Contact = () => {
               </p>
             </form>
           </div>
-          <div className="left  h-[100vh] w-[100%] md:w-[40%] pt-20">
+
+          {/* <div className="left h-fit sm:h-[100vh] w-[100%] md:w-[40%] pt-10">
             <div className="parnt">
               <div className="para">
-                Reach out today to discover how our custom gate designs can transform your property, combining security with style. We&apos;re here to help safeguard your future and create a lasting impression.
+                Reach out today to discover how our custom gate designs can transform your property, combining security with style. We're here to help safeguard your future and create a lasting impression.
               </div>
 
               <div className="sociallink flex justify-start gap-8 items-center py-10">
@@ -241,11 +247,11 @@ const Contact = () => {
               </div>
               <div className="container  w-[100%] flex flex-col justify-center md:items-start items-center gap-5">
 
-                {/* First Box - Contact Info */}
+                
                 <div className="box w-[90%] h-[150px] bg-[#18181B] rounded-lg flex justify-start items-center px-6">
                   <div className="flex justify-between items-center gap-6 text-white w-full">
 
-                    {/* Phone */}
+                    
                     <div className="flex flex-col items-center gap-3">
                       <FaPhoneAlt className="text-zinc-500 text-2xl" />
                       <div>
@@ -254,7 +260,6 @@ const Contact = () => {
                       </div>
                     </div>
 
-                    {/* Email */}
                     <div className="flex flex-col items-center gap-3">
                       <FaEnvelope className="text-zinc-500 text-2xl" />
                       <div>
@@ -265,11 +270,11 @@ const Contact = () => {
                   </div>
                 </div>
 
-                {/* Second Box - Address or Message Prompt */}
+                
                 <div className="box w-[90%] h-[150px] bg-[#18181B] rounded-lg flex justify-start items-center px-6">
                   <div className="flex justify-between items-center gap-6 text-white w-full">
 
-                    {/* Address */}
+                   =
                     <div className="flex flex-col items-center gap-3">
                       <FaMapMarkerAlt className="text-zinc-500 text-2xl" />
                       <div>
@@ -278,10 +283,8 @@ const Contact = () => {
                       </div>
                     </div>
 
-                    {/* Optional: Quick Message Prompt (if needed) */}
-                    {/* You can replace this with another info block or social media icons */}
-                    <div className="flex flex-col gap-1">
-                      <p className="text-sm text-gray-400">We&apos;re here to help</p>
+\                    <div className="flex flex-col gap-1">
+                      <p className="text-sm text-gray-400">We're here to help</p>
                       <p className="text-[0.9rem] font-medium">Feel free to reach out anytime.</p>
                     </div>
 
@@ -290,7 +293,7 @@ const Contact = () => {
               </div>
             </div>
 
-          </div>
+          </div> */}
 
         </div>
 
@@ -299,6 +302,7 @@ const Contact = () => {
       </div>
     </div>
   );
+  
 };
 
 export default Contact;

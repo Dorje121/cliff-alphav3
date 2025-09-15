@@ -4,28 +4,34 @@ import Image from "next/image";
 import React from "react";
 
 const BrighterFutureSection: React.FC = () => {
+
+    const bg = "/texture/texture.png"
     return (
         <>
             {/* CTA Section */}
-            <div className="mt-20 text-center">
-                <div className="bg-transparent backdrop-blur-sm rounded-2xl p-12 ">
-                    <h3 className="text-3xl font-bold font-ramro mb-4 text-white">
-                        Ready to Experience Perfect Vision?
-                    </h3>
-                    <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-                        Discover our complete range of premium eyewear solutions designed
-                        for your lifestyle.
-                    </p>
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
+
+            <section className="" style={{
+
+            }}>
+                <div className="main mt-1 sm:mt-26 " >
+                    <div className="parent flex justify-center items-center flex-col my-10">
+                        <div className="r1 text-5xl sm:text-6xl text-center"> <span className="text-yellow-500">Creating</span> a Brighter Future</div>
+                        <div className="r2 text-5xl sm:text-6xl text-center">Starting <span className="text-yellow-500">Today</span></div>
+                    </div>
+
+                    <p className="text-xl text-zinc-600  text-center ">See every detail with Cliff lenses—crafted for crisp clarity and bold adventures. Upgrade your view today.</p>
+                    <div className="flex flex-col sm:flex-row gap-4 justify-center text-center px-10 sm:px-0 bg-cover bg-center w-60 mx-auto rounded-lg " style={{ backgroundImage: `url('${bg}')` }}>
                         <a
                             href="/Services"
-                            className="px-8 py-3 bg-gradient-to-r from-amber-400 via-amber-300 to-amber-500 text-white rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transform hover:scale-105 transition-all duration-300"
+                            className="px-8 py-3 text-black  rounded-lg font-semibold transform hover:scale-105 transition-all duration-300"
                         >
                             Explore Our Products
                         </a>
                     </div>
+
+
                 </div>
-            </div>
+            </section>
         </>
     );
 };
