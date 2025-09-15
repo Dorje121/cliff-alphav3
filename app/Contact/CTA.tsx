@@ -18,6 +18,8 @@ const BrighterFutureSection: React.FC = () => {
                         <div className="r1 text-5xl sm:text-6xl text-center"> <span className="text-yellow-500">Creating</span> a Brighter Future</div>
                         <div className="r2 text-5xl sm:text-6xl text-center">Starting <span className="text-yellow-500">Today</span></div>
                     </div>
+
+                    <p className="text-xl text-zinc-600  text-center ">See every detail with Cliff lenses—crafted for crisp clarity and bold adventures. Upgrade your view today.</p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center text-center px-10 sm:px-0 bg-cover bg-center w-60 mx-auto rounded-lg " style={{ backgroundImage: `url('${bg}')` }}>
                         <a
                             href="/Services"
@@ -26,12 +28,7 @@ const BrighterFutureSection: React.FC = () => {
                             Explore Our Products
                         </a>
                     </div>
-                    <div className="imgsect border mx-auto h-[300px] my-6 w-[80%]">
-                        <div className="relative w-full max-w-[883px] mx-auto">
 
-                        </div>
-
-                    </div>
 
                 </div>
             </section>

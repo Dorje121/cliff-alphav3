@@ -205,7 +205,7 @@ const Contact = () => {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full text-black  cursor-pointer py-4 px-6 rounded-lg font-semibold text-lg  flex items-center justify-center space-x-2 object-center  bg-center bg-cover" style={{ backgroundImage: `url('${bg}')` }}
+                className="w-full w- text-black  cursor-pointer py-4 px-6 rounded-lg font-semibold text-lg  flex items-center justify-center space-x-2 object-center  bg-center bg-cover" style={{ backgroundImage: `url('${bg}')` }}
 
               >
                 {isSubmitting ? (
@@ -302,6 +302,7 @@ const Contact = () => {
       </div>
     </div>
   );
+  
 };
 
 export default Contact;
