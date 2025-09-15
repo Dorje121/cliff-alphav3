@@ -32,50 +32,37 @@ const CliffZennProgressiveLenses = () => {
   return (
     <>
       {/* Hero Section with Service Information */}
-      <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black text-white relative overflow-hidden">
-        {/* Background Image with Overlay */}
-        <div ref={backgroundImageRef} className="absolute inset-0">
-          <Image
+      <div className="h-[80vh] to-black text-white relative overflow-hidden">
+        <div ref={backgroundImageRef} className="absolute inset-0 h-full">
+          <img
             src="/ai2.jpg"
             alt="Cliff Zenn Progressive Lenses"
-            fill
-            className="object-cover opacity-20"
+            className="w-full h-full object-cover opacity-70"
           />
         </div>
 
         {/* Animated Background Elements */}
         <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-yellow-600/20 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute top-20 left-10 w-72 h-72 bg-violet-600/20 rounded-full blur-3xl animate-pulse"></div>
           <div
-            className="absolute bottom-20 right-10 w-96 h-96 bg-yellow-500/20 rounded-full blur-3xl animate-pulse"
+            className="absolute bottom-20 right-10 w-96 h-96 bg-violet-500/20 rounded-full blur-3xl animate-pulse"
             style={{ animationDelay: "-1s" }}
           ></div>
           <div
-            className="absolute top-1/2 left-1/2 w-80 h-80 bg-yellow-700/10 rounded-full blur-3xl animate-pulse"
+            className="absolute top-1/2 left-1/2 w-80 h-80 bg-violet-700/10 rounded-full blur-3xl animate-pulse"
             style={{ animationDelay: "-0.5s" }}
           ></div>
         </div>
 
         {/* Main Content */}
-        <div className="relative z-10 container max-w-screen mx-auto px-4 py-20">
-          <div className="flex flex-col lg:flex-row items-center gap-16 min-h-screen">
+        <div className="relative z-10 container max-w-[1490px] mx-auto px-4 py-12 h-full">
+          <div className="flex flex-col lg:flex-row items-center gap-16 h-full">
             {/* Left Content */}
-            <div className="lg:w-1/2 space-y-8">
-              {/* Service Badge */}
-              <div className="inline-flex items-center px-6 py-3 rounded-full bg-yellow-400/20 bg-gradient-to-r from-white via-yellow-100 to-yellow-200 bg-clip-text text-transparent text-lg font-medium border border-yellow-400/30">
-                <svg
-                  className="w-5 h-5 mr-3"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                </svg>
-                Premium Progressive Collection
-              </div>
+            <div className="lg:w-1/2 space-y-4">
 
               {/* Service Title */}
-              <h1 className="text-5xl md:text-7xl font-bold leading-tight">
-                <span className="bg-gradient-to-r from-white via-yellow-100 to-yellow-200 bg-clip-text text-transparent">
+              <h1 className="text-5xl md:text-7xl mt-12 font-bold leading-tight">
+                <span className="bg-gradient-to-r from-white via-yellow-100 to-yellow-200 bg-clip-text text-transparent whitespace-nowrap">
                   ZENN PROGRESSIVE
                 </span>
                 <br />
@@ -87,13 +74,12 @@ const CliffZennProgressiveLenses = () => {
               {/* Service Description */}
               <p className="text-xl md:text-2xl bg-gradient-to-r from-white via-yellow-100 to-yellow-200 bg-clip-text text-transparent leading-relaxed max-w-2xl">
                 Progressive lenses featuring Zenn series advanced technology,
-                delivering premium multi-focal vision with superior comfort and
-                style.
+                delivering premium multi-focal vision with superior comfort and style.
               </p>
 
               {/* CTA Button */}
               <div className="pt-8">
-                <button className="group relative px-8 py-4 bg-gradient-to-r from-yellow-600 to-yellow-700 rounded-full text-white font-semibold text-lg hover:shadow-2xl hover:shadow-yellow-500/30 transition-all duration-300 transform hover:scale-105">
+                <button className="group relative px-8 py-4 bg-gradient-to-r from-white via-yellow-100 to-yellow-200 rounded-full text-black font-semibold text-lg  transition-all duration-300 transform hover:scale-105">
                   <span className="relative z-10 flex items-center justify-center">
                     Contact Us
                     <svg

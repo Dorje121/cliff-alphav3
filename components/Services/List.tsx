@@ -220,7 +220,7 @@ const List = () => {
                 </div>
               </div>
             </section>
-      <div className="container max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-2 sm:py-4 lg:py-8 relative">
+      <div className="container max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-1 sm:py-2 lg:py-4 relative">
         {/* Header Section */}
         <div className="mb-8 md:mb-16">
           <div className="flex flex-col mt-8 lg:flex-row lg:items-center lg:justify-between gap-6 lg:gap-8">
