@@ -4,6 +4,7 @@ import React, { useLayoutEffect, useRef } from "react";
 import Image from "next/image";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import TextWithTexture from "@/components/textwithgoldentexture";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -58,7 +59,7 @@ const OurStorySection: React.FC = () => {
             });
         }, containerRef);
 
-        // ❗ DO NOT call ScrollTrigger.refresh() or kill global triggers here
+        //  DO NOT call ScrollTrigger.refresh() or kill global triggers here
 
         return () => ctx.revert(); // cleans only animations inside this context
     }, []);
@@ -71,15 +72,13 @@ const OurStorySection: React.FC = () => {
             </div>
 
             <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-6 md:px-24">
-                <h2
-                    ref={headingRef}
-                    className="text-5xl md:text-6xl font-bold mb-12 bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent text-center"
-                >
-                    Our Story
+
+                <h2 ref={headingRef}>
+                    <TextWithTexture text="Our Story" className="text-4xl md:text-5xl sm:text-6xl font-bold mb-2 mt-12 sm:mt-0 sm:mb-12  text-center" />
                 </h2>
                 <div
                     ref={contentRef}
-                    className="text-gray-300 text-xl leading-relaxed max-w-3xl text-center whitespace-pre-wrap"
+                    className="text-gray-300 text-[0.9rem] sm:text-xl leading-relaxed max-w-3xl text-center whitespace-pre-wrap"
                 />
             </div>
         </section>
