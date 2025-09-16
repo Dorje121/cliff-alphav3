@@ -24,7 +24,7 @@ const Footer = () => {
         {/* Navigation Links - Centered at Bottom */}
         <div className="flex justify-between flex-col lg:flex-row items-center w-full max-w-screen gap-8 lg:gap-0 ">
           {/* Logo and CTA */}
-          <div className="flex flex-row items-center justify-center mb-6 lg:mb-0">
+          <div className="flex flex-row items-center justify-center mb-6 lg:mb-0 ">
             <Image
               src="/logo/FDA.png"
               alt="Cliff Eyewear Logo"
@@ -53,7 +53,7 @@ const Footer = () => {
             </Link> */}
           </div>
 
-          <ul className="flex flex-wrap justify-center uppercase items-center font-semibold gap-x-4 sm:gap-x-6 md:gap-x-8 gap-y-4 py-4 text-center tracking-wide mb-6 lg:mb-0">
+          <ul className="flex flex-wrap justify-center uppercase items-center font-semibold gap-x-4 sm:gap-x-6 md:gap-x-8 gap-y-4 py-4 text-center tracking-wide border-none mb-6 lg:mb-0">
             <li className="px-1 sm:px-2">
               <Link
                 href="/"
@@ -155,7 +155,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </footer>
+    </footer >
   );
 };
 
