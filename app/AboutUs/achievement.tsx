@@ -114,7 +114,7 @@ const Achievement: React.FC = () => {
 
             <div className="parent w-full flex justify-center items-start flex-wrap gap-12">
                 {/* Left Side */}
-                <div className="left w-full md:w-[45%] flex flex-col items-center sm:items-end  gap-10">
+                <div className="left w-full md:w-[46.5%] flex flex-col items-center sm:items-end  gap-10">
                     {[
                         { value: "20", label: "Years of Excellence", mt: '0' },
                         { value: "15", label: "Lens Technology", mt: '5' },
@@ -146,7 +146,7 @@ const Achievement: React.FC = () => {
                 </div>
 
                 {/* Right Side */}
-                <div className="right w-full md:w-[45%] flex flex-col items-center sm:items-start gap-10 mt-10 md:mt-0">
+                <div className="right w-full md:w-[46.5%] flex flex-col items-center sm:items-start gap-10 mt-10 md:mt-0">
                     {[
                         { value: "50000", label: "Happy Customers", suffix: "+", mt: '16' },
                         { value: "99", label: "Satisfaction Rate", suffix: "%", mt: '5' },

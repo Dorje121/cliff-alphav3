@@ -180,7 +180,7 @@ const CliffDynamixProgressive = () => {
         </div>
 
         {/* Main Content */}
-        <div className="relative z-10 container max-w-[1490px] mx-auto px-4 py-12 h-full">
+        <div className="relative z-10 container max-w-[1490px] mx-auto px-3 py-12 h-full">
           <div className="flex flex-col lg:flex-row items-center gap-16 h-full">
             {/* Left Content */}
             <div className="lg:w-1/2 space-y-4">
@@ -261,7 +261,7 @@ const CliffDynamixProgressive = () => {
 
       {/* Main Content */}
       <div className="min-h-screen  text-white overflow-hidden">
-        <div className="w-full px-4">
+        <div className="w-full px-7">
           {/* Animated Background */}
           <div className="absolute inset-0 opacity-5">
             <div className="absolute top-20 left-20 w-72 h-72 bg-yellow-400/20 rounded-full filter blur-3xl animate-pulse delay-500"></div>

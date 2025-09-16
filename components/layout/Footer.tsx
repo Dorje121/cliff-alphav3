@@ -22,9 +22,9 @@ const Footer = () => {
         </div>
 
         {/* Navigation Links - Centered at Bottom */}
-        <div className="flex justify-between flex-col lg:flex-row items-center w-full max-w-screen gap-8 lg:gap-0 ">
+        <div className="flex justify-between flex-col lg:flex-row items-center w-full max-w-screen gap-8 lg:gap-0 mt-52">
           {/* Logo and CTA */}
-          <div className="flex flex-row items-center justify-center mb-6 lg:mb-0 ">
+          <div className="flex flex-row items-center justify-center mb-6 lg:mb-0">
             <Image
               src="/logo/FDA.png"
               alt="Cliff Eyewear Logo"
@@ -32,28 +32,10 @@ const Footer = () => {
               height={120}
               className="object-cover"
             />
-            {/* <Link
-              href="/Contact"
-              className="group px-8 py-4 rounded-full bg-gradient-to-r from-[#b78908] to-[#E1AA12] text-white font-bold font-family-dm-sans text-lg hover:shadow-2xl hover:shadow-[#E1AA12]/30 active:scale-95 transition-all duration-300 flex items-center justify-center gap-3 hover:from-[#E1AA12] hover:to-[#b78908]"
-            >
-              Become a Cliff Dealer
-              <svg
-                className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M7 17l9.2-9.2M17 17V7H7"
-                />
-              </svg>
-            </Link> */}
+
           </div>
 
-          <ul className="flex flex-wrap justify-center uppercase items-center font-semibold gap-x-4 sm:gap-x-6 md:gap-x-8 gap-y-4 py-4 text-center tracking-wide border-none mb-6 lg:mb-0">
+          <ul className="flex flex-wrap justify-center uppercase items-center font-semibold gap-8 gap-y-4 py-4 text-center tracking-wide mb-6">
             <li className="px-1 sm:px-2">
               <Link
                 href="/"
@@ -155,7 +137,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </footer >
+    </footer>
   );
 };
 
