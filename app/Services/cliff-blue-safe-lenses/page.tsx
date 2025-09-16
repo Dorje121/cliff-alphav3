@@ -79,7 +79,7 @@ const CliffBlueSafeLenses = () => {
     <>
       {/* Hero Section with Service Information */}
       <div className="h-[90vh] to-black text-white relative overflow-hidden">
-      <div ref={backgroundImageRef} className="absolute inset-0 h-full">
+         <div ref={backgroundImageRef} className="absolute inset-0 h-full">
           <video
             src="/homevideo/hero.mp4"
             className="w-full h-full object-cover opacity-70"
@@ -163,8 +163,8 @@ const CliffBlueSafeLenses = () => {
 
                 <div className="absolute -bottom-6 left-1/4 w-32 h-32 bg-gradient-to-br from-gray-700 to-gray-800 rounded-2xl flex items-center justify-center shadow-xl border border-white/10">
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-white">Blue</div>
-                    <div className="text-xs text-gray-400">Safe</div>
+                    <div className="text-2xl font-bold text-white">2400</div>
+                    <div className="text-xs text-gray-400">MRP</div>
                   </div>
                 </div>
               </div>
@@ -174,50 +174,15 @@ const CliffBlueSafeLenses = () => {
         </div>
       </div>
 
-      {/* Image Section */}
-      <div className="relative py-20 bg-gradient-to-b from-black via-gray-900 to-black">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-              <span className="bg-gradient-to-r from-white via-yellow-100 to-yellow-200 bg-clip-text text-transparent">
-                Advanced Blue Light Protection
-              </span>
-            </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Experience the perfect blend of style and protection with our cutting-edge lens technology
-            </p>
-          </div>
-          
-          <div className="relative max-w-4xl mx-auto">
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/10">
-              <Image
-                src="/pageimg/safe.png"
-                alt="Cliff Blue Safe UV Technology"
-                width={1000}
-                height={600}
-                className="w-full h-auto object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/30"></div>
-              
-              {/* Floating badges */}
-              <div className="absolute top-6 left-6 bg-white/10 backdrop-blur-md rounded-lg px-4 py-2 border border-white/20">
-                <span className="text-white font-semibold">UV Protection</span>
-              </div>
-              <div className="absolute bottom-6 right-6 bg-white/10 backdrop-blur-md rounded-lg px-4 py-2 border border-white/20">
-                <span className="text-white font-semibold">Blue Light Filter</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+    
 
-      <div className="min-h-screen  text-white overflow-hidden">
+      <div className="min-h-screen  text-white overflow-visible">
         {/* Animated Background */}
         <div className="absolute inset-0 opacity-5">
           <div className="absolute bottom-20 right-20 w-96 h-96 bg-gray-400 rounded-full filter blur-3xl animate-pulse delay-1000"></div>
         </div>
 
-        <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
+        <div className="relative max-w-[1500px] mx-auto p-4 py-8 sm:py-12 lg:py-16">
           {/* Header Section */}
           <div className="text-center mb-8 sm:mb-12 lg:mb-16">
             <div className="flex items-center justify-center mb-4 sm:mb-6">
@@ -231,7 +196,7 @@ const CliffBlueSafeLenses = () => {
           </div>
 
           {/* Main Content Grid */}
-          <div className="grid lg:grid-cols-3 gap-8 lg:gap-12 max-w-screen mx-auto">
+          <div className="grid lg:grid-cols-3 gap-8 lg:gap-12">
             {/* Left Column - Features */}
             <div className="lg:col-span-2 space-y-6">
               <div className="space-y-6">
@@ -281,37 +246,34 @@ const CliffBlueSafeLenses = () => {
             </div>
 
             {/* Right Column - Recommendations & Specifications */}
-            <div className="space-y-6">
-              {/* Recommended For */}
-              <motion.div
-                initial={{ opacity: 0, x: 50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5 }}
-              >
-                <div className="bg-white/5 rounded-xl p-4 sm:p-6 border border-white/10 backdrop-blur-sm">
-                  <h3 className="text-lg sm:text-xl font-bold text-white mb-4">
-                    Recommended For:
-                  </h3>
-                  <div className="space-y-3">
-                    {recommendations.map((rec, index) => (
-                      <div key={index} className="flex items-center gap-2">
-                        <span className="text-yellow-400">•</span>
-                        <span className="text-gray-300 text-sm sm:text-base">
-                          {rec}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </motion.div>
+            <div className="flex flex-col lg:flex-row gap-6">
+              {/* Left Content */}
+              <div className="flex-1">
+                {/* Main content will go here */}
+              </div>
 
-              {/* Power Range Table */}
-              <motion.div
-                initial={{ opacity: 0, x: 50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5, delay: 0.3 }}
-              >
-                <div className="bg-white/5 rounded-xl p-4 sm:p-6 border border-white/10 backdrop-blur-sm">
+              {/* Right Side - Combined Sticky Container */}
+              <div className="lg:w-[28rem]">
+                <div className="sticky top-20 space-y-6">
+                  {/* Recommended For */}
+                  <div className="bg-white/5 rounded-xl p-4 sm:p-6 border border-white/10 backdrop-blur-sm">
+                    <h3 className="text-lg sm:text-xl font-bold text-white mb-4">
+                      Recommended For:
+                    </h3>
+                    <div className="space-y-3">
+                      {recommendations.map((rec, index) => (
+                        <div key={index} className="flex items-center gap-2">
+                          <span className="text-yellow-400">•</span>
+                          <span className="text-gray-300 text-sm sm:text-base">
+                            {rec}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Power Range Table */}
+                  <div className="bg-white/5 rounded-xl p-4 sm:p-6 border border-white/10 backdrop-blur-sm">
                   <h3 className="text-lg sm:text-xl font-bold text-white mb-4 text-center">
                     POWER RANGE
                   </h3>
@@ -372,7 +334,45 @@ const CliffBlueSafeLenses = () => {
                     available.
                   </p>
                 </div>
-              </motion.div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+        {/* Image Section */}
+        <div className="relative py-20 bg-gradient-to-b from-black via-gray-900 to-black">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+              <span className="bg-gradient-to-r from-white via-yellow-100 to-yellow-200 bg-clip-text text-transparent">
+                Advanced Blue Light Protection
+              </span>
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Experience the perfect blend of style and protection with our cutting-edge lens technology
+            </p>
+          </div>
+          
+          <div className="relative max-w-[1470px] mx-auto w-full">
+            <div className="relative rounded-none overflow-hidden shadow-2xl w-full h-[700px]">
+              <Image
+                src="/pageimg/safe.png"
+                alt="Cliff Blue Safe UV Technology"
+                width={1000}
+                height={600}
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-black via-black/80 to-transparent z-10"></div>
+              <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-black via-black/80 to-transparent z-10"></div>
+              {/* Floating badges */}
+              <div className="absolute top-6 left-6 bg-white/10 backdrop-blur-md rounded-lg px-4 py-2 border border-white/20">
+                <span className="text-white font-semibold">UV Protection</span>
+              </div>
+              <div className="absolute bottom-6 right-6 bg-white/10 backdrop-blur-md rounded-lg px-4 py-2 border border-white/20">
+                <span className="text-white font-semibold">Blue Light Filter</span>
+              </div>
             </div>
           </div>
         </div>

@@ -299,11 +299,11 @@ const CliffCoatings = () => {
                 {/* Main Image Container */}
                 <div className="relative rounded-3xl overflow-hidden border border-white/20 shadow-2xl w-[28rem]">
                   <Image
-                    src="/cliffcoating/new.png"
+                    src="/c5.jpeg"
                     alt="Cliff Premium Coatings Technology"
                     width={200}
                     height={300}
-                    className="object-contain h-[300px] w-auto"
+                    className="object-cover w-full h-[350px]"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
 

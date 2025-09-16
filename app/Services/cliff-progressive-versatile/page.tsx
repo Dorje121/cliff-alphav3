@@ -133,8 +133,8 @@ const CliffProgressiveVersatile = () => {
 
                 <div className="absolute -bottom-6 left-1/4 w-32 h-32 bg-gradient-to-br from-indigo-700 to-indigo-800 rounded-2xl flex items-center justify-center shadow-xl border border-white/10">
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-white">Multi</div>
-                    <div className="text-xs text-gray-400">Focal</div>
+                    <div className="text-2xl font-bold text-white">5200</div>
+                    <div className="text-xs text-gray-400">MRP</div>
                   </div>
                 </div>
               </div>

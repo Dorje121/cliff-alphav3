@@ -67,7 +67,7 @@ const Details = () => {
     <>
       {/* Main Content */}
       <div className="min-h-screen text-white">
-        <div className="max-w-screen mx-auto px-6 py-16">
+        <div className="max-w-[1500px] mx-auto p-4">
           {/* Header Section */}
           <motion.div
             initial={{ opacity: 0, y: -50 }}

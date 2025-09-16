@@ -138,10 +138,10 @@ const CliffBlueSafeCoating = () => {
         {/* Main Content */}
         <div className="relative z-10 container max-w-[1490px] mx-auto px-4 py-12 h-full">
           <div className="flex flex-col lg:flex-row items-center gap-16 h-full">
-            {/* Left Content */}
+      
             <div className="lg:w-1/2 space-y-4">
 
-              {/* Service Title */}
+            
               <h1 className="text-5xl md:text-7xl mt-12 font-bold leading-tight capitalize">
                 <TextWithTexture
                   text="Cliff Blue Safe"
@@ -217,7 +217,7 @@ const CliffBlueSafeCoating = () => {
       </div>
 
       {/* Product Showcase Section */}
-      <section className="py-16 px-4 md:px-8 bg-black relative overflow-hidden">
+      {/* <section className="py-16 px-4 md:px-8 bg-black relative overflow-hidden">
         <div className="max-w-[1500px] w-full mx-auto p-4">
         
           <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -316,7 +316,7 @@ const CliffBlueSafeCoating = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
 
       <BackToServicesButton />

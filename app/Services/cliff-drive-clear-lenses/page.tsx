@@ -129,17 +129,6 @@ const CliffDriveClearLenses = () => {
           <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-gray-900/70 to-black/80" />
         </div>
 
-        {/* Animated Background Elements */}
-        <div className="absolute inset-0 opacity-20">
-          {backgroundElements.map((element, index) => (
-            <div
-              key={index}
-              className={`absolute ${element.position} ${element.size} ${element.color} rounded-full blur-3xl animate-pulse`}
-              style={{ animationDelay: element.delay }}
-            ></div>
-          ))}
-        </div>
-
         {/* Main Content */}
         <div className="relative z-10 container max-w-[1490px] mx-auto px-4 py-12 h-full">
           <div className="flex flex-col lg:flex-row items-center gap-16 h-full">
@@ -210,8 +199,8 @@ const CliffDriveClearLenses = () => {
 
                 <div className="absolute -bottom-6 left-1/4 w-32 h-32 bg-gradient-to-br from-gray-700 to-gray-800 rounded-2xl flex items-center justify-center shadow-xl border border-white/10">
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-white">Drive</div>
-                    <div className="text-xs text-gray-400">Safe & Clear</div>
+                    <div className="text-2xl font-bold text-white">4200</div>
+                    <div className="text-xs text-gray-400">MRP</div>
                   </div>
                 </div>
               </div>

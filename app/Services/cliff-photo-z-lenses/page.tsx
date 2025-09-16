@@ -49,23 +49,10 @@ const CliffPhotoZLenses = () => {
           <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-gray-900/70 to-black/80" />
         </div>
 
-        {/* Animated Background Elements */}
-        {/* <div className="absolute inset-0 opacity-90">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-purple-600/20 rounded-full blur-3xl animate-pulse"></div>
-          <div
-            className="absolute bottom-20 right-10 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl animate-pulse"
-            style={{ animationDelay: "-1s" }}
-          ></div>
-          <div
-            className="absolute top-1/2 left-1/2 w-80 h-80 bg-purple-700/10 rounded-full blur-3xl animate-pulse"
-            style={{ animationDelay: "-0.5s" }}
-          ></div>
-        </div> */}
-
         {/* Main Content */}
-        <div className="relative z-10 container max-w-[1490px] mx-auto px-4 py-12 h-full">
+        <div className="relative z-10 container max-w-[1500px] mx-auto p-4 h-full">
           <div className="flex flex-col lg:flex-row items-center gap-16 h-full">
-            {/* Left Content */}
+      
             <div className="lg:w-1/2 space-y-4">
 
               {/* Service Title */}
@@ -134,8 +121,8 @@ const CliffPhotoZLenses = () => {
 
                 <div className="absolute -bottom-6 left-1/4 w-32 h-32 bg-gradient-to-br from-gray-700 to-gray-800 rounded-2xl flex items-center justify-center shadow-xl border border-white/10">
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-white">Auto</div>
-                    <div className="text-xs text-gray-400">Adaptive</div>
+                    <div className="text-2xl font-bold text-white">4800</div>
+                    <div className="text-xs text-gray-400">MRP</div>
                   </div>
                 </div>
               </div>
@@ -145,8 +132,12 @@ const CliffPhotoZLenses = () => {
         </div>
       </div>
       <Details />
-      <div className="max-w-screen mx-auto">
-        {/* Specifications Table */}
+
+
+
+      
+      <div className="max-w-[1500px] mx-auto p-4">
+
         <div className="mb-16">
           <div className="bg-gray-800/30 backdrop-blur-sm rounded-xl overflow-hidden border border-gray-700/50">
             <div className="overflow-x-auto">
