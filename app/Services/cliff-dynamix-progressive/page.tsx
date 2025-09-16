@@ -3,6 +3,9 @@ import BackToServicesButton from "@/components/Services/BackToServicesButton";
 import Image from "next/image";
 import React, { useRef, useLayoutEffect } from "react";
 import { gsap } from "gsap";
+import TextWithTexture from "@/components/textwithgoldentexture";
+import Feature from "./Feature";
+import Diff from './diff'
 
 const CliffDynamixProgressive = () => {
   const backgroundImageRef = useRef<HTMLDivElement>(null);
@@ -41,7 +44,7 @@ const CliffDynamixProgressive = () => {
       bluesafe: "6040",
     },
     {
-      type: "",
+      type: "Clear",
       index: "1.56",
       powerRange: "(+6/-10)",
       cyl: "Upto 4",
@@ -50,7 +53,7 @@ const CliffDynamixProgressive = () => {
       bluesafe: "8240",
     },
     {
-      type: "",
+      type: "Clear",
       index: "1.60",
       powerRange: "(+6/-12)",
       cyl: "Upto 4",
@@ -59,7 +62,7 @@ const CliffDynamixProgressive = () => {
       bluesafe: "11815",
     },
     {
-      type: "",
+      type: "Clear",
       index: "1.67",
       powerRange: "(+6/-15)",
       cyl: "Upto 4",
@@ -104,7 +107,7 @@ const CliffDynamixProgressive = () => {
       bluesafe: "7415",
     },
     {
-      type: "",
+      type: "Blue Shield",
       index: "1.60",
       powerRange: "(+6/-12)",
       cyl: "Upto 4",
@@ -151,7 +154,7 @@ const CliffDynamixProgressive = () => {
     <>
       {/* Hero Section with Service Information */}
       <div className="h-[90vh] to-black text-white relative overflow-hidden">
-      <div ref={backgroundImageRef} className="absolute inset-0 h-full">
+        <div ref={backgroundImageRef} className="absolute inset-0 h-full">
           <video
             src="/homevideo/hero.mp4"
             className="w-full h-full object-cover opacity-70"
@@ -183,19 +186,21 @@ const CliffDynamixProgressive = () => {
             <div className="lg:w-1/2 space-y-4">
 
               {/* Service Title */}
-              <h1 className="text-5xl md:text-7xl mt-12 font-bold leading-tight">
-                <span className="bg-gradient-to-r from-white via-yellow-100 to-yellow-200 bg-clip-text text-transparent whitespace-nowrap">
-                  DYNAMIX
-                </span>
-                <br />
-                <span className="bg-gradient-to-r from-white via-yellow-100 to-yellow-200 bg-clip-text text-transparent">
-                  PROGRESSIVE
-                </span>
+
+              <h1 className="text-5xl md:text-7xl mt-12 font-bold leading-tight capitalize">
+                <TextWithTexture
+                  text="DYNAMIX"
+                  className="text-5xl md:text-7xl mt-12 font-bold leading-tight"
+                />
+                <TextWithTexture
+                  text="PROGRESSIVE"
+                  className="bg-gradient-to-r from-white via-yellow-100 to-yellow-200 bg-clip-text text-transparent"
+                />
               </h1>
 
               {/* Service Description */}
               <p className="text-xl md:text-2xl bg-gradient-to-r from-white via-yellow-100 to-yellow-200 bg-clip-text text-transparent leading-relaxed max-w-2xl">
-                Dynamic progressive lenses with superior adaptation and comfort, 
+                Dynamic progressive lenses with superior adaptation and comfort,
                 featuring advanced technology for optimal vision at all distances.
               </p>
 
@@ -226,13 +231,12 @@ const CliffDynamixProgressive = () => {
             <div className="lg:w-1/2 relative">
               <div className="relative flex justify-center lg:justify-end lg:ml-2">
                 {/* Main Image Container */}
-                <div className="relative rounded-3xl overflow-hidden border border-white/20 shadow-2xl w-[28rem]">
+                <div className=" relative rounded-3xl overflow-hidden border h-[300px] border-white/20 shadow-2xl w-[28rem]">
                   <Image
                     src="/c9.jpeg"
                     alt="Cliff Dynamix Progressive Technology"
-                    width={200}
-                    height={300}
-                    className="object-contain h-[300px] w-auto"
+                    fill
+                    className="object-cover object-center w-auto"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
 
@@ -242,10 +246,10 @@ const CliffDynamixProgressive = () => {
                   </div>
                 </div>
 
-                <div className="absolute -bottom-6 left-1/4 w-32 h-32 bg-gradient-to-br from-violet-700 to-violet-800 rounded-2xl flex items-center justify-center shadow-xl border border-white/10">
+                <div className="absolute -bottom-6 left-1/4 w-32 h-32 bg-[#333841] rounded-2xl flex items-center justify-center shadow-xl border border-white/10">
                   <div className="text-center">
                     <div className="text-2xl font-bold text-white">6K</div>
-                    <div className="text-xs text-gray-400">Definition</div>
+                    <div className="text-xs text-gray-300">Definition</div>
                   </div>
                 </div>
               </div>
@@ -257,7 +261,7 @@ const CliffDynamixProgressive = () => {
 
       {/* Main Content */}
       <div className="min-h-screen  text-white overflow-hidden">
-        <div className="md:max-w-7xl mx-auto">
+        <div className="w-full px-4">
           {/* Animated Background */}
           <div className="absolute inset-0 opacity-5">
             <div className="absolute top-20 left-20 w-72 h-72 bg-yellow-400/20 rounded-full filter blur-3xl animate-pulse delay-500"></div>
@@ -265,91 +269,19 @@ const CliffDynamixProgressive = () => {
             <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-blue-400/10 rounded-full filter blur-3xl animate-pulse delay-1500"></div>
           </div>
 
-          <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
-            {/* Header Section */}
-            <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-              <div className="flex items-center justify-center mb-4 sm:mb-6">
-                <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold">
-                  <span className="text-white">CLIFF </span>
-                  <span className="bg-gradient-to-r from-white via-yellow-100 to-yellow-200 bg-clip-text text-transparent">
-                    DYNAMIX PROGRESSIVE
-                  </span>
-                </div>
-              </div>
-              <p className="text-base sm:text-lg lg:text-xl text-gray-300 max-w-4xl mx-auto mb-6 sm:mb-8 px-4">
-                Advanced progressive lenses featuring Continuum Design
-                Technology with 6K Definition for superior vision at all
-                distances. Experience balanced process design with optimized fit
-                and easy adaptation.
-              </p>
-            </div>
+          <div className="relative  py-8 sm:py-12 lg:py-16">
 
-            {/* Comparison Section */}
-            <div className="mb-12 lg:mb-20">
-              <div className="bg-gradient-to-br from-gray-800/30 to-gray-700/30 rounded-3xl p-6 lg:p-12 backdrop-blur-sm ">
-                <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-                  <div className="order-2 lg:order-1">
-                    <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-6 bg-gradient-to-r from-white via-yellow-100 to-yellow-200 bg-clip-text text-transparent">
-                      Traditional vs Cliff Dynamix Progressive
-                    </h2>
-                    <div className="space-y-4 text-gray-300">
-                      <p className="text-base lg:text-lg">
-                        Experience the evolution of progressive lens technology
-                        with our advanced Cliff Dynamix Progressive lenses.
-                      </p>
-                      <p className="text-base lg:text-lg">
-                        Superior vision clarity, optimized fit, and seamless
-                        adaptation for the modern lifestyle.
-                      </p>
-                    </div>
-                  </div>
-                  <div className="order-1 lg:order-2">
-                    <div className="grid grid-cols-2 gap-4">
-                      <div className="bg-gradient-to-br from-gray-800/30 to-gray-700/30 rounded-2xl p-4 text-center border border-white/10">
-                        <h3 className="text-lg font-semibold mb-2 text-gray-300">
-                          Traditional Progressive
-                        </h3>
-                        <div className="w-full h-32 bg-gray-600/30 rounded-lg mb-2 flex items-center justify-center relative overflow-hidden">
-                          <div
-                            className="absolute inset-0 bg-cover bg-center opacity-30"
-                            style={{
-                              backgroundImage: "url('/blur.jpeg')",
-                            }}
-                          ></div>
-                          <span className="text-gray-400 text-sm relative z-10px-2 py-1 rounded">
-                            Standard Design
-                          </span>
-                        </div>
-                      </div>
-                      <div className="bg-gradient-to-br from-gray-800/30 to-gray-700/30 rounded-2xl p-4 text-center border border-white/10">
-                        <h3 className="text-lg font-semibold mb-2 text-gray-300">
-                          Cliff Dynamix Progressive
-                        </h3>
-                        <div className="w-full h-32 bg-gradient-to-br from-yellow-400/10 to-yellow-600/10 rounded-lg mb-2 flex items-center justify-center relative overflow-hidden">
-                          <div
-                            className="absolute inset-0 bg-cover bg-center opacity-40"
-                            style={{
-                              backgroundImage: "url('/test.avif')",
-                            }}
-                          ></div>
-                          <span className="text-yellow-200 text-sm relative z-10  px-2 py-1 rounded">
-                            6K Definition
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <Diff />
+
+            <Feature />
 
             {/* Specifications Table */}
             <div className="mb-12 lg:mb-16">
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-center mb-8 bg-gradient-to-r from-white via-yellow-100 to-yellow-200 bg-clip-text text-transparent">
                 Lens Specifications
               </h2>
-              <div className="bg-gradient-to-br from-gray-800/30 to-gray-700/30 rounded-3xl p-6 lg:p-8 backdrop-blur-sm border border-white/10 overflow-x-auto">
-                <table className="w-full text-sm border-collapse">
+              <div className="bg-gradient-to-br from-gray-800/30 to-gray-700/30 rounded-md p-6 lg:p-8 backdrop-blur-sm border border-white/10 overflow-x-auto">
+                <table className="w-full text-sm border-collapse rounded-3xl">
                   <thead>
                     <tr className="bg-gray-800/50">
                       <th className="text-left p-3 border border-gray-600 font-semibold">
@@ -357,32 +289,32 @@ const CliffDynamixProgressive = () => {
                           PARTICULARS
                         </span>
                       </th>
-                      <th className="text-left p-3 border border-gray-600 font-semibold">
+                      <th className="text-center p-3 border border-gray-600 font-semibold">
                         <span className="bg-gradient-to-r from-white via-yellow-100 to-yellow-200 bg-clip-text text-transparent">
                           INDEX{" "}
                         </span>
                       </th>
-                      <th className="text-left p-3 border border-gray-600 font-semibold">
+                      <th className="text-center p-3 border border-gray-600 font-semibold">
                         <span className="bg-gradient-to-r from-white via-yellow-100 to-yellow-200 bg-clip-text text-transparent">
                           POWER RANGE{" "}
                         </span>
                       </th>
-                      <th className="text-left p-3 border border-gray-600 font-semibold">
+                      <th className="text-center p-3 border border-gray-600 font-semibold">
                         <span className="bg-gradient-to-r from-white via-yellow-100 to-yellow-200 bg-clip-text text-transparent">
                           CYL{" "}
                         </span>
                       </th>
-                      <th className="text-left p-3 border border-gray-600 font-semibold">
+                      <th className="text-center p-3 border border-gray-600 font-semibold">
                         <span className="bg-gradient-to-r from-white via-yellow-100 to-yellow-200 bg-clip-text text-transparent">
                           HC{" "}
                         </span>
                       </th>
-                      <th className="text-left p-3 border border-gray-600 font-semibold">
+                      <th className="text-center p-3 border border-gray-600 font-semibold">
                         <span className="bg-gradient-to-r from-white via-yellow-100 to-yellow-200 bg-clip-text text-transparent">
                           NOX{" "}
                         </span>
                       </th>
-                      <th className="text-left p-3 border border-gray-600 font-semibold">
+                      <th className="text-center p-3 border border-gray-600 font-semibold">
                         <span className="bg-gradient-to-r from-white via-yellow-100 to-yellow-200 bg-clip-text text-transparent">
                           BLUESAFE{" "}
                         </span>
@@ -390,37 +322,70 @@ const CliffDynamixProgressive = () => {
                     </tr>
                   </thead>
                   <tbody>
-                    {lensSpecs.map((spec, index) => (
-                      <tr
-                        key={index}
-                        className="hover:bg-gray-700/20 transition-colors"
-                      >
-                        <td className="p-3 text-gray-300 border border-gray-600">
-                          {spec.type}
-                        </td>
-                        <td className="p-3 text-gray-300 border border-gray-600">
-                          {spec.index}
-                        </td>
-                        <td className="p-3 text-gray-300 border border-gray-600">
-                          {spec.powerRange}
-                        </td>
-                        <td className="p-3 text-gray-300 border border-gray-600">
-                          {spec.cyl}
-                        </td>
-                        <td className="p-3 text-gray-300 border border-gray-600">
-                          {spec.hc}
-                        </td>
-                        <td className="p-3 text-gray-300 border border-gray-600">
-                          {spec.nox}
-                        </td>
-                        <td className="p-3 text-gray-300 border border-gray-600">
-                          {spec.bluesafe}
-                        </td>
-                      </tr>
-                    ))}
+                    {lensSpecs.map((spec, index) => {
+                      if (index == 0) {
+                        return (
+                          <tr
+                            key={index}
+                            className="hover:bg-gray-700/20 transition-colors"
+                          >
+                            <td className="p-3  text-gray-300 border border-gray-600">
+                              {spec.type}
+                            </td>
+                            <td className="p-3 text-center text-gray-300 border border-gray-600">
+                              {spec.index}
+                            </td>
+                            <td className="p-3 text-center text-gray-300 border border-gray-600">
+                              {spec.powerRange}
+                            </td>
+                            <td className="p-3 text-center text-gray-300 border border-gray-600">
+                              {spec.cyl}
+                            </td>
+                            <td className="p-3 text-center text-gray-300 border border-gray-600">
+                              {spec.hc}
+                            </td>
+                            <td className="p-3 text-center text-gray-300 border border-gray-600">
+                              {spec.nox}
+                            </td>
+                            <td className="p-3 text-center text-gray-300 border border-gray-600">
+                              {spec.bluesafe}
+                            </td>
+                          </tr>
+                        )
+                      }
+
+                      return (
+                        <tr
+                          key={index}
+                          className="hover:bg-gray-700/20 transition-colors"
+                        >
+                          <td className="p-3  text-gray-300 border border-gray-600">
+                            {spec.type}
+                          </td>
+                          <td className="p-3 text-center text-gray-300 border border-gray-600">
+                            {spec.index}
+                          </td>
+                          <td className="p-3 text-center text-gray-300 border border-gray-600">
+                            {spec.powerRange}
+                          </td>
+                          <td className="p-3 text-center text-gray-300 border border-gray-600">
+                            {spec.cyl}
+                          </td>
+                          <td className="p-3 text-center text-gray-300 border border-gray-600">
+                            {spec.hc}
+                          </td>
+                          <td className="p-3 text-center text-gray-300 border border-gray-600">
+                            {spec.nox}
+                          </td>
+                          <td className="p-3 text-center text-gray-300 border border-gray-600">
+                            {spec.bluesafe}
+                          </td>
+                        </tr>
+                      )
+                    })}
                   </tbody>
                 </table>
-                <div className="mt-4 space-y-2">
+                <div className="mt-4 flex justify-between items-center ">
                   <p className="text-xs text-gray-400">
                     Power mentioned is resultant power.
                   </p>
@@ -431,91 +396,37 @@ const CliffDynamixProgressive = () => {
               </div>
             </div>
 
-            {/* Features Grid */}
-            <div className="mb-12 lg:mb-16">
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-center mb-8 bg-gradient-to-r from-white via-yellow-100 to-yellow-200 bg-clip-text text-transparent">
-                Advanced Features
-              </h2>
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-7 gap-4">
-                {features.map((feature, index) => (
-                  <div
-                    key={index}
-                    className="bg-gradient-to-br from-gray-800/30 to-gray-700/30 rounded-2xl p-4 backdrop-blur-sm border border-white/10 text-center hover:border-yellow-400/30 transition-colors"
-                  >
-                    <div className="w-12 h-12 bg-gradient-to-br from-yellow-400/20 to-yellow-600/20 rounded-full mx-auto mb-3 flex items-center justify-center">
-                      <div className="w-6 h-6 bg-gradient-to-r from-white via-yellow-100 to-yellow-200 rounded-full"></div>
-                    </div>
-                    <h3 className="text-sm font-semibold text-gray-200">
-                      {feature}
-                    </h3>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Technology and Benefits */}
-            <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 mb-12 lg:mb-16">
-              {/* Technology */}
-              <div className="bg-gradient-to-br from-gray-800/30 to-gray-700/30 rounded-3xl p-6 lg:p-8 backdrop-blur-sm border border-white/10">
-                <h2 className="text-2xl sm:text-3xl font-bold mb-6 bg-gradient-to-r from-white via-yellow-100 to-yellow-200 bg-clip-text text-transparent">
-                  Technology
-                </h2>
-                <div className="space-y-4">
-                  {technology.map((tech, index) => (
-                    <div key={index} className="flex items-center space-x-3">
-                      <div className="w-2 h-2 bg-gradient-to-r from-white via-yellow-100 to-yellow-200 rounded-full flex-shrink-0"></div>
-                      <span className="text-gray-300">{tech}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Benefits */}
-              <div className="bg-gradient-to-br from-gray-800/30 to-gray-700/30 rounded-3xl p-6 lg:p-8 backdrop-blur-sm border border-white/10">
-                <h2 className="text-2xl sm:text-3xl font-bold mb-6 bg-gradient-to-r from-white via-yellow-100 to-yellow-200 bg-clip-text text-transparent">
-                  Benefits
-                </h2>
-                <div className="space-y-4">
-                  {benefits.map((benefit, index) => (
-                    <div key={index} className="flex items-center space-x-3">
-                      <div className="w-2 h-2 bg-gradient-to-r from-white via-yellow-100 to-yellow-200 rounded-full flex-shrink-0"></div>
-                      <span className="text-gray-300">{benefit}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-
             {/* Recommended For Section */}
             <div className="mb-12 lg:mb-16">
-              <div className="bg-gradient-to-br from-gray-800/30 to-gray-700/30 rounded-3xl p-6 lg:p-8 backdrop-blur-sm border border-white/10">
-                <h2 className="text-2xl sm:text-3xl font-bold mb-6 bg-gradient-to-r from-white via-yellow-100 to-yellow-200 bg-clip-text text-transparent">
-                  Recommended For:
+              <div className=" rounded-3xl p-6 lg:p-8 backdrop-blur-sm ">
+
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-center mb-8 bg-gradient-to-r from-white via-yellow-100 to-yellow-200 bg-clip-text text-transparent">
+                  Recommended For
                 </h2>
-                <div className="space-y-4 text-gray-300">
-                  <div className="flex items-start space-x-3">
-                    <div className="w-2 h-2 bg-gradient-to-r from-white via-yellow-100 to-yellow-200 rounded-full flex-shrink-0 mt-2"></div>
+                <div className="space-y-4 text-gray-300 ">
+                  <div className="flex items-center justify-center space-x-3">
+
                     <span>
                       Regular progressive lens users seeking enhanced comfort
                       and performance
                     </span>
                   </div>
-                  <div className="flex items-start space-x-3">
-                    <div className="w-2 h-2 bg-gradient-to-r from-white via-yellow-100 to-yellow-200 rounded-full flex-shrink-0 mt-2"></div>
+                  <div className="flex items-center justify-center space-x-3">
+
                     <span>
                       Individuals needing customized vision support for all
                       distances - near, intermediate, and far
                     </span>
                   </div>
-                  <div className="flex items-start space-x-3">
-                    <div className="w-2 h-2 bg-gradient-to-r from-white via-yellow-100 to-yellow-200 rounded-full flex-shrink-0 mt-2"></div>
+                  <div className="flex items-center justify-center space-x-3">
+
                     <span>
                       Users who demand high-definition clarity with minimal
                       aberrations and
                     </span>
                   </div>
-                  <div className="flex items-start space-x-3">
-                    <div className="w-2 h-2 bg-gradient-to-r from-white via-yellow-100 to-yellow-200 rounded-full flex-shrink-0 mt-2"></div>
+                  <div className="flex items-center justify-center space-x-3">
+
                     <span>Those seeking comfortable throughout the day</span>
                   </div>
                 </div>
