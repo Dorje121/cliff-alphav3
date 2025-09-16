@@ -150,8 +150,8 @@ const AboutUsPage = () => {
             <h2>
               <TextWithTexture text="Core Values" className=" text-4xl md:text-5xl sm:text-6xl font-bold mb-12  text-center" />
             </h2>
-            <div className="flex justify-center items-start gap-2 flex-wrap">
-              <div className="value-card group relative w-[300px] sm:w-[350px] min-h-[300px] shrink-0 ">
+            <div className="flex justify-center items-start gap-2 flex-wrap ">
+              <div className="value-card group relative w-[325px] sm:w-[350px] min-h-[300px] shrink-0 ">
                 <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-gray-500/5 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300"></div>
                 <div className="absolute inset-0  bg-[#BFA84A]/10 backdrop-blur-sm p-8 rounded-2xl border border-gray-700/50 group-hover:border-[#BFA84A] transition-all duration-300 w-full h-full">
                   <div className="w-16 h-16 bg-gradient-to-r from-gray-600 to-gray-800 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
@@ -173,7 +173,7 @@ const AboutUsPage = () => {
                 </div>
               </div>
 
-              <div className="value-card group relative w-[300px] sm:w-[350px] min-h-[300px] shrink-0">
+              <div className="value-card group relative w-[325px] sm:w-[350px] min-h-[300px] shrink-0">
                 <div className="absolute inset-0 bg-gradient-to-br from-white/3 to-gray-600/5 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300"></div>
                 <div className="absolute inset-0 w-full h-full bg-[#BFA84A]/10 backdrop-blur-sm p-8 rounded-2xl border border-gray-700/50 group-hover:border-[#BFA84A] transition-all duration-300">
                   <div className="w-16 h-16 bg-gradient-to-r from-gray-500 to-gray-700 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
@@ -199,7 +199,7 @@ const AboutUsPage = () => {
                 </div>
               </div>
 
-              <div className="value-card group relative w-[300px] sm:w-[350px] min-h-[300px] shrink-0">
+              <div className="value-card group relative w-[325px] sm:w-[350px] min-h-[300px] shrink-0">
                 <div className="absolute inset-0 bg-gradient-to-br from-white/2 to-gray-700/5 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300"></div>
                 <div className="absolute inset-0 w-full h-full bg-[#BFA84A]/10 backdrop-blur-sm p-8 rounded-2xl border border-gray-700/50 group-hover:border-[#BFA84A] transition-all duration-300">
                   <div className="w-16 h-16 bg-gradient-to-r from-gray-400 to-gray-600 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 hover:text-[#BFA84A]">

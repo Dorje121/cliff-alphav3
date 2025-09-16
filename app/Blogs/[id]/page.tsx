@@ -6,7 +6,7 @@ import { useParams } from "next/navigation";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
+
 import {
   Calendar,
   Clock,
@@ -436,10 +436,6 @@ export default function BlogPost() {
                     {formatDate(post.date)}
                   </div>
                   <div className="flex items-center gap-1">
-                    <Clock size={16} />
-                    {post.readTime}
-                  </div>
-                  <div className="flex items-center gap-1">
                     <Eye size={16} />
                     {post.views} views
                   </div>
@@ -531,7 +527,7 @@ export default function BlogPost() {
               </div>
 
               {/* Sidebar */}
-              <div className="lg:col-span-1">
+              <div className="lg:col-span-1 overflow-x-hidden">
                 <div className="post-sidebar sticky top-32 space-y-8">
                   {/* Reading Progress */}
                   <div className="bg-gradient-to-br from-gray-900/60 to-gray-800/60 backdrop-blur-md border border-gray-700/30 rounded-2xl p-6">
@@ -585,7 +581,7 @@ export default function BlogPost() {
         </div>
       </article>
 
-      <Footer />
+
     </div>
   );
 }

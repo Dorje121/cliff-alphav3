@@ -120,11 +120,11 @@ export default function Blog() {
   return (
     <div className="min-h-screen bg-transparent text-white">
       {/* Hero Section */}
-      <div className="relative pt-32 pb-20 px-4 sm:px-6 lg:px-8">
+      <div className="relative pt-32 pb-20 px-5 ">
         <div className="mx-auto text-left">
           <TextWithTexture
             text="Cliff Insights & Updates"
-            className="text-5xl italic md:text-9xl font-bold font-family-playfair mb-6 py-6 bg-gradient-to-r from-white via-yellow-100 to-yellow-200 bg-clip-text text-transparent"
+            className="text-3xl italic sm:text-4xl md:text-5xl lg:text-9xl font-bold font-family-playfair mb-6 py-6 bg-gradient-to-r from-white via-yellow-100 to-yellow-200 bg-clip-text text-transparent"
           />
           <p className="text-xl md:text-2xl text-gray-300 max-w-3xl leading-relaxed">
             Discover the latest in lens technology, eye health, and vision
@@ -134,7 +134,7 @@ export default function Blog() {
       </div>
 
       {/* Blog Grid */}
-      <div className="px-4 sm:px-6 lg:px-8 pb-20">
+      <div className="px-5  pb-20">
         <div className="mx-auto">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredPosts

@@ -4,6 +4,7 @@ import React, { useEffect } from "react";
 import Image from "next/image";
 import { Calendar, Clock, ArrowRight, Eye } from "lucide-react";
 import TransitionLink from "@/components/PreLoader/TransitionLink";
+import TextWithTexture from "@/components/textwithgoldentexture";
 
 interface BlogPost {
   id: number;
@@ -133,11 +134,10 @@ export default function BlogPage() {
   return (
     <div className="min-h-screen  text-white">
       {/* Hero Section */}
-      <div className="relative pt-32 pb-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto text-center">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 p-1 bg-gradient-to-r from-white via-blue-100 to-blue-200 bg-clip-text text-transparent">
-            Insights & Innovation
-          </h1>
+      <div className="relative pt-32 pb-20 px-4 sm:px-6 lg:px-8 ">
+        <div className=" mx-auto text-center ">
+
+          <TextWithTexture text="Insights & Innovation" className="!h-26  text-5xl md:text-7xl font-bold mb-6 p-1" />
           <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
             Discover the latest in lens technology, eye health, and vision
             science through our expert insights and cutting-edge research.
@@ -145,103 +145,11 @@ export default function BlogPage() {
         </div>
       </div>
 
-      {/* Category Filter */}
-      <div className="px-4 sm:px-6 lg:px-8 mb-16">
-        <div className="max-w-7xl mx-auto">
-          <div className="flex flex-wrap justify-center gap-4 mb-12">
-            {categories.map((category) => (
-              <button
-                key={category}
-                onClick={() => setSelectedCategory(category)}
-                className={`px-6 py-3 rounded-full border transition-all duration-300 ${
-                  selectedCategory === category
-                    ? "bg-white text-black border-white"
-                    : "bg-transparent text-white border-gray-600 hover:border-white hover:bg-white/10"
-                }`}
-              >
-                {category}
-              </button>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* Featured Article */}
-      {filteredPosts.some((post) => post.featured) && (
-        <div className="px-4 sm:px-6 lg:px-8 mb-20">
-          <div className="max-w-7xl mx-auto">
-            <h2 className="text-3xl font-bold mb-8 text-center">
-              Featured Article
-            </h2>
-            {filteredPosts
-              .filter((post) => post.featured)
-              .map((post) => (
-                <div
-                  key={post.id}
-                  className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-gray-900/80 to-gray-800/80 backdrop-blur-md border border-gray-700/50 hover:border-gray-600/50 transition-all duration-500 group"
-                >
-                  <div className="grid md:grid-cols-2 gap-0">
-                    <div className="relative overflow-hidden">
-                      <Image
-                        src={post.image}
-                        alt={post.title}
-                        width={600}
-                        height={400}
-                        className="w-full h-80 md:h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                    </div>
-                    <div className="p-8 md:p-12 flex flex-col justify-center">
-                      <div className="flex items-center gap-4 mb-4">
-                        <span className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm font-medium">
-                          {post.category}
-                        </span>
-                        <span className="text-gray-400 text-sm">Featured</span>
-                      </div>
-                      <h3 className="text-2xl md:text-3xl font-bold mb-4 group-hover:text-blue-300 transition-colors duration-300">
-                        {post.title}
-                      </h3>
-                      <p className="text-gray-300 mb-6 leading-relaxed">
-                        {post.excerpt}
-                      </p>
-                      <div className="flex items-center justify-between mb-6">
-                        <div className="flex items-center gap-4 text-sm text-gray-400">
-                          <div className="flex items-center gap-1">
-                            <Calendar size={16} />
-                            {formatDate(post.date)}
-                          </div>
-                          <div className="flex items-center gap-1">
-                            <Clock size={16} />
-                            {post.readTime}
-                          </div>
-                          <div className="flex items-center gap-1">
-                            <Eye size={16} />
-                            {post.views}
-                          </div>
-                        </div>
-                      </div>
-                      <TransitionLink
-                        href={`/Blogs/${post.id}`}
-                        className="inline-flex items-center gap-2 text-white hover:text-blue-300 transition-colors duration-300 group/link"
-                      >
-                        Read Full Article
-                        <ArrowRight
-                          size={16}
-                          className="transition-transform duration-300 group-hover/link:translate-x-1"
-                        />
-                      </TransitionLink>
-                    </div>
-                  </div>
-                </div>
-              ))}
-          </div>
-        </div>
-      )}
 
       {/* Blog Grid */}
-      <div className="px-4 sm:px-6 lg:px-8 pb-20">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="px-2 sm:px-4 pb-20 ">
+        <div className="w-full mx-auto">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 ">
             {filteredPosts
               .filter((post) => !post.featured)
               .map((post) => (
@@ -258,52 +166,54 @@ export default function BlogPage() {
                       className="w-full h-48 object-cover transition-transform duration-700 group-hover:scale-110"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-                    <div className="absolute top-4 left-4">
-                      <span className="px-3 py-1 bg-black/50 backdrop-blur-md text-white rounded-full text-xs font-medium border border-white/20">
-                        {post.category}
-                      </span>
+                    <div className="absolute top-4 w-full px-5">
+                      <div className="flex justify-between items-center  w-full ">
+                        <span className="px-3 py-1 bg-black/50 backdrop-blur-md text-white rounded-full text-xs font-medium border border-white/20">
+                          {post.category}
+                        </span>
+                        <div className="flex justify-center items-center gap-1 tracking-[1px]">
+                          <Eye size={14} />
+                          {post.views}
+                        </div>
+                      </div>
                     </div>
                   </div>
 
-                  <div className="p-6">
-                    <h3 className="text-xl font-bold mb-3 group-hover:text-blue-300 transition-colors duration-300 line-clamp-2">
-                      {post.title}
-                    </h3>
-                    <p className="text-gray-300 mb-4 leading-relaxed line-clamp-3">
-                      {post.excerpt}
-                    </p>
+                  <div className="pb-2 md:pb-4 min-h-[52%] md:h-[52%]">
+                    <div className="p-4 md:p-6 pb-0  h-full flex justify-between flex-col ">
+                      <div>
+                        <h3 className="text-xl font-bold mb-3 group-hover:text-blue-300 transition-colors duration-300 line-clamp-2">
+                          {post.title}
+                        </h3>
+                        <p className="text-gray-400 mb-4 leading-5 line-clamp-3">
+                          {post.excerpt}
+                        </p>
+                      </div>
 
-                    <div className="flex items-center justify-between text-sm text-gray-400 mb-4">
-                      <div className="flex items-center gap-3">
-                        <div className="flex items-center gap-1">
-                          <Calendar size={14} />
-                          {formatDate(post.date)}
+                      <div className="flex items-center justify-between text-sm text-gray-400  ">
+                        <div className="flex items-center gap-3">
+                          <div className="flex items-center gap-1">
+                            <Calendar size={14} />
+                            {formatDate(post.date)}
+                          </div>
+
                         </div>
+
+
                         <div className="flex items-center gap-1">
-                          <Clock size={14} />
-                          {post.readTime}
+                          <TransitionLink
+                            href={`/Blogs/${post.id}`}
+                            className="inline-flex items-center gap-2 text-white hover:text-blue-300 transition-colors duration-300 group/link"
+                          >
+                            Read More
+                            <ArrowRight
+                              size={14}
+                              className="transition-transform duration-300 group-hover/link:translate-x-1"
+                            />
+                          </TransitionLink>
+
                         </div>
                       </div>
-                      <div className="flex items-center gap-1">
-                        <Eye size={14} />
-                        {post.views}
-                      </div>
-                    </div>
-
-                    <div className="flex items-center justify-between">
-                      <span className="text-sm text-gray-400">
-                        By {post.author}
-                      </span>
-                      <TransitionLink
-                        href={`/Blogs/${post.id}`}
-                        className="inline-flex items-center gap-2 text-white hover:text-blue-300 transition-colors duration-300 group/link"
-                      >
-                        Read More
-                        <ArrowRight
-                          size={14}
-                          className="transition-transform duration-300 group-hover/link:translate-x-1"
-                        />
-                      </TransitionLink>
                     </div>
                   </div>
 

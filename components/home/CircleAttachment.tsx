@@ -48,7 +48,7 @@ export default function CircleAttachment() {
   });
 
   return (
-    <div ref={mainRef} className="relative h-dvh">
+    <div ref={mainRef} className="relative h-[50dvh] md:h-dvh">
       <div className="absolute  inset-0 z-50 bg-gradient-to-t from-black via-transparent to-transparent"></div>
       {/* Background blurred image */}
       {/* <div className="h-full w-full relative">
@@ -62,30 +62,31 @@ export default function CircleAttachment() {
       </div> */}
 
       {/* Revealed clear image layer */}
-      <div className="absolute inset-0 h-screen overflow-hidden">
+      <div className="absolute inset-0 h-[50dvh] md:h-screen overflow-hidden flex justify-end items-end">
         <div className="relative w-full h-full">
           <Image
             src="/circle2.png"
             alt="Revealed Image"
             fill
-            objectFit="cover"
+            // objectFit="cover"
             quality={100}
-            className="object-cover object-right"
+            className="object-contain object-right"
           />
           {/* <div className="absolute z-50 -bottom-1 h-32 w-full bg-gradient-to-b from-transparent to-black "></div> */}
         </div>
       </div>
       <div
         ref={revealLayerSecondRef}
-        className="absolute inset-0 h-screen overflow-hidden"
+        className="absolute inset-0 h-[50dvh] md:h-screen overflow-hidden flex justify-end items-end"
       >
         <div className="relative w-full h-full">
           <Image
             src="/circle.png"
             alt="Revealed Image"
             fill
-            objectFit="cover"
+            // objectFit="cover"
             quality={100}
+            className="object-contain object-right"
           />
           {/* <div className="absolute z-50 -bottom-1 h-32 w-full bg-gradient-to-b from-transparent to-black "></div> */}
         </div>

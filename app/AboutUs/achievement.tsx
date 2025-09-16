@@ -107,21 +107,21 @@ const Achievement: React.FC = () => {
         <section className="bg-black text-white py-20">
 
             <h2>
-                <TextWithTexture text="Our Achievements" className=" text-4xl md:text-5xl sm:text-6xl px-5 sm::px-0 font-bold mb-12  text-center" />
+                <TextWithTexture text="Our Achievements" className=" text-4xl md:text-5xl sm:text-6xl px-5 sm:px-0 font-bold mb-12  text-center" />
             </h2>
 
 
 
             <div className="parent w-full flex justify-center items-start flex-wrap gap-12">
                 {/* Left Side */}
-                <div className="left w-full md:w-[45%] flex flex-col items-end  gap-10">
+                <div className="left w-full md:w-[45%] flex flex-col items-center sm:items-end  gap-10">
                     {[
                         { value: "20", label: "Years of Excellence", mt: '0' },
                         { value: "15", label: "Lens Technology", mt: '5' },
                     ].map((item, idx) => (
                         <div
                             key={idx}
-                            className={`box w-[100%] h-[300px] bg-[#18181B]  rounded-3xl p-6 mt-${item.mt}`}
+                            className={`box  w-[90%] sm:w-[100%] h-[300px] bg-[#18181B]  rounded-3xl p-6 mt-${item.mt}`}
                             ref={pushLeftRef}
                         >
                             <div className={`flex flex-col justify-between h-full `}>
@@ -146,14 +146,14 @@ const Achievement: React.FC = () => {
                 </div>
 
                 {/* Right Side */}
-                <div className="right w-full md:w-[45%] flex flex-col items-start gap-10 mt-10 md:mt-0">
+                <div className="right w-full md:w-[45%] flex flex-col items-center sm:items-start gap-10 mt-10 md:mt-0">
                     {[
                         { value: "50000", label: "Happy Customers", suffix: "+", mt: '16' },
                         { value: "99", label: "Satisfaction Rate", suffix: "%", mt: '5' },
                     ].map((item, idx) => (
                         <div
                             key={idx}
-                            className={`box  w-[100%] h-[300px] bg-[#18181B] rounded-3xl p-6  mt-${item.mt}`}
+                            className={`box w-[90%] sm:w-[100%] h-[300px] bg-[#18181B] rounded-3xl p-6  mt-${item.mt}`}
                             ref={pushRightRef}
                         >
                             <div className="flex flex-col justify-between h-full">

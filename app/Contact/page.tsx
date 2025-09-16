@@ -91,7 +91,7 @@ const Contact = () => {
 
 
           <h2>
-            <TextWithTexture text="Get in Touch" className=" text-5xl md:text-7xl font-bold font-ramro mb-6" />
+            <TextWithTexture text="Get in Touch" className=" text-5xl md:text-7xl font-bold mb-6" />
           </h2>
           <p className="text-xl md:text-2xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
             Have questions about our eyewear? Want to learn more about our
@@ -101,7 +101,7 @@ const Contact = () => {
 
         <div className="flex justify-center items-start flex-col  md:flex-row-reverse  ">
           {/* Contact Form */}
-          <div className=" right w-[100%] md:w-[50%] max-w-2xl rounded-2xl p-8 ">
+          <div className=" right w-[100%] md:w-[50%] max-w-2xl rounded-2xl sm:p-8 ">
             <h2 className="text-3xl font-bold font-ramro mb-8 text-white">
               Send us a Message
             </h2>
@@ -205,7 +205,11 @@ const Contact = () => {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full w- text-black  cursor-pointer py-4 px-6 rounded-lg font-semibold text-lg  flex items-center justify-center space-x-2 object-center  bg-center bg-cover" style={{ backgroundImage: `url('${bg}')` }}
+                className="    w-full text-white cursor-pointer py-4 px-6 rounded-lg font-semibold text-lg
+    flex items-center justify-center space-x-2
+    bg-gradient-to-r from-yellow-200 to-yellow-600
+    transition-all duration-300 ease-in-out
+    hover:bg-gradient-to-l hover:text-xl"
 
               >
                 {isSubmitting ? (
@@ -229,6 +233,7 @@ const Contact = () => {
           </div>
 
           {/* <div className="left h-fit sm:h-[100vh] w-[100%] md:w-[40%] pt-10">
+
             <div className="parnt">
               <div className="para">
                 Reach out today to discover how our custom gate designs can transform your property, combining security with style. We're here to help safeguard your future and create a lasting impression.
@@ -283,7 +288,7 @@ const Contact = () => {
                       </div>
                     </div>
 
-\                    <div className="flex flex-col gap-1">
+                <div className="flex flex-col gap-1">
                       <p className="text-sm text-gray-400">We're here to help</p>
                       <p className="text-[0.9rem] font-medium">Feel free to reach out anytime.</p>
                     </div>
@@ -293,7 +298,7 @@ const Contact = () => {
               </div>
             </div>
 
-          </div> */}
+          </div>  */}
 
         </div>
 
@@ -302,7 +307,7 @@ const Contact = () => {
       </div>
     </div>
   );
-  
+
 };
 
 export default Contact;
