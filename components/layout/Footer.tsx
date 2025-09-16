@@ -18,11 +18,11 @@ const Footer = () => {
         <div className="text-center mb-12 md:mb-20">
 
           <TextWithTexture text="STAY IN TOUCH" className="text-2xl sm:text-3xl md:text-6xl lg:text-8xl xl:text-9xl mt-4 md:mt-8 font-semibold font-family-playfair bg-gradient-to-r from-white via-yellow-100 to-yellow-200 bg-clip-text text-transparent text-center tracking-[0.2rem] sm:tracking-[0.5rem] md:tracking-[1rem] lg:tracking-[1.5rem] xl:tracking-[1.9rem]" />
-        
+
         </div>
 
         {/* Navigation Links - Centered at Bottom */}
-        <div className="flex justify-between flex-col lg:flex-row items-center w-full max-w-screen gap-8 lg:gap-0 lg:*:mt-52">
+        <div className="flex justify-between flex-col lg:flex-row items-center w-full max-w-screen gap-8 lg:gap-0 ">
           {/* Logo and CTA */}
           <div className="flex flex-row items-center justify-center mb-6 lg:mb-0">
             <Image

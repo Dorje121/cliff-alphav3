@@ -140,13 +140,12 @@ export default function Navbar() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 w-full z-50 transition-colors duration-300 ${
-          isOpen
-            ? "text-black"
-            : isTestProductPage || isInFirstSection
+        className={`fixed top-0 left-0 w-full z-[999] transition-colors duration-300 ${isOpen
+          ? "text-black"
+          : isTestProductPage || isInFirstSection
             ? "text-white"
             : "text-white"
-        }`}
+          }`}
       >
         <div className="max-w-[1500px] mx-auto p-4 flex items-center justify-between">
           {/* Logo */}
@@ -202,12 +201,12 @@ export default function Navbar() {
       {isOpen && (
         <div
           ref={menuRef}
-          className="fixed top-0 right-0 w-screen h-screen bg-[#fff] flex z-40"
+          className="fixed top-0 right-0 w-screen h-screen bg-[#fff] flex z-[99]"
           style={{ clipPath: "circle(0% at 100% 0%)" }}
         >
           {/* Left Panel */}
-          <div className="w-full md:w-1/2 h-full flex flex-col justify-center items-start p-8 md:p-24 text-black">
-            <div className="flex flex-col group text-zinc-700 hover:text-gray-200 space-y-12 mx-10">
+          <div className="w-full md:w-1/2 h-full flex flex-col justify-center items-center md:text-left text-center md:items-start p-8 md:p-24 text-black">
+            <div className="flex flex-col group text-zinc-700 hover:text-gray-200 space-y-2 xs:space-y-7 md:space-y-12 mx-10">
               {links.map((link) => {
                 const isActive = pathname === link.href;
                 return (
@@ -215,9 +214,8 @@ export default function Navbar() {
                     key={link.href}
                     href={link.href}
                     onClick={() => handleLinkClick(link.href)}
-                    className={`menu-link text-5xl md:text-7xl font-bold uppercase tracking-wider ${
-                      isActive ? " " : " transition-colors duration-300"
-                    } hover:text-zinc-800 transition-all duration-900`}
+                    className={`menu-link text-[3rem] xs:text-6xl md:text-7xl font-bold uppercase tracking-wider ${isActive ? " " : " transition-colors duration-300"
+                      } hover:text-zinc-800 transition-all duration-900`}
                   >
                     {link.label}
                   </TransitionLink>
@@ -227,7 +225,7 @@ export default function Navbar() {
           </div>
 
           {/* Right Panel Image */}
-          <div className="hidden lense md:flex w-1/2 justify-start  items-end h-full relative">
+          <div className=" md:-z-10 hidden lense md:flex w-1/2 justify-start  items-end h-full relative">
             <img
               src="/handd.png"
               alt="Decorative lens flare"
