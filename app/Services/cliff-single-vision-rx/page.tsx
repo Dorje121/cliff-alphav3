@@ -4,6 +4,7 @@ import BackToServicesButton from "@/components/Services/BackToServicesButton";
 import Image from "next/image";
 import React, { useState, useRef, useLayoutEffect } from "react";
 import { gsap } from "gsap";
+import TextWithTexture from "@/components/textwithgoldentexture";
 
 const CliffSingleVisionRX = () => {
   const backgroundImageRef = useRef<HTMLDivElement>(null);
@@ -112,13 +113,17 @@ const CliffSingleVisionRX = () => {
   return (
     <>
       {/* Hero Section with Service Information */}
-      <div className="h-[80vh] to-black text-white relative overflow-hidden">
-        <div ref={backgroundImageRef} className="absolute inset-0 h-full">
-          <img
-            src="/c8.jpeg"
-            alt="Cliff Single Vision RX"
+      <div className="h-[90vh] to-black text-white relative overflow-hidden">
+      <div ref={backgroundImageRef} className="absolute inset-0 h-full">
+          <video
+            src="/homevideo/hero.mp4"
             className="w-full h-full object-cover opacity-70"
+            autoPlay
+            loop
+            muted
+            playsInline
           />
+          <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-gray-900/70 to-black/80" />
         </div>
 
         {/* Animated Background Elements */}
@@ -142,13 +147,14 @@ const CliffSingleVisionRX = () => {
 
               {/* Service Title */}
               <h1 className="text-5xl md:text-7xl mt-12 font-bold leading-tight">
-                <span className="bg-gradient-to-r from-white via-yellow-100 to-yellow-200 bg-clip-text text-transparent whitespace-nowrap">
-                  SINGLE VISION
-                </span>
-                <br />
-                <span className="bg-gradient-to-r from-white via-yellow-100 to-yellow-200 bg-clip-text text-transparent">
-                  RX LENSES
-                </span>
+                <TextWithTexture
+                  text="Single Vision"
+                  className="text-5xl md:text-7xl mt-12 font-bold leading-tight capitalize"
+                />
+                <TextWithTexture
+                  text="RX Lenses"
+                  className="bg-gradient-to-r from-white via-yellow-100 to-yellow-200 bg-clip-text text-transparent capitalize"
+                />
               </h1>
 
               {/* Service Description */}

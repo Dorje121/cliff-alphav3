@@ -35,13 +35,25 @@ const CliffZennSingleVision = () => {
   return (
     <>
       {/* Hero Section with Service Information */}
-      <div className="h-[80vh] to-black text-white relative overflow-hidden">
-        <div ref={backgroundImageRef} className="absolute inset-0 h-full">
+      <div className="h-[90vh] to-black text-white relative overflow-hidden">
+        {/* <div ref={backgroundImageRef} className="absolute inset-0 h-full">
           <img
             src="/ai0.jpg"
             alt="Cliff Zenn Single Vision Lenses"
             className="w-full h-full object-cover opacity-70"
           />
+        </div> */}
+
+<div ref={backgroundImageRef} className="absolute inset-0 h-full">
+          <video
+            src="/homevideo/hero.mp4"
+            className="w-full h-full object-cover opacity-70"
+            autoPlay
+            loop
+            muted
+            playsInline
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-gray-900/70 to-black/80" />
         </div>
 
         {/* Animated Background Elements */}

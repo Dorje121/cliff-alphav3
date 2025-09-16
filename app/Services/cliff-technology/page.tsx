@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useRef, useLayoutEffect } from "react";
 import { gsap } from "gsap";
+import TextWithTexture from "@/components/textwithgoldentexture";
 
 const CliffTechnology = () => {
   const backgroundImageRef = useRef<HTMLDivElement>(null);
@@ -33,13 +34,17 @@ const CliffTechnology = () => {
   return (
     <>
       {/* Hero Section with Service Information */}
-      <div className="h-[80vh] to-black text-white relative overflow-hidden">
-        <div ref={backgroundImageRef} className="absolute inset-0 h-full">
-          <img
-            src="/c7.jpeg"
-            alt="Cliff Technology"
+      <div className="h-[90vh] to-black text-white relative overflow-hidden">
+      <div ref={backgroundImageRef} className="absolute inset-0 h-full">
+          <video
+            src="/homevideo/hero.mp4"
             className="w-full h-full object-cover opacity-70"
+            autoPlay
+            loop
+            muted
+            playsInline
           />
+          <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-gray-900/70 to-black/80" />
         </div>
 
         {/* Animated Background Elements */}
@@ -63,13 +68,10 @@ const CliffTechnology = () => {
 
               {/* Service Title */}
               <h1 className="text-5xl md:text-7xl mt-12 font-bold leading-tight">
-                <span className="bg-gradient-to-r from-white via-yellow-100 to-yellow-200 bg-clip-text text-transparent whitespace-nowrap">
-                  CLIFF
-                </span>
-                <br />
-                <span className="bg-gradient-to-r from-white via-yellow-100 to-yellow-200 bg-clip-text text-transparent">
-                  TECHNOLOGY
-                </span>
+                <TextWithTexture
+                  text="Cliff Technology"
+                  className="text-5xl md:text-7xl mt-12 font-bold leading-tight capitalize"
+                />
               </h1>
 
               {/* Service Description */}

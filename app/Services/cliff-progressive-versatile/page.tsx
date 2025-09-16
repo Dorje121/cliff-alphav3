@@ -35,14 +35,19 @@ const CliffProgressiveVersatile = () => {
   return (
     <>
       {/* Hero Section with Service Information */}
-      <div className="h-[80vh] to-black text-white relative overflow-hidden">
-        <div ref={backgroundImageRef} className="absolute inset-0 h-full">
-          <img
-            src="/c6.jpeg"
-            alt="Cliff Progressive Versatile"
+      <div className="h-[90vh] to-black text-white relative overflow-hidden">
+      <div ref={backgroundImageRef} className="absolute inset-0 h-full">
+          <video
+            src="/homevideo/hero.mp4"
             className="w-full h-full object-cover opacity-70"
+            autoPlay
+            loop
+            muted
+            playsInline
           />
+          <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-gray-900/70 to-black/80" />
         </div>
+       
 
         {/* Animated Background Elements */}
         <div className="absolute inset-0 opacity-20">
@@ -67,10 +72,10 @@ const CliffProgressiveVersatile = () => {
               <h1 className="text-5xl md:text-7xl mt-12 font-bold leading-tight">
                 <TextWithTexture
                   text="Progressive"
-                  className="text-5xl md:text-7xl mt-12 font-bold leading-tight uppercase"
+                  className="text-5xl md:text-7xl mt-12 font-bold leading-tight capitalize"
                 />
                 <TextWithTexture
-                  text="VERSATILE"
+                  text="Versatile"
                   className="bg-gradient-to-r from-white via-yellow-100 to-yellow-200 bg-clip-text text-transparent"
                 />
               </h1>

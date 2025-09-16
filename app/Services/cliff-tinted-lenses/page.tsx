@@ -148,28 +148,18 @@ const CliffTintedLenses = () => {
   return (
     <>
       {/* Hero Section with Service Information */}
-      <div className="h-[80vh] to-black text-white relative overflow-hidden">
-        <div ref={backgroundImageRef} className="absolute inset-0 h-full">
-          <img
-            src="/eyetest.jpg"
-            alt="Cliff Tinted Lenses"
+      <div className="h-[90vh] to-black text-white relative overflow-hidden">
+      <div ref={backgroundImageRef} className="absolute inset-0 h-full">
+          <video
+            src="/homevideo/hero.mp4"
             className="w-full h-full object-cover opacity-70"
+            autoPlay
+            loop
+            muted
+            playsInline
           />
+          <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-gray-900/70 to-black/80" />
         </div>
-
-        {/* Animated Background Elements */}
-        {/* <div className="absolute inset-0 opacity-90">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-blue-600/20 rounded-full blur-3xl animate-pulse"></div>
-          <div
-            className="absolute bottom-20 right-10 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl animate-pulse"
-            style={{ animationDelay: "-1s" }}
-          ></div>
-          <div
-            className="absolute top-1/2 left-1/2 w-80 h-80 bg-blue-700/10 rounded-full blur-3xl animate-pulse"
-            style={{ animationDelay: "-0.5s" }}
-          ></div>
-          ></div>
-        </div> */}
 
         {/* Main Content */}
         <div className="relative z-10 container max-w-[1490px] mx-auto px-4 py-12 h-full">

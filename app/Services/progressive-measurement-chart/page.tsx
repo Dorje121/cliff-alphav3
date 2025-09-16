@@ -3,19 +3,33 @@ import BackToServicesButton from "@/components/Services/BackToServicesButton";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "motion/react";
-import React from "react";
+import React, { useRef, useLayoutEffect } from "react";
+import { gsap } from "gsap";
 
 const ProgressiveMeasurementChart = () => {
+  const backgroundImageRef = useRef<HTMLDivElement>(null);
+
   return (
     <>
       {/* Hero Section with Service Information */}
-      <div className="h-[80vh] to-black text-white relative overflow-hidden">
-        <div className="absolute inset-0 h-full">
+      <div className="h-[90vh] to-black text-white relative overflow-hidden">
+        {/* <div className="absolute inset-0 h-full">
           <img
             src="/progreesive.png"
             alt="Progressive Measurement Chart"
             className="w-full h-full object-cover opacity-70"
           />
+        </div> */}
+         <div ref={backgroundImageRef} className="absolute inset-0 h-full">
+          <video
+            src="/homevideo/hero.mp4"
+            className="w-full h-full object-cover opacity-70"
+            autoPlay
+            loop
+            muted
+            playsInline
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-gray-900/70 to-black/80" />
         </div>
 
        
