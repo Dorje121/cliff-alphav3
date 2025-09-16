@@ -125,20 +125,6 @@ const CliffSingleVisionRX = () => {
           />
           <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-gray-900/70 to-black/80" />
         </div>
-
-        {/* Animated Background Elements */}
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-rose-600/20 rounded-full blur-3xl animate-pulse"></div>
-          <div
-            className="absolute bottom-20 right-10 w-96 h-96 bg-rose-500/20 rounded-full blur-3xl animate-pulse"
-            style={{ animationDelay: "-1s" }}
-          ></div>
-          <div
-            className="absolute top-1/2 left-1/2 w-80 h-80 bg-rose-700/10 rounded-full blur-3xl animate-pulse"
-            style={{ animationDelay: "-0.5s" }}
-          ></div>
-        </div>
-
         {/* Main Content */}
         <div className="relative z-10 container max-w-[1490px] mx-auto px-4 py-12 h-full">
           <div className="flex flex-col lg:flex-row items-center gap-16 h-full">
@@ -192,11 +178,11 @@ const CliffSingleVisionRX = () => {
                 {/* Main Image Container */}
                 <div className="relative rounded-3xl overflow-hidden border border-white/20 shadow-2xl w-[28rem]">
                   <Image
-                    src="/c8.jpeg"
+                    src="/imAGES/singlevision.png"
                     alt="Cliff Single Vision RX Technology"
                     width={200}
                     height={300}
-                    className="object-contain h-[300px] w-auto"
+                    className="object-cover h-[300px] w-auto"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
 
@@ -206,7 +192,7 @@ const CliffSingleVisionRX = () => {
                   </div>
                 </div>
 
-                <div className="absolute -bottom-6 left-1/4 w-32 h-32 bg-gradient-to-br from-rose-700 to-rose-800 rounded-2xl flex items-center justify-center shadow-xl border border-white/10">
+                <div className="absolute -bottom-6 left-1/4 w-32 h-32 bg-gradient-to-br from-[#303B4C] to-[#303B4C] rounded-2xl flex items-center justify-center shadow-xl border border-white/10">
                   <div className="text-center">
                     <div className="text-2xl font-bold text-white">RX</div>
                     <div className="text-xs text-gray-400">Precision</div>
@@ -219,16 +205,68 @@ const CliffSingleVisionRX = () => {
         </div>
       </div>
 
+      {/* Hero Section with Image and Content */}
+      <div className="relative h-screen w-full overflow-hidden">
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-black">
+            <div className="max-w-[1500px] mx-auto px-4 h-full">
+              <div className="flex h-full">
+                {/* Left side - Content */}
+                <div className="w-1/2 h-full flex items-center">
+                  <div className="text-white space-y-6 max-w-lg">
+                    <p className="text-4xl font-bold leading-tight whitespace-nowrap">
+                      Precision-engineered lenses for superior 
+                      <br></br>
+                      single vision correction.
+                    </p>
+                    <p className="text-xl text-gray-300">
+                      A smart choice for clear, comfortable vision.
+                    </p>
+                    <ul className="space-y-4 text-gray-300 text-lg">
+                      <li className="flex items-start">
+                        <span className="text-amber-400 mr-3">•</span>
+                        <span className="whitespace-nowrap">Slimmer, flatter design with outstanding optical performance</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-amber-400 mr-3">•</span>
+                        <span>Ensures sharp, edge-to-edge clarity</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-amber-400 mr-3">•</span>
+                        <span className="whitespace-nowrap">Custom-crafted with precision back-surface freeform technology for optimal accuracy</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                
+                {/* Right side - Image */}
+                <div className="w-1/2 h-full flex items-center justify-center">
+                  <div className="relative w-full h-3/4">
+                    <Image
+                      src="/imAGES/singlevision.png"
+                      alt="Single Vision RX"
+                      fill
+                      className="object-contain opacity-100"
+                      priority
+                    />
+                     <div className="absolute top-0 right-0 w-8 h-full bg-gradient-to-l from-black via-black/80 to-transparent z-10"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Main Content with Same Background as Cliff Coatings */}
-      <div className="min-h-screen  text-white overflow-hidden">
-        {/* Animated Background Elements */}
+      <div className="min-h-screen text-white overflow-hidden">
         <div className="max-w-screen mx-auto">
           <div className="absolute inset-0 pointer-events-none opacity-5">
             <div className="absolute bottom-20 right-20 w-96 h-96 bg-gray-400 rounded-full filter blur-3xl animate-pulse delay-1000"></div>
           </div>
 
           <div className="relative z-10 container mx-auto px-4 py-16">
-            {/* Header Section */}
+           
             <div className="text-center mb-16">
               <h1 className="text-4xl md:text-6xl font-bold mb-6">
                 <span className="text-white">CLIFF </span>
@@ -248,7 +286,7 @@ const CliffSingleVisionRX = () => {
               </p>
             </div>
 
-            {/* Hero Visual Section */}
+            
             <div className="mb-20">
               <div className="grid lg:grid-cols-2 gap-12 items-center">
                 <div className="space-y-6">
@@ -287,7 +325,7 @@ const CliffSingleVisionRX = () => {
               </div>
             </div>
 
-            {/* Lens Type Selector */}
+         
             <div className="mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
                 <span className="bg-gradient-to-r from-gray-300 to-white bg-clip-text text-transparent">
@@ -311,7 +349,7 @@ const CliffSingleVisionRX = () => {
                 ))}
               </div>
 
-              {/* Selected Lens Details */}
+           
               <div className="bg-gradient-to-br from-gray-800/30 to-gray-700/30 rounded-2xl p-8 backdrop-blur-sm border border-white/10">
                 <div className="grid lg:grid-cols-2 gap-8 items-center">
                   <div>
@@ -364,7 +402,7 @@ const CliffSingleVisionRX = () => {
               </div>
             </div>
 
-            {/* Features Grid */}
+            
             <div className="mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
                 <span className="bg-gradient-to-r from-gray-300 to-white bg-clip-text text-transparent">
@@ -431,7 +469,7 @@ const CliffSingleVisionRX = () => {
               </div>
             </div>
 
-            {/* Technical Specifications Table */}
+         
             <div className="mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
                 <span className="bg-gradient-to-r from-gray-300 to-white bg-clip-text text-transparent">

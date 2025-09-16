@@ -491,7 +491,7 @@ const CliffCoatings = () => {
 
   
     <section className="py-16 bg-black">
-      <div className="max-w-[1400px] mx-auto px-6 space-y-24">
+      <div className="max-w-[1540px] mx-auto p-4 space-y-24">
         
         {/* Blue Safe */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
@@ -521,7 +521,7 @@ const CliffCoatings = () => {
         
 
   {/* Right side - Features in 2 columns */}
-  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+  <div className="grid mt-8 grid-cols-1 sm:grid-cols-2 gap-6">
     {/* Feature */}
     <div className="text-center">
       <img src="/svgs/uvprotection.svg" alt="UV Protection" className="w-20 h-20 mx-auto mb-4" />
@@ -559,13 +559,7 @@ const CliffCoatings = () => {
         {/* Drive Clear */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-stretch">
   {/* Left side - Features in 2 columns */}
-  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 self-center">
-    <div className="text-center">
-      <img src="/svgs/clearvision.svg" alt="Clear Vision" className="w-20 h-20 mx-auto mb-4" />
-      <h3 className="font-bold text-xl text-white mb-2">Clear Vision</h3>
-      <p className="text-gray-300">Anti-Glare Lens</p>
-    </div>
-
+  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-12 self-center">
     <div className="text-center">
       <img src="/svgs/uvprotection.svg" alt="UV Protection" className="w-20 h-20 mx-auto mb-4" />
       <h3 className="font-bold text-xl text-white mb-2">UV Protection</h3>
@@ -573,21 +567,33 @@ const CliffCoatings = () => {
     </div>
 
     <div className="text-center">
-      <img src="/svgs/scratchresistance.svg" alt="Durability" className="w-20 h-20 mx-auto mb-4" />
-      <h3 className="font-bold text-xl text-white mb-2">Durability</h3>
-      <p className="text-gray-300">Scratch Resistant</p>
+      <img src="/svgs/scratchresistance.svg" alt="Scratch Resistance" className="w-20 h-20 mx-auto mb-4" />
+      <h3 className="font-bold text-xl text-white mb-2">Scratch Resistance</h3>
+      <p className="text-gray-300">Durable and long-lasting</p>
     </div>
 
     <div className="text-center">
-      <img src="/svgs/glareprotection.svg" alt="Glare Reduction" className="w-20 h-20 mx-auto mb-4" />
-      <h3 className="font-bold text-xl text-white mb-2">Glare Reduction</h3>
-      <p className="text-gray-300">High Reduction</p>
+      <img src="/svgs/antireflective.svg" alt="Anti Reflective Coating" className="w-20 h-20 mx-auto mb-4" />
+      <h3 className="font-bold text-xl text-white mb-2">Anti Reflective Coating</h3>
+      <p className="text-gray-300">Reduces glare and reflections</p>
     </div>
 
-    <div className="text-center sm:col-span-2">
-      <img src="/svgs/clearvision.svg" alt="Best For" className="w-20 h-20 mx-auto mb-4" />
-      <h3 className="font-bold text-xl text-white mb-2">Best For</h3>
-      <p className="text-gray-300">Driving Day & Night</p>
+    <div className="text-center">
+      <img src="/svgs/easytoclean.svg" alt="Easy to Clean" className="w-20 h-20 mx-auto mb-4" />
+      <h3 className="font-bold text-xl text-white mb-2">Easy to Clean</h3>
+      <p className="text-gray-300">Simple maintenance</p>
+    </div>
+
+    <div className="text-center">
+      <img src="/svgs/bluelight.svg" alt="Blue Light Filter" className="w-20 h-20 mx-auto mb-4" />
+      <h3 className="font-bold text-xl text-white mb-2">Partially Filters Harmful Blue Rays</h3>
+      <p className="text-gray-300">Protects eyes from screens</p>
+    </div>
+
+    <div className="text-center">
+      <img src="/svgs/glareprotection.svg" alt="Glare Protection" className="w-20 h-20 mx-auto mb-4" />
+      <h3 className="font-bold text-xl text-white mb-2">Glare Protection</h3>
+      <p className="text-gray-300">High reduction</p>
     </div>
   </div>
 
@@ -617,7 +623,7 @@ const CliffCoatings = () => {
         {/* Photo-Z */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
   {/* Left side - Card with image, title, description */}
-  <div className="bg-black rounded-2xl p-6 relative overflow-hidden">
+  <div className="bg-black rounded-2xl p-6 relative overflow-hidden sticky top-24">
     <div className="flex justify-center relative">
       <img
         src="/coatings/photoz.png"
@@ -637,35 +643,47 @@ const CliffCoatings = () => {
   </div>
 
   {/* Right side - Features in 2 columns */}
-  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+  <div className="grid grid-cols-1 mt-8 sm:grid-cols-2 gap-6">
     <div className="text-center">
-      <img src="/svgs/photochromatic.svg" alt="Lens Type" className="w-20 h-20 mx-auto mb-4" />
-      <h3 className="font-bold text-xl text-white mb-2">Lens Type</h3>
-      <p className="text-gray-300">Photochromatic</p>
-    </div>
-
-    <div className="text-center">
-      <img src="/svgs/uvprotection.svg" alt="Protection" className="w-20 h-20 mx-auto mb-4" />
-      <h3 className="font-bold text-xl text-white mb-2">Protection</h3>
+      <img src="/svgs/uvprotection.svg" alt="UV Protection" className="w-20 h-20 mx-auto mb-4" />
+      <h3 className="font-bold text-xl text-white mb-2">UV Protection</h3>
       <p className="text-gray-300">UV 400, Anti-Reflective</p>
     </div>
 
     <div className="text-center">
-      <img src="/svgs/scratchresistance.svg" alt="Durability" className="w-20 h-20 mx-auto mb-4" />
-      <h3 className="font-bold text-xl text-white mb-2">Durability</h3>
-      <p className="text-gray-300">Scratch Resistant</p>
+      <img src="/svgs/scratchresistance.svg" alt="Scratch Resistance" className="w-20 h-20 mx-auto mb-4" />
+      <h3 className="font-bold text-xl text-white mb-2">Scratch Resistance</h3>
+      <p className="text-gray-300">Durable and long-lasting</p>
     </div>
 
     <div className="text-center">
-      <img src="/svgs/photochromatic.svg" alt="Effect" className="w-20 h-20 mx-auto mb-4" />
-      <h3 className="font-bold text-xl text-white mb-2">Effect</h3>
-      <p className="text-gray-300">Light Adaptive</p>
+      <img src="/svgs/antireflective.svg" alt="Anti Reflective Coating" className="w-20 h-20 mx-auto mb-4" />
+      <h3 className="font-bold text-xl text-white mb-2">Anti Reflective Coating</h3>
+      <p className="text-gray-300">Reduces glare and reflections</p>
+    </div>
+
+    <div className="text-center">
+      <img src="/svgs/easytoclean.svg" alt="Easy to Clean" className="w-20 h-20 mx-auto mb-4" />
+      <h3 className="font-bold text-xl text-white mb-2">Easy to Clean</h3>
+      <p className="text-gray-300">Simple maintenance</p>
+    </div>
+
+    <div className="text-center">
+      <img src="/svgs/bluelight.svg" alt="Blue Light Filter" className="w-20 h-20 mx-auto mb-4" />
+      <h3 className="font-bold text-xl text-white mb-2">Partially Filters Harmful Blue Rays</h3>
+      <p className="text-gray-300">Protects eyes from screens</p>
+    </div>
+
+    <div className="text-center">
+      <img src="/svgs/glareprotection.svg" alt="Glare Protection" className="w-20 h-20 mx-auto mb-4" />
+      <h3 className="font-bold text-xl text-white mb-2">Glare Protection</h3>
+      <p className="text-gray-300">High reduction</p>
     </div>
 
     <div className="text-center sm:col-span-2">
-      <img src="/svgs/clearvision.svg" alt="Best For" className="w-20 h-20 mx-auto mb-4" />
-      <h3 className="font-bold text-xl text-white mb-2">Best For</h3>
-      <p className="text-gray-300">Indoor & Outdoor Use</p>
+      <img src="/svgs/photochromatic.svg" alt="Spin Coating" className="w-20 h-20 mx-auto mb-4" />
+      <h3 className="font-bold text-xl text-white mb-2">Spin Coating for Photochromatic Effect</h3>
+      <p className="text-gray-300">Advanced light-adaptive technology</p>
     </div>
   </div>
 </div>

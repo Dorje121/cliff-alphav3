@@ -105,11 +105,11 @@ const CliffPhotoZLenses = () => {
                 {/* Main Image Container */}
                 <div className="relative rounded-3xl overflow-hidden border border-white/20 shadow-2xl w-[28rem]">
                   <Image
-                    src="/c4.jpeg"
+                    src="/imAGES/clear.webp"
                     alt="Cliff Photo-Z UV Technology"
                     width={200}
                     height={300}
-                    className="object-contain h-[300px] w-auto"
+                    className="object-cover h-[300px] w-full"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
 
