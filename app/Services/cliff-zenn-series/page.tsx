@@ -47,18 +47,8 @@ const CliffZennSeries = () => {
           <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-gray-900/70 to-black/80" />
         </div>
 
-        {/* Animated Background Elements */}
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-yellow-600/20 rounded-full blur-3xl animate-pulse"></div>
-          <div
-            className="absolute bottom-20 right-10 w-96 h-96 bg-yellow-500/20 rounded-full blur-3xl animate-pulse"
-            style={{ animationDelay: "-1s" }}
-          ></div>
-          <div
-            className="absolute top-1/2 left-1/2 w-80 h-80 bg-yellow-700/10 rounded-full blur-3xl animate-pulse"
-            style={{ animationDelay: "-0.5s" }}
-          ></div>
-        </div>
+
+
 
         {/* Main Content */}
         <div className="relative z-10 container max-w-[1490px] mx-auto px-4 py-12 h-full">
@@ -153,7 +143,7 @@ const CliffZennSeries = () => {
               <div className=" h-full flex justify-between gap-10 items-start flex-col">
 
                 <div className="mt-8">
-                  <h2 className="text-4xl font-semibold mb-4 bg-gradient-to-r from-white via-yellow-100 to-yellow-200 bg-clip-text text-transparent leading-relaxed">
+                  <h2 className="text-4xl font-semibold mb-4 bg-gradient-to-r from-white via-yellow-100 to-yellow-200 bg-clip-text text-transparent sm:leading-relaxed">
                     Empower your vision to keep pace with a fast-moving, digital world.
                   </h2>
                   <p className="text-gray-300 text-lg">
@@ -195,7 +185,14 @@ const CliffZennSeries = () => {
 
               {/* Right Side - Hero Image */}
               <div className=" w-full h-full">
-                <img className="object-cover object-center w-full h-full" src="/pageimg/eye.jpeg" alt="eye" />
+                <div className="flex justify-center items-center relative w-full h-full">
+                  <img className="object-cover object-center w-full h-full" src="/eye1-minii.webp" alt="eye" />
+
+                  {/* Gradient overlay on top */}
+                  <div className="absolute top-0 left-0 w-full h-[10%] bg-gradient-to-b from-black via-black/80 to-transparent z-10"></div>
+                  <div className="absolute bottom-0 left-0 w-full h-[10%] bg-gradient-to-t from-black via-black/80 to-transparent z-10"></div>
+                </div>
+
               </div>
             </div>
 
@@ -230,11 +227,7 @@ const CliffZennSeries = () => {
                 {/* Comfort */}
                 <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 hover:bg-white/15 transition-all duration-300">
                   <div className="text-5xl mb-4 mx-auto w-fit ">
-                    <svg fill="none" stroke="#FFD700" strokeWidth={0.5} strokeLinecap="round" strokeLinejoin="round" className="w-20 h-20" viewBox="0 0 24 24">
-                      <circle cx="12" cy="12" r="10" />
-                      <path d="M8 15c1.333 1 2.667 1 4 0s2.667-1 4 0" />
-                      <path d="M9 9h.01M15 9h.01" />
-                    </svg>
+                    <svg className="w-20 h-20" xmlns="http://www.w3.org/2000/svg" strokeWidth={0.5} viewBox="0 0 256 256"><path fill="#FFD700" d="M128 28a100 100 0 1 0 100 100A100.11 100.11 0 0 0 128 28m0 192a92 92 0 1 1 92-92a92.1 92.1 0 0 1-92 92M84 108a8 8 0 1 1 8 8a8 8 0 0 1-8-8m96 0a4 4 0 0 1-4 4h-24a4 4 0 0 1 0-8h24a4 4 0 0 1 4 4m-8.54 46c-9.55 16.52-25.39 26-43.46 26s-33.91-9.48-43.46-26a4 4 0 0 1 6.92-4c8.21 14.19 21.19 22 36.54 22s28.33-7.81 36.54-22a4 4 0 1 1 6.92 4" /></svg>
                   </div>
                   <h3 className="text-2xl font-bold mb-4 text-gray-300">
                     Comfort
@@ -263,7 +256,7 @@ const CliffZennSeries = () => {
                 </div>
 
                 {/* Precised */}
-                <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 hover:bg-white/15 transition-all duration-300">
+                <div className="bg-white/10 backdrop-blur-3xl rounded-2xl p-8 hover:bg-white/15 transition-all duration-300">
                   <div className="text-5xl mb-4 mx-auto w-fit ">
                     <svg fill="none" stroke="#FFD700" strokeWidth={0.5} strokeLinecap="round" strokeLinejoin="round" className="w-20 h-20" viewBox="0 0 24 24">
                       <circle cx="12" cy="12" r="10" />
