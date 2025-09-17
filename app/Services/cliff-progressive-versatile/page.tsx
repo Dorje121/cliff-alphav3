@@ -4,7 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useRef, useLayoutEffect } from "react";
 import { gsap } from "gsap";
-import Details from "@/components/Services/Details";
 import TextWithTexture from "@/components/textwithgoldentexture";
 
 const CliffProgressiveVersatile = () => {
@@ -32,11 +31,12 @@ const CliffProgressiveVersatile = () => {
 
     return () => ctx.revert();
   }, []);
+  
   return (
     <>
       {/* Hero Section with Service Information */}
       <div className="h-[90vh] to-black text-white relative overflow-hidden">
-      <div ref={backgroundImageRef} className="absolute inset-0 h-full">
+        <div ref={backgroundImageRef} className="absolute inset-0 h-full">
           <video
             src="/homevideo/hero.mp4"
             className="w-full h-full object-cover opacity-70"
@@ -48,7 +48,6 @@ const CliffProgressiveVersatile = () => {
           <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-gray-900/70 to-black/80" />
         </div>
        
-
         {/* Animated Background Elements */}
         <div className="absolute inset-0 opacity-20">
           <div className="absolute top-20 left-10 w-72 h-72 bg-indigo-600/20 rounded-full blur-3xl animate-pulse"></div>
@@ -115,13 +114,13 @@ const CliffProgressiveVersatile = () => {
             <div className="lg:w-1/2 relative">
               <div className="relative flex justify-center lg:justify-end lg:ml-2">
                 {/* Main Image Container */}
-                <div className="relative rounded-3xl overflow-hidden border border-white/20 shadow-2xl w-[28rem]">
+                <div className="relative rounded-3xl overflow-hidden shadow-2xl w-[28rem]">
                   <Image
-                    src="/c6.jpeg"
+                    src="/imAGES/progressive.png"
                     alt="Cliff Progressive Versatile Technology"
                     width={200}
                     height={300}
-                    className="object-contain h-[300px] w-auto"
+                    className="object-cover h-[300px] w-full"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
 
@@ -131,216 +130,291 @@ const CliffProgressiveVersatile = () => {
                   </div>
                 </div>
 
-                <div className="absolute -bottom-6 left-1/4 w-32 h-32 bg-gradient-to-br from-indigo-700 to-indigo-800 rounded-2xl flex items-center justify-center shadow-xl border border-white/10">
-                  <div className="text-center">
-                    <div className="text-2xl font-bold text-white">5200</div>
-                    <div className="text-xs text-gray-400">MRP</div>
+                <div className="absolute -bottom-6 left-1/4 w-32 h-32 backdrop-blur-lg bg-white/20 rounded-2xl flex items-center justify-center shadow-lg ">
+                  <div className="text-center p-4">
+                    <div className="text-2xl font-bold text-[#DFC65F] drop-shadow-lg">5200</div>
+                    <div className="text-xs text-gray-200 mt-1 tracking-wider">MRP</div>
                   </div>
                 </div>
               </div>
             </div>
-
           </div>
         </div>
       </div>
-      <Details />
+      
+ 
 
-      {/* Main Content */}
-      <div className="min-h-screen bg-transparent text-white overflow-hidden">
-        <div className="md:max-w-screen mx-auto">
-          {/* Animated Background */}
-          <div className="absolute inset-0 opacity-5">
-            <div className="absolute bottom-20 right-20 w-96 h-96 bg-gray-400 rounded-full filter blur-3xl animate-pulse delay-1000"></div>
-          </div>
-
-          <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
-            {/* Header Section */}
-            <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-              <div className="flex items-center justify-center mb-4 sm:mb-6">
-                <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold">
-                  <span className="text-white">CLIFF </span>
-                  <span className="bg-gradient-to-r from-white via-yellow-100 to-yellow-200 bg-clip-text text-transparent">
-                    PROGRESSIVE VERSATILE
-                  </span>
-                </div>
-              </div>
-              <p className="text-base sm:text-lg lg:text-xl text-gray-300 max-w-4xl mx-auto mb-6 sm:mb-8 px-4">
-                All-day Progressive Lenses Purpose - A high-quality progressive
-                lens designed for all-day use. Seamlessly blends multiple focal
-                points for near, intermediate, and distance vision.
+      {/* Main Content Section - Enhanced Professional Design */}
+      <div className="min-h-screen bg-black text-white overflow-hidden relative">
+        <div className="max-w-[1500px] mx-auto w-full px-6 lg:px-8 py-20 relative">
+          {/* Main content container */}
+          {/* Header Section */}
+          <div className="w-full mb-20">
+            <div className="max-w-4xl mx-auto text-center">
+              <p className="text-xl md:text-2xl text-gray-300 leading-relaxed font-light">
+                Premium progressive lenses engineered for all-day comfort and seamless transition between near, intermediate, and distance vision. Expertly crafted for individuals with Presbyopia seeking uncompromised visual clarity. Our advanced lens technology ensures crystal-clear vision at all distances while maintaining a sleek, modern aesthetic.
               </p>
             </div>
+          </div>
 
-            {/* Hero Image Section */}
-            <div className="mb-12 lg:mb-20">
-              <div className="bg-gradient-to-br from-gray-800/30 to-gray-700/30 rounded-3xl p-6 lg:p-12 backdrop-blur-sm border border-white/10">
-                <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-                  <div className="order-2 lg:order-1">
-                    <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-6 bg-gradient-to-r from-white via-yellow-100 to-yellow-200 bg-clip-text text-transparent">
-                      All-day Progressive Lenses Purpose
-                    </h2>
-                    <div className="space-y-4 text-gray-300">
-                      <p className="text-base lg:text-lg">
-                        A high-quality progressive lens designed for all-day
-                        use.
-                      </p>
-                      <p className="text-base lg:text-lg">
-                        Seamlessly blends multiple focal points for near,
-                        intermediate, and distance vision.
-                      </p>
-                      <p className="text-base lg:text-lg">
-                        Ideal for individuals with Presbyopia, providing a
-                        smooth visual experience across all distances.
-                      </p>
+          {/* Key Benefits Section */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
+            <div className="bg-gradient-to-b from-gray-900/30 to-gray-900/10 p-6 rounded-xl border border-gray-800/50 hover:border-yellow-500/30 transition-all duration-300">
+              <h3 className="text-lg font-semibold text-white mb-3">Seamless Transition</h3>
+              <p className="text-gray-400 text-sm">Smooth progression between all distances without visible lines or image jumps.</p>
+            </div>
+            
+            <div className="bg-gradient-to-b from-gray-900/30 to-gray-900/10 p-6 rounded-xl border border-gray-800/50 hover:border-yellow-500/30 transition-all duration-300">
+              <h3 className="text-lg font-semibold text-white mb-3">All-Day Comfort</h3>
+              <p className="text-gray-400 text-sm">Ergonomically designed to reduce eye strain and fatigue during prolonged use.</p>
+            </div>
+            
+            <div className="bg-gradient-to-b from-gray-900/30 to-gray-900/10 p-6 rounded-xl border border-gray-800/50 hover:border-yellow-500/30 transition-all duration-300">
+              <h3 className="text-lg font-semibold text-white mb-3">Wide Field of View</h3>
+              <p className="text-gray-400 text-sm">Expanded visual zones for natural vision with minimal head movement.</p>
+            </div>
+            
+            <div className="bg-gradient-to-b from-gray-900/30 to-gray-900/10 p-6 rounded-xl border border-gray-800/50 hover:border-yellow-500/30 transition-all duration-300">
+              <h3 className="text-lg font-semibold text-white mb-3">Crystal Clear Vision</h3>
+              <p className="text-gray-400 text-sm">Premium optics for sharp, distortion-free vision at all distances.</p>
+            </div>
+          </div>
+
+          {/* Product Showcase */}
+          <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
+            <div className="space-y-8">
+              <div>
+                <h2 className="text-3xl font-bold mb-6">
+                  <span className="text-white">Advanced </span>
+                  <span className="bg-gradient-to-r from-yellow-300 to-yellow-500 bg-clip-text text-transparent">Optical Engineering</span>
+                </h2>
+                <p className="text-lg text-gray-300 mb-6 leading-relaxed">
+                  Our progressive lenses incorporate cutting-edge digital surfacing technology, providing precise vision correction tailored to your individual prescription and visual needs.
+                </p>
+                <ul className="space-y-4">
+                  <li className="flex items-start">
+                    <div className="flex-shrink-0 mt-1 mr-3 text-yellow-500">
+                      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
                     </div>
-                  </div>
-                  <div className="order-1 lg:order-2">
-                    <div className="relative">
-                      <div className="bg-gradient-to-br from-blue-500/20 to-gray-600/20 rounded-2xl p-8 backdrop-blur-sm">
-                        <div className="text-center">
-                          <div className="text-6xl mb-4">👓</div>
-                          <p className="text-gray-300 text-sm">
-                            Professional wearing progressive lenses for all-day
-                            comfort
-                          </p>
-                        </div>
-                      </div>
+                    <span className="text-gray-300">Personalized digital design for optimal visual performance</span>
+                  </li>
+                  <li className="flex items-start">
+                    <div className="flex-shrink-0 mt-1 mr-3 text-yellow-500">
+                      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
                     </div>
-                  </div>
-                </div>
+                    <span className="text-gray-300">Enhanced intermediate vision for digital device usage</span>
+                  </li>
+                  <li className="flex items-start">
+                    <div className="flex-shrink-0 mt-1 mr-3 text-yellow-500">
+                      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                    </div>
+                    <span className="text-gray-300">Quick adaptation period with minimal distortion</span>
+                  </li>
+                </ul>
               </div>
             </div>
-            {/* Specifications Table */}
-            <div className="mb-12 lg:mb-20">
-              <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-center mb-8 lg:mb-12">
-                Technical Specifications
-              </h3>
-
-              <div className="rounded-3xl p-6 lg:p-8 backdrop-blur-sm border border-white/10">
-                <div className="overflow-x-auto">
-                  <table className="w-full text-left">
-                    <thead>
-                      <tr className="border-b border-white/20">
-                        <th className="pb-4 text-lg font-bold">
-                          <span className="bg-gradient-to-r from-white via-yellow-100 to-yellow-200 bg-clip-text text-transparent">
-                            INDEX
-                          </span>
-                        </th>
-                        <th className="pb-4 text-lg font-bold text-center text-white px-4 rounded-t-lg">
-                          BLUE SAFE
-                        </th>
-                        <th className="pb-4 text-lg font-bold text-center text-white px-4">
-                          PHOTO Z
-                        </th>
-                      </tr>
-                    </thead>
-                    <tbody className="text-white">
-                      <tr className="border-b border-white/10">
-                        <td className="py-3 font-semibold">1.5</td>
-                        <td className="py-3 text-center px-4 font-bold text-yellow-400">
-                          <span className="bg-gradient-to-r from-white via-yellow-100 to-yellow-200 bg-clip-text text-transparent">
-                            4200
-                          </span>
-                        </td>
-                        <td className="py-3 text-center px-4 font-bold">
-                          <span className="bg-gradient-to-r from-white via-yellow-100 to-yellow-200 bg-clip-text text-transparent">
-                            5200
-                          </span>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-
-                <div className="mt-8 grid md:grid-cols-2 gap-6">
-                  {/* Blue Safe Column */}
-                  <div className="bg-gray-900 rounded-xl p-6">
-                    <div className="text-center mb-6">
-                      <h4 className="text-xl font-bold text-white mb-2">
-                        BLUE SAFE
-                      </h4>
-                      <div className="text-sm text-gray-400 mb-4">Distance</div>
-                    </div>
-
-                    <div className="space-y-4">
-                      <div className="bg-white/10 rounded-lg p-4">
-                        <div className="text-center">
-                          <div className="text-sm text-gray-400 mb-1">
-                            POWER RANGE
-                          </div>
-                          <div className="font-bold text-white">
-                            Plano to + 2.00 sph
-                          </div>
-                        </div>
-                      </div>
-
-                      <div className="grid grid-cols-2 gap-4">
-                        <div className="bg-white/5 rounded-lg p-3 text-center">
-                          <div className="text-sm text-gray-400">Range</div>
-                          <div className="font-semibold text-white">
-                            -0.25 to -1.0
-                          </div>
-                        </div>
-                        <div className="bg-white/5 rounded-lg p-3 text-center">
-                          <div className="text-sm text-gray-400">Add</div>
-                          <div className="font-semibold">
-                            <span className="bg-gradient-to-r from-white via-yellow-100 to-yellow-200 bg-clip-text text-transparent">
-                              +1.00 to +3.0
-                            </span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Photo Z Column */}
-                  <div className="bg-gray/10 rounded-xl p-6">
-                    <div className="text-center mb-6">
-                      <h4 className="text-xl font-bold text-white mb-2">
-                        PHOTO Z
-                      </h4>
-                      <div className="text-sm text-gray-400 mb-4">Distance</div>
-                    </div>
-
-                    <div className="space-y-4">
-                      <div className="bg-white/10 rounded-lg p-4">
-                        <div className="text-center">
-                          <div className="text-sm text-gray-400 mb-1">
-                            POWER RANGE
-                          </div>
-                          <div className="font-bold text-white">
-                            Plano to + 2.00
-                          </div>
-                        </div>
-                      </div>
-
-                      <div className="grid grid-cols-2 gap-4">
-                        <div className="bg-white/5 rounded-lg p-3 text-center">
-                          <div className="text-sm text-gray-400">Range</div>
-                          <div className="font-semibold text-white">
-                            0 to -6.0
-                          </div>
-                        </div>
-                        <div className="bg-white/5 rounded-lg p-3 text-center">
-                          <div className="text-sm text-gray-400">Add</div>
-                          <div className="font-semibold text-yellow-400">
-                            <span className="bg-gradient-to-r from-white via-yellow-100 to-yellow-200 bg-clip-text text-transparent">
-                              +1.00 to +3.00
-                            </span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+            
+            <div className="flex justify-center w-full">
+              <div className="relative w-full max-w-3xl">
+                <div className="relative bg-black rounded-2xl p-6 sm:p-8">
+                  <Image
+                    src="/imAGES/progreessive1.jpeg"
+                    alt="Cliff Progressive Versatile Lenses"
+                    width={800}
+                    height={560}
+                    className="rounded-xl object-contain w-full h-auto"
+                    priority
+                  />
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
 
-      <BackToServicesButton />
-    </>
-  );
+          {/* Advanced Features Grid */}
+          <div className="mb-20">
+            <h2 className="text-3xl font-bold text-center mb-12">
+              <span className="text-white">Premium </span>
+              <span className="bg-gradient-to-r from-yellow-300 to-yellow-500 bg-clip-text text-transparent">Lens Features</span>
+            </h2>
+            
+            <div className="w-full max-w-[90rem] mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 px-8">
+              {/* Blue Filter */}
+              <div className="text-center bg-gradient-to-b from-gray-900/50 to-gray-900/10 p-6 rounded-xl border border-gray-800 hover:border-yellow-500/30 transition-all duration-300">
+                <img src="/svgs/bluelight.svg" alt="Blue Filter" className="w-16 h-16 mx-auto mb-4" />
+                <h3 className="font-bold text-lg text-white mb-2">Blue Filter</h3>
+                <p className="text-sm text-gray-300">Reduces blue light exposure</p>
+              </div>
+
+              {/* UV Protection */}
+              <div className="text-center bg-gradient-to-b from-gray-900/50 to-gray-900/10 p-6 rounded-xl border border-gray-800 hover:border-yellow-500/30 transition-all duration-300">
+                <img src="/svgs/uvprotection.svg" alt="UV Protection" className="w-16 h-16 mx-auto mb-4" />
+                <h3 className="font-bold text-lg text-white mb-2">UV Protection</h3>
+                <p className="text-sm text-gray-300">Blocks harmful UV rays</p>
+              </div>
+
+              {/* Anti Glare Coating */}
+              <div className="text-center bg-gradient-to-b from-gray-900/50 to-gray-900/10 p-6 rounded-xl border border-gray-800 hover:border-yellow-500/30 transition-all duration-300">
+                <img src="/svgs/antireflective.svg" alt="Anti Glare Coating" className="w-16 h-16 mx-auto mb-4" />
+                <h3 className="font-bold text-lg text-white mb-2">Anti Glare Coating</h3>
+                <p className="text-sm text-gray-300">Reduces reflections</p>
+              </div>
+
+              {/* Spin Coating */}
+              <div className="text-center bg-gradient-to-b from-gray-900/50 to-gray-900/10 p-6 rounded-xl border border-gray-800 hover:border-yellow-500/30 transition-all duration-300">
+                <img src="/svgs/scratchresistance.svg" alt="Spin Coating" className="w-16 h-16 mx-auto mb-4" />
+                <h3 className="font-bold text-lg text-white mb-2">Spin Coating</h3>
+                <p className="text-sm text-gray-300">Even and durable application</p>
+              </div>
+
+              {/* Photochromatic */}
+              <div className="text-center bg-gradient-to-b from-gray-900/50 to-gray-900/10 p-6 rounded-xl border border-gray-800 hover:border-yellow-500/30 transition-all duration-300">
+                <img src="/svgs/photochromatic.svg" alt="Photochromatic" className="w-16 h-16 mx-auto mb-4" />
+                <h3 className="font-bold text-lg text-white mb-2">Photochromatic</h3>
+                <p className="text-sm text-gray-300">Adapts to light conditions</p>
+              </div>
+
+              {/* Scratch Resistance */}
+              <div className="text-center bg-gradient-to-b from-gray-900/50 to-gray-900/10 p-6 rounded-xl border border-gray-800 hover:border-yellow-500/30 transition-all duration-300">
+                <img src="/svgs/scratchresistance.svg" alt="Scratch Resistance" className="w-16 h-16 mx-auto mb-4" />
+                <h3 className="font-bold text-lg text-white mb-2">Scratch Resistance</h3>
+                <p className="text-sm text-gray-300">Durable and long-lasting</p>
+              </div>
+
+              {/* Low Reflection */}
+              <div className="text-center bg-gradient-to-b from-gray-900/50 to-gray-900/10 p-6 rounded-xl border border-gray-800 hover:border-yellow-500/30 transition-all duration-300">
+                <img src="/svgs/antireflective.svg" alt="Low Reflection" className="w-16 h-16 mx-auto mb-4" />
+                <h3 className="font-bold text-lg text-white mb-2">Low Reflection</h3>
+                <p className="text-sm text-gray-300">Minimizes light bounce</p>
+              </div>
+
+              {/* Super Hydrophobic Coating */}
+              <div className="text-center bg-gradient-to-b from-gray-900/50 to-gray-900/10 p-6 rounded-xl border border-gray-800 hover:border-yellow-500/30 transition-all duration-300">
+                <img src="/svgs/spincoat.svg" alt="Super Hydrophobic Coating" className="w-16 h-16 mx-auto mb-4" />
+                <h3 className="font-bold text-lg text-white mb-2">Super Hydrophobic</h3>
+                <p className="text-sm text-gray-300">Repels water and oil</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Technical Specifications */}
+          <div className="bg-black p-8 md:p-12  mb-20">
+            <h3 className="text-3xl font-bold text-center mb-12">
+              Technical <span className="text-yellow-400">Specifications</span>
+            </h3>
+
+            <div className="overflow-x-auto rounded-2xl border border-gray-800 mb-12">
+              <table className="w-full text-left">
+                <thead className="bg-gray-800/50">
+                  <tr>
+                    <th className="py-5 px-6 font-semibold text-gray-300">INDEX</th>
+                    <th className="py-5 px-6 font-semibold text-gray-300 text-center">BLUE SAFE</th>
+                    <th className="py-5 px-6 font-semibold text-gray-300 text-center">PHOTO Z</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="border-t border-gray-800">
+                    <td className="py-5 px-6 font-medium">1.5</td>
+                    <td className="py-5 px-6 font-bold text-yellow-400 text-center">4200</td>
+                    <td className="py-5 px-6 font-bold text-yellow-400 text-center">5200</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            {/* Comparison Cards */}
+            <div className="grid md:grid-cols-2 gap-8">
+              {/* Blue Safe */}
+              <div className="bg-gradient-to-b from-gray-900/60 to-gray-900/30 rounded-2xl p-8 border border-gray-800 hover:border-yellow-500/40 transition-all duration-300">
+                <div className="text-center mb-8">
+                  <h4 className="text-2xl font-bold mb-2">BLUE SAFE</h4>
+                  <div className="inline-block bg-yellow-500/10 text-yellow-400 text-sm font-medium px-3 py-1 rounded-full">
+                    Power Range: Plano to +2.00 sph
+                  </div>
+                </div>
+                
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="bg-gray-800/30 rounded-xl p-4 text-center border border-gray-700/50">
+                    <p className="text-sm text-gray-400 mb-2">Range</p>
+                    <p className="font-semibold">-0.25 to -1.0</p>
+                  </div>
+                  <div className="bg-gray-800/30 rounded-xl p-4 text-center border border-gray-700/50">
+                    <p className="text-sm text-gray-400 mb-2">Add</p>
+                    <p className="font-semibold text-yellow-400">+1.00 to +3.0</p>
+                  </div>
+                </div>
+                
+                <div className="mt-8 pt-6 border-t border-gray-800">
+                  <h5 className="font-semibold text-gray-300 mb-3">Key Benefits:</h5>
+                  <ul className="space-y-2 text-sm text-gray-400">
+                    <li className="flex items-start">
+                      <span className="text-yellow-500 mr-2">•</span>
+                      Advanced blue light filtration technology
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-yellow-500 mr-2">•</span>
+                      Reduced digital eye strain
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-yellow-500 mr-2">•</span>
+                      Enhanced contrast and visual clarity
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              {/* Photo Z */}
+              <div className="bg-gradient-to-b from-gray-900/60 to-gray-900/30 rounded-2xl p-8 border border-gray-800 hover:border-yellow-500/40 transition-all duration-300">
+                <div className="text-center mb-8">
+                  <h4 className="text-2xl font-bold mb-2">PHOTO Z</h4>
+                  <div className="inline-block bg-yellow-500/10 text-yellow-400 text-sm font-medium px-3 py-1 rounded-full">
+                    Power Range: Plano to +2.00 sph
+                  </div>
+                </div>
+                
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="bg-gray-800/30 rounded-xl p-4 text-center border border-gray-700/50">
+                    <p className="text-sm text-gray-400 mb-2">Range</p>
+                    <p className="font-semibold">0 to -6.0</p>
+                  </div>
+                  <div className="bg-gray-800/30 rounded-xl p-4 text-center border border-gray-700/50">
+                    <p className="text-sm text-gray-400 mb-2">Add</p>
+                    <p className="font-semibold text-yellow-400">+1.00 to +3.00</p>
+                  </div>
+                </div>
+                
+                <div className="mt-8 pt-6 border-t border-gray-800">
+                  <h5 className="font-semibold text-gray-300 mb-3">Key Benefits:</h5>
+                  <ul className="space-y-2 text-sm text-gray-400">
+                    <li className="flex items-start">
+                      <span className="text-yellow-500 mr-2">•</span>
+                      Photochromic technology for adaptive tint
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-yellow-500 mr-2">•</span>
+                      Seamless indoor-outdoor transition
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-yellow-500 mr-2">•</span>
+                      100% UV protection in all conditions
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+
+
+<BackToServicesButton />
+</>
+);
 };
+
 export default CliffProgressiveVersatile;
