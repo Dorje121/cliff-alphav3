@@ -313,10 +313,16 @@ const CliffCoatings = () => {
                   </div>
                 </div>
 
-                <div className="absolute -bottom-6 left-1/4 w-32 h-32 bg-gradient-to-br from-gray-700 to-gray-800 rounded-2xl flex items-center justify-center shadow-xl border border-white/10">
+                {/* <div className="absolute -bottom-6 left-1/4 w-32 h-32 bg-gradient-to-br from-gray-700 to-gray-800 rounded-2xl flex items-center justify-center shadow-xl border border-white/10">
                   <div className="text-center">
                     <div className="text-2xl font-bold text-white">Cliff</div>
                     <div className="text-xs text-gray-400">Coatings</div>
+                  </div>
+                </div> */}
+                <div className="absolute -bottom-6 left-1/4 w-32 h-32 backdrop-blur-lg bg-white/20 rounded-2xl flex items-center justify-center shadow-lg ">
+                  <div className="text-center p-4">
+                    <div className="text-2xl font-bold text-[#DFC65F] drop-shadow-lg">CLIFF</div>
+                    <div className="text-xs text-gray-200 mt-1 tracking-wider">COATINGS</div>
                   </div>
                 </div>
               </div>
@@ -556,8 +562,8 @@ const CliffCoatings = () => {
 </div>
 
 
-        {/* Drive Clear */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-stretch">
+  {/* Drive Clear */}
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-stretch">
   {/* Left side - Features in 2 columns */}
   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-12 self-center">
     <div className="text-center">

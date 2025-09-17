@@ -203,11 +203,10 @@ const CliffBlueSafeCoating = () => {
                     <span className="text-6xl font-bold text-white/30">02</span>
                   </div>
                 </div>
-
-                <div className="absolute -bottom-6 left-1/4 w-32 h-32 bg-gradient-to-br from-gray-700 to-gray-800 rounded-2xl flex items-center justify-center shadow-xl border border-white/10">
-                  <div className="text-center">
-                    <div className="text-2xl font-bold text-white">Blue</div>
-                    <div className="text-xs text-gray-400">Safe</div>
+                <div className="absolute -bottom-6 left-1/4 w-32 h-32 backdrop-blur-lg bg-white/20 rounded-2xl flex items-center justify-center shadow-lg ">
+                  <div className="text-center p-4">
+                    <div className="text-2xl font-bold text-[#DFC65F] drop-shadow-lg">Blue</div>
+                    <div className="text-xs text-gray-200 mt-1 tracking-wider">Safe</div>
                   </div>
                 </div>
               </div>

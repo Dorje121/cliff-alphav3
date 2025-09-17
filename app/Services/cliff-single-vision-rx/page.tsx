@@ -1,14 +1,20 @@
 "use client";
 
+import { useState, useRef, useLayoutEffect } from "react";
 import BackToServicesButton from "@/components/Services/BackToServicesButton";
 import Image from "next/image";
-import React, { useState, useRef, useLayoutEffect } from "react";
 import { gsap } from "gsap";
 import TextWithTexture from "@/components/textwithgoldentexture";
 
-const CliffSingleVisionRX = () => {
+const CliffSingleVisionRX: React.FC = () => {
   const backgroundImageRef = useRef<HTMLDivElement>(null);
-  const [selectedLens, setSelectedLens] = useState("clear");
+  const [selectedLens, setSelectedLens] = useState<string>('Clear');
+  const [showSpecs, setShowSpecs] = useState(true);
+  
+  const handleLensSelect = (lens: string) => {
+    setSelectedLens(lens);
+    setShowSpecs(['Clear', 'Photocrom', 'Photocrom Plus', 'Photocrom with Blue Shield', 'Blue Shield', 'Polarized'].includes(lens));
+  };
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
@@ -111,7 +117,7 @@ const CliffSingleVisionRX = () => {
     lensTypes.find((lens) => lens.id === selectedLens) || lensTypes[0];
 
   return (
-    <>
+    <div className="min-h-screen">
       {/* Hero Section with Service Information */}
       <div className="h-[90vh] to-black text-white relative overflow-hidden">
       <div ref={backgroundImageRef} className="absolute inset-0 h-full">
@@ -176,7 +182,7 @@ const CliffSingleVisionRX = () => {
             <div className="lg:w-1/2 relative">
               <div className="relative flex justify-center lg:justify-end lg:ml-2">
                 {/* Main Image Container */}
-                <div className="relative rounded-3xl overflow-hidden border border-white/20 shadow-2xl w-[28rem]">
+                <div className="relative rounded-3xl overflow-hidden shadow-2xl w-[28rem]">
                   <Image
                     src="/imAGES/singlevision.png"
                     alt="Cliff Single Vision RX Technology"
@@ -192,11 +198,17 @@ const CliffSingleVisionRX = () => {
                   </div>
                 </div>
 
-                <div className="absolute -bottom-6 left-1/4 w-32 h-32 bg-gradient-to-br from-[#303B4C] to-[#303B4C] rounded-2xl flex items-center justify-center shadow-xl border border-white/10">
+                {/* <div className="absolute -bottom-6 left-1/4 w-32 h-32 bg-gradient-to-br from-[#303B4C] to-[#303B4C] rounded-2xl flex items-center justify-center shadow-xl border border-white/10">
                   <div className="text-center">
                     <div className="text-2xl font-bold text-white">RX</div>
                     <div className="text-xs text-gray-400">Precision</div>
                   </div>
+                </div> */}
+                <div className="absolute -bottom-6 left-1/4 w-32 h-32 backdrop-blur-lg bg-white/20 rounded-2xl flex items-center justify-center shadow-lg ">
+                  <div className="text-center p-4">
+                    <div className="text-2xl font-bold text-[#DFC65F] drop-shadow-lg">RX</div>
+                    <div className="text-xs text-gray-200 mt-1 tracking-wider">PRECISION</div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -205,373 +217,344 @@ const CliffSingleVisionRX = () => {
         </div>
       </div>
 
-      {/* Hero Section with Image and Content */}
-      <div className="relative h-screen w-full overflow-hidden">
-        <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-black">
-            <div className="max-w-[1500px] mx-auto px-4 h-full">
-              <div className="flex h-full">
-                {/* Left side - Content */}
-                <div className="w-1/2 h-full flex items-center">
-                  <div className="text-white space-y-6 max-w-lg">
-                    <p className="text-4xl font-bold leading-tight whitespace-nowrap">
-                      Precision-engineered lenses for superior 
-                      <br></br>
-                      single vision correction.
-                    </p>
-                    <p className="text-xl text-gray-300">
-                      A smart choice for clear, comfortable vision.
-                    </p>
-                    <ul className="space-y-4 text-gray-300 text-lg">
-                      <li className="flex items-start">
-                        <span className="text-amber-400 mr-3">•</span>
-                        <span className="whitespace-nowrap">Slimmer, flatter design with outstanding optical performance</span>
-                      </li>
-                      <li className="flex items-start">
-                        <span className="text-amber-400 mr-3">•</span>
-                        <span>Ensures sharp, edge-to-edge clarity</span>
-                      </li>
-                      <li className="flex items-start">
-                        <span className="text-amber-400 mr-3">•</span>
-                        <span className="whitespace-nowrap">Custom-crafted with precision back-surface freeform technology for optimal accuracy</span>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                
-                {/* Right side - Image */}
-                <div className="w-1/2 h-full flex items-center justify-center">
-                  <div className="relative w-full h-3/4">
-                    <Image
-                      src="/imAGES/singlevision.png"
-                      alt="Single Vision RX"
-                      fill
-                      className="object-contain opacity-100"
-                      priority
-                    />
-                     <div className="absolute top-0 right-0 w-8 h-full bg-gradient-to-l from-black via-black/80 to-transparent z-10"></div>
-                  </div>
-                </div>
+      {/* Grid Layout Section */}
+      <div className="relative w-full bg-black -mt-6 md:-mt-2">
+        <div className="max-w-[1500px] mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            {/* Left side - Content */}
+            <div className="py-8 md:py-16 lg:py-24">
+              <div className="text-white space-y-6 max-w-lg">
+                <p className="text-4xl font-bold leading-tight whitespace-nowrap">
+                  Precision-engineered lenses for superior 
+                  <br />
+                  single vision correction.
+                </p>
+                <p className="text-xl text-gray-300">
+                  A smart choice for clear, comfortable vision.
+                </p>
+                <ul className="space-y-4 text-gray-300 text-lg">
+                  <li className="flex items-start">
+                    <span className="text-amber-400 mr-3">•</span>
+                    <span className="whitespace-nowrap">Slimmer, flatter design with outstanding optical performance</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-amber-400 mr-3">•</span>
+                    <span>Ensures sharp, edge-to-edge clarity</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-amber-400 mr-3">•</span>
+                    <span className="whitespace-nowrap">Custom-crafted with precision back-surface freeform technology for optimal accuracy</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            
+            {/* Right side - Image */}
+            <div className="flex items-center justify-center h-full">
+              <div className="relative w-full h-[50vh] md:h-[70vh]">
+                <Image
+                  src="/imAGES/singlevision.png"
+                  alt="Single Vision RX"
+                  fill
+                  className="object-contain opacity-100"
+                  priority
+                />
+                <div className="absolute top-0 right-0 w-8 h-full bg-gradient-to-l from-black via-black/80 to-transparent z-10"></div>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Main Content with Same Background as Cliff Coatings */}
-      <div className="min-h-screen text-white overflow-hidden">
-        <div className="max-w-screen mx-auto">
-          <div className="absolute inset-0 pointer-events-none opacity-5">
-            <div className="absolute bottom-20 right-20 w-96 h-96 bg-gray-400 rounded-full filter blur-3xl animate-pulse delay-1000"></div>
-          </div>
-
-          <div className="relative z-10 container mx-auto px-4 py-16">
-           
-            <div className="text-center mb-16">
-              <h1 className="text-4xl md:text-6xl font-bold mb-6">
-                <span className="text-white">CLIFF </span>
-                <span className="bg-gradient-to-r from-gray-300 to-white bg-clip-text text-transparent">
-                  SINGLE{" "}
-                  <span className="bg-gradient-to-r from-white via-yellow-100 to-yellow-200 bg-clip-text text-transparent">
-                    VISION RX{" "}
-                  </span>
-                </span>
-              </h1>
-              <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto mb-8">
-                Precision-engineered lenses for superior single vision
-                correction. A smart choice for clear, comfortable vision.
-              </p>
-              <p className="text-lg text-gray-400 max-w-3xl mx-auto">
-                Slimmer, flatter design with outstanding optical performance
-              </p>
+      
+      <div className="w-full bg-black">
+        <div className="w-full max-w-[1800px] mx-auto">
+            <div className="flex flex-nowrap gap-10 w-max mx-auto">
+            <div className="group flex flex-col items-center p-6 transition-all duration-300 hover:scale-105 w-[180px] flex-shrink-0">
+                <Image 
+                  src="/svgs/scratchresistance.svg" 
+                  alt="Scratch Resistance" 
+                  width={100}
+                  height={100}
+                  className="group-hover:scale-110 transition-transform duration-300 mb-4"
+                />
+              <h3 className="text-center text-white font-medium text-lg">Scratch Resistance</h3>
+            </div>
+            <div className="group flex flex-col items-center p-6 transition-all duration-300 hover:scale-105 w-[180px] flex-shrink-0">
+                <Image 
+                  src="/svgs/clearvision.svg" 
+                  alt="Low Reflection" 
+                  width={100}
+                  height={100}
+                  className="group-hover:scale-110 transition-transform duration-300 mb-4"
+                />
+              <h3 className="text-center text-white font-medium text-lg">Low Reflection</h3>
             </div>
 
-            
-            <div className="mb-20">
-              <div className="grid lg:grid-cols-2 gap-12 items-center">
-                <div className="space-y-6">
-                  <h2 className="text-3xl md:text-4xl font-bold">
-                    <span className="bg-gradient-to-r from-gray-300 to-white bg-clip-text text-transparent">
-                      Engineered for Excellence
-                    </span>
-                  </h2>
-                  <div className="space-y-4">
-                    <div className="flex items-center space-x-3">
-                      <div className="w-2 h-2 bg-gray-300 rounded-full"></div>
-                      <p className="text-gray-300">
-                        Ensures sharp, edge-to-edge clarity
-                      </p>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <div className="w-2 h-2 bg-gray-300 rounded-full"></div>
-                      <p className="text-gray-300">
-                        Custom-crafted with precision back-surface freeform
-                        technology for optimal accuracy
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div className="relative">
-                  <div className="aspect-video bg-gradient-to-br from-gray-500 to-gray-600 rounded-xl flex items-center justify-center overflow-hidden">
-                    <Image
-                      src="/eyetestt.jpg"
-                      alt="Single Vision RX Technology"
-                      width={500}
-                      height={300}
-                      className="w-full h-full object-cover rounded-xl"
-                    />
-                  </div>
-                </div>
-              </div>
+            {/* Blue Filter */}
+            <div className="group flex flex-col items-center p-6 transition-all duration-300 hover:scale-105 w-[180px] flex-shrink-0">
+                <Image 
+                  src="/svgs/bluelight.svg" 
+                  alt="Blue Filter" 
+                  width={100}
+                  height={100}
+                  className="group-hover:scale-110 transition-transform duration-300 mb-4"
+                />
+              <h3 className="text-center text-white font-medium text-lg">Blue Filter</h3>
             </div>
-
-         
-            <div className="mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-                <span className="bg-gradient-to-r from-gray-300 to-white bg-clip-text text-transparent">
-                  Choose Your Perfect Lens
-                </span>
-              </h2>
-
-              <div className="flex flex-wrap justify-center gap-3 mb-8">
-                {lensTypes.map((lens) => (
-                  <button
-                    key={lens.id}
-                    onClick={() => setSelectedLens(lens.id)}
-                    className={`px-4 sm:px-6 py-3 rounded-xl font-semibold text-sm sm:text-base transition-all duration-300 transform hover:scale-105 ${
-                      selectedLens === lens.id
-                        ? "bg-gradient-to-r from-gray-300 to-gray-500 text-black shadow-2xl shadow-current"
-                        : "bg-white/10 text-white hover:bg-white/20"
-                    }`}
-                  >
-                    {lens.name}
-                  </button>
-                ))}
-              </div>
-
-           
-              <div className="bg-gradient-to-br from-gray-800/30 to-gray-700/30 rounded-2xl p-8 backdrop-blur-sm border border-white/10">
-                <div className="grid lg:grid-cols-2 gap-8 items-center">
-                  <div>
-                    <h3 className="text-2xl md:text-3xl font-bold mb-4">
-                      <span className="bg-gradient-to-r from-gray-300 to-white bg-clip-text text-transparent">
-                        {currentLens.name}
-                      </span>
-                    </h3>
-                    <p className="text-lg text-gray-300 mb-6">
-                      {currentLens.description}
-                    </p>
-                    <div className="space-y-3">
-                      {currentLens.features.map((feature, index) => (
-                        <div
-                          key={index}
-                          className="flex items-center space-x-3"
-                        >
-                          <div className="w-2 h-2 bg-gray-300 rounded-full"></div>
-                          <p className="text-gray-300">{feature}</p>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                  <div className="bg-white/5 rounded-xl p-6 border border-white/10">
-                    <h4 className="text-xl font-semibold text-gray-300 mb-4">
-                      Specifications
-                    </h4>
-                    <div className="space-y-3">
-                      <div className="flex justify-between">
-                        <span className="text-gray-400">Index Options:</span>
-                        <span className="text-gray-300">
-                          {specifications.indexOptions.join(", ")}
-                        </span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span className="text-gray-400">Power Range:</span>
-                        <span className="text-gray-300">
-                          {specifications.powerRange}
-                        </span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span className="text-gray-400">Cylinder:</span>
-                        <span className="text-gray-300">
-                          {specifications.cylinder}
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            {/* UV Protection */}
+            <div className="group flex flex-col items-center p-6 transition-all duration-300 hover:scale-105 w-[180px] flex-shrink-0">
+                <Image 
+                  src="/svgs/uvprotection.svg" 
+                  alt="UV Protection" 
+                  width={100}
+                  height={100}
+                  className="group-hover:scale-110 transition-transform duration-300 mb-4"
+                />
+              <h3 className="text-center text-white font-medium text-lg">UV Protection</h3>
             </div>
-
-            
-            <div className="mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-                <span className="bg-gradient-to-r from-gray-300 to-white bg-clip-text text-transparent">
-                  Advanced Features
-                </span>
-              </h2>
-
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {specifications.resistanceFeatures.map((feature, index) => {
-                  const getFeatureIcon = (featureName: string) => {
-                    const iconMap: { [key: string]: string } = {
-                      "Scratch Resistance": "/svgs/scratchresistance.svg",
-                      "Re-Reflection": "/svgs/antireflective.svg",
-                      "Super Hydrophobic Coating": "/svgs/superslippery.svg",
-                      "UV Filter": "/svgs/uvprotection.svg",
-                      Protection: "/svgs/clearvision.svg",
-                      "Anti-static Coating": "/svgs/spincoat.svg",
-                      Photochromatic: "/svgs/photochromatic.svg",
-                    };
-
-                    const iconSrc =
-                      iconMap[featureName] || "/svgs/clearvision.svg";
-
-                    return (
-                      <Image
-                        src={iconSrc}
-                        alt={featureName}
-                        width={24}
-                        height={24}
-                        className="w-18 h-18 filter brightness-0 invert"
-                      />
-                    );
-                  };
-
-                  return (
-                    <div
-                      key={index}
-                      className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 text-center hover:bg-white/15 transition-all duration-300"
-                    >
-                      <div className="w-12 h-12 l mx-auto mb-4 flex items-center justify-center">
-                        {getFeatureIcon(feature)}
-                      </div>
-                      <h3 className="text-lg font-semibold text-gray-300 mb-2">
-                        {feature}
-                      </h3>
-                      <p className="text-sm text-gray-400">
-                        {feature === "Scratch Resistance" &&
-                          "Enhanced surface hardness for durability"}
-                        {feature === "Re-Reflection" &&
-                          "Anti-reflective coating for clearer vision"}
-                        {feature === "Super Hydrophobic Coating" &&
-                          "Water and oil repellent surface"}
-                        {feature === "UV Filter" && "Complete UV protection"}
-                        {feature === "Protection" &&
-                          "Comprehensive lens protection"}
-                        {feature === "Anti-static Coating" &&
-                          "Reduces dust attraction"}
-                        {feature === "Photochromatic" &&
-                          "Adaptive light technology"}
-                      </p>
-                    </div>
-                  );
-                })}
-              </div>
+            {/* Anti Glare */}
+            <div className="group flex flex-col items-center p-6 transition-all duration-300 hover:scale-105 w-[180px] flex-shrink-0">
+                <Image 
+                  src="/svgs/glareprotection.svg" 
+                  alt="Anti Glare" 
+                  width={100}
+                  height={100}
+                  className="group-hover:scale-110 transition-transform duration-300 mb-4"
+                />
+              <h3 className="text-center text-white font-medium text-lg">Anti Glare</h3>
             </div>
-
-         
-            <div className="mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-                <span className="bg-gradient-to-r from-gray-300 to-white bg-clip-text text-transparent">
-                  Technical Specifications
-                </span>
-              </h2>
-
-              <div className="bg-gradient-to-br from-gray-800/30 to-gray-700/30 rounded-2xl p-6 backdrop-blur-sm border border-white/10 overflow-x-auto">
-                <table className="w-full text-sm">
-                  <thead>
-                    <tr className="border-b border-gray-600">
-                      <th className="text-left py-3 px-4 text-gray-300 font-semibold">
-                        Particulars
-                      </th>
-                      <th className="text-center py-3 px-4 text-gray-300 font-semibold">
-                        Index
-                      </th>
-                      <th className="text-center py-3 px-4 text-gray-300 font-semibold">
-                        Power Range
-                      </th>
-                      <th className="text-center py-3 px-4 text-gray-300 font-semibold">
-                        Cyl
-                      </th>
-                      <th className="text-center py-3 px-4 text-gray-300 font-semibold">
-                        RC
-                      </th>
-                      <th className="text-center py-3 px-4 text-gray-300 font-semibold">
-                        NOX
-                      </th>
-                      <th className="text-center py-3 px-4 text-gray-300 font-semibold">
-                        Bluesafe
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody className="text-gray-300">
-                    <tr className="border-b border-gray-700/50">
-                      <td className="py-3 px-4">Clear</td>
-                      <td className="text-center py-3 px-4">
-                        1.50
-                        <br />
-                        1.56
-                        <br />
-                        1.60
-                      </td>
-                      <td className="text-center py-3 px-4">
-                        (+6/-6)
-                        <br />
-                        (+6/-10)
-                        <br />
-                        (+6/-12)
-                      </td>
-                      <td className="text-center py-3 px-4">Upto 4</td>
-                      <td className="text-center py-3 px-4">
-                        3500
-                        <br />
-                        4435
-                        <br />
-                        7240
-                      </td>
-                      <td className="text-center py-3 px-4">
-                        5135
-                        <br />
-                        7005
-                        <br />
-                        9750
-                      </td>
-                      <td className="text-center py-3 px-4">
-                        5740
-                        <br />
-                        7630
-                        <br />
-                        11220
-                      </td>
-                    </tr>
-                    <tr className="border-b border-gray-700/50">
-                      <td className="py-3 px-4">Photochromic</td>
-                      <td className="text-center py-3 px-4">1.56</td>
-                      <td className="text-center py-3 px-4">(+6/-10.0)</td>
-                      <td className="text-center py-3 px-4">Upto 4</td>
-                      <td className="text-center py-3 px-4">4905</td>
-                      <td className="text-center py-3 px-4">6775</td>
-                      <td className="text-center py-3 px-4">7570</td>
-                    </tr>
-                    <tr className="border-b border-gray-700/50">
-                      <td className="py-3 px-4">Photochromic Plus</td>
-                      <td className="text-center py-3 px-4">1.56</td>
-                      <td className="text-center py-3 px-4">(+6/-8.0)</td>
-                      <td className="text-center py-3 px-4">Upto 4</td>
-                      <td className="text-center py-3 px-4">6070</td>
-                      <td className="text-center py-3 px-4">7940</td>
-                      <td className="text-center py-3 px-4">8875</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
+            {/* Photochromatic */}
+            <div className="group flex flex-col items-center p-6 transition-all duration-300 hover:scale-105 w-[180px] flex-shrink-0">
+                <Image 
+                  src="/svgs/photochromatic.svg" 
+                  alt="Photochromatic" 
+                  width={100}
+                  height={100}
+                  className="group-hover:scale-110 transition-transform duration-300 mb-4"
+                />
+              <h3 className="text-center text-white font-medium text-lg">Photochromatic</h3>
+            </div>
+            {/* Super Hydrophobic Coating */}
+            <div className="group flex flex-col items-center p-5 transition-all duration-300 hover:scale-105 w-[180px] flex-shrink-0">
+                <Image 
+                  src="/svgs/superslippery.svg" 
+                  alt="Super Hydrophobic Coating" 
+                  width={100}
+                  height={100}
+                  className="group-hover:scale-110 transition-transform duration-300 mb-4"
+                />
+              <h3 className="text-center text-white font-medium text-lg">Super Hydrophobic</h3>
             </div>
           </div>
         </div>
       </div>
 
       <BackToServicesButton />
-    </>
+
+      <section className="w-full h-screen bg-black pt-10 relative">
+        <div className="absolute top-0 left-0 w-full h-1/11 bg-gradient-to-b from-black via-black/80 to-transparent z-10"></div>
+        <div className="relative w-full h-full">
+          <div className="absolute inset-0">
+            <Image
+              src="/newimage/bg2.png"
+              alt="Premium Lenses"
+              fill
+              className="object-cover"
+              priority
+            />
+            <div className="absolute right-0 top-[55%] -translate-y-1/2 w-[55%] h-2/3 pl-12">
+              <Image
+                src="https://lensfactory.com/cdn/shop/products/high-index-167-single-vision-lens__74395.1384221478.800.800_1080x.jpg"
+                alt="Single Vision Lens"
+                fill
+                className="object-contain"
+                priority
+              />
+            </div>
+          </div>
+          <div className="absolute inset-0 bg-black/40" />
+          
+          {/* Left Side Selectable Menu */}
+          <div className="absolute top-8 left-8 z-50">
+            <div className="flex flex-col space-y-4">
+              <div className="flex space-x-4 bg-black/80 backdrop-blur-md p-4 rounded-lg border border-white/10">
+                {['Clear', 'Photocrom', 'Photocrom Plus', 'Photocrom with Blue Shield', 'Blue Shield', 'Polarized'].map((item) => (
+                  <button
+                    key={item}
+                    onClick={() => handleLensSelect(item)}
+                    className={`px-4 py-2 text-sm font-medium rounded-md transition-colors duration-200 whitespace-nowrap ${
+                      selectedLens === item 
+                        ? 'bg-white/20 text-white' 
+                        : 'text-white/80 hover:bg-white/10'
+                    }`}
+                  >
+                    {item}
+                  </button>
+                ))}
+              </div>
+              
+              {/* Lens Specifications Sidebar */}
+              {showSpecs && (
+                <div className="w-[42rem] bg-black/80 backdrop-blur-md p-6 rounded-lg border border-white/10 text-white">
+                  <h3 className="text-xl font-bold mb-4 text-yellow-400">
+                    {selectedLens} Lens Specifications
+                  </h3>
+                  <div className="text-sm">
+                    <div className="grid grid-cols-6 gap-2 mb-2 text-xs text-white/70 font-medium">
+                      <div>INDEX</div>
+                      <div>POWER RANGE</div>
+                      <div>CYL</div>
+                      <div>HC</div>
+                      <div>NOX</div>
+                      <div>BLUESAFE</div>
+                    </div>
+                    <div className="space-y-2">
+                      {selectedLens === 'Clear' && (
+                        <>
+                          <div className="grid grid-cols-6 gap-2">
+                            <div>1.50</div>
+                            <div>+6/-6</div>
+                            <div>Upto 4</div>
+                            <div>3500</div>
+                            <div>5135</div>
+                            <div>5740</div>
+                          </div>
+                          <div className="grid grid-cols-6 gap-2">
+                            <div>1.56</div>
+                            <div>+6/-10</div>
+                            <div>Upto 4</div>
+                            <div>4435</div>
+                            <div>7005</div>
+                            <div>7830</div>
+                          </div>
+                          <div className="grid grid-cols-6 gap-2">
+                            <div>1.60</div>
+                            <div>+6/-12</div>
+                            <div>Upto 4</div>
+                            <div>7240</div>
+                            <div>9750</div>
+                            <div>11220</div>
+                          </div>
+                          <div className="grid grid-cols-6 gap-2">
+                            <div>1.67</div>
+                            <div>+6/-15</div>
+                            <div>Upto 4</div>
+                            <div>14475</div>
+                            <div>17050</div>
+                            <div>19050</div>
+                          </div>
+                        </>
+                      )}
+                      {selectedLens === 'Photocrom' && (
+                        <div className="grid grid-cols-6 gap-2">
+                          <div>1.56</div>
+                          <div>+6/-10.0</div>
+                          <div>Upto 4</div>
+                          <div>4905</div>
+                          <div>6775</div>
+                          <div>7570</div>
+                        </div>
+                      )}
+                      {selectedLens === 'Photocrom Plus' && (
+                        <div className="grid grid-cols-6 gap-2">
+                          <div>1.56</div>
+                          <div>+6/-8.0</div>
+                          <div>Upto 4</div>
+                          <div>6070</div>
+                          <div>7940</div>
+                          <div>8875</div>
+                        </div>
+                      )}
+                      {selectedLens === 'Photocrom with Blue Shield' && (
+                        <div className="grid grid-cols-6 gap-2">
+                          <div>1.56</div>
+                          <div>+6/-8.0</div>
+                          <div>Upto 4</div>
+                          <div>7940</div>
+                          <div>10735</div>
+                          <div>12000</div>
+                        </div>
+                      )}
+                      {selectedLens === 'Blue Shield' && (
+                        <>
+                          <div className="grid grid-cols-6 gap-2">
+                            <div>1.56</div>
+                            <div>+6/-10.0</div>
+                            <div>Upto 4</div>
+                            <div>4675</div>
+                            <div>6305</div>
+                            <div>7050</div>
+                          </div>
+                          <div className="grid grid-cols-6 gap-2">
+                            <div>1.60</div>
+                            <div>+6/-10.0</div>
+                            <div>Upto 4</div>
+                            <div>8875</div>
+                            <div>11670</div>
+                            <div>13045</div>
+                          </div>
+                        </>
+                      )}
+                      {selectedLens === 'Polarized' && (
+                        <div className="grid grid-cols-6 gap-2">
+                          <div>1.50</div>
+                          <div>+6/-8.00</div>
+                          <div>Upto 4</div>
+                          <div>9340</div>
+                          <div>10980</div>
+                          <div>12265</div>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+          
+          <div className="absolute inset-0 flex items-center justify-center">
+            
+          </div>
+        </div>
+      </section>
+
+
+      <section className="w-full bg-black relative py-16">
+        <div className="relative w-full h-[70vh] mx-auto">
+          <Image
+            src="/pageimg/mm.jpg"
+            alt="Premium Vision Clarity"
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute top-0 left-0 w-full h-1/11 bg-gradient-to-b from-black via-black/80 to-transparent z-10"></div>
+          {/* Noise Texture Overlay with Black Tint */}
+          <div className="absolute inset-0 bg-black/30">
+            <div 
+              className="w-full h-full mix-blend-overlay opacity-30"
+              style={{
+                backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 200 200\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'noiseFilter\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.65\' numOctaves=\'3\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23noiseFilter)\' /%3E%3C/svg%3E")',
+              }}
+            />
+          </div>
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+          <div className="absolute top-16 left-8 text-left">
+            <h2 className="text-4xl md:text-6xl font-bold text-white">
+              CLIFF
+            </h2>
+            <h3 className="text-2xl md:text-4xl font-bold text-yellow-400">
+              SINGLE VISION RX
+            </h3>
+          </div>
+          
+        </div>
+      </section>
+
+      {/* New Full Viewport Section */}
+     
+    </div>
   );
 };
 

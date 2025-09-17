@@ -34,17 +34,20 @@ const CliffBlueSafeLenses = () => {
   }, []);
   const features = [
     {
+      id: "scratch",
       icon: "/svgs/scratchresistance.svg",
       title: "Scratch Resistance",
       benefits: ["Better Durability", "Protect Against Scratches"],
-    },
+    },    
     {
-      icon: "/svgs/antireflective.svg",
-      title: "Low Reflection",
+      id: "clear",
+      icon: "/svgs/clearvision.svg",
+      title: "Clear Vision Reduced Reflection",
       benefits: ["Clearer and Sharper Image", "Better Aesthetics"],
     },
     {
-      icon: "/svgs/easytoclean.svg",
+      id: "slippery",
+      icon: "/svgs/superslippery.svg",
       title: "Super Hydrophobic Coating",
       benefits: [
         "Easy to Clean",
@@ -53,18 +56,26 @@ const CliffBlueSafeLenses = () => {
       ],
     },
     {
+      id: "bluelight",
       icon: "/svgs/bluelight.svg",
-      title: "Blue Filter",
+      title: "Blue Light Protection",
       benefits: [
         "Blocks harmful blue rays",
-        "Allow beneficial blue rays to eye",
+        "Allows beneficial blue light",
         "Better sleep cycle/ maintain circadian rhythm",
       ],
     },
     {
+      id: "uv",
       icon: "/svgs/uvprotection.svg",
       title: "UV Protection",
-      benefits: ["As Recommended by WHO upto 400nm"],
+      benefits: ["As Recommended by WHO up to 400nm"],
+    },
+    {
+      id: "glare",
+      icon: "/svgs/glareprotection.svg",
+      title: "Glare Protection",
+      benefits: ["Reduces eye strain", "Improves visual comfort"],
     },
   ];
 
@@ -147,24 +158,19 @@ const CliffBlueSafeLenses = () => {
                 {/* Main Image Container */}
                 <div className="relative rounded-3xl overflow-hidden border border-white/20 shadow-2xl w-[28rem]">
                   <Image
-                    src="/bluesafe/lense.png"
+                    src="/newimage/alibaba.avif"
                     alt="Cliff Blue Safe UV Technology"
                     width={200}
                     height={300}
-                    className="object-contain h-[300px] w-auto"
+                    className="object-cover h-[300px] w-full"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
-
-                  {/* Service Number Overlay */}
-                  {/* <div className="absolute top-6 right-6">
-                    <span className="text-6xl font-bold text-white/30">01</span>
-                  </div> */}
                 </div>
 
-                <div className="absolute -bottom-6 left-1/4 w-32 h-32 bg-gradient-to-br from-gray-700 to-gray-800 rounded-2xl flex items-center justify-center shadow-xl border border-white/10">
-                  <div className="text-center">
-                    <div className="text-2xl font-bold text-white">2400</div>
-                    <div className="text-xs text-gray-400">MRP</div>
+                <div className="absolute -bottom-6 left-1/4 w-32 h-32 backdrop-blur-lg bg-white/20 rounded-2xl flex items-center justify-center shadow-lg ">
+                  <div className="text-center p-4">
+                    <div className="text-2xl font-bold text-[#DFC65F] drop-shadow-lg">2400</div>
+                    <div className="text-xs text-gray-200 mt-1 tracking-wider">MRP</div>
                   </div>
                 </div>
               </div>
@@ -176,104 +182,82 @@ const CliffBlueSafeLenses = () => {
 
     
 
-      <div className="min-h-screen  text-white overflow-visible">
-        {/* Animated Background */}
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute bottom-20 right-20 w-96 h-96 bg-gray-400 rounded-full filter blur-3xl animate-pulse delay-1000"></div>
-        </div>
-
+      <div className="min-h-screen text-white overflow-visible py-8">
         <div className="relative max-w-[1500px] mx-auto p-4 py-8 sm:py-12 lg:py-16">
-          {/* Header Section */}
-          <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-            <div className="flex items-center justify-center mb-4 sm:mb-6">
-              <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold">
-                <span className="text-white">CLIFF </span>
-                <span className="bg-gradient-to-r from-white via-yellow-100 to-yellow-200 bg-clip-text text-transparent">
-                  BLUE SAFE UV
-                </span>
-              </div>
-            </div>
-          </div>
-
           {/* Main Content Grid */}
           <div className="grid lg:grid-cols-3 gap-8 lg:gap-12">
-            {/* Left Column - Features */}
-            <div className="lg:col-span-2 space-y-6">
-              <div className="space-y-6">
+            {/* Left Column - Title & Features */}
+            <div className="lg:col-span-2">
+              {/* Title Section */}
+              <div className="mb-12 pl-2">
+                <span className="text-sm uppercase tracking-wider text-yellow-400 font-medium">Premium Lens Technology</span>
+                <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mt-2">
+                  <span className="text-white">CLIFF </span>
+                  <span className="bg-gradient-to-r from-white via-yellow-100 to-yellow-200 bg-clip-text text-transparent">
+                    BLUE SAFE UV
+                  </span>
+                </h1>
+              </div>
+              <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
                 {features.map((feature, index) => (
                   <motion.div
-                    initial={{
-                      x: -50,
-                      opacity: 0,
-                    }}
-                    whileInView={{ x: 0, opacity: 1 }}
-                    transition={{ duration: 0.5, delay: index * 0.5 }}
-                    key={index}
-                    className="bg-white/5 rounded-xl p-4 sm:p-6 border border-white/10 backdrop-blur-sm"
+                    initial={{ y: 20, opacity: 0 }}
+                    whileInView={{ y: 0, opacity: 1 }}
+                    transition={{ duration: 0.3, delay: index * 0.1 }}
+                    key={feature.id}
+                    className="text-center"
                   >
-                    <div className="flex items-start gap-4">
-                      <div className="w-8 h-8 sm:w-10 sm:h-10 flex-shrink-0">
-                        <Image
-                          src={feature.icon}
-                          alt={feature.title}
-                          width={40}
-                          height={40}
-                          className="w-full h-full object-contain filter brightness-0 invert"
-                        />
-                      </div>
-                      <div className="flex-1">
-                        <h3 className="text-lg sm:text-xl font-bold text-white mb-3">
-                          {feature.title}
-                        </h3>
-                        <div className="space-y-1">
-                          {feature.benefits.map((benefit, idx) => (
-                            <div
-                              key={idx}
-                              className="flex items-center gap-2 text-gray-300"
-                            >
-                              <span className="text-yellow-400">-</span>
-                              <span className="text-sm sm:text-base">
-                                {benefit}
-                              </span>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
+                    <div className="w-20 h-20 mx-auto mb-4 flex items-center justify-center">
+                      <Image
+                        src={feature.icon}
+                        alt={feature.title}
+                        width={80}
+                        height={80}
+                        className="object-contain"
+                      />
                     </div>
+                    <h3 className="font-bold text-xl text-white mb-2">
+                      {feature.title}
+                    </h3>
+                    {feature.benefits.length === 1 ? (
+                      <p className="text-gray-300">{feature.benefits[0]}</p>
+                    ) : (
+                      <ul className="space-y-1">
+                        {feature.benefits.map((benefit, idx) => (
+                          <li key={idx} className="text-gray-300">
+                            {benefit}
+                          </li>
+                        ))}
+                      </ul>
+                    )}
                   </motion.div>
                 ))}
               </div>
             </div>
 
             {/* Right Column - Recommendations & Specifications */}
-            <div className="flex flex-col lg:flex-row gap-6">
-              {/* Left Content */}
-              <div className="flex-1">
-                {/* Main content will go here */}
-              </div>
-
+            <div className="lg:col-span-1">
               {/* Right Side - Combined Sticky Container */}
-              <div className="lg:w-[28rem]">
-                <div className="sticky top-20 space-y-6">
-                  {/* Recommended For */}
-                  <div className="bg-white/5 rounded-xl p-4 sm:p-6 border border-white/10 backdrop-blur-sm">
-                    <h3 className="text-lg sm:text-xl font-bold text-white mb-4">
-                      Recommended For:
-                    </h3>
-                    <div className="space-y-3">
-                      {recommendations.map((rec, index) => (
-                        <div key={index} className="flex items-center gap-2">
-                          <span className="text-yellow-400">•</span>
-                          <span className="text-gray-300 text-sm sm:text-base">
-                            {rec}
-                          </span>
-                        </div>
-                      ))}
-                    </div>
+              <div className="sticky top-20 space-y-6 lg:pl-4">
+                {/* Recommended For */}
+                <div className="bg-gradient-to-br from-white/5 to-white/10 rounded-2xl p-6 border border-white/10 backdrop-blur-lg shadow-2xl">
+                  <h3 className="text-lg sm:text-xl font-bold text-white mb-4">
+                    Recommended For:
+                  </h3>
+                  <div className="space-y-3">
+                    {recommendations.map((rec, index) => (
+                      <div key={index} className="flex items-center gap-2">
+                        <span className="text-yellow-400">•</span>
+                        <span className="text-gray-300 text-sm sm:text-base">
+                          {rec}
+                        </span>
+                      </div>
+                    ))}
                   </div>
+                </div>
 
-                  {/* Power Range Table */}
-                  <div className="bg-white/5 rounded-xl p-4 sm:p-6 border border-white/10 backdrop-blur-sm">
+                {/* Power Range Table */}
+                <div className="bg-gradient-to-br from-white/5 to-white/10 rounded-2xl p-6 border border-white/10 backdrop-blur-lg shadow-2xl">
                   <h3 className="text-lg sm:text-xl font-bold text-white mb-4 text-center">
                     POWER RANGE
                   </h3>
@@ -281,7 +265,7 @@ const CliffBlueSafeLenses = () => {
                   <div className="overflow-x-auto">
                     <table className="w-full border-collapse">
                       <thead>
-                        <tr className="bg-gray-800/50">
+                        <tr className="bg-white/10 backdrop-blur-sm">
                           <th className="border border-gray-600 p-2 text-center text-white font-bold">
                             INDEX
                           </th>
@@ -300,28 +284,28 @@ const CliffBlueSafeLenses = () => {
                         <tr>
                           <td
                             rowSpan={2}
-                            className="border border-gray-600 p-2 text-center text-white font-bold bg-gray-800/30"
+                            className="border border-white/20 p-2 text-center text-white font-bold bg-white/10 backdrop-blur-sm"
                           >
                             1.56
                           </td>
-                          <td className="border border-gray-600 p-2 text-center text-gray-300 text-sm">
+                          <td className="border border-white/10 p-2 text-center text-gray-200 text-sm">
                             0.00 to -8.00
                           </td>
-                          <td className="border border-gray-600 p-2 text-center text-gray-300 text-sm">
+                          <td className="border border-white/10 p-2 text-center text-gray-200 text-sm">
                             0.00 to -3.00
                           </td>
                           <td
                             rowSpan={2}
-                            className="border border-gray-600 p-2 text-center text-white font-bold bg-gray-800/30"
+                            className="border border-white/20 p-2 text-center text-white font-bold bg-white/10 backdrop-blur-sm"
                           >
                             2450
                           </td>
                         </tr>
                         <tr>
-                          <td className="border border-gray-600 p-2 text-center text-gray-300 text-sm">
+                          <td className="border border-white/10 p-2 text-center text-gray-200 text-sm">
                             0.00 to +4.00
                           </td>
-                          <td className="border border-gray-600 p-2 text-center text-gray-300 text-sm">
+                          <td className="border border-white/10 p-2 text-center text-gray-200 text-sm">
                             0.00 to -2.00
                           </td>
                         </tr>
@@ -334,15 +318,14 @@ const CliffBlueSafeLenses = () => {
                     available.
                   </p>
                 </div>
-                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-        {/* Image Section */}
-        <div className="relative py-20 bg-gradient-to-b from-black via-gray-900 to-black">
+      {/* Image Section */}
+      <div className="relative py-20 bg-black">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
@@ -356,7 +339,7 @@ const CliffBlueSafeLenses = () => {
           </div>
           
           <div className="relative max-w-[1470px] mx-auto w-full">
-            <div className="relative rounded-none overflow-hidden shadow-2xl w-full h-[700px]">
+            <div className="relative w-full h-[700px]">
               <Image
                 src="/pageimg/safe.png"
                 alt="Cliff Blue Safe UV Technology"
@@ -364,15 +347,9 @@ const CliffBlueSafeLenses = () => {
                 height={600}
                 className="w-full h-full object-cover"
               />
-              <div className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-black via-black/80 to-transparent z-10"></div>
-              <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-black via-black/80 to-transparent z-10"></div>
-              {/* Floating badges */}
-              <div className="absolute top-6 left-6 bg-white/10 backdrop-blur-md rounded-lg px-4 py-2 border border-white/20">
-                <span className="text-white font-semibold">UV Protection</span>
-              </div>
-              <div className="absolute bottom-6 right-6 bg-white/10 backdrop-blur-md rounded-lg px-4 py-2 border border-white/20">
-                <span className="text-white font-semibold">Blue Light Filter</span>
-              </div>
+              <div className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-black via-black/80 to-transparent z-10" />
+              <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-black via-black/80 to-transparent z-10" />
+             
             </div>
           </div>
         </div>

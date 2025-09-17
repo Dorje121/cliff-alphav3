@@ -109,9 +109,9 @@ const CliffTechnology = () => {
             <div className="lg:w-1/2 relative">
               <div className="relative flex justify-center lg:justify-end lg:ml-2">
                 {/* Main Image Container */}
-                <div className="relative rounded-3xl overflow-hidden border border-white/20 shadow-2xl w-[28rem]">
+                <div className="relative rounded-3xl overflow-hidden shadow-2xl w-[28rem]">
                   <Image
-                    src="/imAGES/cliffrx.jpg"
+                    src="/imAGES/technology.png"
                     alt="Cliff Technology Innovation"
                     width={200}
                     height={300}
@@ -124,11 +124,17 @@ const CliffTechnology = () => {
                     <span className="text-6xl font-bold text-white/30">08</span>
                   </div>
                 </div>
-
+{/* 
                 <div className="absolute -bottom-6 left-1/4 w-32 h-32 bg-gradient-to-br from-cyan-700 to-cyan-800 rounded-2xl flex items-center justify-center shadow-xl border border-white/10">
                   <div className="text-center">
                     <div className="text-2xl font-bold text-white">Tech</div>
                     <div className="text-xs text-gray-400">Innovation</div>
+                  </div>
+                </div> */}
+                <div className="absolute -bottom-6 left-1/4 w-32 h-32 backdrop-blur-lg bg-white/20 rounded-2xl flex items-center justify-center shadow-lg ">
+                  <div className="text-center p-4">
+                    <div className="text-2xl font-bold text-[#DFC65F] drop-shadow-lg">TECH</div>
+                    <div className="text-xs text-gray-200 mt-1 tracking-wider">INNOVATION</div>
                   </div>
                 </div>
               </div>
@@ -410,7 +416,7 @@ const CliffTechnology = () => {
       {/* New Section with 4 alternating divs */}
       <div className="min-h-screen">
         {/* First div: black background, right side image, left side content */}
-        <div className="bg-black text-white py-20 ml-8">
+        {/* <div className="bg-black text-white py-20 ml-8">
           <div className="max-w-[1540px] mx-auto p-4">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div className="space-y-6">
@@ -426,18 +432,47 @@ const CliffTechnology = () => {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
+            <div className="relative min-h-[80dvh] bg-white text-white">
+
+
+              <div className="absolute min-h-[80dvh] flex justify-end items-center overflow-hidden h-full inset-0 bg-black w-full"
+                style={{
+                  clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 70%)",
+                }}
+              >
+                <div className="relative -mt-24">
+                    <img
+                      src="/lensepage/eye.png"
+                      alt="Technology 1"
+                      className="w-full h-auto object-contain z-50"
+                    />
+                    
+                  </div>
+              </div>
+              <div className="max-w-[1540px] min-h-[80dvh] pt-36  relative z-50 mx-auto p-4">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center z-50">
+                  <div className="space-y-6 ml-8 -mt-6">
+                    <h2 className="text-4xl font-bold">1. Psicoptix Technology ™</h2>
+                    <p className="text-lg text-gray-300">
+                      Psicoptix™ Technology Merges advanced optics with visual neuroscience to deliver sharper, natural, and adaptive vision - enhancing how the brain interprets images.
+                    </p>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
 
         {/* Second div: white background, left side image, right side content */}
-        <div className="bg-white text-black py-20">
-          <div className="max-w-[1540px] mx-auto p-4">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <div className="relative">
-                <div className="relative max-w-sm mx-auto aspect-square">
+        <div className="relative bg-white text-black">
+          <div className="max-w-[1540px] mx-auto px-4 py-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+              <div className="relative ">
+                <div className="relative max-w-sm mx-auto aspect-square overflow-hidden">
                   <img
                     src="/lensepage/technology.jpg"
                     alt="Technology 2"
-                    className="w-full h-full object-contain -mt-8"
+                    className="w-full h-full object-contain -mt-16"
                     onError={(e) => {
                       e.currentTarget.src = '/ee.jpg';
                       e.currentTarget.className = 'w-full h-full object-cover';
@@ -445,7 +480,7 @@ const CliffTechnology = () => {
                   />
                 </div>
                 
-                <div className="absolute bottom-8 left-0 right-0 transform translate-y-1/2">
+                <div className="absolute bottom-12 left-0 right-0 transform translate-y-1/3">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8 px-8">
                     <div className="bg-transparent rounded-none p-4">
                       <p className="text-lg">Allows up to quadruple the density of points on the optical surface</p>
@@ -465,43 +500,49 @@ const CliffTechnology = () => {
         </div>
 
         {/* Third div: black background, right side image, left side content */}
-        <div className="bg-black text-white py-20">
-          <div className="max-w-[1540px] mx-auto p-4">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <div className="space-y-6 ml-8 -mt-4">
+        <div className="relative min-h-[80dvh] bg-white text-white">
+          <div className="absolute min-h-[80dvh] flex justify-end items-center overflow-hidden h-full inset-0 bg-black w-full"
+            style={{
+              clipPath: "polygon(0 6%, 100% 0, 100% 100%, 0 60%)",
+            }}
+          >
+            <div className="relative -mt-12">
+              <img
+                src="/lensepage/modal.png"
+                alt="Technology 3"
+                className="w-[90%] h-auto object-contain z-50"
+              />
+            </div>
+          </div>
+          <div className="max-w-[1540px] min-h-[80dvh] pt-36 relative z-50 mx-auto p-4">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center z-50">
+              <div className="space-y-6 ml-8 -mt-6">
                 <h2 className="text-4xl font-bold">3. Wear Fit Customization</h2>
                 <p className="text-lg text-gray-300">WearFit™ Customization Lenses tailored for you based on your unique measurements like pupillary distance, vertex, panoramic and pantoscopic angles - for unmatched comfort and precision.</p>
               </div>
-              <div className="relative">
-                <div className="max-w-md mx-auto">
-                  <img
-                     src="/lensepage/modal.png"
-                    alt="Technology 3"
-                    className="w-full h-full object-cover max-w-md"
-                  />
-                </div>
-              </div>
+            </div>
           </div>
+       
         </div>
 
         {/* Fourth div: white background, left side image, right side content */}
-        <div className="bg-white text-black py-20">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <div className="relative flex justify-center">
+        <div className="bg-white text-black py-16">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-2 items-center">
+              <div className="relative flex -mt-24 justify-center">
                   <img
-                    src="/lensepage/cliff.png"
+                    src="/newimage/thikness.svg"
                     alt="Technology 4"
                     className="w-auto h-auto max-w-[400px] max-h-[300px] object-contain"
                   />
               </div>
-              <div className="space-y-6 ml-8">
+              <div className="space-y-6 ml-12">
                 <h2 className="text-4xl font-bold">4. Thickness Control Technologies</h2>
-                <p className="text-lg text-gray-600">Blending™ Thickness Optimization Smart material blending that ensures slimmer lenses without compromising clarity and performance.</p>
+                <p className="text-lg text-gray-600 ">Blending™ Thickness Optimization Smart material blending that ensures slimmer lenses without compromising clarity and performance.</p>
               </div>
             </div>
           </div>
         </div>
-      </div>
+   
 
       <BackToServicesButton />
     </>
