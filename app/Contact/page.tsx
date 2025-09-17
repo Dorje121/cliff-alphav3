@@ -3,14 +3,14 @@
 import React, { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { Send } from "lucide-react";
-import CTA from './CTA'
-import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
 import TextWithTexture from "@/components/textwithgoldentexture";
+import Image from "next/image";
 
 const Contact = () => {
-  const bg = "/texture/texture.png"
+  const bg = "/texture/texture.png";
   const [formData, setFormData] = useState({
-    name: "",
+    firstname: "",
+    lastname: "",
     email: "",
     subject: "",
     message: "",
@@ -60,12 +60,12 @@ const Contact = () => {
     setSubmitStatus("idle");
 
     // Create mailto link
-    const { name, email, subject, message } = formData;
+    const { firstname, lastname, email, subject, message } = formData;
     const mailtoSubject = encodeURIComponent(
       subject || "Contact from Cliff Eyewear Website"
     );
     const mailtoBody = encodeURIComponent(
-      `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
+      `Firstname: ${firstname}\nlastname:${lastname}\nEmail: ${email}\n\nMessage:\n${message}`
     );
     const mailtoLink = `mailto:info@cliffeyewear.com?subject=${mailtoSubject}&body=${mailtoBody}`;
 
@@ -76,7 +76,13 @@ const Contact = () => {
     setTimeout(() => {
       setIsSubmitting(false);
       setSubmitStatus("success");
-      setFormData({ name: "", email: "", subject: "", message: "" });
+      setFormData({
+        firstname: "",
+        lastname: "",
+        email: "",
+        subject: "",
+        message: "",
+      });
 
       // Reset success message after 5 seconds
       setTimeout(() => setSubmitStatus("idle"), 5000);
@@ -84,26 +90,42 @@ const Contact = () => {
   };
 
   return (
-    <div className="min-h-screen bg-black text-white">
-      <div className="container mx-auto px-6 py-16 max-w-7xl">
-        {/* Hero Section */}
-        <div ref={heroRef} className="text-center mb-16">
+    <div className="min-h-screen bg-black text-white h-[600px]">
+      <div className="mx-auto px-4 py-16">
+        <div className="flex justify-center items-center ">
+          <div ref={heroRef} className="text-start mb-16 w-1/2 relative">
+            {/* Text Content */}
+            <div className="relative z-20 flex flex-col justify-center p-6 h-full">
+              <h2>
+                <TextWithTexture
+                  text="Get in Touch"
+                  className="text-5xl md:text-7xl font-bold mb-6"
+                />
+              </h2>
+              <p className="text-xl md:text-2xl text-zinc-300 w-2/3 leading-relaxed">
+                Have questions about our eyewear? Want to learn more about our
+                products? We&apos;d love to hear from you.
+              </p>
+            </div>
+            {/* Image with gradient overlay */}
+            <div className="absolute right-0 bottom-0 w-full h-full">
+              <div className="relative">
+                <Image
+                  src="/handd.png"
+                  alt="Cliff lens"
+                  width={1000}
+                  height={1000}
+                  className="object-contain"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black via- to-transparent"></div>
+              </div>
+            </div>
+          </div>
 
-
-          <h2>
-            <TextWithTexture text="Get in Touch" className=" text-5xl md:text-7xl font-bold mb-6" />
-          </h2>
-          <p className="text-xl md:text-2xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
-            Have questions about our eyewear? Want to learn more about our
-            products? We&apos;d love to hear from you.
-          </p>
-        </div>
-
-        <div className="flex justify-center items-start flex-col  md:flex-row-reverse  ">
           {/* Contact Form */}
-          <div className=" right w-[100%] md:w-[50%] max-w-2xl rounded-2xl sm:p-8 ">
+          <div className=" w-1/2 rounded-2xl sm:p-8 ">
             <h2 className="text-3xl font-bold font-ramro mb-8 text-white">
-              Send us a Message
+              Have any quires?
             </h2>
 
             <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
@@ -111,48 +133,65 @@ const Contact = () => {
                 <div className="space-y-2">
                   <label
                     htmlFor="name"
-                    className="text-sm font-medium text-gray-300"
+                    className="text-sm font-medium text-zinc-300"
                   >
-                    Your Name *
+                    First Name <span className="text-red-500">*</span>
                   </label>
                   <input
                     type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
+                    id="firstname"
+                    name="firstname"
+                    value={formData.firstname}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 bg-gray-800/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-yellow-500 focus:border-transparent transition-all duration-300"
-                    placeholder="John Doe"
+                    className="w-full px-4 py-3 bg-zinc-800 border-none border-zinc-600 rounded-lg text-white placeholder-zinc-400 focus:outline-none focus:ring-1 focus:ring-yellow-500 focus:border-transparent transition-all duration-300"
+                    placeholder="John"
                   />
                 </div>
 
                 <div className="space-y-2">
                   <label
-                    htmlFor="email"
-                    className="text-sm font-medium text-gray-300"
+                    htmlFor="lastname"
+                    className="text-sm font-medium text-zinc-300"
                   >
-                    Email Address *
+                    Last Name <span className="text-red-500">*</span>
                   </label>
                   <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
+                    type="text"
+                    id="lastname"
+                    name="lastname"
+                    value={formData.lastname}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 bg-gray-800/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-yellow-500 focus:border-transparent transition-all duration-300"
-                    placeholder="john@example.com"
+                    className="w-full px-4 py-3 bg-zinc-800 border-none border-zinc-600 rounded-lg text-white placeholder-zinc-400 focus:outline-none focus:ring-1 focus:ring-yellow-500 focus:border-transparent transition-all duration-300"
+                    placeholder="Doe"
                   />
                 </div>
               </div>
 
               <div className="space-y-2">
                 <label
-                  htmlFor="subject"
-                  className="text-sm font-medium text-gray-300"
+                  htmlFor="email"
+                  className="text-sm font-medium text-zinc-300"
                 >
-                  Subject
+                  Email <span className="text-red-500">*</span>
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleInputChange}
+                  className="w-full px-4 py-3 bg-zinc-800 border-none border-zinc-600 rounded-lg text-white placeholder-zinc-400 focus:outline-none focus:ring-1 focus:ring-yellow-500 focus:border-transparent transition-all duration-300"
+                  placeholder="example@email.com"
+                />
+              </div>
+              <div className="space-y-2">
+                <label
+                  htmlFor="subject"
+                  className="text-sm font-medium text-zinc-300"
+                >
+                  Subject <span className="text-red-500">*</span>
                 </label>
                 <input
                   type="text"
@@ -160,7 +199,7 @@ const Contact = () => {
                   name="subject"
                   value={formData.subject}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 bg-gray-800/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-yellow-500 focus:border-transparent transition-all duration-300"
+                  className="w-full px-4 py-3 bg-zinc-800 border-none border-zinc-600 rounded-lg text-white placeholder-zinc-400 focus:outline-none focus:ring-1 focus:ring-yellow-500 focus:border-transparent transition-all duration-300"
                   placeholder="How can we help you?"
                 />
               </div>
@@ -168,9 +207,9 @@ const Contact = () => {
               <div className="space-y-2">
                 <label
                   htmlFor="message"
-                  className="text-sm font-medium text-gray-300"
+                  className="text-sm font-medium text-zinc-300"
                 >
-                  Message *
+                  Message <span className="text-yellow-300">(Optional)</span>
                 </label>
                 <textarea
                   id="message"
@@ -179,7 +218,7 @@ const Contact = () => {
                   onChange={handleInputChange}
                   required
                   rows={6}
-                  className="w-full px-4 py-3 bg-gray-800/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-yellow-500  focus:border-transparent transition-all duration-300 resize-none"
+                  className="w-full px-4 py-3 bg-zinc-800 border-none border-zinc-600 rounded-lg text-white placeholder-zinc-400 focus:outline-none focus:ring-1 focus:ring-yellow-500  focus:border-transparent transition-all duration-300 resize-none"
                   placeholder="Tell us about your needs, questions, or feedback..."
                 />
               </div>
@@ -188,8 +227,7 @@ const Contact = () => {
               {submitStatus === "success" && (
                 <div className="p-4 bg-green-900/30 border border-green-600/50 rounded-lg">
                   <p className="text-green-400 text-center">
-                    Thank you! Your default email client should open with your
-                    message.
+                    Thank you! We will get back to you as soon as possible.
                   </p>
                 </div>
               )}
@@ -205,12 +243,11 @@ const Contact = () => {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="    w-full text-white cursor-pointer py-4 px-6 rounded-lg font-semibold text-lg
+                className="    w-fit text-black cursor-pointer py-4 px-6 rounded-lg font-semibold text-lg
     flex items-center justify-center space-x-2
     bg-gradient-to-r from-yellow-200 to-yellow-600
     transition-all duration-300 ease-in-out
     hover:bg-gradient-to-l hover:text-xl"
-
               >
                 {isSubmitting ? (
                   <>
@@ -225,89 +262,16 @@ const Contact = () => {
                 )}
               </button>
 
-              <p className="text-sm text-gray-500 text-center">
+              {/* <p className="text-sm text-zinc-500 text-center">
                 * Required fields. Your message will open in your default email
                 application.
-              </p>
+              </p> */}
             </form>
           </div>
-
-          {/* <div className="left h-fit sm:h-[100vh] w-[100%] md:w-[40%] pt-10">
-
-            <div className="parnt">
-              <div className="para">
-                Reach out today to discover how our custom gate designs can transform your property, combining security with style. We're here to help safeguard your future and create a lasting impression.
-              </div>
-
-              <div className="sociallink flex justify-start gap-8 items-center py-10">
-                <div className="box w-[40px] h-[40px]">
-                  <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill="#71717B" d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131c.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951" /></svg>
-                </div>
-                <div className="box w-[40px] h-[40px]">
-                  <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill="#71717B" d="M9.294 6.928L14.357 1h-1.2L8.762 6.147L5.25 1H1.2l5.31 7.784L1.2 15h1.2l4.642-5.436L10.751 15h4.05zM7.651 8.852l-.538-.775L2.832 1.91h1.843l3.454 4.977l.538.775l4.491 6.47h-1.843z" /></svg>
-                </div>
-                <div className="box w-[40px] h-[40px]">
-                  <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14"><g fill="none" stroke="#71717B" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"><path d="M10.333 3.644a.25.25 0 1 1 0-.5m0 .5a.25.25 0 1 0 0-.5" /><path d="M.858 3.431A2.573 2.573 0 0 1 3.431.858h6.862a2.573 2.573 0 0 1 2.573 2.573v6.862a2.573 2.573 0 0 1-2.573 2.573H3.43a2.573 2.573 0 0 1-2.573-2.573z" /><path d="M4.312 6.862a2.55 2.55 0 1 0 5.1 0a2.55 2.55 0 1 0-5.1 0" /></g></svg>
-                </div>
-              </div>
-              <div className="container  w-[100%] flex flex-col justify-center md:items-start items-center gap-5">
-
-                
-                <div className="box w-[90%] h-[150px] bg-[#18181B] rounded-lg flex justify-start items-center px-6">
-                  <div className="flex justify-between items-center gap-6 text-white w-full">
-
-                    
-                    <div className="flex flex-col items-center gap-3">
-                      <FaPhoneAlt className="text-zinc-500 text-2xl" />
-                      <div>
-
-                        <p className="text-[0.9rem] font-medium text-center">+1 (555) 123-4567</p>
-                      </div>
-                    </div>
-
-                    <div className="flex flex-col items-center gap-3">
-                      <FaEnvelope className="text-zinc-500 text-2xl" />
-                      <div>
-
-                        <p className="text-[0.9rem] font-medium break-words break-all text-center">contact@example.com</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                
-                <div className="box w-[90%] h-[150px] bg-[#18181B] rounded-lg flex justify-start items-center px-6">
-                  <div className="flex justify-between items-center gap-6 text-white w-full">
-
-                   =
-                    <div className="flex flex-col items-center gap-3">
-                      <FaMapMarkerAlt className="text-zinc-500 text-2xl" />
-                      <div>
-
-                        <p className="text-[0.9rem] font-medium text-center">123 Main Street, City, ZIP</p>
-                      </div>
-                    </div>
-
-                <div className="flex flex-col gap-1">
-                      <p className="text-sm text-gray-400">We're here to help</p>
-                      <p className="text-[0.9rem] font-medium">Feel free to reach out anytime.</p>
-                    </div>
-
-                  </div>
-                </div>
-              </div>
-            </div>
-
-          </div>  */}
-
         </div>
-
-
-        <CTA />
       </div>
     </div>
   );
-
 };
 
 export default Contact;

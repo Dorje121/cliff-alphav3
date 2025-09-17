@@ -15,10 +15,11 @@ const Footer = () => {
 
       <div className="relative z-10 w-full max-w-[1520px] mx-auto px-4 sm:px-6 md:px-8 py-8 md:py-16 flex flex-col items-center justify-center h-full">
         {/* Main Title */}
-        <div className="text-center mb-12 md:mb-20">
-
-          <TextWithTexture text="STAY IN TOUCH" className="text-2xl sm:text-3xl md:text-6xl lg:text-8xl xl:text-9xl mt-4 md:mt-8 font-semibold font-family-playfair bg-gradient-to-r from-white via-yellow-100 to-yellow-200 bg-clip-text text-transparent text-center tracking-[0.2rem] sm:tracking-[0.5rem] md:tracking-[1rem] lg:tracking-[1.5rem] xl:tracking-[1.9rem]" />
-
+        <div className="text-center mb-12 md:mb-0 w-1/2">
+          <TextWithTexture
+            text="STAY IN TOUCH"
+            className="text-2xl sm:text-3xl md:text-6xl lg:text-8xl xl:text-9xl mt-4 md:mt-8 font-semibold font-family-playfair bg-gradient-to-r from-white via-yellow-100 to-yellow-200 bg-clip-text text-transparent text-center tracking-[0.2rem] sm:tracking-[0.5rem] md:tracking-[1rem] lg:tracking-[1.5rem] xl:tracking-[1.9rem]"
+          />
         </div>
 
         {/* Navigation Links - Centered at Bottom */}
@@ -32,7 +33,6 @@ const Footer = () => {
               height={120}
               className="object-cover"
             />
-
           </div>
 
           <ul className="flex flex-wrap justify-center uppercase items-center font-semibold gap-8 gap-y-4 py-4 text-center tracking-wide mb-6">
@@ -119,20 +119,9 @@ const Footer = () => {
                 href="#"
                 className="hover:text-[#E1AA12] transition-colors duration-300 px-2"
               >
-                Privacy Policy
+                Made in USA
               </Link>
-              <Link
-                href="#"
-                className="hover:text-[#E1AA12] transition-colors duration-300 px-2"
-              >
-                Terms of Service
-              </Link>
-              <Link
-                href="#"
-                className="hover:text-[#E1AA12] transition-colors duration-300 px-2"
-              >
-                Cookie Policy
-              </Link>
+              
             </div>
           </div>
         </div>

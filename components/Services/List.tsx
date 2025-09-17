@@ -3,7 +3,7 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import TextWithTexture from "@/components/textwithgoldentexture";
-
+import CTA from "../cta/CTA";
 
 const List = () => {
   const services = [
@@ -203,39 +203,39 @@ const List = () => {
 
   return (
     <div className="min-h-screen bg-black text-white overflow-x-hidden">
-
-       <section className="w-full bg-black mt-14 flex justify-center py-4">
-              <div className="w-full max-w-[1500px] mx-auto px-4">
-                <div className="relative rounded-3xl overflow-hidden shadow-2xl h-[60vh] bg-black">
-                  <video
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    className="w-full h-full object-cover object-[50%_30%]"
-                  >
-                    <source src="/homevideo/BlueSafe-2.mp4" type="video/mp4" />
-                    Your browser does not support the video tag.
-                  </video>
-                </div>
-              </div>
-            </section>
+      <section className="w-full bg-black mt-14 flex justify-center py-4">
+        <div className="w-full max-w-[1500px] mx-auto px-4">
+          <div className="relative rounded-3xl overflow-hidden shadow-2xl h-[60vh] bg-black">
+            <video
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="w-full h-full object-cover object-[50%_30%]"
+            >
+              <source src="/homevideo/BlueSafe-2.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
+      </section>
       <div className="container max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-1 sm:py-2 lg:py-4 relative">
         {/* Header Section */}
         <div className="mb-8 md:mb-16">
           <div className="flex flex-col mt-8 lg:flex-row lg:items-center lg:justify-between gap-6 lg:gap-8">
             {/* Title and Description */}
             <div className="flex-1">
-
-              <TextWithTexture text="Our Products"  
-              className="text-3xl italic sm:text-4xl md:text-5xl lg:text-7xl font-semibold font-family-playfair mb-4 md:mb-6 bg-gradient-to-r from-[#FFF9DC] via-yellow-100 to-[#FFCC00] bg-clip-text text-transparent" /> 
-              <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-4xl">
+              <TextWithTexture
+                text="Our Products"
+                className="text-3xl italic sm:text-4xl md:text-5xl lg:text-7xl font-semibold font-family-playfair mb-4 md:mb-6 bg-gradient-to-r from-[#FFF9DC] via-yellow-100 to-[#FFCC00] bg-clip-text text-transparent"
+              />
+              <p className="text-base sm:text-lg md:text-xl text-zinc-300 max-w-4xl">
                 Discover our comprehensive range of premium optical solutions,
-                advanced lens technologies, and professional services designed to
-                enhance your vision experience.
+                advanced lens technologies, and professional services designed
+                to enhance your vision experience.
               </p>
             </div>
-            
+
             {/* Category Filter - Same Row */}
             <div className="flex-shrink-0 mt-22">
               <div
@@ -287,7 +287,7 @@ const List = () => {
                         className={`w-full px-4 sm:px-6 py-2.5 sm:py-3 text-left hover:bg-white/10 transition-all duration-200 first:rounded-t-xl last:rounded-b-xl ${
                           selectedCategory === category
                             ? "bg-amber-400/20 text-amber-400 border-l-4 border-amber-400"
-                            : "text-gray-300 hover:text-white"
+                            : "text-zinc-300 hover:text-white"
                         } ${index > 0 ? "border-t border-white/5" : ""}`}
                       >
                         <div className="flex items-center justify-between">
@@ -326,7 +326,7 @@ const List = () => {
               className="cursor-pointer block"
             >
               <div
-                className={`group relative backdrop-blur-sm border-t border-t-gray-700 transition-all duration-500 hover:scale-102 overflow-hidden rounded-lg md:rounded-none`}
+                className={`group relative backdrop-blur-sm border-t border-t-zinc-700 transition-all duration-500 hover:scale-102 overflow-hidden rounded-lg md:rounded-none`}
               >
                 {/* Mobile Layout */}
                 <div className="block md:hidden">
@@ -360,7 +360,7 @@ const List = () => {
                       </h3>
 
                       {/* Service Description */}
-                      <p className="text-gray-300 group-hover:text-white transition-colors duration-300 leading-relaxed text-sm mb-4">
+                      <p className="text-zinc-300 group-hover:text-white transition-colors duration-300 leading-relaxed text-sm mb-4">
                         {service.description}
                       </p>
 
@@ -421,7 +421,7 @@ const List = () => {
                     </h3>
 
                     {/* Service Description */}
-                    <p className="text-gray-300 group-hover:text-white transition-colors duration-300 leading-relaxed text-base lg:text-lg mb-8">
+                    <p className="text-zinc-300 group-hover:text-white transition-colors duration-300 leading-relaxed text-base lg:text-lg mb-8">
                       {service.description}
                     </p>
 
@@ -449,7 +449,7 @@ const List = () => {
                       src={service.image}
                       alt={service.title}
                       fill
-                      className="object-cover transition-transform duration-500 group-hover:scale-110"
+                      className="object-contain rounded-2xl transition-transform duration-500 group-hover:scale-110"
                     />
                     <div className="absolute inset-0 bg-gradient-to-r from-black/50 to-transparent"></div>
                   </div>
@@ -460,43 +460,7 @@ const List = () => {
         </div>
 
         {/* Call to Action */}
-        <div className="text-center mt-8 sm:mt-12 lg:mt-16 px-4 sm:px-0">
-          <div className="relative rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-12 backdrop-blur-sm overflow-hidden h-[50vh]">
-            {/* Background Image */}
-            <div className="absolute inset-0">
-              <img
-                src="/bluesafe/ctalist.jpg"
-                alt="Bluesafe Contact Lens Background"
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/80"></div>
-            </div>
-            
-            {/* Content */}
-            <div className="relative z-10 text-left">
-              <p className="uppercase tracking-widest text-gray-400 text-sm mb-3">Who We Are</p>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
-                <span className="text-amber-400">CLIFF</span> eyewear
-              </h2>
-              <p className="text-gray-300 mb-6 text-base sm:text-lg leading-relaxed">
-                Cliff is an esteemed eyewear company dedicated to transforming how people see the world, one pair of glasses at a time. 
-                Our journey began with a simple mission: to blend exceptional craftsmanship with innovative design, creating eyewear 
-                that not only enhances vision but also elevates style.
-              </p>
-              <div className="flex flex-wrap gap-4">
-                <button className="bg-gray-800 hover:bg-gray-700 text-white px-6 py-3 rounded-md transition-all duration-300">
-                  Become a Cliff Dealer
-                </button>
-                <button className="bg-amber-400 hover:bg-amber-500 text-black font-semibold px-6 py-3 rounded-md flex items-center gap-2 transition-all duration-300">
-                  Explore Our Products
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
+        <CTA />
       </div>
     </div>
   );
