@@ -5,6 +5,7 @@ import React, { useRef, useLayoutEffect, useEffect } from "react";
 import { gsap } from "gsap";
 import { motion } from "framer-motion";
 import TextWithTexture from "@/components/textwithgoldentexture";
+import HeroSection from "@/components/Services/heropage";
 
 const CliffDriveClearLenses = () => {
   const backgroundImageRef = useRef<HTMLDivElement>(null);
@@ -107,90 +108,17 @@ const CliffDriveClearLenses = () => {
 
   return (
     <>
-      {/* Hero Section */}
-      <div className="h-[90vh] to-black text-white relative overflow-hidden">
-        <div ref={backgroundImageRef} className="absolute inset-0 h-full">
-          <video
-            src="/homevideo/hero.mp4"
-            className="w-full h-full object-cover opacity-70"
-            autoPlay
-            loop
-            muted
-            playsInline
-          />
-          <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-gray-900/70 to-black/80" />
-        </div>
 
-        <div className="relative z-10 container max-w-[1490px] mx-auto px-4 py-12 h-full">
-          <div className="flex flex-col lg:flex-row items-center gap-16 h-full">
-            {/* Left Content */}
-            <div className="lg:w-1/2 space-y-4">
-              <h1 className="text-5xl md:text-7xl mt-12 font-bold leading-tight">
-                <TextWithTexture
-                  text="Cliff Drive"
-                  className="text-5xl md:text-7xl mt-12 font-bold leading-tight capitalize"
-                />
-                <TextWithTexture
-                  text="Clear UV"
-                  className="bg-gradient-to-r from-white via-yellow-100 to-yellow-200 bg-clip-text text-transparent"
-                />
-              </h1>
-
-              <p className="text-xl md:text-2xl bg-gradient-to-r from-white via-yellow-100 to-yellow-200 bg-clip-text text-transparent leading-relaxed max-w-2xl">
-                Specialized lenses optimized for driving and enhanced road
-                visibility, ensuring safer and more comfortable driving
-                experiences.
-              </p>
-
-              <div className="pt-8">
-                <button className="px-8 py-4 bg-gradient-to-r from-white via-yellow-100 to-yellow-200 rounded-full text-black font-semibold text-lg transition-all duration-300 transform hover:scale-105">
-                  <span className="relative z-10 flex items-center justify-center">
-                    Contact Us
-                    <svg
-                      className="w-5 h-5 ml-2 transition-transform duration-300 group-hover:translate-x-1"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M17 8l4 4m0 0l-4 4m4-4H3"
-                      />
-                    </svg>
-                  </span>
-                </button>
-              </div>
-            </div>
-
-            {/* Right Content */}
-            <div className="lg:w-1/2 relative">
-              <div className="relative flex justify-center lg:justify-end lg:ml-2">
-                <div className="relative rounded-3xl overflow-hidden border border-white/20 shadow-2xl w-[28rem]">
-                  <Image
-                    src="/bluesafe/drive.png"
-                    alt="Cliff Drive Clear Technology"
-                    width={200}
-                    height={300}
-                    className="object-cover h-[300px] w-full"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
-                  <div className="absolute top-6 right-6">
-                    <span className="text-6xl font-bold text-white/30">06</span>
-                  </div>
-                </div>
-                <div className="absolute -bottom-6 left-1/4 w-32 h-32 bg-gradient-to-br from-gray-700 to-gray-800 rounded-2xl flex items-center justify-center shadow-xl border border-white/10">
-                  <div className="text-center">
-                    <div className="text-2xl font-bold text-white">4200</div>
-                    <div className="text-xs text-gray-400">MRP</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+    <HeroSection
+                title="Cliff Drive Clear"
+                subtitle="UV Lenses"
+                description="Specialized lenses optimized for driving and enhanced road visibility, ensuring safer and more comfortable driving experiences."
+                backgroundImage="/bluesafe/drive.png"
+                rightImage="/bluesafe/drive.png"
+                serviceNumber="06"
+                badgeTitle="4200"
+                badgeSubtitle="MRP"
+              />
 
       {/* Info Section with Fade-In List */}
       <section className="py-16">

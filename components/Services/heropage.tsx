@@ -83,32 +83,32 @@ export default function HeroSection({
       </div>
 
       {/* Main Content */}
-      <div className="relative z-10 container max-w-[1490px] mx-auto px-4 py-12 h-full">
-        <div className="flex flex-col lg:flex-row items-center gap-16 h-full">
-          <div className="lg:w-1/2 space-y-4">
-            <h1 className="text-5xl md:text-7xl mt-12 font-bold leading-tight capitalize hero-title">
+      <div className="relative z-10 container max-w-[1510px] mx-auto px-4 sm:px-6 py-8 sm:py-12 h-full">
+        <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-16 h-full">
+          <div className="w-full lg:w-1/2 space-y-4 text-center lg:text-left">
+            <div className="hero-title">
               <TextWithTexture
                 text={title}
-                className="text-5xl md:text-7xl mt-12 font-bold leading-tight capitalize"
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold leading-tight capitalize block lg:mt-12"
               />
               <TextWithTexture
                 text={subtitle}
-                className="bg-gradient-to-r from-white via-yellow-100 to-yellow-200 bg-clip-text text-transparent"
+                className="text-2xl sm:text-3xl md:text-4xl lg:text-7xl bg-gradient-to-r from-white via-yellow-100 to-yellow-200 bg-clip-text text-transparent font-bold leading-tight"
               />
-            </h1>
+            </div>
 
-            <p className="text-xl md:text-2xl  text-white leading-relaxed max-w-2xl">
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white leading-relaxed max-w-full lg:max-w-2xl">
               {description}
             </p>
 
             {/* CTA */}
-            <div className="pt-8">
+            <div className="pt-6 sm:pt-8 lg:pt-8">
               <Link href='/Contact' className="group relative inline-block">
-                <button className="px-8 py-4 bg-white/10 rounded-full text-white backdrop-blur-sm border border-white/30 font-semibold text-lg transition-all duration-300 transform hover:scale-105 cursor-pointer">
+                <button className="px-6 sm:px-8 py-3 sm:py-4 lg:px-8 lg:py-4 bg-white/10 rounded-full text-white backdrop-blur-sm border border-white/30 font-semibold text-base sm:text-lg lg:text-lg transition-all duration-300 transform hover:scale-105 cursor-pointer">
                   <span className="relative z-10 flex items-center justify-center">
                     Contact Us
                     <svg
-                      className="w-5 h-5 ml-2 transition-transform duration-300 group-hover:translate-x-1"
+                      className="w-4 h-4 sm:w-5 sm:h-5 lg:w-5 lg:h-5 ml-2 transition-transform duration-300 group-hover:translate-x-1"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -127,27 +127,27 @@ export default function HeroSection({
           </div>
 
           {/* Right Content - Enhanced Visual */}
-          <div className="lg:w-1/2 relative">
-            <div className="relative flex justify-center lg:justify-end lg:ml-2">
+          <div className="w-full lg:w-1/2 relative flex justify-center lg:justify-end lg:ml-2 mt-8 lg:mt-0">
+            <div className="relative">
               {/* Main Image Container */}
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl w-[28rem] hero-image">
+              <div className="relative rounded-2xl sm:rounded-3xl lg:rounded-3xl overflow-hidden shadow-2xl w-full max-w-md sm:max-w-lg lg:w-[28rem] hero-image">
                 <Image
                   src={rightImage}
                   alt="Cliff Blue Safe Coating Technology"
                   width={200}
                   height={300}
-                  className="object-cover h-[300px] w-full"
+                  className="object-cover h-[250px] sm:h-[300px] lg:h-[300px] w-full"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
 
                 {/* Service Number Overlay */}
-                <div className="absolute top-6 right-6">
-                  <span className="text-6xl font-bold text-white/30">{serviceNumber}</span>
+                <div className="absolute top-4 sm:top-6 lg:top-6 right-4 sm:right-6 lg:right-6">
+                  <span className="text-4xl sm:text-6xl lg:text-6xl font-bold text-white/30">{serviceNumber}</span>
                 </div>
               </div>
-              <div className="absolute -bottom-6 left-1/4 w-32 h-32 backdrop-blur-sm bg-white/10 rounded-2xl flex items-center justify-center ">
-                <div className="text-center p-4">
-                  <div className="text-2xl font-bold text-[#DFC65F] drop-shadow-lg">
+              <div className="absolute -bottom-4 sm:-bottom-6 lg:-bottom-6 left-1/4 sm:left-1/4 lg:left-1/4 w-24 h-24 sm:w-32 sm:h-32 lg:w-32 lg:h-32 backdrop-blur-sm bg-white/10 rounded-2xl flex items-center justify-center">
+                <div className="text-center p-2 sm:p-4 lg:p-4">
+                  <div className="text-lg sm:text-2xl lg:text-2xl font-bold text-[#DFC65F] drop-shadow-lg">
                     {badgeTitle}
                   </div>
                   <div className="text-xs text-gray-200 mt-1 tracking-wider">

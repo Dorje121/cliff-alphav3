@@ -5,6 +5,8 @@ import BackToServicesButton from "@/components/Services/BackToServicesButton";
 import Image from "next/image";
 import { gsap } from "gsap";
 import TextWithTexture from "@/components/textwithgoldentexture";
+import HeroSection from "@/components/Services/heropage";
+import { ServerManagementTable } from "@/components/Services/table";
 
 const CliffSingleVisionRX: React.FC = () => {
   const backgroundImageRef = useRef<HTMLDivElement>(null);
@@ -117,106 +119,19 @@ const CliffSingleVisionRX: React.FC = () => {
     lensTypes.find((lens) => lens.id === selectedLens) || lensTypes[0];
 
   return (
-    <div className="min-h-screen">
-      {/* Hero Section with Service Information */}
-      <div className="h-[90vh] to-black text-white relative overflow-hidden">
-      <div ref={backgroundImageRef} className="absolute inset-0 h-full">
-          <video
-            src="/homevideo/hero.mp4"
-            className="w-full h-full object-cover opacity-70"
-            autoPlay
-            loop
-            muted
-            playsInline
-          />
-          <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-gray-900/70 to-black/80" />
-        </div>
-        {/* Main Content */}
-        <div className="relative z-10 container max-w-[1490px] mx-auto px-4 py-12 h-full">
-          <div className="flex flex-col lg:flex-row items-center gap-16 h-full">
-            {/* Left Content */}
-            <div className="lg:w-1/2 space-y-4">
-
-              {/* Service Title */}
-              <h1 className="text-5xl md:text-7xl mt-12 font-bold leading-tight">
-                <TextWithTexture
-                  text="Single Vision"
-                  className="text-5xl md:text-7xl mt-12 font-bold leading-tight capitalize"
-                />
-                <TextWithTexture
-                  text="RX Lenses"
-                  className="bg-gradient-to-r from-white via-yellow-100 to-yellow-200 bg-clip-text text-transparent capitalize"
-                />
-              </h1>
-
-              {/* Service Description */}
-              <p className="text-xl md:text-2xl bg-gradient-to-r from-white via-yellow-100 to-yellow-200 bg-clip-text text-transparent leading-relaxed max-w-2xl">
-                Prescription single vision lenses for clear, focused sight with 
-                precise vision correction tailored to your unique needs.
-              </p>
-
-              {/* CTA Button */}
-              <div className="pt-8">
-                <button className="group relative px-8 py-4 bg-gradient-to-r from-white via-yellow-100 to-yellow-200 rounded-full text-black font-semibold text-lg  transition-all duration-300 transform hover:scale-105">
-                  <span className="relative z-10 flex items-center justify-center">
-                    Contact Us
-                    <svg
-                      className="w-5 h-5 ml-2 transition-transform duration-300 group-hover:translate-x-1"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M17 8l4 4m0 0l-4 4m4-4H3"
-                      />
-                    </svg>
-                  </span>
-                </button>
-              </div>
-            </div>
-
-            {/* Right Content - Enhanced Visual */}
-            <div className="lg:w-1/2 relative">
-              <div className="relative flex justify-center lg:justify-end lg:ml-2">
-                {/* Main Image Container */}
-                <div className="relative rounded-3xl overflow-hidden shadow-2xl w-[28rem]">
-                  <Image
-                    src="/imAGES/singlevision.png"
-                    alt="Cliff Single Vision RX Technology"
-                    width={200}
-                    height={300}
-                    className="object-cover h-[300px] w-auto"
+    
+      <div className="min-h-screen">
+         <HeroSection
+                                  title="Cliff Single Vision"
+                                  subtitle="RX Lenses"
+                                  description="Prescription single vision lenses for clear, focused sight with precise vision correction tailored to your unique needs."
+                                  backgroundImage="/imAGES/singlevision.png"
+                                  rightImage="/imAGES/singlevision.png"
+                                  serviceNumber="09"
+                                  badgeTitle="SINGLE"
+                                  badgeSubtitle="VISION RX"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
-
-                  {/* Service Number Overlay */}
-                  <div className="absolute top-6 right-6">
-                    <span className="text-6xl font-bold text-white/30">09</span>
-                  </div>
-                </div>
-
-                {/* <div className="absolute -bottom-6 left-1/4 w-32 h-32 bg-gradient-to-br from-[#303B4C] to-[#303B4C] rounded-2xl flex items-center justify-center shadow-xl border border-white/10">
-                  <div className="text-center">
-                    <div className="text-2xl font-bold text-white">RX</div>
-                    <div className="text-xs text-gray-400">Precision</div>
-                  </div>
-                </div> */}
-                <div className="absolute -bottom-6 left-1/4 w-32 h-32 backdrop-blur-lg bg-white/20 rounded-2xl flex items-center justify-center shadow-lg ">
-                  <div className="text-center p-4">
-                    <div className="text-2xl font-bold text-[#DFC65F] drop-shadow-lg">RX</div>
-                    <div className="text-xs text-gray-200 mt-1 tracking-wider">PRECISION</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </div>
-
+  
       {/* Grid Layout Section */}
       <div className="relative w-full bg-black -mt-6 md:-mt-2">
         <div className="max-w-[1500px] mx-auto px-4">
@@ -265,7 +180,10 @@ const CliffSingleVisionRX: React.FC = () => {
           </div>
         </div>
       </div>
+            
 
+
+            
       
       <div className="w-full bg-black">
         <div className="w-full max-w-[1800px] mx-auto">
@@ -349,6 +267,38 @@ const CliffSingleVisionRX: React.FC = () => {
           </div>
         </div>
       </div>
+
+      <section className="w-full bg-black relative py-16">
+        <div className="relative w-full h-[70vh] mx-auto">
+          <Image
+            src="/pageimg/mm.jpg"
+            alt="Premium Vision Clarity"
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute top-0 left-0 w-full h-1/11 bg-gradient-to-b from-black via-black/80 to-transparent z-10"></div>
+          {/* Noise Texture Overlay with Black Tint */}
+          <div className="absolute inset-0 bg-black/30">
+            <div 
+              className="w-full h-full mix-blend-overlay opacity-30"
+              style={{
+                backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 200 200\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'noiseFilter\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.65\' numOctaves=\'3\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23noiseFilter)\' /%3E%3C/svg%3E")',
+              }}
+            />
+          </div>
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+          <div className="absolute top-16 left-8 text-left">
+            <h2 className="text-4xl md:text-6xl font-bold text-white">
+              CLIFF
+            </h2>
+            <h3 className="text-2xl md:text-4xl font-bold text-yellow-400">
+              SINGLE VISION RX
+            </h3>
+          </div>
+          
+        </div>
+      </section>
 
       <BackToServicesButton />
 
@@ -520,40 +470,28 @@ const CliffSingleVisionRX: React.FC = () => {
       </section>
 
 
-      <section className="w-full bg-black relative py-16">
-        <div className="relative w-full h-[70vh] mx-auto">
-          <Image
-            src="/pageimg/mm.jpg"
-            alt="Premium Vision Clarity"
-            fill
-            className="object-cover"
-            priority
-          />
-          <div className="absolute top-0 left-0 w-full h-1/11 bg-gradient-to-b from-black via-black/80 to-transparent z-10"></div>
-          {/* Noise Texture Overlay with Black Tint */}
-          <div className="absolute inset-0 bg-black/30">
-            <div 
-              className="w-full h-full mix-blend-overlay opacity-30"
-              style={{
-                backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 200 200\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'noiseFilter\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.65\' numOctaves=\'3\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23noiseFilter)\' /%3E%3C/svg%3E")',
-              }}
-            />
-          </div>
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
-          <div className="absolute top-16 left-8 text-left">
-            <h2 className="text-4xl md:text-6xl font-bold text-white">
-              CLIFF
-            </h2>
-            <h3 className="text-2xl md:text-4xl font-bold text-yellow-400">
-              SINGLE VISION RX
-            </h3>
-          </div>
-          
-        </div>
-      </section>
+     
 
       {/* New Full Viewport Section */}
-     
+      <section className="w-full min-h-screen bg-black py-20 relative">
+        <div className="container mx-auto px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-6xl font-bold text-white mb-4">
+              Lens Specifications
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Detailed technical specifications and performance metrics for our Single Vision RX lenses
+            </p>
+          </div>
+          
+          <div className="max-w-7xl mx-auto">
+            <ServerManagementTable 
+              title="Single Vision RX Lens Specifications"
+              className="bg-black/50 backdrop-blur-md border-white/20"
+            />
+          </div>
+        </div>
+      </section>
     </div>
   );
 };

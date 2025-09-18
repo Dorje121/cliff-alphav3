@@ -238,108 +238,10 @@ const CliffCoatings = () => {
   description="Advanced protective coatings for modern eyewear. Premium coating technology enhances clarity, durability, and protection for your lenses."
   backgroundImage="/c5.jpeg"
   rightImage="/c5.jpeg"
-  ctaLabel="Contact Us"
-  ctaLink="/Contact"
   serviceNumber="02"
   badgeTitle="CLIFF"
   badgeSubtitle="COATINGS"
 /> 
-
-      {/* Hero Section with Service Information */}
-      {/* <div className="h-[100vh] text-white relative overflow-hidden">
-        <div ref={backgroundImageRef} className="absolute inset-0 h-full">
-          <Image
-            src={"/c5.jpeg"}
-            className="w-full h-full object-cover opacity-70"
-            alt="Cliff lens"
-            fill
-          />
-          <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-gray-900/70 to-black/80" />
-        </div>
-        
-        <div className="relative z-10 container max-w-[1490px] mx-auto px-4 py-12 h-full">
-          <div className="flex flex-col lg:flex-row items-center gap-16 h-full">
-          
-            <div className="lg:w-1/2 space-y-4">
-             
-              <h1 className="text-5xl md:text-7xl mt-12 font-bold leading-tight">
-                <TextWithTexture
-                  text="Cliff Premium"
-                  className="text-5xl md:text-7xl mt-12 font-bold leading-tight capitalize"
-                />
-                <TextWithTexture
-                  text="Coatings"
-                  className="bg-gradient-to-r from-white via-yellow-100 to-yellow-200 bg-clip-text text-transparent capitalize"
-                />
-              </h1>
-
-       
-              <p className="text-xl md:text-2xl  text-white leading-relaxed max-w-2xl">
-                Advanced protective coatings for modern eyewear. Premium coating
-                technology enhances clarity, durability, and protection for your
-                lenses.
-              </p>
-
-         
-              <div className="pt-8">
-                <Link href="/Contact" className="group relative inline-block">
-                  <button className="px-8 py-4 bg-white/10 rounded-full text-white backdrop-blur-sm border border-white/30 font-semibold text-lg  transition-all duration-300 transform hover:scale-105  cursor-pointer">
-                    <span className="relative z-10 flex items-center justify-center">
-                      Contact Us
-                      <svg
-                        className="w-5 h-5 ml-2 transition-transform duration-300 group-hover:translate-x-1"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M17 8l4 4m0 0l-4 4m4-4H3"
-                        />
-                      </svg>
-                    </span>
-                  </button>
-                </Link>
-              </div>
-            </div>
-
-            
-            <div className="lg:w-1/2 relative">
-              <div className="relative flex justify-center lg:justify-end lg:ml-2">
-                
-                <div className="relative rounded-3xl overflow-hidden border border-white/30 w-[28rem]">
-                  <Image
-                    src="/c5.jpeg"
-                    alt="Cliff Premium Coatings Technology"
-                    width={200}
-                    height={300}
-                    className="object-cover w-full h-[350px]"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
-
-                      
-                  <div className="absolute top-6 right-6">
-                    <span className="text-6xl font-bold text-white/30">03</span>
-                  </div>
-                </div>
-
-                <div className="absolute -bottom-6 left-1/4 w-32 h-32 backdrop-blur-sm bg-white/10 rounded-2xl flex items-center justify-center shadow-lg ">
-                  <div className="text-center p-4">
-                    <div className="text-2xl font-bold text-[#DFC65F] drop-shadow-lg">
-                      CLIFF
-                    </div>
-                    <div className="text-xs text-zinc-200 mt-1 tracking-wider">
-                      COATINGS
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div> */}
 
       <section className="py-16 bg-black">
         <div className=" p-4 space-y-10">

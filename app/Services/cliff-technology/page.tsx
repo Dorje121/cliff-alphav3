@@ -5,6 +5,7 @@ import Link from "next/link";
 import React, { useRef, useLayoutEffect } from "react";
 import { gsap } from "gsap";
 import TextWithTexture from "@/components/textwithgoldentexture";
+import HeroSection from "@/components/Services/heropage";
 
 const CliffTechnology = () => {
   const backgroundImageRef = useRef<HTMLDivElement>(null);
@@ -33,116 +34,17 @@ const CliffTechnology = () => {
   }, []);
   return (
     <>
-      {/* Hero Section with Service Information */}
-      <div className="h-[90vh] to-black text-white relative overflow-hidden">
-      <div ref={backgroundImageRef} className="absolute inset-0 h-full">
-          <video
-            src="/homevideo/hero.mp4"
-            className="w-full h-full object-cover opacity-70"
-            autoPlay
-            loop
-            muted
-            playsInline
+
+     <HeroSection
+                          title="Cliff Technology"
+                          subtitle="Innovation"
+                          description="Cutting-edge optical technology and innovation solutions that push the boundaries of vision science and lens engineering."
+                          backgroundImage="/imAGES/technology.png"
+                          rightImage="/imAGES/technology.png"
+                          serviceNumber="08"
+                          badgeTitle="TECH"
+                          badgeSubtitle="INNOVATION"
           />
-          <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-gray-900/70 to-black/80" />
-        </div>
-
-        {/* Animated Background Elements */}
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-cyan-600/20 rounded-full blur-3xl animate-pulse"></div>
-          <div
-            className="absolute bottom-20 right-10 w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl animate-pulse"
-            style={{ animationDelay: "-1s" }}
-          ></div>
-          <div
-            className="absolute top-1/2 left-1/2 w-80 h-80 bg-cyan-700/10 rounded-full blur-3xl animate-pulse"
-            style={{ animationDelay: "-0.5s" }}
-          ></div>
-        </div>
-
-        {/* Main Content */}
-        <div className="relative z-10 container max-w-[1490px] mx-auto px-4 py-12 h-full">
-          <div className="flex flex-col lg:flex-row items-center gap-16 h-full">
-        
-            <div className="lg:w-1/2 space-y-4">
-
-             
-              <h1 className="text-5xl md:text-7xl mt-12 font-bold leading-tight">
-                <TextWithTexture
-                  text="Cliff Technology"
-                  className="text-5xl md:text-7xl mt-12 font-bold leading-tight capitalize"
-                />
-              </h1>
-
-             
-              <p className="text-xl md:text-2xl bg-gradient-to-r from-white via-yellow-100 to-yellow-200 bg-clip-text text-transparent leading-relaxed max-w-2xl">
-                Cutting-edge optical technology and innovation solutions that 
-                push the boundaries of vision science and lens engineering.
-              </p>
-
-             
-              <div className="pt-8">
-                <Link href="/Contact" className="group relative inline-block">
-                  <button className="px-8 py-4 bg-gradient-to-r from-white via-yellow-100 to-yellow-200 rounded-full text-black font-semibold text-lg  transition-all duration-300 transform hover:scale-105">
-                    <span className="relative z-10 flex items-center justify-center">
-                      Contact Us
-                      <svg
-                        className="w-5 h-5 ml-2 transition-transform duration-300 group-hover:translate-x-1"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M17 8l4 4m0 0l-4 4m4-4H3"
-                        />
-                      </svg>
-                    </span>
-                  </button>
-                </Link>
-              </div>
-            </div>
-
-            {/* Right Content - Enhanced Visual */}
-            <div className="lg:w-1/2 relative">
-              <div className="relative flex justify-center lg:justify-end lg:ml-2">
-                {/* Main Image Container */}
-                <div className="relative rounded-3xl overflow-hidden shadow-2xl w-[28rem]">
-                  <Image
-                    src="/imAGES/technology.png"
-                    alt="Cliff Technology Innovation"
-                    width={200}
-                    height={300}
-                    className="object-cover h-[300px] w-full"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
-
-                  {/* Service Number Overlay */}
-                  <div className="absolute top-6 right-6">
-                    <span className="text-6xl font-bold text-white/30">08</span>
-                  </div>
-                </div>
-{/* 
-                <div className="absolute -bottom-6 left-1/4 w-32 h-32 bg-gradient-to-br from-cyan-700 to-cyan-800 rounded-2xl flex items-center justify-center shadow-xl border border-white/10">
-                  <div className="text-center">
-                    <div className="text-2xl font-bold text-white">Tech</div>
-                    <div className="text-xs text-gray-400">Innovation</div>
-                  </div>
-                </div> */}
-                <div className="absolute -bottom-6 left-1/4 w-32 h-32 backdrop-blur-lg bg-white/20 rounded-2xl flex items-center justify-center shadow-lg ">
-                  <div className="text-center p-4">
-                    <div className="text-2xl font-bold text-[#DFC65F] drop-shadow-lg">TECH</div>
-                    <div className="text-xs text-gray-200 mt-1 tracking-wider">INNOVATION</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </div>
 
       {/* Main Content with Same Background as Cliff Coatings */}
       {/* <div className="min-h-screen text-white overflow-hidden">
