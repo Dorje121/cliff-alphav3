@@ -66,7 +66,7 @@ const Details = () => {
   return (
     <>
       {/* Main Content */}
-      <div className="min-h-screen text-white">
+      <div className="text-white bg-black py-16">
         <div className="max-w-[1500px] mx-auto p-4">
           {/* Header Section */}
           <motion.div

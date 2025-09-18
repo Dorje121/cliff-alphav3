@@ -86,7 +86,7 @@ export default function HeroSection({
       <div className="relative z-10 container max-w-[1490px] mx-auto px-4 py-12 h-full">
         <div className="flex flex-col lg:flex-row items-center gap-16 h-full">
           <div className="lg:w-1/2 space-y-4">
-            <h1 className="text-5xl md:text-7xl mt-12 font-bold leading-tight capitalize hero-title">
+            <div className="text-5xl md:text-7xl mt-12 font-bold leading-tight capitalize hero-title">
               <TextWithTexture
                 text={title}
                 className="text-5xl md:text-7xl mt-12 font-bold leading-tight capitalize"
@@ -95,7 +95,7 @@ export default function HeroSection({
                 text={subtitle}
                 className="bg-gradient-to-r from-white via-yellow-100 to-yellow-200 bg-clip-text text-transparent"
               />
-            </h1>
+            </div>
 
             <p className="text-xl md:text-2xl  text-white leading-relaxed max-w-2xl">
               {description}
