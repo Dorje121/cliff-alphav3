@@ -8,6 +8,12 @@ import { X, Power, Pause, Play, RotateCcw } from "lucide-react";
 export interface Server {
   id: string;
   number: string;
+  particulars: string;
+  powerRange: string;
+  cyl: string;
+  hc: string;
+  nox: string;
+  bluesafe: string;
   serviceName: string;
   osType: "windows" | "linux" | "ubuntu";
   serviceLocation: string;
@@ -28,7 +34,13 @@ interface ServerManagementTableProps {
 const defaultServers: Server[] = [
   {
     id: "1",
-    number: "01",
+    number: "1.50 ",
+    particulars: "Clear",
+    powerRange: "0.00 to -6.00",
+    cyl: "0.00 to -2.00",
+    hc: "Available",
+    nox: "Available",
+    bluesafe: "3200",
     serviceName: "VPS-2 (Windows)",
     osType: "windows",
     serviceLocation: "Frankfurt, Germany",
@@ -41,6 +53,12 @@ const defaultServers: Server[] = [
   {
     id: "2", 
     number: "02",
+    particulars: "Photocrom",
+    powerRange: "(+6/-6)",
+    cyl: "0.00 to -2.00",
+    hc: "Available",
+    nox: "Available",
+    bluesafe: "3800",
     serviceName: "VPS-1 (Windows)",
     osType: "windows",
     serviceLocation: "Frankfurt, Germany", 
@@ -53,6 +71,12 @@ const defaultServers: Server[] = [
   {
     id: "3",
     number: "03", 
+    particulars: "Photocrom Plus",
+    powerRange: "0.00 to -6.00",
+    cyl: "0.00 to -2.00",
+    hc: "Available",
+    nox: "Available",
+    bluesafe: "4200",
     serviceName: "VPS-1 (Ubuntu)",
     osType: "ubuntu",
     serviceLocation: "Paris, France",
@@ -65,6 +89,12 @@ const defaultServers: Server[] = [
   {
     id: "4",
     number: "04",
+    particulars: "Photocrom with Blue Shield",
+    powerRange: "0.00 to -6.00",
+    cyl: "0.00 to -2.00",
+    hc: "Available",
+    nox: "Available",
+    bluesafe: "4800",
     serviceName: "Cloud Server (Ubuntu)",
     osType: "ubuntu",
     serviceLocation: "California, US West",
@@ -77,6 +107,12 @@ const defaultServers: Server[] = [
   {
     id: "5",
     number: "05",
+    particulars: "Blue Shield",
+    powerRange: "0.00 to -6.00",
+    cyl: "0.00 to -2.00",
+    hc: "Available",
+    nox: "Available",
+    bluesafe: "4200",
     serviceName: "Dedicated Server (Windows)",
     osType: "windows",
     serviceLocation: "Virginia, US East",
@@ -85,11 +121,29 @@ const defaultServers: Server[] = [
     dueDate: "15 Dec 2026",
     cpuPercentage: 25,
     status: "inactive"
+  },
+  {
+    id: "6",
+    number: "06",
+    particulars: "Polarized",
+    powerRange: "0.00 to -6.00",
+    cyl: "0.00 to -2.00",
+    hc: "Available",
+    nox: "Available",
+    bluesafe: "4500",
+    serviceName: "Polarized Server (Windows)",
+    osType: "windows",
+    serviceLocation: "Virginia, US East",
+    countryCode: "us",
+    ip: "203.0.113.46",
+    dueDate: "15 Dec 2026",
+    cpuPercentage: 30,
+    status: "active"
   }
 ];
 
 export function ServerManagementTable({
-  title = "Active Services",
+  title = "Lens Specifications",
   servers: initialServers = defaultServers,
   onStatusChange,
   className = ""
@@ -312,14 +366,14 @@ export function ServerManagementTable({
           animate="visible"
         >
           {/* Headers */}
-          <div className="grid grid-cols-12 gap-4 px-4 py-2 text-xs font-medium text-muted-foreground uppercase tracking-wider">
-            <div className="col-span-1">No</div>
-            <div className="col-span-2">Service Name</div>
-            <div className="col-span-2">Service Location</div>
-            <div className="col-span-2">IP</div>
-            <div className="col-span-2">Due Date</div>
-            <div className="col-span-2">CPU</div>
-            <div className="col-span-1">Status</div>
+          <div className="grid grid-cols-7 gap-4 px-4 py-2 text-xs font-medium text-muted-foreground uppercase tracking-wider">
+            <div className="col-span-1">PARTICULARS</div>
+            <div className="col-span-1">INDEX</div>
+            <div className="col-span-1">POWER RANGE</div>
+            <div className="col-span-1">CYL</div>
+            <div className="col-span-1">HC</div>
+            <div className="col-span-1">NOX</div>
+            <div className="col-span-1">BLUESAFE</div>
           </div>
 
           {/* Server Rows */}
@@ -369,56 +423,54 @@ export function ServerManagementTable({
                 />
                 
                 {/* Grid Content */}
-                <div className="relative grid grid-cols-12 gap-4 items-center">
-                  {/* Number */}
+                <div className="relative grid grid-cols-7 gap-4 items-center">
+                  {/* PARTICULARS */}
+                  <div className="col-span-1">
+                    <span className="text-foreground font-medium">
+                      {server.particulars}
+                    </span>
+                  </div>
+
+                  {/* INDEX */}
                   <div className="col-span-1">
                     <span className="text-2xl font-bold text-muted-foreground">
                       {server.number}
                     </span>
                   </div>
 
-                  {/* Service Name */}
-                  <div className="col-span-2 flex items-center gap-3">
-                    {getOSIcon(server.osType)}
-                    <span className="text-foreground font-medium">
-                      {server.serviceName}
-                    </span>
-                  </div>
-
-                  {/* Service Location */}
-                  <div className="col-span-2 flex items-center gap-3">
-                    <div className="w-8 h-8 rounded-full overflow-hidden border border-border/30 flex items-center justify-center">
-                      <div className="w-full h-full">
-                        {getCountryFlag(server.countryCode)}
-                      </div>
-                    </div>
-                    <span className="text-foreground">
-                      {server.serviceLocation}
-                    </span>
-                  </div>
-
-                  {/* IP */}
-                  <div className="col-span-2">
-                    <span className="text-foreground font-mono text-sm">
-                      {server.ip}
-                    </span>
-                  </div>
-
-                  {/* Due Date */}
-                  <div className="col-span-2">
-                    <span className="text-foreground">
-                      {server.dueDate}
-                    </span>
-                  </div>
-
-                  {/* CPU */}
-                  <div className="col-span-2">
-                    {getCPUBars(server.cpuPercentage, server.status)}
-                  </div>
-
-                  {/* Status */}
+                  {/* POWER RANGE */}
                   <div className="col-span-1">
-                    {getStatusBadge(server.status)}
+                    <span className="text-foreground font-medium">
+                      {server.powerRange}
+                    </span>
+                  </div>
+
+                  {/* CYL */}
+                  <div className="col-span-1">
+                    <span className="text-foreground font-medium">
+                      {server.cyl}
+                    </span>
+                  </div>
+
+                  {/* HC */}
+                  <div className="col-span-1">
+                    <span className="text-foreground font-medium">
+                      {server.hc}
+                    </span>
+                  </div>
+
+                  {/* NOX */}
+                  <div className="col-span-1">
+                    <span className="text-foreground font-medium">
+                      {server.nox}
+                    </span>
+                  </div>
+
+                  {/* BLUESAFE */}
+                  <div className="col-span-1">
+                    <span className="text-foreground font-medium">
+                      {server.bluesafe}
+                    </span>
                   </div>
                 </div>
               </motion.div>

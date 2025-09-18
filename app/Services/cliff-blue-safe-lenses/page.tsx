@@ -245,35 +245,39 @@ const CliffBlueSafeLenses = () => {
       </div>
 
       {/* Image Section */}
-      <div className="relative py-20 bg-black">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-              <span className="bg-gradient-to-r from-white via-yellow-100 to-yellow-200 bg-clip-text text-transparent">
-                Advanced Blue Light Protection
-              </span>
-            </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Experience the perfect blend of style and protection with our cutting-edge lens technology
-            </p>
-          </div>
-          
-          <div className="relative max-w-[1470px] mx-auto w-full">
-            <div className="relative w-full h-[700px]">
-              <Image
-                src="/pageimg/safe.png"
-                alt="Cliff Blue Safe UV Technology"
-                width={1000}
-                height={600}
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-black via-black/80 to-transparent z-10" />
-              <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-black via-black/80 to-transparent z-10" />
-             
-            </div>
-          </div>
-        </div>
+      <div className="relative py-16 sm:py-20 bg-black">
+  <div className="container mx-auto px-4">
+    {/* Heading */}
+    <div className="text-center mb-10 sm:mb-12">
+      <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-white mb-4 leading-snug">
+        <span className="bg-gradient-to-r from-white via-yellow-100 to-yellow-200 bg-clip-text text-transparent">
+          Advanced Blue Light Protection
+        </span>
+      </h2>
+      <p className="text-sm sm:text-base md:text-xl text-gray-300 max-w-3xl mx-auto px-2">
+        Experience the perfect blend of style and protection with our
+        cutting-edge lens technology
+      </p>
+    </div>
+
+    {/* Image */}
+    <div className="relative max-w-[1470px] mx-auto w-full">
+      <div className="relative w-full h-[250px] sm:h-[400px] md:h-[550px] lg:h-[700px] rounded-xl overflow-hidden">
+        <Image
+          src="/pageimg/safe.png"
+          alt="Cliff Blue Safe UV Technology"
+          width={1000}
+          height={600}
+          className="w-full h-full object-cover"
+        />
+        {/* Gradient overlays */}
+        <div className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-black via-black/80 to-transparent z-10" />
+        <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-black via-black/80 to-transparent z-10" />
       </div>
+    </div>
+  </div>
+</div>
+
 
       <BackToServicesButton />
     </>
