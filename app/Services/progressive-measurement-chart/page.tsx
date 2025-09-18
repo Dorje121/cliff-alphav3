@@ -103,8 +103,8 @@ const ProgressiveMeasurementChart = () => {
               Measurement chart
             </span>
           </h2>
-          <div className="h-[85vh] w-screen">
-            <img className="w-full h-full object-center object-cover " src="/pageimg/measurement.png" alt="cliff measurement chart" />
+          <div className="h-fit md:h-[85vh] w-screen">
+            <img className="rotate-90 md:rotate-0 w-full h-full object-center object-cover " src="/pageimg/measurement.png" alt="cliff measurement chart" />
           </div>
         </div>
       </div>

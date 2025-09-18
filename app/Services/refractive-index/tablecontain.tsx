@@ -75,7 +75,7 @@ const LensSlider: React.FC = () => {
     };
 
     return (
-        <> <section className="  px-4 sm:px-7">
+        <> <section className="  px-4 sm:px-6 md:px-7">
             <h2 className=" text-center mb-2 md:text-left mt-20 text-xl sm:text-3xl md:text-4xl lg:text-6xl font-bold   !bg-gradient-to-r !from-white !via-yellow-100 !to-yellow-200 !bg-clip-text !text-transparent px-2">
                 Recommended Refractive Index <span className="text-yellow-400">by Prescription</span>
             </h2>
