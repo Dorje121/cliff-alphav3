@@ -9,16 +9,6 @@ import {
 } from "framer-motion";
 
 const CustomCursor: React.FC = () => {
-  // Check if device is mobile
-  const isMobile = () => {
-    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth <= 768;
-  };
-
-  // Don't render custom cursor on mobile devices
-  if (isMobile()) {
-    return null;
-  }
-
   // 1. Create motion values to track mouse position.
   // These values are optimized for frequent updates and won't trigger re-renders.
   const mouseX = useMotionValue(0);
@@ -44,6 +34,16 @@ const CustomCursor: React.FC = () => {
     };
     // Add motion values to the dependency array
   }, [mouseX, mouseY]);
+
+  // Check if device is mobile
+  const isMobile = () => {
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth <= 768;
+  };
+
+  // Don't render custom cursor on mobile devices
+  if (isMobile()) {
+    return null;
+  }
 
   // 3. Use `useMotionTemplate` to create a dynamic CSS transform string.
   // This combines the smoothed mouse coordinates with a static transform
