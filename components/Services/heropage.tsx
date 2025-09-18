@@ -106,10 +106,10 @@ export default function HeroSection({
 
             {/* CTA */}
             <div className="pt-8">
-              <Link href={ctaLink} className="group relative inline-block">
+              <Link href='/Contact' className="group relative inline-block">
                 <button className="px-8 py-4 bg-white/10 rounded-full text-white backdrop-blur-sm border border-white/30 font-semibold text-lg transition-all duration-300 transform hover:scale-105 cursor-pointer">
                   <span className="relative z-10 flex items-center justify-center">
-                    {ctaLabel}
+                    Contact Us
                     <svg
                       className="w-5 h-5 ml-2 transition-transform duration-300 group-hover:translate-x-1"
                       fill="none"
