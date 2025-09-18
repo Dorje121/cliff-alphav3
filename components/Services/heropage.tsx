@@ -16,8 +16,7 @@ interface HeroSectionProps {
   description: string;
   backgroundImage: string;
   rightImage: string;
-  ctaLabel?: string;
-  ctaLink?: string;
+
   serviceNumber?: string;
   badgeTitle?: string;
   badgeSubtitle?: string;
@@ -29,8 +28,6 @@ export default function HeroSection({
   description,
   backgroundImage,
   rightImage,
-  ctaLabel,
-  ctaLink,
   serviceNumber = "01",
   badgeTitle = "CLIFF",
   badgeSubtitle = "COATINGS",

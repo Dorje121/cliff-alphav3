@@ -140,7 +140,10 @@ const CliffBlueSafeCoating = () => {
         badgeTitle="CLIFF"
         badgeSubtitle="BLUE SAFE"
       /> 
-      <div className="h-[100vh] text-white relative overflow-hidden">
+
+
+      
+      {/* <div className="h-[100vh] text-white relative overflow-hidden">
         <div ref={backgroundImageRef} className="absolute inset-0 h-full">
           <Image
             src={"/bluesafe/blue1.png"}
@@ -151,7 +154,7 @@ const CliffBlueSafeCoating = () => {
           <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-gray-900/70 to-black/80" />
         </div>
 
-        {/* Main Content */}
+    
         <div className="relative z-10 container max-w-[1490px] mx-auto px-4 py-12 h-full">
           <div className="flex flex-col lg:flex-row items-center gap-16 h-full">
             <div className="lg:w-1/2 space-y-4">
@@ -166,7 +169,6 @@ const CliffBlueSafeCoating = () => {
                 />
               </h1>
 
-              {/* Service Description */}
               <p className="text-xl md:text-2xl  text-white leading-relaxed max-w-2xl">
                 Advanced blue light protection coating for modern digital
                 lifestyle. Premium coating technology protects your eyes from
@@ -197,10 +199,10 @@ const CliffBlueSafeCoating = () => {
               </div>
             </div>
 
-            {/* Right Content - Enhanced Visual */}
+          
             <div className="lg:w-1/2 relative">
               <div className="relative flex justify-center lg:justify-end lg:ml-2">
-                {/* Main Image Container */}
+            
                 <div className="relative rounded-3xl overflow-hidden border border-white/20 shadow-2xl w-[28rem]">
                   <Image
                     src="/bluesafe/blue1.png"
@@ -211,7 +213,7 @@ const CliffBlueSafeCoating = () => {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
 
-                  {/* Service Number Overlay */}
+           
                   <div className="absolute top-6 right-6">
                     <span className="text-6xl font-bold text-white/30">02</span>
                   </div>
@@ -230,7 +232,7 @@ const CliffBlueSafeCoating = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
       <BackToServicesButton />
 
