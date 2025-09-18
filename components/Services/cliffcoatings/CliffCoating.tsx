@@ -7,7 +7,7 @@ import HeroSection from "@/components/Services/heropage";
 import { ArrowLeft } from "lucide-react";
 import { gsap } from "gsap";
 import TextWithTexture from "@/components/textwithgoldentexture";
-import CTA from "../cta/CTA";
+
 
 // Star Icon Component
 const StarIcon = () => (
