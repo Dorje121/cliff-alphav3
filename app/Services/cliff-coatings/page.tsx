@@ -1,4 +1,4 @@
-import CliffCoatings from "@/components/Services/CliffCoating";
+import CliffCoatings from "@/components/Services/cliffcoatings/CliffCoating";
 import React from "react";
 
 const CliffCoatingsPage = () => {
