@@ -9,6 +9,16 @@ import {
 } from "framer-motion";
 
 const CustomCursor: React.FC = () => {
+  // Check if device is mobile
+  const isMobile = () => {
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth <= 768;
+  };
+
+  // Don't render custom cursor on mobile devices
+  if (isMobile()) {
+    return null;
+  }
+
   // 1. Create motion values to track mouse position.
   // These values are optimized for frequent updates and won't trigger re-renders.
   const mouseX = useMotionValue(0);

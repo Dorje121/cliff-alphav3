@@ -73,7 +73,7 @@ const LensTable: React.FC<{ title: string; data: typeof singleVisionData }> = ({
 
 const CliffZennLenses: React.FC = () => {
     return (
-        <div className="min-h-screen bg-black text-white px-4 sm:px-6 lg:px-20 py-12">
+        <div className="min-h-screen bg-black text-white px-4 sm:px-6 md:px-7 py-12">
             <LensTable title="CLIFF ZENN SINGLE VISION" data={singleVisionData} />
             <LensTable title="CLIFF ZENN PROGRESSIVE LENSES" data={progressiveData} />
         </div>

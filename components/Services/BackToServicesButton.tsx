@@ -7,7 +7,7 @@ const BackToServicesButton = () => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <div className="fixed top-16 left-8 z-50">
+    <div className="fixed top-16 left-8 z-50 hidden sm:block">
       <Link
         href="/Services"
         onMouseEnter={() => setIsHovered(true)}

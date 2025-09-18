@@ -75,7 +75,7 @@ const LensSlider: React.FC = () => {
     };
 
     return (
-        <> <section className="  px-7">
+        <> <section className="  px-4 sm:px-6 md:px-7">
             <h2 className=" text-center mb-2 md:text-left mt-20 text-xl sm:text-3xl md:text-4xl lg:text-6xl font-bold   !bg-gradient-to-r !from-white !via-yellow-100 !to-yellow-200 !bg-clip-text !text-transparent px-2">
                 Recommended Refractive Index <span className="text-yellow-400">by Prescription</span>
             </h2>
@@ -150,7 +150,7 @@ const LensSlider: React.FC = () => {
                 {/* Prev Button */}
                 <button
                     onClick={goPrev}
-                    className="absolute left-3 top-1/2 -translate-y-1/2 p-2 rounded-full bg-gray-700/50 hover:bg-gray-600"
+                    className="absolute left-0 top-1/2 -translate-y-1/2 p-2 rounded-full bg-gray-700/50 hover:bg-gray-600"
                 >
                     <ChevronLeft className="w-6 h-6" />
                 </button>
@@ -158,7 +158,7 @@ const LensSlider: React.FC = () => {
                 {/* Next Button */}
                 <button
                     onClick={goNext}
-                    className="absolute right-3 top-1/2 -translate-y-1/2 p-2 rounded-full bg-gray-700/50 hover:bg-gray-600"
+                    className="absolute right-0 top-1/2 -translate-y-1/2 p-2 rounded-full bg-gray-700/50 hover:bg-gray-600"
                 >
                     <ChevronRight className="w-6 h-6" />
                 </button>

@@ -2,7 +2,7 @@ import React from 'react';
 
 const Techbene = () => {
   return (
-    <section className='my-14 px-7 bg-black text-white'>
+    <section className='my-14 px-4 sm:px-6 md:px-7 bg-black text-white'>
       <div className="parent w-full  flex-col lg:flex-row flex  justify-center">
 
         {/* Left Image Section */}
