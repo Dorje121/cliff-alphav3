@@ -134,8 +134,6 @@ const CliffBlueSafeCoating = () => {
         description="Advanced blue light protection coating for modern digital lifestyle. Premium coating technology protects your eyes from harmful blue light emitted by digital screens."
         backgroundImage="/bluesafe/blue1.png"
         rightImage="/bluesafe/blue1.png"
-        ctaLabel="Contact Us"
-        ctaLink="/Contact"
         serviceNumber="03"
         badgeTitle="CLIFF"
         badgeSubtitle="BLUE SAFE"
