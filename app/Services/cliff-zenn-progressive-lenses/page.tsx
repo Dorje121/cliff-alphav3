@@ -245,7 +245,7 @@ const CliffZennProgressiveLenses = () => {
                 <h2 className="text-xl sm:text-2xl lg:text-4xl font-bold text-center mb-8 bg-gradient-to-r from-white via-yellow-100 to-yellow-200 bg-clip-text text-transparent px-4">
                   Refined digital craftsmanship for evolving lifestyle.
                 </h2>
-                <div className="w-full h-[300px] md:h-[400px]">
+                <div className="w-full h-[300px] md:h-[400px] overflow-hidden rounded-md">
                   <img
                     className="w-full h-full object-center object-cover"
                     src="/pageimg/lensView.png"
