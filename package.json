@@ -19,6 +19,7 @@
     "@studio-freight/tempus": "^0.0.44",
     "@types/three": "^0.178.1",
     "class-variance-authority": "^0.7.1",
+    "embla-carousel": "^8.6.0",
     "embla-carousel-autoplay": "^8.6.0",
     "embla-carousel-react": "^8.6.0",
     "gsap": "^3.13.0",
