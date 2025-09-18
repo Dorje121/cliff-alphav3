@@ -3,10 +3,10 @@ import React, { useState, useRef, useLayoutEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import BackToServicesButton from "@/components/Services/BackToServicesButton";
-import HeroSection from "@/components/Services/heropage";
 import { ArrowLeft } from "lucide-react";
 import { gsap } from "gsap";
 import TextWithTexture from "@/components/textwithgoldentexture";
+import HeroSection from "@/components/Services/heropage";
 
 
 // Star Icon Component
@@ -231,6 +231,20 @@ const CliffCoatings = () => {
 
   return (
     <>
+
+<HeroSection
+  title="Cliff Premium"
+  subtitle="Coatings"
+  description="Advanced protective coatings for modern eyewear. Premium coating technology enhances clarity, durability, and protection for your lenses."
+  backgroundImage="/c5.jpeg"
+  rightImage="/c5.jpeg"
+  ctaLabel="Contact Us"
+  ctaLink="/Contact"
+  serviceNumber="02"
+  badgeTitle="CLIFF"
+  badgeSubtitle="COATINGS"
+/> 
+
       {/* Hero Section with Service Information */}
       <div className="h-[100vh] text-white relative overflow-hidden">
         <div ref={backgroundImageRef} className="absolute inset-0 h-full">
