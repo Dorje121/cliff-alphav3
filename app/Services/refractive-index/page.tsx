@@ -54,7 +54,7 @@ const RefractiveIndex = () => {
 
 
       <TableContain />
-      {/* <ChartIndex /> */}
+      <ChartIndex />
       <BackToServicesButton />
     </>
   );
