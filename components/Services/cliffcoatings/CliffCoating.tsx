@@ -246,7 +246,7 @@ const CliffCoatings = () => {
 /> 
 
       {/* Hero Section with Service Information */}
-      <div className="h-[100vh] text-white relative overflow-hidden">
+      {/* <div className="h-[100vh] text-white relative overflow-hidden">
         <div ref={backgroundImageRef} className="absolute inset-0 h-full">
           <Image
             src={"/c5.jpeg"}
@@ -256,12 +256,12 @@ const CliffCoatings = () => {
           />
           <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-gray-900/70 to-black/80" />
         </div>
-        {/* Main Content */}
+        
         <div className="relative z-10 container max-w-[1490px] mx-auto px-4 py-12 h-full">
           <div className="flex flex-col lg:flex-row items-center gap-16 h-full">
-            {/* Left Content */}
+          
             <div className="lg:w-1/2 space-y-4">
-              {/* Service Title */}
+             
               <h1 className="text-5xl md:text-7xl mt-12 font-bold leading-tight">
                 <TextWithTexture
                   text="Cliff Premium"
@@ -273,14 +273,14 @@ const CliffCoatings = () => {
                 />
               </h1>
 
-              {/* Service Description */}
+       
               <p className="text-xl md:text-2xl  text-white leading-relaxed max-w-2xl">
                 Advanced protective coatings for modern eyewear. Premium coating
                 technology enhances clarity, durability, and protection for your
                 lenses.
               </p>
 
-              {/* CTA Button */}
+         
               <div className="pt-8">
                 <Link href="/Contact" className="group relative inline-block">
                   <button className="px-8 py-4 bg-white/10 rounded-full text-white backdrop-blur-sm border border-white/30 font-semibold text-lg  transition-all duration-300 transform hover:scale-105  cursor-pointer">
@@ -305,10 +305,10 @@ const CliffCoatings = () => {
               </div>
             </div>
 
-            {/* Right Content - Enhanced Visual */}
+            
             <div className="lg:w-1/2 relative">
               <div className="relative flex justify-center lg:justify-end lg:ml-2">
-                {/* Main Image Container */}
+                
                 <div className="relative rounded-3xl overflow-hidden border border-white/30 w-[28rem]">
                   <Image
                     src="/c5.jpeg"
@@ -319,7 +319,7 @@ const CliffCoatings = () => {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
 
-                  {/* Service Number Overlay */}
+                      
                   <div className="absolute top-6 right-6">
                     <span className="text-6xl font-bold text-white/30">03</span>
                   </div>
@@ -339,7 +339,7 @@ const CliffCoatings = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
       <section className="py-16 bg-black">
         <div className=" p-4 space-y-10">
