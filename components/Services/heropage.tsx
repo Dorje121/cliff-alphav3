@@ -127,41 +127,41 @@ export default function HeroSection({
           </div>
 
           {/* Right Content - Enhanced Visual */}
-          <div className="w-full lg:w-1/2 relative flex justify-center lg:justify-end lg:ml-2 mt-8 lg:mt-0">
-            <div className="relative">
-              {/* Main Image Container */}
-              <div className="relative rounded-2xl sm:rounded-3xl lg:rounded-3xl overflow-hidden shadow-2xl w-full max-w-md sm:max-w-lg lg:w-[28rem] hero-image">
-                <Image
-                  src={rightImage}
-                  alt="Cliff Blue Safe Coating Technology"
-                  width={200}
-                  height={300}
-                  className="object-cover h-[250px] sm:h-[300px] lg:h-[300px] w-full"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
+          <div className="w-full lg:w-1/2 relative flex justify-center lg:justify-end lg:ml-2 mt-6 lg:mt-0">
+                <div className="relative w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-[28rem]">
+                  {/* Main Image Container */}
+                  <div className="relative rounded-xl sm:rounded-2xl md:rounded-3xl overflow-hidden shadow-xl sm:shadow-2xl w-full hero-image">
+                    <Image
+                      src={rightImage}
+                      alt="Cliff Blue Safe Coating Technology"
+                      width={400}
+                      height={400}
+                      className="object-cover w-full h-[180px] sm:h-[220px] md:h-[280px] lg:h-[300px]"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
 
-                {/* Service Number Overlay */}
-                <div className="absolute top-4 sm:top-6 lg:top-6 right-4 sm:right-6 lg:right-6">
-                  <span className="text-4xl sm:text-6xl lg:text-6xl font-bold text-white/30">{serviceNumber}</span>
+                    {/* Service Number Overlay */}
+                    <div className="absolute top-1 sm:top-2 md:top-4 right-1 sm:right-2 md:right-4">
+                      <span className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white/30">{serviceNumber}</span>
+                    </div>
+                  </div>
+
+                  {/* Badge Overlay */}
+                  <div className="absolute -bottom-4 sm:-bottom-6 md:-bottom-8 left-1 sm:left-2 md:left-4 w-16 sm:w-20 md:w-24 h-16 sm:h-20 md:h-24 backdrop-blur-sm bg-white/10 rounded-xl sm:rounded-2xl flex items-center justify-center">
+                    <div className="text-center p-1 sm:p-2 md:p-3">
+                      <div className="text-sm sm:text-base md:text-lg lg:text-2xl font-bold text-[#DFC65F] drop-shadow-lg">
+                        {badgeTitle}
+                      </div>
+                      <div className="text-[6px] sm:text-[8px] md:text-[10px] lg:text-sm text-gray-200 mt-0.5 sm:mt-1 tracking-wider">
+                        {badgeSubtitle}
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div className="absolute -bottom-8 left-1 sm:-left-14 w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 backdrop-blur-sm bg-white/10 rounded-2xl flex items-center justify-center">
-              <div className="text-center p-2 sm:p-4">
-                <div className="text-lg sm:text-xl md:text-2xl font-bold text-[#DFC65F] drop-shadow-lg">
-                  {badgeTitle}
-                </div>
-                <div className="text-[10px] sm:text-xs md:text-sm text-gray-200 mt-1 tracking-wider">
-                  {badgeSubtitle}
-                </div>
-              </div>
-              </div>
-              
-            </div>
-            </div>
-          </div>
-          
         </div>
       </div>
+    </div>
 
   );
 }
