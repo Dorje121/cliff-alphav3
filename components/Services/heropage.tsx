@@ -85,7 +85,7 @@ export default function HeroSection({
       {/* Main Content */}
       <div className="relative z-10 container max-w-[1510px] mx-auto px-4 sm:px-6 py-8 sm:py-12 h-full">
         <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-16 h-full">
-          <div className="w-full lg:w-1/2 space-y-4 text-center lg:text-left">
+          <div className="w-full lg:w-1/2 space-y-2 pt-24 sm:pt-0 text-center lg:text-left">
             <div className="hero-title">
               <TextWithTexture
                 text={title}
@@ -93,7 +93,7 @@ export default function HeroSection({
               />
               <TextWithTexture
                 text={subtitle}
-                className="text-2xl sm:text-3xl md:text-4xl lg:text-7xl bg-gradient-to-r from-white via-yellow-100 to-yellow-200 bg-clip-text text-transparent font-bold leading-tight"
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold leading-tight capitalize block"
               />
             </div>
 
@@ -145,20 +145,23 @@ export default function HeroSection({
                   <span className="text-4xl sm:text-6xl lg:text-6xl font-bold text-white/30">{serviceNumber}</span>
                 </div>
               </div>
-              <div className="absolute -bottom-4 sm:-bottom-6 lg:-bottom-6 left-1/4 sm:left-1/4 lg:left-1/4 w-24 h-24 sm:w-32 sm:h-32 lg:w-32 lg:h-32 backdrop-blur-sm bg-white/10 rounded-2xl flex items-center justify-center">
-                <div className="text-center p-2 sm:p-4 lg:p-4">
-                  <div className="text-lg sm:text-2xl lg:text-2xl font-bold text-[#DFC65F] drop-shadow-lg">
-                    {badgeTitle}
-                  </div>
-                  <div className="text-xs text-gray-200 mt-1 tracking-wider">
-                    {badgeSubtitle}
-                  </div>
+              <div className="absolute -bottom-8 left-1 sm:-left-14 w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 backdrop-blur-sm bg-white/10 rounded-2xl flex items-center justify-center">
+              <div className="text-center p-2 sm:p-4">
+                <div className="text-lg sm:text-xl md:text-2xl font-bold text-[#DFC65F] drop-shadow-lg">
+                  {badgeTitle}
+                </div>
+                <div className="text-[10px] sm:text-xs md:text-sm text-gray-200 mt-1 tracking-wider">
+                  {badgeSubtitle}
                 </div>
               </div>
+              </div>
+              
+            </div>
             </div>
           </div>
+          
         </div>
       </div>
-    </div>
+
   );
 }
