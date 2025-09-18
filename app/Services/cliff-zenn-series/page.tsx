@@ -53,7 +53,7 @@ const CliffZennSeries = () => {
         {/* Animated Background */}
         <div className="max-w-screen mx-auto ">
           {/* Main Content */}
-          <div className="relative z-10 px-7 py-20  w-[100%]">
+          <div className="relative z-10 px-4 sm:px-7 py-20  w-[100%]">
             {/* Hero Section with Statistics */}
             <div className="grid lg:grid-cols-2 gap-12 items-center mb-20">
               {/* Left Side - Statistics */}

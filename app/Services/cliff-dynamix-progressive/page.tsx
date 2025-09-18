@@ -171,7 +171,7 @@ const CliffDynamixProgressive = () => {
 
         {/* Main Content */}
         <div className="min-h-screen  text-white overflow-hidden">
-          <div className="w-full px-7">
+          <div className="w-full px-4 sm:px-7">
 
 
             <div className="relative  py-8 sm:py-12 lg:py-16">

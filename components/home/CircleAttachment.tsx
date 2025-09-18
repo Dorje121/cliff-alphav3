@@ -70,7 +70,7 @@ export default function CircleAttachment() {
             fill
             // objectFit="cover"
             quality={100}
-            className="object-contain object-right"
+            className="md:object-cover object-contain object-right"
           />
           {/* <div className="absolute z-50 -bottom-1 h-32 w-full bg-gradient-to-b from-transparent to-black "></div> */}
         </div>
@@ -86,7 +86,7 @@ export default function CircleAttachment() {
             fill
             // objectFit="cover"
             quality={100}
-            className="object-contain object-right"
+            className="object-contain md:object-cover object-right"
           />
           {/* <div className="absolute z-50 -bottom-1 h-32 w-full bg-gradient-to-b from-transparent to-black "></div> */}
         </div>
