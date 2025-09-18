@@ -24,7 +24,7 @@ const data = [
 
 export default function CliffZennPage() {
     return (
-        <div className="min-h-screen w-full bg-black text-white p-4 md:p-6">
+        <div className="min-h-screen w-full bg-black text-white px-4 sm:px-7">
             {/* Graph Section */}
             <section className="flex flex-col items-center justify-center bg-black px-2 sm:px-4 py-12 md:py-20">
 
