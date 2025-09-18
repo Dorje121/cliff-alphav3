@@ -134,11 +134,11 @@ export default function BlogPage() {
   return (
     <div className="min-h-screen  text-white">
       {/* Hero Section */}
-      <div className="relative pt-32 pb-20 px-4 sm:px-6 lg:px-8 ">
+      <div className="relative pt-16 pb-4 px-4 sm:px-6 lg:px-8  mb-10">
         <div className=" mx-auto text-center ">
 
-          <TextWithTexture text="Insights & Innovation" className="!h-26  text-5xl md:text-7xl font-bold mb-6 p-1" />
-          <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+          <TextWithTexture text="Insights & Innovation" className="!h-26  text-5xl md:text-7xl font-bold  p-1" />
+          <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto leading-">
             Discover the latest in lens technology, eye health, and vision
             science through our expert insights and cutting-edge research.
           </p>
@@ -155,7 +155,7 @@ export default function BlogPage() {
               .map((post) => (
                 <article
                   key={post.id}
-                  className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-gray-900/60 to-gray-800/60 backdrop-blur-md border border-gray-700/30 hover:border-gray-600/50 transition-all duration-500 hover:-translate-y-2"
+                  className="group relative overflow-hidden rounded-lg bg-gradient-to-br from-gray-900/60 to-gray-800/60 backdrop-blur-md border border-gray-700/30 hover:border-gray-600/50 transition-all duration-500 hover:-translate-y-2"
                 >
                   <div className="relative overflow-hidden">
                     <Image
@@ -163,7 +163,7 @@ export default function BlogPage() {
                       alt={post.title}
                       width={400}
                       height={300}
-                      className="w-full h-48 object-cover transition-transform duration-700 group-hover:scale-110"
+                      className="w-full h-56 object-cover transition-transform duration-700 group-hover:scale-110"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
                     <div className="absolute top-4 w-full px-5">
@@ -171,10 +171,6 @@ export default function BlogPage() {
                         <span className="px-3 py-1 bg-black/50 backdrop-blur-md text-white rounded-full text-xs font-medium border border-white/20">
                           {post.category}
                         </span>
-                        <div className="flex justify-center items-center gap-1 tracking-[1px]">
-                          <Eye size={14} />
-                          {post.views}
-                        </div>
                       </div>
                     </div>
                   </div>
@@ -194,7 +190,7 @@ export default function BlogPage() {
                         <div className="flex items-center gap-3">
                           <div className="flex items-center gap-1">
                             <Calendar size={14} />
-                            {formatDate(post.date)}
+                            <span className="">{formatDate(post.date)}</span>
                           </div>
 
                         </div>

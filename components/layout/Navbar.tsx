@@ -140,7 +140,7 @@ export default function Navbar() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 w-full z-[999] transition-colors duration-300 ${isOpen
+        className={`fixed top-0 left-0 w-full z-[9999999999] transition-colors duration-300 ${isOpen
           ? "text-black"
           : isTestProductPage || isInFirstSection
             ? "text-white"

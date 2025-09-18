@@ -10,56 +10,74 @@ interface TimeLoadingProps {
 
 const TimeLoading: React.FC<TimeLoadingProps> = ({ isVisible, onComplete }) => {
   const [progress, setProgress] = useState(0);
+  const [loadingStage, setLoadingStage] = useState("Initializing");
   const pathname = usePathname();
 
   useEffect(() => {
     if (isVisible) {
       setProgress(0);
+      setLoadingStage("Initializing");
+
+      const stages = ["Initializing", "Loading Assets", "Optimizing", "Almost Ready"];
+      let currentStageIndex = 0;
+
       const interval = setInterval(() => {
         setProgress((prev) => {
-          if (prev >= 100) {
+          const increment = Math.random() * 12 + 3;
+          const newProgress = Math.min(prev + increment, 100);
+
+          // Update loading stage based on progress
+          const stageProgress = Math.floor(newProgress / 25);
+          if (stageProgress !== currentStageIndex && stageProgress < stages.length) {
+            currentStageIndex = stageProgress;
+            setLoadingStage(stages[currentStageIndex]);
+          }
+
+          if (newProgress >= 100) {
             clearInterval(interval);
+            setLoadingStage("Complete");
             setTimeout(() => {
               onComplete?.();
-            }, 300);
+            }, 500);
             return 100;
           }
-          return prev + Math.random() * 15 + 5;
+          return newProgress;
         });
-      }, 100);
+      }, 120);
 
       return () => clearInterval(interval);
     }
   }, [isVisible, onComplete]);
 
-  const getPageTitle = (path: string) => {
-    if (path === "/") return "Home";
-    if (path === "/Services") return "Products";
-    if (path === "/test") return "Test";
+  const getPageTitle = (path: string): { title: string; category: string } => {
+    if (path === "/") return { title: "Home", category: "Welcome" };
+    if (path === "/Services") return { title: "Products", category: "Our Solutions" };
+    if (path === "/test") return { title: "Test", category: "Diagnostics" };
+    if (path === "/AboutUs") return { title: "About Us", category: "Our Story" };
+    if (path === "/Contact") return { title: "Contact", category: "Get in Touch" };
+    if (path === "/Blogs") return { title: "Blogs", category: "Insights" };
 
-    // Handle service pages
-    if (path.includes("cliff-blue-safe-coating")) return "Blue Safe Coating";
-    if (path.includes("cliff-blue-safe-lenses")) return "Blue Safe Lenses";
-    if (path.includes("cliff-coatings")) return "Coatings";
-    if (path.includes("cliff-drive-clear-lenses")) return "Drive Clear Lenses";
-    if (path.includes("cliff-dynamix-progressive"))
-      return "Dynamix Progressive";
-    if (path.includes("cliff-photo-z-lenses")) return "Photo Z Lenses";
-    if (path.includes("cliff-progressive-versatile"))
-      return "Progressive Versatile";
-    if (path.includes("cliff-single-vision-rx")) return "Single Vision RX";
-    if (path.includes("cliff-technology")) return "Technology";
-    if (path.includes("cliff-tinted-lenses")) return "Tinted Lenses";
-    if (path.includes("cliff-zenn-progressive-lenses"))
-      return "Zenn Progressive";
-    if (path.includes("cliff-zenn-series")) return "Zenn Series";
-    if (path.includes("cliff-zenn-single-vision")) return "Zenn Single Vision";
-    if (path.includes("progressive-measurement-chart"))
-      return "Measurement Chart";
-    if (path.includes("refractive-index")) return "Refractive Index";
+    // Handle service pages with better categorization
+    if (path.includes("cliff-blue-safe-coating")) return { title: "Blue Safe Coating", category: "Protective Solutions" };
+    if (path.includes("cliff-blue-safe-lenses")) return { title: "Blue Safe Lenses", category: "Digital Protection" };
+    if (path.includes("cliff-coatings")) return { title: "Premium Coatings", category: "Advanced Technology" };
+    if (path.includes("cliff-drive-clear-lenses")) return { title: "Drive Clear Lenses", category: "Vision Enhancement" };
+    if (path.includes("cliff-dynamix-progressive")) return { title: "Dynamix Progressive", category: "Progressive Solutions" };
+    if (path.includes("cliff-photo-z-lenses")) return { title: "Photo Z Lenses", category: "Adaptive Technology" };
+    if (path.includes("cliff-progressive-versatile")) return { title: "Progressive Versatile", category: "Multi-focal Solutions" };
+    if (path.includes("cliff-single-vision-rx")) return { title: "Single Vision RX", category: "Prescription Lenses" };
+    if (path.includes("cliff-technology")) return { title: "Technology", category: "Innovation Hub" };
+    if (path.includes("cliff-tinted-lenses")) return { title: "Tinted Lenses", category: "Style & Protection" };
+    if (path.includes("cliff-zenn-progressive-lenses")) return { title: "Zenn Progressive", category: "Premium Series" };
+    if (path.includes("cliff-zenn-series")) return { title: "Zenn Series", category: "Signature Collection" };
+    if (path.includes("cliff-zenn-single-vision")) return { title: "Zenn Single Vision", category: "Essential Series" };
+    if (path.includes("progressive-measurement-chart")) return { title: "Measurement Chart", category: "Professional Tools" };
+    if (path.includes("refractive-index")) return { title: "Refractive Index", category: "Technical Specifications" };
 
-    return "Loading";
+    return { title: "Loading", category: "Please Wait" };
   };
+
+  const pageInfo = getPageTitle(pathname);
 
   return (
     <AnimatePresence>
@@ -68,138 +86,127 @@ const TimeLoading: React.FC<TimeLoadingProps> = ({ isVisible, onComplete }) => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 0.3 }}
-          className="fixed inset-0 z-[9999] bg-gradient-to-br from-black via-gray-900 to-black flex flex-col justify-center items-center"
+          transition={{ duration: 0.4, ease: "easeInOut" }}
+          className="fixed inset-0 z-[9999] bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 flex flex-col justify-center items-center overflow-hidden"
         >
-          {/* Background Pattern */}
-          <div className="absolute inset-0 opacity-10">
-            <div className="absolute inset-0 bg-[url('/circle.png')] bg-repeat bg-opacity-5"></div>
+          {/* Animated Background Grid */}
+          <div className="absolute inset-0 opacity-5">
+            <motion.div
+              className="absolute inset-0"
+              style={{
+                backgroundImage: 'radial-gradient(circle at 50% 50%, rgba(255,255,255,0.1) 1px, transparent 1px)',
+                backgroundSize: '50px 50px'
+              }}
+              animate={{
+                backgroundPosition: ['0px 0px', '50px 50px'],
+              }}
+              transition={{
+                duration: 10,
+                repeat: Infinity,
+                ease: "linear",
+              }}
+            />
           </div>
 
-          {/* Main Content */}
-          <div className="relative z-10 flex flex-col items-center space-y-8">
-            {/* Logo/Brand */}
-            <motion.div
-              initial={{ scale: 0.8, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              transition={{ delay: 0.1, duration: 0.5 }}
-              className="text-center"
-            >
-              <h1 className="text-4xl md:text-6xl font-serif text-white mb-2">
-                <span className="text-yellow-400">CLIFF</span>
-              </h1>
-              <p className="text-gray-300 text-sm md:text-base font-light tracking-wider">
-                Eye Wear Excellence
-              </p>
-            </motion.div>
+          {/* Subtle Corner Decorations */}
+          <motion.div
+            className="absolute top-8 left-8 w-24 h-24 rounded-full border border-amber-400/10"
+            animate={{
+              rotate: 360,
+              scale: [1, 1.05, 1],
+            }}
+            transition={{
+              rotate: { duration: 15, repeat: Infinity, ease: "linear" },
+              scale: { duration: 4, repeat: Infinity, ease: "easeInOut" },
+            }}
+          />
 
-            {/* Page Title */}
-            <motion.div
-              initial={{ y: 20, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ delay: 0.3, duration: 0.5 }}
-              className="text-center"
-            >
-              <p className="text-gray-400 text-sm uppercase tracking-widest mb-2">
-                Loading
-              </p>
-              <h2 className="text-2xl md:text-3xl text-white font-light">
-                {getPageTitle(pathname)}
-              </h2>
-            </motion.div>
+          <motion.div
+            className="absolute bottom-8 right-8 w-16 h-16 rounded-full border border-amber-400/5"
+            animate={{
+              rotate: -360,
+              scale: [1, 0.95, 1],
+            }}
+            transition={{
+              rotate: { duration: 12, repeat: Infinity, ease: "linear" },
+              scale: { duration: 3, repeat: Infinity, ease: "easeInOut" },
+            }}
+          />
 
-            {/* Progress Bar */}
+          {/* Main Content Container */}
+          <div className="relative z-10 flex flex-col items-center space-y-12 px-8 max-w-lg mx-auto text-center">
+
+            {/* Brand Logo Section */}
             <motion.div
-              initial={{ width: 0, opacity: 0 }}
-              animate={{ width: "300px", opacity: 1 }}
-              transition={{ delay: 0.5, duration: 0.5 }}
-              className="relative"
+              initial={{ scale: 0.8, opacity: 0, y: 30 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              transition={{ delay: 0.1, duration: 0.6, ease: "easeOut" }}
+              className="space-y-3"
             >
-              <div className="w-[300px] h-1 bg-gray-800 rounded-full overflow-hidden">
+              <div className="relative">
+                <h1 className="text-5xl md:text-7xl font-light text-white tracking-wider">
+                  <span className="bg-gradient-to-r from-amber-400 via-yellow-400 to-amber-500 bg-clip-text text-transparent">
+                    CLIFF
+                  </span>
+                </h1>
                 <motion.div
-                  className="h-full bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 rounded-full"
-                  style={{ width: `${Math.min(progress, 100)}%` }}
-                  transition={{ duration: 0.3, ease: "easeOut" }}
+                  className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 h-0.5 bg-gradient-to-r from-transparent via-amber-400 to-transparent"
+                  initial={{ width: 0 }}
+                  animate={{ width: "80%" }}
+                  transition={{ delay: 0.8, duration: 0.8, ease: "easeOut" }}
                 />
               </div>
-
-              {/* Progress Percentage */}
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.7, duration: 0.3 }}
-                className="absolute -bottom-6 left-0 right-0 text-center"
-              >
-                <span className="text-gray-400 text-sm font-mono">
-                  {Math.round(progress)}%
-                </span>
-              </motion.div>
+              <p className="text-slate-400 text-sm md:text-base font-light tracking-[0.3em] uppercase">
+                Eyewear Excellence
+              </p>
             </motion.div>
 
-            {/* Loading Animation */}
+
+            {/* Progress Section */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6, duration: 0.6, ease: "easeOut" }}
+              className="w-full max-w-xs space-y-4"
+            >
+              {/* Progress Bar Container */}
+              <div className="relative">
+
+                {/* Progress Indicators */}
+                <div className="flex justify-center mt-3">
+                  <span className="text-slate-400 font-serif text-3xl sm:text-5xl xl:text-[10rem]  tracking-wider">
+                    {Math.round(progress)}
+                  </span>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Loading Animation Dots */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.8, duration: 0.5 }}
-              className="flex space-x-2"
+              className="flex items-center space-x-2"
             >
-              {[0, 1, 2].map((i) => (
+              {[0, 1, 2, 3].map((i) => (
                 <motion.div
                   key={i}
-                  className="w-2 h-2 bg-yellow-400 rounded-full"
+                  className="w-1.5 h-1.5 bg-amber-400/60 rounded-full"
                   animate={{
-                    scale: [1, 1.5, 1],
-                    opacity: [0.5, 1, 0.5],
+                    scale: [1, 1.4, 1],
+                    opacity: [0.4, 1, 0.4],
                   }}
                   transition={{
-                    duration: 1.5,
+                    duration: 1.8,
                     repeat: Infinity,
-                    delay: i * 0.2,
+                    delay: i * 0.15,
                     ease: "easeInOut",
                   }}
                 />
               ))}
             </motion.div>
 
-            {/* Optional Loading Text */}
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: [0.5, 1, 0.5] }}
-              transition={{
-                duration: 2,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-              className="text-gray-500 text-xs uppercase tracking-widest"
-            >
-              Preparing Experience
-            </motion.p>
           </div>
-
-          {/* Decorative Elements */}
-          <motion.div
-            className="absolute top-10 left-10 w-20 h-20 border border-yellow-400/20 rounded-full"
-            animate={{
-              rotate: 360,
-              scale: [1, 1.1, 1],
-            }}
-            transition={{
-              rotate: { duration: 8, repeat: Infinity, ease: "linear" },
-              scale: { duration: 3, repeat: Infinity, ease: "easeInOut" },
-            }}
-          />
-
-          <motion.div
-            className="absolute bottom-10 right-10 w-16 h-16 border border-yellow-400/10 rounded-full"
-            animate={{
-              rotate: -360,
-              scale: [1, 0.8, 1],
-            }}
-            transition={{
-              rotate: { duration: 6, repeat: Infinity, ease: "linear" },
-              scale: { duration: 4, repeat: Infinity, ease: "easeInOut" },
-            }}
-          />
         </motion.div>
       )}
     </AnimatePresence>
