@@ -16,6 +16,8 @@ const HeroSection: React.FC<HeroProps> = ({ className = "" }) => {
   const lensRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    if (typeof window === 'undefined') return;
+    
     const handleScroll = (): void => {
       setScrollY(window.scrollY);
     };

@@ -8,6 +8,8 @@ const Video = () => {
 
   // Detect scroll
   useEffect(() => {
+    if (typeof window === 'undefined') return;
+    
     let scrollTimeout: NodeJS.Timeout;
 
     const handleScroll = () => {

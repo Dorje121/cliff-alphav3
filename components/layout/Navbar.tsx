@@ -117,6 +117,8 @@ export default function Navbar() {
 
   // Scroll detection for cliff-coatings and cliff-blue-safe-coating pages
   useEffect(() => {
+    if (typeof window === 'undefined') return;
+    
     if (pathname === "/Services/cliff-coatings" || pathname === "/Services/cliff-blue-safe-coating") {
       const handleScroll = () => {
         const scrollPosition = window.scrollY;
