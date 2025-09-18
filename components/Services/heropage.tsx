@@ -16,8 +16,8 @@ interface HeroSectionProps {
   description: string;
   backgroundImage: string;
   rightImage: string;
-  ctaLabel: string;
-  ctaLink: string;
+  ctaLabel?: string;
+  ctaLink?: string;
   serviceNumber?: string;
   badgeTitle?: string;
   badgeSubtitle?: string;
