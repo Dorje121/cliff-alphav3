@@ -126,6 +126,20 @@ const CliffBlueSafeCoating = () => {
   return (
     <>
       {/* Hero Section with Service Information */}
+
+
+      <HeroSection
+        title="Cliff Premium"
+        subtitle="Coatings"
+        description="Advanced blue light protection coating for modern digital lifestyle. Premium coating technology protects your eyes from harmful blue light emitted by digital screens."
+        backgroundImage="/bluesafe/blue1.png"
+        rightImage="/bluesafe/blue1.png"
+        ctaLabel="Contact Us"
+        ctaLink="/Contact"
+        serviceNumber="03"
+        badgeTitle="CLIFF"
+        badgeSubtitle="BLUE SAFE"
+      /> 
       <div className="h-[100vh] text-white relative overflow-hidden">
         <div ref={backgroundImageRef} className="absolute inset-0 h-full">
           <Image
