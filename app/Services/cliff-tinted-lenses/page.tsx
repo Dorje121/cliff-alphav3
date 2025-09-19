@@ -164,19 +164,19 @@ const CliffTintedLenses = () => {
 
   return (
     <>
-       <HeroSection
-             title="Cliff Tinted"
-             subtitle="Lenses"
-             description=" Fashionable tinted lenses with UV protection and style, offering
+      <HeroSection
+        title="Cliff Tinted"
+        subtitle="Lenses"
+        description=" Fashionable tinted lenses with UV protection and style, offering
                 a perfect blend of fashion and function for every lifestyle."
-             backgroundImage="/eyetest.jpg"
-             rightImage="/eyetest.jpg"
-             serviceNumber="08"
-             badgeTitle="Style"
-             badgeSubtitle="Protection"
-       />
+        backgroundImage="/eyetest.jpg"
+        rightImage="/eyetest.jpg"
+        serviceNumber="08"
+        badgeTitle="Style"
+        badgeSubtitle="Protection"
+      />
 
-     <div className="max-w-screen mx-auto">
+      <div className="max-w-screen mx-auto">
         {/* Animated Background */}
         <div className="absolute inset-0 opacity-5">
           <div className="absolute bottom-20 right-20 w-96 h-96 bg-gray-400 rounded-full filter blur-3xl animate-pulse delay-1000"></div>

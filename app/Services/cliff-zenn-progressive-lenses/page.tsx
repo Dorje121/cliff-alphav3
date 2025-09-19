@@ -18,32 +18,29 @@ const CliffZennProgressiveLenses = () => {
 
   const leftCards = [
     {
-      img: "/pageimg/wqw.png", // replace with your image
+      img: "/pageimg/wqw.png",
       title: "Digital Ray-Path® Technology",
       desc: "Enhances vision from center to edge by compensating the lens point-by-point",
     },
-
     {
-      img: "/pageimg/per.png", // replace with your image
+      img: "/pageimg/per.png",
       title: "Personalization Parameters",
       desc: "Used for the calculation are specific for each individual wearer",
     },
-
   ];
 
   const rightCards = [
     {
-      img: "/pageimg/nobgSmartadd.png", // replace with your image
+      img: "/pageimg/nobgSmartadd.png",
       title: "Smart Add Technology",
       desc: "Improves lens performance against screen devices, optimizing the surface for better dynamic vision",
     },
     {
-      img: "/pageimg/auto.png", // replace with your image
+      img: "/pageimg/auto.png",
       title: "Automatic Corridor Selection & INSET",
       desc: "With Ultimate Freestyle progressive lenses the MFH is automatically calculated to deliver an unmatched visual experience",
     },
   ];
-
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
@@ -91,15 +88,24 @@ const CliffZennProgressiveLenses = () => {
         });
       });
 
-      // Pin center column to stick until end of parent
+      // Pin center column ONLY on md+ screens
       if (centerRef.current && parentRef.current) {
-        ScrollTrigger.create({
-          trigger: parentRef.current,
-          start: "top top+=100",
-          end: "bottom bottom",
-          pin: centerRef.current,
-          pinSpacing: false,
-          scrub: true,
+        ScrollTrigger.matchMedia({
+          // desktop
+          "(min-width: 768px)": function () {
+            ScrollTrigger.create({
+              trigger: parentRef.current,
+              start: "top top+=100",
+              end: "bottom bottom",
+              pin: centerRef.current,
+              pinSpacing: false,
+              scrub: true,
+            });
+          },
+          // mobile - do nothing (no pin)
+          "(max-width: 767px)": function () {
+            // no pin
+          },
         });
       }
     });
@@ -123,21 +129,18 @@ const CliffZennProgressiveLenses = () => {
           badgeSubtitle="Progressive lens"
         />
 
-
-
-
         {/* ================= Scroll Section ================= */}
-        <section className="px-4 sm:px-6 md:px-7 my-10 ">
+        <section className="px-4 sm:px-6 md:px-7 my-10">
           <div
             ref={parentRef}
             className="parent relative w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10"
           >
             {/* Left Column */}
-            <div className="left flex flex-col justify-between order-1">
+            <div className="left flex flex-col justify-between order-2 md:order-1">
               {leftCards.map((card, i) => (
                 <div
                   key={i}
-                  className={`card  h-[350px] md:h-[400px] rounded-md bg-zinc-900 flex flex-col justify-around items-center mt-8 sm:mt-0 md:mt-20 `}
+                  className="card h-[350px] md:h-[400px] rounded-md bg-zinc-900 flex flex-col justify-around items-center mt-8 sm:mt-0 md:mt-20"
                 >
                   <div className="img rounded-sm w-[94%] h-[160px] md:h-[200px] mx-auto overflow-hidden">
                     <img
@@ -156,13 +159,16 @@ const CliffZennProgressiveLenses = () => {
               ))}
             </div>
 
-            {/* Center Column */}
-            <div className="center mb-20 md:mb-0 order-3 md:order-2" ref={centerRef}>
-              <div className="flex flex-col justify-center items-center gap-4">
-                <h2 className="text-xl sm:text-2xl lg:text-4xl font-bold text-center mb-8 bg-gradient-to-r from-white via-yellow-100 to-yellow-200 bg-clip-text text-transparent px-4">
+            {/* Center Column - MOBILE FIX APPLIED */}
+            <div
+              className="center mb-10 md:mb-0 order-[-1] md:order-2"
+              ref={centerRef}
+            >
+              <div className="flex flex-col justify-center items-center ggap-4">
+                <h2 className="text-xl sm:text-2xl lg:text-4xl font-bold text-center mb-2 lg:mb-8 bg-gradient-to-r from-white via-yellow-100 to-yellow-200 bg-clip-text text-transparent px-4">
                   Refined digital craftsmanship for evolving lifestyle.
                 </h2>
-                <div className="w-full h-[300px] md:h-[400px] overflow-hidden rounded-md">
+                <div className="w-full h-[250px] lg:h-[400px] overflow-hidden rounded-md">
                   <img
                     className="w-full h-full object-center object-cover"
                     src="/pageimg/lensView.png"
@@ -173,11 +179,11 @@ const CliffZennProgressiveLenses = () => {
             </div>
 
             {/* Right Column */}
-            <div className="right flex flex-col justify-between space-y-20 lg:space-y-20 order-2 md:order-3">
+            <div className="right flex flex-col justify-between space-y-20 lg:space-y-20 order-3 md:order-3">
               {rightCards.map((card, i) => (
                 <div
                   key={i}
-                  className={`card  h-[350px] md:h-[400px] rounded-md bg-zinc-900 flex flex-col justify-around items-center mt-8 sm:mt-0 md:mt-20  `}
+                  className="card h-[350px] md:h-[400px] rounded-md bg-zinc-900 flex flex-col justify-around items-center mt-8 sm:mt-0 md:mt-20"
                 >
                   <div className="img rounded-sm w-[94%] h-[160px] md:h-[200px] mx-auto overflow-hidden">
                     <img

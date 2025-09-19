@@ -4,7 +4,7 @@ const diff = () => {
     return (
         <>
 
-            < section className=' my-28  ' >
+            < section className=' my-8 sm:my-10  ' >
                 <div className="parent w-full flex flex-col sm:flex-row sm:gap-0 gap-7 justify-between items-center">
                     <div className='left  border-1 border-zinc-700 w-[100%] sm:w-[49%] rounded-b-2xl overflow-hidden'>
                         <div className="  h-[330px] md:h-[450px] w-full  overflow-hidden">
