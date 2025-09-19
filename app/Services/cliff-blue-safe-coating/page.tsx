@@ -135,8 +135,8 @@ const CliffBlueSafeCoating = () => {
         backgroundImage="/bluesafe/blue1.png"
         rightImage="/bluesafe/blue1.png"
         serviceNumber="03"
-        badgeTitle="CLIFF"
-        badgeSubtitle="BLUE SAFE"
+        badgeTitle="BLUE"
+        badgeSubtitle="Safe"
       /> 
 
       <BackToServicesButton />

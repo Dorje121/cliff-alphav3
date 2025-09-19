@@ -150,12 +150,12 @@ export default function HeroSection({
                   </div>
 
                   {/* Badge Overlay */}
-                  <div className="absolute -bottom-6 sm:-bottom-6 md:-bottom-8 left-[-40px] sm:left-[-36px] md:left-[-32px] w-20 sm:w-24 md:w-28 h-20 sm:h-24 md:h-28 backdrop-blur-sm bg-white/10 rounded-xl sm:rounded-2xl flex items-center justify-center hidden sm:block">
-                    <div className="text-center p-2 sm:p-3 md:p-4">
-                      <div className="text-base sm:text-lg md:text-xl lg:text-3xl font-bold text-[#DFC65F] drop-shadow-lg">
+                  <div className="absolute -bottom-8 sm:-bottom-8 md:-bottom-10 left-[-48px] sm:left-[-44px] md:left-[-40px] w-24 sm:w-28 md:w-32 h-24 sm:h-28 md:h-32 backdrop-blur-sm bg-white/10 rounded-xl sm:rounded-2xl flex items-center justify-center">
+                    <div className="text-center p-3 sm:p-4 md:p-5">
+                      <div className="text-lg sm:text-xl md:text-xl lg:text-xl font-bold text-[#DFC65F] drop-shadow-lg">
                         {badgeTitle}
                       </div>
-                      <div className="text-[8px] sm:text-[10px] md:text-xs lg:text-base text-gray-200 mt-1 sm:mt-1.5 tracking-wider">
+                      <div className="text-[10px] sm:text-[12px] md:text-sm lg:text-lg text-gray-200 mt-1.5 sm:mt-2 tracking-wider">
                         {badgeSubtitle}
                       </div>
                     </div>
