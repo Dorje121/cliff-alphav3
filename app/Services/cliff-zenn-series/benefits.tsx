@@ -1,10 +1,45 @@
-"use client" // ✅ must be the very first line, no semicolon
+"use client";
 
-import React from "react";
+import React, { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Benefits: React.FC = () => {
+    const sectionRef = useRef<HTMLDivElement | null>(null);
+
+    useEffect(() => {
+        if (!sectionRef.current) return;
+
+        const cards = sectionRef.current.querySelectorAll(".benefit-card");
+
+        // Set initial hidden state
+        gsap.set(cards, { opacity: 0, y: 40, scale: 0.95 });
+
+        // Faster animation: reduced duration + stagger
+        gsap.to(cards, {
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            stagger: 0.15, // ⬅ slightly quicker one-by-one reveal
+            duration: 0.6, // ⬅ faster fade + slide
+            ease: "power3.out",
+            scrollTrigger: {
+                trigger: sectionRef.current,
+                start: "top 80%",
+                end: "bottom 20%",
+                toggleActions: "play reverse play reverse",
+            },
+        });
+
+        return () => {
+            ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+        };
+    }, []);
+
     return (
-        <section className="px-4 sm:px-6 md:px-8 py-12">
+        <section ref={sectionRef} className="px-4 sm:px-6 md:px-8 py-12">
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
                 {/* Clarity */}
                 <div className="benefit-card bg-white/10 backdrop-blur-sm rounded-2xl p-8 hover:bg-white/15 transition-all duration-300">
