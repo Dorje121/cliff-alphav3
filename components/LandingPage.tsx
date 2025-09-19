@@ -1,13 +1,18 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { useRouter } from "next/navigation";
+import CustomCursor from "@/components/CustomCursor";
 
-const LandingPage = () => {
+interface LandingPageProps {
+  onComplete?: () => void;
+}
+
+const LandingPage: React.FC<LandingPageProps> = ({ onComplete }) => {
   const [isLoading, setIsLoading] = useState(true);
   const [showContent, setShowContent] = useState(false);
+  const [showWelcomeModal, setShowWelcomeModal] = useState(true);
+  const [soundEnabled, setSoundEnabled] = useState(false);
   const [progress, setProgress] = useState(0);
-  const router = useRouter();
 
   useEffect(() => {
     // Simulate loading process
@@ -20,7 +25,7 @@ const LandingPage = () => {
           clearInterval(loadingInterval);
           setTimeout(() => {
             setIsLoading(false);
-            setShowContent(true);
+            // Don't show content yet - wait for welcome modal response
           }, 500);
         }
         
@@ -31,15 +36,109 @@ const LandingPage = () => {
     return () => clearInterval(loadingInterval);
   }, []);
 
+  const handleSoundPreference = (enableSound: boolean) => {
+    setSoundEnabled(enableSound);
+    setShowWelcomeModal(false);
+    
+    if (enableSound) {
+      
+      try {
+        const audio = new Audio('/audio/audio.wav');
+        audio.volume = 0.3; // Set volume to 30%
+        
+        const playPromise = audio.play();
+        
+        if (playPromise !== undefined) {
+          playPromise.then(() => {
+            console.log('Audio playing successfully');
+            // Just let it play continuously without any delays
+          }).catch((error: unknown) => {
+            console.log('Initial audio play failed:', error);
+            
+            // Try fallback method
+            try {
+              const audioElement = document.createElement('audio');
+              audioElement.src = '/audio/audio.wav';
+              audioElement.volume = 0.3;
+              document.body.appendChild(audioElement);
+              
+              // Play immediately and let it play continuously
+              audioElement.play().catch((err: unknown) => {
+                console.log('Fallback audio play failed:', err);
+              });
+              
+              // Clean up when audio ends
+              audioElement.onended = () => {
+                document.body.removeChild(audioElement);
+              };
+            } catch (fallbackError: unknown) {
+              console.log('Fallback audio creation failed:', fallbackError);
+            }
+          });
+        }
+      } catch (audioError: unknown) {
+        console.log('Audio creation failed:', audioError);
+      }
+    }
+    
+    setTimeout(() => {
+      setShowContent(true);
+    }, 300);
+  };
+
   const handleEnterSite = () => {
     setShowContent(false);
     setTimeout(() => {
-      router.push("/");
+      onComplete?.();
     }, 800);
   };
 
   return (
     <div className="min-h-screen bg-black text-white overflow-hidden relative">
+      {/* Custom Cursor */}
+      <CustomCursor />
+      
+      {/* Welcome Modal */}
+      <AnimatePresence>
+        {showWelcomeModal && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-black z-50 flex items-center justify-center"
+          >
+            <motion.div
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.8, opacity: 0 }}
+              className="  p-8 max-w-md mx-4 text-center"
+            >
+              <h2 className="text-2xl font-bold mb-4">Hello, Welcome To CLIFF!</h2>
+              <p className="text-gray-300 mb-6">Would you like to experience the website with sound?</p>
+              
+              <div className="flex gap-4 justify-center">
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  onClick={() => handleSoundPreference(true)}
+                  className="px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg font-medium transition-colors"
+                >
+                  Yes Please!
+                </motion.button>
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  onClick={() => handleSoundPreference(false)}
+                  className="px-6 py-3 bg-gray-700 hover:bg-gray-600 rounded-lg font-medium transition-colors"
+                >
+                  No
+                </motion.button>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+      
       {/* Animated Background */}
       <div className="absolute inset-0">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/20 rounded-full filter blur-3xl animate-pulse"></div>
