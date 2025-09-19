@@ -1,14 +1,10 @@
-// file: app/layout.tsx
-
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Montserrat } from "next/font/google";
 import "./globals.css";
-import CustomCursor from "@/components/CustomCursor";
 import SmoothScroller from "@/components/lenis/SmoothScroller";
 import { Suspense } from "react";
 import PageTransitionProvider from "@/components/PreLoader/PageTransitionProvider";
-import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
+import LayoutContent from "@/components/LayoutContent";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -25,11 +21,10 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-// The dynamic import for CustomCursor is REMOVED from this file
-
 export const metadata: Metadata = {
   title: "Cliff Lens",
 };
+
 
 export default function RootLayout({
   children,
@@ -41,7 +36,6 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${montserrat.className} antialiased cursor-none`}
         style={{
-          // Ensure smooth scrolling works with GSAP
           overflow: "auto",
           height: "100%",
         }}
@@ -50,11 +44,9 @@ export default function RootLayout({
           <Suspense fallback={<div>Loading...</div>}>
             <SmoothScroller />
           </Suspense>
-          <Navbar />
-          {/* Use the new Client Component wrapper here */}
-          <CustomCursor />
-          {children}
-          <Footer />
+          <LayoutContent>
+            {children}
+          </LayoutContent>
         </PageTransitionProvider>
       </body>
     </html>
