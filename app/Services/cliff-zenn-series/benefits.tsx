@@ -1,40 +1,11 @@
-"use client";
+"use client" // ✅ must be the very first line, no semicolon
 
-import React, { useRef, useLayoutEffect } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
+import React from "react";
 
 const Benefits: React.FC = () => {
-    const containerRef = useRef<HTMLDivElement | null>(null);
-
-    useLayoutEffect(() => {
-        if (!containerRef.current) return; // null check for TypeScript
-
-        const cards = containerRef.current.querySelectorAll<HTMLDivElement>(".benefit-card");
-
-        gsap.from(cards, {
-            opacity: 0,
-            y: 50,
-            stagger: 0.2,
-            duration: 0.8,
-            ease: "power2.out",
-            scrollTrigger: {
-                trigger: containerRef.current,
-                start: "top 80%",
-                end: "bottom 20%",
-                toggleActions: "play reverse play reverse",
-            },
-        });
-    }, []);
-
     return (
-        <section>
-            <div
-                ref={containerRef}
-                className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto"
-            >
+        <section className="px-4 sm:px-6 md:px-8 py-12">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
                 {/* Clarity */}
                 <div className="benefit-card bg-white/10 backdrop-blur-sm rounded-2xl p-8 hover:bg-white/15 transition-all duration-300">
                     <div className="text-5xl mb-4 mx-auto w-fit">
@@ -54,8 +25,7 @@ const Benefits: React.FC = () => {
                     </div>
                     <h3 className="text-2xl font-bold mb-4 text-gray-300">Clarity</h3>
                     <p className="text-gray-300">
-                        Crystal clear vision with advanced lens technology for optimal visual
-                        performance
+                        Crystal clear vision with advanced lens technology for optimal visual performance
                     </p>
                 </div>
 

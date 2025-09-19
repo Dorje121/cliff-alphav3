@@ -203,7 +203,7 @@ export default function Navbar() {
       {isOpen && (
         <div
           ref={menuRef}
-          className="fixed top-0 right-0 w-screen h-screen bg-[#fff] flex z-[99]"
+          className="fixed top-0 right-0 w-screen h-screen bg-[#fff] flex z-[99999]"
           style={{ clipPath: "circle(0% at 100% 0%)" }}
         >
           {/* Left Panel */}

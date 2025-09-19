@@ -182,7 +182,7 @@ const CliffTintedLenses = () => {
           <div className="absolute bottom-20 right-20 w-96 h-96 bg-gray-400 rounded-full filter blur-3xl animate-pulse delay-1000"></div>
         </div>
 
-        <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
+        <div className="relative  mx-auto  py-5 sm:py-8 lg:py-12">
           {/* Header Section */}
           <div className="text-center mb-8 sm:mb-12 lg:mb-16">
             <div className="flex items-center justify-center mb-4 sm:mb-6">
@@ -200,15 +200,15 @@ const CliffTintedLenses = () => {
           </div>
 
           {/* Tint Categories */}
-          <div className="space-y-8 relative z-[9999] cursor-help sm:space-y-12 lg:space-y-16">
+          <div className="space-y-8 relative z-[999] cursor-help sm:space-y-12 lg:space-y-16">
             {tintCategories.map((category, categoryIndex) => (
               <div
                 key={categoryIndex}
-                className="bg-gradient-to-br from-gray-800/30 to-gray-700/30 rounded-2xl sm:rounded-3xl  backdrop-blur-sm"
+                className="bg-gradient-to-br z-[999] from-gray-800/30 to-gray-700/30 rounded-2xl sm:rounded-3xl  backdrop-blur-sm"
               >
-                <div className="h-[100dvh] w-full relative">
-                  <Image src={"/scene.jpg"} fill alt="scene" className="object-cover brightness-90 object-center" />
-                  <div className="absolute flex justify-between items-center flex-col inset-0 p-4 lg:p-6">
+                <div className="h-[100dvh] w-full z-[99] relative">
+                  <Image src={"/background-min.webp"} fill alt="scene" className="object-cover brightness-90 object-center" />
+                  <div className="absolute flex justify-between items-center flex-col z-40 inset-0 p-4 lg:p-6">
                     <div className="text-center  p-2 mb-6 sm:mb-8">
                       <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-2 bg-gradient-to-r from-amber-400 to-amber-200 bg-clip-text text-transparent">
                         {category.name} Tints
@@ -293,9 +293,12 @@ const CliffTintedLenses = () => {
                 Benefits of Tinted Lenses
               </h3>
 
+
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 <div className="text-center">
-                  <div className="text-4xl mb-4">☀️</div>
+                  <div className="text-4xl mb-4 w-20 h-20 mx-auto">
+                    <img className="w-full h-full object-contain object-center" src="/svgs/uvprotection.svg" alt="cliff uvprotection" />
+                  </div>
                   <h4 className="text-lg font-bold text-white mb-2">
                     UV Protection
                   </h4>
@@ -305,7 +308,9 @@ const CliffTintedLenses = () => {
                 </div>
 
                 <div className="text-center">
-                  <div className="text-4xl mb-4">👁️</div>
+                  <div className="text-4xl mb-4 w-20 h-20 mx-auto">
+                    <img className="w-full h-full object-contain object-center" src="/svgs/bluelight.svg" alt="cliff bluelight" />
+                  </div>
                   <h4 className="text-lg font-bold text-white mb-2">
                     Reduced Glare
                   </h4>
@@ -315,7 +320,9 @@ const CliffTintedLenses = () => {
                 </div>
 
                 <div className="text-center">
-                  <div className="text-4xl mb-4">🎨</div>
+                  <div className="text-4xl mb-8 w-16 h-16 mx-auto">
+                    <img className="w-full h-full object-contain object-center" src="/style.svg" alt="style customize cliff" />
+                  </div>
                   <h4 className="text-lg font-bold text-white mb-2">
                     Style Options
                   </h4>
@@ -325,7 +332,9 @@ const CliffTintedLenses = () => {
                 </div>
 
                 <div className="text-center">
-                  <div className="text-4xl mb-4">🚗</div>
+                  <div className="text-4xl mb-4 w-20 h-20 mx-auto">
+                    <img className="w-full h-full object-contain object-center" src="/svgs/antireflective.svg" alt="cliff antireflective" />
+                  </div>
                   <h4 className="text-lg font-bold text-white mb-2">
                     Driving Comfort
                   </h4>
