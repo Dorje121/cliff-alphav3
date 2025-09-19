@@ -6,7 +6,7 @@ export default function LensDemo() {
   return (
     <Lens zoomFactor={2} lensSize={190} isStatic={false} ariaLabel="Zoom Area">
       <Image
-        src="/vf.jpg"
+        src="/lens-zoom.png"
         alt="image placeholder"
         width={1920}
         height={1080}
