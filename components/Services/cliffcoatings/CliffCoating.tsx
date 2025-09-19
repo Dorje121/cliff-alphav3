@@ -240,7 +240,7 @@ const CliffCoatings = () => {
   rightImage="/c5.jpeg"
   serviceNumber="02"
   badgeTitle="CLIFF"
-  badgeSubtitle="COATINGS"
+  badgeSubtitle="Coatings"
 /> 
 
      
