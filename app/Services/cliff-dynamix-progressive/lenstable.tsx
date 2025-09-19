@@ -18,11 +18,14 @@ const Lenstable = () => {
 
     return (
         <section className="min-h-screen flex flex-col items-center py-12 px-4">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-center mb-8
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-center mb-2
                      bg-gradient-to-r from-white via-yellow-100 to-yellow-200
                      bg-clip-text text-transparent">
                 Lens Specifications
             </h2>
+            <p className="text-lg text-center text-gray-300 mb-8">
+                Complete technical specifications for all lens types
+            </p>
 
             {/* Table wrapper with horizontal scroll on small screens */}
             <div className="w-full max-w-6xl overflow-x-auto">
