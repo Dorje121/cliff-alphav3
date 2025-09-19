@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import CustomCursor from "@/components/CustomCursor";
 
@@ -13,10 +13,123 @@ const LandingPage: React.FC<LandingPageProps> = ({ onComplete }) => {
   const [audioPlaying, setAudioPlaying] = useState(false);
   const [showAudioContent, setShowAudioContent] = useState(false);
   const [isFadingOut, setIsFadingOut] = useState(false);
+  const [backgroundAudio, setBackgroundAudio] = useState<HTMLAudioElement | null>(null);
+  const [currentLine, setCurrentLine] = useState(0);
+  const [displayedText, setDisplayedText] = useState<string[]>(['', '', '', '']);
+
+  const lines = [
+    "Welcome to Cliff — where vision meets precision.",
+    "Our lenses aren't just crafted; they're engineered to protect, enhance, and redefine the way you see the world.",
+    "From UV 400 protection to crystal-clear optics, every detail is designed with your eyes in mind.",
+    "Experience comfort, clarity, and confidence — only with Cliff."
+  ];
+
+  useEffect(() => {
+    if (showAudioContent) {
+      setCurrentLine(0);
+      setDisplayedText(['', '', '', '']);
+    }
+  }, [showAudioContent]);
+
+  useEffect(() => {
+    if (currentLine >= 4 || !showAudioContent) return;
+
+    const targetLine = lines[currentLine];
+    let currentIndex = 0;
+    
+    // Different typing speeds for different lines
+    const getTypingSpeed = (lineIndex: number) => {
+      switch (lineIndex) {
+        case 0: return 50;  // First paragraph - normal speed
+        case 1: return 80;  // Second paragraph - slower
+        case 2: return 50;  // Third paragraph - normal speed
+        case 3: return 50;  // Fourth paragraph - normal speed
+        default: return 50;
+      }
+    };
+    
+    const typingSpeed = getTypingSpeed(currentLine);
+    
+    const typeInterval = setInterval(() => {
+      if (currentIndex <= targetLine.length) {
+        const newDisplayedText = [...displayedText];
+        newDisplayedText[currentLine] = targetLine.substring(0, currentIndex);
+        setDisplayedText(newDisplayedText);
+        currentIndex++;
+      } else {
+        clearInterval(typeInterval);
+        setTimeout(() => {
+          setCurrentLine(currentLine + 1);
+        }, 500); // Pause before next line
+      }
+    }, typingSpeed);
+
+    return () => clearInterval(typeInterval);
+  }, [currentLine, showAudioContent]);
+
+  const startBackgroundAudio = () => {
+    console.log('Starting background audio...');
+    
+    // Try multiple audio file paths (using actual files in the project)
+    const audioPaths = [
+      '/audio/bg.mp3',      // Found in public/audio/bg.mp3
+      '/music.mp3',         // Found in public/music.mp3
+      '/musicc.mp3'         // Found in public/musicc.mp3
+    ];
+    
+    let currentPathIndex = 0;
+    
+    const tryPlayAudio = () => {
+      if (currentPathIndex >= audioPaths.length) {
+        console.log('All audio paths failed');
+        return;
+      }
+      
+      const currentPath = audioPaths[currentPathIndex];
+      console.log(`Trying audio path: ${currentPath}`);
+      
+      const bgAudio = new Audio(currentPath);
+      bgAudio.loop = true;
+      bgAudio.volume = 0.3;
+      
+      // Try to play the audio
+      const playPromise = bgAudio.play();
+      
+      if (playPromise !== undefined) {
+        playPromise.then(() => {
+          console.log(`Background audio playing successfully from: ${currentPath}`);
+          setBackgroundAudio(bgAudio);
+        }).catch((error) => {
+          console.log(`Background audio play failed for ${currentPath}:`, error);
+          // Clean up if play fails
+          bgAudio.pause();
+          bgAudio.src = '';
+          // Try next path
+          currentPathIndex++;
+          setTimeout(tryPlayAudio, 100);
+        });
+      }
+    };
+    
+    tryPlayAudio();
+  };
+
+  useEffect(() => {
+    // Cleanup audio when component unmounts
+    return () => {
+      if (backgroundAudio) {
+        backgroundAudio.pause();
+        backgroundAudio.src = '';
+      }
+    };
+  }, [backgroundAudio]);
 
   const handleSoundPreference = (enableSound: boolean) => {
     setSoundEnabled(enableSound);
     setShowWelcomeModal(false);
+    
+    // Start background audio when user makes a choice
+    startBackgroundAudio();
     
     if (enableSound) {
       
@@ -34,13 +147,13 @@ const LandingPage: React.FC<LandingPageProps> = ({ onComplete }) => {
             
             // Add onended event handler to redirect after audio finishes
             audio.onended = () => {
-              console.log('Audio finished, starting smooth transition');
-              // Start fade out animation
+              console.log('Audio finished, starting immediate redirect');
+              // Start fade out animation immediately
               setIsFadingOut(true);
               // Wait for fade out animation to complete, then redirect
               setTimeout(() => {
-                onComplete?.();
-              }, 1500); // 1.5 seconds total (0.5s fade + 1s buffer)
+                handleLandingComplete();
+              }, 500); // 0.5s fade animation
             };
           }).catch((error: unknown) => {
             console.log('Initial audio play failed:', error);
@@ -61,14 +174,14 @@ const LandingPage: React.FC<LandingPageProps> = ({ onComplete }) => {
               });
                            
               audioElement.onended = () => {
-                console.log('Fallback audio finished, starting smooth transition');
+                console.log('Fallback audio finished, starting immediate redirect');
                 document.body.removeChild(audioElement);
-                // Start fade out animation
+                // Start fade out animation immediately
                 setIsFadingOut(true);
                 // Wait for fade out animation to complete, then redirect
                 setTimeout(() => {
-                  onComplete?.();
-                }, 1500); // 1.5 seconds total (0.5s fade + 1s buffer)
+                  handleLandingComplete();
+                }, 500); // 0.5s fade animation
               };
             } catch (fallbackError: unknown) {
               console.log('Fallback audio creation failed:', fallbackError);
@@ -82,15 +195,55 @@ const LandingPage: React.FC<LandingPageProps> = ({ onComplete }) => {
       // If user clicks "No", redirect directly to home page
       console.log('User declined sound, redirecting to home page');
       setTimeout(() => {
-        onComplete?.();
+        handleLandingComplete();
       }, 500); // Small delay for smooth transition
     }
   };
 
   const handleEnterSite = () => {
     setTimeout(() => {
-      onComplete?.();
+      handleLandingComplete();
     }, 800);
+  };
+
+  const fadeOutBackgroundAudio = () => {
+    if (!backgroundAudio) return;
+    
+    const fadeOutDuration = 2000; // 2 seconds fade out
+    const fadeOutSteps = 50; // Number of steps
+    const fadeOutInterval = fadeOutDuration / fadeOutSteps;
+    const volumeDecrement = backgroundAudio.volume / fadeOutSteps;
+    
+    let currentStep = 0;
+    
+    const fadeOut = () => {
+      currentStep++;
+      
+      if (currentStep <= fadeOutSteps && backgroundAudio) {
+        // Gradually decrease volume
+        backgroundAudio.volume = Math.max(0, backgroundAudio.volume - volumeDecrement);
+        setTimeout(fadeOut, fadeOutInterval);
+      } else {
+        // Fade out complete, stop audio and clean up
+        if (backgroundAudio) {
+          backgroundAudio.pause();
+          backgroundAudio.src = '';
+          setBackgroundAudio(null);
+        }
+      }
+    };
+    
+    fadeOut();
+  };
+
+  const handleLandingComplete = () => {
+    // Start fade out and wait for it to complete before transitioning
+    fadeOutBackgroundAudio();
+    
+    // Wait for fade out to complete (2 seconds) plus a small buffer
+    setTimeout(() => {
+      onComplete?.();
+    }, 2200); // 2000ms fade + 200ms buffer
   };
 
   return (
@@ -103,7 +256,7 @@ const LandingPage: React.FC<LandingPageProps> = ({ onComplete }) => {
       {/* Custom Cursor */}
       <CustomCursor />
       
-      {/* Welcome Modal */}
+     
       <AnimatePresence>
         {showWelcomeModal && (
           <motion.div
@@ -187,43 +340,27 @@ const LandingPage: React.FC<LandingPageProps> = ({ onComplete }) => {
                 </svg>
               </motion.div>
               
-              {/* Animated Text Lines */}
+              {/* Sequential Typewriter Animation */}
               <div className="space-y-4">
-                <motion.p
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 0.5 }}
-                  className="text-2xl font-light text-gray-300"
-                >
-                  Welcome to Cliff — where vision meets precision.
-                </motion.p>
+                <p className="text-2xl font-light text-gray-300">
+                  {displayedText[0]}
+                  {currentLine === 0 && <span className="ml-1 inline-block w-2 h-8 bg-gray-300 animate-pulse align-middle"></span>}
+                </p>
                 
-                <motion.p
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 1.0 }}
-                  className="text-lg text-gray-400 leading-relaxed"
-                >
-                  Our lenses aren't just crafted; they're engineered to protect, enhance, and redefine the way you see the world.
-                </motion.p>
+                <p className="text-lg text-gray-400 leading-relaxed">
+                  {displayedText[1]}
+                  {currentLine === 1 && <span className="ml-1 inline-block w-2 h-6 bg-gray-400 animate-pulse align-middle"></span>}
+                </p>
                 
-                <motion.p
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 1.5 }}
-                  className="text-lg text-gray-400 leading-relaxed"
-                >
-                  From UV 400 protection to crystal-clear optics, every detail is designed with your eyes in mind.
-                </motion.p>
+                <p className="text-lg text-gray-400 leading-relaxed">
+                  {displayedText[2]}
+                  {currentLine === 2 && <span className="ml-1 inline-block w-2 h-6 bg-gray-400 animate-pulse align-middle"></span>}
+                </p>
                 
-                <motion.p
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 2.0 }}
-                  className="text-lg text-gray-400 leading-relaxed"
-                >
-                  Experience comfort, clarity, and confidence — only with Cliff.
-                </motion.p>
+                <p className="text-lg text-gray-400 leading-relaxed">
+                  {displayedText[3]}
+                  {currentLine === 3 && <span className="ml-1 inline-block w-2 h-6 bg-gray-400 animate-pulse align-middle"></span>}
+                </p>
               </div>
             </div>
           </motion.div>

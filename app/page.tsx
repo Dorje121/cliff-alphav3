@@ -11,7 +11,7 @@ import Blog from "@/components/home/Blog";
 import LensDemo from "@/components/home/Focus";
 
 const Page = () => {
-  const [pageState, setPageState] = useState<'loading' | 'landing' | 'main'>('loading');
+  const [pageState, setPageState] = useState<'landing' | 'main'>('landing');
   const [showLayout, setShowLayout] = useState(true);
   const router = useRouter();
 
@@ -20,8 +20,6 @@ const Page = () => {
     const hasVisited = localStorage.getItem('cliff-has-visited');
     console.log('Has visited:', hasVisited);
     
-    // Temporarily force landing page to show for testing
-    localStorage.removeItem('cliff-has-visited');
     
     if (!hasVisited) {
       // First visit - show landing page
@@ -47,15 +45,10 @@ const Page = () => {
 
   return (
     <div data-show-layout={showLayout}>
-      {/* Show loading state while checking localStorage */}
-      {pageState === 'loading' && (
-        <div className="min-h-screen bg-black flex items-center justify-center">
-          <div className="text-center">
-            <div className="w-16 h-16 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
-            <p className="text-white mt-4">Loading CLIFF Experience...</p>
-          </div>
-        </div>
-      )}
+      {/* Always preload hero section in background */}
+      <div className={`${pageState === 'landing' ? 'invisible absolute' : 'visible relative'}`}>
+        <LandingVideo />
+      </div>
 
       {/* Show landing page */}
       {pageState === 'landing' && (
@@ -65,7 +58,6 @@ const Page = () => {
       {/* Show main content */}
       {pageState === 'main' && (
         <div className="relative">
-          <LandingVideo />
           <Demo />
           <CircleAttachment />
           <HomeList />
