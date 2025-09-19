@@ -49,15 +49,15 @@ const CliffPhotoZLenses = () => {
         <div className="max-w-[1500px] mx-auto p-4">
 
         <div className="mb-16">
-          <div className="bg-gray-800/30 backdrop-blur-sm rounded-xl overflow-hidden border border-gray-700/50">
+          <div className="bg-black/80 backdrop-blur-sm rounded-xl overflow-hidden border border-gray-800">
             <div className="overflow-x-auto">
-              <table className="w-full">
+              <table className="w-full table-fixed">
                 <thead>
                   <tr className="border-b border-gray-700">
-                    <th className="px-6 py-4 text-left text-xl font-bold">
+                    <th className="w-1/3 px-6 py-4 text-left text-xl font-bold text-white">
                       INDEX
                     </th>
-                    <th className="px-6 py-4 text-center text-xl font-bold bg-gray-700 text-white">
+                    <th className="w-1/3 px-6 py-4 text-center text-xl font-bold text-white bg-gray-900">
                       <div className="space-y-1">
                         <div>POWER RANGE</div>
                         <div className="flex justify-center gap-4">
@@ -66,28 +66,28 @@ const CliffPhotoZLenses = () => {
                         </div>
                       </div>
                     </th>
-                    <th className="px-6 py-4 text-center text-xl font-bold">
+                    <th className="w-1/3 px-6 py-4 text-center text-xl font-bold text-white">
                       MRP
                     </th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr className="border-b border-gray-700 last:border-b-0">
-                    <td className="px-6 py-4 text-xl font-semibold">1.56</td>
-                    <td className="px-6 py-4 text-center bg-gray-700/50">
+                    <td className="w-1/3 px-6 py-4 text-xl font-semibold text-white">1.56</td>
+                    <td className="w-1/3 px-6 py-4 text-center text-white bg-gray-900/50">
                       <div className="flex justify-center gap-8">
                         <span>0.00 to -6.00</span>
                         <span>0.00 to -2.00</span>
                       </div>
                     </td>
-                    <td className="px-6 py-4 text-center text-xl font-bold">
+                    <td className="w-1/3 px-6 py-4 text-center text-xl font-bold text-white">
                       4800
                     </td>
                   </tr>
                 </tbody>
               </table>
             </div>
-            <div className="text-center text-gray-400 py-8">
+            <div className="text-center text-gray-400 py-8 bg-black/60">
                    <p className="text-sm">
                     All listed powers are resultant; cross-compound is not available.
                </p>
