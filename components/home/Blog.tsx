@@ -88,14 +88,14 @@ const blogPosts: BlogPost[] = [
   },
 ];
 
-const categories = [
-  "All",
-  "Technology",
-  "Health",
-  "Education",
-  "Product",
-  "Sports",
-];
+// const categories = [
+//   "All",
+//   "Technology",
+//   "Health",
+//   "Education",
+//   "Product",
+//   "Sports",
+// ];
 
 export default function Blog() {
   const [selectedCategory, setSelectedCategory] = React.useState("All");
@@ -152,14 +152,14 @@ export default function Blog() {
                   }}
                 >
                   {/* Premium glass morphism overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-black/10 via-black/20 to-black/40 backdrop-blur-[1px]"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/50 backdrop-blur-[1px]"></div>
 
                   {/* Content Container */}
                   <div className="relative z-10 flex flex-col justify-between h-full p-8">
                     {/* Top Section - Category & Meta */}
                     <div className="flex items-start justify-between mb-4">
-                      <div className="space-y-2">
-                        <span className="inline-block px-4 py-2 bg-white/10 backdrop-blur-xl text-white rounded-full text-xs font-semibold shadow-lg">
+                      <div className="w-full flex justify-between items-center">
+                        <span className="inline-block px-4 py-2 bg-white/10 backdrop-blur-xl text-yellow-300 rounded-full text-xs font-semibold">
                           {post.category}
                         </span>
                         <div className="flex items-center gap-4 text-xs text-white/70">
@@ -201,15 +201,15 @@ export default function Blog() {
                   </div>
 
                   {/* Subtle animation lines */}
-                  <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-1000"></div>
-                  <div className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-1000 delay-300"></div>
+                  <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
+                  <div className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200 delay-300"></div>
                 </article>
               ))}
           </div>
 
           {filteredPosts.length === 0 && (
             <div className="text-center py-20">
-              <p className="text-gray-400 text-lg">
+              <p className="text-zinc-400 text-lg">
                 No articles found in this category.
               </p>
             </div>
