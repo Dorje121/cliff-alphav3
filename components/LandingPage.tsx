@@ -430,40 +430,50 @@ const LandingPage: React.FC<LandingPageProps> = ({ onComplete }) => {
                     }}
                     className="flex items-center bg-white/10 backdrop-blur-xl rounded-full justify-center w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-gray-400 hover:text-white transition-colors cursor-pointer"
                   >
-                    <style>{`
-                      .sound-line-1,
-                      .sound-line-2,
-                      .sound-line-3 {
-                        transform-origin: center bottom;
-                        animation: soundLine 1.5s ease-in-out infinite;
-                      }
-                      .sound-line-1 {
-                        animation-delay: 0s;
-                      }
-                      .sound-line-2 {
-                        animation-delay: 0.2s;
-                      }
-                      .sound-line-3 {
-                        animation-delay: 0.4s;
-                      }
-                      @keyframes soundLine {
-                        0%, 100% {
-                          transform: scaleY(1);
-                          opacity: 1;
-                        }
-                        50% {
-                          transform: scaleY(0.3);
-                          opacity: 0.7;
-                        }
-                      }
-                    `}</style>
-                    <svg className="w-8 h-8 sound-icon" viewBox="0 0 10 8" xmlns="http://www.w3.org/2000/svg">
-                      <g transform="translate(0.250000, 0.25000)" stroke="#e0eeee" strokeWidth="0.5" fillRule="evenodd" strokeLinecap="round">
-                        <line x1="6.25" y1="2.5" x2="6.25" y2="6" className="sound-line-1" />
-                        <line x1="4.75" y1="1.5" x2="4.75" y2="6" className="sound-line-2" />
-                        <line x1="3.25" y1="3.5" x2="3.25" y2="6" className="sound-line-3" />
-                      </g>
-                    </svg>
+                    {backgroundAudio && !backgroundAudio.paused ? (
+                      <>
+                        <style>{`
+                          .sound-line-1,
+                          .sound-line-2,
+                          .sound-line-3 {
+                            transform-origin: center bottom;
+                            animation: soundLine 1.5s ease-in-out infinite;
+                          }
+                          .sound-line-1 {
+                            animation-delay: 0s;
+                          }
+                          .sound-line-2 {
+                            animation-delay: 0.2s;
+                          }
+                          .sound-line-3 {
+                            animation-delay: 0.4s;
+                          }
+                          @keyframes soundLine {
+                            0%, 100% {
+                              transform: scaleY(1);
+                              opacity: 1;
+                            }
+                            50% {
+                              transform: scaleY(0.3);
+                              opacity: 0.7;
+                            }
+                          }
+                        `}</style>
+                        <svg className="w-4 h-4 sm:w-5 sm:h-5" viewBox="0 0 10 8" xmlns="http://www.w3.org/2000/svg">
+                          <g transform="translate(0.250000, 0.25000)" stroke="#e0eeee" strokeWidth="0.5" fillRule="evenodd" strokeLinecap="round">
+                            <line x1="6.25" y1="2.5" x2="6.25" y2="6" className="sound-line-1" />
+                            <line x1="4.75" y1="1.5" x2="4.75" y2="6" className="sound-line-2" />
+                            <line x1="3.25" y1="3.5" x2="3.25" y2="6" className="sound-line-3" />
+                          </g>
+                        </svg>
+                      </>
+                    ) : (
+                      <img 
+                        src="audio/sound-mute.svg" 
+                        alt="Sound off" 
+                        className="w-4 h-4 sm:w-5 sm:h-5" 
+                      />
+                    )}
                   </button>
                   
                  
