@@ -216,6 +216,9 @@ const LandingPage: React.FC<LandingPageProps> = ({ onComplete }) => {
                 setShowAudioContent(true); 
               }).catch((err: unknown) => {
                 console.log('Fallback audio play failed:', err);
+                // Continue with landing completion even if fallback audio play fails
+                setIsFadingOut(true);
+                handleLandingComplete();
               });
                            
               audioElement.onended = () => {
@@ -226,11 +229,17 @@ const LandingPage: React.FC<LandingPageProps> = ({ onComplete }) => {
               };
             } catch (fallbackError: unknown) {
               console.log('Fallback audio creation failed:', fallbackError);
+              // Continue with landing completion even if fallback audio fails
+              setIsFadingOut(true);
+              handleLandingComplete();
             }
           });
         }
       } catch (audioError: unknown) {
         console.log('Audio creation failed:', audioError);
+        // Continue with landing completion even if audio fails
+        setIsFadingOut(true);
+        handleLandingComplete();
       }
     } else {
       console.log('User declined sound, starting shutter animation');
