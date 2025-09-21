@@ -209,7 +209,7 @@ export default function Blog() {
 
           {filteredPosts.length === 0 && (
             <div className="text-center py-20">
-              <p className="text-gray-400 text-lg">
+              <p className="text-zinc-400 text-lg">
                 No articles found in this category.
               </p>
             </div>
