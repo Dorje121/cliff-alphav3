@@ -58,7 +58,7 @@ const CustomCursor: React.FC = () => {
       style={{ transform }}
       id="custom-cursor"
       // The rest of the styling remains the same.
-      className="fixed top-0 left-0 z-[9999] w-24 h-24 bg-white rounded-full pointer-events-none mix-blend-difference"
+      className="fixed top-0 left-0 z-[9999999999999999999] w-24 h-24 bg-white rounded-full pointer-events-none mix-blend-difference"
     />
   );
 };

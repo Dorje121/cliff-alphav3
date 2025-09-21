@@ -121,47 +121,47 @@ const CliffSingleVisionRX: React.FC = () => {
     
       <div className="min-h-screen">
          <HeroSection
-                                  title="Cliff Single Vision"
-                                  subtitle="RX Lenses"
-                                  description="Prescription single vision lenses for clear, focused sight with precise vision correction tailored to your unique needs."
-                                  backgroundImage="/imAGES/singlevision.png"
-                                  rightImage="/imAGES/singlevision.png"
-                                  serviceNumber="09"
-                                  badgeTitle="SINGLE"
-                                  badgeSubtitle="VISION RX"
+                  title="Cliff Single Vision"
+                  subtitle="RX Lenses"
+                  description="Prescription single vision lenses for clear, focused sight with precise vision correction tailored to your unique needs."
+                  backgroundImage="/imAGES/single1.jpg"
+                  rightImage="/imAGES/single1.jpg"
+                  serviceNumber="09"
+                  badgeTitle="SINGLE"
+                  badgeSubtitle="VISION RX"
                   />
   
       {/* Grid Layout Section */}
       <div className="relative w-full bg-black -mt-6 md:-mt-2">
-  <div className="max-w-[1500px] mx-auto px-4 sm:px-6">
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+         <div className="max-w-[1500px] mx-auto px-4 sm:px-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
       
-      {/* Left side - Content */}
-      <div className="py-8 md:py-16 lg:py-24">
-        <div className="text-white space-y-6 max-w-lg mx-auto md:mx-0">
-          <p className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
-            Precision-engineered lenses for superior <br className="hidden sm:inline" />
-            single vision correction.
-          </p>
-          <p className="text-lg sm:text-xl text-gray-300">
-            A smart choice for clear, comfortable vision.
-          </p>
-          <ul className="space-y-3 sm:space-y-4 text-gray-300 text-base sm:text-lg">
-            <li className="flex items-start">
-              <span className="text-amber-400 mr-3">•</span>
-              <span>Slimmer, flatter design with outstanding optical performance</span>
-            </li>
-            <li className="flex items-start">
-              <span className="text-amber-400 mr-3">•</span>
-              <span>Ensures sharp, edge-to-edge clarity</span>
-            </li>
-            <li className="flex items-start">
-              <span className="text-amber-400 mr-3">•</span>
-              <span>Custom-crafted with precision back-surface freeform technology for optimal accuracy</span>
-            </li>
-          </ul>
-        </div>
-      </div>
+         {/* Left side - Content */}
+          <div className="py-8 md:py-16 lg:py-24">
+                    <div className="text-white space-y-6 max-w-3xl mx-auto md:mx-0">
+                      <div className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
+                      <p>Precision engineered lenses for</p>
+                      <p>superior single vision correction.</p>
+                      </div>
+                    <p className="text-lg sm:text-xl text-gray-300">
+                      A smart choice for clear, comfortable vision.
+                    </p>
+                    <ul className="space-y-3 sm:space-y-4 text-gray-300 text-base sm:text-lg">
+                    <li className="flex items-start">
+                      <span className="text-amber-400 mr-3">•</span>
+                      <span>Slimmer, flatter design with outstanding optical performance</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-amber-400 mr-3">•</span>
+                      <span>Ensures sharp, edge-to-edge clarity</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-amber-400 mr-3">•</span>
+                      <span>Custom-crafted with precision back-surface freeform technology for optimal accuracy</span>
+                    </li>
+                    </ul>
+                   </div>
+          </div>
       
       {/* Right side - Image */}
       <div className="flex items-center justify-center w-full">
@@ -186,7 +186,7 @@ const CliffSingleVisionRX: React.FC = () => {
 
       <div className="w-full bg-black py-10">
   <div className="max-w-[1800px] mx-auto px-4 sm:px-6">
-    <div className="flex gap-6 sm:gap-8 overflow-x-auto scrollbar-hide py-4">
+    <div className="grid grid-cols-2 sm:flex gap-4 sm:gap-6 sm:gap-8 sm:overflow-x-auto sm:scrollbar-hide py-4">
       
       {/* Feature Card */}
       {[
@@ -200,7 +200,7 @@ const CliffSingleVisionRX: React.FC = () => {
       ].map((feature, idx) => (
         <div
           key={idx}
-          className="group flex flex-col items-center p-4 sm:p-6 w-40 sm:w-44 flex-shrink-0 transition-transform duration-300 hover:scale-105"
+          className="group flex flex-col items-center p-3 sm:p-4 sm:p-6 w-full sm:w-40 sm:w-44 flex-shrink-0 transition-transform duration-300 hover:scale-105"
         >
           <Image
             src={feature.icon}
@@ -252,178 +252,158 @@ const CliffSingleVisionRX: React.FC = () => {
 
       <BackToServicesButton />
 
-      <section className="w-full bg-black py-16 relative">
-        <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Lens Specifications
-            </h2>
-            <p className="text-lg text-gray-300">
-              Complete technical specifications for all lens types
-            </p>
-          </div>
-          
-          {/* Full Width Table */}
-          <div className="bg-black/80 backdrop-blur-md rounded-lg border border-white/10 overflow-hidden">
-            <div className="overflow-x-auto">
-              <table className="w-full text-white">
-                <thead>
-                  <tr className="border-b border-white/20">
-                    <th className="px-6 py-4 text-left text-xs font-medium text-white/70 uppercase tracking-wider">
-                      Lens Type
-                    </th>
-                    <th className="px-6 py-4 text-left text-xs font-medium text-white/70 uppercase tracking-wider">
-                      Index
-                    </th>
-                    <th className="px-6 py-4 text-left text-xs font-medium text-white/70 uppercase tracking-wider">
-                      Power Range
-                    </th>
-                    <th className="px-6 py-4 text-left text-xs font-medium text-white/70 uppercase tracking-wider">
-                      CYL
-                    </th>
-                    <th className="px-6 py-4 text-left text-xs font-medium text-white/70 uppercase tracking-wider">
-                      HC
-                    </th>
-                    <th className="px-6 py-4 text-left text-xs font-medium text-white/70 uppercase tracking-wider">
-                      NOX
-                    </th>
-                    <th className="px-6 py-4 text-left text-xs font-medium text-white/70 uppercase tracking-wider">
-                      BLUESAFE
-                    </th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-white/10">
-                  {/* Clear Lenses */}
-                  <tr className="hover:bg-white/5 transition-colors">
-                    <td className="px-6 py-4 whitespace-nowrap font-medium text-yellow-400">Clear</td>
-                    <td className="px-6 py-4 whitespace-nowrap">1.50</td>
-                    <td className="px-6 py-4 whitespace-nowrap">+6/-6</td>
-                    <td className="px-6 py-4 whitespace-nowrap">Upto 4</td>
-                    <td className="px-6 py-4 whitespace-nowrap">3500</td>
-                    <td className="px-6 py-4 whitespace-nowrap">5135</td>
-                    <td className="px-6 py-4 whitespace-nowrap">5740</td>
-                  </tr>
-                  <tr className="hover:bg-white/5 transition-colors">
-                    <td className="px-6 py-4 whitespace-nowrap font-medium text-yellow-400">Clear</td>
-                    <td className="px-6 py-4 whitespace-nowrap">1.56</td>
-                    <td className="px-6 py-4 whitespace-nowrap">+6/-10</td>
-                    <td className="px-6 py-4 whitespace-nowrap">Upto 4</td>
-                    <td className="px-6 py-4 whitespace-nowrap">4435</td>
-                    <td className="px-6 py-4 whitespace-nowrap">7005</td>
-                    <td className="px-6 py-4 whitespace-nowrap">7830</td>
-                  </tr>
-                  <tr className="hover:bg-white/5 transition-colors">
-                    <td className="px-6 py-4 whitespace-nowrap font-medium text-yellow-400">Clear</td>
+    <section className="w-full bg-black py-4 relative">
+      <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
+         <div className="text-center mb-6">
+         <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+         Lens Specifications
+         </h2>
+         <p className="text-lg text-gray-300">
+         Complete technical specifications for all lens types
+         </p>
+         </div>
+
+    {/* Performance Style Table */}
+     <div className="overflow-x-auto">
+      <table className="w-full border-separate border-spacing-y-2">
+        <thead>
+          <tr className="bg-gradient-to-r from-yellow-500 to-yellow-600 text-black text-sm">
+            <th className="px-6 py-3 text-left font-bold uppercase tracking-wider rounded-l-lg">
+              Lens Type
+            </th>
+            <th className="px-6 py-3 text-left font-bold uppercase tracking-wider">
+              Index
+            </th>
+            <th className="px-6 py-3 text-left font-bold uppercase tracking-wider">
+              Power Range
+            </th>
+            <th className="px-6 py-3 text-left font-bold uppercase tracking-wider">
+              CYL
+            </th>
+            <th className="px-6 py-3 text-left font-bold uppercase tracking-wider">
+              HC
+            </th>
+            <th className="px-6 py-3 text-left font-bold uppercase tracking-wider">
+              NOX
+            </th>
+            <th className="px-6 py-3 text-left font-bold uppercase tracking-wider rounded-r-lg">
+              BLUESAFE
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          {/* Example Row */}
+          <tr className="bg-zinc-900/80 hover:bg-zinc-800 transition-all rounded-lg shadow-md">
+            <td className="px-6 py-4 text-amber-400 font-semibold rounded-l-lg">Clear</td>
+            <td className="px-6 py-4">1.50</td>
+            <td className="px-6 py-4">+6/-6</td>
+            <td className="px-6 py-4">Upto 4</td>
+            <td className="px-6 py-4">3500</td>
+            <td className="px-6 py-4">5135</td>
+            <td className="px-6 py-4 rounded-r-lg">5740</td>
+          </tr>
+
+          <tr className="bg-white/20 hover:bg-zinc-800 transition-all rounded-lg shadow-md">
+            <td className="px-6 py-4 text-amber-400 font-semibold rounded-l-lg">Clear</td>
+            <td className="px-6 py-4">1.56</td>
+            <td className="px-6 py-4">+6/-10</td>
+            <td className="px-6 py-4">Upto 4</td>
+            <td className="px-6 py-4">4435</td>
+            <td className="px-6 py-4">7005</td>
+            <td className="px-6 py-4 rounded-r-lg">7830</td>
+          </tr>
+
+          <tr className="bg-zinc-900/80 hover:bg-zinc-800 transition-all rounded-lg shadow-md">
+                    <td className="px-6 py-4 text-amber-400 font-semibold rounded-l-lg">Clear</td>
                     <td className="px-6 py-4 whitespace-nowrap">1.60</td>
                     <td className="px-6 py-4 whitespace-nowrap">+6/-12</td>
                     <td className="px-6 py-4 whitespace-nowrap">Upto 4</td>
                     <td className="px-6 py-4 whitespace-nowrap">7240</td>
                     <td className="px-6 py-4 whitespace-nowrap">9750</td>
-                    <td className="px-6 py-4 whitespace-nowrap">11220</td>
-                  </tr>
-                  <tr className="hover:bg-white/5 transition-colors">
-                    <td className="px-6 py-4 whitespace-nowrap font-medium text-yellow-400">Clear</td>
+          <td className="px-6 py-4 rounded-r-lg">11220</td>
+          </tr>
+
+          <tr className="bg-white/20 hover:bg-zinc-800 transition-all rounded-lg shadow-md">
+                    <td className="px-6 py-4 text-amber-400 font-semibold rounded-l-lg">Clear</td>
                     <td className="px-6 py-4 whitespace-nowrap">1.67</td>
                     <td className="px-6 py-4 whitespace-nowrap">+6/-15</td>
                     <td className="px-6 py-4 whitespace-nowrap">Upto 4</td>
                     <td className="px-6 py-4 whitespace-nowrap">14475</td>
                     <td className="px-6 py-4 whitespace-nowrap">17050</td>
-                    <td className="px-6 py-4 whitespace-nowrap">19050</td>
+                    <td className="px-6 py-4 rounded-r-lg">19050</td>
                   </tr>
                   
                   {/* Photocrom */}
-                  <tr className="hover:bg-white/5 transition-colors">
-                    <td className="px-6 py-4 whitespace-nowrap font-medium text-yellow-400">Photocrom</td>
+                  <tr className="bg-zinc-900/80 hover:bg-zinc-800 transition-all rounded-lg shadow-md">
+                    <td className="px-6 py-4 text-amber-400 font-semibold rounded-l-lg">Photocrom</td>
                     <td className="px-6 py-4 whitespace-nowrap">1.56</td>
                     <td className="px-6 py-4 whitespace-nowrap">+6/-10.0</td>
                     <td className="px-6 py-4 whitespace-nowrap">Upto 4</td>
                     <td className="px-6 py-4 whitespace-nowrap">4905</td>
                     <td className="px-6 py-4 whitespace-nowrap">6775</td>
-                    <td className="px-6 py-4 whitespace-nowrap">7570</td>
+                    <td className="px-6 py-4 rounded-r-lg">7570</td>
                   </tr>
                   
                   {/* Photocrom Plus */}
-                  <tr className="hover:bg-white/5 transition-colors">
-                    <td className="px-6 py-4 whitespace-nowrap font-medium text-yellow-400">Photocrom Plus</td>
+                  <tr className="bg-white/20 hover:bg-zinc-800 transition-all rounded-lg shadow-md">
+                    <td className="px-6 py-4 text-amber-400 font-semibold rounded-l-lg">Photocrom Plus</td>
                     <td className="px-6 py-4 whitespace-nowrap">1.56</td>
                     <td className="px-6 py-4 whitespace-nowrap">+6/-8.0</td>
                     <td className="px-6 py-4 whitespace-nowrap">Upto 4</td>
                     <td className="px-6 py-4 whitespace-nowrap">6070</td>
                     <td className="px-6 py-4 whitespace-nowrap">7940</td>
-                    <td className="px-6 py-4 whitespace-nowrap">8875</td>
+                    <td className="px-6 py-4 rounded-r-lg">8875</td>
                   </tr>
                   
                   {/* Photocrom with Blue Shield */}
-                  <tr className="hover:bg-white/5 transition-colors">
-                    <td className="px-6 py-4 whitespace-nowrap font-medium text-yellow-400">Photocrom with Blue Shield</td>
+                  <tr className="bg-zinc-900/80 hover:bg-zinc-800 transition-all rounded-lg shadow-md">
+                    <td className="px-6 py-4 text-amber-400 font-semibold rounded-l-lg">Photocrom with Blue Shield</td>
                     <td className="px-6 py-4 whitespace-nowrap">1.56</td>
                     <td className="px-6 py-4 whitespace-nowrap">+6/-8.0</td>
                     <td className="px-6 py-4 whitespace-nowrap">Upto 4</td>
                     <td className="px-6 py-4 whitespace-nowrap">7940</td>
                     <td className="px-6 py-4 whitespace-nowrap">10735</td>
-                    <td className="px-6 py-4 whitespace-nowrap">12000</td>
+                    <td className="px-6 py-4 rounded-r-lg">12000</td>
                   </tr>
                   
                   {/* Blue Shield */}
-                  <tr className="hover:bg-white/5 transition-colors">
-                    <td className="px-6 py-4 whitespace-nowrap font-medium text-yellow-400">Blue Shield</td>
+                  <tr className="bg-white/20 hover:bg-zinc-800 transition-all rounded-lg shadow-md">
+                    <td className="px-6 py-4 text-amber-400 font-semibold rounded-l-lg">Blue Shield</td>
                     <td className="px-6 py-4 whitespace-nowrap">1.56</td>
                     <td className="px-6 py-4 whitespace-nowrap">+6/-10.0</td>
                     <td className="px-6 py-4 whitespace-nowrap">Upto 4</td>
                     <td className="px-6 py-4 whitespace-nowrap">4675</td>
                     <td className="px-6 py-4 whitespace-nowrap">6305</td>
-                    <td className="px-6 py-4 whitespace-nowrap">7050</td>
+                    <td className="px-6 py-4 rounded-r-lg">7050</td>
                   </tr>
-                  <tr className="hover:bg-white/5 transition-colors">
-                    <td className="px-6 py-4 whitespace-nowrap font-medium text-yellow-400">Blue Shield</td>
+                  <tr className="bg-zinc-900/80 hover:bg-zinc-800 transition-all rounded-lg shadow-md">
+                    <td className="px-6 py-4 text-amber-400 font-semibold rounded-l-lg">Blue Shield</td>
                     <td className="px-6 py-4 whitespace-nowrap">1.60</td>
                     <td className="px-6 py-4 whitespace-nowrap">+6/-10.0</td>
                     <td className="px-6 py-4 whitespace-nowrap">Upto 4</td>
                     <td className="px-6 py-4 whitespace-nowrap">8875</td>
                     <td className="px-6 py-4 whitespace-nowrap">11670</td>
-                    <td className="px-6 py-4 whitespace-nowrap">13045</td>
+                    <td className="px-6 py-4 rounded-r-lg">13045</td>
                   </tr>
                   
                   {/* Polarized */}
-                  <tr className="hover:bg-white/5 transition-colors">
-                    <td className="px-6 py-4 whitespace-nowrap font-medium text-yellow-400">Polarized</td>
+                  <tr className="bg-white/20 hover:bg-zinc-800 transition-all rounded-lg shadow-md">
+                    <td className="px-6 py-4 text-amber-400 font-semibold rounded-l-lg">Polarized</td>
                     <td className="px-6 py-4 whitespace-nowrap">1.50</td>
                     <td className="px-6 py-4 whitespace-nowrap">+6/-8.00</td>
                     <td className="px-6 py-4 whitespace-nowrap">Upto 4</td>
                     <td className="px-6 py-4 whitespace-nowrap">9340</td>
                     <td className="px-6 py-4 whitespace-nowrap">10980</td>
-                    <td className="px-6 py-4 whitespace-nowrap">12265</td>
+                    <td className="px-6 py-4 rounded-r-lg">12265</td>
                   </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-      </section>
 
+          {/* Keep repeating same rows for all your lens data */}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
 
-     
-
-      {/* New Full Viewport Section */}
-      {/* <section className="w-full min-h-screen bg-black py-20 relative">
-        <div className="container mx-auto px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-6xl font-bold text-white mb-4">
-              Lens Specifications
-            </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Detailed technical specifications and performance metrics for our Single Vision RX lenses
-            </p>
-          </div>
-          
-          <div className="max-w-7xl mx-auto">
-            <ServerManagementTable 
-              title="Single Vision RX Lens Specifications"
-              className="bg-black/50 backdrop-blur-md border-white/20"
-            />
-          </div>
-        </div>
-      </section> */}
     </div>
   );
 };

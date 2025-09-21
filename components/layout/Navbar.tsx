@@ -5,12 +5,11 @@ import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import gsap from "gsap";
 import TransitionLink from "@/components/PreLoader/TransitionLink";
-// import { useSoundStore } from "./Store/Sound";
+
 
 const links = [
   { href: "/", label: "Home" },
   { href: "/Services", label: "Products" },
-  // { href: "/test", label: "Test" },
   { href: "/AboutUs", label: "About Us" },
   { href: "/Blogs", label: "Blogs" },
   { href: "/Contact", label: "Contact" },
@@ -22,8 +21,7 @@ export default function Navbar() {
   const pathname = usePathname();
   const [isInFirstSection, setIsInFirstSection] = useState(false);
 
-  // The Navbar now only controls the audio, it does not initialize it.
-  // const { play, pause, isPlaying } = useSoundStore();
+  
 
   const closeMenu = (onCompleteCallback?: () => void) => {
     const menuLinks = gsap.utils.toArray(".menu-link");
@@ -118,7 +116,7 @@ export default function Navbar() {
   // Scroll detection for cliff-coatings and cliff-blue-safe-coating pages
   useEffect(() => {
     if (typeof window === 'undefined') return;
-    
+
     if (pathname === "/Services/cliff-coatings" || pathname === "/Services/cliff-blue-safe-coating") {
       const handleScroll = () => {
         const scrollPosition = window.scrollY;
@@ -203,7 +201,7 @@ export default function Navbar() {
       {isOpen && (
         <div
           ref={menuRef}
-          className="fixed top-0 right-0 w-screen h-screen bg-[#fff] flex z-[99]"
+          className="fixed top-0 right-0 w-screen h-screen bg-[#fff] flex z-[99999]"
           style={{ clipPath: "circle(0% at 100% 0%)" }}
         >
           {/* Left Panel */}
