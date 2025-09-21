@@ -13,11 +13,10 @@ import LensDemo from "@/components/home/Focus";
 const Page = () => {
   const [pageState, setPageState] = useState<'landing' | 'main'>('landing');
   const [showLayout, setShowLayout] = useState(true);
-  const router = useRouter();
 
   useEffect(() => {
     // Check if user has visited before
-    const hasVisited = localStorage.getItem('cliff-has-visited');
+    const hasVisited = sessionStorage.getItem('cliff-has-visited');
     console.log('Has visited:', hasVisited);
 
     if (!hasVisited) {
@@ -35,7 +34,7 @@ const Page = () => {
       // Press Ctrl+Shift+R to reset and show landing page again
       if (event.ctrlKey && event.shiftKey && event.key === 'R') {
         console.log('Resetting landing page...');
-        localStorage.removeItem('cliff-has-visited');
+        sessionStorage.removeItem('cliff-has-visited');
         setPageState('landing');
         setShowLayout(false);
         event.preventDefault();
@@ -48,7 +47,7 @@ const Page = () => {
 
   const handleLandingComplete = () => {
 
-    localStorage.setItem('cliff-has-visited', 'true');
+    sessionStorage.setItem('cliff-has-visited', 'true');
     setShowLayout(true);
 
 
