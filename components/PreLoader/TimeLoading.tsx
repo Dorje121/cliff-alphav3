@@ -26,7 +26,7 @@ const TimeLoading: React.FC<TimeLoadingProps> = ({ isVisible, onComplete }) => {
           const increment = Math.random() * 12 + 3;
           const newProgress = Math.min(prev + increment, 100);
 
-          // Update loading stage based on progress
+          
           const stageProgress = Math.floor(newProgress / 25);
           if (stageProgress !== currentStageIndex && stageProgress < stages.length) {
             currentStageIndex = stageProgress;
@@ -57,7 +57,6 @@ const TimeLoading: React.FC<TimeLoadingProps> = ({ isVisible, onComplete }) => {
     if (path === "/Contact") return { title: "Contact", category: "Get in Touch" };
     if (path === "/Blogs") return { title: "Blogs", category: "Insights" };
 
-    // Handle service pages with better categorization
     if (path.includes("cliff-blue-safe-coating")) return { title: "Blue Safe Coating", category: "Protective Solutions" };
     if (path.includes("cliff-blue-safe-lenses")) return { title: "Blue Safe Lenses", category: "Digital Protection" };
     if (path.includes("cliff-coatings")) return { title: "Premium Coatings", category: "Advanced Technology" };
