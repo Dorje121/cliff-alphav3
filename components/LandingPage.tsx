@@ -70,48 +70,37 @@ const LandingPage: React.FC<LandingPageProps> = ({ onComplete }) => {
   const startBackgroundAudio = () => {
     console.log('Starting background audio...');
     
-   
+    // Try to play background audio with fallback paths
     const audioPaths = [
-      '/audio/bg.mp3',      
-      '/music.mp3',         
-
+      '/audio/bg.mp3',
+      '/music.mp3'
     ];
     
-    let currentPathIndex = 0;
-    
-    const tryPlayAudio = () => {
-      if (currentPathIndex >= audioPaths.length) {
-        console.log('All audio paths failed');
-        return;
-      }
-      
-      const currentPath = audioPaths[currentPathIndex];
-      console.log(`Trying audio path: ${currentPath}`);
-      
-      const bgAudio = new Audio(currentPath);
-      bgAudio.loop = true;
-      bgAudio.volume = 0.3;
-      
-      // Try to play the audio
-      const playPromise = bgAudio.play();
-      
-      if (playPromise !== undefined) {
-        playPromise.then(() => {
-          console.log(`Background audio playing successfully from: ${currentPath}`);
+    // Try each path until one works
+    for (const audioPath of audioPaths) {
+      try {
+        const bgAudio = new Audio(audioPath);
+        bgAudio.loop = true;
+        bgAudio.volume = 0.3;
+        
+        // Since this is called in response to user click, play() should work
+        bgAudio.play().then(() => {
+          console.log(`Background audio playing successfully from: ${audioPath}`);
           setBackgroundAudio(bgAudio);
         }).catch((error) => {
-          console.log(`Background audio play failed for ${currentPath}:`, error);
+          console.log(`Background audio play failed for ${audioPath}:`, error);
           // Clean up if play fails
           bgAudio.pause();
           bgAudio.src = '';
-          // Try next path
-          currentPathIndex++;
-          setTimeout(tryPlayAudio, 100);
         });
+        
+        // Break after first attempt (we'll let the promise handle success/failure)
+        break;
+      } catch (error) {
+        console.log(`Background audio creation failed for ${audioPath}:`, error);
+        // Continue to next path
       }
-    };
-    
-    tryPlayAudio();
+    }
   };
 
   useEffect(() => {
@@ -144,13 +133,50 @@ const LandingPage: React.FC<LandingPageProps> = ({ onComplete }) => {
   const handleSoundPreference = (enableSound: boolean) => {
     setSoundEnabled(enableSound);
     
- 
     if (enableSound) {
       setShowWelcomeModal(false);
-
-      startBackgroundAudio();
-    } else {
       
+      // Start background audio first
+      startBackgroundAudio();
+      
+      // Create and play main audio immediately in response to user click
+      try {
+        const audio = new Audio('/audio/audio.wav');
+        audio.volume = 0.5;
+        setMainAudio(audio);
+        
+        // Play audio immediately - this should work because it's in response to user click
+        audio.play().then(() => {
+          console.log('Audio playing successfully');
+          setAudioPlaying(true);
+          setShowAudioContent(true);
+          
+          audio.onended = () => {
+            console.log('Audio finished, starting shutter animation');
+            setIsFadingOut(true);
+            handleLandingComplete();
+          };
+        }).catch((error: unknown) => {
+          console.log('Audio play failed:', error);
+          // If audio fails to play, continue with the experience
+          setAudioPlaying(false);
+          setShowAudioContent(true);
+          setTimeout(() => {
+            setIsFadingOut(true);
+            handleLandingComplete();
+          }, 3000); // Show content for 3 seconds then continue
+        });
+      } catch (audioError: unknown) {
+        console.log('Audio creation failed:', audioError);
+        // Continue with landing completion even if audio fails
+        setShowAudioContent(true);
+        setTimeout(() => {
+          setIsFadingOut(true);
+          handleLandingComplete();
+        }, 3000);
+      }
+    } else {
+      // User declined sound
       if (backgroundAudio) {
         backgroundAudio.pause();
         backgroundAudio.currentTime = 0;
@@ -162,6 +188,7 @@ const LandingPage: React.FC<LandingPageProps> = ({ onComplete }) => {
         mainAudio.src = '';
       }
       
+      // Clean up any audio elements
       const allAudioElements = document.querySelectorAll('audio');
       allAudioElements.forEach(element => {
         const audioElement = element as HTMLAudioElement;
@@ -172,79 +199,12 @@ const LandingPage: React.FC<LandingPageProps> = ({ onComplete }) => {
           element.parentNode.removeChild(element);
         }
       });
-     
+      
       setShowAudioContent(true);
       setTimeout(() => {
         setIsFadingOut(true);
         handleLandingComplete();
       }, 1000);
-    }
-    
-    if (enableSound) {
-      
-      try {
-        const audio = new Audio('/audio/audio.wav');
-        audio.volume = 0.5;
-        setMainAudio(audio); 
-        
-        const playPromise = audio.play();
-        
-        if (playPromise !== undefined) {
-          playPromise.then(() => {
-            console.log('Audio playing successfully');
-            setAudioPlaying(true);
-            setShowAudioContent(true);
-            
-            audio.onended = () => {
-              console.log('Audio finished, starting shutter animation');
-              setIsFadingOut(true);
-              handleLandingComplete();
-            };
-          }).catch((error: unknown) => {
-            console.log('Initial audio play failed:', error);
-            
-          
-            try {
-              const audioElement = document.createElement('audio');
-              audioElement.src = '/audio/audio.wav';
-              audioElement.volume = 0.3;
-              document.body.appendChild(audioElement);
-              
-          
-              audioElement.play().then(() => {
-                setAudioPlaying(true);
-                setShowAudioContent(true); 
-              }).catch((err: unknown) => {
-                console.log('Fallback audio play failed:', err);
-                // Continue with landing completion even if fallback audio play fails
-                setIsFadingOut(true);
-                handleLandingComplete();
-              });
-                           
-              audioElement.onended = () => {
-                console.log('Fallback audio finished, starting shutter animation');
-                document.body.removeChild(audioElement);
-                setIsFadingOut(true);
-                handleLandingComplete();
-              };
-            } catch (fallbackError: unknown) {
-              console.log('Fallback audio creation failed:', fallbackError);
-              // Continue with landing completion even if fallback audio fails
-              setIsFadingOut(true);
-              handleLandingComplete();
-            }
-          });
-        }
-      } catch (audioError: unknown) {
-        console.log('Audio creation failed:', audioError);
-        // Continue with landing completion even if audio fails
-        setIsFadingOut(true);
-        handleLandingComplete();
-      }
-    } else {
-      console.log('User declined sound, starting shutter animation');
-      setIsFadingOut(true);
-      handleLandingComplete();
     }
   };
 
@@ -426,15 +386,43 @@ const LandingPage: React.FC<LandingPageProps> = ({ onComplete }) => {
                   {/* Sound Icon Button */}
                   <button
                     onClick={() => {
-                      // Toggle sound functionality
+                      console.log('Sound toggle clicked');
+                      
                       if (backgroundAudio) {
                         if (backgroundAudio.paused) {
-                          backgroundAudio.play();
-                          setIsMuted(false);
+                          // Try to resume background audio
+                          backgroundAudio.play().then(() => {
+                            console.log('Background audio resumed');
+                            setIsMuted(false);
+                          }).catch((error) => {
+                            console.log('Failed to resume background audio:', error);
+                            // If we can't resume, try to recreate and play
+                            try {
+                              const newBgAudio = new Audio('/audio/bg.mp3');
+                              newBgAudio.loop = true;
+                              newBgAudio.volume = 0.3;
+                              newBgAudio.play().then(() => {
+                                setBackgroundAudio(newBgAudio);
+                                setIsMuted(false);
+                                console.log('Background audio restarted');
+                              }).catch((err) => {
+                                console.log('Failed to restart background audio:', err);
+                              });
+                            } catch (err) {
+                              console.log('Failed to create new background audio:', err);
+                            }
+                          });
                         } else {
+                          // Pause background audio
                           backgroundAudio.pause();
                           setIsMuted(true);
+                          console.log('Background audio paused');
                         }
+                      } else {
+                        // No background audio exists, try to start it
+                        console.log('No background audio, trying to start...');
+                        startBackgroundAudio();
+                        setIsMuted(false);
                       }
                     }}
                     className="flex items-center bg-white/10 backdrop-blur-xl rounded-full justify-center w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-gray-400 hover:text-white transition-colors cursor-pointer"
@@ -488,19 +476,25 @@ const LandingPage: React.FC<LandingPageProps> = ({ onComplete }) => {
                   {/* Skip Button */}
                   <button
                     onClick={() => {
-                      // Stop any background audio that might be playing
+                      console.log('Skip button clicked - stopping all audio');
+                      
+                      // Stop background audio
                       if (backgroundAudio) {
                         backgroundAudio.pause();
                         backgroundAudio.currentTime = 0;
                         backgroundAudio.src = '';
+                        setBackgroundAudio(null);
                       }
-                      // Stop the main audio.wav that might be playing
+                      
+                      // Stop main audio
                       if (mainAudio) {
                         mainAudio.pause();
                         mainAudio.currentTime = 0;
                         mainAudio.src = '';
+                        setMainAudio(null);
                       }
-                      // Remove ALL audio elements from document body (both WAV and MP3 files)
+                      
+                      // Clean up any remaining audio elements
                       const allAudioElements = document.querySelectorAll('audio');
                       allAudioElements.forEach(element => {
                         const audioElement = element as HTMLAudioElement;
@@ -511,8 +505,16 @@ const LandingPage: React.FC<LandingPageProps> = ({ onComplete }) => {
                           element.parentNode.removeChild(element);
                         }
                       });
-                      // Then handle the skip functionality (same as No button)
-                      handleSoundPreference(false);
+                      
+                      // Reset audio states
+                      setAudioPlaying(false);
+                      setIsMuted(true);
+                      
+                      // Continue with the experience (same as No button)
+                      setTimeout(() => {
+                        setIsFadingOut(true);
+                        handleLandingComplete();
+                      }, 500);
                     }}
                     className="px-4 sm:px-6 py-1 bg-transparent font-medium transition-colors cursor-pointer text-sm sm:text-base"
                   >
