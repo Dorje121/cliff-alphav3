@@ -127,7 +127,7 @@ const List = () => {
         "Custom refractive index solutions for optimal lens thickness and clarity",
       category: "Technology",
       slug: "refractive-index",
-      image: "/ai4.jpg",
+      image: "/cliffcoating/reflative-index.png",
     },
     {
       id: "16",
@@ -135,7 +135,7 @@ const List = () => {
       description: "Fashionable tinted lenses with UV protection and style",
       category: "Specialty",
       slug: "cliff-tinted-lenses",
-      image: "/eyetest.jpg",
+      image: "/cliffcoating/changable.gif",
     },
     {
       id: "17",

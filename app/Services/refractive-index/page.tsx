@@ -1,14 +1,10 @@
 "use client";
 import BackToServicesButton from "@/components/Services/BackToServicesButton";
-import Image from "next/image";
-import Link from "next/link";
-import { motion } from "motion/react";
 import { useRef, useLayoutEffect } from "react";
 import { gsap } from "gsap";
 import HeroSection from "@/components/Services/heropage";
-import TableContain from './tablecontain'
-import ChartIndex from './Chart'
-
+import TableContain from "./tablecontain";
+import ChartIndex from "./Chart";
 
 const RefractiveIndex = () => {
   const backgroundImageRef = useRef<HTMLDivElement>(null);
@@ -45,13 +41,12 @@ const RefractiveIndex = () => {
         description="Complete guide to understanding refractive index values and
                 their impact on lens thickness, weight, and optical performance
                 for superior vision correction."
-        backgroundImage="/ai4.jpg"
-        rightImage="/ai4.jpg"
+        backgroundImage="/cliffcoating/reflative-index.png"
+        rightImage="/cliffcoating/reflative-index.png"
         serviceNumber="15"
         badgeTitle="1.74"
         badgeSubtitle="Max Index"
       />
-
 
       <TableContain />
       <ChartIndex />
