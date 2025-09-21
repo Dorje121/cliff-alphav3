@@ -337,18 +337,40 @@ const LandingPage: React.FC<LandingPageProps> = ({ onComplete }) => {
               <p className="text-gray-300 mb-6 no-wrap">Would you like to experience the website with sound?</p>
               
               <div className="flex gap-4 justify-center">
-                <button
+                <motion.button
                   onClick={() => handleSoundPreference(true)}
-                  className="px-6 py-3 bg-transparent font-medium transition-colors cursor-pointer"
+                  className="px-6 py-3 bg-transparent font-medium cursor-pointer"
+                  whileHover={{ 
+                    scale: 1.05,
+                    color: "#FFD700"
+                  }}
+                  whileTap={{ scale: 0.95 }}
+                  transition={{ 
+                    type: "spring", 
+                    stiffness: 400, 
+                    damping: 17,
+                    color: { duration: 0.2 }
+                  }}
                 >
                   Yes Please!
-                </button>
-                <button
+                </motion.button>
+                <motion.button
                   onClick={() => handleSoundPreference(false)}
-                  className="px-6 py-3 bg-transparent font-medium transition-colors cursor-pointer"
+                  className="px-6 py-3 bg-transparent font-medium cursor-pointer"
+                  whileHover={{ 
+                    scale: 1.05,
+                    color: "#FF6B6B"
+                  }}
+                  whileTap={{ scale: 0.95 }}
+                  transition={{ 
+                    type: "spring", 
+                    stiffness: 400, 
+                    damping: 17,
+                    color: { duration: 0.2 }
+                  }}
                 >
                   No
-                </button>
+                </motion.button>
               </div>
             </div>
           </div>
