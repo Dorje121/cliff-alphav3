@@ -47,7 +47,7 @@ const BgAttached: React.FC<BgAttachedProps> = ({
       )}
       
       {/* Dark overlay for better text readability */}
-      <div className="absolute inset-0 bg-black/40 z-20"></div>
+      <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black z-20"></div>
     </div>
   );
 };
