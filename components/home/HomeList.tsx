@@ -136,7 +136,7 @@ const HomeList = () => {
       description: "Fashionable tinted lenses with UV protection and style",
       category: "Specialty",
       slug: "cliff-tinted-lenses",
-      image: "/eyetest.jpg",
+      image: "/cliffcoating/changable.gif",
     },
     {
       id: "17",
@@ -289,8 +289,9 @@ const HomeList = () => {
 
                 {/* Desktop Layout (Side by Side) */}
                 <div
-                  className={`   w-full hidden md:flex p-5 ${index % 2 === 0 ? "flex-row" : "flex-row-reverse"
-                    } items-center min-h-[300px]`}
+                  className={`   w-full hidden md:flex p-5 ${
+                    index % 2 === 0 ? "flex-row" : "flex-row-reverse"
+                  } items-center min-h-[300px]`}
                 >
                   <div className="w-1/3 text-left">
                     {/* Service Number Overlay */}
@@ -301,10 +302,11 @@ const HomeList = () => {
 
                   {/* Content Section */}
                   <div
-                    className={`w-1/3 p-8 lg:p-12 ${index % 2 === 0
-                      ? "lg:pl-12 lg:pr-16"
-                      : "lg:pr-12 lg:pl-16"
-                      }`}
+                    className={`w-1/3 p-8 lg:p-12 ${
+                      index % 2 === 0
+                        ? "lg:pl-12 lg:pr-16"
+                        : "lg:pr-12 lg:pl-16"
+                    }`}
                   >
                     {/* Category Badge */}
                     <div className="inline-flex items-center px-4 py-2 rounded-full bg-amber-400/20 text-amber-400 text-sm font-medium mb-6">
