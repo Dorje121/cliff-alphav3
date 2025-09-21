@@ -17,7 +17,6 @@ const LandingPage: React.FC<LandingPageProps> = ({ onComplete }) => {
   const [mainAudio, setMainAudio] = useState<HTMLAudioElement | null>(null);
   const [currentLine, setCurrentLine] = useState(0);
   const [displayedText, setDisplayedText] = useState<string[]>(['', '']);
-  const [isMuted, setIsMuted] = useState(false);
 
   const lines = [
     "Welcome to Cliff — where vision meets precision.",
@@ -70,41 +69,48 @@ const LandingPage: React.FC<LandingPageProps> = ({ onComplete }) => {
   const startBackgroundAudio = () => {
     console.log('Starting background audio...');
     
-    // Try to play background audio with fallback paths
+   
     const audioPaths = [
-      '/audio/bg.mp3',
-      '/music.mp3'
+      '/audio/bg.mp3',      
+      '/music.mp3',         
+
     ];
     
-    // Try each path until one works
-    for (const audioPath of audioPaths) {
-      try {
-        const bgAudio = new Audio(audioPath);
-        bgAudio.loop = true;
-        bgAudio.volume = 0.3;
-        
-        // Since this is called in response to user click, play() should work
-        bgAudio.play().then(() => {
-          console.log(`Background audio playing successfully from: ${audioPath}`);
+    let currentPathIndex = 0;
+    
+    const tryPlayAudio = () => {
+      if (currentPathIndex >= audioPaths.length) {
+        console.log('All audio paths failed');
+        return;
+      }
+      
+      const currentPath = audioPaths[currentPathIndex];
+      console.log(`Trying audio path: ${currentPath}`);
+      
+      const bgAudio = new Audio(currentPath);
+      bgAudio.loop = true;
+      bgAudio.volume = 0.3;
+      
+      const playPromise = bgAudio.play();
+      
+      if (playPromise !== undefined) {
+        playPromise.then(() => {
+          console.log(`Background audio playing successfully from: ${currentPath}`);
           setBackgroundAudio(bgAudio);
         }).catch((error) => {
-          console.log(`Background audio play failed for ${audioPath}:`, error);
-          // Clean up if play fails
+          console.log(`Background audio play failed for ${currentPath}:`, error);
           bgAudio.pause();
           bgAudio.src = '';
+          currentPathIndex++;
+          setTimeout(tryPlayAudio, 100);
         });
-        
-        // Break after first attempt (we'll let the promise handle success/failure)
-        break;
-      } catch (error) {
-        console.log(`Background audio creation failed for ${audioPath}:`, error);
-        // Continue to next path
       }
-    }
+    };
+    
+    tryPlayAudio();
   };
 
   useEffect(() => {
-    // Cleanup audio when component unmounts
     return () => {
       if (backgroundAudio) {
         backgroundAudio.pause();
@@ -116,7 +122,6 @@ const LandingPage: React.FC<LandingPageProps> = ({ onComplete }) => {
         mainAudio.currentTime = 0;
         mainAudio.src = '';
       }
-      // Remove all audio elements from document body (both WAV and MP3)
       const allAudioElements = document.querySelectorAll('audio');
       allAudioElements.forEach(element => {
         const audioElement = element as HTMLAudioElement;
@@ -133,50 +138,13 @@ const LandingPage: React.FC<LandingPageProps> = ({ onComplete }) => {
   const handleSoundPreference = (enableSound: boolean) => {
     setSoundEnabled(enableSound);
     
+ 
     if (enableSound) {
       setShowWelcomeModal(false);
-      
-      // Start background audio first
+
       startBackgroundAudio();
-      
-      // Create and play main audio immediately in response to user click
-      try {
-        const audio = new Audio('/audio/audio.wav');
-        audio.volume = 0.5;
-        setMainAudio(audio);
-        
-        // Play audio immediately - this should work because it's in response to user click
-        audio.play().then(() => {
-          console.log('Audio playing successfully');
-          setAudioPlaying(true);
-          setShowAudioContent(true);
-          
-          audio.onended = () => {
-            console.log('Audio finished, starting shutter animation');
-            setIsFadingOut(true);
-            handleLandingComplete();
-          };
-        }).catch((error: unknown) => {
-          console.log('Audio play failed:', error);
-          // If audio fails to play, continue with the experience
-          setAudioPlaying(false);
-          setShowAudioContent(true);
-          setTimeout(() => {
-            setIsFadingOut(true);
-            handleLandingComplete();
-          }, 3000); // Show content for 3 seconds then continue
-        });
-      } catch (audioError: unknown) {
-        console.log('Audio creation failed:', audioError);
-        // Continue with landing completion even if audio fails
-        setShowAudioContent(true);
-        setTimeout(() => {
-          setIsFadingOut(true);
-          handleLandingComplete();
-        }, 3000);
-      }
     } else {
-      // User declined sound
+      
       if (backgroundAudio) {
         backgroundAudio.pause();
         backgroundAudio.currentTime = 0;
@@ -188,7 +156,6 @@ const LandingPage: React.FC<LandingPageProps> = ({ onComplete }) => {
         mainAudio.src = '';
       }
       
-      // Clean up any audio elements
       const allAudioElements = document.querySelectorAll('audio');
       allAudioElements.forEach(element => {
         const audioElement = element as HTMLAudioElement;
@@ -199,12 +166,70 @@ const LandingPage: React.FC<LandingPageProps> = ({ onComplete }) => {
           element.parentNode.removeChild(element);
         }
       });
-      
+     
       setShowAudioContent(true);
       setTimeout(() => {
         setIsFadingOut(true);
         handleLandingComplete();
       }, 1000);
+    }
+    
+    if (enableSound) {
+      
+      try {
+        const audio = new Audio('/audio/audio.wav');
+        audio.volume = 0.5;
+        setMainAudio(audio); 
+        
+        const playPromise = audio.play();
+        
+        if (playPromise !== undefined) {
+          playPromise.then(() => {
+            console.log('Audio playing successfully');
+            setAudioPlaying(true);
+            setShowAudioContent(true);
+            
+            audio.onended = () => {
+              console.log('Audio finished, starting shutter animation');
+              setIsFadingOut(true);
+              handleLandingComplete();
+            };
+          }).catch((error: unknown) => {
+            console.log('Initial audio play failed:', error);
+            
+          
+            try {
+              const audioElement = document.createElement('audio');
+              audioElement.src = '/audio/audio.wav';
+              audioElement.volume = 0.3;
+              document.body.appendChild(audioElement);
+              
+          
+              audioElement.play().then(() => {
+                setAudioPlaying(true);
+                setShowAudioContent(true); 
+              }).catch((err: unknown) => {
+                console.log('Fallback audio play failed:', err);
+              });
+                           
+              audioElement.onended = () => {
+                console.log('Fallback audio finished, starting shutter animation');
+                document.body.removeChild(audioElement);
+                setIsFadingOut(true);
+                handleLandingComplete();
+              };
+            } catch (fallbackError: unknown) {
+              console.log('Fallback audio creation failed:', fallbackError);
+            }
+          });
+        }
+      } catch (audioError: unknown) {
+        console.log('Audio creation failed:', audioError);
+      }
+    } else {
+      console.log('User declined sound, starting shutter animation');
+      setIsFadingOut(true);
+      handleLandingComplete();
     }
   };
 
@@ -218,8 +243,8 @@ const LandingPage: React.FC<LandingPageProps> = ({ onComplete }) => {
   const fadeOutBackgroundAudio = () => {
     if (!backgroundAudio) return;
     
-    const fadeOutDuration = 2000; // 2 seconds fade out
-    const fadeOutSteps = 50; // Number of steps
+    const fadeOutDuration = 2000; 
+    const fadeOutSteps = 50; 
     const fadeOutInterval = fadeOutDuration / fadeOutSteps;
     const volumeDecrement = backgroundAudio.volume / fadeOutSteps;
     
@@ -229,11 +254,9 @@ const LandingPage: React.FC<LandingPageProps> = ({ onComplete }) => {
       currentStep++;
       
       if (currentStep <= fadeOutSteps && backgroundAudio) {
-        // Gradually decrease volume
         backgroundAudio.volume = Math.max(0, backgroundAudio.volume - volumeDecrement);
         setTimeout(fadeOut, fadeOutInterval);
       } else {
-        // Fade out complete, stop audio and clean up
         if (backgroundAudio) {
           backgroundAudio.pause();
           backgroundAudio.src = '';
@@ -246,7 +269,6 @@ const LandingPage: React.FC<LandingPageProps> = ({ onComplete }) => {
   };
 
   const handleLandingComplete = () => {
-    // Stop all audio immediately to prevent any audio from playing during transition
     if (backgroundAudio) {
       backgroundAudio.pause();
       backgroundAudio.currentTime = 0;
@@ -257,7 +279,6 @@ const LandingPage: React.FC<LandingPageProps> = ({ onComplete }) => {
       mainAudio.currentTime = 0;
       mainAudio.src = '';
     }
-    // Remove ALL audio elements from document body (both WAV and MP3 files)
     const allAudioElements = document.querySelectorAll('audio');
     allAudioElements.forEach(element => {
       const audioElement = element as HTMLAudioElement;
@@ -269,13 +290,12 @@ const LandingPage: React.FC<LandingPageProps> = ({ onComplete }) => {
       }
     });
     
-    // Call onComplete() immediately so hero section starts loading during shutter animation
     onComplete?.();
   };
 
   return (
     <motion.div 
-      className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white overflow-hidden fixed inset-0 z-[999999999999999]"
+      className="min-h-screen bg-black text-white overflow-hidden fixed inset-0 z-[999999999999999]"
       initial={{ y: 0, opacity: 1 }}
       animate={{ 
         y: isFadingOut ? '-100vh' : 0
@@ -285,10 +305,7 @@ const LandingPage: React.FC<LandingPageProps> = ({ onComplete }) => {
         ease: [0.4, 0, 0.2, 1]
       }}
     >
-      {/* Custom Cursor - hidden during shutter animation */}
       {!isFadingOut && <CustomCursor />}
-      
-      {/* Global cursor styling */}
       <style jsx global>{`
         body {
           cursor: none !important;
@@ -304,8 +321,14 @@ const LandingPage: React.FC<LandingPageProps> = ({ onComplete }) => {
       <AnimatePresence>
         {showWelcomeModal && (
           <div
-            className="fixed inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 z-[999999999999999] flex items-center justify-center cursor-pointer"
+            className="fixed inset-0 bg-black z-[999999999999999] flex items-center justify-center cursor-pointer"
           >
+            {/* Animated Background */}
+            <div className="absolute inset-0">
+              <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/20 rounded-full filter blur-3xl animate-pulse"></div>
+              <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/20 rounded-full filter blur-3xl animate-pulse delay-1000"></div>
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-cyan-500/10 rounded-full filter blur-2xl animate-pulse delay-2000"></div>
+            </div>
             
             <div
               className="relative z-10 p-8 max-w-md mx-4 text-center"
@@ -331,6 +354,13 @@ const LandingPage: React.FC<LandingPageProps> = ({ onComplete }) => {
           </div>
         )}
       </AnimatePresence>
+      
+      {/* Animated Background */}
+      <div className="absolute inset-0">
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/20 rounded-full filter blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/20 rounded-full filter blur-3xl animate-pulse delay-1000"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-cyan-500/10 rounded-full filter blur-2xl animate-pulse delay-2000"></div>
+      </div>
 
 
 
@@ -342,7 +372,7 @@ const LandingPage: React.FC<LandingPageProps> = ({ onComplete }) => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 1 }}
-            className="relative z-10 min-h-screen flex items-start justify-start pt-32 sm:pt-40 md:pt-48 pl-4 sm:pl-8 md:pl-12 lg:pl-16 xl:pl-20"
+            className="relative z-10 min-h-screen flex items-center justify-center sm:items-start sm:justify-start pt-2 sm:pt-24 md:pt-32 lg:pt-40 xl:pt-48 pl-4 sm:pl-8 md:pl-12 lg:pl-16 xl:pl-20"
           >
             <div className="max-w-4xl mx-auto">
               {/* Cliff Icon */}
@@ -369,8 +399,8 @@ const LandingPage: React.FC<LandingPageProps> = ({ onComplete }) => {
               </motion.div>
               
               {/* Sequential Typewriter Animation */}
-              <div className="space-y-4 relative w-full sm:w-[44rem] h-[192px] flex-shrink-0">
-                <p className="text-xl sm:text-2xl md:text-3xl font-light text-gray-300">
+              <div className="space-y-4 relative w-full max-w-[44rem] sm:w-[44rem] h-[10rem] sm:h-auto min-h-[12rem] sm:min-h-[14rem] md:min-h-[16rem] lg:min-h-[192px] flex-shrink-0">
+                <p className="text-xl sm:text-2xl font-light text-gray-300">
                   {displayedText[0]}
                   {currentLine === 0 && <span className="ml-1 inline-block w-2 h-8 bg-gray-300 animate-pulse align-middle"></span>}
                 </p>
@@ -378,51 +408,24 @@ const LandingPage: React.FC<LandingPageProps> = ({ onComplete }) => {
                 <p className="text-base sm:text-lg text-gray-400 leading-relaxed">
                   {displayedText[1]}
                   {currentLine === 1 && <span className="ml-1 inline-block w-2 h-6 bg-gray-400 animate-pulse align-middle"></span>}
-                </p> 
+                </p>
+
+              
+                
               </div>
 
 
-              <div className="absolute bottom-24 sm:bottom-32 md:bottom-36 right-4 sm:right-8 md:right-12 lg:right-20 xl:right-32 2xl:right-90 flex items-center gap-3">
+              <div className="absolute bottom-8 sm:bottom-12 md:bottom-20 lg:bottom-28 xl:bottom-36 right-4 sm:right-8 md:right-12 lg:right-20 xl:right-32 2xl:right-90 flex items-center gap-3">
                   {/* Sound Icon Button */}
                   <button
                     onClick={() => {
-                      console.log('Sound toggle clicked');
-                      
+                      // Toggle sound functionality
                       if (backgroundAudio) {
                         if (backgroundAudio.paused) {
-                          // Try to resume background audio
-                          backgroundAudio.play().then(() => {
-                            console.log('Background audio resumed');
-                            setIsMuted(false);
-                          }).catch((error) => {
-                            console.log('Failed to resume background audio:', error);
-                            // If we can't resume, try to recreate and play
-                            try {
-                              const newBgAudio = new Audio('/audio/bg.mp3');
-                              newBgAudio.loop = true;
-                              newBgAudio.volume = 0.3;
-                              newBgAudio.play().then(() => {
-                                setBackgroundAudio(newBgAudio);
-                                setIsMuted(false);
-                                console.log('Background audio restarted');
-                              }).catch((err) => {
-                                console.log('Failed to restart background audio:', err);
-                              });
-                            } catch (err) {
-                              console.log('Failed to create new background audio:', err);
-                            }
-                          });
+                          backgroundAudio.play();
                         } else {
-                          // Pause background audio
                           backgroundAudio.pause();
-                          setIsMuted(true);
-                          console.log('Background audio paused');
                         }
-                      } else {
-                        // No background audio exists, try to start it
-                        console.log('No background audio, trying to start...');
-                        startBackgroundAudio();
-                        setIsMuted(false);
                       }
                     }}
                     className="flex items-center bg-white/10 backdrop-blur-xl rounded-full justify-center w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-gray-400 hover:text-white transition-colors cursor-pointer"
@@ -454,47 +457,28 @@ const LandingPage: React.FC<LandingPageProps> = ({ onComplete }) => {
                         }
                       }
                     `}</style>
-                    {isMuted ? (
-                      <svg className="w-8 h-8 sound-icon" viewBox="0 0 10 8" xmlns="http://www.w3.org/2000/svg">
-                        <g transform="translate(0.250000, 0.25000)" stroke="#e0eeee" strokeWidth="0.5" fillRule="evenodd" strokeLinecap="round">
-                          <line x1="6.25" y1="2.5" x2="6.25" y2="6" />
-                          <line x1="4.75" y1="1.5" x2="4.75" y2="6" />
-                          <line x1="3.25" y1="3.5" x2="3.25" y2="6" />
-                        </g>
-                      </svg>
-                    ) : (
-                      <svg className="w-8 h-8 sound-icon" viewBox="0 0 10 8" xmlns="http://www.w3.org/2000/svg">
-                        <g transform="translate(0.250000, 0.25000)" stroke="#e0eeee" strokeWidth="0.5" fillRule="evenodd" strokeLinecap="round">
-                          <line x1="6.25" y1="2.5" x2="6.25" y2="6" className="sound-line-1" />
-                          <line x1="4.75" y1="1.5" x2="4.75" y2="6" className="sound-line-2" />
-                          <line x1="3.25" y1="3.5" x2="3.25" y2="6" className="sound-line-3" />
-                        </g>
-                      </svg>
-                    )}
+                    <svg className="w-8 h-8 sound-icon" viewBox="0 0 10 8" xmlns="http://www.w3.org/2000/svg">
+                      <g transform="translate(0.250000, 0.25000)" stroke="#e0eeee" strokeWidth="0.5" fillRule="evenodd" strokeLinecap="round">
+                        <line x1="6.25" y1="2.5" x2="6.25" y2="6" className="sound-line-1" />
+                        <line x1="4.75" y1="1.5" x2="4.75" y2="6" className="sound-line-2" />
+                        <line x1="3.25" y1="3.5" x2="3.25" y2="6" className="sound-line-3" />
+                      </g>
+                    </svg>
                   </button>
                   
-                  {/* Skip Button */}
+                 
                   <button
                     onClick={() => {
-                      console.log('Skip button clicked - stopping all audio');
-                      
-                      // Stop background audio
                       if (backgroundAudio) {
                         backgroundAudio.pause();
                         backgroundAudio.currentTime = 0;
                         backgroundAudio.src = '';
-                        setBackgroundAudio(null);
                       }
-                      
-                      // Stop main audio
                       if (mainAudio) {
                         mainAudio.pause();
                         mainAudio.currentTime = 0;
                         mainAudio.src = '';
-                        setMainAudio(null);
                       }
-                      
-                      // Clean up any remaining audio elements
                       const allAudioElements = document.querySelectorAll('audio');
                       allAudioElements.forEach(element => {
                         const audioElement = element as HTMLAudioElement;
@@ -505,33 +489,19 @@ const LandingPage: React.FC<LandingPageProps> = ({ onComplete }) => {
                           element.parentNode.removeChild(element);
                         }
                       });
-                      
-                      // Reset audio states
-                      setAudioPlaying(false);
-                      setIsMuted(true);
-                      
-                      // Continue with the experience (same as No button)
-                      setTimeout(() => {
-                        setIsFadingOut(true);
-                        handleLandingComplete();
-                      }, 500);
+                      handleSoundPreference(false);
                     }}
                     className="px-4 sm:px-6 py-1 bg-transparent font-medium transition-colors cursor-pointer text-sm sm:text-base"
                   >
                     <span className="border-b border-white/50 hover:border-white pb-0.5">Skip</span>
                   </button>
                 </div>
-              
-              
-              
             </div>
           </motion.div>
         )}
       </AnimatePresence>
-
-      {/* Decorative Elements */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-slate-900 to-transparent"></div>
-      <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-slate-900 to-transparent"></div>
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black to-transparent"></div>
+      <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-black to-transparent"></div>
     </motion.div>
   );
 };
