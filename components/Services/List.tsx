@@ -14,7 +14,7 @@ const List = () => {
         "Premium protective coatings for enhanced lens durability and performance",
       category: "Coatings",
       slug: "cliff-coatings",
-      image: "/c1.jpeg",
+      image: "/product/premium_coating.png",
     },
     {
       id: "03",
@@ -252,9 +252,8 @@ const List = () => {
                       : selectedCategory}
                   </span>
                   <svg
-                    className={`w-4 h-4 sm:w-5 sm:h-5 transition-transform duration-300 ${
-                      isDropdownOpen ? "rotate-180" : "rotate-0"
-                    }`}
+                    className={`w-4 h-4 sm:w-5 sm:h-5 transition-transform duration-300 ${isDropdownOpen ? "rotate-180" : "rotate-0"
+                      }`}
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -284,11 +283,10 @@ const List = () => {
                           setSelectedCategory(category);
                           setIsDropdownOpen(false);
                         }}
-                        className={`w-full px-4 sm:px-6 py-2.5 sm:py-3 text-left hover:bg-white/10 transition-all duration-200 first:rounded-t-xl last:rounded-b-xl ${
-                          selectedCategory === category
-                            ? "bg-amber-400/20 text-amber-400 border-l-4 border-amber-400"
-                            : "text-zinc-300 hover:text-white"
-                        } ${index > 0 ? "border-t border-white/5" : ""}`}
+                        className={`w-full px-4 sm:px-6 py-2.5 sm:py-3 text-left hover:bg-white/10 transition-all duration-200 first:rounded-t-xl last:rounded-b-xl ${selectedCategory === category
+                          ? "bg-amber-400/20 text-amber-400 border-l-4 border-amber-400"
+                          : "text-zinc-300 hover:text-white"
+                          } ${index > 0 ? "border-t border-white/5" : ""}`}
                       >
                         <div className="flex items-center justify-between">
                           <span className="font-medium text-sm sm:text-base">
@@ -387,14 +385,12 @@ const List = () => {
 
                 {/* Desktop Layout */}
                 <div
-                  className={`hidden md:flex p-5 ${
-                    index % 2 === 0 ? "flex-row" : "flex-row-reverse"
-                  } items-center min-h-[300px]`}
+                  className={`hidden md:flex p-5 ${index % 2 === 0 ? "flex-row" : "flex-row-reverse"
+                    } items-center min-h-[300px]`}
                 >
                   <div
-                    className={`w-1/3 ${
-                      index % 2 === 0 ? "text-left" : "text-left"
-                    } `}
+                    className={`w-1/3 ${index % 2 === 0 ? "text-left" : "text-left"
+                      } `}
                   >
                     {/* Service Number Overlay - Desktop */}
                     <div className="text-center text-6xl lg:text-8xl font-bold text-white/20 group-hover:text-amber-400/40 transition-all duration-500">
@@ -404,11 +400,10 @@ const List = () => {
 
                   {/* Content Section - Desktop */}
                   <div
-                    className={`w-1/3 p-8 lg:p-12 ${
-                      index % 2 === 0
-                        ? "lg:pl-12 lg:pr-16"
-                        : "lg:pr-12 lg:pl-16"
-                    }`}
+                    className={`w-1/3 p-8 lg:p-12 ${index % 2 === 0
+                      ? "lg:pl-12 lg:pr-16"
+                      : "lg:pr-12 lg:pl-16"
+                      }`}
                   >
                     {/* Category Badge */}
                     <div className="inline-flex items-center px-4 py-2 rounded-full bg-amber-400/20 text-amber-400 text-sm font-medium mb-6">

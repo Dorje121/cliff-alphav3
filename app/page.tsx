@@ -19,25 +19,39 @@ const Page = () => {
     // Check if user has visited before
     const hasVisited = localStorage.getItem('cliff-has-visited');
     console.log('Has visited:', hasVisited);
-    
-    
+
     if (!hasVisited) {
       console.log('Showing landing page');
       setPageState('landing');
-      setShowLayout(false); 
+      setShowLayout(false);
     } else {
       console.log('Showing main content');
       setPageState('main');
-      setShowLayout(true); 
+      setShowLayout(true);
     }
+
+    // Add keyboard shortcut to reset landing page for testing
+    const handleKeyPress = (event: KeyboardEvent) => {
+      // Press Ctrl+Shift+R to reset and show landing page again
+      if (event.ctrlKey && event.shiftKey && event.key === 'R') {
+        console.log('Resetting landing page...');
+        localStorage.removeItem('cliff-has-visited');
+        setPageState('landing');
+        setShowLayout(false);
+        event.preventDefault();
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyPress);
+    return () => document.removeEventListener('keydown', handleKeyPress);
   }, []);
 
   const handleLandingComplete = () => {
-    
+
     localStorage.setItem('cliff-has-visited', 'true');
-    setShowLayout(true); 
-    
-    
+    setShowLayout(true);
+
+
     setTimeout(() => {
       setPageState('main');
     }, 2000);

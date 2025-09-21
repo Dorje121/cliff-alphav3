@@ -40,7 +40,7 @@ export default function LayoutContent({ children }: LayoutContentProps) {
     <>
       {showLayout && <Navbar />}
       <CustomCursor />
-      {children}
+    {children}
       {showLayout && <Footer />}
     </>
   );

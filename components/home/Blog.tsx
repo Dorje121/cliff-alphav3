@@ -88,14 +88,6 @@ const blogPosts: BlogPost[] = [
   },
 ];
 
-// const categories = [
-//   "All",
-//   "Technology",
-//   "Health",
-//   "Education",
-//   "Product",
-//   "Sports",
-// ];
 
 export default function Blog() {
   const [selectedCategory, setSelectedCategory] = React.useState("All");
@@ -188,7 +180,7 @@ export default function Blog() {
                       <div className="flex items-center  justify-start">
                         <TransitionLink
                           href={`/Blogs/${post.id}`}
-                          className="group/cta inline-flex items-center gap-3 px-6 py-3 bg-white/10 hover:bg-white/20 backdrop-blur-xl border border-bg-gradient-to-r from-white via-yellow-100 to-yellow-200   rounded-full text-white font-semibold text-sm transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/25 hover:scale-105"
+                          className="group/cta inline-flex items-center gap-3 px-5 py-2 bg-white/10 hover:bg-white/20 backdrop-blur-xl border border-bg-gradient-to-r from-white via-yellow-100 to-yellow-200   rounded-full text-white font-semibold text-sm transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/25 hover:scale-105"
                         >
                           <span>Read Article</span>
                           <ArrowRight
