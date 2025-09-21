@@ -37,22 +37,26 @@ const Page = () => {
   const handleLandingComplete = () => {
     // Mark as visited and show main content
     localStorage.setItem('cliff-has-visited', 'true');
-    setShowLayout(true); // Show navbar and footer for main content
+    setShowLayout(true); // Show navbar and footer immediately - visible behind shutter
+    
+    // Wait for shutter animation to complete (2 seconds) before removing landing page
     setTimeout(() => {
       setPageState('main');
-    }, 500);
+    }, 2000);
   };
 
   return (
     <div data-show-layout={showLayout}>
-      {/* Always preload hero section in background */}
-      <div className={`${pageState === 'landing' ? 'invisible absolute' : 'visible relative'}`}>
+      {/* Hero section always visible in background */}
+      <div className="visible relative">
         <LandingVideo />
       </div>
 
-      {/* Show landing page */}
+      {/* Landing page overlays hero during animation */}
       {pageState === 'landing' && (
-        <LandingPage onComplete={handleLandingComplete} />
+        <div className="fixed inset-0 z-[999999999999999]">
+          <LandingPage onComplete={handleLandingComplete} />
+        </div>
       )}
 
       {/* Show main content */}

@@ -5,12 +5,11 @@ import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import gsap from "gsap";
 import TransitionLink from "@/components/PreLoader/TransitionLink";
-// import { useSoundStore } from "./Store/Sound";
+
 
 const links = [
   { href: "/", label: "Home" },
   { href: "/Services", label: "Products" },
-  // { href: "/test", label: "Test" },
   { href: "/AboutUs", label: "About Us" },
   { href: "/Blogs", label: "Blogs" },
   { href: "/Contact", label: "Contact" },
@@ -22,8 +21,7 @@ export default function Navbar() {
   const pathname = usePathname();
   const [isInFirstSection, setIsInFirstSection] = useState(false);
 
-  // The Navbar now only controls the audio, it does not initialize it.
-  // const { play, pause, isPlaying } = useSoundStore();
+  
 
   const closeMenu = (onCompleteCallback?: () => void) => {
     const menuLinks = gsap.utils.toArray(".menu-link");
