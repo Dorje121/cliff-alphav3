@@ -17,6 +17,7 @@ const LandingPage: React.FC<LandingPageProps> = ({ onComplete }) => {
   const [mainAudio, setMainAudio] = useState<HTMLAudioElement | null>(null);
   const [currentLine, setCurrentLine] = useState(0);
   const [displayedText, setDisplayedText] = useState<string[]>(['', '']);
+  const [isMuted, setIsMuted] = useState(false);
 
   const lines = [
     "Welcome to Cliff — where vision meets precision.",
@@ -91,6 +92,7 @@ const LandingPage: React.FC<LandingPageProps> = ({ onComplete }) => {
       bgAudio.loop = true;
       bgAudio.volume = 0.3;
       
+      // Try to play the audio
       const playPromise = bgAudio.play();
       
       if (playPromise !== undefined) {
@@ -99,8 +101,10 @@ const LandingPage: React.FC<LandingPageProps> = ({ onComplete }) => {
           setBackgroundAudio(bgAudio);
         }).catch((error) => {
           console.log(`Background audio play failed for ${currentPath}:`, error);
+          // Clean up if play fails
           bgAudio.pause();
           bgAudio.src = '';
+          // Try next path
           currentPathIndex++;
           setTimeout(tryPlayAudio, 100);
         });
@@ -111,6 +115,7 @@ const LandingPage: React.FC<LandingPageProps> = ({ onComplete }) => {
   };
 
   useEffect(() => {
+    // Cleanup audio when component unmounts
     return () => {
       if (backgroundAudio) {
         backgroundAudio.pause();
@@ -122,6 +127,7 @@ const LandingPage: React.FC<LandingPageProps> = ({ onComplete }) => {
         mainAudio.currentTime = 0;
         mainAudio.src = '';
       }
+      // Remove all audio elements from document body (both WAV and MP3)
       const allAudioElements = document.querySelectorAll('audio');
       allAudioElements.forEach(element => {
         const audioElement = element as HTMLAudioElement;
@@ -243,8 +249,8 @@ const LandingPage: React.FC<LandingPageProps> = ({ onComplete }) => {
   const fadeOutBackgroundAudio = () => {
     if (!backgroundAudio) return;
     
-    const fadeOutDuration = 2000; 
-    const fadeOutSteps = 50; 
+    const fadeOutDuration = 2000; // 2 seconds fade out
+    const fadeOutSteps = 50; // Number of steps
     const fadeOutInterval = fadeOutDuration / fadeOutSteps;
     const volumeDecrement = backgroundAudio.volume / fadeOutSteps;
     
@@ -254,9 +260,11 @@ const LandingPage: React.FC<LandingPageProps> = ({ onComplete }) => {
       currentStep++;
       
       if (currentStep <= fadeOutSteps && backgroundAudio) {
+        // Gradually decrease volume
         backgroundAudio.volume = Math.max(0, backgroundAudio.volume - volumeDecrement);
         setTimeout(fadeOut, fadeOutInterval);
       } else {
+        // Fade out complete, stop audio and clean up
         if (backgroundAudio) {
           backgroundAudio.pause();
           backgroundAudio.src = '';
@@ -269,6 +277,7 @@ const LandingPage: React.FC<LandingPageProps> = ({ onComplete }) => {
   };
 
   const handleLandingComplete = () => {
+    // Stop all audio immediately to prevent any audio from playing during transition
     if (backgroundAudio) {
       backgroundAudio.pause();
       backgroundAudio.currentTime = 0;
@@ -279,6 +288,7 @@ const LandingPage: React.FC<LandingPageProps> = ({ onComplete }) => {
       mainAudio.currentTime = 0;
       mainAudio.src = '';
     }
+    // Remove ALL audio elements from document body (both WAV and MP3 files)
     const allAudioElements = document.querySelectorAll('audio');
     allAudioElements.forEach(element => {
       const audioElement = element as HTMLAudioElement;
@@ -290,6 +300,7 @@ const LandingPage: React.FC<LandingPageProps> = ({ onComplete }) => {
       }
     });
     
+    // Call onComplete() immediately so hero section starts loading during shutter animation
     onComplete?.();
   };
 
@@ -305,7 +316,10 @@ const LandingPage: React.FC<LandingPageProps> = ({ onComplete }) => {
         ease: [0.4, 0, 0.2, 1]
       }}
     >
+      {/* Custom Cursor - hidden during shutter animation */}
       {!isFadingOut && <CustomCursor />}
+      
+      {/* Global cursor styling */}
       <style jsx global>{`
         body {
           cursor: none !important;
@@ -372,7 +386,7 @@ const LandingPage: React.FC<LandingPageProps> = ({ onComplete }) => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 1 }}
-            className="relative z-10 min-h-screen flex items-start justify-start pt-16 sm:pt-24 md:pt-32 lg:pt-40 xl:pt-48 pl-4 sm:pl-8 md:pl-12 lg:pl-16 xl:pl-20"
+            className="relative z-10 min-h-screen flex items-start justify-start pt-48 pl-20"
           >
             <div className="max-w-4xl mx-auto">
               {/* Cliff Icon */}
@@ -399,8 +413,8 @@ const LandingPage: React.FC<LandingPageProps> = ({ onComplete }) => {
               </motion.div>
               
               {/* Sequential Typewriter Animation */}
-              <div className="space-y-4 relative w-full max-w-md sm:max-w-lg md:max-w-2xl lg:max-w-3xl xl:max-w-[44rem] h-auto min-h-[12rem] sm:min-h-[14rem] md:min-h-[16rem] lg:min-h-[192px] flex-shrink-0">
-                <p className="text-xl sm:text-2xl font-light text-gray-300">
+              <div className="space-y-4 relative w-[44rem] h-[192px] flex-shrink-0">
+                <p className="text-xl sm:text-2xl md:text-3xl font-light text-gray-300">
                   {displayedText[0]}
                   {currentLine === 0 && <span className="ml-1 inline-block w-2 h-8 bg-gray-300 animate-pulse align-middle"></span>}
                 </p>
@@ -408,14 +422,11 @@ const LandingPage: React.FC<LandingPageProps> = ({ onComplete }) => {
                 <p className="text-base sm:text-lg text-gray-400 leading-relaxed">
                   {displayedText[1]}
                   {currentLine === 1 && <span className="ml-1 inline-block w-2 h-6 bg-gray-400 animate-pulse align-middle"></span>}
-                </p>
-
-              
-                
+                </p> 
               </div>
 
 
-              <div className="absolute bottom-8 sm:bottom-12 md:bottom-20 lg:bottom-28 xl:bottom-36 right-4 sm:right-8 md:right-12 lg:right-20 xl:right-32 2xl:right-90 flex items-center gap-3">
+              <div className="absolute bottom-24 sm:bottom-32 md:bottom-36 right-4 sm:right-8 md:right-12 lg:right-20 xl:right-32 2xl:right-90 flex items-center gap-3">
                   {/* Sound Icon Button */}
                   <button
                     onClick={() => {
@@ -423,8 +434,10 @@ const LandingPage: React.FC<LandingPageProps> = ({ onComplete }) => {
                       if (backgroundAudio) {
                         if (backgroundAudio.paused) {
                           backgroundAudio.play();
+                          setIsMuted(false);
                         } else {
                           backgroundAudio.pause();
+                          setIsMuted(true);
                         }
                       }
                     }}
@@ -457,28 +470,41 @@ const LandingPage: React.FC<LandingPageProps> = ({ onComplete }) => {
                         }
                       }
                     `}</style>
-                    <svg className="w-8 h-8 sound-icon" viewBox="0 0 10 8" xmlns="http://www.w3.org/2000/svg">
-                      <g transform="translate(0.250000, 0.25000)" stroke="#e0eeee" strokeWidth="0.5" fillRule="evenodd" strokeLinecap="round">
-                        <line x1="6.25" y1="2.5" x2="6.25" y2="6" className="sound-line-1" />
-                        <line x1="4.75" y1="1.5" x2="4.75" y2="6" className="sound-line-2" />
-                        <line x1="3.25" y1="3.5" x2="3.25" y2="6" className="sound-line-3" />
-                      </g>
-                    </svg>
+                    {isMuted ? (
+                      <svg className="w-8 h-8 sound-icon" viewBox="0 0 10 8" xmlns="http://www.w3.org/2000/svg">
+                        <g transform="translate(0.250000, 0.25000)" stroke="#e0eeee" strokeWidth="0.5" fillRule="evenodd" strokeLinecap="round">
+                          <line x1="6.25" y1="2.5" x2="6.25" y2="6" />
+                          <line x1="4.75" y1="1.5" x2="4.75" y2="6" />
+                          <line x1="3.25" y1="3.5" x2="3.25" y2="6" />
+                        </g>
+                      </svg>
+                    ) : (
+                      <svg className="w-8 h-8 sound-icon" viewBox="0 0 10 8" xmlns="http://www.w3.org/2000/svg">
+                        <g transform="translate(0.250000, 0.25000)" stroke="#e0eeee" strokeWidth="0.5" fillRule="evenodd" strokeLinecap="round">
+                          <line x1="6.25" y1="2.5" x2="6.25" y2="6" className="sound-line-1" />
+                          <line x1="4.75" y1="1.5" x2="4.75" y2="6" className="sound-line-2" />
+                          <line x1="3.25" y1="3.5" x2="3.25" y2="6" className="sound-line-3" />
+                        </g>
+                      </svg>
+                    )}
                   </button>
                   
-                 
+                  {/* Skip Button */}
                   <button
                     onClick={() => {
+                      // Stop any background audio that might be playing
                       if (backgroundAudio) {
                         backgroundAudio.pause();
                         backgroundAudio.currentTime = 0;
                         backgroundAudio.src = '';
                       }
+                      // Stop the main audio.wav that might be playing
                       if (mainAudio) {
                         mainAudio.pause();
                         mainAudio.currentTime = 0;
                         mainAudio.src = '';
                       }
+                      // Remove ALL audio elements from document body (both WAV and MP3 files)
                       const allAudioElements = document.querySelectorAll('audio');
                       allAudioElements.forEach(element => {
                         const audioElement = element as HTMLAudioElement;
@@ -489,6 +515,7 @@ const LandingPage: React.FC<LandingPageProps> = ({ onComplete }) => {
                           element.parentNode.removeChild(element);
                         }
                       });
+                      // Then handle the skip functionality (same as No button)
                       handleSoundPreference(false);
                     }}
                     className="px-4 sm:px-6 py-1 bg-transparent font-medium transition-colors cursor-pointer text-sm sm:text-base"
@@ -496,10 +523,15 @@ const LandingPage: React.FC<LandingPageProps> = ({ onComplete }) => {
                     <span className="border-b border-white/50 hover:border-white pb-0.5">Skip</span>
                   </button>
                 </div>
+              
+              
+              
             </div>
           </motion.div>
         )}
       </AnimatePresence>
+
+      {/* Decorative Elements */}
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black to-transparent"></div>
       <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-black to-transparent"></div>
     </motion.div>
