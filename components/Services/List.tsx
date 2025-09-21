@@ -8,34 +8,34 @@ import CTA from "../cta/CTA";
 const List = () => {
   const services = [
     {
-      id: "02",
+      id: "01",
       title: "CLIFF COATINGS",
       description:
         "Premium protective coatings for enhanced lens durability and performance",
       category: "Coatings",
       slug: "cliff-coatings",
-      image: "/product/premium_coating.png",
+      image: "/product/01.jpeg",
     },
     {
-      id: "03",
+      id: "02",
       title: "CLIFF BLUE SAFE COATING",
       description:
         "Advanced blue light filtering coating for digital eye strain protection",
       category: "Coatings",
       slug: "cliff-blue-safe-coating",
-      image: "/c2.jpeg",
+      image: "/product/02.jpeg",
     },
     {
-      id: "04",
+      id: "03",
       title: "CLIFF BLUE SAFE UV",
       description:
         "Complete blue light protection lenses for modern digital lifestyle",
       category: "Lenses",
       slug: "cliff-blue-safe-lenses",
-      image: "/c3.jpeg",
+      image: "/product/03.jpeg",
     },
     {
-      id: "05",
+      id: "04",
       title: "CLIFF PHOTO-Z UV",
       description:
         "Photochromic lenses that adapt to changing light conditions automatically",
@@ -44,7 +44,7 @@ const List = () => {
       image: "/c4.jpeg",
     },
     {
-      id: "06",
+      id: "05",
       title: "CLIFF DRIVE CLEAR LENSES",
       description:
         "Specialized lenses optimized for driving and enhanced road visibility",
@@ -53,7 +53,7 @@ const List = () => {
       image: "/c5.jpeg",
     },
     {
-      id: "07",
+      id: "06",
       title: "CLIFF PROGRESSIVE VERSATILE",
       description:
         "Multi-focal progressive lenses for seamless vision at all distances",
@@ -62,7 +62,7 @@ const List = () => {
       image: "/c6.jpeg",
     },
     {
-      id: "08",
+      id: "07",
       title: "CLIFF TECHNOLOGY",
       description: "Cutting-edge optical technology and innovation solutions",
       category: "Technology",
@@ -70,7 +70,7 @@ const List = () => {
       image: "/c7.jpeg",
     },
     {
-      id: "09",
+      id: "08",
       title: "CLIFF SINGLE VISION RX",
       description: "Prescription single vision lenses for clear, focused sight",
       category: "Prescription",
@@ -78,7 +78,7 @@ const List = () => {
       image: "/c8.jpeg",
     },
     {
-      id: "10",
+      id: "9",
       title: "CLIFF DYNAMIX PROGRESSIVE",
       description:
         "Dynamic progressive lenses with superior adaptation and comfort",
@@ -87,7 +87,7 @@ const List = () => {
       image: "/c9.jpeg",
     },
     {
-      id: "11",
+      id: "10",
       title: "CLIFF ZENN SERIES",
       description:
         "Premium lens series combining style with advanced optical performance",
@@ -96,7 +96,7 @@ const List = () => {
       image: "/ai0.jpg",
     },
     {
-      id: "12",
+      id: "11",
       title: "CLIFF ZENN SINGLE VISION LENSES",
       description: "Single vision lenses from the premium Zenn collection",
       category: "Premium",
@@ -104,7 +104,7 @@ const List = () => {
       image: "/ai1.jpg",
     },
     {
-      id: "13",
+      id: "12",
       title: "CLIFF ZENN PROGRESSIVE LENSES",
       description:
         "Progressive lenses featuring Zenn series advanced technology",
@@ -113,7 +113,7 @@ const List = () => {
       image: "/ai2.jpg",
     },
     {
-      id: "14",
+      id: "13",
       title: "CLIFF ZENN SINGLE VISION",
       description: "Enhanced single vision experience with Zenn technology",
       category: "Premium",
@@ -121,7 +121,7 @@ const List = () => {
       image: "/ai3.jpg",
     },
     {
-      id: "15",
+      id: "14",
       title: "REFRACTIVE INDEX",
       description:
         "Custom refractive index solutions for optimal lens thickness and clarity",
@@ -130,7 +130,7 @@ const List = () => {
       image: "/cliffcoating/reflative-index.png",
     },
     {
-      id: "16",
+      id: "15",
       title: "CLIFF TINTED LENSES",
       description: "Fashionable tinted lenses with UV protection and style",
       category: "Specialty",
@@ -138,7 +138,7 @@ const List = () => {
       image: "/cliffcoating/changable.gif",
     },
     {
-      id: "17",
+      id: "16",
       title: "PROGRESSIVE MEASUREMENT CHART",
       description:
         "Professional fitting and measurement services for progressive lenses",
