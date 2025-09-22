@@ -107,8 +107,7 @@ const TimeLoading: React.FC<TimeLoadingProps> = ({ isVisible, onComplete }) => {
               scale: { duration: 4, repeat: Infinity, ease: "easeInOut" },
             }}
           />
-     {/* deploying */}
-     {/* changes */}
+    
           <motion.div
             className="absolute bottom-8 right-8 w-16 h-16 rounded-full border border-amber-400/5"
             animate={{
