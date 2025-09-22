@@ -6,6 +6,7 @@ export function TimelineDemo() {
   const data = [
     {
       title: "2024",
+      url: "#",
       content: (
         <div>
           <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
@@ -46,6 +47,7 @@ export function TimelineDemo() {
     },
     {
       title: "Early 2023",
+      url: "#",
       content: (
         <div>
           <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
@@ -91,6 +93,7 @@ export function TimelineDemo() {
     },
     {
       title: "Changelog",
+      url: "#",
       content: (
         <div>
           <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-4">
