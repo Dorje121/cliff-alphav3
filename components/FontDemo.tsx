@@ -7,7 +7,7 @@ const FontDemo: React.FC = () => {
 
       {/* DM Sans Examples */}
       <section className="space-y-4">
-        <h2 className="text-2xl font-semibold border-b border-gray-600 pb-2">
+        <h2 className="text-2xl font-semibold border-b border-zinc-600 pb-2">
           DM Sans Font
         </h2>
         <div className="space-y-2">
@@ -34,7 +34,7 @@ const FontDemo: React.FC = () => {
 
       {/* Playfair Display Examples */}
       <section className="space-y-4">
-        <h2 className="text-2xl font-semibold border-b border-gray-600 pb-2">
+        <h2 className="text-2xl font-semibold border-b border-zinc-600 pb-2">
           Playfair Display Font
         </h2>
         <div className="space-y-2">
@@ -61,7 +61,7 @@ const FontDemo: React.FC = () => {
 
       {/* Combined Usage Examples */}
       <section className="space-y-4">
-        <h2 className="text-2xl font-semibold border-b border-gray-600 pb-2">
+        <h2 className="text-2xl font-semibold border-b border-zinc-600 pb-2">
           Combined Usage
         </h2>
         <div className="space-y-4">
@@ -90,38 +90,38 @@ const FontDemo: React.FC = () => {
 
       {/* Tailwind Classes Guide */}
       <section className="space-y-4">
-        <h2 className="text-2xl font-semibold border-b border-gray-600 pb-2">
+        <h2 className="text-2xl font-semibold border-b border-zinc-600 pb-2">
           How to Use
         </h2>
-        <div className="bg-gray-900 p-4 rounded-lg">
+        <div className="bg-zinc-900 p-4 rounded-lg">
           <h3 className="font-dm-sans text-lg font-semibold mb-2">
             Tailwind Classes:
           </h3>
           <ul className="font-dm-sans text-sm space-y-1 text-zinc-300">
             <li>
-              <code className="bg-gray-800 px-2 py-1 rounded">
+              <code className="bg-zinc-800 px-2 py-1 rounded">
                 font-dm-sans
               </code>{" "}
               - Apply DM Sans font
             </li>
             <li>
-              <code className="bg-gray-800 px-2 py-1 rounded">
+              <code className="bg-zinc-800 px-2 py-1 rounded">
                 font-playfair
               </code>{" "}
               - Apply Playfair Display font
             </li>
             <li>
-              <code className="bg-gray-800 px-2 py-1 rounded">font-ramro</code>{" "}
+              <code className="bg-zinc-800 px-2 py-1 rounded">font-ramro</code>{" "}
               - Apply Montserrat font (existing)
             </li>
           </ul>
           <p className="font-dm-sans text-sm text-zinc-300 mt-3">
             You can also use the CSS custom properties directly:
-            <code className="bg-gray-800 px-2 py-1 rounded ml-1">
+            <code className="bg-zinc-800 px-2 py-1 rounded ml-1">
               font-family-dm-sans
             </code>
             ,
-            <code className="bg-gray-800 px-2 py-1 rounded ml-1">
+            <code className="bg-zinc-800 px-2 py-1 rounded ml-1">
               font-family-playfair
             </code>
           </p>

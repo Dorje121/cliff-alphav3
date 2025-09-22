@@ -41,9 +41,9 @@ const RefractiveIndex = () => {
         description="Complete guide to understanding refractive index values and
                 their impact on lens thickness, weight, and optical performance
                 for superior vision correction."
-        backgroundImage="/cliffcoating/reflative-index.png"
-        rightImage="/cliffcoating/reflative-index.png"
-        serviceNumber="15"
+        backgroundImage="/product/14.jpg"
+        rightImage="/product/14.jpg"
+        serviceNumber="14"
         badgeTitle="1.74"
         badgeSubtitle="Max Index"
       />

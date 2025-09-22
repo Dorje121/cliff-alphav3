@@ -224,9 +224,9 @@ const CliffBlueSafeLenses = () => {
         title="Cliff Blue Safe"
         subtitle="UV Lenses"
         description="Complete blue light protection lenses for modern digital lifestyle. Advanced UV filtering technology protects your eyes from harmful blue light emitted by digital screens."
-        backgroundImage="/newimage/alibaba.avif"
-        rightImage="/newimage/alibaba.avif"
-        serviceNumber="04"
+        backgroundImage="/product/03.jpeg"
+        rightImage="/product/03.jpeg"
+        serviceNumber="02"
         badgeTitle="2400"
         badgeSubtitle="MRP"
       />
@@ -302,16 +302,16 @@ const CliffBlueSafeLenses = () => {
                     <table className="w-full border-collapse">
                       <thead>
                         <tr className="bg-white/10 backdrop-blur-sm">
-                          <th className="border border-gray-600 p-2 text-center text-white font-bold">
+                          <th className="border border-zinc-600 p-2 text-center text-white font-bold">
                             INDEX
                           </th>
-                          <th className="border border-gray-600 p-2 text-center text-white font-bold">
+                          <th className="border border-zinc-600 p-2 text-center text-white font-bold">
                             SPH
                           </th>
-                          <th className="border border-gray-600 p-2 text-center text-white font-bold">
+                          <th className="border border-zinc-600 p-2 text-center text-white font-bold">
                             CYL
                           </th>
-                          <th className="border border-gray-600 p-2 text-center text-white font-bold">
+                          <th className="border border-zinc-600 p-2 text-center text-white font-bold">
                             MRP
                           </th>
                         </tr>
@@ -324,10 +324,10 @@ const CliffBlueSafeLenses = () => {
                           >
                             1.56
                           </td>
-                          <td className="border border-white/10 p-2 text-center text-gray-200 text-sm">
+                          <td className="border border-white/10 p-2 text-center text-zinc-200 text-sm">
                             0.00 to -8.00
                           </td>
-                          <td className="border border-white/10 p-2 text-center text-gray-200 text-sm">
+                          <td className="border border-white/10 p-2 text-center text-zinc-200 text-sm">
                             0.00 to -3.00
                           </td>
                           <td
@@ -338,10 +338,10 @@ const CliffBlueSafeLenses = () => {
                           </td>
                         </tr>
                         <tr>
-                          <td className="border border-white/10 p-2 text-center text-gray-200 text-sm">
+                          <td className="border border-white/10 p-2 text-center text-zinc-200 text-sm">
                             0.00 to +4.00
                           </td>
-                          <td className="border border-white/10 p-2 text-center text-gray-200 text-sm">
+                          <td className="border border-white/10 p-2 text-center text-zinc-200 text-sm">
                             0.00 to -2.00
                           </td>
                         </tr>

@@ -38,60 +38,100 @@ const CliffPhotoZLenses = () => {
         title="Cliff Photo-Z"
         subtitle="UV Lenses"
         description="Photochromic lenses that adapt to changing light conditions automatically, providing seamless comfort from indoor to outdoor environments."
-        backgroundImage="/imAGES/clear.webp"
-        rightImage="/imAGES/clear.webp"
-        serviceNumber="05"
+        backgroundImage="/product/04.jpeg"
+        rightImage="/product/04.jpeg"
+        serviceNumber="04"
         badgeTitle="4800"
         badgeSubtitle="MRP"
       />
 
-      <div className="py-8 bg-black border-t border-gray-800">
+      <div className="py-8 bg-black border-t border-zinc-800">
         <div className="max-w-[1500px] mx-auto p-4">
 
-          <div className="mb-16">
-            <div className="bg-black/80 backdrop-blur-sm rounded-xl overflow-hidden border border-gray-800">
+          <div className="my-16">
+            <div className="bg-gradient-to-br from-zinc-900/90 to-black/80 backdrop-blur-md rounded-xl overflow-hidden border border-zinc-700/50 shadow-2xl shadow-yellow-500/10">
+              {/* Table Header with Gradient */}
+              <div className=" border-b border-zinc-600/50 px-6 py-4">
+                <h3 className="text-2xl font-bold text-white text-center">
+                  <span className="bg-gradient-to-r from-yellow-400 to-yellow-400 bg-clip-text text-transparent">
+                    Cliff Photo-Z Pricing
+                  </span>
+                </h3>
+              </div>
+
               <div className="overflow-x-auto">
                 <table className="w-full table-fixed">
                   <thead>
-                    <tr className="border-b border-gray-700">
-                      <th className="w-1/3 px-6 py-4 text-left text-xl font-bold text-white">
-                        INDEX
+                    <tr className="bg-gradient-to-r from-zinc-800/50 to-zinc-900/50 border-b border-zinc-600/50">
+                      <th className="w-1/3 px-8 py-6 text-left">
+                        <div className="flex items-center gap-3">
+                          <span className="text-xl font-bold text-white">INDEX</span>
+                        </div>
                       </th>
-                      <th className="w-1/3 px-6 py-4 text-center text-xl font-bold text-white bg-gray-900">
-                        <div className="space-y-1">
-                          <div>POWER RANGE</div>
-                          <div className="flex justify-center gap-4">
-                            <span>SPH</span>
-                            <span>CYL</span>
+                      <th className="w-1/3 px-8 py-6 text-center bg-gradient-to-br from-zinc-800/20 to-zinc-900/20">
+                        <div className="space-y-2">
+                          <div className="text-xl font-bold text-white">POWER RANGE</div>
+                          <div className="flex justify-center gap-6">
+                            <span className="px-3 py-1 bg-yellow-500/20 text-yellow-300 rounded-full text-sm font-medium border border-yellow-500/30">
+                              SPH
+                            </span>
+                            <span className="px-3 py-1 bg-yellow-500/20 text-yellow-300 rounded-full text-sm font-medium border border-yellow-500/30">
+                              CYL
+                            </span>
                           </div>
                         </div>
                       </th>
-                      <th className="w-1/3 px-6 py-4 text-center text-xl font-bold text-white">
-                        MRP
+                      <th className="w-1/3 px-8 py-6 text-center">
+                        <div className="flex items-center justify-center gap-3">
+                          <span className="text-xl font-bold text-white">MRP</span>
+                        </div>
                       </th>
                     </tr>
                   </thead>
                   <tbody>
-                    <tr className="border-b border-gray-700 last:border-b-0">
-                      <td className="w-1/3 px-6 py-4 text-xl font-semibold text-white">1.56</td>
-                      <td className="w-1/3 px-6 py-4 text-center text-white bg-gray-900/50">
-                        <div className="flex justify-center gap-8">
-                          <span>0.00 to -6.00</span>
-                          <span>0.00 to -2.00</span>
+                    <tr className="border-b border-zinc-700/50 hover:bg-gradient-to-r hover:from-zinc-800/30 hover:to-zinc-900/30 transition-all duration-300 group">
+                      <td className="w-1/3 px-8 py-6">
+                        <div className="flex items-center gap-4">
+                          <div className="w-16 h-12 bg-gradient-to-br from-yellow-500/20 to-yellow-600/20 rounded-sm flex items-center justify-center border border-yellow-500/30 group-hover:scale-110 transition-transform duration-300">
+                            <span className="text-xl font-bold text-yellow-300">1.56</span>
+                          </div>
+                          <div className="flex flex-col">
+                            <span className="text-lg font-semibold text-white">Index 1.56</span>
+                            <span className="text-sm text-zinc-400">Standard Quality</span>
+                          </div>
                         </div>
                       </td>
-                      <td className="w-1/3 px-6 py-4 text-center text-xl font-bold text-white">
-                        4800
+                      <td className="w-1/3 px-8 py-6 text-center bg-gradient-to-br from-zinc-800/30 to-zinc-900/30">
+                        <div className="space-y-3">
+                          <div className="flex justify-center gap-8">
+                            <div className="text-center">
+                              <div className="text-lg font-semibold text-yellow-300">0.00 to -6.00</div>
+                              <div className="text-xs text-zinc-500 uppercase tracking-wider">Spherical</div>
+                            </div>
+                            <div className="w-px bg-zinc-600"></div>
+                            <div className="text-center">
+                              <div className="text-lg font-semibold text-yellow-300">0.00 to -2.00</div>
+                              <div className="text-xs text-zinc-500 uppercase tracking-wider">Cylindrical</div>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                      <td className="w-1/3 px-8 py-6 text-center">
+                        <div className="flex flex-col items-center gap-2">
+                          <div className="text-3xl font-bold  ">
+                            ₹4800
+                          </div>
+                          <div className="px-3 py-1 bg-yellow-500/20 text-yellow-300 rounded-full text-xs font-medium border border-yellow-500/30">
+                            Best Value
+                          </div>
+                        </div>
                       </td>
                     </tr>
                   </tbody>
                 </table>
               </div>
-              <div className="text-center text-zinc-400 py-8 bg-black/60">
-                <p className="text-sm">
-                  All listed powers are resultant; cross-compound is not available.
-                </p>
-              </div>
+
+
             </div>
           </div>
 
@@ -103,7 +143,7 @@ const CliffPhotoZLenses = () => {
 
 
         {/* Timeline Section */}
-        <div className="py-20 bg-black border-t border-gray-800 mt-8">
+        <div className="py-20 bg-black border-t border-zinc-800 mt-8">
           <div className="max-w-7xl mx-auto px-4">
             {/* Inline TimelineDemo */}
             <div className="relative w-full">
@@ -118,162 +158,99 @@ const CliffPhotoZLenses = () => {
                           The coating is designed to provide better durability, ensuring your lenses last longer even with daily use.
                         </p>
                         <p className="text-zinc-300 text-xl md:text-xl font-normal mb-8">
-                          -  Protect Against Scratches
-                          <br />
-                          It helps protect your lenses against scratches, keeping them clear and maintaining visual quality over time..
+                          - Protect Against Scratches <br />
+                          It helps protect your lenses against scratches, keeping them clear and maintaining visual quality over time.
                         </p>
                         <div className="grid grid-cols-2 gap-4">
-                          <Image
-                            src="/imAGES/scratch.png"
-                            alt="startup template"
-                            width={500}
-                            height={500}
-                            className="rounded-lg object-contain h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-                          />
-                          <Image
-                            src="/imAGES/scratch.png" alt="startup template"
-                            width={500}
-                            height={500}
-                            className="rounded-lg object-contain h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-                          />
-
+                          <Image src="/feature/scratch1.jpg" alt="scratch protection lens" width={500} height={500} className="rounded-lg border border-white/20 object-contain h-20 md:h-44 lg:h-60 w-full" />
+                          <Image src="/feature/scratch2.jpg" alt="lens durability" width={500} height={500} className="rounded-lg border border-white/20 object-contain h-20 md:h-44 lg:h-60 w-full" />
                         </div>
                       </div>
                     ),
+                    url: "/svgs/scratchresistance.svg"
                   },
                   {
                     title: "Low Reflection",
                     content: (
                       <div>
                         <p className="text-zinc-300 text-xl md:text-xl font-normal mb-8">
-                          - Better Durability <br />
-                          The coating is designed to provide better durability, ensuring your lenses last longer even with daily use.
+                          - Clearer Vision <br />
+                          Reduces glare from screens, headlights, and bright lights, allowing more comfortable vision during day and night.
                         </p>
                         <p className="text-zinc-300 text-xl md:text-xl font-normal mb-8">
-                          -  Protect Against Scratches
-                          <br />
-                          It helps protect your lenses against scratches, keeping them clear and maintaining visual quality over time..
+                          - Enhanced Aesthetics <br />
+                          Minimizes distracting reflections on your lenses so your eyes remain visible and natural in photos and conversations.
                         </p>
                         <div className="grid grid-cols-2 gap-4">
-                          <Image
-                            src="/imAGES/clear.webp"
-                            alt="hero template"
-                            width={500}
-                            height={500}
-                            className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-                          />
-                          <Image
-                            src="/imAGES/clear.webp"
-                            alt="feature template"
-                            width={500}
-                            height={500}
-                            className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-                          />
+                          <Image src="/feature/second1.jpg" alt="anti reflection lens" width={500} height={500} className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full" />
+                          <Image src="/feature/second2.jpg" alt="clear lens view" width={500} height={500} className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full" />
                         </div>
                       </div>
                     ),
+                    url: "/svgs/clearvision.svg"
                   },
                   {
                     title: "Super Hydrophobic Coating",
                     content: (
                       <div>
                         <p className="text-zinc-300 text-xl md:text-xl font-normal mb-8">
-                          - Better Durability <br />
-                          The coating is designed to provide better durability, ensuring your lenses last longer even with daily use.
+                          - Water Repellent <br />
+                          Special nano-coating prevents water droplets from sticking, keeping your vision clear during rain or humidity.
                         </p>
                         <p className="text-zinc-300 text-xl md:text-xl font-normal mb-8">
-                          -  Protect Against Scratches
-                          <br />
-                          It helps protect your lenses against scratches, keeping them clear and maintaining visual quality over time..
+                          - Easy Cleaning <br />
+                          Resists fingerprints, dust, and smudges so lenses stay cleaner for longer with minimal maintenance.
                         </p>
                         <div className="grid grid-cols-2 gap-4">
-                          <Image
-                            src="/imAGES/clear.webp"
-                            alt="hero template"
-                            width={500}
-                            height={500}
-                            className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-                          />
-                          <Image
-                            src="/imAGES/clear.webp"
-                            alt="feature template"
-                            width={500}
-                            height={500}
-                            className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-                          />
+                          <Image src="/feature/third1.jpg" alt="hydrophobic lens" width={500} height={500} className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full" />
+                          <Image src="/feature/third2.jpg" alt="water resistant lens" width={500} height={500} className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full" />
                         </div>
                       </div>
                     ),
+                    url: "/svgs/superslippery.svg"
                   },
                   {
                     title: "UV Protection",
                     content: (
                       <div>
                         <p className="text-zinc-300 text-xl md:text-xl font-normal mb-8">
-                          - Better Durability <br />
-                          The coating is designed to provide better durability, ensuring your lenses last longer even with daily use.
+                          - Eye Safety <br />
+                          Blocks harmful UVA and UVB rays, reducing the risk of long-term eye conditions caused by sun exposure.
                         </p>
                         <p className="text-zinc-300 text-xl md:text-xl font-normal mb-8">
-                          -  Protect Against Scratches
-                          <br />
-                          It helps protect your lenses against scratches, keeping them clear and maintaining visual quality over time..
+                          - Outdoor Comfort <br />
+                          Provides comfortable vision in bright environments by filtering out invisible ultraviolet radiation.
                         </p>
-
                         <div className="grid grid-cols-2 gap-4">
-                          <Image
-                            src="/imAGES/clear.webp"
-                            alt="hero template"
-                            width={500}
-                            height={500}
-                            className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-                          />
-                          <Image
-                            src="/imAGES/clear.webp"
-                            alt="feature template"
-                            width={500}
-                            height={500}
-                            className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-                          />
-
+                          <Image src="/feature/fourth1.jpg" alt="uv protection lens" width={500} height={500} className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full" />
+                          <Image src="/feature/fourth2.jpg" alt="sunlight lens protection" width={500} height={500} className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full" />
                         </div>
                       </div>
                     ),
+                    url: "/svgs/uvprotection.svg"
                   },
                   {
-                    title: "Blue Filter",
+                    title: "Yellow Filter",
                     content: (
                       <div>
                         <p className="text-zinc-300 text-xl md:text-xl font-normal mb-8">
-                          - Better Durability <br />
-                          The coating is designed to provide better durability, ensuring your lenses last longer even with daily use.
+                          - Night Driving Clarity <br />
+                          Reduces glare from oncoming headlights and streetlights, making night driving safer and more comfortable.
                         </p>
                         <p className="text-zinc-300 text-xl md:text-xl font-normal mb-8">
-                          -  Protect Against Scratches
-                          <br />
-                          It helps protect your lenses against scratches, keeping them clear and maintaining visual quality over time..
+                          - Blue Light Balance <br />
+                          Helps reduce eye strain from digital screens while enhancing contrast for sharper vision in low light.
                         </p>
-
                         <div className="grid grid-cols-2 gap-4">
-                          <Image
-                            src="/images/clear.webp"
-                            alt="hero template"
-                            width={500}
-                            height={500}
-                            className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-                          />
-                          <Image
-                            src="/images/clear.webp"
-                            alt="feature template"
-                            width={500}
-                            height={500}
-                            className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-                          />
-
+                          <Image src="/feature/fifth1.jpg" alt="yellow filter lens" width={500} height={500} className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full" />
+                          <Image src="/feature/fifth2.jpg" alt="anti glare yellow lens" width={500} height={500} className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full" />
                         </div>
                       </div>
                     ),
-                  },
+                    url: "/svgs/glareprotection.svg"
+                  }
                 ]} />
+
               </div>
             </div>
           </div>

@@ -9,157 +9,146 @@ import TextWithTexture from "@/components/textwithgoldentexture";
 const HomeList = () => {
   const services = [
     {
-      id: "02",
+      id: "01",
       title: "CLIFF COATINGS",
       description:
         "Premium protective coatings for enhanced lens durability and performance",
       category: "Coatings",
       slug: "cliff-coatings",
-      image: "/c1.jpeg",
+      image: "/product/01.jpeg",
     },
     {
-      id: "03",
+      id: "02",
       title: "CLIFF BLUE SAFE COATING",
       description:
         "Advanced blue light filtering coating for digital eye strain protection",
       category: "Coatings",
       slug: "cliff-blue-safe-coating",
-      image: "/c2.jpeg",
+      image: "/product/02.jpeg",
     },
     {
-      id: "04",
+      id: "03",
       title: "CLIFF BLUE SAFE UV",
       description:
         "Complete blue light protection lenses for modern digital lifestyle",
       category: "Lenses",
       slug: "cliff-blue-safe-lenses",
-      image: "/c3.jpeg",
+      image: "/product/03.jpeg",
     },
     {
-      id: "05",
+      id: "04",
       title: "CLIFF PHOTO-Z UV",
       description:
         "Photochromic lenses that adapt to changing light conditions automatically",
       category: "Lenses",
       slug: "cliff-photo-z-lenses",
-      image: "/c4.jpeg",
+      image: "/product/04.jpeg",
     },
     {
-      id: "06",
+      id: "05",
       title: "CLIFF DRIVE CLEAR LENSES",
       description:
         "Specialized lenses optimized for driving and enhanced road visibility",
       category: "Lenses",
       slug: "cliff-drive-clear-lenses",
-      image: "/c5.jpeg",
+      image: "/product/5.jpg",
     },
     {
-      id: "07",
+      id: "06",
       title: "CLIFF PROGRESSIVE VERSATILE",
       description:
         "Multi-focal progressive lenses for seamless vision at all distances",
       category: "Progressive",
       slug: "cliff-progressive-versatile",
-      image: "/c6.jpeg",
+      image: "/product/6.jpg",
     },
     {
-      id: "08",
+      id: "07",
       title: "CLIFF TECHNOLOGY",
       description: "Cutting-edge optical technology and innovation solutions",
       category: "Technology",
       slug: "cliff-technology",
-      image: "/c7.jpeg",
+      image: "/product/7.jpg",
     },
     {
-      id: "09",
+      id: "08",
       title: "CLIFF SINGLE VISION RX",
       description: "Prescription single vision lenses for clear, focused sight",
       category: "Prescription",
       slug: "cliff-single-vision-rx",
-      image: "/c8.jpeg",
+      image: "/product/8.jpg",
     },
     {
-      id: "10",
+      id: "9",
       title: "CLIFF DYNAMIX PROGRESSIVE",
       description:
         "Dynamic progressive lenses with superior adaptation and comfort",
       category: "Progressive",
       slug: "cliff-dynamix-progressive",
-      image: "/c9.jpeg",
+      image: "/product/9.jpg",
     },
     {
-      id: "11",
+      id: "10",
       title: "CLIFF ZENN SERIES",
       description:
         "Premium lens series combining style with advanced optical performance",
       category: "Premium",
       slug: "cliff-zenn-series",
-      image: "/ai0.jpg",
+      image: "/product/10.jpg",
     },
     {
-      id: "12",
+      id: "11",
       title: "CLIFF ZENN SINGLE VISION LENSES",
       description: "Single vision lenses from the premium Zenn collection",
       category: "Premium",
       slug: "cliff-zenn-single-vision-lenses",
-      image: "/ai1.jpg",
+      image: "/product/11.jpg",
     },
     {
-      id: "13",
+      id: "12",
       title: "CLIFF ZENN PROGRESSIVE LENSES",
       description:
         "Progressive lenses featuring Zenn series advanced technology",
       category: "Premium",
       slug: "cliff-zenn-progressive-lenses",
-      image: "/ai2.jpg",
+      image: "/product/12.jpg",
     },
     {
-      id: "14",
+      id: "13",
       title: "CLIFF ZENN SINGLE VISION",
       description: "Enhanced single vision experience with Zenn technology",
       category: "Premium",
       slug: "cliff-zenn-single-vision",
-      image: "/ai3.jpg",
+      image: "/product/13.jpg",
     },
     {
-      id: "15",
+      id: "14",
       title: "REFRACTIVE INDEX",
       description:
         "Custom refractive index solutions for optimal lens thickness and clarity",
       category: "Technology",
       slug: "refractive-index",
-      image: "/ai4.jpg",
+      image: "/product/14.jpg",
     },
     {
-      id: "16",
+      id: "15",
       title: "CLIFF TINTED LENSES",
       description: "Fashionable tinted lenses with UV protection and style",
       category: "Specialty",
       slug: "cliff-tinted-lenses",
-      image: "/cliffcoating/changable.gif",
+      image: "/product/15.jpg",
     },
     {
-      id: "17",
+      id: "16",
       title: "PROGRESSIVE MEASUREMENT CHART",
       description:
         "Professional fitting and measurement services for progressive lenses",
       category: "Services",
       slug: "progressive-measurement-chart",
-      image: "/progreesive.png",
+      image: "/product/16.jpg",
     },
   ];
 
-  const categories = [
-    "All",
-    "Coatings",
-    "Lenses",
-    "Progressive",
-    "Technology",
-    "Prescription",
-    "Premium",
-    "Specialty",
-    "Services",
-  ];
 
   const [selectedCategory, setSelectedCategory] = React.useState("All");
   const [isDropdownOpen, setIsDropdownOpen] = React.useState(false);
@@ -229,7 +218,7 @@ const HomeList = () => {
               className="cursor-pointer block"
             >
               <div
-                className={`group relative backdrop-blur-sm border-t border-t-gray-700 transition-all duration-500 hover:scale-102 overflow-hidden`}
+                className={`group relative backdrop-blur-sm border-t border-t-zinc-700 transition-all duration-500 hover:scale-102 overflow-hidden`}
               >
                 {/* Mobile Layout (Stack Vertically) */}
                 <div className="flex flex-col md:hidden p-4">
@@ -240,7 +229,7 @@ const HomeList = () => {
                         src={service.image}
                         alt={service.title}
                         fill
-                        className="object-cover transition-transform duration-500 group-hover:scale-110"
+                        className="object-cover h-full transition-transform duration-500 group-hover:scale-110"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
                       {/* Service Number Overlay on Mobile */}
@@ -302,8 +291,8 @@ const HomeList = () => {
                   {/* Content Section */}
                   <div
                     className={`w-1/3 p-8 lg:p-12 ${index % 2 === 0
-                        ? "lg:pl-12 lg:pr-16"
-                        : "lg:pr-12 lg:pl-16"
+                      ? "lg:pl-12 lg:pr-16"
+                      : "lg:pr-12 lg:pl-16"
                       }`}
                   >
                     {/* Category Badge */}

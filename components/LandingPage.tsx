@@ -424,12 +424,12 @@ const LandingPage: React.FC<LandingPageProps> = ({ onComplete }) => {
               <div className="space-y-4 relative w-full max-w-[44rem] sm:w-[44rem] h-[10rem] sm:h-auto min-h-[12rem] sm:min-h-[14rem] md:min-h-[16rem] lg:min-h-[192px] flex-shrink-0">
                 <p className="text-xl sm:text-2xl font-light text-zinc-300">
                   {displayedText[0]}
-                  {currentLine === 0 && <span className="ml-1 inline-block w-2 h-8 bg-gray-300 animate-pulse align-middle"></span>}
+                  {currentLine === 0 && <span className="ml-1 inline-block w-2 h-8 bg-zinc-300 animate-pulse align-middle"></span>}
                 </p>
 
                 <p className="text-base sm:text-lg text-zinc-400 leading-relaxed">
                   {displayedText[1]}
-                  {currentLine === 1 && <span className="ml-1 inline-block w-2 h-6 bg-gray-400 animate-pulse align-middle"></span>}
+                  {currentLine === 1 && <span className="ml-1 inline-block w-2 h-6 bg-zinc-400 animate-pulse align-middle"></span>}
                 </p>
 
 

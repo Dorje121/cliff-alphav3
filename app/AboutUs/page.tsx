@@ -130,7 +130,7 @@ const AboutUsPage = () => {
           {/* Minimal floating elements */}
           <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
             <div className="absolute top-20 left-10 w-2 h-2 bg-white/30 rounded-full animate-ping"></div>
-            <div className="absolute top-40 right-20 w-3 h-3 bg-gray-400/30 rounded-full animate-ping delay-500"></div>
+            <div className="absolute top-40 right-20 w-3 h-3 bg-zinc-400/30 rounded-full animate-ping delay-500"></div>
             <div className="absolute bottom-20 left-1/3 w-1 h-1 bg-white/20 rounded-full animate-ping delay-1000"></div>
           </div>
 
@@ -142,10 +142,10 @@ const AboutUsPage = () => {
               />
             </h2>
             <div className="flex justify-center items-start gap-2 flex-wrap ">
-              <div className="value-card group relative w-[325px] sm:w-[350px] min-h-[300px] shrink-0 ">
-                <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-gray-500/5 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300"></div>
-                <div className="absolute inset-0  bg-[#BFA84A]/10 backdrop-blur-sm p-8 rounded-2xl border border-gray-700/50 group-hover:border-[#BFA84A] transition-all duration-300 w-full h-full">
-                  <div className="w-16 h-16 bg-gradient-to-r from-gray-600 to-gray-800 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+              <div className="value-card group relative w-[325px] sm:w-[400px] min-h-[300px] shrink-0 ">
+                <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-zinc-500/5 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300"></div>
+                <div className="absolute inset-0   backdrop-blur-sm p-8 rounded-2xl border border-zinc-700/50 group-hover:border-[#BFA84A] transition-all duration-300 w-full h-full">
+                  <div className="w-16 h-16  bg-gradient-to-r from-zinc-600/15 to-zinc-800/20 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                     <svg
                       className="w-6 h-6 text-white block"
                       xmlns="http://www.w3.org/2000/svg"
@@ -167,7 +167,7 @@ const AboutUsPage = () => {
                     />
                   </h2>
 
-                  <p className="text-zinc-300 leading-relaxed">
+                  <p className="text-zinc-300 mt-3 leading-relaxed">
                     Every lens we craft meets the highest standards of optical
                     precision, ensuring perfect vision.
                   </p>
@@ -176,9 +176,9 @@ const AboutUsPage = () => {
               </div>
 
               <div className="value-card group relative w-[325px] sm:w-[350px] min-h-[300px] shrink-0">
-                <div className="absolute inset-0 bg-gradient-to-br from-white/3 to-gray-600/5 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300"></div>
-                <div className="absolute inset-0 w-full h-full bg-[#BFA84A]/10 backdrop-blur-sm p-8 rounded-2xl border border-gray-700/50 group-hover:border-[#BFA84A] transition-all duration-300">
-                  <div className="w-16 h-16 bg-gradient-to-r from-gray-500 to-gray-700 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <div className="absolute inset-0 bg-gradient-to-br from-white/3 to-zinc-600/5 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300"></div>
+                <div className="absolute inset-0 w-full h-full  backdrop-blur-sm p-8 rounded-2xl border border-zinc-700/50 group-hover:border-[#BFA84A] transition-all duration-300">
+                  <div className="w-16 h-16 bg-gradient-to-r from-zinc-600/15 to-zinc-800/20 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                     <svg
                       className="w-8 h-8 text-white"
                       fill="#BFA84A"
@@ -199,14 +199,14 @@ const AboutUsPage = () => {
                     We continuously invest in research and development to bring
                     you the latest advances in lens technology and design.
                   </p>
-                  <div className="absolute top-4 right-4 w-2 h-2 bg-gray-400/40 rounded-full"></div>
+                  <div className="absolute top-4 right-4 w-2 h-2 bg-zinc-400/40 rounded-full"></div>
                 </div>
               </div>
 
               <div className="value-card group relative w-[325px] sm:w-[350px] min-h-[300px] shrink-0">
-                <div className="absolute inset-0 bg-gradient-to-br from-white/2 to-gray-700/5 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300"></div>
-                <div className="absolute inset-0 w-full h-full bg-[#BFA84A]/10 backdrop-blur-sm p-8 rounded-2xl border border-gray-700/50 group-hover:border-[#BFA84A] transition-all duration-300">
-                  <div className="w-16 h-16 bg-gradient-to-r from-gray-400 to-gray-600 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 hover:text-[#BFA84A]">
+                <div className="absolute inset-0 bg-gradient-to-br from-white/2 to-zinc-700/5 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300"></div>
+                <div className="absolute inset-0 w-full h-full  backdrop-blur-sm p-8 rounded-2xl border border-zinc-700/50 group-hover:border-[#BFA84A] transition-all duration-300">
+                  <div className="w-16 h-16 bg-gradient-to-r from-zinc-600/15 to-zinc-800/20 to-zinc-600 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 hover:text-[#BFA84A]">
                     <svg
                       className="w-8 h-8 text-white hover:text-[#BFA84A]"
                       fill="#BFA84A"

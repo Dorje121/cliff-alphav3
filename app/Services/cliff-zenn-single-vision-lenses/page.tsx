@@ -2,10 +2,6 @@
 import React, { useRef, useLayoutEffect } from "react";
 import { gsap } from "gsap";
 import BackToServicesButton from "@/components/Services/BackToServicesButton";
-import Image from "next/image";
-import Link from "next/link";
-import { motion } from "motion/react";
-import TextWithTexture from "@/components/textwithgoldentexture";
 import GraphSec from './graph'
 import Diff from './diff'
 import TechBene from './Techbene'
@@ -45,9 +41,9 @@ const CliffZennSingleVision = () => {
         subtitle="SINGLE VISION"
         description="The most versatile design for Single Vision Lenses with 76% more
                 stability and better vision in all gaze directions."
-        backgroundImage="/ai0.jpg"
-        rightImage="/ai0.jpg"
-        serviceNumber="12"
+        backgroundImage="/product/11.jpg"
+        rightImage="/product/11.jpg"
+        serviceNumber="11"
         badgeTitle="Zenn"
         badgeSubtitle="Single Vision"
       />

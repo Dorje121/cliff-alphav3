@@ -46,7 +46,7 @@ export const getRouteLoadingTime = (pathname: string): number => {
 
 #### Styling
 The preloader uses Tailwind CSS classes. Key styling is in `TimeLoading.tsx`:
-- Background: `bg-gradient-to-br from-black via-gray-900 to-black`
+- Background: `bg-gradient-to-br from-black via-zinc-900 to-black`
 - Brand color: `text-yellow-400` (CLIFF branding)
 - Progress bar: Gradient yellow colors
 

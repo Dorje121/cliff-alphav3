@@ -1,9 +1,7 @@
 "use client";
 import BackToServicesButton from "@/components/Services/BackToServicesButton";
-import Image from "next/image";
 import React, { useRef, useLayoutEffect } from "react";
 import { gsap } from "gsap";
-import TextWithTexture from "@/components/textwithgoldentexture";
 import Feature from "./Feature";
 import Diff from './diff'
 import HeroSection from "@/components/Services/heropage";
@@ -37,30 +35,6 @@ const CliffDynamixProgressive = () => {
   // Lens specifications data from the provided chart
 
 
-  const features = [
-    "Scratch Resistance",
-    "Low Reflection",
-    "Super Hydrophobic Coating",
-    "Blue Filter",
-    "UV Protection",
-    "Anti Glare Coating",
-    "Photochromic",
-  ];
-
-  const technology = [
-    "Balanced Process Design",
-    "Continuum Design Technology (6K Definition)",
-    "Wear Fit Customization",
-    "AdaptEase Technology",
-  ];
-
-  const benefits = [
-    "Superior Vision at all distance",
-    "Ultra Clarity",
-    "Optimized Fit",
-    "Easy of Adaptation",
-  ];
-
   return (
     <>
       <section className="max-w-screen overflow-x-hidden">
@@ -70,9 +44,9 @@ const CliffDynamixProgressive = () => {
           subtitle="PROGRESSIVE"
           description="Dynamic progressive lenses with superior adaptation and comfort,
                   featuring advanced technology for optimal vision at all distances."
-          backgroundImage="/c9.jpeg"
-          rightImage="/c9.jpeg"
-          serviceNumber="10"
+          backgroundImage="/product/9.jpg"
+          rightImage="/product/9.jpg"
+          serviceNumber="09"
           badgeTitle="6K"
           badgeSubtitle="Definition"
         />

@@ -130,7 +130,7 @@ const MansoryLayout: React.FC = () => {
                 <h3 className="text-xl md:text-2xl font-semibold text-white mb-3">
                   {feature.title}
                 </h3>
-                <p className="text-gray-200 text-sm md:text-base">
+                <p className="text-zinc-200 text-sm md:text-base">
                   {feature.description}
                 </p>
               </div>

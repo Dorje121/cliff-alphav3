@@ -142,7 +142,7 @@ const Feature = () => {
                             { src: "/svgs/easytoclean.svg", title: "Hydrophobic", desc: "Super Hydrophobic Coatings" },
                             { src: "/svgs/bluelight.svg", title: "Blue Filter", desc: "Protects eyes from screens" },
                         ].map((item, i) => (
-                            <div key={i} className="text-center border border-gray-600 hover:border-gray-400 bg-[#161617] w-[250px] sm:w-[220px] md:w-[250px] p-4 rounded-md transition-all duration-300 ease-in-out max-h-[300px]">
+                            <div key={i} className="text-center border border-zinc-600 hover:border-zinc-400 bg-[#161617] w-[250px] sm:w-[220px] md:w-[250px] p-4 rounded-md transition-all duration-300 ease-in-out max-h-[300px]">
                                 <img src={item.src} alt={item.title} className="w-16 sm:w-20 h-16 sm:h-20 mx-auto mb-4" />
                                 <h3 className="font-bold text-lg sm:text-xl text-white mb-2">{item.title}</h3>
                                 <p className="text-zinc-300 text-sm sm:text-base">{item.desc}</p>
@@ -163,7 +163,7 @@ const Feature = () => {
                             { src: "/svgs/clearvision.svg", title: "Anti-Glare Coating", desc: "Anti-Glare Coating Lens" },
                             { src: "/svgs/easytoclean.svg", title: "Photochromic", desc: "Shade when exposed to light" },
                         ].map((item, i) => (
-                            <div key={i} className="text-center border border-gray-600 hover:border-gray-400 bg-[#161617] w-[250px] sm:w-[220px] md:w-[250px] p-4 rounded-md transition-all duration-300 ease-in-out">
+                            <div key={i} className="text-center border border-zinc-600 hover:border-zinc-400 bg-[#161617] w-[250px] sm:w-[220px] md:w-[250px] p-4 rounded-md transition-all duration-300 ease-in-out">
                                 <img src={item.src} alt={item.title} className="w-16 sm:w-20 h-16 sm:h-20 mx-auto mb-4" />
                                 <h3 className="font-bold text-lg sm:text-xl text-white mb-2">{item.title}</h3>
                                 <p className="text-zinc-300 text-sm sm:text-base">{item.desc}</p>

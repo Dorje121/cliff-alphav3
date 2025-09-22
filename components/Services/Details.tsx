@@ -75,7 +75,7 @@ const Details = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             <div className="text-center mb-16">
-              <h1 className="text-4xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+              <h1 className="text-4xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-white to-zinc-300 bg-clip-text text-transparent">
                 CLIFF{" "}
                 <span className="bg-gradient-to-r from-white via-yellow-100 to-yellow-200 bg-clip-text text-transparent">
                   PHOTO-Z UV{" "}
@@ -125,13 +125,13 @@ const Details = () => {
                   initial={{ opacity: 0, x: 50 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className={`bg-gray-800/30 backdrop-blur-sm rounded-xl border border-gray-700/50 transition-all duration-300 ${selectedFeature === feature.id
-                    ? "ring-1 ring-yellow-500/50 bg-gray-800/50"
+                  className={`bg-zinc-800/30 backdrop-blur-sm rounded-xl border border-zinc-700/50 transition-all duration-300 ${selectedFeature === feature.id
+                    ? "ring-1 ring-yellow-500/50 bg-zinc-800/50"
                     : ""
                     }`}
                 >
                   <div
-                    className="p-6 cursor-pointer hover:bg-gray-800/40 transition-all duration-300"
+                    className="p-6 cursor-pointer hover:bg-zinc-800/40 transition-all duration-300"
                     onClick={() =>
                       setSelectedFeature(
                         selectedFeature === feature.id ? null : feature.id
@@ -186,7 +186,7 @@ const Details = () => {
                     className="overflow-hidden"
                   >
                     <div className="px-6 pb-6">
-                      <div className="border-t border-gray-600/50 pt-4">
+                      <div className="border-t border-zinc-600/50 pt-4">
                         <ul className="space-y-2 text-zinc-300">
                           {feature.benefits.map((benefit, benefitIndex) => (
                             <motion.li

@@ -1,11 +1,8 @@
 "use client";
-import React, { useState, useRef, useLayoutEffect } from "react";
+import React, { useRef, useLayoutEffect } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import BackToServicesButton from "@/components/Services/BackToServicesButton";
-import { ArrowLeft } from "lucide-react";
 import { gsap } from "gsap";
-import TextWithTexture from "@/components/textwithgoldentexture";
 import HeroSection from "@/components/Services/heropage";
 
 
@@ -46,10 +43,7 @@ interface CoatingType {
 
 const CliffCoatings = () => {
   const backgroundImageRef = useRef<HTMLDivElement>(null);
-  const [selectedCoating, setSelectedCoating] = useState<string>("nox");
-  const [currentPhotoIndex, setCurrentPhotoIndex] = useState(0);
-  const [thumbnails, setThumbnails] = useState([0, 1, 2, 3, 4]);
-  const [isHovered, setIsHovered] = useState(false);
+
 
   // Array of 5 photos
   const photos = [
@@ -61,27 +55,8 @@ const CliffCoatings = () => {
     "/cliffcoating/new5.png",
   ];
 
-  const handleThumbnailClick = (index: number) => {
-    setCurrentPhotoIndex(index);
-    // Update thumbnails to show the clicked photo and next 4 photos
-    const newThumbnails = [];
-    for (let i = 0; i < 5; i++) {
-      newThumbnails.push((index + i) % photos.length);
-    }
-    setThumbnails(newThumbnails);
-  };
 
-  const handleNext = () => {
-    const nextIndex = (currentPhotoIndex + 1) % photos.length;
-    setCurrentPhotoIndex(nextIndex);
-    handleThumbnailClick(nextIndex);
-  };
 
-  const handlePrev = () => {
-    const prevIndex = (currentPhotoIndex - 1 + photos.length) % photos.length;
-    setCurrentPhotoIndex(prevIndex);
-    handleThumbnailClick(prevIndex);
-  };
 
   const features: CoatingFeature[] = [
     {
@@ -129,86 +104,8 @@ const CliffCoatings = () => {
     },
   ];
 
-  const coatings: CoatingType[] = [
-    {
-      id: "nox",
-      name: "NOX",
-      color: "from-gray-300 to-gray-500",
-      gradient: "bg-gradient-to-br from-gray-800/30 to-gray-700/30",
-      features: {
-        uv: true,
-        scratch: true,
-        clear: true,
-        slippery: true,
-        bluelight: false,
-        glare: false,
-        photo: false,
-      },
-      description: "Essential coating with fundamental protection features",
-      price: "$49",
-    },
-    {
-      id: "bluesafe",
-      name: "Blue Safe",
-      color: "from-gray-200 to-gray-400",
-      gradient: "bg-gradient-to-br from-gray-700/30 to-gray-600/30",
-      features: {
-        uv: true,
-        scratch: true,
-        clear: true,
-        slippery: true,
-        bluelight: true,
-        glare: false,
-        photo: false,
-      },
-      description:
-        "Perfect for digital device users with blue light protection",
-      price: "$69",
-    },
-    {
-      id: "driveclear",
-      name: "Drive Clear",
-      color: "from-gray-100 to-gray-300",
-      gradient: "bg-gradient-to-br from-gray-600/30 to-gray-500/30",
-      features: {
-        uv: true,
-        scratch: true,
-        clear: true,
-        slippery: true,
-        bluelight: "special",
-        glare: true,
-        photo: false,
-      },
-      description: "Enhanced clarity and glare reduction for driving",
-      price: "$89",
-    },
-    {
-      id: "photoz",
-      name: "Photo-Z",
-      color: "from-white to-gray-200",
-      gradient: "bg-gradient-to-br from-gray-500/30 to-gray-400/30",
-      features: {
-        uv: true,
-        scratch: true,
-        clear: true,
-        slippery: true,
-        bluelight: "special",
-        glare: true,
-        photo: true,
-      },
-      description:
-        "Advanced photochromatic technology with all premium features",
-      price: "$129",
-    },
-  ];
 
-  const currentCoating =
-    coatings.find((c) => c.id === selectedCoating) || coatings[0];
 
-  const getFeatureIcon = (hasFeature: boolean | "special") => {
-    if (hasFeature === "special") return <StarIcon />;
-    return hasFeature ? <StarIcon /> : null;
-  };
 
   useLayoutEffect(() => {
     // Background image continuous motion animation
@@ -236,9 +133,9 @@ const CliffCoatings = () => {
         title="Cliff Premium"
         subtitle="Coatings"
         description="Advanced protective coatings for modern eyewear. Premium coating technology enhances clarity, durability, and protection for your lenses."
-        backgroundImage="/c5.jpeg"
-        rightImage="/c5.jpeg"
-        serviceNumber="02"
+        backgroundImage="/product/01.jpeg"
+        rightImage="/product/01.jpeg"
+        serviceNumber="01"
         badgeTitle="CLIFF"
         badgeSubtitle="Coatings"
       />

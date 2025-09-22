@@ -21,7 +21,7 @@ export default function Navbar() {
   const pathname = usePathname();
   const [isInFirstSection, setIsInFirstSection] = useState(false);
 
-  
+
 
   const closeMenu = (onCompleteCallback?: () => void) => {
     const menuLinks = gsap.utils.toArray(".menu-link");
@@ -206,7 +206,7 @@ export default function Navbar() {
         >
           {/* Left Panel */}
           <div className="w-full md:w-1/2 h-full flex flex-col justify-center items-center md:text-left text-center md:items-start p-8 md:p-24 text-black">
-            <div className="flex flex-col group text-zinc-700 hover:text-gray-200 space-y-2 xs:space-y-7 md:space-y-12 mx-10">
+            <div className="flex flex-col group text-zinc-700 hover:text-zinc-200 space-y-2 xs:space-y-7 md:space-y-12 mx-10">
               {links.map((link) => {
                 const isActive = pathname === link.href;
                 return (

@@ -1,12 +1,9 @@
 "use client";
 import BackToServicesButton from "@/components/Services/BackToServicesButton";
-import Image from "next/image";
 import React, { useRef, useLayoutEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Data from "./Data";
-import Link from "next/link";
-import TextWithTexture from "@/components/textwithgoldentexture";
 import HeroSection from "@/components/Services/heropage";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -122,9 +119,9 @@ const CliffZennProgressiveLenses = () => {
           subtitle="PROGRESSIVE LENSES"
           description="The most versatile design for Single Vision Lenses with 76% more
                   stability and better vision in all gaze directions."
-          backgroundImage="/ai0.jpg"
-          rightImage="/ai0.jpg"
-          serviceNumber="13"
+          backgroundImage="/product/12.jpg"
+          rightImage="/product/12.jpg"
+          serviceNumber="12"
           badgeTitle="Zenn"
           badgeSubtitle="Progressive lens"
         />

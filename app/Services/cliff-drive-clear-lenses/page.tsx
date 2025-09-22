@@ -4,7 +4,6 @@ import Image from "next/image";
 import React, { useRef, useLayoutEffect, useEffect } from "react";
 import { gsap } from "gsap";
 import { motion } from "framer-motion";
-import TextWithTexture from "@/components/textwithgoldentexture";
 import HeroSection from "@/components/Services/heropage";
 
 const CliffDriveClearLenses = () => {
@@ -59,13 +58,13 @@ const CliffDriveClearLenses = () => {
       title: "Scratch Resistance",
       icon: "/svgs/scratchresistance.svg",
       benefits: ["• Better Durability", "• Protect Against Scratches"],
-      textColor: "text-gray-200",
+      textColor: "text-zinc-200",
     },
     {
       title: "Low Reflection",
       icon: "/svgs/clearvision.svg",
       benefits: ["• Clearer and Sharper Image", "• Better Aesthetics"],
-      textColor: "text-gray-200",
+      textColor: "text-zinc-200",
     },
     {
       title: "Super Hydrophobic Coating",
@@ -75,19 +74,19 @@ const CliffDriveClearLenses = () => {
         "• Repels Dust and Water",
         "• Prolonged Cleanliness",
       ],
-      textColor: "text-gray-200",
+      textColor: "text-zinc-200",
     },
     {
       title: "Blue Filter",
       icon: "/svgs/bluelight.svg",
       benefits: ["• Partially Filters Harmful Blue Rays"],
-      textColor: "text-gray-200",
+      textColor: "text-zinc-200",
     },
     {
       title: "UV Protection",
       icon: "/svgs/uvprotection.svg",
       benefits: ["• As Recommended by WHO upto 400nm"],
-      textColor: "text-gray-200",
+      textColor: "text-zinc-200",
     },
     {
       title: "Anti Glare Coating",
@@ -96,7 +95,7 @@ const CliffDriveClearLenses = () => {
         "• Reduce Distraction for reflection from Dashboard mirror",
         "• Comfortable Night Driving",
       ],
-      textColor: "text-gray-200",
+      textColor: "text-zinc-200",
     },
   ];
 
@@ -113,9 +112,9 @@ const CliffDriveClearLenses = () => {
         title="Cliff Drive Clear"
         subtitle="UV Lenses"
         description="Specialized lenses optimized for driving and enhanced road visibility, ensuring safer and more comfortable driving experiences."
-        backgroundImage="/bluesafe/drive.png"
-        rightImage="/bluesafe/drive.png"
-        serviceNumber="06"
+        backgroundImage="/product/5.jpg"
+        rightImage="/product/5.jpg"
+        serviceNumber="05"
         badgeTitle="4200"
         badgeSubtitle="MRP"
       />
@@ -224,70 +223,112 @@ const CliffDriveClearLenses = () => {
 
 
           {/* Recommended */}
-          <div className="bg-gradient-to-br from-gray-800/30 to-gray-700/30 rounded-2xl p-6 lg:p-8 mb-12">
-            <h3 className="text-2xl lg:text-3xl font-bold mb-6 text-center bg-gradient-to-r from-gray-300 to-white bg-clip-text text-transparent">
+          <div className="bg-gradient-to-br from-zinc-800/30 to-zinc-700/30 rounded-2xl p-6 lg:p-8 mb-12">
+            <h3 className="text-2xl lg:text-3xl font-bold mb-6 text-center bg-gradient-to-r from-zinc-300 to-white bg-clip-text text-transparent">
               Recommended For:
             </h3>
             <div className="grid md:grid-cols-3 gap-4">
               {recommendedFor.map((item, index) => (
                 <div key={index} className="flex items-center gap-3 p-4 bg-white/5 rounded-xl">
-                  <div className="w-2 h-2 bg-gray-300 rounded-full"></div>
-                  <span className="text-gray-200">{item}</span>
+                  <div className="w-2 h-2 bg-zinc-300 rounded-full"></div>
+                  <span className="text-zinc-200">{item}</span>
                 </div>
               ))}
             </div>
           </div>
 
           {/* Specifications */}
-          <div className="bg-gradient-to-br from-gray-800/50 to-gray-700/50 rounded-2xl p-6 lg:p-8 backdrop-blur-sm">
-            <h3 className="text-2xl lg:text-3xl font-bold mb-6 text-center bg-gradient-to-r from-gray-300 to-white bg-clip-text text-transparent">
-              Specifications
-            </h3>
-            <div className="overflow-x-auto">
-              <table className="w-full text-left">
-                <thead>
-                  <tr className="border-b border-gray-600">
-                    <th className="py-4 px-4 text-zinc-300 font-semibold">INDEX</th>
-                    <th className="py-4 px-4 text-center">
-                      <div className="bg-gradient-to-r from-gray-700 to-gray-600 text-white px-4 py-2 rounded-lg font-bold">
-                        POWER RANGE
-                      </div>
-                    </th>
-                    <th className="py-4 px-4 text-zinc-300 font-semibold text-right">MRP</th>
-                  </tr>
-                  <tr className="border-b border-gray-600">
-                    <th></th>
-                    <th className="py-2 px-4">
-                      <div className="grid grid-cols-2 gap-2 text-center">
-                        <div className="bg-gray-800 text-white px-2 py-1 rounded text-sm font-medium">
-                          SPH
-                        </div>
-                        <div className="bg-gray-800 text-white px-2 py-1 rounded text-sm font-medium">
-                          CYL
-                        </div>
-                      </div>
-                    </th>
-                    <th></th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr className="border-b border-gray-700 hover:bg-white/5 transition-colors">
-                    <td className="py-4 px-4 text-white font-medium">1.60</td>
-                    <td className="py-4 px-4">
-                      <div className="grid grid-cols-2 gap-2 text-center">
-                        <div className="text-zinc-300">0.00 to -8.00</div>
-                        <div className="text-zinc-300">0.00 to -2.00</div>
-                      </div>
-                    </td>
-                    <td className="py-4 px-4 text-right">
-                      <span className="text-xl font-bold text-white">4200</span>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+          <div className="bg-gradient-to-br from-zinc-900/90 to-zinc-800/70 rounded-3xl p-8 lg:p-10 backdrop-blur-md border border-zinc-700/50 shadow-2xl shadow-yellow-500/10">
+            <div className="text-center mb-8">
+              <h3 className="text-3xl lg:text-4xl font-bold mb-2 bg-gradient-to-r from-yellow-400 via-yellow-300 to-orange-300 bg-clip-text text-transparent">
+                Specifications
+              </h3>
             </div>
-            <div className="mt-4 text-sm text-zinc-400 text-center">
-              All listed powers are resultant; cross-compound is not available.
+
+            <div className="bg-gradient-to-br from-zinc-800/60 to-zinc-900/60 rounded-2xl overflow-hidden border border-zinc-600/50 shadow-xl">
+              {/* Table Header */}
+              <div className=" border-b border-zinc-600/50 px-6 py-4">
+                <h4 className="text-xl font-bold text-center">
+                  <span className="bg-gradient-to-r from-yellow-400 to-yellow-400 bg-clip-text text-transparent">
+                    Cliff Drive Clear UV Pricing
+                  </span>
+                </h4>
+              </div>
+
+              <div className="overflow-x-auto">
+                <table className="w-full">
+                  <thead>
+                    <tr className="bg-gradient-to-r from-zinc-800/70 to-zinc-900/70 border-b border-zinc-600/50">
+                      <th className="py-6 px-6 text-left">
+                        <div className="flex items-center gap-3">
+                          <div className="w-2 h-8 bg-gradient-to-b from-yellow-500 to-orange-500 rounded-full"></div>
+                          <span className="text-xl font-bold text-white">INDEX</span>
+                        </div>
+                      </th>
+                      <th className="py-6 px-6 text-center bg-gradient-to-br from-zinc-800/80 to-zinc-900/80">
+                        <div className="space-y-3">
+                          <div className="text-xl font-bold text-white">POWER RANGE</div>
+                          <div className="flex justify-center gap-4">
+                            <span className="px-4 py-2 bg-yellow-500/20 text-yellow-300 rounded-full text-sm font-medium border border-yellow-500/30">
+                              SPH
+                            </span>
+                            <span className="px-4 py-2 bg-yellow-500/20 text-yellow-300 rounded-full text-sm font-medium border border-yellow-500/30">
+                              CYL
+                            </span>
+                          </div>
+                        </div>
+                      </th>
+                      <th className="py-6 px-6 text-center">
+                        <div className="flex items-center justify-center gap-3">
+                          <span className="text-xl font-bold text-white">MRP</span>
+                        </div>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr className="border-b border-zinc-700/50 hover:bg-gradient-to-r hover:from-zinc-800/40 hover:to-zinc-900/40 transition-all duration-300 group">
+                      <td className="py-6 px-6">
+                        <div className="flex items-center gap-4">
+                          <div className="w-16 h-14 bg-gradient-to-br from-yellow-500/20 to-orange-500/20 rounded-xl flex items-center justify-center border border-yellow-500/30 group-hover:scale-110 transition-transform duration-300">
+                            <span className="text-xl font-bold text-yellow-300">1.60</span>
+                          </div>
+                          <div className="flex flex-col">
+                            <span className="text-lg font-semibold text-white">Index 1.60</span>
+                            <span className="text-sm text-zinc-400">High Quality</span>
+                          </div>
+                        </div>
+                      </td>
+                      <td className="py-6 px-6 text-center bg-gradient-to-br from-zinc-800/30 to-zinc-900/30">
+                        <div className="space-y-3">
+                          <div className="flex justify-center gap-8">
+                            <div className="text-center">
+                              <div className="text-lg font-semibold text-yellow-300">0.00 to -8.00</div>
+                              <div className="text-xs text-zinc-500 uppercase tracking-wider">Spherical</div>
+                            </div>
+                            <div className="w-px bg-zinc-600"></div>
+                            <div className="text-center">
+                              <div className="text-lg font-semibold text-orange-300">0.00 to -2.00</div>
+                              <div className="text-xs text-zinc-500 uppercase tracking-wider">Cylindrical</div>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                      <td className="py-6 px-6 text-center">
+                        <div className="flex flex-col items-center gap-2">
+                          <div className="text-3xl font-bold ">
+                            ₹4200
+                          </div>
+                          <div className="px-3 py-1 bg-yellow-500/20 text-yellow-300 rounded-full text-xs font-medium border border-yellow-500/30">
+                            Premium Quality
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+
             </div>
           </div>
         </div>

@@ -1,7 +1,6 @@
 "use client";
 import BackToServicesButton from "@/components/Services/BackToServicesButton";
 import Image from "next/image";
-import Link from "next/link";
 import React, { useRef, useLayoutEffect } from "react";
 import { gsap } from "gsap";
 import HeroSection from "@/components/Services/heropage";
@@ -39,9 +38,9 @@ const CliffProgressiveVersatile = () => {
         title="Cliff Progressive"
         subtitle="Versatile"
         description="Multi-focal progressive lenses for seamless vision at all distances, providing natural and comfortable vision correction."
-        backgroundImage="/imAGES/progressive.png"
-        rightImage="/imAGES/progressive.png"
-        serviceNumber="07"
+        backgroundImage="/product/6.jpg"
+        rightImage="/product/6.jpg"
+        serviceNumber="06"
         badgeTitle="5200"
         badgeSubtitle="MRP"
       />
@@ -64,7 +63,7 @@ const CliffProgressiveVersatile = () => {
             {["Seamless Transition", "All-Day Comfort", "Wide Field of View", "Crystal Clear Vision"].map((title, i) => (
               <div
                 key={i}
-                className="bg-gradient-to-b from-gray-900/30 to-gray-900/10 p-5 sm:p-6 rounded-xl border border-gray-800/50 hover:border-yellow-500/30 transition-all duration-300"
+                className="bg-gradient-to-b from-zinc-900/30 to-zinc-900/10 p-5 sm:p-6 rounded-xl border border-zinc-800/50 hover:border-yellow-500/30 transition-all duration-300"
               >
                 <h3 className="text-lg sm:text-base md:text-lg font-semibold text-white mb-2">{title}</h3>
                 <p className="text-sm sm:text-sm md:text-sm text-zinc-400">
@@ -144,7 +143,7 @@ const CliffProgressiveVersatile = () => {
               ].map((feature, idx) => (
                 <div
                   key={idx}
-                  className="text-center bg-gradient-to-b from-gray-900/50 to-gray-900/10 p-4 sm:p-6 rounded-xl border border-gray-800 hover:border-yellow-500/30 transition-all duration-300"
+                  className="text-center bg-gradient-to-b from-zinc-900/50 to-zinc-900/10 p-4 sm:p-6 rounded-xl border border-zinc-800 hover:border-yellow-500/30 transition-all duration-300"
                 >
                   <img src={feature.icon} alt={feature.title} className="w-12 sm:w-16 h-12 sm:h-16 mx-auto mb-3 sm:mb-4" />
                   <h3 className="font-bold text-sm sm:text-lg text-white mb-1 sm:mb-2">{feature.title}</h3>
@@ -160,9 +159,9 @@ const CliffProgressiveVersatile = () => {
               Technical <span className="text-yellow-400">Specifications</span>
             </h3>
 
-            <div className="overflow-x-auto rounded-2xl border border-gray-800 mb-8">
+            <div className="overflow-x-auto rounded-2xl border border-zinc-800 mb-8">
               <table className="w-full text-left text-sm sm:text-base">
-                <thead className="bg-gray-800/50">
+                <thead className="bg-zinc-800/50">
                   <tr>
                     <th className="py-3 px-4 font-semibold text-zinc-300">INDEX</th>
                     <th className="py-3 px-4 font-semibold text-zinc-300 text-center">BLUE SAFE</th>
@@ -170,7 +169,7 @@ const CliffProgressiveVersatile = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  <tr className="border-t border-gray-800">
+                  <tr className="border-t border-zinc-800">
                     <td className="py-3 px-4 font-medium">1.5</td>
                     <td className="py-3 px-4 font-bold text-yellow-400 text-center">4200</td>
                     <td className="py-3 px-4 font-bold text-yellow-400 text-center">5200</td>
@@ -208,7 +207,7 @@ const CliffProgressiveVersatile = () => {
               ].map((item, idx) => (
                 <div
                   key={idx}
-                  className="bg-gradient-to-b from-gray-900/60 to-gray-900/30 rounded-2xl p-6 sm:p-8 border border-gray-800 hover:border-yellow-500/40 transition-all duration-300"
+                  className="bg-gradient-to-b from-zinc-900/60 to-zinc-900/30 rounded-2xl p-6 sm:p-8 border border-zinc-800 hover:border-yellow-500/40 transition-all duration-300"
                 >
                   <div className="text-center mb-6">
                     <h4 className="text-xl sm:text-2xl font-bold mb-2">{item.name}</h4>
@@ -218,17 +217,17 @@ const CliffProgressiveVersatile = () => {
                   </div>
 
                   <div className="grid grid-cols-2 gap-3 sm:gap-4">
-                    <div className="bg-gray-800/30 rounded-xl p-3 sm:p-4 text-center border border-gray-700/50">
+                    <div className="bg-zinc-800/30 rounded-xl p-3 sm:p-4 text-center border border-zinc-700/50">
                       <p className="text-xs sm:text-sm text-zinc-400 mb-1">Range</p>
                       <p className="font-semibold">{item.range}</p>
                     </div>
-                    <div className="bg-gray-800/30 rounded-xl p-3 sm:p-4 text-center border border-gray-700/50">
+                    <div className="bg-zinc-800/30 rounded-xl p-3 sm:p-4 text-center border border-zinc-700/50">
                       <p className="text-xs sm:text-sm text-zinc-400 mb-1">Add</p>
                       <p className="font-semibold text-yellow-400">{item.add}</p>
                     </div>
                   </div>
 
-                  <div className="mt-6 sm:mt-8 pt-4 sm:pt-6 border-t border-gray-800">
+                  <div className="mt-6 sm:mt-8 pt-4 sm:pt-6 border-t border-zinc-800">
                     <h5 className="font-semibold text-zinc-300 mb-2 sm:mb-3">Key Benefits:</h5>
                     <ul className="space-y-1 sm:space-y-2 text-xs sm:text-sm text-zinc-400">
                       {item.benefits.map((b, i) => (

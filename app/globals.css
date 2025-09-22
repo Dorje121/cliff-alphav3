@@ -16,7 +16,7 @@
 
 html,
 body {
-  /* @apply bg-gradient-to-br from-black via-gray-900 to-black text-white font-sans antialiased; */
+  /* @apply bg-gradient-to-br from-black via-zinc-900 to-black text-white font-sans antialiased; */
   @apply bg-black text-white font-sans antialiased;
 
   scrollbar-width: none;
@@ -526,4 +526,3 @@ p {
 .animate-glow-pulse {
   animation: glow-pulse 2s ease-in-out infinite;
 }
-

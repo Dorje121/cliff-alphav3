@@ -69,7 +69,7 @@ const Lenstable = () => {
                         <div
                             key={i}
                             className="grid grid-cols-[2.5fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr] rounded-md bg-[#1c1c1c] even:bg-[#222]
-                         hover:bg-[#2a2a2a] shadow-md transition-colors text-gray-200 text-sm sm:text-base"
+                         hover:bg-[#2a2a2a] shadow-md transition-colors text-zinc-200 text-sm sm:text-base"
                         >
                             <div className="px-4 py-4">{spec.type}</div>
                             <div className="px-4 py-4 text-center">{spec.index}</div>

@@ -2,9 +2,6 @@
 import React, { useRef, useLayoutEffect } from "react";
 import { gsap } from "gsap";
 import BackToServicesButton from "@/components/Services/BackToServicesButton";
-import Image from "next/image";
-import Link from "next/link";
-import TextWithTexture from "@/components/textwithgoldentexture";
 import HeroSection from "@/components/Services/heropage";
 import Benefits from "./benefits";
 
@@ -41,9 +38,9 @@ const CliffZennSeries = () => {
         subtitle="SERIES"
         description="Premium lens series combining style with advanced optical
                 performance for the most discerning vision needs."
-        backgroundImage="/ai0.jpg"
-        rightImage="/ai0.jpg"
-        serviceNumber="11"
+        backgroundImage="/product/10.jpg"
+        rightImage="/product/10.jpg"
+        serviceNumber="10"
         badgeTitle="Zenn"
         badgeSubtitle="Premium"
       />

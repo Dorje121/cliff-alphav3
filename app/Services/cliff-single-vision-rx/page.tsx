@@ -5,7 +5,6 @@ import BackToServicesButton from "@/components/Services/BackToServicesButton";
 import Image from "next/image";
 import { gsap } from "gsap";
 import HeroSection from "@/components/Services/heropage";
-import { ServerManagementTable } from "@/components/Services/table";
 
 const CliffSingleVisionRX: React.FC = () => {
   const backgroundImageRef = useRef<HTMLDivElement>(null);
@@ -40,82 +39,7 @@ const CliffSingleVisionRX: React.FC = () => {
     return () => ctx.revert();
   }, []);
 
-  const lensTypes = [
-    {
-      id: "clear",
-      name: "Clear",
-      description: "Standard clear lenses for everyday vision correction",
-      features: [
-        "Sharp edge-to-edge clarity",
-        "Custom-crafted precision",
-        "Superior optical performance",
-      ],
-    },
-    {
-      id: "photochromic",
-      name: "Photochromic",
-      description: "Adaptive lenses that darken in sunlight",
-      features: [
-        "UV-reactive technology",
-        "Seamless indoor/outdoor transition",
-        "100% UV protection",
-      ],
-    },
-    {
-      id: "photochromic-plus",
-      name: "Photochromic Plus",
-      description: "Enhanced photochromic with faster transitions",
-      features: [
-        "Faster activation",
-        "Enhanced color perception",
-        "Premium UV protection",
-      ],
-    },
-    {
-      id: "sunglass",
-      name: "Sunglass",
-      description: "Tinted lenses for permanent sun protection",
-      features: ["Consistent tint", "Glare reduction", "Style versatility"],
-    },
-    {
-      id: "blue-shield",
-      name: "Blue Shield",
-      description: "Digital eye strain protection",
-      features: [
-        "Blue light filtering",
-        "Reduced digital fatigue",
-        "Clear vision comfort",
-      ],
-    },
-    {
-      id: "polarized",
-      name: "Polarized",
-      description: "Premium glare elimination",
-      features: [
-        "Eliminates reflected glare",
-        "Enhanced contrast",
-        "Superior visual comfort",
-      ],
-    },
-  ];
 
-  const specifications = {
-    indexOptions: ["1.50", "1.56", "1.60"],
-    powerRange: "(+6/-6)",
-    cylinder: "Upto 4",
-    resistanceFeatures: [
-      "Scratch Resistance",
-      "Re-Reflection",
-      "Super Hydrophobic Coating",
-      "UV Filter",
-      "Protection",
-      "Anti-static Coating",
-      "Photochromatic",
-    ],
-  };
-
-  const currentLens =
-    lensTypes.find((lens) => lens.id === selectedLens) || lensTypes[0];
 
   return (
 
@@ -124,9 +48,9 @@ const CliffSingleVisionRX: React.FC = () => {
         title="Cliff Single Vision"
         subtitle="RX Lenses"
         description="Prescription single vision lenses for clear, focused sight with precise vision correction tailored to your unique needs."
-        backgroundImage="/imAGES/single1.jpg"
-        rightImage="/imAGES/single1.jpg"
-        serviceNumber="09"
+        backgroundImage="/product/7.jpg"
+        rightImage="/product/7.jpg"
+        serviceNumber="08"
         badgeTitle="SINGLE"
         badgeSubtitle="VISION RX"
       />

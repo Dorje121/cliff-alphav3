@@ -299,7 +299,7 @@ const CliffWelcome: React.FC<CliffWelcomeProps> = ({ className = "" }) => {
           {/* Call to Action */}
           {/* <div className="space-y-6 pointer-events-auto">
             <button
-              className="group px-8 py-4 bg-gradient-to-r from-[#5a5959] via-[#ffffff] to-[#e7baba] text-black rounded-full font-semibold tracking-wide hover:from-gray-500 hover:to-white transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-yellow-500/25"
+              className="group px-8 py-4 bg-gradient-to-r from-[#5a5959] via-[#ffffff] to-[#e7baba] text-black rounded-full font-semibold tracking-wide hover:from-zinc-500 hover:to-white transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-yellow-500/25"
               onClick={() => console.log("Explore Collection clicked")}
             >
               <span className="mr-2">Explore Collection</span>
@@ -310,13 +310,13 @@ const CliffWelcome: React.FC<CliffWelcomeProps> = ({ className = "" }) => {
 
             <div className="flex justify-center space-x-4">
               <button
-                className="px-6 py-3 border  text-white rounded-full hover:border-gray-800 hover:text-gray-200 transition-all duration-300"
+                className="px-6 py-3 border  text-white rounded-full hover:border-zinc-800 hover:text-zinc-200 transition-all duration-300"
                 onClick={() => console.log("Virtual Try-On clicked")}
               >
                 Virtual Try-On
               </button>
               <button
-                className="px-6 py-3 border text-white rounded-full  hover:border-gray-800 hover:text-gray-200 transition-all duration-300"
+                className="px-6 py-3 border text-white rounded-full  hover:border-zinc-800 hover:text-zinc-200 transition-all duration-300"
                 onClick={() => console.log("Find Store clicked")}
               >
                 Find Store

@@ -110,8 +110,9 @@ const Contact = () => {
             {/* Image with gradient overlay */}
             <div className="absolute right-0 bottom-0 w-full h-full">
               <div className="relative">
-                <Image
-                  src="/handd.png"
+                <div className="absolute inset-0 bg-gradient-to-b from-black"></div>
+                <img
+                  src="https://static.vecteezy.com/system/resources/thumbnails/053/736/050/small_2x/two-hands-shaking-over-a-networked-background-photo.jpeg"
                   alt="Cliff lens"
                   width={1000}
                   height={1000}

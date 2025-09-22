@@ -327,7 +327,7 @@ const CliffTintedLenses = () => {
                 a perfect blend of fashion and function for every lifestyle."
         backgroundImage="/product/15.jpg"
         rightImage="/product/15.jpg"
-        serviceNumber="08"
+        serviceNumber="15"
         badgeTitle="Style"
         badgeSubtitle="Protection"
       />

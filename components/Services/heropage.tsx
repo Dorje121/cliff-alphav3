@@ -82,7 +82,7 @@ export default function HeroSection({
           alt="Cliff lens"
           fill
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-gray-900/70 to-black/80" />
+        <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-zinc-900/70 to-black/80" />
       </div>
 
       {/* Main Content */}
@@ -150,12 +150,12 @@ export default function HeroSection({
               </div>
 
               {/* Badge Overlay */}
-              <div className="absolute -bottom-6 sm:-bottom-8 md:-bottom-10 left-2 sm:left-[-44px] md:left-[-40px] w-20 sm:w-28 md:w-32 h-20 sm:h-28 md:h-32 backdrop-blur-sm bg-white/10 rounded-xl sm:rounded-2xl flex items-center justify-center">
+              <div className="absolute -bottom-6 sm:-bottom-8 md:-bottom-10 left-2 sm:left-[-44px] md:left-[-40px] w-20 sm:w-28 md:w-32 h-20 sm:h-28 md:h-32 backdrop-blur-md bg-black/15 rounded-xl sm:rounded-2xl flex items-center justify-center">
                 <div className="text-center p-2 sm:p-4 md:p-5">
                   <div className="text-sm sm:text-xl md:text-xl lg:text-xl font-bold text-[#DFC65F] drop-shadow-lg">
                     {badgeTitle}
                   </div>
-                  <div className="text-[9px] sm:text-[12px] md:text-sm lg:text-lg text-gray-200 mt-1 sm:mt-2 tracking-wider">
+                  <div className="text-[9px] sm:text-[12px] md:text-sm lg:text-lg text-zinc-200 mt-1 sm:mt-2 tracking-wider">
                     {badgeSubtitle}
                   </div>
                 </div>

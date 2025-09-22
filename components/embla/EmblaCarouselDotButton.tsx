@@ -74,11 +74,10 @@ export const ImageDotButton: React.FC<ImageDotButtonProps> = (props) => {
   return (
     <button
       type="button"
-      className={`relative w-16 h-16 rounded-lg overflow-hidden border-2 transition-all ${
-        isSelected
+      className={`relative w-16 h-16 rounded-lg overflow-hidden border-2 transition-all ${isSelected
           ? "border-blue-500 ring-2 ring-blue-200"
-          : "border-gray-200 hover:border-gray-300"
-      }`}
+          : "border-zinc-200 hover:border-zinc-300"
+        }`}
       {...restProps}
     >
       <Image src={imageSrc} alt={alt} fill className="object-contain p-1" />

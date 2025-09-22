@@ -37,9 +37,9 @@ const CliffTechnology = () => {
         title="Cliff Technology"
         subtitle="Innovation"
         description="Cutting-edge optical technology and innovation solutions that push the boundaries of vision science and lens engineering."
-        backgroundImage="/imAGES/technology.png"
-        rightImage="/imAGES/technology.png"
-        serviceNumber="08"
+        backgroundImage="/product/7.jpg"
+        rightImage="/product/7.jpg"
+        serviceNumber="07"
         badgeTitle="TECH"
         badgeSubtitle="INNOVATION"
       />
@@ -106,10 +106,10 @@ const CliffTechnology = () => {
                 />
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
-                <div className="bg-gradient-to-b from-gray-900/50 to-gray-900/10 p-4 rounded-xl border border-gray-800">
+                <div className="bg-gradient-to-b from-zinc-900/50 to-zinc-900/10 p-4 rounded-xl border border-zinc-800">
                   <p className="text-sm text-zinc-300">Allows up to quadruple the density of points on the optical surface</p>
                 </div>
-                <div className="bg-gradient-to-b from-gray-900/50 to-gray-900/10 p-4 rounded-xl border border-gray-800">
+                <div className="bg-gradient-to-b from-zinc-900/50 to-zinc-900/10 p-4 rounded-xl border border-zinc-800">
                   <p className="text-sm text-zinc-300">Conventional lenses with interpolation technology based on discontinuous points matrix</p>
                 </div>
               </div>
@@ -184,7 +184,7 @@ const CliffTechnology = () => {
             ].map((feature, idx) => (
               <div
                 key={idx}
-                className="group flex flex-col items-center p-4 sm:p-6 bg-gradient-to-b from-gray-900/50 to-gray-900/10 rounded-xl border border-gray-800 hover:border-yellow-500/30 transition-all duration-300 hover:scale-105"
+                className="group flex flex-col items-center p-4 sm:p-6 bg-gradient-to-b from-zinc-900/50 to-zinc-900/10 rounded-xl border border-zinc-800 hover:border-yellow-500/30 transition-all duration-300 hover:scale-105"
               >
                 <img
                   src={feature.icon}

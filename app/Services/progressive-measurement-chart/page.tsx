@@ -1,15 +1,8 @@
 "use client";
 import BackToServicesButton from "@/components/Services/BackToServicesButton";
-import Image from "next/image";
-import Link from "next/link";
-import { motion } from "motion/react";
-import React, { useRef, useLayoutEffect } from "react";
-import { gsap } from "gsap";
 import HeroSection from "@/components/Services/heropage";
 
 const ProgressiveMeasurementChart = () => {
-  const backgroundImageRef = useRef<HTMLDivElement>(null);
-
   return (
     <>
       {/* Hero Section with Service Information */}
@@ -19,9 +12,9 @@ const ProgressiveMeasurementChart = () => {
         description="Comprehensive measurement guide for progressive lenses ensuring
                 precise fitting, optimal visual zones, and superior comfort for
                 every prescription."
-        backgroundImage="/pageimg/test.jpeg"
-        rightImage="/pageimg/test.jpeg"
-        serviceNumber="17"
+        backgroundImage="/product/16.jpg"
+        rightImage="/product/16.jpg"
+        serviceNumber="16"
         badgeTitle="100%"
         badgeSubtitle="Accuracy"
       />

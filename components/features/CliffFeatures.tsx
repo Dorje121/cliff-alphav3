@@ -118,7 +118,7 @@ const CliffFeatures: React.FC = () => {
                 <h3 className="text-2xl font-semibold text-white mb-3">
                   {feature.title}
                 </h3>
-                <p className="text-gray-200">{feature.description}</p>
+                <p className="text-zinc-200">{feature.description}</p>
               </div>
             </div>
           ))}

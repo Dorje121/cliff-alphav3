@@ -42,7 +42,7 @@ const CliffFeatures2 = () => {
           <h2 className="text-4xl md:text-5xl font-bold font-ramro text-white mb-4">
             RX
           </h2>
-          <p className="text-xl font-semibold font-ramro text-gray-200 max-w-2xl mx-auto">
+          <p className="text-xl font-semibold font-ramro text-zinc-200 max-w-2xl mx-auto">
             New and expertly crafted eyewear frames of the season
           </p>
         </div>

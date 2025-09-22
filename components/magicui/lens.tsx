@@ -71,11 +71,9 @@ export function Lens({
     if (e.key === "Escape") setIsHovering(false);
   }, []);
 
-  const maskImage = useMotionTemplate`radial-gradient(circle ${
-    lensSize / 2
-  }px at ${currentPosition.x}px ${
-    currentPosition.y
-  }px, ${lensColor} 100%, transparent 100%)`;
+  const maskImage = useMotionTemplate`radial-gradient(circle ${lensSize / 2
+    }px at ${currentPosition.x}px ${currentPosition.y
+    }px, ${lensColor} 100%, transparent 100%)`;
 
   const LensContent = useMemo(() => {
     const { x, y } = currentPosition;
@@ -86,7 +84,7 @@ export function Lens({
         animate={{ opacity: 1, scale: 1 }}
         exit={{ opacity: 0, scale: 0.8 }}
         transition={{ duration }}
-        className="absolute inset-0 overflow-hidden cursor-none"
+        className="absolute inset-0 z-50 overflow-hidden cursor-none"
         style={{
           maskImage,
           WebkitMaskImage: maskImage,
@@ -95,7 +93,7 @@ export function Lens({
         }}
       >
         <div
-          className="absolute inset-0"
+          className="absolute z-50 inset-0"
           style={{
             transform: `scale(${zoomFactor})`,
             transformOrigin: `${x}px ${y}px`,
@@ -110,7 +108,7 @@ export function Lens({
   return (
     <div
       ref={containerRef}
-      className="relative z-[9999999999] overflow-hidden "
+      className="relative z-[9999] overflow-hidden "
       onMouseEnter={() => setIsHovering(true)}
       onMouseLeave={() => setIsHovering(false)}
       onMouseMove={handleMouseMove}

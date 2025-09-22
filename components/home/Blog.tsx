@@ -134,7 +134,7 @@ export default function Blog() {
               .map((post) => (
                 <article
                   key={post.id}
-                  className="group relative overflow-hidden rounded-3xl shadow-2xl hover:shadow-blue-900/25 transition-all duration-700 hover:-translate-y-3 transform-gpu"
+                  className="group border border-white/20 sm:border-none relative overflow-hidden rounded-3xl shadow-2xl hover:shadow-blue-900/25 transition-all duration-700 hover:-translate-y-3 transform-gpu"
                   style={{
                     background: `linear-gradient(135deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.5) 100%), url(${post.image})`,
                     backgroundSize: "cover",
@@ -150,7 +150,7 @@ export default function Blog() {
                   <div className="relative z-10 flex flex-col justify-between h-full p-8">
                     {/* Top Section - Category & Meta */}
                     <div className="flex items-start justify-between mb-4">
-                      <div className="w-full flex justify-between items-center">
+                      <div className="w-full flex flex-wrap justify-between items-center">
                         <span className="inline-block px-4 py-2 bg-white/10 backdrop-blur-xl text-yellow-300 rounded-full text-xs font-semibold">
                           {post.category}
                         </span>
@@ -173,7 +173,7 @@ export default function Blog() {
 
                     {/* Bottom Section - Title & CTA */}
                     <div className="space-y-6">
-                      <h3 className="text-2xl font-bold font-family-playfair leading-tight text-transparent bg-gradient-to-r from-white via-yellow-100 to-yellow-200 bg-clip-text transition-all duration-500 line-clamp-3">
+                      <h3 className="text-lg sm:text-2xl font-bold font-family-playfair leading-tight text-transparent bg-gradient-to-r from-white via-yellow-100 to-yellow-200 bg-clip-text transition-all duration-500 line-clamp-3">
                         {post.title}
                       </h3>
 

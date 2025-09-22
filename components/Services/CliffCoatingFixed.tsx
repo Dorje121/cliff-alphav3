@@ -91,8 +91,8 @@ const CliffCoatings = () => {
     {
       id: "nox",
       name: "NOX",
-      color: "from-gray-300 to-gray-500",
-      gradient: "bg-gradient-to-br from-gray-800/30 to-gray-700/30",
+      color: "from-zinc-300 to-zinc-500",
+      gradient: "bg-gradient-to-br from-zinc-800/30 to-zinc-700/30",
       features: {
         uv: true,
         scratch: true,
@@ -108,8 +108,8 @@ const CliffCoatings = () => {
     {
       id: "bluesafe",
       name: "Blue Safe",
-      color: "from-gray-200 to-gray-400",
-      gradient: "bg-gradient-to-br from-gray-700/30 to-gray-600/30",
+      color: "from-zinc-200 to-zinc-400",
+      gradient: "bg-gradient-to-br from-zinc-700/30 to-zinc-600/30",
       features: {
         uv: true,
         scratch: true,
@@ -126,8 +126,8 @@ const CliffCoatings = () => {
     {
       id: "driveclear",
       name: "Drive Clear",
-      color: "from-gray-100 to-gray-300",
-      gradient: "bg-gradient-to-br from-gray-600/30 to-gray-500/30",
+      color: "from-zinc-100 to-zinc-300",
+      gradient: "bg-gradient-to-br from-zinc-600/30 to-zinc-500/30",
       features: {
         uv: true,
         scratch: true,
@@ -143,8 +143,8 @@ const CliffCoatings = () => {
     {
       id: "photoz",
       name: "Photo-Z",
-      color: "from-white to-gray-200",
-      gradient: "bg-gradient-to-br from-gray-500/30 to-gray-400/30",
+      color: "from-white to-zinc-200",
+      gradient: "bg-gradient-to-br from-zinc-500/30 to-zinc-400/30",
       features: {
         uv: true,
         scratch: true,
@@ -176,7 +176,7 @@ const CliffCoatings = () => {
   return (
     <>
       {/* Hero Section */}
-      <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black text-white relative overflow-hidden">
+      <div className="min-h-screen bg-gradient-to-br from-black via-zinc-900 to-black text-white relative overflow-hidden">
         {/* Background Image with Overlay */}
         <div ref={backgroundImageRef} className="absolute inset-0">
           <Image
@@ -335,7 +335,7 @@ const CliffCoatings = () => {
                   </div>
                 </div>
 
-                <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-gradient-to-br from-gray-700 to-gray-800 rounded-2xl flex items-center justify-center shadow-xl border border-white/10">
+                <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-gradient-to-br from-zinc-700 to-zinc-800 rounded-2xl flex items-center justify-center shadow-xl border border-white/10">
                   <div className="text-center">
                     <div className="text-2xl font-bold text-white">100%</div>
                     <div className="text-xs text-zinc-400">Protection</div>
@@ -348,11 +348,11 @@ const CliffCoatings = () => {
       </div>
 
       {/* Comparison Section */}
-      <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black text-white overflow-hidden">
+      <div className="min-h-screen bg-gradient-to-br from-black via-zinc-900 to-black text-white overflow-hidden">
         <div className="md:max-w-7xl mx-auto">
           {/* Animated Background */}
           <div className="absolute inset-0 opacity-5">
-            <div className="absolute bottom-20 right-20 w-96 h-96 bg-gray-400 rounded-full filter blur-3xl animate-pulse delay-1000"></div>
+            <div className="absolute bottom-20 right-20 w-96 h-96 bg-zinc-400 rounded-full filter blur-3xl animate-pulse delay-1000"></div>
           </div>
 
           <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
@@ -403,7 +403,7 @@ const CliffCoatings = () => {
                   >
                     {currentCoating.name}
                   </h2>
-                  <p className="text-gray-200 text-sm sm:text-base lg:text-lg mb-2 sm:mb-4">
+                  <p className="text-zinc-200 text-sm sm:text-base lg:text-lg mb-2 sm:mb-4">
                     {currentCoating.description}
                   </p>
                   <div
@@ -589,8 +589,8 @@ const CliffCoatings = () => {
               </h3>
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
                 <div className="space-y-6">
-                  <div className="flex items-start gap-4 p-3 rounded-lg bg-gray-600/20 border border-gray-500/30">
-                    <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-gray-500/40 flex items-center justify-center">
+                  <div className="flex items-start gap-4 p-3 rounded-lg bg-zinc-600/20 border border-zinc-500/30">
+                    <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-zinc-500/40 flex items-center justify-center">
                       <Image
                         src="/cliffcoating/super.jpg"
                         alt="Super Slippery Coating"
@@ -603,8 +603,8 @@ const CliffCoatings = () => {
                       Super Slippery Water & Oil Repellent Coating
                     </span>
                   </div>
-                  <div className="flex items-start gap-4 p-3 rounded-lg bg-gray-600/20 border border-gray-500/30">
-                    <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-gray-500/40 flex items-center justify-center">
+                  <div className="flex items-start gap-4 p-3 rounded-lg bg-zinc-600/20 border border-zinc-500/30">
+                    <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-zinc-500/40 flex items-center justify-center">
                       <Image
                         src="/cliffcoating/bluelight.jpg"
                         alt="Blue Light Protection"
@@ -617,8 +617,8 @@ const CliffCoatings = () => {
                       Blue Light Protection for Digital Eye Strain
                     </span>
                   </div>
-                  <div className="flex items-start gap-4 p-3 rounded-lg bg-gray-600/20 border border-gray-500/30">
-                    <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-gray-500/40 flex items-center justify-center">
+                  <div className="flex items-start gap-4 p-3 rounded-lg bg-zinc-600/20 border border-zinc-500/30">
+                    <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-zinc-500/40 flex items-center justify-center">
                       <Image
                         src="/cliffcoating/gprotection.jpg"
                         alt="Glare Protection"
@@ -631,8 +631,8 @@ const CliffCoatings = () => {
                       Glare Protection
                     </span>
                   </div>
-                  <div className="flex items-start gap-4 p-3 rounded-lg bg-gray-600/20 border border-gray-500/30">
-                    <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-gray-500/40 flex items-center justify-center">
+                  <div className="flex items-start gap-4 p-3 rounded-lg bg-zinc-600/20 border border-zinc-500/30">
+                    <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-zinc-500/40 flex items-center justify-center">
                       <Image
                         src="/cliffcoating/photo.png"
                         alt="Photochromatic Effect"
