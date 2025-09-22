@@ -1,3 +1,16 @@
-<svg width="805" height="602" viewBox="0 0 805 602" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M10.5961 220.112C47.3961 385.312 51 439 142 537.5C233 636 429.929 600.112 533.596 564.112C800.096 478.612 780.096 391.612 789 362.5C797.904 333.388 802.096 208.445 802.596 147.112C817.396 57.1118 668.43 19.2785 592.096 11.6118C288.496 -25.1882 137 42.7874 95.5 53.5C-26.0958 84.8881 0.929469 165.279 10.5961 220.112Z" fill="#D9B6A3" fill-opacity="0.8" stroke="white"/>
-</svg>
+✅ last demo section on homepage issue with navbar
+✅ services image replacement
+✅ blog details page
+✅ all seller new phone country code package implemented
+✅ cliff blog details
+✅ 404 page of blog
+✅ image changing in all products pages (15)
+✅ various pages detail improved
+✅ code cleanup and removed unnecessary
+✅ cliff-photo-z-lenses page improvement
+
+
+
+http://localhost:3000/Services/cliff-photo-z-lenses
+http://localhost:3000/Services/cliff-drive-clear-lenses
+

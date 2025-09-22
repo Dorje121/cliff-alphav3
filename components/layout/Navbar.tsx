@@ -152,6 +152,7 @@ export default function Navbar() {
 
           <TransitionLink
             href="/"
+            onClick={handleGoHome}
             className="relative flex items-center space-x-2 text-sm font-normal"
           >
             <svg
