@@ -35,7 +35,7 @@ const CliffDynamixProgressive = () => {
     return () => ctx.revert();
   }, []);
   // Lens specifications data from the provided chart
- 
+
 
   const features = [
     "Scratch Resistance",
@@ -90,7 +90,7 @@ const CliffDynamixProgressive = () => {
 
               <Feature />
 
- 
+
               <LensTable />
 
               {/* Recommended For Section */}
@@ -100,7 +100,7 @@ const CliffDynamixProgressive = () => {
                   <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-center mb-8 bg-gradient-to-r from-white via-yellow-100 to-yellow-200 bg-clip-text text-transparent">
                     Recommended For
                   </h2>
-                  <div className="space-y-4 text-gray-300 ">
+                  <div className="space-y-4 text-zinc-300 ">
                     <div className="flex items-center justify-center space-x-3">
 
                       <span className="text-center">

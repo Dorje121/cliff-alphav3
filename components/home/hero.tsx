@@ -34,7 +34,7 @@ const LandingVideo = () => {
             />
 
             {/* Subheading */}
-            <p className="text-lg text-center ml-6 md:text-xl text-wrap w-[100vw] lg:w-[25vw] lg:text-left pt-15 px-4 font-dm-sans text-gray-300 mb-8 max-w-2xl leading-relaxed">
+            <p className="text-lg text-center ml-6 md:text-xl text-wrap w-[100vw] lg:w-[25vw] lg:text-left pt-15 px-4 font-dm-sans text-zinc-300 mb-8 max-w-2xl leading-relaxed">
               Cliff is a precision solution to modern vision challenges,
               crafting eyewear that enhances clarity and comfort
             </p>

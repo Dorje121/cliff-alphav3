@@ -232,353 +232,353 @@ const CliffCoatings = () => {
   return (
     <>
 
-<HeroSection
-  title="Cliff Premium"
-  subtitle="Coatings"
-  description="Advanced protective coatings for modern eyewear. Premium coating technology enhances clarity, durability, and protection for your lenses."
-  backgroundImage="/c5.jpeg"
-  rightImage="/c5.jpeg"
-  serviceNumber="02"
-  badgeTitle="CLIFF"
-  badgeSubtitle="Coatings"
-/> 
-
-     
-          {/* Blue Safe */}
-          <div className="w-full mx-auto">
-  {/* Heading */}
-  <div className="flex flex-col items-center justify-center">
-
-    <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mt-16 mb-3 text-center relative z-20">
-      Blue Safe Coating
-    </h2>
-    <p className="text-gray-300 text-xl text-center relative z-10 max-w-2xl">
-      Protects against harmful UV rays and filters blue light for comfortable
-      digital screen use.
-    </p>
-  </div>
-
-  {/* Features Section */}
-  <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8 mt-12">
-    {/* Feature */}
-    <div className="text-center">
-      <img
-        src="/svgs/uvprotection.svg"
-        alt="UV Protection"
-        className="w-20 h-20 mx-auto mb-4"
+      <HeroSection
+        title="Cliff Premium"
+        subtitle="Coatings"
+        description="Advanced protective coatings for modern eyewear. Premium coating technology enhances clarity, durability, and protection for your lenses."
+        backgroundImage="/c5.jpeg"
+        rightImage="/c5.jpeg"
+        serviceNumber="02"
+        badgeTitle="CLIFF"
+        badgeSubtitle="Coatings"
       />
-      <h3 className="font-bold text-xl text-white mb-2">UV Protection</h3>
-      <p className="text-gray-300">Blocks harmful UV rays</p>
-    </div>
-
-    <div className="text-center">
-      <img
-        src="/svgs/antireflective.svg"
-        alt="Anti Reflective Coating"
-        className="w-20 h-20 mx-auto mb-4"
-      />
-      <h3 className="font-bold text-xl text-white mb-2">Anti Reflective</h3>
-      <p className="text-gray-300">Reduces glare and reflections</p>
-    </div>
-
-    <div className="text-center">
-      <img
-        src="/svgs/easytoclean.svg"
-        alt="Easy to Clean"
-        className="w-20 h-20 mx-auto mb-4"
-      />
-      <h3 className="font-bold text-xl text-white mb-2">Easy to Clean</h3>
-      <p className="text-gray-300">Simple maintenance</p>
-    </div>
-
-    <div className="text-center">
-      <img
-        src="/svgs/bluelight.svg"
-        alt="Blue Light Filter"
-        className="w-20 h-20 mx-auto mb-4"
-      />
-      <h3 className="font-bold text-xl text-white mb-2">Blue Light Filter</h3>
-      <p className="text-gray-300">Protects eyes from screens</p>
-    </div>
-
-    <div className="text-center">
-      <img
-        src="/svgs/scratchresistance.svg"
-        alt="Scratch Resistance"
-        className="w-20 h-20 mx-auto mb-4"
-      />
-      <h3 className="font-bold text-xl text-white mb-2">Scratch Resistance</h3>
-      <p className="text-gray-300">Durable and long-lasting</p>
-    </div>
-  </div>
-
-  {/* Image Section */}
-  <div className="relative overflow-hidden mt-16">
-    <div className="flex justify-center relative">
-      <Image
-        height={1000}
-        width={1000}
-        src="/bluesafe/image.png"
-        alt="Blue Safe"
-        className="h-[100vh] w-full object-cover relative z-10 rounded-xl"
-      />
-      {/* Gradient overlays */}
-      <div className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-black via-black/80 to-transparent z-10"></div>
-      <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-black via-black/80 to-transparent z-10"></div>
-    </div>
-  </div>
-</div>
 
 
+      {/* Blue Safe */}
+      <div className="w-full mx-auto">
+        {/* Heading */}
+        <div className="flex flex-col items-center justify-center">
 
-          {/* Drive Clear */}
-          <div className="w-full mx-auto">
-  {/* Heading */}
-  <div className="flex flex-col items-center justify-center">
-    <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mt-6 mb-3 text-center relative z-20">
-      Drive Clear Coating
-    </h2>
-    <p className="text-gray-300 text-base sm:text-lg md:text-xl text-center relative z-20 max-w-2xl">
-      Specially designed for driving, offering glare reduction and crystal clear vision.
-    </p>
-  </div>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mt-16 mb-3 text-center relative z-20">
+            Blue Safe Coating
+          </h2>
+          <p className="text-zinc-300 text-xl text-center relative z-10 max-w-2xl">
+            Protects against harmful UV rays and filters blue light for comfortable
+            digital screen use.
+          </p>
+        </div>
 
-  {/* Features Grid */}
-  <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-x-8 gap-y-10 mt-12">
-    <div className="text-center">
-      <img
-        src="/svgs/uvprotection.svg"
-        alt="UV Protection"
-        className="w-14 sm:w-16 md:w-20 h-14 sm:h-16 md:h-20 mx-auto mb-4"
-      />
-      <h3 className="font-bold text-lg sm:text-xl text-white mb-2">
-        UV Protection
-      </h3>
-      <p className="text-gray-300 text-sm sm:text-base">
-        UV 400, Anti-Reflective
-      </p>
-    </div>
+        {/* Features Section */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8 mt-12">
+          {/* Feature */}
+          <div className="text-center">
+            <img
+              src="/svgs/uvprotection.svg"
+              alt="UV Protection"
+              className="w-20 h-20 mx-auto mb-4"
+            />
+            <h3 className="font-bold text-xl text-white mb-2">UV Protection</h3>
+            <p className="text-zinc-300">Blocks harmful UV rays</p>
+          </div>
 
-    <div className="text-center">
-      <img
-        src="/svgs/scratchresistance.svg"
-        alt="Scratch Resistance"
-        className="w-14 sm:w-16 md:w-20 h-14 sm:h-16 md:h-20 mx-auto mb-4"
-      />
-      <h3 className="font-bold text-lg sm:text-xl text-white mb-2">
-        Scratch Resistance
-      </h3>
-      <p className="text-gray-300 text-sm sm:text-base">
-        Durable and long-lasting
-      </p>
-    </div>
+          <div className="text-center">
+            <img
+              src="/svgs/antireflective.svg"
+              alt="Anti Reflective Coating"
+              className="w-20 h-20 mx-auto mb-4"
+            />
+            <h3 className="font-bold text-xl text-white mb-2">Anti Reflective</h3>
+            <p className="text-zinc-300">Reduces glare and reflections</p>
+          </div>
 
-    <div className="text-center">
-      <img
-        src="/svgs/antireflective.svg"
-        alt="Anti Reflective Coating"
-        className="w-14 sm:w-16 md:w-20 h-14 sm:h-16 md:h-20 mx-auto mb-4"
-      />
-      <h3 className="font-bold text-lg sm:text-xl text-white mb-2">
-        Anti Reflective Coating
-      </h3>
-      <p className="text-gray-300 text-sm sm:text-base">
-        Reduces glare and reflections
-      </p>
-    </div>
+          <div className="text-center">
+            <img
+              src="/svgs/easytoclean.svg"
+              alt="Easy to Clean"
+              className="w-20 h-20 mx-auto mb-4"
+            />
+            <h3 className="font-bold text-xl text-white mb-2">Easy to Clean</h3>
+            <p className="text-zinc-300">Simple maintenance</p>
+          </div>
 
-    <div className="text-center">
-      <img
-        src="/svgs/easytoclean.svg"
-        alt="Easy to Clean"
-        className="w-14 sm:w-16 md:w-20 h-14 sm:h-16 md:h-20 mx-auto mb-4"
-      />
-      <h3 className="font-bold text-lg sm:text-xl text-white mb-2">
-        Easy to Clean
-      </h3>
-      <p className="text-gray-300 text-sm sm:text-base">
-        Simple maintenance
-      </p>
-    </div>
+          <div className="text-center">
+            <img
+              src="/svgs/bluelight.svg"
+              alt="Blue Light Filter"
+              className="w-20 h-20 mx-auto mb-4"
+            />
+            <h3 className="font-bold text-xl text-white mb-2">Blue Light Filter</h3>
+            <p className="text-zinc-300">Protects eyes from screens</p>
+          </div>
 
-    <div className="text-center">
-      <img
-        src="/svgs/bluelight.svg"
-        alt="Blue Light Filter"
-        className="w-14 sm:w-16 md:w-20 h-14 sm:h-16 md:h-20 mx-auto mb-4"
-      />
-      <h3 className="font-bold text-lg sm:text-xl text-white mb-2">
-        Partially Filters Harmful Blue Rays
-      </h3>
-      <p className="text-gray-300 text-sm sm:text-base">
-        Protects eyes from screens
-      </p>
-    </div>
+          <div className="text-center">
+            <img
+              src="/svgs/scratchresistance.svg"
+              alt="Scratch Resistance"
+              className="w-20 h-20 mx-auto mb-4"
+            />
+            <h3 className="font-bold text-xl text-white mb-2">Scratch Resistance</h3>
+            <p className="text-zinc-300">Durable and long-lasting</p>
+          </div>
+        </div>
 
-    <div className="text-center">
-      <img
-        src="/svgs/glareprotection.svg"
-        alt="Glare Protection"
-        className="w-14 sm:w-16 md:w-20 h-14 sm:h-16 md:h-20 mx-auto mb-4"
-      />
-      <h3 className="font-bold text-lg sm:text-xl text-white mb-2">
-        Glare Protection
-      </h3>
-      <p className="text-gray-300 text-sm sm:text-base">
-        High reduction
-      </p>
-    </div>
-  </div>
-
-  {/* Image Section */}
-  <div className="relative overflow-hidden flex flex-col justify-center mt-12">
-    <div className="flex justify-center relative">
-      <Image
-        height={1000}
-        width={1000}
-        src="/coatings/drive.png"
-        alt="Drive Clear"
-        className="w-full h-[50vh] sm:h-[70vh] lg:h-[100vh] object-cover relative z-0 rounded-xl"
-      />
-      {/* Gradient overlays */}
-      <div className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-black via-black/80 to-transparent z-10 rounded-xl"></div>
-      <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-black via-black/80 to-transparent z-10 rounded-xl"></div>
-    </div>
-  </div>
-  
-</div>
+        {/* Image Section */}
+        <div className="relative overflow-hidden mt-16">
+          <div className="flex justify-center relative">
+            <Image
+              height={1000}
+              width={1000}
+              src="/bluesafe/image.png"
+              alt="Blue Safe"
+              className="h-[100vh] w-full object-cover relative z-10 rounded-xl"
+            />
+            {/* Gradient overlays */}
+            <div className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-black via-black/80 to-transparent z-10"></div>
+            <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-black via-black/80 to-transparent z-10"></div>
+          </div>
+        </div>
+      </div>
 
 
-          {/* Photo-Z */}
-          <div className="w-full mx-auto">
-  {/* Heading */}
-  <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mt-6 mb-3 text-center relative z-10">
-    Photo-Z Coating
-  </h2>
-  <p className="text-gray-300 text-base sm:text-lg md:text-xl text-center relative z-10 max-w-2xl mx-auto">
-    Adaptive lenses that adjust to light conditions, combining comfort and protection.
-  </p>
 
-  {/* Features Grid */}
-  <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-8 gap-y-10 mt-10">
-    <div className="text-center">
-      <img
-        src="/svgs/uvprotection.svg"
-        alt="UV Protection"
-        className="w-14 sm:w-16 md:w-20 h-14 sm:h-16 md:h-20 mx-auto mb-4"
-      />
-      <h3 className="font-bold text-lg sm:text-xl text-white mb-2">
-        UV Protection
-      </h3>
-      <p className="text-gray-300 text-sm sm:text-base">
-        UV 400, Anti-Reflective
-      </p>
-    </div>
+      {/* Drive Clear */}
+      <div className="w-full mx-auto">
+        {/* Heading */}
+        <div className="flex flex-col items-center justify-center">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mt-6 mb-3 text-center relative z-20">
+            Drive Clear Coating
+          </h2>
+          <p className="text-zinc-300 text-base sm:text-lg md:text-xl text-center relative z-20 max-w-2xl">
+            Specially designed for driving, offering glare reduction and crystal clear vision.
+          </p>
+        </div>
 
-    <div className="text-center">
-      <img
-        src="/svgs/scratchresistance.svg"
-        alt="Scratch Resistance"
-        className="w-14 sm:w-16 md:w-20 h-14 sm:h-16 md:h-20 mx-auto mb-4"
-      />
-      <h3 className="font-bold text-lg sm:text-xl text-white mb-2">
-        Scratch Resistance
-      </h3>
-      <p className="text-gray-300 text-sm sm:text-base">
-        Durable and long-lasting
-      </p>
-    </div>
+        {/* Features Grid */}
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-x-8 gap-y-10 mt-12">
+          <div className="text-center">
+            <img
+              src="/svgs/uvprotection.svg"
+              alt="UV Protection"
+              className="w-14 sm:w-16 md:w-20 h-14 sm:h-16 md:h-20 mx-auto mb-4"
+            />
+            <h3 className="font-bold text-lg sm:text-xl text-white mb-2">
+              UV Protection
+            </h3>
+            <p className="text-zinc-300 text-sm sm:text-base">
+              UV 400, Anti-Reflective
+            </p>
+          </div>
 
-    <div className="text-center">
-      <img
-        src="/svgs/antireflective.svg"
-        alt="Anti Reflective Coating"
-        className="w-14 sm:w-16 md:w-20 h-14 sm:h-16 md:h-20 mx-auto mb-4"
-      />
-      <h3 className="font-bold text-lg sm:text-xl text-white mb-2">
-        Anti Reflective Coating
-      </h3>
-      <p className="text-gray-300 text-sm sm:text-base">
-        Reduces glare and reflections
-      </p>
-    </div>
+          <div className="text-center">
+            <img
+              src="/svgs/scratchresistance.svg"
+              alt="Scratch Resistance"
+              className="w-14 sm:w-16 md:w-20 h-14 sm:h-16 md:h-20 mx-auto mb-4"
+            />
+            <h3 className="font-bold text-lg sm:text-xl text-white mb-2">
+              Scratch Resistance
+            </h3>
+            <p className="text-zinc-300 text-sm sm:text-base">
+              Durable and long-lasting
+            </p>
+          </div>
 
-    <div className="text-center">
-      <img
-        src="/svgs/easytoclean.svg"
-        alt="Easy to Clean"
-        className="w-14 sm:w-16 md:w-20 h-14 sm:h-16 md:h-20 mx-auto mb-4"
-      />
-      <h3 className="font-bold text-lg sm:text-xl text-white mb-2">
-        Easy to Clean
-      </h3>
-      <p className="text-gray-300 text-sm sm:text-base">
-        Simple maintenance
-      </p>
-    </div>
+          <div className="text-center">
+            <img
+              src="/svgs/antireflective.svg"
+              alt="Anti Reflective Coating"
+              className="w-14 sm:w-16 md:w-20 h-14 sm:h-16 md:h-20 mx-auto mb-4"
+            />
+            <h3 className="font-bold text-lg sm:text-xl text-white mb-2">
+              Anti Reflective Coating
+            </h3>
+            <p className="text-zinc-300 text-sm sm:text-base">
+              Reduces glare and reflections
+            </p>
+          </div>
 
-    <div className="text-center">
-      <img
-        src="/svgs/bluelight.svg"
-        alt="Blue Light Filter"
-        className="w-14 sm:w-16 md:w-20 h-14 sm:h-16 md:h-20 mx-auto mb-4"
-      />
-      <h3 className="font-bold text-lg sm:text-xl text-white mb-2">
-        Filters Harmful Blue Rays
-      </h3>
-      <p className="text-gray-300 text-sm sm:text-base">
-        Protects eyes from screens
-      </p>
-    </div>
+          <div className="text-center">
+            <img
+              src="/svgs/easytoclean.svg"
+              alt="Easy to Clean"
+              className="w-14 sm:w-16 md:w-20 h-14 sm:h-16 md:h-20 mx-auto mb-4"
+            />
+            <h3 className="font-bold text-lg sm:text-xl text-white mb-2">
+              Easy to Clean
+            </h3>
+            <p className="text-zinc-300 text-sm sm:text-base">
+              Simple maintenance
+            </p>
+          </div>
 
-    <div className="text-center">
-      <img
-        src="/svgs/glareprotection.svg"
-        alt="Glare Protection"
-        className="w-14 sm:w-16 md:w-20 h-14 sm:h-16 md:h-20 mx-auto mb-4"
-      />
-      <h3 className="font-bold text-lg sm:text-xl text-white mb-2">
-        Glare Protection
-      </h3>
-      <p className="text-gray-300 text-sm sm:text-base">
-        High reduction
-      </p>
-    </div>
+          <div className="text-center">
+            <img
+              src="/svgs/bluelight.svg"
+              alt="Blue Light Filter"
+              className="w-14 sm:w-16 md:w-20 h-14 sm:h-16 md:h-20 mx-auto mb-4"
+            />
+            <h3 className="font-bold text-lg sm:text-xl text-white mb-2">
+              Partially Filters Harmful Blue Rays
+            </h3>
+            <p className="text-zinc-300 text-sm sm:text-base">
+              Protects eyes from screens
+            </p>
+          </div>
 
-    <div className="text-center">
-      <img
-        src="/svgs/photochromatic.svg"
-        alt="Photochromatic Effect"
-        className="w-14 sm:w-16 md:w-20 h-14 sm:h-16 md:h-20 mx-auto mb-4"
-      />
-      <h3 className="font-bold text-lg sm:text-xl text-white mb-2">
-        Spin Coating for Photochromatic Effect
-      </h3>
-      <p className="text-gray-300 text-sm sm:text-base">
-        Advanced light-adaptive technology
-      </p>
-    </div>
-  </div>
+          <div className="text-center">
+            <img
+              src="/svgs/glareprotection.svg"
+              alt="Glare Protection"
+              className="w-14 sm:w-16 md:w-20 h-14 sm:h-16 md:h-20 mx-auto mb-4"
+            />
+            <h3 className="font-bold text-lg sm:text-xl text-white mb-2">
+              Glare Protection
+            </h3>
+            <p className="text-zinc-300 text-sm sm:text-base">
+              High reduction
+            </p>
+          </div>
+        </div>
 
-  {/* Image Section */}
-  <div className="relative overflow-hidden mt-12">
-    <div className="flex justify-center relative">
-      <Image
-        height={1000}
-        width={1000}
-        src="/coatings/photoz.png"
-        alt="Photo-Z Coating"
-        className="w-full h-[50vh] sm:h-[70vh] lg:h-[100vh] object-cover relative z-10 rounded-xl"
-      />
-      {/* Gradient overlays */}
-      <div className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-black via-black/80 to-transparent z-10"></div>
-      <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-black via-black/80 to-transparent z-10"></div>
-    </div>
-  </div>
-</div>
+        {/* Image Section */}
+        <div className="relative overflow-hidden flex flex-col justify-center mt-12">
+          <div className="flex justify-center relative">
+            <Image
+              height={1000}
+              width={1000}
+              src="/coatings/drive.png"
+              alt="Drive Clear"
+              className="w-full h-[50vh] sm:h-[70vh] lg:h-[100vh] object-cover relative z-0 rounded-xl"
+            />
+            {/* Gradient overlays */}
+            <div className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-black via-black/80 to-transparent z-10 rounded-xl"></div>
+            <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-black via-black/80 to-transparent z-10 rounded-xl"></div>
+          </div>
+        </div>
 
-        
-      
+      </div>
+
+
+      {/* Photo-Z */}
+      <div className="w-full mx-auto">
+        {/* Heading */}
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mt-6 mb-3 text-center relative z-10">
+          Photo-Z Coating
+        </h2>
+        <p className="text-zinc-300 text-base sm:text-lg md:text-xl text-center relative z-10 max-w-2xl mx-auto">
+          Adaptive lenses that adjust to light conditions, combining comfort and protection.
+        </p>
+
+        {/* Features Grid */}
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-8 gap-y-10 mt-10">
+          <div className="text-center">
+            <img
+              src="/svgs/uvprotection.svg"
+              alt="UV Protection"
+              className="w-14 sm:w-16 md:w-20 h-14 sm:h-16 md:h-20 mx-auto mb-4"
+            />
+            <h3 className="font-bold text-lg sm:text-xl text-white mb-2">
+              UV Protection
+            </h3>
+            <p className="text-zinc-300 text-sm sm:text-base">
+              UV 400, Anti-Reflective
+            </p>
+          </div>
+
+          <div className="text-center">
+            <img
+              src="/svgs/scratchresistance.svg"
+              alt="Scratch Resistance"
+              className="w-14 sm:w-16 md:w-20 h-14 sm:h-16 md:h-20 mx-auto mb-4"
+            />
+            <h3 className="font-bold text-lg sm:text-xl text-white mb-2">
+              Scratch Resistance
+            </h3>
+            <p className="text-zinc-300 text-sm sm:text-base">
+              Durable and long-lasting
+            </p>
+          </div>
+
+          <div className="text-center">
+            <img
+              src="/svgs/antireflective.svg"
+              alt="Anti Reflective Coating"
+              className="w-14 sm:w-16 md:w-20 h-14 sm:h-16 md:h-20 mx-auto mb-4"
+            />
+            <h3 className="font-bold text-lg sm:text-xl text-white mb-2">
+              Anti Reflective Coating
+            </h3>
+            <p className="text-zinc-300 text-sm sm:text-base">
+              Reduces glare and reflections
+            </p>
+          </div>
+
+          <div className="text-center">
+            <img
+              src="/svgs/easytoclean.svg"
+              alt="Easy to Clean"
+              className="w-14 sm:w-16 md:w-20 h-14 sm:h-16 md:h-20 mx-auto mb-4"
+            />
+            <h3 className="font-bold text-lg sm:text-xl text-white mb-2">
+              Easy to Clean
+            </h3>
+            <p className="text-zinc-300 text-sm sm:text-base">
+              Simple maintenance
+            </p>
+          </div>
+
+          <div className="text-center">
+            <img
+              src="/svgs/bluelight.svg"
+              alt="Blue Light Filter"
+              className="w-14 sm:w-16 md:w-20 h-14 sm:h-16 md:h-20 mx-auto mb-4"
+            />
+            <h3 className="font-bold text-lg sm:text-xl text-white mb-2">
+              Filters Harmful Blue Rays
+            </h3>
+            <p className="text-zinc-300 text-sm sm:text-base">
+              Protects eyes from screens
+            </p>
+          </div>
+
+          <div className="text-center">
+            <img
+              src="/svgs/glareprotection.svg"
+              alt="Glare Protection"
+              className="w-14 sm:w-16 md:w-20 h-14 sm:h-16 md:h-20 mx-auto mb-4"
+            />
+            <h3 className="font-bold text-lg sm:text-xl text-white mb-2">
+              Glare Protection
+            </h3>
+            <p className="text-zinc-300 text-sm sm:text-base">
+              High reduction
+            </p>
+          </div>
+
+          <div className="text-center">
+            <img
+              src="/svgs/photochromatic.svg"
+              alt="Photochromatic Effect"
+              className="w-14 sm:w-16 md:w-20 h-14 sm:h-16 md:h-20 mx-auto mb-4"
+            />
+            <h3 className="font-bold text-lg sm:text-xl text-white mb-2">
+              Spin Coating for Photochromatic Effect
+            </h3>
+            <p className="text-zinc-300 text-sm sm:text-base">
+              Advanced light-adaptive technology
+            </p>
+          </div>
+        </div>
+
+        {/* Image Section */}
+        <div className="relative overflow-hidden mt-12">
+          <div className="flex justify-center relative">
+            <Image
+              height={1000}
+              width={1000}
+              src="/coatings/photoz.png"
+              alt="Photo-Z Coating"
+              className="w-full h-[50vh] sm:h-[70vh] lg:h-[100vh] object-cover relative z-10 rounded-xl"
+            />
+            {/* Gradient overlays */}
+            <div className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-black via-black/80 to-transparent z-10"></div>
+            <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-black via-black/80 to-transparent z-10"></div>
+          </div>
+        </div>
+      </div>
+
+
+
 
       <BackToServicesButton />
     </>

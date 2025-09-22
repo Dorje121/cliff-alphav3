@@ -100,13 +100,13 @@ const Details = () => {
                       src={
                         selectedFeature
                           ? features.find((f) => f.id === selectedFeature)
-                              ?.image || "/c1.jpeg"
+                            ?.image || "/c1.jpeg"
                           : "/c1.jpeg"
                       }
                       alt={
                         selectedFeature
                           ? features.find((f) => f.id === selectedFeature)
-                              ?.title || "Feature"
+                            ?.title || "Feature"
                           : "Select a feature"
                       }
                       fill
@@ -125,11 +125,10 @@ const Details = () => {
                   initial={{ opacity: 0, x: 50 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className={`bg-gray-800/30 backdrop-blur-sm rounded-xl border border-gray-700/50 transition-all duration-300 ${
-                    selectedFeature === feature.id
-                      ? "ring-1 ring-yellow-500/50 bg-gray-800/50"
-                      : ""
-                  }`}
+                  className={`bg-gray-800/30 backdrop-blur-sm rounded-xl border border-gray-700/50 transition-all duration-300 ${selectedFeature === feature.id
+                    ? "ring-1 ring-yellow-500/50 bg-gray-800/50"
+                    : ""
+                    }`}
                 >
                   <div
                     className="p-6 cursor-pointer hover:bg-gray-800/40 transition-all duration-300"
@@ -157,7 +156,7 @@ const Details = () => {
                           rotate: selectedFeature === feature.id ? 180 : 0,
                         }}
                         transition={{ duration: 0.3 }}
-                        className="text-gray-400"
+                        className="text-zinc-400"
                       >
                         <svg
                           className="w-5 h-5"
@@ -188,7 +187,7 @@ const Details = () => {
                   >
                     <div className="px-6 pb-6">
                       <div className="border-t border-gray-600/50 pt-4">
-                        <ul className="space-y-2 text-gray-300">
+                        <ul className="space-y-2 text-zinc-300">
                           {feature.benefits.map((benefit, benefitIndex) => (
                             <motion.li
                               key={benefitIndex}

@@ -93,7 +93,7 @@ const AboutUsPage = () => {
             />
 
             <div className="relative">
-              <p className="text-xl md:text-2xl text-center w-1/2 mx-auto text-gray-300 leading-relaxed relative z-10">
+              <p className="text-xl md:text-2xl text-center w-1/2 mx-auto text-zinc-300 leading-relaxed relative z-10">
                 Pioneering the future of vision with precision-crafted lenses
                 and innovative eyewear solutions.
               </p>
@@ -116,7 +116,7 @@ const AboutUsPage = () => {
               />
             </h2>
             <div className="relative">
-              <p className="text-xl md:text-2xl text-gray-300 leading-relaxed mb-8 relative z-10">
+              <p className="text-xl md:text-2xl text-zinc-300 leading-relaxed mb-8 relative z-10">
                 &ldquo;To provide every individual with the clearest, most
                 comfortable vision possible through innovative lens technology
                 and personalized eyewear solutions.&rdquo;
@@ -167,7 +167,7 @@ const AboutUsPage = () => {
                     />
                   </h2>
 
-                  <p className="text-gray-300 leading-relaxed">
+                  <p className="text-zinc-300 leading-relaxed">
                     Every lens we craft meets the highest standards of optical
                     precision, ensuring perfect vision.
                   </p>
@@ -195,7 +195,7 @@ const AboutUsPage = () => {
                     />
                   </h2>
 
-                  <p className="text-gray-300 leading-relaxed">
+                  <p className="text-zinc-300 leading-relaxed">
                     We continuously invest in research and development to bring
                     you the latest advances in lens technology and design.
                   </p>
@@ -221,7 +221,7 @@ const AboutUsPage = () => {
                       className=" text-2xl font-bold mb-4"
                     />
                   </h2>
-                  <p className="text-gray-300 leading-relaxed">
+                  <p className="text-zinc-300 leading-relaxed">
                     Your vision health is our priority. We provide personalized
                     care and support throughout your eyewear journey.
                   </p>

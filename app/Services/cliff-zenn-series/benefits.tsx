@@ -58,8 +58,8 @@ const Benefits: React.FC = () => {
                             <path d="M12 5v1M12 18v1M5 12H4M20 12h1" />
                         </svg>
                     </div>
-                    <h3 className="text-2xl font-bold mb-4 text-gray-300">Clarity</h3>
-                    <p className="text-gray-300">
+                    <h3 className="text-2xl font-bold mb-4 text-zinc-300">Clarity</h3>
+                    <p className="text-zinc-300">
                         Crystal clear vision with advanced lens technology for optimal visual performance
                     </p>
                 </div>
@@ -79,8 +79,8 @@ const Benefits: React.FC = () => {
                             />
                         </svg>
                     </div>
-                    <h3 className="text-2xl font-bold mb-4 text-gray-300">Comfort</h3>
-                    <p className="text-gray-300">
+                    <h3 className="text-2xl font-bold mb-4 text-zinc-300">Comfort</h3>
+                    <p className="text-zinc-300">
                         All-day comfort with reduced eye strain and fatigue during extended use
                     </p>
                 </div>
@@ -101,8 +101,8 @@ const Benefits: React.FC = () => {
                             <path d="M16 16l2 2 4-4" />
                         </svg>
                     </div>
-                    <h3 className="text-2xl font-bold mb-4 text-gray-300">Digital Ready</h3>
-                    <p className="text-gray-300">
+                    <h3 className="text-2xl font-bold mb-4 text-zinc-300">Digital Ready</h3>
+                    <p className="text-zinc-300">
                         Optimized for digital device usage with blue light protection
                     </p>
                 </div>
@@ -125,8 +125,8 @@ const Benefits: React.FC = () => {
                             <path d="M12 2v4M12 18v4M2 12h4M18 12h4" />
                         </svg>
                     </div>
-                    <h3 className="text-2xl font-bold mb-4 text-gray-300">Precised</h3>
-                    <p className="text-gray-300">
+                    <h3 className="text-2xl font-bold mb-4 text-zinc-300">Precised</h3>
+                    <p className="text-zinc-300">
                         Precision-crafted lenses for accurate vision correction in all conditions
                     </p>
                 </div>
@@ -147,8 +147,8 @@ const Benefits: React.FC = () => {
                             <path d="M8 13h.01M16 13h.01M6 10a2 2 0 1 1 4 0v1M14 10a2 2 0 1 1 4 0v1" />
                         </svg>
                     </div>
-                    <h3 className="text-2xl font-bold mb-4 text-gray-300">Personalized</h3>
-                    <p className="text-gray-300">
+                    <h3 className="text-2xl font-bold mb-4 text-zinc-300">Personalized</h3>
+                    <p className="text-zinc-300">
                         Customized to your unique visual needs and lifestyle requirements
                     </p>
                 </div>
@@ -169,8 +169,8 @@ const Benefits: React.FC = () => {
                             <path d="M9 12l2 2 4-4" />
                         </svg>
                     </div>
-                    <h3 className="text-2xl font-bold mb-4 text-gray-300">Durable</h3>
-                    <p className="text-gray-300">
+                    <h3 className="text-2xl font-bold mb-4 text-zinc-300">Durable</h3>
+                    <p className="text-zinc-300">
                         Long-lasting quality with superior scratch and impact resistance
                     </p>
                 </div>

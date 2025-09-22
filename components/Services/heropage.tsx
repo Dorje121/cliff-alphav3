@@ -131,37 +131,37 @@ export default function HeroSection({
 
           {/* Right Content - Enhanced Visual */}
           <div className="w-full lg:w-1/2 relative flex justify-center lg:justify-end lg:ml-2 mt-6 lg:mt-0">
-                <div className="relative w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-[28rem]">
-                  {/* Main Image Container */}
-                  <div className="relative rounded-xl sm:rounded-2xl md:rounded-3xl overflow-hidden shadow-xl sm:shadow-2xl w-full hero-image">
-                    <Image
-                      src={rightImage}
-                      alt="Cliff Blue Safe Coating Technology"
-                      width={400}
-                      height={400}
-                      className="object-cover w-full h-[180px] sm:h-[220px] md:h-[280px] lg:h-[300px]"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
+            <div className="relative w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-[28rem]">
+              {/* Main Image Container */}
+              <div className="relative rounded-xl sm:rounded-2xl md:rounded-3xl overflow-hidden shadow-xl sm:shadow-2xl w-full hero-image">
+                <Image
+                  src={rightImage}
+                  alt="Cliff Blue Safe Coating Technology"
+                  width={400}
+                  height={400}
+                  className="object-cover w-full h-[180px] sm:h-[220px] md:h-[280px] lg:h-[300px]"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
 
-                    {/* Service Number Overlay */}
-                    <div className="absolute top-1 sm:top-2 md:top-4 right-1 sm:right-2 md:right-4">
-                      <span className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white/30">{serviceNumber}</span>
-                    </div>
+                {/* Service Number Overlay */}
+                <div className="absolute top-1 sm:top-2 md:top-4 right-1 sm:right-2 md:right-4">
+                  <span className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-zinc-400">{serviceNumber}</span>
+                </div>
+              </div>
+
+              {/* Badge Overlay */}
+              <div className="absolute -bottom-6 sm:-bottom-8 md:-bottom-10 left-2 sm:left-[-44px] md:left-[-40px] w-20 sm:w-28 md:w-32 h-20 sm:h-28 md:h-32 backdrop-blur-sm bg-white/10 rounded-xl sm:rounded-2xl flex items-center justify-center">
+                <div className="text-center p-2 sm:p-4 md:p-5">
+                  <div className="text-sm sm:text-xl md:text-xl lg:text-xl font-bold text-[#DFC65F] drop-shadow-lg">
+                    {badgeTitle}
                   </div>
-
-                  {/* Badge Overlay */}
-                  <div className="absolute -bottom-6 sm:-bottom-8 md:-bottom-10 left-2 sm:left-[-44px] md:left-[-40px] w-20 sm:w-28 md:w-32 h-20 sm:h-28 md:h-32 backdrop-blur-sm bg-white/10 rounded-xl sm:rounded-2xl flex items-center justify-center">
-                    <div className="text-center p-2 sm:p-4 md:p-5">
-                      <div className="text-sm sm:text-xl md:text-xl lg:text-xl font-bold text-[#DFC65F] drop-shadow-lg">
-                        {badgeTitle}
-                      </div>
-                      <div className="text-[9px] sm:text-[12px] md:text-sm lg:text-lg text-gray-200 mt-1 sm:mt-2 tracking-wider">
-                        {badgeSubtitle}
-                      </div>
-                    </div>
+                  <div className="text-[9px] sm:text-[12px] md:text-sm lg:text-lg text-gray-200 mt-1 sm:mt-2 tracking-wider">
+                    {badgeSubtitle}
                   </div>
                 </div>
-           </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

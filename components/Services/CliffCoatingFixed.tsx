@@ -169,8 +169,8 @@ const CliffCoatings = () => {
   };
 
   const getFeatureColor = (hasFeature: boolean | "special") => {
-    if (hasFeature === "special") return "text-gray-300";
-    return hasFeature ? "text-white" : "text-gray-600";
+    if (hasFeature === "special") return "text-zinc-300";
+    return hasFeature ? "text-white" : "text-zinc-600";
   };
 
   return (
@@ -227,7 +227,7 @@ const CliffCoatings = () => {
               </h1>
 
               {/* Service Description */}
-              <p className="text-xl md:text-2xl text-gray-300 leading-relaxed max-w-2xl">
+              <p className="text-xl md:text-2xl text-zinc-300 leading-relaxed max-w-2xl">
                 Premium protective coatings for enhanced lens durability and
                 performance, ensuring your lenses stay crystal clear and
                 protected.
@@ -241,7 +241,7 @@ const CliffCoatings = () => {
                     <h4 className="font-semibold text-white mb-1">
                       Enhanced Durability
                     </h4>
-                    <p className="text-gray-400 text-sm">
+                    <p className="text-zinc-400 text-sm">
                       Long-lasting protection against scratches and wear
                     </p>
                   </div>
@@ -252,7 +252,7 @@ const CliffCoatings = () => {
                     <h4 className="font-semibold text-white mb-1">
                       Superior Performance
                     </h4>
-                    <p className="text-gray-400 text-sm">
+                    <p className="text-zinc-400 text-sm">
                       Optimized optical clarity and light transmission
                     </p>
                   </div>
@@ -263,7 +263,7 @@ const CliffCoatings = () => {
                     <h4 className="font-semibold text-white mb-1">
                       Easy Maintenance
                     </h4>
-                    <p className="text-gray-400 text-sm">
+                    <p className="text-zinc-400 text-sm">
                       Simple cleaning and long-lasting protection
                     </p>
                   </div>
@@ -274,7 +274,7 @@ const CliffCoatings = () => {
                     <h4 className="font-semibold text-white mb-1">
                       Professional Grade
                     </h4>
-                    <p className="text-gray-400 text-sm">
+                    <p className="text-zinc-400 text-sm">
                       Industry-leading coating technology
                     </p>
                   </div>
@@ -323,7 +323,7 @@ const CliffCoatings = () => {
 
                   {/* Service Number Overlay */}
                   <div className="absolute top-6 right-6">
-                    <span className="text-6xl font-bold text-white/30">02</span>
+                    <span className="text-6xl font-bold text-zinc-400">02</span>
                   </div>
 
                   {/* Tech Badge */}
@@ -338,7 +338,7 @@ const CliffCoatings = () => {
                 <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-gradient-to-br from-gray-700 to-gray-800 rounded-2xl flex items-center justify-center shadow-xl border border-white/10">
                   <div className="text-center">
                     <div className="text-2xl font-bold text-white">100%</div>
-                    <div className="text-xs text-gray-400">Protection</div>
+                    <div className="text-xs text-zinc-400">Protection</div>
                   </div>
                 </div>
               </div>
@@ -364,7 +364,7 @@ const CliffCoatings = () => {
                   Coating Options
                 </span>
               </h2>
-              <p className="text-base sm:text-lg lg:text-xl text-gray-300 max-w-3xl mx-auto mb-6 sm:mb-8 px-4">
+              <p className="text-base sm:text-lg lg:text-xl text-zinc-300 max-w-3xl mx-auto mb-6 sm:mb-8 px-4">
                 Compare our premium lens coating technologies and find the
                 perfect protection for your lenses
               </p>
@@ -377,11 +377,10 @@ const CliffCoatings = () => {
                   <button
                     key={coating.id}
                     onClick={() => setSelectedCoating(coating.id)}
-                    className={`px-3 cursor-pointer sm:px-6 lg:px-8 py-2 sm:py-3 lg:py-4 rounded-xl sm:rounded-2xl font-bold text-sm sm:text-base lg:text-lg transition-all duration-300 transform hover:scale-105 ${
-                      selectedCoating === coating.id
-                        ? `bg-gradient-to-r ${coating.color} text-black shadow-2xl shadow-current`
-                        : "bg-white/10 text-white hover:bg-white/20"
-                    }`}
+                    className={`px-3 cursor-pointer sm:px-6 lg:px-8 py-2 sm:py-3 lg:py-4 rounded-xl sm:rounded-2xl font-bold text-sm sm:text-base lg:text-lg transition-all duration-300 transform hover:scale-105 ${selectedCoating === coating.id
+                      ? `bg-gradient-to-r ${coating.color} text-black shadow-2xl shadow-current`
+                      : "bg-white/10 text-white hover:bg-white/20"
+                      }`}
                   >
                     {coating.name}
                   </button>
@@ -458,7 +457,7 @@ const CliffCoatings = () => {
                           <div className="font-semibold text-white text-sm sm:text-base">
                             {feature.name}
                           </div>
-                          <div className="text-gray-400 text-xs sm:text-sm">
+                          <div className="text-zinc-400 text-xs sm:text-sm">
                             {feature.description}
                           </div>
                         </div>
@@ -541,7 +540,7 @@ const CliffCoatings = () => {
                     />
                   </div>
                   <h4 className="font-bold text-white mb-2">UV Protection</h4>
-                  <p className="text-gray-400 text-sm">
+                  <p className="text-zinc-400 text-sm">
                     Advanced UV blocking technology to protect your eyes from
                     harmful sun rays and prevent premature aging.
                   </p>
@@ -559,7 +558,7 @@ const CliffCoatings = () => {
                   <h4 className="font-bold text-white mb-2">
                     Scratch Resistance
                   </h4>
-                  <p className="text-gray-400 text-sm">
+                  <p className="text-zinc-400 text-sm">
                     Military-grade hardness coating that protects against daily
                     wear and tear, keeping your lenses crystal clear.
                   </p>
@@ -575,7 +574,7 @@ const CliffCoatings = () => {
                     />
                   </div>
                   <h4 className="font-bold text-white mb-2">Clear Vision</h4>
-                  <p className="text-gray-400 text-sm">
+                  <p className="text-zinc-400 text-sm">
                     Anti-reflective technology that eliminates glare and
                     reflections for superior visual clarity.
                   </p>
@@ -656,7 +655,7 @@ const CliffCoatings = () => {
                 <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-2 sm:mb-4 text-white">
                   Ready to Upgrade Your Lenses?
                 </h2>
-                <p className="text-gray-300 mb-4 sm:mb-6 lg:mb-8 text-sm sm:text-base lg:text-lg">
+                <p className="text-zinc-300 mb-4 sm:mb-6 lg:mb-8 text-sm sm:text-base lg:text-lg">
                   Contact our experts to learn more about {currentCoating.name}{" "}
                   coating
                 </p>

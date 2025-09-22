@@ -17,13 +17,13 @@ const CTA = () => {
 
         {/* Content */}
         <div className="relative z-10 text-left">
-          <p className="uppercase tracking-widest text-gray-400 text-sm mb-3">
+          <p className="uppercase tracking-widest text-zinc-400 text-sm mb-3">
             Who We Are
           </p>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
             <span className="text-amber-400">CLIFF</span> Eyewear
           </h2>
-          <p className="text-gray-300 mb-6 text-base sm:text-lg leading-relaxed w-1/2">
+          <p className="text-zinc-300 mb-6 text-base sm:text-lg leading-relaxed w-1/2">
             Cliff is an esteemed eyewear company dedicated to transforming how
             people see the world, one pair of glasses at a time.
           </p>

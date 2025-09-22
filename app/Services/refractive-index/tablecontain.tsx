@@ -130,13 +130,13 @@ const LensSlider: React.FC = () => {
                     {lensData[current].title}
                   </h2>
 
-                  <p className="text-gray-300 mb-16 text-sm sm:text-lg">
+                  <p className="text-zinc-300 mb-16 text-sm sm:text-lg">
                     {lensData[current].desc}
                   </p>
                   <p className="mb-2 ">
                     <div className="font-semibold text-lg text-yellow-300 sm:text-2xl">
                       Power:{" "}
-                      <span className="text-xl text-gray-300 ">
+                      <span className="text-xl text-zinc-300 ">
                         {lensData[current].power}
                       </span>
                     </div>
@@ -145,7 +145,7 @@ const LensSlider: React.FC = () => {
                     <span className="font-semibold text-lg sm:text-2xl">
                       Index:{" "}
                     </span>
-                    <span className="text-xl text-gray-300 ">
+                    <span className="text-xl text-zinc-300 ">
                       {lensData[current].index}
                     </span>
                   </p>
@@ -153,7 +153,7 @@ const LensSlider: React.FC = () => {
                     <span className="font-semibold text-lg sm:text-2xl">
                       Features:{" "}
                     </span>
-                    <span className="text-xl text-gray-300">
+                    <span className="text-xl text-zinc-300">
                       {lensData[current].feature}
                     </span>
                   </p>
@@ -187,9 +187,8 @@ const LensSlider: React.FC = () => {
                   setDirection(idx > current ? "next" : "prev");
                   setCurrent(idx);
                 }}
-                className={`h-4  w-4 md:mt-10 mt-10 rounded-full ${
-                  current === idx ? "bg-yellow-200" : "bg-zinc-600"
-                }`}
+                className={`h-4  w-4 md:mt-10 mt-10 rounded-full ${current === idx ? "bg-yellow-200" : "bg-zinc-600"
+                  }`}
               />
             ))}
           </div>

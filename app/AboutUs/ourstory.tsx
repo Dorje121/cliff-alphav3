@@ -78,7 +78,7 @@ const OurStorySection: React.FC = () => {
                 </h2>
                 <div
                     ref={contentRef}
-                    className="text-gray-300 text-[1rem] sm:text-xl leading-relaxed max-w-3xl text-center whitespace-pre-wrap"
+                    className="text-zinc-300 text-[1rem] sm:text-xl leading-relaxed max-w-3xl text-center whitespace-pre-wrap"
                 />
             </div>
         </section>

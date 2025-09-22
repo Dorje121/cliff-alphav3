@@ -138,7 +138,7 @@ export default function BlogPage() {
         <div className=" mx-auto text-center ">
 
           <TextWithTexture text="Insights & Innovation" className="!h-26  text-5xl md:text-7xl font-bold  p-1" />
-          <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto leading-">
+          <p className="text-xl md:text-2xl text-zinc-300 max-w-3xl mx-auto leading-">
             Discover the latest in lens technology, eye health, and vision
             science through our expert insights and cutting-edge research.
           </p>
@@ -222,7 +222,7 @@ export default function BlogPage() {
 
           {filteredPosts.length === 0 && (
             <div className="text-center py-20">
-              <p className="text-gray-400 text-lg">
+              <p className="text-zinc-400 text-lg">
                 No articles found in this category.
               </p>
             </div>

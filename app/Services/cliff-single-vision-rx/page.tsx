@@ -143,10 +143,10 @@ const CliffSingleVisionRX: React.FC = () => {
                   <p>Precision engineered lenses for</p>
                   <p>superior single vision correction.</p>
                 </div>
-                <p className="text-lg sm:text-xl text-gray-300">
+                <p className="text-lg sm:text-xl text-zinc-300">
                   A smart choice for clear, comfortable vision.
                 </p>
-                <ul className="space-y-3 sm:space-y-4 text-gray-300 text-base sm:text-lg">
+                <ul className="space-y-3 sm:space-y-4 text-zinc-300 text-base sm:text-lg">
                   <li className="flex items-start">
                     <span className="text-amber-400 mr-3">•</span>
                     <span>Slimmer, flatter design with outstanding optical performance</span>
@@ -258,7 +258,7 @@ const CliffSingleVisionRX: React.FC = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Lens Specifications
             </h2>
-            <p className="text-lg text-gray-300">
+            <p className="text-lg text-zinc-300">
               Complete technical specifications for all lens types
             </p>
           </div>

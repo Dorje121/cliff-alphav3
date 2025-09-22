@@ -22,7 +22,7 @@ const Techbene = () => {
             <div className="w-full sm:w-1/2 pr-6">
               <h2 className="text-xl md:text-4xl font-semibold mb-7  bg-gradient-to-r from-white via-yellow-100 to-yellow-200 bg-clip-text text-transparent">TECHNOLOGY</h2>
               <h3 className="text-xl md:text-2xl font-semibold">Digital Ray Path</h3>
-              <p className="text-[0.9rem] md:text-lg text-gray-300 mt-2 leading-relaxed">
+              <p className="text-[0.9rem] md:text-lg text-zinc-300 mt-2 leading-relaxed">
                 With Digital Ray-Path®, each Single Vision lens is precisely calculated using real
                 personalization parameters for optimal visual performance.
               </p>

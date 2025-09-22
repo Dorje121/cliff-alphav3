@@ -64,7 +64,7 @@ const CliffZennSeries = () => {
                   <h2 className="text-4xl font-semibold mb-4 bg-gradient-to-r from-white via-yellow-100 to-yellow-200 bg-clip-text text-transparent sm:leading-relaxed">
                     Empower your vision to keep pace with a fast-moving, digital world.
                   </h2>
-                  <p className="text-gray-300 text-lg">
+                  <p className="text-zinc-300 text-lg">
                     <span className="italic">
                       In an age where our eyes face countless hours of screens and devices, true clarity is more than sharp sight—it’s the confidence to stay focused, comfortable, and adaptable. The Cliff Zenn Series inspires you to embrace every challenge with lenses designed to protect and support your vision, so you can see—and live—without limits.
                     </span>

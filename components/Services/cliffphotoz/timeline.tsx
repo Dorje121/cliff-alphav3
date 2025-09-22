@@ -42,7 +42,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
           <h2 className="text-2xl md:text-5xl font-bold mb-6 text-white leading-tight">
             Cliff Photo-Z <span className="text-yellow-400">UV Lenses</span>
           </h2>
-          <p className="text-gray-400 text-base md:text-lg leading-relaxed max-w-2xl">
+          <p className="text-zinc-400 text-base md:text-lg leading-relaxed max-w-2xl">
             Advanced photochromic lens technology that seamlessly adapts to changing light conditions, providing optimal comfort and protection throughout your day.
           </p>
         </div>
@@ -51,19 +51,19 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
           <div className="space-y-2">
             <div className="flex items-center">
               <div className="w-1.5 h-1.5 bg-yellow-400 rounded-full mr-3"></div>
-              <span className="text-gray-300">All day use purpose</span>
+              <span className="text-zinc-300">All day use purpose</span>
             </div>
             <div className="flex items-center">
               <div className="w-1.5 h-1.5 bg-yellow-400 rounded-full mr-3"></div>
-              <span className="text-gray-300">Digital gadget users</span>
+              <span className="text-zinc-300">Digital gadget users</span>
             </div>
             <div className="flex items-center">
               <div className="w-1.5 h-1.5 bg-yellow-400 rounded-full mr-3"></div>
-              <span className="text-gray-300">Digital eye strain</span>
+              <span className="text-zinc-300">Digital eye strain</span>
             </div>
             <div className="flex items-center">
               <div className="w-1.5 h-1.5 bg-yellow-400 rounded-full mr-3"></div>
-              <span className="text-gray-300">Computer vision syndrome (CVS)</span>
+              <span className="text-zinc-300">Computer vision syndrome (CVS)</span>
             </div>
           </div>
         </div>
@@ -76,12 +76,12 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
             className="flex justify-start pt-10 md:pt-40 md:gap-10"
           >
             <div className="sticky flex flex-col md:flex-row z-40 items-center top-40 self-start max-w-xs lg:max-w-sm md:w-full">
-              
-                  <img
-                  src="/svgs/scratchresistance.svg"
-                  alt="Scratch Resistance"
-                  className="w-16 h-16 border border-black"
-                />
+
+              <img
+                src="/svgs/scratchresistance.svg"
+                alt="Scratch Resistance"
+                className="w-16 h-16 border border-black"
+              />
 
               <h3 className="hidden md:block text-xl md:pl-8 md:text-4xl font-bold text-white">
                 {item.title}

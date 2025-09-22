@@ -111,7 +111,7 @@ export default function CliffZennPage() {
                     </ResponsiveContainer>
                 </div>
 
-                <p className="max-w-3xl mt-6 text-center text-gray-300 px-4 text-sm sm:text-base">
+                <p className="max-w-3xl mt-6 text-center text-zinc-300 px-4 text-sm sm:text-base">
                     The graph shows oblique errors for a –4.00 D single-vision lens, which increase
                     with stronger prescriptions. CLIFF ZENN SV lenses are 76% more stable than
                     conventional lenses for high prescriptions.

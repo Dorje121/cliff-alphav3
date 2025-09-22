@@ -42,7 +42,7 @@ const ProgressiveMeasurementChart = () => {
                   Measurement Guide
                 </span>
               </h2>
-              <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto">
+              <p className="text-xl md:text-2xl text-zinc-300 max-w-3xl mx-auto">
                 Master the art of progressive lens fitting with our
                 comprehensive measurement chart and professional guidelines
               </p>
@@ -85,7 +85,7 @@ const ProgressiveMeasurementChart = () => {
 
                     {/* Description */}
                     <div className="flex-grow flex flex-col justify-center">
-                      <p className="text-gray-300 text-center leading-relaxed">
+                      <p className="text-zinc-300 text-center leading-relaxed">
                         {item.description}
                       </p>
                     </div>

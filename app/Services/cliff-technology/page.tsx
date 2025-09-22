@@ -51,7 +51,7 @@ const CliffTechnology = () => {
           {/* Intro Paragraph */}
           <div className="w-full mb-16">
             <div className="max-w-3xl mx-auto text-center">
-              <p className="text-base sm:text-lg md:text-xl text-gray-300 leading-relaxed font-light">
+              <p className="text-base sm:text-lg md:text-xl text-zinc-300 leading-relaxed font-light">
                 Cutting-edge optical technology and innovation solutions that push the boundaries of vision science and lens engineering.
                 Our advanced technologies ensure superior visual performance, comfort, and precision for every user.
               </p>
@@ -70,7 +70,7 @@ const CliffTechnology = () => {
                   <span className="text-[#FFD700]">™</span>
                 </h2>
               </div>
-              <p className="text-sm sm:text-base md:text-lg text-gray-300 leading-relaxed">
+              <p className="text-sm sm:text-base md:text-lg text-zinc-300 leading-relaxed">
                 Psicoptix™ Technology merges advanced optics with visual neuroscience to deliver sharper, natural, and adaptive vision - enhancing how the brain interprets images.
               </p>
               <div className="relative w-full ">
@@ -91,7 +91,7 @@ const CliffTechnology = () => {
                   <span className="text-[#FFD700]"> 8K Definition</span>
                 </h2>
               </div>
-              <p className="text-sm sm:text-base md:text-lg text-gray-300 leading-relaxed">
+              <p className="text-sm sm:text-base md:text-lg text-zinc-300 leading-relaxed">
                 CDT® (Continuum Design) 8K - Our advanced design ensures ultra-high resolution lenses (up to 8x more optical definition than standard Freeform) for superior clarity and wider visual fields.
               </p>
               <div className="relative w-full ">
@@ -107,10 +107,10 @@ const CliffTechnology = () => {
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
                 <div className="bg-gradient-to-b from-gray-900/50 to-gray-900/10 p-4 rounded-xl border border-gray-800">
-                  <p className="text-sm text-gray-300">Allows up to quadruple the density of points on the optical surface</p>
+                  <p className="text-sm text-zinc-300">Allows up to quadruple the density of points on the optical surface</p>
                 </div>
                 <div className="bg-gradient-to-b from-gray-900/50 to-gray-900/10 p-4 rounded-xl border border-gray-800">
-                  <p className="text-sm text-gray-300">Conventional lenses with interpolation technology based on discontinuous points matrix</p>
+                  <p className="text-sm text-zinc-300">Conventional lenses with interpolation technology based on discontinuous points matrix</p>
                 </div>
               </div>
             </div>
@@ -124,7 +124,7 @@ const CliffTechnology = () => {
                   <span className="text-[#FFD700]">™ Customization</span>
                 </h2>
               </div>
-              <p className="text-sm sm:text-base md:text-lg text-gray-300 leading-relaxed">
+              <p className="text-sm sm:text-base md:text-lg text-zinc-300 leading-relaxed">
                 WearFit™ Customization - Lenses tailored for you based on your unique measurements like pupillary distance, vertex, panoramic and pantoscopic angles - for unmatched comfort and precision.
               </p>
               <div className="relative w-full ">
@@ -145,7 +145,7 @@ const CliffTechnology = () => {
                   <span className="text-[#FFD700]"> Technologies</span>
                 </h2>
               </div>
-              <p className="text-sm sm:text-base md:text-lg text-gray-300 leading-relaxed">
+              <p className="text-sm sm:text-base md:text-lg text-zinc-300 leading-relaxed">
                 Blending™ Thickness Optimization - Smart material blending that ensures slimmer lenses without compromising clarity and performance. <br /> -Cliff lens
               </p>
               <div className="relative w-full ">
@@ -168,7 +168,7 @@ const CliffTechnology = () => {
             <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
               Innovation <span className="text-[#FFD700]">Features</span>
             </h2>
-            <p className="text-lg text-gray-300 max-w-2xl mx-auto">
+            <p className="text-lg text-zinc-300 max-w-2xl mx-auto">
               Advanced technological features that set our lenses apart in the industry
             </p>
           </div>
@@ -192,7 +192,7 @@ const CliffTechnology = () => {
                   className="w-12 sm:w-16 h-12 sm:h-16 mb-3 sm:mb-4 group-hover:scale-110 transition-transform duration-300"
                 />
                 <h3 className="text-center text-white font-semibold text-sm sm:text-base mb-2">{feature.title}</h3>
-                <p className="text-center text-gray-400 text-xs sm:text-sm">{feature.desc}</p>
+                <p className="text-center text-zinc-400 text-xs sm:text-sm">{feature.desc}</p>
               </div>
             ))}
           </div>
@@ -209,7 +209,7 @@ const CliffTechnology = () => {
                 <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 text-center lg:text-left">
                   Advanced Optical Engineering
                 </h2>
-                <p className="text-gray-300 max-w-2xl mx-auto lg:mx-0 mb-8 text-base sm:text-lg lg:text-xl leading-relaxed text-center lg:text-left">
+                <p className="text-zinc-300 max-w-2xl mx-auto lg:mx-0 mb-8 text-base sm:text-lg lg:text-xl leading-relaxed text-center lg:text-left">
                   Our cutting-edge technology portfolio represents decades of innovation in optical science, delivering unparalleled visual performance and comfort.
                 </p>
 

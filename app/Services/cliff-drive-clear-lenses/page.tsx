@@ -109,67 +109,67 @@ const CliffDriveClearLenses = () => {
   return (
     <>
 
-    <HeroSection
-                title="Cliff Drive Clear"
-                subtitle="UV Lenses"
-                description="Specialized lenses optimized for driving and enhanced road visibility, ensuring safer and more comfortable driving experiences."
-                backgroundImage="/bluesafe/drive.png"
-                rightImage="/bluesafe/drive.png"
-                serviceNumber="06"
-                badgeTitle="4200"
-                badgeSubtitle="MRP"
-              />
+      <HeroSection
+        title="Cliff Drive Clear"
+        subtitle="UV Lenses"
+        description="Specialized lenses optimized for driving and enhanced road visibility, ensuring safer and more comfortable driving experiences."
+        backgroundImage="/bluesafe/drive.png"
+        rightImage="/bluesafe/drive.png"
+        serviceNumber="06"
+        badgeTitle="4200"
+        badgeSubtitle="MRP"
+      />
 
       {/* Info Section with Fade-In List */}
       <section className="py-16 bg-black">
-  <div className="max-w-[1500px] mx-auto p-4">
-    <div className="flex flex-col md:flex-row justify-center items-center relative gap-8">
-      
-      {/* Image */}
-      <div className="relative w-full md:w-1/2 flex justify-center">
-        <img
-          src="/imAGES/pages.png"
-          alt="Product Page"
-          className="w-full max-w-[800px] h-auto rounded-lg shadow-lg object-cover"
-        />
-        {/* Gradient overlays */}
-        <div className="absolute top-0 left-0 w-full h-8 bg-gradient-to-b from-black via-black/80 to-transparent z-10"></div>
-        <div className="absolute bottom-0 left-0 w-full h-8 bg-gradient-to-t from-black via-black/80 to-transparent z-10"></div>
-        <div className="absolute top-0 right-0 w-8 h-full bg-gradient-to-l from-black via-black/80 to-transparent z-10"></div>
-      </div>
+        <div className="max-w-[1500px] mx-auto p-4">
+          <div className="flex flex-col md:flex-row justify-center items-center relative gap-8">
 
-      {/* Text Content */}
-      <div className="w-full md:w-1/2 mt-4 md:mt-0 max-w-xl mx-auto">
-        <h3 className="text-2xl sm:text-3xl font-bold text-white mb-6 text-center md:text-left">
-          Our Drive Clear UV
-        </h3>
-        <ul className="space-y-4 sm:space-y-6 text-gray-300">
-          {[
-            "Superior UV protection for safe driving",
-            "Crystal clear vision in all conditions",
-            "Anti-glare technology for night driving",
-            "Scratch-resistant coating",
-            "Water-repellent surface for easy cleaning",
-            "Reduced eye strain during long drives",
-            "Enhanced contrast for better road visibility",
-          ].map((text, i) => (
-            <li
-              key={i}
-              ref={(el) => {
-                itemsRef.current[i] = el;
-              }}
-              className="flex items-start justify-start opacity-0 transform translate-y-4 transition-all duration-700 ease-out"
-            >
-              <span className="text-green-400 mr-2 mt-1">✓</span>
-              <span className="text-sm sm:text-base">{text}</span>
-            </li>
-          ))}
-        </ul>
-      </div>
+            {/* Image */}
+            <div className="relative w-full md:w-1/2 flex justify-center">
+              <img
+                src="/imAGES/pages.png"
+                alt="Product Page"
+                className="w-full max-w-[800px] h-auto rounded-lg shadow-lg object-cover"
+              />
+              {/* Gradient overlays */}
+              <div className="absolute top-0 left-0 w-full h-8 bg-gradient-to-b from-black via-black/80 to-transparent z-10"></div>
+              <div className="absolute bottom-0 left-0 w-full h-8 bg-gradient-to-t from-black via-black/80 to-transparent z-10"></div>
+              <div className="absolute top-0 right-0 w-8 h-full bg-gradient-to-l from-black via-black/80 to-transparent z-10"></div>
+            </div>
 
-    </div>
-  </div>
-</section>
+            {/* Text Content */}
+            <div className="w-full md:w-1/2 mt-4 md:mt-0 max-w-xl mx-auto">
+              <h3 className="text-2xl sm:text-3xl font-bold text-white mb-6 text-center md:text-left">
+                Our Drive Clear UV
+              </h3>
+              <ul className="space-y-4 sm:space-y-6 text-zinc-300">
+                {[
+                  "Superior UV protection for safe driving",
+                  "Crystal clear vision in all conditions",
+                  "Anti-glare technology for night driving",
+                  "Scratch-resistant coating",
+                  "Water-repellent surface for easy cleaning",
+                  "Reduced eye strain during long drives",
+                  "Enhanced contrast for better road visibility",
+                ].map((text, i) => (
+                  <li
+                    key={i}
+                    ref={(el) => {
+                      itemsRef.current[i] = el;
+                    }}
+                    className="flex items-start justify-start opacity-0 transform translate-y-4 transition-all duration-700 ease-out"
+                  >
+                    <span className="text-green-400 mr-2 mt-1">✓</span>
+                    <span className="text-sm sm:text-base">{text}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+          </div>
+        </div>
+      </section>
 
 
       {/* Features */}
@@ -182,45 +182,45 @@ const CliffDriveClearLenses = () => {
                 CLEAR UV
               </span>
             </div>
-            <p className="text-base sm:text-lg lg:text-xl text-gray-300 max-w-3xl mx-auto mb-8 px-4">
+            <p className="text-base sm:text-lg lg:text-xl text-zinc-300 max-w-3xl mx-auto mb-8 px-4">
               Advanced lens technology designed for optimal driving experience
               and all-day protection
             </p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 lg:gap-8 mb-12">
-  {featureCards.map((feature, index) => (
-    <motion.div
-      initial={{ x: -50, opacity: 0 }}
-      whileInView={{ x: 0, opacity: 1 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5, delay: index * 0.3 }}
-      key={index}
-    >
-      <div className="bg-white/5 h-auto sm:h-40 rounded-2xl p-4 sm:p-6 border border-white/10 hover:bg-white/10 transition-all duration-300">
-        <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
-          <Image
-            src={feature.icon}
-            alt={feature.title}
-            width={32}
-            height={32}
-            className="w-14 sm:w-16 h-14 sm:h-16 brightness-0 invert"
-          />
-          <div className="flex-1">
-            <h3 className={`text-lg sm:text-xl font-bold mb-2 ${feature.textColor}`}>
-              {feature.title}
-            </h3>
-            <ul className="text-gray-300 space-y-1 text-sm sm:text-base">
-              {feature.benefits.map((benefit, idx) => (
-                <li key={idx}>{benefit}</li>
-              ))}
-            </ul>
+            {featureCards.map((feature, index) => (
+              <motion.div
+                initial={{ x: -50, opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.3 }}
+                key={index}
+              >
+                <div className="bg-white/5 h-auto sm:h-40 rounded-2xl p-4 sm:p-6 border border-white/10 hover:bg-white/10 transition-all duration-300">
+                  <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+                    <Image
+                      src={feature.icon}
+                      alt={feature.title}
+                      width={32}
+                      height={32}
+                      className="w-14 sm:w-16 h-14 sm:h-16 brightness-0 invert"
+                    />
+                    <div className="flex-1">
+                      <h3 className={`text-lg sm:text-xl font-bold mb-2 ${feature.textColor}`}>
+                        {feature.title}
+                      </h3>
+                      <ul className="text-zinc-300 space-y-1 text-sm sm:text-base">
+                        {feature.benefits.map((benefit, idx) => (
+                          <li key={idx}>{benefit}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
           </div>
-        </div>
-      </div>
-    </motion.div>
-  ))}
-</div>
 
 
           {/* Recommended */}
@@ -247,13 +247,13 @@ const CliffDriveClearLenses = () => {
               <table className="w-full text-left">
                 <thead>
                   <tr className="border-b border-gray-600">
-                    <th className="py-4 px-4 text-gray-300 font-semibold">INDEX</th>
+                    <th className="py-4 px-4 text-zinc-300 font-semibold">INDEX</th>
                     <th className="py-4 px-4 text-center">
                       <div className="bg-gradient-to-r from-gray-700 to-gray-600 text-white px-4 py-2 rounded-lg font-bold">
                         POWER RANGE
                       </div>
                     </th>
-                    <th className="py-4 px-4 text-gray-300 font-semibold text-right">MRP</th>
+                    <th className="py-4 px-4 text-zinc-300 font-semibold text-right">MRP</th>
                   </tr>
                   <tr className="border-b border-gray-600">
                     <th></th>
@@ -275,8 +275,8 @@ const CliffDriveClearLenses = () => {
                     <td className="py-4 px-4 text-white font-medium">1.60</td>
                     <td className="py-4 px-4">
                       <div className="grid grid-cols-2 gap-2 text-center">
-                        <div className="text-gray-300">0.00 to -8.00</div>
-                        <div className="text-gray-300">0.00 to -2.00</div>
+                        <div className="text-zinc-300">0.00 to -8.00</div>
+                        <div className="text-zinc-300">0.00 to -2.00</div>
                       </div>
                     </td>
                     <td className="py-4 px-4 text-right">
@@ -286,7 +286,7 @@ const CliffDriveClearLenses = () => {
                 </tbody>
               </table>
             </div>
-            <div className="mt-4 text-sm text-gray-400 text-center">
+            <div className="mt-4 text-sm text-zinc-400 text-center">
               All listed powers are resultant; cross-compound is not available.
             </div>
           </div>

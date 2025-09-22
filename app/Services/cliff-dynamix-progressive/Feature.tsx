@@ -125,7 +125,7 @@ const Feature = () => {
                             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-3 text-center relative z-10">
                                 Technology
                             </h2>
-                            <p className="text-gray-400 text-sm sm:text-base text-center relative z-10 max-w-[450px] mx-auto">
+                            <p className="text-zinc-400 text-sm sm:text-base text-center relative z-10 max-w-[450px] mx-auto">
                                 Balanced Process Design, Continuum Design Technology, Wear Fit Customization, and AdaptEase Technology.
                             </p>
                         </div>
@@ -145,7 +145,7 @@ const Feature = () => {
                             <div key={i} className="text-center border border-gray-600 hover:border-gray-400 bg-[#161617] w-[250px] sm:w-[220px] md:w-[250px] p-4 rounded-md transition-all duration-300 ease-in-out max-h-[300px]">
                                 <img src={item.src} alt={item.title} className="w-16 sm:w-20 h-16 sm:h-20 mx-auto mb-4" />
                                 <h3 className="font-bold text-lg sm:text-xl text-white mb-2">{item.title}</h3>
-                                <p className="text-gray-300 text-sm sm:text-base">{item.desc}</p>
+                                <p className="text-zinc-300 text-sm sm:text-base">{item.desc}</p>
                             </div>
                         ))}
                     </div>
@@ -166,7 +166,7 @@ const Feature = () => {
                             <div key={i} className="text-center border border-gray-600 hover:border-gray-400 bg-[#161617] w-[250px] sm:w-[220px] md:w-[250px] p-4 rounded-md transition-all duration-300 ease-in-out">
                                 <img src={item.src} alt={item.title} className="w-16 sm:w-20 h-16 sm:h-20 mx-auto mb-4" />
                                 <h3 className="font-bold text-lg sm:text-xl text-white mb-2">{item.title}</h3>
-                                <p className="text-gray-300 text-sm sm:text-base">{item.desc}</p>
+                                <p className="text-zinc-300 text-sm sm:text-base">{item.desc}</p>
                             </div>
                         ))}
                     </div>
@@ -190,7 +190,7 @@ const Feature = () => {
                             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-3 text-center relative z-20">
                                 Benefits
                             </h2>
-                            <p className="text-gray-400 text-sm sm:text-base text-center relative max-w-[450px] mx-auto z-20 px-4">
+                            <p className="text-zinc-400 text-sm sm:text-base text-center relative max-w-[450px] mx-auto z-20 px-4">
                                 Superior Vision at all distance, Ultra Clarity, Optimized Fit, Ease of Adaptation
                             </p>
                         </div>

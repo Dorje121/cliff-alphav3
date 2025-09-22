@@ -43,26 +43,26 @@ const blogPosts: Record<number, BlogPost> = {
       "Discover how our latest lens innovations are transforming the way people see the world, with cutting-edge technology that adapts to every lifestyle.",
     content: `
       <div class="prose prose-lg prose-invert max-w-none">
-        <p class="text-xl leading-relaxed text-gray-300 mb-8">
+        <p class="text-xl leading-relaxed text-zinc-300 mb-8">
           The world of vision correction is undergoing a revolutionary transformation. With advances in materials science, digital manufacturing, and personalized medicine, we're witnessing the emergence of lens technologies that seemed impossible just a decade ago.
         </p>
 
         <h2 class="text-3xl font-bold text-white mt-12 mb-6">Adaptive Intelligence in Every Lens</h2>
-        <p class="text-gray-300 leading-relaxed mb-6">
+        <p class="text-zinc-300 leading-relaxed mb-6">
           Our latest generation of smart lenses incorporates micro-sensors that continuously monitor environmental conditions and adjust accordingly. Whether you're transitioning from indoor lighting to bright sunlight, or moving between different visual tasks, these lenses adapt in real-time to provide optimal visual comfort.
         </p>
 
-        <blockquote class="border-l-4 border-blue-500 pl-6 my-8 italic text-lg text-gray-300">
+        <blockquote class="border-l-4 border-blue-500 pl-6 my-8 italic text-lg text-zinc-300">
           "The future of vision correction isn't just about seeing clearly – it's about seeing intelligently."
         </blockquote>
 
         <h2 class="text-3xl font-bold text-white mt-12 mb-6">Personalized Visual Experiences</h2>
-        <p class="text-gray-300 leading-relaxed mb-6">
+        <p class="text-zinc-300 leading-relaxed mb-6">
           Using advanced biometric analysis and AI-driven customization, we can now create lenses that are uniquely tailored to each individual's visual patterns, lifestyle, and physiological characteristics. This level of personalization was unimaginable in traditional lens manufacturing.
         </p>
 
         <h3 class="text-2xl font-semibold text-white mt-10 mb-4">Key Innovations Include:</h3>
-        <ul class="list-disc list-inside space-y-3 text-gray-300 mb-8">
+        <ul class="list-disc list-inside space-y-3 text-zinc-300 mb-8">
           <li>Dynamic focal adjustment based on gaze tracking</li>
           <li>Automatic blue light filtering that adapts to screen time</li>
           <li>Enhanced contrast in low-light conditions</li>
@@ -71,20 +71,20 @@ const blogPosts: Record<number, BlogPost> = {
         </ul>
 
         <h2 class="text-3xl font-bold text-white mt-12 mb-6">The Science Behind the Innovation</h2>
-        <p class="text-gray-300 leading-relaxed mb-6">
+        <p class="text-zinc-300 leading-relaxed mb-6">
           Our research team has spent over five years developing proprietary materials that can change their optical properties in response to various stimuli. These smart materials are embedded at the molecular level, ensuring durability while maintaining the highest optical clarity.
         </p>
 
-        <p class="text-gray-300 leading-relaxed mb-6">
+        <p class="text-zinc-300 leading-relaxed mb-6">
           The manufacturing process involves precision layering techniques that build up the lens structure atom by atom, allowing for unprecedented control over the final optical properties. This level of precision ensures that each lens delivers consistent performance across its entire surface area.
         </p>
 
         <h2 class="text-3xl font-bold text-white mt-12 mb-6">Looking to the Future</h2>
-        <p class="text-gray-300 leading-relaxed mb-6">
+        <p class="text-zinc-300 leading-relaxed mb-6">
           As we continue to push the boundaries of what's possible in vision correction, we're exploring technologies like augmented reality integration, health monitoring capabilities, and even more advanced adaptive features that will make these lenses true extensions of human visual capability.
         </p>
 
-        <p class="text-gray-300 leading-relaxed">
+        <p class="text-zinc-300 leading-relaxed">
           The future of vision is not just about correction – it's about enhancement, intelligence, and creating a seamless interface between human vision and the digital world around us.
         </p>
       </div>
@@ -104,17 +104,17 @@ const blogPosts: Record<number, BlogPost> = {
       "Everything you need to know about progressive lenses, from benefits to choosing the right type for your needs.",
     content: `
       <div class="prose prose-lg prose-invert max-w-none">
-        <p class="text-xl leading-relaxed text-gray-300 mb-8">
+        <p class="text-xl leading-relaxed text-zinc-300 mb-8">
           Progressive lenses represent one of the most significant advances in vision correction technology, offering a seamless solution for those who need multiple vision corrections in a single lens.
         </p>
 
         <h2 class="text-3xl font-bold text-white mt-12 mb-6">Understanding Progressive Lenses</h2>
-        <p class="text-gray-300 leading-relaxed mb-6">
+        <p class="text-zinc-300 leading-relaxed mb-6">
           Unlike traditional bifocals or trifocals, progressive lenses provide a smooth transition between different vision zones, eliminating the visible lines that can be both aesthetically unappealing and functionally limiting.
         </p>
 
         <h3 class="text-2xl font-semibold text-white mt-10 mb-4">Benefits of Progressive Lenses:</h3>
-        <ul class="list-disc list-inside space-y-3 text-gray-300 mb-8">
+        <ul class="list-disc list-inside space-y-3 text-zinc-300 mb-8">
           <li>Seamless vision at all distances</li>
           <li>Natural appearance without visible lines</li>
           <li>Reduced eye strain during computer work</li>
@@ -122,7 +122,7 @@ const blogPosts: Record<number, BlogPost> = {
           <li>Age-appropriate vision correction</li>
         </ul>
 
-        <p class="text-gray-300 leading-relaxed">
+        <p class="text-zinc-300 leading-relaxed">
           Modern progressive lens technology has evolved to address the specific visual challenges of our digital age, providing optimal solutions for both traditional tasks and modern screen-based activities.
         </p>
       </div>
@@ -142,26 +142,26 @@ const blogPosts: Record<number, BlogPost> = {
       "Discover how our latest lens innovations are transforming the way people see the world, with cutting-edge technology that adapts to every lifestyle.",
     content: `
       <div class="prose prose-lg prose-invert max-w-none">
-        <p class="text-xl leading-relaxed text-gray-300 mb-8">
+        <p class="text-xl leading-relaxed text-zinc-300 mb-8">
           The world of vision correction is undergoing a revolutionary transformation. With advances in materials science, digital manufacturing, and personalized medicine, we're witnessing the emergence of lens technologies that seemed impossible just a decade ago.
         </p>
 
         <h2 class="text-3xl font-bold text-white mt-12 mb-6">Adaptive Intelligence in Every Lens</h2>
-        <p class="text-gray-300 leading-relaxed mb-6">
+        <p class="text-zinc-300 leading-relaxed mb-6">
           Our latest generation of smart lenses incorporates micro-sensors that continuously monitor environmental conditions and adjust accordingly. Whether you're transitioning from indoor lighting to bright sunlight, or moving between different visual tasks, these lenses adapt in real-time to provide optimal visual comfort.
         </p>
 
-        <blockquote class="border-l-4 border-blue-500 pl-6 my-8 italic text-lg text-gray-300">
+        <blockquote class="border-l-4 border-blue-500 pl-6 my-8 italic text-lg text-zinc-300">
           "The future of vision correction isn't just about seeing clearly – it's about seeing intelligently."
         </blockquote>
 
         <h2 class="text-3xl font-bold text-white mt-12 mb-6">Personalized Visual Experiences</h2>
-        <p class="text-gray-300 leading-relaxed mb-6">
+        <p class="text-zinc-300 leading-relaxed mb-6">
           Using advanced biometric analysis and AI-driven customization, we can now create lenses that are uniquely tailored to each individual's visual patterns, lifestyle, and physiological characteristics. This level of personalization was unimaginable in traditional lens manufacturing.
         </p>
 
         <h3 class="text-2xl font-semibold text-white mt-10 mb-4">Key Innovations Include:</h3>
-        <ul class="list-disc list-inside space-y-3 text-gray-300 mb-8">
+        <ul class="list-disc list-inside space-y-3 text-zinc-300 mb-8">
           <li>Dynamic focal adjustment based on gaze tracking</li>
           <li>Automatic blue light filtering that adapts to screen time</li>
           <li>Enhanced contrast in low-light conditions</li>
@@ -170,20 +170,20 @@ const blogPosts: Record<number, BlogPost> = {
         </ul>
 
         <h2 class="text-3xl font-bold text-white mt-12 mb-6">The Science Behind the Innovation</h2>
-        <p class="text-gray-300 leading-relaxed mb-6">
+        <p class="text-zinc-300 leading-relaxed mb-6">
           Our research team has spent over five years developing proprietary materials that can change their optical properties in response to various stimuli. These smart materials are embedded at the molecular level, ensuring durability while maintaining the highest optical clarity.
         </p>
 
-        <p class="text-gray-300 leading-relaxed mb-6">
+        <p class="text-zinc-300 leading-relaxed mb-6">
           The manufacturing process involves precision layering techniques that build up the lens structure atom by atom, allowing for unprecedented control over the final optical properties. This level of precision ensures that each lens delivers consistent performance across its entire surface area.
         </p>
 
         <h2 class="text-3xl font-bold text-white mt-12 mb-6">Looking to the Future</h2>
-        <p class="text-gray-300 leading-relaxed mb-6">
+        <p class="text-zinc-300 leading-relaxed mb-6">
           As we continue to push the boundaries of what's possible in vision correction, we're exploring technologies like augmented reality integration, health monitoring capabilities, and even more advanced adaptive features that will make these lenses true extensions of human visual capability.
         </p>
 
-        <p class="text-gray-300 leading-relaxed">
+        <p class="text-zinc-300 leading-relaxed">
           The future of vision is not just about correction – it's about enhancement, intelligence, and creating a seamless interface between human vision and the digital world around us.
         </p>
       </div>
@@ -203,26 +203,26 @@ const blogPosts: Record<number, BlogPost> = {
       "Discover how our latest lens innovations are transforming the way people see the world, with cutting-edge technology that adapts to every lifestyle.",
     content: `
       <div class="prose prose-lg prose-invert max-w-none">
-        <p class="text-xl leading-relaxed text-gray-300 mb-8">
+        <p class="text-xl leading-relaxed text-zinc-300 mb-8">
           The world of vision correction is undergoing a revolutionary transformation. With advances in materials science, digital manufacturing, and personalized medicine, we're witnessing the emergence of lens technologies that seemed impossible just a decade ago.
         </p>
 
         <h2 class="text-3xl font-bold text-white mt-12 mb-6">Adaptive Intelligence in Every Lens</h2>
-        <p class="text-gray-300 leading-relaxed mb-6">
+        <p class="text-zinc-300 leading-relaxed mb-6">
           Our latest generation of smart lenses incorporates micro-sensors that continuously monitor environmental conditions and adjust accordingly. Whether you're transitioning from indoor lighting to bright sunlight, or moving between different visual tasks, these lenses adapt in real-time to provide optimal visual comfort.
         </p>
 
-        <blockquote class="border-l-4 border-blue-500 pl-6 my-8 italic text-lg text-gray-300">
+        <blockquote class="border-l-4 border-blue-500 pl-6 my-8 italic text-lg text-zinc-300">
           "The future of vision correction isn't just about seeing clearly – it's about seeing intelligently."
         </blockquote>
 
         <h2 class="text-3xl font-bold text-white mt-12 mb-6">Personalized Visual Experiences</h2>
-        <p class="text-gray-300 leading-relaxed mb-6">
+        <p class="text-zinc-300 leading-relaxed mb-6">
           Using advanced biometric analysis and AI-driven customization, we can now create lenses that are uniquely tailored to each individual's visual patterns, lifestyle, and physiological characteristics. This level of personalization was unimaginable in traditional lens manufacturing.
         </p>
 
         <h3 class="text-2xl font-semibold text-white mt-10 mb-4">Key Innovations Include:</h3>
-        <ul class="list-disc list-inside space-y-3 text-gray-300 mb-8">
+        <ul class="list-disc list-inside space-y-3 text-zinc-300 mb-8">
           <li>Dynamic focal adjustment based on gaze tracking</li>
           <li>Automatic blue light filtering that adapts to screen time</li>
           <li>Enhanced contrast in low-light conditions</li>
@@ -231,20 +231,20 @@ const blogPosts: Record<number, BlogPost> = {
         </ul>
 
         <h2 class="text-3xl font-bold text-white mt-12 mb-6">The Science Behind the Innovation</h2>
-        <p class="text-gray-300 leading-relaxed mb-6">
+        <p class="text-zinc-300 leading-relaxed mb-6">
           Our research team has spent over five years developing proprietary materials that can change their optical properties in response to various stimuli. These smart materials are embedded at the molecular level, ensuring durability while maintaining the highest optical clarity.
         </p>
 
-        <p class="text-gray-300 leading-relaxed mb-6">
+        <p class="text-zinc-300 leading-relaxed mb-6">
           The manufacturing process involves precision layering techniques that build up the lens structure atom by atom, allowing for unprecedented control over the final optical properties. This level of precision ensures that each lens delivers consistent performance across its entire surface area.
         </p>
 
         <h2 class="text-3xl font-bold text-white mt-12 mb-6">Looking to the Future</h2>
-        <p class="text-gray-300 leading-relaxed mb-6">
+        <p class="text-zinc-300 leading-relaxed mb-6">
           As we continue to push the boundaries of what's possible in vision correction, we're exploring technologies like augmented reality integration, health monitoring capabilities, and even more advanced adaptive features that will make these lenses true extensions of human visual capability.
         </p>
 
-        <p class="text-gray-300 leading-relaxed">
+        <p class="text-zinc-300 leading-relaxed">
           The future of vision is not just about correction – it's about enhancement, intelligence, and creating a seamless interface between human vision and the digital world around us.
         </p>
       </div>
@@ -264,26 +264,26 @@ const blogPosts: Record<number, BlogPost> = {
       "Discover how our latest lens innovations are transforming the way people see the world, with cutting-edge technology that adapts to every lifestyle.",
     content: `
       <div class="prose prose-lg prose-invert max-w-none">
-        <p class="text-xl leading-relaxed text-gray-300 mb-8">
+        <p class="text-xl leading-relaxed text-zinc-300 mb-8">
           The world of vision correction is undergoing a revolutionary transformation. With advances in materials science, digital manufacturing, and personalized medicine, we're witnessing the emergence of lens technologies that seemed impossible just a decade ago.
         </p>
 
         <h2 class="text-3xl font-bold text-white mt-12 mb-6">Adaptive Intelligence in Every Lens</h2>
-        <p class="text-gray-300 leading-relaxed mb-6">
+        <p class="text-zinc-300 leading-relaxed mb-6">
           Our latest generation of smart lenses incorporates micro-sensors that continuously monitor environmental conditions and adjust accordingly. Whether you're transitioning from indoor lighting to bright sunlight, or moving between different visual tasks, these lenses adapt in real-time to provide optimal visual comfort.
         </p>
 
-        <blockquote class="border-l-4 border-blue-500 pl-6 my-8 italic text-lg text-gray-300">
+        <blockquote class="border-l-4 border-blue-500 pl-6 my-8 italic text-lg text-zinc-300">
           "The future of vision correction isn't just about seeing clearly – it's about seeing intelligently."
         </blockquote>
 
         <h2 class="text-3xl font-bold text-white mt-12 mb-6">Personalized Visual Experiences</h2>
-        <p class="text-gray-300 leading-relaxed mb-6">
+        <p class="text-zinc-300 leading-relaxed mb-6">
           Using advanced biometric analysis and AI-driven customization, we can now create lenses that are uniquely tailored to each individual's visual patterns, lifestyle, and physiological characteristics. This level of personalization was unimaginable in traditional lens manufacturing.
         </p>
 
         <h3 class="text-2xl font-semibold text-white mt-10 mb-4">Key Innovations Include:</h3>
-        <ul class="list-disc list-inside space-y-3 text-gray-300 mb-8">
+        <ul class="list-disc list-inside space-y-3 text-zinc-300 mb-8">
           <li>Dynamic focal adjustment based on gaze tracking</li>
           <li>Automatic blue light filtering that adapts to screen time</li>
           <li>Enhanced contrast in low-light conditions</li>
@@ -292,20 +292,20 @@ const blogPosts: Record<number, BlogPost> = {
         </ul>
 
         <h2 class="text-3xl font-bold text-white mt-12 mb-6">The Science Behind the Innovation</h2>
-        <p class="text-gray-300 leading-relaxed mb-6">
+        <p class="text-zinc-300 leading-relaxed mb-6">
           Our research team has spent over five years developing proprietary materials that can change their optical properties in response to various stimuli. These smart materials are embedded at the molecular level, ensuring durability while maintaining the highest optical clarity.
         </p>
 
-        <p class="text-gray-300 leading-relaxed mb-6">
+        <p class="text-zinc-300 leading-relaxed mb-6">
           The manufacturing process involves precision layering techniques that build up the lens structure atom by atom, allowing for unprecedented control over the final optical properties. This level of precision ensures that each lens delivers consistent performance across its entire surface area.
         </p>
 
         <h2 class="text-3xl font-bold text-white mt-12 mb-6">Looking to the Future</h2>
-        <p class="text-gray-300 leading-relaxed mb-6">
+        <p class="text-zinc-300 leading-relaxed mb-6">
           As we continue to push the boundaries of what's possible in vision correction, we're exploring technologies like augmented reality integration, health monitoring capabilities, and even more advanced adaptive features that will make these lenses true extensions of human visual capability.
         </p>
 
-        <p class="text-gray-300 leading-relaxed">
+        <p class="text-zinc-300 leading-relaxed">
           The future of vision is not just about correction – it's about enhancement, intelligence, and creating a seamless interface between human vision and the digital world around us.
         </p>
       </div>
@@ -376,7 +376,7 @@ export default function BlogPost() {
       <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black text-white flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-4xl font-bold mb-4">Article Not Found</h1>
-          <p className="text-gray-400 mb-8">
+          <p className="text-zinc-400 mb-8">
             The article you&apos;re looking for doesn&apos;t exist.
           </p>
           <TransitionLink
@@ -413,7 +413,7 @@ export default function BlogPost() {
           <div className="max-w-5xl mx-auto">
             <TransitionLink
               href="/Blogs"
-              className="inline-flex items-center gap-2 text-gray-400 hover:text-white transition-colors duration-300"
+              className="inline-flex items-center gap-2 text-zinc-400 hover:text-white transition-colors duration-300"
             >
               <ArrowLeft size={20} />
               Back to Blogs
@@ -430,7 +430,7 @@ export default function BlogPost() {
                 <span className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm font-medium">
                   {post.category}
                 </span>
-                <div className="flex items-center gap-4 text-sm text-gray-400">
+                <div className="flex items-center gap-4 text-sm text-zinc-400">
                   <div className="flex items-center gap-1">
                     <Calendar size={16} />
                     {formatDate(post.date)}
@@ -448,7 +448,7 @@ export default function BlogPost() {
               </h1>
 
               {/* Excerpt */}
-              <p className="text-xl text-gray-300 leading-relaxed mb-8">
+              <p className="text-xl text-zinc-300 leading-relaxed mb-8">
                 {post.excerpt}
               </p>
 
@@ -459,7 +459,7 @@ export default function BlogPost() {
                 </div>
                 <div>
                   <p className="font-medium text-white">By {post.author}</p>
-                  <p className="text-sm text-gray-400">
+                  <p className="text-sm text-zinc-400">
                     Vision Technology Expert
                   </p>
                 </div>
@@ -504,7 +504,7 @@ export default function BlogPost() {
                     {post.tags.map((tag, index) => (
                       <span
                         key={index}
-                        className="px-3 py-1 bg-gray-800 text-gray-300 rounded-full text-sm hover:bg-gray-700 transition-colors cursor-pointer"
+                        className="px-3 py-1 bg-gray-800 text-zinc-300 rounded-full text-sm hover:bg-gray-700 transition-colors cursor-pointer"
                       >
                         #{tag}
                       </span>
@@ -537,15 +537,15 @@ export default function BlogPost() {
                     </div>
                     <div className="space-y-3 text-sm">
                       <div className="flex justify-between">
-                        <span className="text-gray-400">Read time:</span>
+                        <span className="text-zinc-400">Read time:</span>
                         <span>{post.readTime}</span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-gray-400">Views:</span>
+                        <span className="text-zinc-400">Views:</span>
                         <span>{post.views.toLocaleString()}</span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-gray-400">Published:</span>
+                        <span className="text-zinc-400">Published:</span>
                         <span>{formatDate(post.date)}</span>
                       </div>
                     </div>
@@ -567,7 +567,7 @@ export default function BlogPost() {
                             <h4 className="font-medium text-sm group-hover:text-blue-300 transition-colors line-clamp-2">
                               {relatedPost.title}
                             </h4>
-                            <p className="text-xs text-gray-400 mt-1">
+                            <p className="text-xs text-zinc-400 mt-1">
                               {relatedPost.readTime}
                             </p>
                           </TransitionLink>

@@ -67,7 +67,7 @@ const Feature = () => {
             Cliff <span className="italic text-yellow-400">Lens</span> Crafted
             Just For You
           </h1>
-          <p className="text-lg text-gray-400 max-w-2xl mx-auto">
+          <p className="text-lg text-zinc-400 max-w-2xl mx-auto">
             New and expertly crafted eyewear frames of the season
           </p>
         </header>

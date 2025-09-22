@@ -23,7 +23,7 @@ const Lenstable = () => {
                      bg-clip-text text-transparent">
                 Lens Specifications
             </h2>
-            <p className="text-lg text-center text-gray-300 mb-8">
+            <p className="text-lg text-center text-zinc-300 mb-8">
                 Complete technical specifications for all lens types
             </p>
 
@@ -61,7 +61,7 @@ const Lenstable = () => {
                 </div>
             </div>
 
-            <div className="mt-4 flex flex-col sm:flex-row justify-between w-full max-w-6xl text-gray-400 text-xs px-2">
+            <div className="mt-4 flex flex-col sm:flex-row justify-between w-full max-w-6xl text-zinc-400 text-xs px-2">
                 <p>Power mentioned is resultant power.</p>
                 <p>Addition: +1.00 to +3.00</p>
             </div>

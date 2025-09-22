@@ -80,7 +80,7 @@ const FontDemo: React.FC = () => {
             <h3 className="font-playfair text-2xl font-semibold mb-2 italic">
               Stylish Subheading
             </h3>
-            <p className="font-dm-sans text-sm text-gray-300">
+            <p className="font-dm-sans text-sm text-zinc-300">
               DM Sans is perfect for smaller text and UI elements, while
               Playfair Display excels in headlines and featured content.
             </p>
@@ -97,7 +97,7 @@ const FontDemo: React.FC = () => {
           <h3 className="font-dm-sans text-lg font-semibold mb-2">
             Tailwind Classes:
           </h3>
-          <ul className="font-dm-sans text-sm space-y-1 text-gray-300">
+          <ul className="font-dm-sans text-sm space-y-1 text-zinc-300">
             <li>
               <code className="bg-gray-800 px-2 py-1 rounded">
                 font-dm-sans
@@ -115,7 +115,7 @@ const FontDemo: React.FC = () => {
               - Apply Montserrat font (existing)
             </li>
           </ul>
-          <p className="font-dm-sans text-sm text-gray-300 mt-3">
+          <p className="font-dm-sans text-sm text-zinc-300 mt-3">
             You can also use the CSS custom properties directly:
             <code className="bg-gray-800 px-2 py-1 rounded ml-1">
               font-family-dm-sans

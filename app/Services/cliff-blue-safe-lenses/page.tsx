@@ -10,7 +10,7 @@ const LensTimelineSection = () => {
   const [currentImage, setCurrentImage] = useState(0);
   const timelineRef = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLDivElement>(null);
-  
+
   const features = [
     {
       id: 1,
@@ -32,25 +32,25 @@ const LensTimelineSection = () => {
       desc: "Powered by Seecoat™ Next for a whole new level of lens protection and durability, tested and proven to withstand daily wear and tear.",
       active: false,
       image: "/newimage/img.avif"
-    
+
     },
   ];
 
   useLayoutEffect(() => {
     // Only run on client side
     if (typeof window === 'undefined') return;
-    
+
     const handleScroll = () => {
       if (!timelineRef.current) return;
-      
+
       const timelineItems = timelineRef.current.querySelectorAll('[data-timeline-item]');
       const scrollPosition = window.scrollY + window.innerHeight / 2;
-      
+
       timelineItems.forEach((item, index) => {
         const rect = item.getBoundingClientRect();
         const itemTop = rect.top + window.scrollY;
         const itemBottom = rect.bottom + window.scrollY;
-        
+
         if (scrollPosition >= itemTop && scrollPosition <= itemBottom) {
           setCurrentImage(index);
         }
@@ -61,7 +61,7 @@ const LensTimelineSection = () => {
         const timelineRect = timelineRef.current.getBoundingClientRect();
         const imageHeight = 320; // w-80 h-80 = 320px
         const offset = 128; // top-32 = 128px
-        
+
         if (timelineRect.top <= offset && timelineRect.bottom > offset + imageHeight) {
           // Image should be fixed
           imageRef.current.style.position = 'fixed';
@@ -82,7 +82,7 @@ const LensTimelineSection = () => {
 
     window.addEventListener('scroll', handleScroll);
     handleScroll(); // Initial check
-    
+
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -93,19 +93,19 @@ const LensTimelineSection = () => {
         <div className="flex justify-center">
           <div className="sticky top-32 h-fit z-20">
             <motion.div
-            key={currentImage}
-            className="relative w-80 h-80 rounded-2xl shadow-2xl "
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5 }}
-          >
-            <Image
-              src={features[currentImage].image}
-              alt="Lens Protection"
-              fill
-              className="object-cover rounded-2xl"
-            />
-          </motion.div>
+              key={currentImage}
+              className="relative w-80 h-80 rounded-2xl shadow-2xl "
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5 }}
+            >
+              <Image
+                src={features[currentImage].image}
+                alt="Lens Protection"
+                fill
+                className="object-cover rounded-2xl"
+              />
+            </motion.div>
           </div>
         </div>
 
@@ -120,25 +120,23 @@ const LensTimelineSection = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
                 viewport={{ once: true, amount: 0.4 }}
-                className={`relative p-6 rounded-xl shadow-lg border transition-all duration-300 ${
-                  currentImage === index
-                    ? "bg-yellow-500/10 border-yellow-500/40"
-                    : "bg-zinc-900/80 border-zinc-800 hover:bg-zinc-800"
-                }`}
+                className={`relative p-6 rounded-xl shadow-lg border transition-all duration-300 ${currentImage === index
+                  ? "bg-yellow-500/10 border-yellow-500/40"
+                  : "bg-zinc-900/80 border-zinc-800 hover:bg-zinc-800"
+                  }`}
               >
                 {/* Timeline Dot */}
                 <span
-                  className={`absolute -left-12 top-6 w-4 h-4 rounded-full border-2 ${
-                    currentImage === index
-                      ? "bg-yellow-500 border-yellow-500 shadow-yellow-500/70 shadow-lg"
-                      : "bg-zinc-700 border-zinc-600"
-                  }`}
+                  className={`absolute -left-12 top-6 w-4 h-4 rounded-full border-2 ${currentImage === index
+                    ? "bg-yellow-500 border-yellow-500 shadow-yellow-500/70 shadow-lg"
+                    : "bg-zinc-700 border-zinc-600"
+                    }`}
                 ></span>
 
                 <h3 className="text-xl font-semibold text-white">
                   {feature.title}
                 </h3>
-                <p className="mt-2 text-gray-400">{feature.desc}</p>
+                <p className="mt-2 text-zinc-400">{feature.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -178,37 +176,37 @@ const CliffBlueSafeLenses = () => {
       id: "scratch",
       icon: "/svgs/scratchresistance.svg",
       title: "Scratch Resistance",
-      
-    },    
+
+    },
     {
       id: "clear",
       icon: "/svgs/clearvision.svg",
       title: "Clear Vision Reduced Reflection",
-     
+
     },
     {
       id: "slippery",
       icon: "/svgs/superslippery.svg",
       title: "Super Hydrophobic Coating",
-     
+
     },
     {
       id: "bluelight",
       icon: "/svgs/bluelight.svg",
       title: "Blue Light Protection",
-     
+
     },
     {
       id: "uv",
       icon: "/svgs/uvprotection.svg",
       title: "UV Protection",
-   
+
     },
     {
       id: "glare",
       icon: "/svgs/glareprotection.svg",
       title: "Glare Protection",
-      
+
     },
   ];
 
@@ -223,26 +221,26 @@ const CliffBlueSafeLenses = () => {
     <>
 
       <HeroSection
-            title="Cliff Blue Safe"
-            subtitle="UV Lenses"
-            description="Complete blue light protection lenses for modern digital lifestyle. Advanced UV filtering technology protects your eyes from harmful blue light emitted by digital screens."
-            backgroundImage="/newimage/alibaba.avif"
-            rightImage="/newimage/alibaba.avif"
-            serviceNumber="04"
-            badgeTitle="2400"
-            badgeSubtitle="MRP"
-          /> 
+        title="Cliff Blue Safe"
+        subtitle="UV Lenses"
+        description="Complete blue light protection lenses for modern digital lifestyle. Advanced UV filtering technology protects your eyes from harmful blue light emitted by digital screens."
+        backgroundImage="/newimage/alibaba.avif"
+        rightImage="/newimage/alibaba.avif"
+        serviceNumber="04"
+        badgeTitle="2400"
+        badgeSubtitle="MRP"
+      />
 
 
       <div className="min-h-screen text-white overflow-visible py-8">
         <div className="relative max-w-[1500px] mx-auto p-4 py-8 sm:py-12 lg:py-16">
-          
+
           <div className="grid lg:grid-cols-3 gap-8 lg:gap-12">
-        
+
             <div className="lg:col-span-2">
-              
+
               <div className="mb-12 pl-2">
-                
+
                 <h1 className="text-4xl sm:text-5xl md:text-6xl mt-2">
                   <span className="text-white">Premium Lens Technology </span>
                 </h1>
@@ -286,7 +284,7 @@ const CliffBlueSafeLenses = () => {
                     {recommendations.map((rec, index) => (
                       <div key={index} className="flex items-center gap-2">
                         <span className="text-yellow-400">•</span>
-                        <span className="text-gray-300 text-sm sm:text-base">
+                        <span className="text-zinc-300 text-sm sm:text-base">
                           {rec}
                         </span>
                       </div>
@@ -351,7 +349,7 @@ const CliffBlueSafeLenses = () => {
                     </table>
                   </div>
 
-                  <p className="text-xs text-gray-400 mt-3 italic">
+                  <p className="text-xs text-zinc-400 mt-3 italic">
                     All listed powers are resultant; cross-compound is not
                     available.
                   </p>
@@ -364,54 +362,54 @@ const CliffBlueSafeLenses = () => {
 
 
       <section>
-        
-          <div className="text-center mb-10 sm:mb-12">
-            <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-white mb-4 leading-snug">
-              <span className="text-white">
-              Enjoy the Purest Light <br /> Your Eyes Deserve 
-              </span>
-            </h2>
-           
-          </div>
-     
+
+        <div className="text-center mb-10 sm:mb-12">
+          <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-white mb-4 leading-snug">
+            <span className="text-white">
+              Enjoy the Purest Light <br /> Your Eyes Deserve
+            </span>
+          </h2>
+
+        </div>
+
         <LensTimelineSection />
       </section>
 
-     
+
 
       {/* Image Section */}
       <div className="relative py-16 sm:py-20 bg-black">
-  <div className="container mx-auto px-4">
-    {/* Heading */}
-    <div className="text-center mb-10 sm:mb-12">
-      <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-white mb-4 leading-snug">
-        <span className="text-white">
-          Advanced Blue Light Protection
-        </span>
-      </h2>
-      <p className="text-sm sm:text-base md:text-xl text-gray-300 max-w-3xl mx-auto px-2">
-        Experience the perfect blend of style and protection with our
-        cutting-edge lens technology
-      </p>
-    </div>
+        <div className="container mx-auto px-4">
+          {/* Heading */}
+          <div className="text-center mb-10 sm:mb-12">
+            <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-white mb-4 leading-snug">
+              <span className="text-white">
+                Advanced Blue Light Protection
+              </span>
+            </h2>
+            <p className="text-sm sm:text-base md:text-xl text-zinc-300 max-w-3xl mx-auto px-2">
+              Experience the perfect blend of style and protection with our
+              cutting-edge lens technology
+            </p>
+          </div>
 
-    {/* Image */}
-    <div className="relative max-w-[1470px] mx-auto w-full">
-      <div className="relative w-full h-[250px] sm:h-[400px] md:h-[550px] lg:h-[700px] rounded-xl overflow-hidden">
-        <Image
-          src="/pageimg/safe.png"
-          alt="Cliff Blue Safe UV Technology"
-          width={1000}
-          height={600}
-          className="w-full h-full object-cover"
-        />
-        {/* Gradient overlays */}
-        <div className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-black via-black/80 to-transparent z-10" />
-        <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-black via-black/80 to-transparent z-10" />
+          {/* Image */}
+          <div className="relative max-w-[1470px] mx-auto w-full">
+            <div className="relative w-full h-[250px] sm:h-[400px] md:h-[550px] lg:h-[700px] rounded-xl overflow-hidden">
+              <Image
+                src="/pageimg/safe.png"
+                alt="Cliff Blue Safe UV Technology"
+                width={1000}
+                height={600}
+                className="w-full h-full object-cover"
+              />
+              {/* Gradient overlays */}
+              <div className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-black via-black/80 to-transparent z-10" />
+              <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-black via-black/80 to-transparent z-10" />
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</div>
 
 
       <BackToServicesButton />

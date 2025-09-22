@@ -41,7 +41,7 @@ const List = () => {
         "Photochromic lenses that adapt to changing light conditions automatically",
       category: "Lenses",
       slug: "cliff-photo-z-lenses",
-      image: "/c4.jpeg",
+      image: "/product/04.jpeg",
     },
     {
       id: "05",
@@ -50,7 +50,7 @@ const List = () => {
         "Specialized lenses optimized for driving and enhanced road visibility",
       category: "Lenses",
       slug: "cliff-drive-clear-lenses",
-      image: "/c5.jpeg",
+      image: "/product/5.jpg",
     },
     {
       id: "06",
@@ -59,7 +59,7 @@ const List = () => {
         "Multi-focal progressive lenses for seamless vision at all distances",
       category: "Progressive",
       slug: "cliff-progressive-versatile",
-      image: "/c6.jpeg",
+      image: "/product/6.jpg",
     },
     {
       id: "07",
@@ -67,7 +67,7 @@ const List = () => {
       description: "Cutting-edge optical technology and innovation solutions",
       category: "Technology",
       slug: "cliff-technology",
-      image: "/c7.jpeg",
+      image: "/product/7.jpg",
     },
     {
       id: "08",
@@ -75,7 +75,7 @@ const List = () => {
       description: "Prescription single vision lenses for clear, focused sight",
       category: "Prescription",
       slug: "cliff-single-vision-rx",
-      image: "/c8.jpeg",
+      image: "/product/8.jpg",
     },
     {
       id: "9",
@@ -84,7 +84,7 @@ const List = () => {
         "Dynamic progressive lenses with superior adaptation and comfort",
       category: "Progressive",
       slug: "cliff-dynamix-progressive",
-      image: "/c9.jpeg",
+      image: "/product/9.jpg",
     },
     {
       id: "10",
@@ -93,7 +93,7 @@ const List = () => {
         "Premium lens series combining style with advanced optical performance",
       category: "Premium",
       slug: "cliff-zenn-series",
-      image: "/ai0.jpg",
+      image: "/product/10.jpg",
     },
     {
       id: "11",
@@ -101,7 +101,7 @@ const List = () => {
       description: "Single vision lenses from the premium Zenn collection",
       category: "Premium",
       slug: "cliff-zenn-single-vision-lenses",
-      image: "/ai1.jpg",
+      image: "/product/11.jpg",
     },
     {
       id: "12",
@@ -110,7 +110,7 @@ const List = () => {
         "Progressive lenses featuring Zenn series advanced technology",
       category: "Premium",
       slug: "cliff-zenn-progressive-lenses",
-      image: "/ai2.jpg",
+      image: "/product/12.jpg",
     },
     {
       id: "13",
@@ -118,7 +118,7 @@ const List = () => {
       description: "Enhanced single vision experience with Zenn technology",
       category: "Premium",
       slug: "cliff-zenn-single-vision",
-      image: "/ai3.jpg",
+      image: "/product/13.jpg",
     },
     {
       id: "14",
@@ -127,7 +127,7 @@ const List = () => {
         "Custom refractive index solutions for optimal lens thickness and clarity",
       category: "Technology",
       slug: "refractive-index",
-      image: "/cliffcoating/reflative-index.png",
+      image: "/product/14.jpg",
     },
     {
       id: "15",
@@ -135,7 +135,7 @@ const List = () => {
       description: "Fashionable tinted lenses with UV protection and style",
       category: "Specialty",
       slug: "cliff-tinted-lenses",
-      image: "/cliffcoating/changable.gif",
+      image: "/product/15.jpg",
     },
     {
       id: "16",
@@ -144,7 +144,7 @@ const List = () => {
         "Professional fitting and measurement services for progressive lenses",
       category: "Services",
       slug: "progressive-measurement-chart",
-      image: "/progreesive.png",
+      image: "/product/16.jpg",
     },
   ];
 
@@ -340,7 +340,7 @@ const List = () => {
                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
 
                       {/* Service Number Overlay - Mobile */}
-                      <div className="absolute top-4 right-4 text-4xl font-bold text-white/30 group-hover:text-amber-400/50 transition-all duration-500">
+                      <div className="absolute top-4 right-4 text-4xl font-bold text-zinc-400 group-hover:text-amber-400/50 transition-all duration-500">
                         {service.id}
                       </div>
                     </div>

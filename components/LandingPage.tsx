@@ -21,8 +21,8 @@ const LandingPage: React.FC<LandingPageProps> = ({ onComplete }) => {
   const lines = [
     "Welcome to Cliff — where vision meets precision.",
     "Our lenses aren't just crafted; they're engineered to protect, enhance, and redefine the way you see the world. From UV 400 protection to crystal-clear optics, every detail is designed with your eyes in mind. Experience comfort, clarity, and confidence — only with Cliff.",
-   
-    
+
+
   ];
 
   useEffect(() => {
@@ -37,18 +37,18 @@ const LandingPage: React.FC<LandingPageProps> = ({ onComplete }) => {
 
     const targetLine = lines[currentLine];
     let currentIndex = 0;
-    
+
     // Different typing speeds for different lines
     const getTypingSpeed = (lineIndex: number) => {
       switch (lineIndex) {
-        case 0: return 80;  
-        case 1: return 60; 
+        case 0: return 80;
+        case 1: return 60;
         default: return 80;
       }
     };
-    
+
     const typingSpeed = getTypingSpeed(currentLine);
-    
+
     const typeInterval = setInterval(() => {
       if (currentIndex <= targetLine.length) {
         const newDisplayedText = [...displayedText];
@@ -59,7 +59,7 @@ const LandingPage: React.FC<LandingPageProps> = ({ onComplete }) => {
         clearInterval(typeInterval);
         setTimeout(() => {
           setCurrentLine(currentLine + 1);
-        }, 300); 
+        }, 300);
       }
     }, typingSpeed);
 
@@ -68,31 +68,31 @@ const LandingPage: React.FC<LandingPageProps> = ({ onComplete }) => {
 
   const startBackgroundAudio = () => {
     console.log('Starting background audio...');
-    
-   
+
+
     const audioPaths = [
-      '/audio/bg.mp3',      
-      '/music.mp3',         
+      '/audio/bg.mp3',
+      '/music.mp3',
 
     ];
-    
+
     let currentPathIndex = 0;
-    
+
     const tryPlayAudio = () => {
       if (currentPathIndex >= audioPaths.length) {
         console.log('All audio paths failed');
         return;
       }
-      
+
       const currentPath = audioPaths[currentPathIndex];
       console.log(`Trying audio path: ${currentPath}`);
-      
+
       const bgAudio = new Audio(currentPath);
       bgAudio.loop = true;
       bgAudio.volume = 0.3;
-      
+
       const playPromise = bgAudio.play();
-      
+
       if (playPromise !== undefined) {
         playPromise.then(() => {
           console.log(`Background audio playing successfully from: ${currentPath}`);
@@ -106,7 +106,7 @@ const LandingPage: React.FC<LandingPageProps> = ({ onComplete }) => {
         });
       }
     };
-    
+
     tryPlayAudio();
   };
 
@@ -137,14 +137,14 @@ const LandingPage: React.FC<LandingPageProps> = ({ onComplete }) => {
 
   const handleSoundPreference = (enableSound: boolean) => {
     setSoundEnabled(enableSound);
-    
- 
+
+
     if (enableSound) {
       setShowWelcomeModal(false);
 
       startBackgroundAudio();
     } else {
-      
+
       if (backgroundAudio) {
         backgroundAudio.pause();
         backgroundAudio.currentTime = 0;
@@ -155,7 +155,7 @@ const LandingPage: React.FC<LandingPageProps> = ({ onComplete }) => {
         mainAudio.currentTime = 0;
         mainAudio.src = '';
       }
-      
+
       const allAudioElements = document.querySelectorAll('audio');
       allAudioElements.forEach(element => {
         const audioElement = element as HTMLAudioElement;
@@ -166,29 +166,29 @@ const LandingPage: React.FC<LandingPageProps> = ({ onComplete }) => {
           element.parentNode.removeChild(element);
         }
       });
-     
+
       setShowAudioContent(true);
       setTimeout(() => {
         setIsFadingOut(true);
         handleLandingComplete();
       }, 1000);
     }
-    
+
     if (enableSound) {
-      
+
       try {
         const audio = new Audio('/audio/audio.wav');
         audio.volume = 0.5;
-        setMainAudio(audio); 
-        
+        setMainAudio(audio);
+
         const playPromise = audio.play();
-        
+
         if (playPromise !== undefined) {
           playPromise.then(() => {
             console.log('Audio playing successfully');
             setAudioPlaying(true);
             setShowAudioContent(true);
-            
+
             audio.onended = () => {
               console.log('Audio finished, starting shutter animation');
               setIsFadingOut(true);
@@ -196,22 +196,22 @@ const LandingPage: React.FC<LandingPageProps> = ({ onComplete }) => {
             };
           }).catch((error: unknown) => {
             console.log('Initial audio play failed:', error);
-            
-          
+
+
             try {
               const audioElement = document.createElement('audio');
               audioElement.src = '/audio/audio.wav';
               audioElement.volume = 0.3;
               document.body.appendChild(audioElement);
-              
-          
+
+
               audioElement.play().then(() => {
                 setAudioPlaying(true);
-                setShowAudioContent(true); 
+                setShowAudioContent(true);
               }).catch((err: unknown) => {
                 console.log('Fallback audio play failed:', err);
               });
-                           
+
               audioElement.onended = () => {
                 console.log('Fallback audio finished, starting shutter animation');
                 document.body.removeChild(audioElement);
@@ -242,17 +242,17 @@ const LandingPage: React.FC<LandingPageProps> = ({ onComplete }) => {
 
   const fadeOutBackgroundAudio = () => {
     if (!backgroundAudio) return;
-    
-    const fadeOutDuration = 2000; 
-    const fadeOutSteps = 50; 
+
+    const fadeOutDuration = 2000;
+    const fadeOutSteps = 50;
     const fadeOutInterval = fadeOutDuration / fadeOutSteps;
     const volumeDecrement = backgroundAudio.volume / fadeOutSteps;
-    
+
     let currentStep = 0;
-    
+
     const fadeOut = () => {
       currentStep++;
-      
+
       if (currentStep <= fadeOutSteps && backgroundAudio) {
         backgroundAudio.volume = Math.max(0, backgroundAudio.volume - volumeDecrement);
         setTimeout(fadeOut, fadeOutInterval);
@@ -264,7 +264,7 @@ const LandingPage: React.FC<LandingPageProps> = ({ onComplete }) => {
         }
       }
     };
-    
+
     fadeOut();
   };
 
@@ -289,19 +289,19 @@ const LandingPage: React.FC<LandingPageProps> = ({ onComplete }) => {
         element.parentNode.removeChild(element);
       }
     });
-    
+
     onComplete?.();
   };
 
   return (
-    <motion.div 
+    <motion.div
       className="min-h-screen bg-black text-white overflow-hidden fixed inset-0 z-[999999999999999]"
       initial={{ y: 0, opacity: 1 }}
-      animate={{ 
+      animate={{
         y: isFadingOut ? '-100vh' : 0
       }}
-      transition={{ 
-        duration: 2, 
+      transition={{
+        duration: 2,
         ease: [0.4, 0, 0.2, 1]
       }}
     >
@@ -317,7 +317,7 @@ const LandingPage: React.FC<LandingPageProps> = ({ onComplete }) => {
           pointer-events: none !important;
         }
       `}</style>
-      
+
       <AnimatePresence>
         {showWelcomeModal && (
           <div
@@ -329,25 +329,25 @@ const LandingPage: React.FC<LandingPageProps> = ({ onComplete }) => {
               <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/20 rounded-full filter blur-3xl animate-pulse delay-1000"></div>
               <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-cyan-500/10 rounded-full filter blur-2xl animate-pulse delay-2000"></div>
             </div>
-            
+
             <div
               className="relative z-10 p-8 max-w-md mx-4 text-center"
             >
               <h2 className="text-2xl font-bold mb-4">Hello, Welcome To CLIFF!</h2>
-              <p className="text-gray-300 mb-6 no-wrap">Would you like to experience the website with sound?</p>
-              
+              <p className="text-zinc-300 mb-6 no-wrap">Would you like to experience the website with sound?</p>
+
               <div className="flex gap-4 justify-center">
                 <motion.button
                   onClick={() => handleSoundPreference(true)}
                   className="px-6 py-3 bg-transparent font-medium cursor-pointer"
-                  whileHover={{ 
+                  whileHover={{
                     scale: 1.05,
                     color: "#FFD700"
                   }}
                   whileTap={{ scale: 0.95 }}
-                  transition={{ 
-                    type: "spring", 
-                    stiffness: 400, 
+                  transition={{
+                    type: "spring",
+                    stiffness: 400,
                     damping: 17,
                     color: { duration: 0.2 }
                   }}
@@ -357,14 +357,14 @@ const LandingPage: React.FC<LandingPageProps> = ({ onComplete }) => {
                 <motion.button
                   onClick={() => handleSoundPreference(false)}
                   className="px-6 py-3 bg-transparent font-medium cursor-pointer"
-                  whileHover={{ 
+                  whileHover={{
                     scale: 1.05,
                     color: "#FF6B6B"
                   }}
                   whileTap={{ scale: 0.95 }}
-                  transition={{ 
-                    type: "spring", 
-                    stiffness: 400, 
+                  transition={{
+                    type: "spring",
+                    stiffness: 400,
                     damping: 17,
                     color: { duration: 0.2 }
                   }}
@@ -376,7 +376,7 @@ const LandingPage: React.FC<LandingPageProps> = ({ onComplete }) => {
           </div>
         )}
       </AnimatePresence>
-      
+
       {/* Animated Background */}
       <div className="absolute inset-0">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/20 rounded-full filter blur-3xl animate-pulse"></div>
@@ -419,42 +419,42 @@ const LandingPage: React.FC<LandingPageProps> = ({ onComplete }) => {
                   <path d="M45.2691 25.8995C42.957 25.8995 41.194 25.3747 39.9803 24.3249C38.7666 23.259 38.1602 21.693 38.1602 19.6265V14.3624C38.1602 12.2963 38.767 10.7381 39.9803 9.68868C41.194 8.62279 42.9567 8.08984 45.2691 8.08984C46.8761 8.08984 48.188 8.36042 49.205 8.90158C50.238 9.42631 51.058 10.2216 51.6648 11.2875L49.1803 13.0095C48.672 12.2224 48.1391 11.6566 47.5815 11.3121C47.0403 10.9677 46.2697 10.7956 45.2691 10.7956C44.0065 10.7956 43.0798 11.099 42.4894 11.7059C41.9154 12.2963 41.6284 13.1819 41.6284 14.3624V19.6265C41.6284 20.8074 41.9154 21.7008 42.4894 22.3077C43.0798 22.8981 44.0061 23.1933 45.2691 23.1933C46.3514 23.1933 47.1878 23.0131 47.7782 22.6522C48.385 22.2748 48.9262 21.6766 49.4016 20.8563L51.8615 22.6764C51.3367 23.4307 50.7956 24.0375 50.238 24.4966C49.6804 24.9556 48.9997 25.3083 48.1962 25.5542C47.4091 25.7838 46.4335 25.8987 45.2691 25.8987V25.8995ZM59.8243 25.6043C57.7254 25.6043 56.2165 25.1452 55.298 24.2267C54.3959 23.3083 53.9451 21.98 53.9451 20.242V8.38543H57.4134V20.242C57.4134 21.144 57.6104 21.8162 58.0038 22.2588C58.3971 22.685 59.004 22.8985 59.8239 22.8985H65.334V25.6043H59.8239H59.8243ZM68.0364 8.38543H71.5047V25.6043H68.0364V8.38543ZM75.0603 13.7477C75.0603 12.0093 75.5357 10.681 76.487 9.76295C77.438 8.84448 79.0044 8.38543 81.1854 8.38543H86.9414V11.0912H81.1854C80.2834 11.0912 79.6112 11.3043 79.1682 11.7309C78.742 12.1571 78.5285 12.8296 78.5285 13.7481V16.134H85.8587V18.8398H78.5285V25.6043H75.0603V13.7477ZM89.2811 13.7477C89.2811 12.0093 89.7566 10.681 90.7079 9.76295C91.6592 8.84448 93.2252 8.38543 95.4062 8.38543H101.162V11.0912H95.4062C94.5042 11.0912 93.8316 11.3043 93.389 11.7309C92.9628 12.1571 92.7493 12.8296 92.7493 13.7481V16.134H100.08V18.8398H92.7493V25.6043H89.2811V13.7477Z" fill="#FFD700" />
                 </svg>
               </motion.div>
-              
+
               {/* Sequential Typewriter Animation */}
               <div className="space-y-4 relative w-full max-w-[44rem] sm:w-[44rem] h-[10rem] sm:h-auto min-h-[12rem] sm:min-h-[14rem] md:min-h-[16rem] lg:min-h-[192px] flex-shrink-0">
-                <p className="text-xl sm:text-2xl font-light text-gray-300">
+                <p className="text-xl sm:text-2xl font-light text-zinc-300">
                   {displayedText[0]}
                   {currentLine === 0 && <span className="ml-1 inline-block w-2 h-8 bg-gray-300 animate-pulse align-middle"></span>}
                 </p>
-                
-                <p className="text-base sm:text-lg text-gray-400 leading-relaxed">
+
+                <p className="text-base sm:text-lg text-zinc-400 leading-relaxed">
                   {displayedText[1]}
                   {currentLine === 1 && <span className="ml-1 inline-block w-2 h-6 bg-gray-400 animate-pulse align-middle"></span>}
                 </p>
 
-              
-                
+
+
               </div>
 
 
               <div className="absolute bottom-8 sm:bottom-12 md:bottom-20 lg:bottom-28 xl:bottom-36 right-4 sm:right-8 md:right-12 lg:right-20 xl:right-32 2xl:right-90 flex items-center gap-3">
-                  {/* Sound Icon Button */}
-                  <button
-                    onClick={() => {
-                      // Toggle sound functionality
-                      if (backgroundAudio) {
-                        if (backgroundAudio.paused) {
-                          backgroundAudio.play();
-                        } else {
-                          backgroundAudio.pause();
-                        }
+                {/* Sound Icon Button */}
+                <button
+                  onClick={() => {
+                    // Toggle sound functionality
+                    if (backgroundAudio) {
+                      if (backgroundAudio.paused) {
+                        backgroundAudio.play();
+                      } else {
+                        backgroundAudio.pause();
                       }
-                    }}
-                    className="flex items-center bg-white/10 backdrop-blur-xl rounded-full justify-center w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-gray-400 hover:text-white transition-colors cursor-pointer"
-                  >
-                    {backgroundAudio && !backgroundAudio.paused ? (
-                      <>
-                        <style>{`
+                    }
+                  }}
+                  className="flex items-center bg-white/10 backdrop-blur-xl rounded-full justify-center w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-zinc-400 hover:text-white transition-colors cursor-pointer"
+                >
+                  {backgroundAudio && !backgroundAudio.paused ? (
+                    <>
+                      <style>{`
                           .sound-line-1,
                           .sound-line-2,
                           .sound-line-3 {
@@ -481,53 +481,53 @@ const LandingPage: React.FC<LandingPageProps> = ({ onComplete }) => {
                             }
                           }
                         `}</style>
-                        <svg className="w-4 h-4 sm:w-5 sm:h-5" viewBox="0 0 10 8" xmlns="http://www.w3.org/2000/svg">
-                          <g transform="translate(0.250000, 0.25000)" stroke="#e0eeee" strokeWidth="0.5" fillRule="evenodd" strokeLinecap="round">
-                            <line x1="6.25" y1="2.5" x2="6.25" y2="6" className="sound-line-1" />
-                            <line x1="4.75" y1="1.5" x2="4.75" y2="6" className="sound-line-2" />
-                            <line x1="3.25" y1="3.5" x2="3.25" y2="6" className="sound-line-3" />
-                          </g>
-                        </svg>
-                      </>
-                    ) : (
-                      <img 
-                        src="audio/sound-mute.svg" 
-                        alt="Sound off" 
-                        className="w-4 h-4 sm:w-5 sm:h-5" 
-                      />
-                    )}
-                  </button>
-                  
-                 
-                  <button
-                    onClick={() => {
-                      if (backgroundAudio) {
-                        backgroundAudio.pause();
-                        backgroundAudio.currentTime = 0;
-                        backgroundAudio.src = '';
+                      <svg className="w-4 h-4 sm:w-5 sm:h-5" viewBox="0 0 10 8" xmlns="http://www.w3.org/2000/svg">
+                        <g transform="translate(0.250000, 0.25000)" stroke="#e0eeee" strokeWidth="0.5" fillRule="evenodd" strokeLinecap="round">
+                          <line x1="6.25" y1="2.5" x2="6.25" y2="6" className="sound-line-1" />
+                          <line x1="4.75" y1="1.5" x2="4.75" y2="6" className="sound-line-2" />
+                          <line x1="3.25" y1="3.5" x2="3.25" y2="6" className="sound-line-3" />
+                        </g>
+                      </svg>
+                    </>
+                  ) : (
+                    <img
+                      src="audio/sound-mute.svg"
+                      alt="Sound off"
+                      className="w-4 h-4 sm:w-5 sm:h-5"
+                    />
+                  )}
+                </button>
+
+
+                <button
+                  onClick={() => {
+                    if (backgroundAudio) {
+                      backgroundAudio.pause();
+                      backgroundAudio.currentTime = 0;
+                      backgroundAudio.src = '';
+                    }
+                    if (mainAudio) {
+                      mainAudio.pause();
+                      mainAudio.currentTime = 0;
+                      mainAudio.src = '';
+                    }
+                    const allAudioElements = document.querySelectorAll('audio');
+                    allAudioElements.forEach(element => {
+                      const audioElement = element as HTMLAudioElement;
+                      audioElement.pause();
+                      audioElement.currentTime = 0;
+                      audioElement.src = '';
+                      if (element.parentNode) {
+                        element.parentNode.removeChild(element);
                       }
-                      if (mainAudio) {
-                        mainAudio.pause();
-                        mainAudio.currentTime = 0;
-                        mainAudio.src = '';
-                      }
-                      const allAudioElements = document.querySelectorAll('audio');
-                      allAudioElements.forEach(element => {
-                        const audioElement = element as HTMLAudioElement;
-                        audioElement.pause();
-                        audioElement.currentTime = 0;
-                        audioElement.src = '';
-                        if (element.parentNode) {
-                          element.parentNode.removeChild(element);
-                        }
-                      });
-                      handleSoundPreference(false);
-                    }}
-                    className="px-4 sm:px-6 py-1 bg-transparent font-medium transition-colors cursor-pointer text-sm sm:text-base"
-                  >
-                    <span className="border-b border-white/50 hover:border-white pb-0.5">Skip</span>
-                  </button>
-                </div>
+                    });
+                    handleSoundPreference(false);
+                  }}
+                  className="px-4 sm:px-6 py-1 bg-transparent font-medium transition-colors cursor-pointer text-sm sm:text-base"
+                >
+                  <span className="border-b border-white/50 hover:border-white pb-0.5">Skip</span>
+                </button>
+              </div>
             </div>
           </motion.div>
         )}

@@ -38,7 +38,7 @@ const Footer = () => {
             <li className="px-1 sm:px-2">
               <Link
                 href="/"
-                className="text-xs sm:text-sm md:text-base font-family-dm-sans text-gray-300 hover:text-[#E1AA12] transition-all duration-300 hover:scale-105 inline-block whitespace-nowrap"
+                className="text-xs sm:text-sm md:text-base font-family-dm-sans text-zinc-300 hover:text-[#E1AA12] transition-all duration-300 hover:scale-105 inline-block whitespace-nowrap"
               >
                 Home
               </Link>
@@ -46,7 +46,7 @@ const Footer = () => {
             <li className="px-1 sm:px-2">
               <Link
                 href="/Services"
-                className="text-xs sm:text-sm md:text-base font-family-dm-sans text-gray-300 hover:text-[#E1AA12] transition-all duration-300 hover:scale-105 inline-block whitespace-nowrap"
+                className="text-xs sm:text-sm md:text-base font-family-dm-sans text-zinc-300 hover:text-[#E1AA12] transition-all duration-300 hover:scale-105 inline-block whitespace-nowrap"
               >
                 Products
               </Link>
@@ -54,7 +54,7 @@ const Footer = () => {
             <li className="px-1 sm:px-2">
               <Link
                 href="/AboutUs"
-                className="text-xs sm:text-sm md:text-base font-family-dm-sans text-gray-300 hover:text-[#E1AA12] transition-all duration-300 hover:scale-105 inline-block whitespace-nowrap"
+                className="text-xs sm:text-sm md:text-base font-family-dm-sans text-zinc-300 hover:text-[#E1AA12] transition-all duration-300 hover:scale-105 inline-block whitespace-nowrap"
               >
                 About Us
               </Link>
@@ -62,7 +62,7 @@ const Footer = () => {
             <li className="px-1 sm:px-2">
               <Link
                 href="/Blogs"
-                className="text-xs sm:text-sm md:text-base font-family-dm-sans text-gray-300 hover:text-[#E1AA12] transition-all duration-300 hover:scale-105 inline-block whitespace-nowrap"
+                className="text-xs sm:text-sm md:text-base font-family-dm-sans text-zinc-300 hover:text-[#E1AA12] transition-all duration-300 hover:scale-105 inline-block whitespace-nowrap"
               >
                 Latest News
               </Link>
@@ -70,7 +70,7 @@ const Footer = () => {
             <li className="px-1 sm:px-2">
               <Link
                 href="/Contact"
-                className="text-xs sm:text-sm md:text-base font-family-dm-sans text-gray-300 hover:text-[#E1AA12] transition-all duration-300 hover:scale-105 inline-block whitespace-nowrap"
+                className="text-xs sm:text-sm md:text-base font-family-dm-sans text-zinc-300 hover:text-[#E1AA12] transition-all duration-300 hover:scale-105 inline-block whitespace-nowrap"
               >
                 Contact
               </Link>
@@ -98,10 +98,10 @@ const Footer = () => {
         {/* Footer Bottom */}
         <div className="w-full py-3 sm:py-4 px-4 sm:px-6 border-t border-white/20 lg:absolute lg:bottom-4 mt-4 sm:mt-6 lg:mt-0">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-2 sm:space-y-4 md:space-y-0 text-center md:text-left">
-            <p className="text-gray-400 font-family-dm-sans text-xs sm:text-sm md:text-base">
+            <p className="text-zinc-400 font-family-dm-sans text-xs sm:text-sm md:text-base">
               © 2025 Cliff Eyewear. All rights reserved.
             </p>
-            <div className="flex flex-col sm:flex-row space-y-1 sm:space-y-0 sm:space-x-4 md:space-x-8 text-xs sm:text-sm md:text-base text-gray-400 font-family-dm-sans">
+            <div className="flex flex-col sm:flex-row space-y-1 sm:space-y-0 sm:space-x-4 md:space-x-8 text-xs sm:text-sm md:text-base text-zinc-400 font-family-dm-sans">
               <Link
                 href="#"
                 className="hover:text-[#E1AA12] transition-colors duration-300 px-2 whitespace-nowrap"

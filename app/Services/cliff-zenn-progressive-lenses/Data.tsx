@@ -67,7 +67,7 @@ const StatsSection: React.FC = () => {
                         <svg viewBox="0 0 36 36" className="transform -rotate-90">
                             {/* Background Circle */}
                             <path
-                                className="text-gray-700"
+                                className="text-zinc-700"
                                 stroke="currentColor"
                                 strokeWidth="3"
                                 fill="none"
@@ -99,7 +99,7 @@ const StatsSection: React.FC = () => {
                     <p className="mt-3 font-semibold text-white text-sm md:text-base">
                         {stat.label}
                     </p>
-                    <p className="text-xs md:text-sm text-gray-400">{stat.subLabel}</p>
+                    <p className="text-xs md:text-sm text-zinc-400">{stat.subLabel}</p>
                 </div>
             ))}
         </section>

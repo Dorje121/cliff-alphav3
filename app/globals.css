@@ -341,7 +341,7 @@ p {
 
 /* Blog Content Styles */
 .prose {
-  @apply text-gray-300 leading-relaxed;
+  @apply text-zinc-300 leading-relaxed;
 }
 
 .prose h1,
