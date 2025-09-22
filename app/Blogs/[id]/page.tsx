@@ -426,6 +426,9 @@ export default function BlogPost() {
 
   const shareUrl = typeof window !== 'undefined' ? window.location.href : '';
 
+
+  // latest
+
   const copyToClipboard = () => {
     navigator.clipboard.writeText(shareUrl);
   };
