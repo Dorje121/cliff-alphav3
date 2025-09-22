@@ -11,7 +11,6 @@ import {
   Eye,
   User,
   Share2,
-  BookOpen,
   Clock,
   Heart,
   Bookmark,
@@ -329,7 +328,6 @@ export default function BlogPost() {
   const parallaxRef = useRef<HTMLDivElement>(null);
   const postId = parseInt(params.id as string);
   const post = blogPosts[postId];
-  const [readingProgress, setReadingProgress] = useState(0);
   const [isLiked, setIsLiked] = useState(false);
   const [isBookmarked, setIsBookmarked] = useState(false);
 
@@ -537,7 +535,7 @@ export default function BlogPost() {
                 <div className="flex items-start gap-4 mb-12 p-6 bg-gradient-to-r from-amber-500/10 to-amber-500/10 border-l-4 border-amber-500 rounded-2xl">
                   <Quote size={24} className="text-amber-400 mt-1 flex-shrink-0" />
                   <blockquote className="text-xl text-zinc-300 italic leading-relaxed">
-                    "The future of vision correction isn't just about seeing clearly – it's about seeing intelligently."
+                    &ldquo;The future of vision correction isn&rsquo;t just about seeing clearly – it&rsquo;s about seeing intelligently.&rdquo;
                   </blockquote>
                 </div>
 

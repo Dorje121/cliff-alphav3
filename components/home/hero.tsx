@@ -14,6 +14,7 @@ const LandingVideo = () => {
         muted
         loop
       />
+      {/* latest changes */}
 
       {/* Dark Overlay */}
       <div className="absolute inset-0 bg-black/50" />

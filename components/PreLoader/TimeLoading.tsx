@@ -86,7 +86,7 @@ const TimeLoading: React.FC<TimeLoadingProps> = ({ isVisible, onComplete }) => {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.4, ease: "easeInOut" }}
-          className="fixed inset-0 z-[9999] bg-slate-900 flex flex-col justify-center items-center overflow-hidden"
+          className="fixed inset-0 z-[9999] bg-black flex flex-col justify-center items-center overflow-hidden"
         >
           {/* Animated Background */}
           <div className="absolute inset-0">
@@ -107,8 +107,7 @@ const TimeLoading: React.FC<TimeLoadingProps> = ({ isVisible, onComplete }) => {
               scale: { duration: 4, repeat: Infinity, ease: "easeInOut" },
             }}
           />
-     {/* deploying */}
-     {/* changes */}
+    
           <motion.div
             className="absolute bottom-8 right-8 w-16 h-16 rounded-full border border-amber-400/5"
             animate={{
