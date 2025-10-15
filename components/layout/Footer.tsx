@@ -16,8 +16,8 @@ const Footer = () => {
         {/* Main Title */}
         <div className="text-center mb-8 sm:mb-12 md:mb-0 w-full sm:w-1/2">
           <TextWithTexture
-            text="STAY IN TOUCH"
-            className="text-xl sm:text-3xl md:text-6xl lg:text-8xl xl:text-9xl mt-4 sm:mt-8 md:mt-8 font-semibold font-family-playfair bg-gradient-to-r from-white via-yellow-100 to-yellow-200 bg-clip-text text-transparent text-center tracking-[0.1rem] sm:tracking-[0.5rem] md:tracking-[1rem] lg:tracking-[1.5rem] xl:tracking-[1.9rem]"
+            text="Partner with us"
+            className="uppercase text-xl sm:text-3xl md:text-5xl lg:text-7xl xl:text-8xl mt-4 sm:mt-8 md:mt-8 font-semibold font-family-playfair bg-gradient-to-r from-white via-yellow-100 to-yellow-200 bg-clip-text text-transparent text-center tracking-[0.1rem] sm:tracking-[0.5rem] md:tracking-[1rem] lg:tracking-[1.5rem] xl:tracking-[1.9rem]"
           />
         </div>
 
@@ -105,7 +105,7 @@ const Footer = () => {
                 href="#"
                 className="hover:text-[#E1AA12] transition-colors duration-300 px-2 whitespace-nowrap"
               >
-                Made in USA
+                {/* Made in USA */}
               </Link>
 
             </div>

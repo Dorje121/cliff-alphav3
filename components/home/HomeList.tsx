@@ -8,26 +8,26 @@ import TextWithTexture from "@/components/textwithgoldentexture";
 
 const HomeList = () => {
   const services = [
+    // {
+    //   id: "01",
+    //   title: "CLIFF COATINGS",
+    //   description:
+    //     "Premium protective coatings for enhanced lens durability and performance",
+    //   category: "Coatings",
+    //   slug: "cliff-coatings",
+    //   image: "/product/01.jpeg",
+    // },
+    // {
+    //   id: "02",
+    //   title: "CLIFF BLUE SAFE COATING",
+    //   description:
+    //     "Advanced blue light filtering coating for digital eye strain protection",
+    //   category: "Coatings",
+    //   slug: "cliff-blue-safe-coating",
+    //   image: "/product/02.jpeg",
+    // },
     {
       id: "01",
-      title: "CLIFF COATINGS",
-      description:
-        "Premium protective coatings for enhanced lens durability and performance",
-      category: "Coatings",
-      slug: "cliff-coatings",
-      image: "/product/01.jpeg",
-    },
-    {
-      id: "02",
-      title: "CLIFF BLUE SAFE COATING",
-      description:
-        "Advanced blue light filtering coating for digital eye strain protection",
-      category: "Coatings",
-      slug: "cliff-blue-safe-coating",
-      image: "/product/02.jpeg",
-    },
-    {
-      id: "03",
       title: "CLIFF BLUE SAFE UV",
       description:
         "Complete blue light protection lenses for modern digital lifestyle",
@@ -36,7 +36,7 @@ const HomeList = () => {
       image: "/product/03.jpeg",
     },
     {
-      id: "04",
+      id: "02",
       title: "CLIFF PHOTO-Z UV",
       description:
         "Photochromic lenses that adapt to changing light conditions automatically",
@@ -45,7 +45,7 @@ const HomeList = () => {
       image: "/product/04.jpeg",
     },
     {
-      id: "05",
+      id: "03",
       title: "CLIFF DRIVE CLEAR LENSES",
       description:
         "Specialized lenses optimized for driving and enhanced road visibility",
@@ -54,7 +54,7 @@ const HomeList = () => {
       image: "/product/5.jpg",
     },
     {
-      id: "06",
+      id: "04",
       title: "CLIFF PROGRESSIVE VERSATILE",
       description:
         "Multi-focal progressive lenses for seamless vision at all distances",
@@ -63,7 +63,7 @@ const HomeList = () => {
       image: "/product/6.jpg",
     },
     {
-      id: "07",
+      id: "05",
       title: "CLIFF TECHNOLOGY",
       description: "Cutting-edge optical technology and innovation solutions",
       category: "Technology",
@@ -71,7 +71,7 @@ const HomeList = () => {
       image: "/product/7.jpg",
     },
     {
-      id: "08",
+      id: "06",
       title: "CLIFF SINGLE VISION RX",
       description: "Prescription single vision lenses for clear, focused sight",
       category: "Prescription",
@@ -79,7 +79,7 @@ const HomeList = () => {
       image: "/product/8.jpg",
     },
     {
-      id: "9",
+      id: "07",
       title: "CLIFF DYNAMIX PROGRESSIVE",
       description:
         "Dynamic progressive lenses with superior adaptation and comfort",
@@ -88,7 +88,7 @@ const HomeList = () => {
       image: "/product/9.jpg",
     },
     {
-      id: "10",
+      id: "08",
       title: "CLIFF ZENN SERIES",
       description:
         "Premium lens series combining style with advanced optical performance",
@@ -97,7 +97,7 @@ const HomeList = () => {
       image: "/product/10.jpg",
     },
     {
-      id: "11",
+      id: "09",
       title: "CLIFF ZENN SINGLE VISION LENSES",
       description: "Single vision lenses from the premium Zenn collection",
       category: "Premium",
@@ -105,7 +105,7 @@ const HomeList = () => {
       image: "/product/11.jpg",
     },
     {
-      id: "12",
+      id: "10",
       title: "CLIFF ZENN PROGRESSIVE LENSES",
       description:
         "Progressive lenses featuring Zenn series advanced technology",
@@ -114,7 +114,7 @@ const HomeList = () => {
       image: "/product/12.jpg",
     },
     {
-      id: "13",
+      id: "11",
       title: "CLIFF ZENN SINGLE VISION",
       description: "Enhanced single vision experience with Zenn technology",
       category: "Premium",
@@ -122,7 +122,7 @@ const HomeList = () => {
       image: "/product/13.jpg",
     },
     {
-      id: "14",
+      id: "12",
       title: "REFRACTIVE INDEX",
       description:
         "Custom refractive index solutions for optimal lens thickness and clarity",
@@ -131,7 +131,7 @@ const HomeList = () => {
       image: "/product/14.jpg",
     },
     {
-      id: "15",
+      id: "13",
       title: "CLIFF TINTED LENSES",
       description: "Fashionable tinted lenses with UV protection and style",
       category: "Specialty",
@@ -139,7 +139,7 @@ const HomeList = () => {
       image: "/product/15.jpg",
     },
     {
-      id: "16",
+      id: "1",
       title: "PROGRESSIVE MEASUREMENT CHART",
       description:
         "Professional fitting and measurement services for progressive lenses",

@@ -65,7 +65,7 @@ export default function CircleAttachment() {
       <div className="absolute inset-0 h-[50dvh] md:h-screen overflow-hidden flex justify-end items-end">
         <div className="relative w-full h-full">
           <Image
-            src="/circle2.png"
+            src="/earth2.png"
             alt="Revealed Image"
             fill
             // objectFit="cover"
@@ -81,7 +81,7 @@ export default function CircleAttachment() {
       >
         <div className="relative w-full h-full">
           <Image
-            src="/circle.png"
+            src="/earth.webp"
             alt="Revealed Image"
             fill
             // objectFit="cover"

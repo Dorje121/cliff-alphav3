@@ -10,8 +10,9 @@ import TransitionLink from "@/components/PreLoader/TransitionLink";
 const links = [
   { href: "/", label: "Home" },
   { href: "/Services", label: "Products" },
-  { href: "/AboutUs", label: "About Us" },
-  { href: "/Blogs", label: "Blogs" },
+  { href: "/Coating", label: "Coatings" },
+  // { href: "/AboutUs", label: "About Us" },
+  { href: "/Technologies", label: "Technologies" },
   { href: "/Contact", label: "Contact" },
 ];
 
