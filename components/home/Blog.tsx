@@ -110,15 +110,15 @@ export default function Blog() {
   };
 
   return (
-    <div className="min-h-screen bg-transparent text-white">
+    <div className="min-h-screen bg-white text-black">
       {/* Hero Section */}
       <div className="relative pt-32 pb-20 px-5 ">
         <div className="mx-auto text-left">
           <TextWithTexture
             text="Cliff Insights & Updates"
-            className="text-3xl italic sm:text-4xl md:text-5xl lg:text-9xl font-bold montserrat mb-6 py-6 bg-gradient-to-r from-white via-yellow-100 to-yellow-200 bg-clip-text text-transparent"
+            className="text-3xl  sm:text-4xl md:text-5xl lg:text-9xl font-bold montserrat mb-6 py-6 bg-gradient-to-r from-black via-yellow-300 to-yellow-400 bg-clip-text text-transparent"
           />
-          <p className="text-xl md:text-2xl text-zinc-300 max-w-3xl leading-relaxed poppins">
+          <p className="text-xl md:text-2xl text-zinc-800 max-w-3xl leading-relaxed poppins">
             Discover the latest in lens technology, eye health, and vision
             science through our expert insights and cutting-edge research.
           </p>
@@ -134,7 +134,7 @@ export default function Blog() {
               .map((post) => (
                 <article
                   key={post.id}
-                  className="group border border-white/20 sm:border-none relative overflow-hidden rounded-3xl shadow-2xl hover:shadow-blue-900/25 transition-all duration-700 hover:-translate-y-3 transform-gpu"
+                  className="group border border-black/20 sm:border-none relative overflow-hidden rounded-3xl shadow-2xl hover:shadow-blue-900/25 transition-all duration-700 hover:-translate-y-3 transform-gpu"
                   style={{
                     background: `linear-gradient(135deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.5) 100%), url(${post.image})`,
                     backgroundSize: "cover",
@@ -144,17 +144,17 @@ export default function Blog() {
                   }}
                 >
                   {/* Premium glass morphism overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/50 backdrop-blur-[1px]"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-white/50 via-transparent to-white/50 backdrop-blur-[1px]"></div>
 
                   {/* Content Container */}
                   <div className="relative z-10 flex flex-col justify-between h-full p-8">
                     {/* Top Section - Category & Meta */}
                     <div className="flex items-start justify-between mb-4">
                       <div className="w-full flex flex-wrap justify-between items-center">
-                        <span className="inline-block px-4 py-2 bg-white/10 backdrop-blur-xl text-yellow-300 rounded-full text-xs font-semibold">
+                        <span className="inline-block px-4 py-2 bg-black/10 backdrop-blur-xl text-yellow-300 rounded-full text-xs font-semibold">
                           {post.category}
                         </span>
-                        <div className="flex items-center gap-4 text-xs text-white/70">
+                        <div className="flex items-center gap-4 text-xs text-black/70">
                           <div className="flex items-center gap-1">
                             <Calendar size={12} />
                             <span>{formatDate(post.date)}</span>
@@ -173,14 +173,14 @@ export default function Blog() {
 
                     {/* Bottom Section - Title & CTA */}
                     <div className="space-y-6">
-                      <h3 className="text-lg sm:text-2xl font-bold montserrat leading-tight text-transparent bg-gradient-to-r from-white via-yellow-100 to-yellow-200 bg-clip-text transition-all duration-500 line-clamp-3">
+                      <h3 className="text-lg sm:text-2xl font-bold montserrat leading-tight text-transparent bg-gradient-to-r from-black via-yellow-300 to-yellow-400 bg-clip-text transition-all duration-500 line-clamp-3">
                         {post.title}
                       </h3>
 
                       <div className="flex items-center  justify-start">
                         <TransitionLink
                           href={`/Blogs/${post.id}`}
-                          className="group/cta inline-flex items-center gap-3 px-5 py-2 bg-white/10 hover:bg-white/20 backdrop-blur-xl border border-bg-gradient-to-r from-white via-yellow-100 to-yellow-200   rounded-full text-white font-semibold text-sm transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/25 hover:scale-105"
+                          className="group/cta inline-flex items-center gap-3 px-5 py-2 bg-black/10 hover:bg-black/20 backdrop-blur-xl border border-bg-gradient-to-r from-black via-yellow-300 to-yellow-400   rounded-full text-black font-semibold text-sm transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/25 hover:scale-105"
                         >
                           <span>Read Article</span>
                           <ArrowRight
@@ -193,15 +193,15 @@ export default function Blog() {
                   </div>
 
                   {/* Subtle animation lines */}
-                  <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
-                  <div className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200 delay-300"></div>
+                  <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
+                  <div className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200 delay-300"></div>
                 </article>
               ))}
           </div>
 
           {filteredPosts.length === 0 && (
             <div className="text-center py-20">
-              <p className="text-zinc-400 text-lg">
+              <p className="text-zinc-500 text-lg">
                 No articles found in this category.
               </p>
             </div>

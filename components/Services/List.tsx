@@ -227,7 +227,7 @@ const List = () => {
             <div className="flex-1">
               <TextWithTexture
                 text="Our Products"
-                className="text-3xl italic sm:text-4xl md:text-5xl lg:text-7xl font-semibold montserrat mb-4 md:mb-6 bg-gradient-to-r from-[#FFF9DC] via-yellow-100 to-[#FFCC00] bg-clip-text text-transparent"
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-semibold montserrat mb-4 md:mb-6 bg-gradient-to-r from-[#FFF9DC] via-yellow-100 to-[#FFCC00] bg-clip-text text-transparent"
               />
               <p className="text-base sm:text-lg md:text-xl text-zinc-300 max-w-4xl poppins">
                 Discover our comprehensive range of premium optical solutions,

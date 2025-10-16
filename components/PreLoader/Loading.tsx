@@ -32,8 +32,8 @@ const Loading = ({ startVideo }: { startVideo: () => void }) => {
       ) : (
         <div className="h-screen w-full z-[99] bg-black flex flex-col justify-center items-center">
           <h1 className="text-3xl text-center md:text-4xl font-serif text-white ">
-            Thank <span className="italic text-yellow-400">You</span> For
-            Choosing <span className="italic text-yellow-400">CLIFF</span> Eye
+            Thank <span className=" text-yellow-400">You</span> For
+            Choosing <span className=" text-yellow-400">CLIFF</span> Eye
             Wear.
             <br /> Please, Enter the site to explore.
           </h1>

@@ -30,7 +30,7 @@ const BgAttached: React.FC<BgAttachedProps> = ({
           Your browser does not support the video tag.
         </video>
       )}
-      
+
       {/* Image Background (fallback or when no video) */}
       {bgImage && !bgVideo && (
         <div
@@ -45,9 +45,9 @@ const BgAttached: React.FC<BgAttachedProps> = ({
           }}
         ></div>
       )}
-      
+
       {/* Dark overlay for better text readability */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black z-20"></div>
+      {/* <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-white z-20"></div> */}
     </div>
   );
 };
