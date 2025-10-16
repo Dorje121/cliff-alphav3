@@ -46,7 +46,7 @@ const CliffDynamixProgressive = () => {
                   featuring advanced technology for optimal vision at all distances."
           backgroundImage="/product/9.jpg"
           rightImage="/product/9.jpg"
-          serviceNumber="09"
+          serviceNumber="07"
           badgeTitle="6K"
           badgeSubtitle="Definition"
         />

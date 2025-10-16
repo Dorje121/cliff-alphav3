@@ -40,7 +40,7 @@ const CliffZennSeries = () => {
                 performance for the most discerning vision needs."
         backgroundImage="/product/10.jpg"
         rightImage="/product/10.jpg"
-        serviceNumber="10"
+        serviceNumber="08"
         badgeTitle="Zenn"
         badgeSubtitle="Premium"
       />

@@ -84,12 +84,12 @@ export function Lens({
         animate={{ opacity: 1, scale: 1 }}
         exit={{ opacity: 0, scale: 0.8 }}
         transition={{ duration }}
-        className="absolute inset-0 z-50 overflow-hidden cursor-none"
+        className="absolute inset-0 z-[99999999999999] overflow-hidden cursor-none"
         style={{
           maskImage,
           WebkitMaskImage: maskImage,
           transformOrigin: `${x}px ${y}px`,
-          zIndex: 50,
+          zIndex: 99999999999999,
         }}
       >
         <div

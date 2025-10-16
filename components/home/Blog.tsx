@@ -116,9 +116,9 @@ export default function Blog() {
         <div className="mx-auto text-left">
           <TextWithTexture
             text="Cliff Insights & Updates"
-            className="text-3xl italic sm:text-4xl md:text-5xl lg:text-9xl font-bold font-family-playfair mb-6 py-6 bg-gradient-to-r from-white via-yellow-100 to-yellow-200 bg-clip-text text-transparent"
+            className="text-3xl italic sm:text-4xl md:text-5xl lg:text-9xl font-bold montserrat mb-6 py-6 bg-gradient-to-r from-white via-yellow-100 to-yellow-200 bg-clip-text text-transparent"
           />
-          <p className="text-xl md:text-2xl text-zinc-300 max-w-3xl leading-relaxed">
+          <p className="text-xl md:text-2xl text-zinc-300 max-w-3xl leading-relaxed poppins">
             Discover the latest in lens technology, eye health, and vision
             science through our expert insights and cutting-edge research.
           </p>
@@ -173,7 +173,7 @@ export default function Blog() {
 
                     {/* Bottom Section - Title & CTA */}
                     <div className="space-y-6">
-                      <h3 className="text-lg sm:text-2xl font-bold font-family-playfair leading-tight text-transparent bg-gradient-to-r from-white via-yellow-100 to-yellow-200 bg-clip-text transition-all duration-500 line-clamp-3">
+                      <h3 className="text-lg sm:text-2xl font-bold montserrat leading-tight text-transparent bg-gradient-to-r from-white via-yellow-100 to-yellow-200 bg-clip-text transition-all duration-500 line-clamp-3">
                         {post.title}
                       </h3>
 

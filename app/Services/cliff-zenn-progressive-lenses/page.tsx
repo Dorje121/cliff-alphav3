@@ -121,7 +121,7 @@ const CliffZennProgressiveLenses = () => {
                   stability and better vision in all gaze directions."
           backgroundImage="/product/12.jpg"
           rightImage="/product/12.jpg"
-          serviceNumber="12"
+          serviceNumber="10"
           badgeTitle="Zenn"
           badgeSubtitle="Progressive lens"
         />

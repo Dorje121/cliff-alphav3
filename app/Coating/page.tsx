@@ -106,88 +106,14 @@ const List = () => {
                         {/* Title and Description */}
                         <div className="flex-1">
                             <TextWithTexture
-                                text="Lens Coatings"
-                                className="py-2 text-3xl italic sm:text-4xl md:text-5xl lg:text-7xl font-semibold font-family-playfair mb-4 md:mb-6 bg-gradient-to-r from-[#FFF9DC] via-yellow-100 to-[#FFCC00] bg-clip-text text-transparent"
+                                text="Discover Our Coatings"
+                                className="py-2 text-3xl italic sm:text-4xl md:text-5xl lg:text-7xl font-semibold montserrat mb-4 md:mb-6 bg-gradient-to-r from-[#FFF9DC] via-yellow-100 to-[#FFCC00] bg-clip-text text-transparent"
                             />
                             <p className="text-base sm:text-lg md:text-xl text-zinc-300 max-w-4xl">
                                 Explore our advanced lens coating technologies, offering superior protection, enhanced clarity, and lasting comfort — engineered to reduce glare, resist scratches, and keep your vision crystal clear in every environment.
                             </p>
                         </div>
 
-                        {/* Category Filter - Same Row */}
-                        {/* <div className="flex-shrink-0 mt-22">
-                            <div
-                                className="relative w-full max-w-xs sm:max-w-none sm:w-auto"
-                                ref={dropdownRef}
-                            >
-                                <button
-                                    onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                                    className="flex items-center justify-between w-full sm:w-64 px-4 sm:px-6 py-3 sm:py-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl text-white hover:bg-white/20 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-amber-400/50"
-                                >
-                                    <span className="font-medium text-sm sm:text-base">
-                                        {selectedCategory === "All"
-                                            ? "All Categories"
-                                            : selectedCategory}
-                                    </span>
-                                    <svg
-                                        className={`w-4 h-4 sm:w-5 sm:h-5 transition-transform duration-300 ${isDropdownOpen ? "rotate-180" : "rotate-0"
-                                            }`}
-                                        fill="none"
-                                        stroke="currentColor"
-                                        viewBox="0 0 24 24"
-                                    >
-                                        <path
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                            strokeWidth={2}
-                                            d="M19 9l-7 7-7-7"
-                                        />
-                                    </svg>
-                                </button>
-
-                                {isDropdownOpen && (
-                                    <div
-                                        className="absolute top-full left-0 right-0 mt-2 bg-black/90 backdrop-blur-md border border-white/20 rounded-xl shadow-2xl z-50 max-h-60 sm:max-h-80 overflow-y-auto scrollbar-custom"
-                                        onWheel={(e) => {
-                                            e.stopPropagation();
-                                        }}
-                                    >
-                                        {categories.map((category, index) => (
-                                            <button
-                                                key={category}
-                                                onClick={() => {
-                                                    setSelectedCategory(category);
-                                                    setIsDropdownOpen(false);
-                                                }}
-                                                className={`w-full px-4 sm:px-6 py-2.5 sm:py-3 text-left hover:bg-white/10 transition-all duration-200 first:rounded-t-xl last:rounded-b-xl ${selectedCategory === category
-                                                    ? "bg-amber-400/20 text-amber-400 border-l-4 border-amber-400"
-                                                    : "text-zinc-300 hover:text-white"
-                                                    } ${index > 0 ? "border-t border-white/5" : ""}`}
-                                            >
-                                                <div className="flex items-center justify-between">
-                                                    <span className="font-medium text-sm sm:text-base">
-                                                        {category === "All" ? "All Categories" : category}
-                                                    </span>
-                                                    {selectedCategory === category && (
-                                                        <svg
-                                                            className="w-3 h-3 sm:w-4 sm:h-4 text-amber-400"
-                                                            fill="currentColor"
-                                                            viewBox="0 0 20 20"
-                                                        >
-                                                            <path
-                                                                fillRule="evenodd"
-                                                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                                                                clipRule="evenodd"
-                                                            />
-                                                        </svg>
-                                                    )}
-                                                </div>
-                                            </button>
-                                        ))}
-                                    </div>
-                                )}
-                            </div>
-                        </div> */}
                     </div>
                 </div>
 
@@ -224,23 +150,23 @@ const List = () => {
                                         {/* Content Section - Mobile */}
                                         <div className="p-4">
                                             {/* Category Badge */}
-                                            <div className="inline-flex items-center px-3 py-1 rounded-full bg-amber-400/20 text-amber-400 text-xs font-medium mb-3">
+                                            <div className="inline-flex items-center px-3 py-1 rounded-full bg-amber-400/20 text-amber-400 text-xs font-medium mb-3" >
                                                 {service.category}
                                             </div>
 
                                             {/* Service Title */}
-                                            <h3 className="text-xl font-bold mb-3 font-family-playfair bg-gradient-to-r from-white via-yellow-100 to-yellow-200  bg-clip-text text-transparent group-hover:text-amber-400 transition-colors duration-300">
+                                            <h3 className="text-xl font-bold mb-3 montserrat bg-gradient-to-r from-white via-yellow-100 to-yellow-200  bg-clip-text text-transparent group-hover:text-amber-400 transition-colors duration-300">
                                                 {service.title}
                                             </h3>
 
                                             {/* Service Description */}
-                                            <p className="text-zinc-300 group-hover:text-white transition-colors duration-300 leading-relaxed text-sm mb-4">
+                                            <p className="text-zinc-300 poppins group-hover:text-white transition-colors duration-300 leading-relaxed text-sm mb-4">
                                                 {service.description}
                                             </p>
 
                                             {/* Learn More Button */}
                                             <div className="inline-flex items-center text-amber-400 font-medium group-hover:text-white transition-colors duration-300 text-sm">
-                                                <span className="mr-2">Learn More</span>
+                                                <span className="mr-2 poppins">Learn More</span>
                                                 <svg
                                                     className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"
                                                     fill="none"
@@ -287,18 +213,18 @@ const List = () => {
                                         </div>
 
                                         {/* Service Title */}
-                                        <h3 className="text-2xl lg:text-3xl xl:text-4xl font-bold font-family-playfair mb-6 bg-gradient-to-r from-white via-yellow-100 to-yellow-200  bg-clip-text text-transparent group-hover:text-amber-400 transition-colors duration-300">
+                                        <h3 className="text-2xl lg:text-3xl xl:text-4xl font-bold montserrat mb-6 bg-gradient-to-r from-white via-yellow-100 to-yellow-200  bg-clip-text text-transparent group-hover:text-amber-400 transition-colors duration-300">
                                             {service.title}
                                         </h3>
 
                                         {/* Service Description */}
-                                        <p className="text-zinc-300 group-hover:text-white transition-colors duration-300 leading-relaxed text-base lg:text-lg mb-8">
+                                        <p className="text-zinc-300 group-hover:text-white transition-colors duration-300 leading-relaxed text-base lg:text-lg mb-8 poppins">
                                             {service.description}
                                         </p>
 
                                         {/* Learn More Button */}
                                         <div className="inline-flex items-center text-amber-400 font-medium group-hover:text-white transition-colors duration-300">
-                                            <span className="mr-2">Learn More</span>
+                                            <span className="mr-2 poppins">Learn More</span>
                                             <svg
                                                 className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-2"
                                                 fill="none"
@@ -330,8 +256,7 @@ const List = () => {
                     ))}
                 </div>
 
-                {/* Call to Action */}
-                {/* <CTA /> */}
+
             </div>
         </div>
     );

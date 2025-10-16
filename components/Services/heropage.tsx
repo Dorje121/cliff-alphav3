@@ -92,15 +92,15 @@ export default function HeroSection({
             <div className="hero-title">
               <TextWithTexture
                 text={title}
-                className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold leading-tight capitalize block lg:mt-12"
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold leading-tight capitalize block lg:mt-12  montserrat"
               />
               <TextWithTexture
                 text={subtitle}
-                className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold leading-tight capitalize block"
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold leading-tight capitalize block montserrat"
               />
             </div>
 
-            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white leading-relaxed max-w-full lg:max-w-2xl">
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white leading-relaxed max-w-full lg:max-w-2xl poppins">
               {description}
             </p>
 
@@ -109,7 +109,7 @@ export default function HeroSection({
               <Link href='/Contact' className="group relative inline-block">
                 <button className="px-6 sm:px-8 py-3 sm:py-4 lg:px-8 lg:py-4 bg-white/10 rounded-full text-white backdrop-blur-sm border border-white/30 font-semibold text-base sm:text-lg lg:text-lg transition-all duration-300 transform hover:scale-105 cursor-pointer">
                   <span className="relative z-10 flex items-center justify-center">
-                    Contact Us
+                    Partner with Us
                     <svg
                       className="w-4 h-4 sm:w-5 sm:h-5 lg:w-5 lg:h-5 ml-2 transition-transform duration-300 group-hover:translate-x-1"
                       fill="none"

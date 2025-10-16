@@ -207,8 +207,8 @@ export default function Navbar() {
           style={{ clipPath: "circle(0% at 100% 0%)" }}
         >
           {/* Left Panel */}
-          <div className="w-full md:w-1/2 h-full flex flex-col justify-center items-center md:text-left text-center md:items-start p-8 md:p-24 text-black">
-            <div className="flex flex-col group text-zinc-700 hover:text-zinc-200 space-y-2 xs:space-y-7 md:space-y-12 mx-10">
+          <div className="w-full md:w-1/2 h-full flex flex-col justify-center items-center md:text-left text-center md:items-start p-8 md:p-24 text-black border border-red-500">
+            <div className="flex flex-col group text-zinc-700 hover:text-zinc-200 space-y-2 xs:space-y-7 md:space-y-7 mx-10 ">
               {links.map((link) => {
                 const isActive = pathname === link.href;
                 return (
@@ -216,7 +216,7 @@ export default function Navbar() {
                     key={link.href}
                     href={link.href}
                     onClick={() => handleLinkClick(link.href)}
-                    className={`menu-link text-[3rem] xs:text-6xl md:text-7xl font-bold uppercase tracking-wider ${isActive ? " " : " transition-colors duration-300"
+                    className={`menu-link text-[2rem] xs:text-4xl md:text-5xl font-bold uppercase tracking-wider ${isActive ? " " : " transition-colors duration-300"
                       } hover:text-zinc-800 transition-all duration-900`}
                   >
                     {link.label}
@@ -229,7 +229,7 @@ export default function Navbar() {
           {/* Right Panel Image */}
           <div className=" md:-z-10 hidden lense md:flex w-1/2 justify-start  items-end h-full relative">
             <img
-              src="/handd.png"
+              src="/hand.jpg"
               alt="Decorative lens flare"
               className="w-[500px] h-fit object-contain"
             />

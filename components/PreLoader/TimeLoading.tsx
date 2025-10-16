@@ -26,7 +26,7 @@ const TimeLoading: React.FC<TimeLoadingProps> = ({ isVisible, onComplete }) => {
           const increment = Math.random() * 12 + 3;
           const newProgress = Math.min(prev + increment, 100);
 
-          
+
           const stageProgress = Math.floor(newProgress / 25);
           if (stageProgress !== currentStageIndex && stageProgress < stages.length) {
             currentStageIndex = stageProgress;
@@ -107,7 +107,7 @@ const TimeLoading: React.FC<TimeLoadingProps> = ({ isVisible, onComplete }) => {
               scale: { duration: 4, repeat: Infinity, ease: "easeInOut" },
             }}
           />
-    
+
           <motion.div
             className="absolute bottom-8 right-8 w-16 h-16 rounded-full border border-amber-400/5"
             animate={{
@@ -132,7 +132,7 @@ const TimeLoading: React.FC<TimeLoadingProps> = ({ isVisible, onComplete }) => {
             >
               <div className="relative">
                 <h1 className="text-5xl md:text-7xl font-light text-white tracking-wider">
-                  <span className="bg-gradient-to-r from-amber-400 via-yellow-400 to-amber-500 bg-clip-text text-transparent">
+                  <span className="bg-gradient-to-r from-amber-400 via-yellow-400 to-amber-500 bg-clip-text text-transparent montserrat">
                     CLIFF
                   </span>
                 </h1>

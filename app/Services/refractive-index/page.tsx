@@ -43,7 +43,7 @@ const RefractiveIndex = () => {
                 for superior vision correction."
         backgroundImage="/product/14.jpg"
         rightImage="/product/14.jpg"
-        serviceNumber="14"
+        serviceNumber="12"
         badgeTitle="1.74"
         badgeSubtitle="Max Index"
       />

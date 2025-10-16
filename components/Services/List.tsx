@@ -227,9 +227,9 @@ const List = () => {
             <div className="flex-1">
               <TextWithTexture
                 text="Our Products"
-                className="text-3xl italic sm:text-4xl md:text-5xl lg:text-7xl font-semibold font-family-playfair mb-4 md:mb-6 bg-gradient-to-r from-[#FFF9DC] via-yellow-100 to-[#FFCC00] bg-clip-text text-transparent"
+                className="text-3xl italic sm:text-4xl md:text-5xl lg:text-7xl font-semibold montserrat mb-4 md:mb-6 bg-gradient-to-r from-[#FFF9DC] via-yellow-100 to-[#FFCC00] bg-clip-text text-transparent"
               />
-              <p className="text-base sm:text-lg md:text-xl text-zinc-300 max-w-4xl">
+              <p className="text-base sm:text-lg md:text-xl text-zinc-300 max-w-4xl poppins">
                 Discover our comprehensive range of premium optical solutions,
                 advanced lens technologies, and professional services designed
                 to enhance your vision experience.
@@ -353,17 +353,17 @@ const List = () => {
                       </div>
 
                       {/* Service Title */}
-                      <h3 className="text-xl font-bold mb-3 font-family-playfair bg-gradient-to-r from-white via-yellow-100 to-yellow-200  bg-clip-text text-transparent group-hover:text-amber-400 transition-colors duration-300">
+                      <h3 className="text-xl font-bold mb-3 montserrat bg-gradient-to-r from-white via-yellow-100 to-yellow-200  bg-clip-text text-transparent group-hover:text-amber-400 transition-colors duration-300 font-family-montserrat">
                         {service.title}
                       </h3>
 
                       {/* Service Description */}
-                      <p className="text-zinc-300 group-hover:text-white transition-colors duration-300 leading-relaxed text-sm mb-4">
+                      <p className="text-zinc-300 group-hover:text-white transition-colors duration-300 leading-relaxed text-sm mb-4 poppins">
                         {service.description}
                       </p>
 
                       {/* Learn More Button */}
-                      <div className="inline-flex items-center text-amber-400 font-medium group-hover:text-white transition-colors duration-300 text-sm">
+                      <div className="inline-flex items-center text-amber-400 font-medium group-hover:text-white transition-colors duration-300 text-sm poppins">
                         <span className="mr-2">Learn More</span>
                         <svg
                           className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"
@@ -411,18 +411,18 @@ const List = () => {
                     </div>
 
                     {/* Service Title */}
-                    <h3 className="text-2xl lg:text-3xl xl:text-4xl font-bold font-family-playfair mb-6 bg-gradient-to-r from-white via-yellow-100 to-yellow-200  bg-clip-text text-transparent group-hover:text-amber-400 transition-colors duration-300">
+                    <h3 className="text-2xl lg:text-3xl xl:text-4xl font-bold montserrat mb-6 bg-gradient-to-r from-white via-yellow-100 to-yellow-200  bg-clip-text text-transparent group-hover:text-amber-400 transition-colors duration-300">
                       {service.title}
                     </h3>
 
                     {/* Service Description */}
-                    <p className="text-zinc-300 group-hover:text-white transition-colors duration-300 leading-relaxed text-base lg:text-lg mb-8">
+                    <p className="text-zinc-300 group-hover:text-white transition-colors duration-300 leading-relaxed text-base lg:text-lg mb-8 poppins">
                       {service.description}
                     </p>
 
                     {/* Learn More Button */}
                     <div className="inline-flex items-center text-amber-400 font-medium group-hover:text-white transition-colors duration-300">
-                      <span className="mr-2">Learn More</span>
+                      <span className="mr-2 poppins">Learn More</span>
                       <svg
                         className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-2"
                         fill="none"

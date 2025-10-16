@@ -40,9 +40,9 @@ const CliffProgressiveVersatile = () => {
         description="Multi-focal progressive lenses for seamless vision at all distances, providing natural and comfortable vision correction."
         backgroundImage="/product/6.jpg"
         rightImage="/product/6.jpg"
-        serviceNumber="06"
-        badgeTitle="5200"
-        badgeSubtitle="MRP"
+        serviceNumber="04"
+        badgeTitle="UV"
+        badgeSubtitle="Lens"
       />
 
       {/* Main Content Section - Enhanced Professional Design */}
