@@ -139,7 +139,7 @@ const HomeList = () => {
       image: "/product/15.jpg",
     },
     {
-      id: "1",
+      id: "14",
       title: "PROGRESSIVE MEASUREMENT CHART",
       description:
         "Professional fitting and measurement services for progressive lenses",
