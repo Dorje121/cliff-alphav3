@@ -11,6 +11,8 @@ import Blog from "@/components/home/Blog";
 import LensDemo from "@/components/home/Focus";
 import WhiteFooter from "@/components/home/whitefoot"
 import BlackTinted from "@/components/home/blackTinted"
+import AnimateSection from "@/components/home/animate";
+import ScrollBackground from "@/components/home/scrollbg";
 
 const Page = () => {
   const [pageState, setPageState] = useState<'landing' | 'main'>('landing');
@@ -72,16 +74,24 @@ const Page = () => {
       {/* Show main content */}
       {pageState === 'main' && (
         <div className="relative">
+          <ScrollBackground />
           <Demo />
-          <CircleAttachment />
-          <HomeList />
-          <div className="!bg-white">
-            <BlackTinted />
-            <BgAttached bgVideo="/homevideo/BlueSafe-2.mp4" />
-            <Blog />
+          
+          <section id="animate-section" className="min-h-screen">
+            <AnimateSection />
+          </section>
+          
+          <section id="home-list" className="min-h-screen">
+            <HomeList />
+          </section>
+          
+         
+            <div id="blog" className="min-h-screen">
+              <Blog />
+            </div>
+            
             <LensDemo />
-            <WhiteFooter />
-          </div>
+          
         </div>
       )}
     </div>

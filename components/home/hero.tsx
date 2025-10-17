@@ -24,9 +24,9 @@ const LandingVideo = () => {
         <div className="flex flex-col w-full h-full">
           {/* Main Heading */}
 
-          <TextWithTexture
+          <TextWithTexture 
             text="Cliff lens crafted, Just for you"
-            className="text-3xl md:text-4xl lg:text-8xl poppins font-bold leading-tight"
+            className="text-3xl md:text-4xl lg:text-8xl montserrat font-bold leading-tight"
           />
           {/* <TextWithTexture
             text="Just for you"

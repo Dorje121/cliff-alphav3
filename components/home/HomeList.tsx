@@ -174,7 +174,7 @@ const HomeList = () => {
       : services.filter((service) => service.category === selectedCategory);
 
   return (
-    <div className="min-h-screen  bg-white text-black overflow-x-hidden !w-full px-4 sm:px-6 md:px-7">
+    <div className="min-h-screen  text-black overflow-x-hidden !w-full px-4 sm:px-6 md:px-7">
       <div className=" !w-[100%] !shrink-0 py-6 md:py-8 lg:py-16 relative">
         {/* Header Section */}
         <div className=" mb-8 md:mb-16">

@@ -110,7 +110,7 @@ export default function Blog() {
   };
 
   return (
-    <div className="min-h-screen bg-white text-black">
+    <div className="min-h-screen text-white">
       {/* Hero Section */}
       <div className="relative pt-32 pb-20 px-5 ">
         <div className="mx-auto text-left">
