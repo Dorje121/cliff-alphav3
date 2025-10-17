@@ -1,7 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import LandingPage from "@/components/LandingPage";
 import Demo from "@/components/home/Demo";
 import BgAttached from "@/components/home/BgAttached";
 import LandingVideo from "@/components/home/hero";
@@ -49,30 +48,16 @@ const Page = () => {
     return () => document.removeEventListener('keydown', handleKeyPress);
   }, []);
 
-  const handleLandingComplete = () => {
-
-    sessionStorage.setItem('cliff-has-visited', 'true');
-    setShowLayout(true);
-
-
-    setTimeout(() => {
-      setPageState('main');
-    }, 2000);
-  };
-
+ 
   return (
     <div data-show-layout={showLayout}>
-      <div className="visible relative">
+            <div className="visible relative">
         <LandingVideo />
       </div>
-      {pageState === 'landing' && (
-        <div className="fixed inset-0 z-[999999999999999]">
-          <LandingPage onComplete={handleLandingComplete} />
-        </div>
-      )}
+
 
       {/* Show main content */}
-      {pageState === 'main' && (
+     
         <div className="relative">
           <ScrollBackground />
           <Demo />
@@ -93,7 +78,7 @@ const Page = () => {
             <LensDemo />
           
         </div>
-      )}
+    
     </div>
   );
 };

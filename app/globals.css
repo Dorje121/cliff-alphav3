@@ -443,6 +443,28 @@ p {
   background: transparent;
 }
 
+/* Preloader reveal animation */
+@keyframes reveal {
+  0% {
+    opacity: 0;
+    transform: scale(0.7) translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.animate-reveal {
+  animation: reveal 1.2s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+  animation-delay: 0.3s;
+}
+
+/* Hide navbar when preloader is active */
+body.preloader-active header {
+  display: none !important;
+}
+
 /* Scrollbar hiding utility */
 .scrollbar-hide {
 

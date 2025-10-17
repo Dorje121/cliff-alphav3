@@ -18,30 +18,30 @@ export default function ScrollBackground() {
 
       // starting section
       ScrollTrigger.create({
-        trigger: "#animate-section",
+        trigger: "#home-list",
         start: "top 0%",
         onEnter: () => {
           gsap.to("body", { 
             backgroundColor: "white", 
-            duration: 0.8,
+            duration: 0.9,
             overwrite: true
           });
         },
         onLeaveBack: () => {
           gsap.to("body", { 
             backgroundColor: "black", 
-            duration: 0.8,
+            duration: 0.6,
             overwrite: true
           });
         }
       });
       ScrollTrigger.create({
-        trigger: "#animate-section",
+        trigger: "#home-list",
         start: "top 0%",
         onEnter: () => {
           gsap.to("body", { 
             backgroundColor: "white", 
-            duration: 0.8,
+            duration: 0.9,
             overwrite: true
           });
         },

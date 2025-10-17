@@ -5,6 +5,7 @@ import SmoothScroller from "@/components/lenis/SmoothScroller";
 import { Suspense } from "react";
 import PageTransitionProvider from "@/components/PreLoader/PageTransitionProvider";
 import LayoutContent from "@/components/LayoutContent";
+import PreloaderWrapper from "@/components/PreloaderWrapper";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -40,6 +41,7 @@ export default function RootLayout({
           height: "100%",
         }}
       >
+        <PreloaderWrapper />
         <PageTransitionProvider>
           <Suspense fallback={<div>Loading...</div>}>
             <SmoothScroller />
@@ -47,6 +49,7 @@ export default function RootLayout({
           <LayoutContent>
             {children}
           </LayoutContent>
+    
         </PageTransitionProvider>
       </body>
     </html>
