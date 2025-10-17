@@ -53,7 +53,7 @@ const blogPosts: Record<number, BlogPost> = {
           Our latest generation of smart lenses incorporates micro-sensors that continuously monitor environmental conditions and adjust accordingly. Whether you're transitioning from indoor lighting to bright sunlight, or moving between different visual tasks, these lenses adapt in real-time to provide optimal visual comfort.
         </p>
 
-        <blockquote class="border-l-4 border-blue-500 pl-6 my-8 italic text-lg text-zinc-300">
+        <blockquote class="border-l-4 border-blue-500 pl-6 my-8  text-lg text-zinc-300">
           "The future of vision correction isn't just about seeing clearly – it's about seeing intelligently."
         </blockquote>
 
@@ -152,7 +152,7 @@ const blogPosts: Record<number, BlogPost> = {
           Our latest generation of smart lenses incorporates micro-sensors that continuously monitor environmental conditions and adjust accordingly. Whether you're transitioning from indoor lighting to bright sunlight, or moving between different visual tasks, these lenses adapt in real-time to provide optimal visual comfort.
         </p>
 
-        <blockquote class="border-l-4 border-blue-500 pl-6 my-8 italic text-lg text-zinc-300">
+        <blockquote class="border-l-4 border-blue-500 pl-6 my-8  text-lg text-zinc-300">
           "The future of vision correction isn't just about seeing clearly – it's about seeing intelligently."
         </blockquote>
 
@@ -213,7 +213,7 @@ const blogPosts: Record<number, BlogPost> = {
           Our latest generation of smart lenses incorporates micro-sensors that continuously monitor environmental conditions and adjust accordingly. Whether you're transitioning from indoor lighting to bright sunlight, or moving between different visual tasks, these lenses adapt in real-time to provide optimal visual comfort.
         </p>
 
-        <blockquote class="border-l-4 border-blue-500 pl-6 my-8 italic text-lg text-zinc-300">
+        <blockquote class="border-l-4 border-blue-500 pl-6 my-8  text-lg text-zinc-300">
           "The future of vision correction isn't just about seeing clearly – it's about seeing intelligently."
         </blockquote>
 
@@ -274,7 +274,7 @@ const blogPosts: Record<number, BlogPost> = {
           Our latest generation of smart lenses incorporates micro-sensors that continuously monitor environmental conditions and adjust accordingly. Whether you're transitioning from indoor lighting to bright sunlight, or moving between different visual tasks, these lenses adapt in real-time to provide optimal visual comfort.
         </p>
 
-        <blockquote class=" pl-6 my-8 italic text-lg text-zinc-300">
+        <blockquote class=" pl-6 my-8  text-lg text-zinc-300">
           "The future of vision correction isn't just about seeing clearly – it's about seeing intelligently."
         </blockquote>
 
@@ -537,7 +537,7 @@ export default function BlogPost() {
                 {/* Quote Highlight */}
                 <div className="flex items-start gap-4 mb-12 p-6 bg-gradient-to-r from-amber-500/10 to-amber-500/10 border-l-4 border-amber-500 rounded-2xl">
                   <Quote size={24} className="text-amber-400 mt-1 flex-shrink-0" />
-                  <blockquote className="text-xl text-zinc-300 italic leading-relaxed">
+                  <blockquote className="text-xl text-zinc-300  leading-relaxed">
                     &ldquo;The future of vision correction isn&rsquo;t just about seeing clearly – it&rsquo;s about seeing intelligently.&rdquo;
                   </blockquote>
                 </div>

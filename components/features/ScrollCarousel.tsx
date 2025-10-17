@@ -94,7 +94,7 @@ export default function ScrollCarousel() {
     <div className="bg-transparent">
       {/* Horizontal scroll section */}
       <section ref={containerRef} className="relative overflow-hidden">
-        <h1 className="text-4xl md:text-5xl font-serif italic text-white mb-2 text-center mt-10">
+        <h1 className="text-4xl md:text-5xl font-serif text-white mb-2 text-center mt-10">
           Why Choose<span className="text-yellow-400  "> Cliff </span>Lens ?
         </h1>
         <div

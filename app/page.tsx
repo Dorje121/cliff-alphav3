@@ -9,6 +9,7 @@ import HomeList from "@/components/home/HomeList";
 import CircleAttachment from "@/components/home/CircleAttachment";
 import Blog from "@/components/home/Blog";
 import LensDemo from "@/components/home/Focus";
+import WhiteFooter from "@/components/home/whitefoot"
 import BlackTinted from "@/components/home/blackTinted"
 
 const Page = () => {
@@ -74,11 +75,13 @@ const Page = () => {
           <Demo />
           <CircleAttachment />
           <HomeList />
-
-        <BlackTinted />
-          <BgAttached bgVideo="/homevideo/BlueSafe-2.mp4" />
-          <Blog />
-          <LensDemo />
+          <div className="!bg-white">
+            <BlackTinted />
+            <BgAttached bgVideo="/homevideo/BlueSafe-2.mp4" />
+            <Blog />
+            <LensDemo />
+            <WhiteFooter />
+          </div>
         </div>
       )}
     </div>

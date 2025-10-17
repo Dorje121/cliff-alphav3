@@ -174,17 +174,17 @@ const HomeList = () => {
       : services.filter((service) => service.category === selectedCategory);
 
   return (
-    <div className="min-h-screen  bg-transparent text-white overflow-x-hidden !w-full px-4 sm:px-6 md:px-7">
+    <div className="min-h-screen  bg-white text-black overflow-x-hidden !w-full px-4 sm:px-6 md:px-7">
       <div className=" !w-[100%] !shrink-0 py-6 md:py-8 lg:py-16 relative">
         {/* Header Section */}
         <div className=" mb-8 md:mb-16">
           <div className="flex mb-4 md:mb-6"></div>
           <TextWithTexture
             text="Our Products"
-            className="text-3xl italic sm:text-4xl md:text-5xl lg:text-9xl font-semibold montserrat mb-4 md:mb-6  bg-gradient-to-r from-white via-yellow-100 to-yellow-200 bg-clip-text text-transparent"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-9xl font-semibold montserrat mb-4 md:mb-6  bg-gradient-to-r from-black via-yellow-100 to-yellow-200 bg-clip-text text-transparent"
           />
 
-          <p className="text-base sm:text-lg md:text-xl text-zinc-300 max-w-3xl poppins">
+          <p className="text-base sm:text-lg md:text-xl text-zinc-800 max-w-3xl poppins">
             Discover our comprehensive range of premium optical solutions,
             advanced lens technologies, and professional services designed to
             enhance your vision experience.
@@ -215,7 +215,7 @@ const HomeList = () => {
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
                       {/* Service Number Overlay on Mobile */}
-                      <div className="absolute top-4 right-4 text-4xl font-bold text-white/60 group-hover:text-amber-400/80 transition-all duration-500">
+                      <div className="absolute top-4 right-4 text-4xl font-bold text-black/60 group-hover:text-amber-400/80 transition-all duration-500">
                         {service.id}
                       </div>
                     </div>
@@ -234,12 +234,12 @@ const HomeList = () => {
                     </h3>
 
                     {/* Service Description */}
-                    <p className="text-zinc-300 group-hover:text-white transition-colors duration-300 leading-relaxed text-sm">
+                    <p className="text-zinc-700 group-hover:text-black transition-colors duration-300 leading-relaxed text-sm">
                       {service.description}
                     </p>
 
                     {/* Learn More Button */}
-                    <div className="inline-flex items-center text-amber-400 font-medium group-hover:text-white transition-colors duration-300 text-sm poppins">
+                    <div className="inline-flex items-center text-amber-400 font-medium group-hover:text-black transition-colors duration-300 text-sm poppins">
                       <span className="mr-2">View Details</span>
                       <svg
                         className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"
@@ -265,7 +265,7 @@ const HomeList = () => {
                 >
                   <div className="w-1/3 text-left">
                     {/* Service Number Overlay */}
-                    <div className="text-center text-6xl lg:text-8xl font-bold text-white/20 group-hover:text-amber-400/40 transition-all duration-500">
+                    <div className="text-center text-6xl lg:text-8xl font-bold text-black/60 group-hover:text-amber-400/40 transition-all duration-500">
                       {service.id}
                     </div>
                   </div>
@@ -283,17 +283,17 @@ const HomeList = () => {
                     </div>
 
                     {/* Service Title */}
-                    <h3 className="text-2xl lg:text-3xl xl:text-4xl montserrate font-bold mb-6 bg-gradient-to-r from-white via-yellow-100 to-yellow-200  bg-clip-text text-transparent group-hover:text-amber-400 transition-colors duration-300">
+                    <h3 className="text-2xl lg:text-3xl xl:text-4xl montserrate font-bold mb-6 bg-gradient-to-r from-black via-yellow-300 to-yellow-400  bg-clip-text text-transparent group-hover:text-amber-400 transition-colors duration-300">
                       {service.title}
                     </h3>
 
                     {/* Service Description */}
-                    <p className="text-zinc-300 group-hover:text-white transition-colors duration-300 leading-relaxed text-base lg:text-lg mb-8 poppins">
+                    <p className="text-zinc-700 group-hover:text-black transition-colors duration-300 leading-relaxed text-base lg:text-lg mb-8 poppins">
                       {service.description}
                     </p>
 
                     {/* Learn More Button */}
-                    <div className="inline-flex items-center text-white font-medium group-hover:text-amber-400 transition-colors duration-300 poppins">
+                    <div className="inline-flex items-center text-black font-medium group-hover:text-amber-400 transition-colors duration-300 poppins ">
                       <span className="mr-2">View Details</span>
                       <svg
                         className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-2"
@@ -331,7 +331,7 @@ const HomeList = () => {
         <div className="text-center mt-8 md:mt-12 px-4">
           <TransitionLink
             href={`/Services`}
-            className="group/cta inline-flex items-center gap-3 px-6 py-3 bg-white/10 hover:bg-white/20 backdrop-blur-xl border-2 border-white/50 rounded-full text-white font-semibold text-sm transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/25 hover:scale-105"
+            className="group/cta inline-flex items-center gap-3 px-6 py-3 bg-black/10 hover:bg-white/20 backdrop-blur-xl border-2 border-black/50 rounded-full text-black font-semibold text-sm transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/25 hover:scale-105"
           >
             <span>View All Products</span>
             <ArrowRight

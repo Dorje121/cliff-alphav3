@@ -107,7 +107,7 @@ const List = () => {
                         <div className="flex-1">
                             <TextWithTexture
                                 text="Discover Our Coatings"
-                                className="py-2 text-3xl italic sm:text-4xl md:text-5xl lg:text-7xl font-semibold montserrat mb-4 md:mb-6 bg-gradient-to-r from-[#FFF9DC] via-yellow-100 to-[#FFCC00] bg-clip-text text-transparent"
+                                className="py-2 text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-semibold montserrat mb-4 md:mb-6 bg-gradient-to-r from-[#FFF9DC] via-yellow-100 to-[#FFCC00] bg-clip-text text-transparent"
                             />
                             <p className="text-base sm:text-lg md:text-xl text-zinc-300 max-w-4xl">
                                 Explore our advanced lens coating technologies, offering superior protection, enhanced clarity, and lasting comfort — engineered to reduce glare, resist scratches, and keep your vision crystal clear in every environment.

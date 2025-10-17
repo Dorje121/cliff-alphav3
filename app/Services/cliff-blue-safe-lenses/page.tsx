@@ -349,7 +349,7 @@ const CliffBlueSafeLenses = () => {
                     </table>
                   </div>
 
-                  <p className="text-xs text-zinc-400 mt-3 italic">
+                  <p className="text-xs text-zinc-400 mt-3 ">
                     All listed powers are resultant; cross-compound is not
                     available.
                   </p>

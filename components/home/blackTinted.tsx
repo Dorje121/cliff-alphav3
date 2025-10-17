@@ -107,7 +107,7 @@ const CliffTintedLenses = () => {
 
             <div className="max-w-screen mx-auto">
 
-                <div className="relative  mx-auto mb-12">
+                <div className="relative  mx-auto pb-12">
 
 
                     {/* Tint Categories */}
@@ -115,7 +115,7 @@ const CliffTintedLenses = () => {
                         {tintCategories.map((category, categoryIndex) => (
                             <div
                                 key={categoryIndex}
-                                className="bg-gradient-to-br z-[999] from-zinc-800/30 to-zinc-700/30 rounded-2xl sm:rounded-3xl  backdrop-blur-sm"
+                                className="bg-gradient-to-br z-[999] from-zinc-400/30 to-zinc-300/30   backdrop-blur-sm bg-white"
                             >
                                 <div className="h-[100dvh] w-full z-[99] relative">
                                     <Image
@@ -124,7 +124,7 @@ const CliffTintedLenses = () => {
                                         alt="scene"
                                         className="object-cover brightness-90 object-center"
                                     />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>
+                                    <div className="absolute inset-0 bg-gradient-to-t  to-transparent"></div>
                                     <div className="absolute flex justify-end gap-8 items-center flex-col z-40 inset-0 p-4 lg:p-6">
 
 
@@ -164,8 +164,8 @@ const CliffTintedLenses = () => {
                                                                 className={`w-full h-full ${tint.color} opacity-80`}
                                                             ></div>
                                                             {/* Glass Effect Overlay */}
-                                                            <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent rounded-full"></div>
-                                                            <div className="absolute top-2 right-2 w-3 h-3 bg-white/40 rounded-full blur-sm"></div>
+                                                            <div className="absolute inset-0 bg-gradient-to-br from-black/20 to-transparent rounded-full"></div>
+                                                            <div className="absolute top-2 right-2 w-3 h-3 bg-black/40 rounded-full blur-sm"></div>
                                                             {/* Selection Indicator */}
                                                             {selectedTints[category.name].name === tint.name && (
                                                                 <div className="absolute inset-0 flex items-center justify-center">
@@ -187,21 +187,25 @@ const CliffTintedLenses = () => {
                                         </div>
                                     </div>
                                 </div>
+
+                                <div className="text-center px-4 pt-4">
+                                    <TransitionLink
+                                        href={`/Services/cliff-tinted-lenses`}
+                                        className="group/cta inline-flex items-center gap-3 px-6 py-3 bg-black/10 hover:bg-white/20 backdrop-blur-xl border-2 border-black/50 rounded-full text-black font-semibold text-sm transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/25 hover:scale-105"
+                                    >
+                                        <span>View All Products</span>
+                                        <ArrowRight
+                                            size={16}
+                                            className="transition-transform duration-500 group-hover/cta:translate-x-2 group-hover/cta:scale-110"
+                                        />
+                                    </TransitionLink>
+                                </div>
                             </div>
+
                         ))}
+
                     </div>
-                    <div className="text-center px-4">
-                        <TransitionLink
-                            href={`/Services/cliff-tinted-lenses`}
-                            className="group/cta inline-flex items-center gap-3 px-6 py-3 bg-white/10 hover:bg-white/20 backdrop-blur-xl border-2 border-white/50 rounded-full text-white font-semibold text-sm transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/25 hover:scale-105"
-                        >
-                            <span>View All Products</span>
-                            <ArrowRight
-                                size={16}
-                                className="transition-transform duration-500 group-hover/cta:translate-x-2 group-hover/cta:scale-110"
-                            />
-                        </TransitionLink>
-                    </div>
+
                 </div>
             </div>
 
