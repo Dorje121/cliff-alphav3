@@ -39,7 +39,7 @@ const CliffTechnology = () => {
         description="Cutting-edge optical technology and innovation solutions that push the boundaries of vision science and lens engineering."
         backgroundImage="/product/7.jpg"
         rightImage="/product/7.jpg"
-        serviceNumber="07"
+        serviceNumber="05"
         badgeTitle="TECH"
         badgeSubtitle="INNOVATION"
       />

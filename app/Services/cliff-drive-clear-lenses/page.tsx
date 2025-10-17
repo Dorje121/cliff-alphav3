@@ -114,9 +114,9 @@ const CliffDriveClearLenses = () => {
         description="Specialized lenses optimized for driving and enhanced road visibility, ensuring safer and more comfortable driving experiences."
         backgroundImage="/product/5.jpg"
         rightImage="/product/5.jpg"
-        serviceNumber="05"
-        badgeTitle="4200"
-        badgeSubtitle="MRP"
+        serviceNumber="03"
+        badgeTitle="UV"
+        badgeSubtitle="Lens"
       />
 
       {/* Info Section with Fade-In List */}

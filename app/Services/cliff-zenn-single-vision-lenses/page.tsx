@@ -43,7 +43,7 @@ const CliffZennSingleVision = () => {
                 stability and better vision in all gaze directions."
         backgroundImage="/product/11.jpg"
         rightImage="/product/11.jpg"
-        serviceNumber="11"
+        serviceNumber="09"
         badgeTitle="Zenn"
         badgeSubtitle="Single Vision"
       />

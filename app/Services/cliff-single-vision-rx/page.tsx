@@ -50,7 +50,7 @@ const CliffSingleVisionRX: React.FC = () => {
         description="Prescription single vision lenses for clear, focused sight with precise vision correction tailored to your unique needs."
         backgroundImage="/product/7.jpg"
         rightImage="/product/7.jpg"
-        serviceNumber="08"
+        serviceNumber="06"
         badgeTitle="SINGLE"
         badgeSubtitle="VISION RX"
       />

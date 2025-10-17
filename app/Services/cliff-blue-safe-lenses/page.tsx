@@ -226,9 +226,9 @@ const CliffBlueSafeLenses = () => {
         description="Complete blue light protection lenses for modern digital lifestyle. Advanced UV filtering technology protects your eyes from harmful blue light emitted by digital screens."
         backgroundImage="/product/03.jpeg"
         rightImage="/product/03.jpeg"
-        serviceNumber="02"
-        badgeTitle="2400"
-        badgeSubtitle="MRP"
+        serviceNumber="01"
+        badgeTitle="UV"
+        badgeSubtitle="Lens"
       />
 
 
@@ -242,7 +242,7 @@ const CliffBlueSafeLenses = () => {
               <div className="mb-12 pl-2">
 
                 <h1 className="text-4xl sm:text-5xl md:text-6xl mt-2">
-                  <span className="text-white">Premium Lens Technology </span>
+                  <span className="text-white montserrat font-semibold">Premium Lens Technology </span>
                 </h1>
               </div>
               <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">

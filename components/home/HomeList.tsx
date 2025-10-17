@@ -8,24 +8,6 @@ import TextWithTexture from "@/components/textwithgoldentexture";
 
 const HomeList = () => {
   const services = [
-    // {
-    //   id: "01",
-    //   title: "CLIFF COATINGS",
-    //   description:
-    //     "Premium protective coatings for enhanced lens durability and performance",
-    //   category: "Coatings",
-    //   slug: "cliff-coatings",
-    //   image: "/product/01.jpeg",
-    // },
-    // {
-    //   id: "02",
-    //   title: "CLIFF BLUE SAFE COATING",
-    //   description:
-    //     "Advanced blue light filtering coating for digital eye strain protection",
-    //   category: "Coatings",
-    //   slug: "cliff-blue-safe-coating",
-    //   image: "/product/02.jpeg",
-    // },
     {
       id: "01",
       title: "CLIFF BLUE SAFE UV",
@@ -199,10 +181,10 @@ const HomeList = () => {
           <div className="flex mb-4 md:mb-6"></div>
           <TextWithTexture
             text="Our Products"
-            className="text-3xl italic sm:text-4xl md:text-5xl lg:text-9xl font-semibold font-family-playfair mb-4 md:mb-6  bg-gradient-to-r from-white via-yellow-100 to-yellow-200 bg-clip-text text-transparent"
+            className="text-3xl italic sm:text-4xl md:text-5xl lg:text-9xl font-semibold montserrat mb-4 md:mb-6  bg-gradient-to-r from-white via-yellow-100 to-yellow-200 bg-clip-text text-transparent"
           />
 
-          <p className="text-base sm:text-lg md:text-xl text-zinc-300 max-w-3xl">
+          <p className="text-base sm:text-lg md:text-xl text-zinc-300 max-w-3xl poppins">
             Discover our comprehensive range of premium optical solutions,
             advanced lens technologies, and professional services designed to
             enhance your vision experience.
@@ -247,7 +229,7 @@ const HomeList = () => {
                     </div>
 
                     {/* Service Title */}
-                    <h3 className="text-xl font-bold font-family-playfair bg-gradient-to-r from-white via-yellow-100 to-yellow-200  bg-clip-text text-transparent group-hover:text-amber-400 transition-colors duration-300 leading-tight">
+                    <h3 className="text-xl font-bold montserrat bg-gradient-to-r from-white via-yellow-100 to-yellow-200  bg-clip-text text-transparent group-hover:text-amber-400 transition-colors duration-300 leading-tight">
                       {service.title}
                     </h3>
 
@@ -257,7 +239,7 @@ const HomeList = () => {
                     </p>
 
                     {/* Learn More Button */}
-                    <div className="inline-flex items-center text-amber-400 font-medium group-hover:text-white transition-colors duration-300 text-sm">
+                    <div className="inline-flex items-center text-amber-400 font-medium group-hover:text-white transition-colors duration-300 text-sm poppins">
                       <span className="mr-2">View Details</span>
                       <svg
                         className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"
@@ -301,17 +283,17 @@ const HomeList = () => {
                     </div>
 
                     {/* Service Title */}
-                    <h3 className="text-2xl lg:text-3xl xl:text-4xl font-family-playfair font-bold mb-6 bg-gradient-to-r from-white via-yellow-100 to-yellow-200  bg-clip-text text-transparent group-hover:text-amber-400 transition-colors duration-300">
+                    <h3 className="text-2xl lg:text-3xl xl:text-4xl montserrate font-bold mb-6 bg-gradient-to-r from-white via-yellow-100 to-yellow-200  bg-clip-text text-transparent group-hover:text-amber-400 transition-colors duration-300">
                       {service.title}
                     </h3>
 
                     {/* Service Description */}
-                    <p className="text-zinc-300 group-hover:text-white transition-colors duration-300 leading-relaxed text-base lg:text-lg mb-8">
+                    <p className="text-zinc-300 group-hover:text-white transition-colors duration-300 leading-relaxed text-base lg:text-lg mb-8 poppins">
                       {service.description}
                     </p>
 
                     {/* Learn More Button */}
-                    <div className="inline-flex items-center text-white font-medium group-hover:text-amber-400 transition-colors duration-300">
+                    <div className="inline-flex items-center text-white font-medium group-hover:text-amber-400 transition-colors duration-300 poppins">
                       <span className="mr-2">View Details</span>
                       <svg
                         className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-2"

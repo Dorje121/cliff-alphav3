@@ -17,7 +17,7 @@ const CliffZennSingleVision = () => {
         description="Table data of Cliff zenn single vision and cliff zenn progressive lenses"
         backgroundImage="/product/13.jpg"
         rightImage="/product/13.jpg"
-        serviceNumber="13"
+        serviceNumber="11"
         badgeTitle="Zenn"
         badgeSubtitle="single vision"
       />

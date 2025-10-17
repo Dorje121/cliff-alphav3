@@ -40,9 +40,9 @@ const CliffPhotoZLenses = () => {
         description="Photochromic lenses that adapt to changing light conditions automatically, providing seamless comfort from indoor to outdoor environments."
         backgroundImage="/product/04.jpeg"
         rightImage="/product/04.jpeg"
-        serviceNumber="04"
-        badgeTitle="4800"
-        badgeSubtitle="MRP"
+        serviceNumber="02"
+        badgeTitle="UV"
+        badgeSubtitle="Lens"
       />
 
       <div className="py-8 bg-black border-t border-zinc-800">

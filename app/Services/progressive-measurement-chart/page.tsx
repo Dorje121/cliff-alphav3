@@ -14,7 +14,7 @@ const ProgressiveMeasurementChart = () => {
                 every prescription."
         backgroundImage="/product/16.jpg"
         rightImage="/product/16.jpg"
-        serviceNumber="16"
+        serviceNumber="14"
         badgeTitle="100%"
         badgeSubtitle="Accuracy"
       />

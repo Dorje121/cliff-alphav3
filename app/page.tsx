@@ -9,6 +9,7 @@ import HomeList from "@/components/home/HomeList";
 import CircleAttachment from "@/components/home/CircleAttachment";
 import Blog from "@/components/home/Blog";
 import LensDemo from "@/components/home/Focus";
+import BlackTinted from "@/components/home/blackTinted"
 
 const Page = () => {
   const [pageState, setPageState] = useState<'landing' | 'main'>('landing');
@@ -73,6 +74,8 @@ const Page = () => {
           <Demo />
           <CircleAttachment />
           <HomeList />
+
+        <BlackTinted />
           <BgAttached bgVideo="/homevideo/BlueSafe-2.mp4" />
           <Blog />
           <LensDemo />

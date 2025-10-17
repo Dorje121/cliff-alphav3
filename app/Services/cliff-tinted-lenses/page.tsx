@@ -327,7 +327,7 @@ const CliffTintedLenses = () => {
                 a perfect blend of fashion and function for every lifestyle."
         backgroundImage="/product/15.jpg"
         rightImage="/product/15.jpg"
-        serviceNumber="15"
+        serviceNumber="13"
         badgeTitle="Style"
         badgeSubtitle="Protection"
       />
@@ -413,6 +413,7 @@ const CliffTintedLenses = () => {
               </div>
             </div>
           </div>
+
           {/* Tint Categories */}
           <div className="relative z-[999]">
             {tintCategories.map((category, categoryIndex) => (
