@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import TextWithTexture from "@/components/textwithgoldentexture";
 import CTA from "../cta/CTA";
+import { Icon } from "@iconify-icon/react";
 
 const List = () => {
   const services = [
@@ -203,22 +204,92 @@ const List = () => {
 
   return (
     <div className="min-h-screen bg-black text-white overflow-x-hidden">
-      <section className="w-full bg-black mt-14 flex justify-center py-4">
-        <div className="w-full max-w-[1500px] mx-auto px-4">
-          <div className="relative rounded-3xl overflow-hidden shadow-2xl h-[60vh] bg-black">
-            <video
-              autoPlay
-              muted
-              loop
-              playsInline
-              className="w-full h-full object-cover object-[50%_30%]"
+      <section className="relative h-screen flex flex-col justify-between items-center py-8 md:pb-16 overflow-hidden">
+        {/* Background video */}
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover object-center z-0"
+        >
+          <source src="/videos/22222.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+
+        {/* Overlay (optional for better text readability) */}
+        <div className="absolute inset-0 bg-black/60 z-[1]" />
+
+        {/* Foreground Content */}
+        <div className="relative z-[2] flex flex-col items-center justify-center h-full">
+          <h1 className="text-white poppins font-semibold text-5xl uppercase text-center">
+            Cliff product and solutions
+          </h1>
+        </div>
+
+        <div className="relative z-[2] grid grid-cols-2 sm:grid-cols-2 md:grid-cols-8 gap-2 sm:gap-4 px-2 sm:px-8 pb-8">
+          {[
+            {
+              icon: "/svgs/bluelight.svg",
+              title: "Blue Filter",
+              desc: "Reduces blue light exposure",
+            },
+            {
+              icon: "/svgs/uvprotection.svg",
+              title: "UV Protection",
+              desc: "Blocks harmful UV rays",
+            },
+            {
+              icon: "/svgs/antireflective.svg",
+              title: "Anti Glare Coating",
+              desc: "Reduces reflections",
+            },
+            {
+              icon: "/svgs/scratchresistance.svg",
+              title: "Spin Coating",
+              desc: "Even and durable application",
+            },
+            {
+              icon: "/svgs/photochromatic.svg",
+              title: "Photochromatic",
+              desc: "Adapts to light conditions",
+            },
+            {
+              icon: "/svgs/scratchresistance.svg",
+              title: "Scratch Resistance",
+              desc: "Durable and long-lasting",
+            },
+            {
+              icon: "/svgs/antireflective.svg",
+              title: "Low Reflection",
+              desc: "Minimizes light bounce",
+            },
+            {
+              icon: "/svgs/spincoat.svg",
+              title: "Super Hydrophobic",
+              desc: "Repels water and oil",
+            },
+          ].map((feature, idx) => (
+            <div
+              key={idx}
+              className="text-center bg-gradient-to-b from-zinc-900/50 to-zinc-900/10 p-4 sm:p-6 rounded-xl border border-zinc-800 hover:border-yellow-500/30 transition-all duration-300"
             >
-              <source src="/homevideo/BlueSafe-2.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          </div>
+              <Image
+                src={feature.icon}
+                alt={feature.title}
+                height={1000}
+                width={1000}
+                className="w-12 sm:w-16 h-12 sm:h-16 mx-auto mb-3 sm:mb-4"
+              />
+              <h3 className="font-semibold text-sm sm:text-md text-white mb-1 sm:mb-2 uppercase">
+                {feature.title}
+              </h3>
+              <p className="text-xs sm:text-sm text-zinc-300">{feature.desc}</p>
+            </div>
+          ))}
         </div>
       </section>
+
       <div className="container max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-1 sm:py-2 lg:py-4 relative">
         {/* Header Section */}
         <div className="mb-8 md:mb-16">
@@ -226,7 +297,7 @@ const List = () => {
             {/* Title and Description */}
             <div className="flex-1">
               <TextWithTexture
-                text="Our Products"
+                text="The Best of Cliff"
                 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-semibold montserrat mb-4 md:mb-6 bg-gradient-to-r from-[#FFF9DC] via-yellow-100 to-[#FFCC00] bg-clip-text text-transparent"
               />
               <p className="text-base sm:text-lg md:text-xl text-zinc-300 max-w-4xl poppins">
@@ -252,8 +323,9 @@ const List = () => {
                       : selectedCategory}
                   </span>
                   <svg
-                    className={`w-4 h-4 sm:w-5 sm:h-5 transition-transform duration-300 ${isDropdownOpen ? "rotate-180" : "rotate-0"
-                      }`}
+                    className={`w-4 h-4 sm:w-5 sm:h-5 transition-transform duration-300 ${
+                      isDropdownOpen ? "rotate-180" : "rotate-0"
+                    }`}
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -283,10 +355,11 @@ const List = () => {
                           setSelectedCategory(category);
                           setIsDropdownOpen(false);
                         }}
-                        className={`w-full px-4 sm:px-6 py-2.5 sm:py-3 text-left hover:bg-white/10 transition-all duration-200 first:rounded-t-xl last:rounded-b-xl ${selectedCategory === category
-                          ? "bg-amber-400/20 text-amber-400 border-l-4 border-amber-400"
-                          : "text-zinc-300 hover:text-white"
-                          } ${index > 0 ? "border-t border-white/5" : ""}`}
+                        className={`w-full px-4 sm:px-6 py-2.5 sm:py-3 text-left hover:bg-white/10 transition-all duration-200 first:rounded-t-xl last:rounded-b-xl ${
+                          selectedCategory === category
+                            ? "bg-amber-400/20 text-amber-400 border-l-4 border-amber-400"
+                            : "text-zinc-300 hover:text-white"
+                        } ${index > 0 ? "border-t border-white/5" : ""}`}
                       >
                         <div className="flex items-center justify-between">
                           <span className="font-medium text-sm sm:text-base">
@@ -316,15 +389,15 @@ const List = () => {
         </div>
 
         {/* Services List */}
-        <div className="space-y-4 md:space-y-8">
+        <div className="space-y-4 md:space-y-4">
           {filteredServices.map((service, index) => (
             <Link
               key={service.id}
               href={`/Services/${service.slug}`}
-              className="cursor-pointer block"
+              className="cursor-pointer block group"
             >
               <div
-                className={`group relative backdrop-blur-sm border-t border-t-zinc-700 transition-all duration-500 hover:scale-102 overflow-hidden rounded-lg md:rounded-none`}
+                className={` relative backdrop-blur-sm border border-zinc-800 transition-all duration-500  overflow-hidden group-hover:bg-zinc-900 rounded-lg md:rounded-xl`}
               >
                 {/* Mobile Layout */}
                 <div className="block md:hidden">
@@ -339,45 +412,44 @@ const List = () => {
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
 
+                      {/* Content Section - Mobile */}
+                      <div className="p-4">
+                        {/* Category Badge */}
+                        <div className="inline-flex items-center px-3 py-1 rounded-full bg-amber-400/20 text-amber-400 text-xs font-medium mb-3">
+                          {service.category}
+                        </div>
+
+                        {/* Service Title */}
+                        <h3 className="text-xl font-bold mb-3 montserrat bg-gradient-to-r from-white via-yellow-100 to-yellow-200  bg-clip-text text-transparent group-hover:text-amber-400 transition-colors duration-300 font-family-montserrat">
+                          {service.title}
+                        </h3>
+
+                        {/* Service Description */}
+                        <p className="text-zinc-300 group-hover:text-white transition-colors duration-300 leading-relaxed text-sm mb-4 poppins">
+                          {service.description}
+                        </p>
+
+                        {/* Learn More Button */}
+                        <div className="inline-flex items-center text-amber-400 font-medium group-hover:text-white transition-colors duration-300 text-sm poppins">
+                          <span className="mr-2">Learn More</span>
+                          <svg
+                            className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M17 8l4 4m0 0l-4 4m4-4H3"
+                            />
+                          </svg>
+                        </div>
+                      </div>
                       {/* Service Number Overlay - Mobile */}
                       <div className="absolute top-4 right-4 text-4xl font-bold text-zinc-400 group-hover:text-amber-400/50 transition-all duration-500">
                         {service.id}
-                      </div>
-                    </div>
-
-                    {/* Content Section - Mobile */}
-                    <div className="p-4">
-                      {/* Category Badge */}
-                      <div className="inline-flex items-center px-3 py-1 rounded-full bg-amber-400/20 text-amber-400 text-xs font-medium mb-3">
-                        {service.category}
-                      </div>
-
-                      {/* Service Title */}
-                      <h3 className="text-xl font-bold mb-3 montserrat bg-gradient-to-r from-white via-yellow-100 to-yellow-200  bg-clip-text text-transparent group-hover:text-amber-400 transition-colors duration-300 font-family-montserrat">
-                        {service.title}
-                      </h3>
-
-                      {/* Service Description */}
-                      <p className="text-zinc-300 group-hover:text-white transition-colors duration-300 leading-relaxed text-sm mb-4 poppins">
-                        {service.description}
-                      </p>
-
-                      {/* Learn More Button */}
-                      <div className="inline-flex items-center text-amber-400 font-medium group-hover:text-white transition-colors duration-300 text-sm poppins">
-                        <span className="mr-2">Learn More</span>
-                        <svg
-                          className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M17 8l4 4m0 0l-4 4m4-4H3"
-                          />
-                        </svg>
                       </div>
                     </div>
                   </div>
@@ -385,33 +457,46 @@ const List = () => {
 
                 {/* Desktop Layout */}
                 <div
-                  className={`hidden md:flex p-5 ${index % 2 === 0 ? "flex-row" : "flex-row-reverse"
-                    } items-center min-h-[300px]`}
+                  className={`hidden md:flex p-5 ${
+                    index % 1 === 0 ? "flex-row" : "flex-row-reverse"
+                  } items-start justify-between `}
                 >
-                  <div
-                    className={`w-1/3 ${index % 2 === 0 ? "text-left" : "text-left"
-                      } `}
-                  >
-                    {/* Service Number Overlay - Desktop */}
-                    <div className="text-center text-6xl lg:text-8xl font-bold text-white/20 group-hover:text-amber-400/40 transition-all duration-500">
-                      {service.id}
+                  {/* Service Number Overlay - Desktop */}
+                  <div className={``}>
+                    <div className="text-center text-6xl lg:text-6xl font-bold text-white/20 group-hover:text-amber-400/40 transition-all duration-500">
+                      {index + 1 < 10 ? "0" + (index + 1) : index + 1}
+                    </div>
+                  </div>
+
+                  {/* Image Section - Desktop */}
+                  <div className="w-[300px] h-[200px] relative overflow-hidden rounded-2xl">
+                    <Image
+                      src={service.image}
+                      alt={service.title}
+                      fill
+                      className="object-cover rounded-2xl transition-transform duration-500 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-r from-black/50 to-transparent"></div>
+                  </div>
+                  {/* Category Badge */}
+                  <div className="flex flex-col gap-2">
+                    <h3 className="text-center">Type</h3>
+
+                    <div className="inline-flex items-center px-4 py-2 rounded-full bg-amber-400/20 text-amber-400 text-sm font-medium mb-6">
+                      {service.category}
                     </div>
                   </div>
 
                   {/* Content Section - Desktop */}
                   <div
-                    className={`w-1/3 p-8 lg:p-12 ${index % 2 === 0
-                      ? "lg:pl-12 lg:pr-16"
-                      : "lg:pr-12 lg:pl-16"
-                      }`}
+                    className={`w-1/3 ${
+                      index % 2 === 0
+                        ? "lg:pl-12 lg:pr-16"
+                        : "lg:pr-12 lg:pl-16"
+                    }`}
                   >
-                    {/* Category Badge */}
-                    <div className="inline-flex items-center px-4 py-2 rounded-full bg-amber-400/20 text-amber-400 text-sm font-medium mb-6">
-                      {service.category}
-                    </div>
-
                     {/* Service Title */}
-                    <h3 className="text-2xl lg:text-3xl xl:text-4xl font-bold montserrat mb-6 bg-gradient-to-r from-white via-yellow-100 to-yellow-200  bg-clip-text text-transparent group-hover:text-amber-400 transition-colors duration-300">
+                    <h3 className="text-2xl lg:text-3xl xl:text-3xl font-bold montserrat mb-2 text-white group-hover:text-amber-400 transition-colors duration-300">
                       {service.title}
                     </h3>
 
@@ -419,34 +504,12 @@ const List = () => {
                     <p className="text-zinc-300 group-hover:text-white transition-colors duration-300 leading-relaxed text-base lg:text-lg mb-8 poppins">
                       {service.description}
                     </p>
-
-                    {/* Learn More Button */}
-                    <div className="inline-flex items-center text-amber-400 font-medium group-hover:text-white transition-colors duration-300">
-                      <span className="mr-2 poppins">Learn More</span>
-                      <svg
-                        className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-2"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M17 8l4 4m0 0l-4 4m4-4H3"
-                        />
-                      </svg>
-                    </div>
                   </div>
-                  {/* Image Section - Desktop */}
-                  <div className="w-1/3 h-[300px] relative overflow-hidden">
-                    <Image
-                      src={service.image}
-                      alt={service.title}
-                      fill
-                      className="object-contain rounded-2xl transition-transform duration-500 group-hover:scale-110"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-r from-black/50 to-transparent"></div>
+
+                  {/* Learn More Button */}
+                  <div className="inline-flex items-center text-amber-400 font-medium group-hover:text-white transition-colors duration-300">
+                    <span className="mr-2 poppins">Learn More</span>
+                    <Icon icon="mage:external-link" width="24" height="24" />
                   </div>
                 </div>
               </div>

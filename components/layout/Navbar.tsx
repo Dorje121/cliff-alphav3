@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import gsap from "gsap";
 import TransitionLink from "@/components/PreLoader/TransitionLink";
-
+import Image from "next/image";
 
 const links = [
   { href: "/", label: "Home" },
@@ -21,8 +21,6 @@ export default function Navbar() {
   const menuRef = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
   const [isInFirstSection, setIsInFirstSection] = useState(false);
-
-
 
   const closeMenu = (onCompleteCallback?: () => void) => {
     const menuLinks = gsap.utils.toArray(".menu-link");
@@ -116,20 +114,23 @@ export default function Navbar() {
 
   // Scroll detection for cliff-coatings and cliff-blue-safe-coating pages
   useEffect(() => {
-    if (typeof window === 'undefined') return;
+    if (typeof window === "undefined") return;
 
-    if (pathname === "/Services/cliff-coatings" || pathname === "/Services/cliff-blue-safe-coating") {
+    if (
+      pathname === "/Services/cliff-coatings" ||
+      pathname === "/Services/cliff-blue-safe-coating"
+    ) {
       const handleScroll = () => {
         const scrollPosition = window.scrollY;
         const firstSectionHeight = window.innerHeight * 0.9; // 90vh
         setIsInFirstSection(scrollPosition < firstSectionHeight);
       };
 
-      window.addEventListener('scroll', handleScroll);
+      window.addEventListener("scroll", handleScroll);
       handleScroll(); // Initial check
 
       return () => {
-        window.removeEventListener('scroll', handleScroll);
+        window.removeEventListener("scroll", handleScroll);
       };
     } else {
       setIsInFirstSection(false);
@@ -141,12 +142,13 @@ export default function Navbar() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 w-full z-[9999999999] transition-colors duration-300 ${isOpen
-          ? "text-black"
-          : isTestProductPage || isInFirstSection
+        className={`fixed top-0 left-0 w-full z-[9999999999] transition-colors duration-300 ${
+          isOpen
+            ? "text-black"
+            : isTestProductPage || isInFirstSection
             ? "text-white"
             : "text-white"
-          }`}
+        }`}
       >
         <div className="max-w-[1500px] mx-auto p-4 flex items-center justify-between">
           {/* Logo */}
@@ -206,9 +208,9 @@ export default function Navbar() {
           className="fixed top-0 right-0 w-screen h-screen bg-[#fff] flex z-[99999]"
           style={{ clipPath: "circle(0% at 100% 0%)" }}
         >
-          {/* Left Panel */}
-          <div className="w-full md:w-1/2 h-full flex flex-col justify-center items-center md:text-left text-center md:items-start p-8 md:p-24 text-black border border-red-500">
-            <div className="flex flex-col group text-zinc-700 hover:text-zinc-200 space-y-2 xs:space-y-7 md:space-y-7 mx-10 ">
+          <div className="w-full md:w-1/2 h-full flex flex-col justify-center items-center md:text-left text-center md:items-start p-8 md:py-24 text-black">
+            {/* left Panel Image */}
+            <div className="flex flex-col items-start group text-zinc-700 hover:text-zinc-200 space-y-2 xs:space-y-7 md:space-y-7 mx-10 ">
               {links.map((link) => {
                 const isActive = pathname === link.href;
                 return (
@@ -216,8 +218,9 @@ export default function Navbar() {
                     key={link.href}
                     href={link.href}
                     onClick={() => handleLinkClick(link.href)}
-                    className={`menu-link text-[2rem] xs:text-4xl md:text-5xl font-bold uppercase tracking-wider ${isActive ? " " : " transition-colors duration-300"
-                      } hover:text-zinc-800 transition-all duration-900`}
+                    className={`menu-link text-[2rem] xs:text-4xl md:text-6xl font-bold uppercase tracking-wide ${
+                      isActive ? " " : " transition-colors duration-300"
+                    } hover:text-zinc-800 transition-all duration-900`}
                   >
                     {link.label}
                   </TransitionLink>
@@ -225,12 +228,13 @@ export default function Navbar() {
               })}
             </div>
           </div>
-
-          {/* Right Panel Image */}
+          {/* Right Panel */}
           <div className=" md:-z-10 hidden lense md:flex w-1/2 justify-start  items-end h-full relative">
-            <img
+            <Image
               src="/hand.jpg"
               alt="Decorative lens flare"
+              height={1000}
+              width={1000}
               className="w-[500px] h-fit object-contain"
             />
           </div>

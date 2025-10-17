@@ -9,7 +9,7 @@ interface TextWithTextureProps {
 const TextWithTexture = ({ text, image = "/texture/texture.png", className = "" }: TextWithTextureProps) => {
   return (
     <h1
-      className={`text-transparent bg-clip-text bg-center bg-cover ${className}`}
+      className={`text-transparent poppins bg-clip-text bg-center bg-cover ${className}`}
       style={{ backgroundImage: `url('${image}')` }}
     >
       {text}

@@ -136,15 +136,16 @@ export default function BlogPage() {
       {/* Hero Section */}
       <div className="relative pt-16 pb-4 px-4 sm:px-6 lg:px-8  mb-10">
         <div className=" mx-auto text-center ">
-
-          <TextWithTexture text="Insights & Innovation" className="!h-26  text-5xl md:text-7xl font-bold  p-1" />
+          <TextWithTexture
+            text="Insights & Innovation"
+            className="!h-26  text-5xl md:text-7xl font-bold  p-1"
+          />
           <p className="text-xl md:text-2xl text-zinc-300 max-w-3xl mx-auto leading-">
             Discover the latest in lens technology, eye health, and vision
             science through our expert insights and cutting-edge research.
           </p>
         </div>
       </div>
-
 
       {/* Blog Grid */}
       <div className="px-2 sm:px-4 md:px-8 pb-20 ">
@@ -155,7 +156,7 @@ export default function BlogPage() {
               .map((post) => (
                 <article
                   key={post.id}
-                  className="group relative overflow-hidden rounded-3xl shadow-2xl hover:shadow-blue-900/25 transition-all duration-700 hover:-translate-y-3 transform-gpu"
+                  className="group relative overflow-hidden rounded-3xl transition-all duration-700 hover:-translate-y-3 transform-gpu"
                   style={{
                     background: `linear-gradient(135deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.5) 100%), url(${post.image})`,
                     backgroundSize: "cover",
@@ -165,7 +166,7 @@ export default function BlogPage() {
                   }}
                 >
                   {/* Premium glass morphism overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/50 backdrop-blur-[1px]"></div>
+                  {/* <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/50 backdrop-blur-[1px]"></div> */}
 
                   {/* Content Container */}
                   <div className="relative z-10 flex flex-col justify-between h-full p-8">
