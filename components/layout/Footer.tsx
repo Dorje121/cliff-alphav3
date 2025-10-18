@@ -1,27 +1,48 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import TextWithTexture from "@/components/textwithgoldentexture";
+import { Icon } from "@iconify-icon/react";
+// import TextWithTexture from "@/components/textwithgoldentexture";
 
 const Footer = () => {
   return (
     <footer
-      className="relative md:h-screen backdrop-blur-sm flex items-center justify-center text-white bg-cover bg-center bg-no-repeat"
+      className="relative md:h-[110vh] backdrop-blur-sm flex items-center justify-center text-white bg-cover bg-center bg-no-repeat"
       style={{ backgroundImage: "url(/footer/cliff-mount-lens.png)" }}
     >
       {/* Enhanced Overlay with gradient */}
       {/* <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-black/40"></div> */}
 
-      <div className="relative z-10 w-full max-w-[1520px] mx-auto px-4 sm:px-6 md:px-8 py-8  flex flex-col items-center sm:justify-center justify-start h-full">
+      <div className="relative z-10 w-full mx-auto px-4 sm:px-6 md:px-8 py-8  flex flex-col items-center sm:justify-center justify-start h-full">
         {/* Main Title */}
-        <div className="text-center w-full sm:w-1/2 ">
-          <h2 className="text-4xl md:text-8xl uppercase pt-44 font-medium montserrat text-[#FFD700]">
-            Partner with us
-          </h2>
-        </div>
 
+        <div className="text-[#FFD700] flex flex-col items-start justify-center px-4 py-8">
+          <div className="text-center w-full ">
+            <h2 className="text-4xl md:text-4xl uppercase pb-6 pt-44 font-medium montserrat text-[#FFD700]">
+              Partner with us
+            </h2>
+          </div>
+          <form className="w-full relative border-b border-[#FFD700]/70">
+            <label className="block text-xs uppercase tracking-widest mb-2 text-[#FFD700]">
+              Your Email <span className="text-red-500">*</span>
+            </label>
+            <div className="flex items-center justify-between">
+              <input
+                type="email"
+                placeholder=""
+                className="bg-transparent w-full text-[#FFD700] placeholder-[#b6ff00]/60 focus:outline-none text-sm tracking-wider"
+              />
+              <button
+                type="submit"
+                className="text-[#FFD700] uppercase text-nowrap cursor-pointer text-sm ml-3 tracking-widest hover:text-white transition-colors"
+              >
+                [ Join ]
+              </button>
+            </div>
+          </form>
+        </div>
         {/* Navigation Links - Centered at Bottom */}
-        <div className="flex justify-between flex-col lg:flex-row items-center w-full max-w-screen gap-4 sm:gap-8 lg:gap-0 mt-8 sm:mt-16 md:mt-32 lg:mt-52 lg:mb-28">
+        <div className="flex justify-between flex-col lg:flex-row items-center w-full max-w-screen gap-4 sm:gap-8 lg:gap-0 mt-8 sm:mt-16 md:mt-32 lg:mt-52 lg:mb-16">
           {/* Logo and CTA */}
           <div className="flex flex-row items-center justify-center mb-4 sm:mb-6 lg:mb-0 order-1 lg:order-none">
             <Image
@@ -52,10 +73,10 @@ const Footer = () => {
             </li>
             <li className="px-1 sm:px-2">
               <Link
-                href="/AboutUs"
+                href="/Coating"
                 className="text-xs sm:text-sm md:text-base font-family-dm-sans transition-all duration-300 hover:scale-105 inline-block whitespace-nowrap"
               >
-                About Us
+                Coatings
               </Link>
             </li>
             <li className="px-1 sm:px-2">
@@ -63,7 +84,7 @@ const Footer = () => {
                 href="/Blogs"
                 className="text-xs sm:text-sm md:text-base font-family-dm-sans transition-all duration-300 hover:scale-105 inline-block whitespace-nowrap"
               >
-                Latest News
+                Technologies
               </Link>
             </li>
             <li className="px-1 sm:px-2">
@@ -76,76 +97,23 @@ const Footer = () => {
             </li>
           </ul>
           {/* Social Media */}
-          <div className="flex flex-col items-center order-3 lg:order-none">
-            <div className="flex items-center justify-center gap-4 text-[#FFD700]">
-              <a href="#" className="p-1 sm:p-2">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width={24}
-                  height={24}
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    fill="currentColor"
-                    d="M12 9.52A2.48 2.48 0 1 0 14.48 12A2.48 2.48 0 0 0 12 9.52m9.93-2.45a6.5 6.5 0 0 0-.42-2.26a4 4 0 0 0-2.32-2.32a6.5 6.5 0 0 0-2.26-.42C15.64 2 15.26 2 12 2s-3.64 0-4.93.07a6.5 6.5 0 0 0-2.26.42a4 4 0 0 0-2.32 2.32a6.5 6.5 0 0 0-.42 2.26C2 8.36 2 8.74 2 12s0 3.64.07 4.93a6.9 6.9 0 0 0 .42 2.27a3.9 3.9 0 0 0 .91 1.4a3.9 3.9 0 0 0 1.41.91a6.5 6.5 0 0 0 2.26.42C8.36 22 8.74 22 12 22s3.64 0 4.93-.07a6.5 6.5 0 0 0 2.26-.42a3.9 3.9 0 0 0 1.41-.91a3.9 3.9 0 0 0 .91-1.4a6.6 6.6 0 0 0 .42-2.27C22 15.64 22 15.26 22 12s0-3.64-.07-4.93m-2.54 8a5.7 5.7 0 0 1-.39 1.8A3.86 3.86 0 0 1 16.87 19a5.7 5.7 0 0 1-1.81.35H8.94A5.7 5.7 0 0 1 7.13 19a3.5 3.5 0 0 1-1.31-.86A3.5 3.5 0 0 1 5 16.87a5.5 5.5 0 0 1-.34-1.81V8.94A5.5 5.5 0 0 1 5 7.13a3.5 3.5 0 0 1 .86-1.31A3.6 3.6 0 0 1 7.13 5a5.7 5.7 0 0 1 1.81-.35h6.12a5.7 5.7 0 0 1 1.81.35a3.5 3.5 0 0 1 1.31.86A3.5 3.5 0 0 1 19 7.13a5.7 5.7 0 0 1 .35 1.81V12c0 2.06.07 2.27.04 3.06Zm-1.6-7.44a2.38 2.38 0 0 0-1.41-1.41A4 4 0 0 0 15 6H9a4 4 0 0 0-1.38.26a2.38 2.38 0 0 0-1.41 1.36A4.3 4.3 0 0 0 6 9v6a4.3 4.3 0 0 0 .26 1.38a2.38 2.38 0 0 0 1.41 1.41a4.3 4.3 0 0 0 1.33.26h6a4 4 0 0 0 1.38-.26a2.38 2.38 0 0 0 1.41-1.41a4 4 0 0 0 .26-1.38V9a3.8 3.8 0 0 0-.26-1.38ZM12 15.82A3.81 3.81 0 0 1 8.19 12A3.82 3.82 0 1 1 12 15.82m4-6.89a.9.9 0 0 1 0-1.79a.9.9 0 0 1 0 1.79"
-                  ></path>
-                </svg>{" "}
-              </a>
-              <a href="#" className="p-1 sm:p-2">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width={18}
-                  height={18}
-                  viewBox="0 0 20 20"
-                  className="sm:w-5 sm:h-5"
-                >
-                  <path
-                    fill="currentColor"
-                    fillRule="evenodd"
-                    d="M18.896 0H1.104C.494 0 0 .494 0 1.104v17.792C0 19.506.494 20 1.104 20h9.578v-7.745H8.076V9.237h2.606V7.01c0-2.584 1.578-3.99 3.883-3.99c1.104 0 2.052.082 2.329.119v2.7h-1.598c-1.254 0-1.496.596-1.496 1.47v1.927h2.989l-.39 3.018h-2.6V20h5.097c.61 0 1.104-.494 1.104-1.104V1.104C20 .494 19.506 0 18.896 0"
-                  ></path>
-                </svg>
-              </a>
-              <a href="#" className="p-1 sm:p-2">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width={18}
-                  height={18}
-                  viewBox="0 0 20 20"
-                  className="sm:w-5 sm:h-5"
-                >
-                  <path
-                    fill="currentColor"
-                    d="M17.04 17.043h-2.962v-4.64c0-1.107-.023-2.531-1.544-2.531c-1.544 0-1.78 1.204-1.78 2.449v4.722H7.793V7.5h2.844v1.3h.039c.397-.75 1.364-1.54 2.808-1.54c3.001 0 3.556 1.974 3.556 4.545zM4.447 6.194c-.954 0-1.72-.771-1.72-1.72s.767-1.72 1.72-1.72a1.72 1.72 0 0 1 0 3.44m1.484 10.85h-2.97V7.5h2.97zM18.522 0H1.476C.66 0 0 .645 0 1.44v17.12C0 19.355.66 20 1.476 20h17.042c.815 0 1.482-.644 1.482-1.44V1.44C20 .646 19.333 0 18.518 0z"
-                  ></path>
-                </svg>
-              </a>
-              <a href="#" className="p-1 sm:p-2">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width={20}
-                  height={20}
-                  viewBox="0 0 15 15"
-                  className="sm:w-6 sm:h-6"
-                >
-                  <path
-                    fill="currentColor"
-                    d="M8.599 7.5L7 8.566V6.434z"
-                  ></path>
-                  <path
-                    fill="currentColor"
-                    fillRule="evenodd"
-                    d="M1.506 1.773a28.6 28.6 0 0 1 11.988 0A1.905 1.905 0 0 1 15 3.636v7.728c0 .898-.628 1.675-1.506 1.863a28.6 28.6 0 0 1-11.988 0A1.905 1.905 0 0 1 0 11.364V3.636c0-.898.628-1.675 1.506-1.863m5.271 3.311A.5.5 0 0 0 6 5.5v4a.5.5 0 0 0 .777.416l3-2a.5.5 0 0 0 0-.832z"
-                    clipRule="evenodd"
-                  ></path>
-                </svg>
-              </a>
+          <div className="flex flex-col items-center ">
+            <div className="flex items-center justify-center gap-2 text-[#FFD700]">
+              <Link href="https://facebook.com" className="p-1 pb-0">
+                <Icon icon="ri:facebook-fill" width="24" height="24" />
+              </Link>
+              <Link href="https://instagram.com" className="p-1 pb-0">
+                <Icon icon="basil:instagram-solid" width="24" height="24" />
+              </Link>
+              <Link href="https://linkedin.com" className="p-1 pb-0">
+                <Icon icon="jam:linkedin" width="24" height="24" />
+              </Link>
             </div>
           </div>
         </div>
 
         {/* Footer Bottom */}
-        <div className="w-full py-3 sm:py-4 px-4 sm:px-6 border-t border-white/20 absolute bottom-4 mt-4 sm:mt-6 ">
+        <div className="w-full py-3 sm:py-4 px-4 sm:px-6 border-t border-yellow-600/40 absolute bottom-4 mt-4 sm:mt-6 ">
           <p className="text-[#FFD700] poppins text-xs text-center">
             © 2025 Cliff Eyewear. All rights reserved.
           </p>
