@@ -90,19 +90,17 @@ const Contact = () => {
   };
 
   return (
-    <div className="min-h-screen bg-black text-white h-[600px]">
+    <div className="min-h-screen bg-black text-[#FFD700]">
       <div className="mx-auto px-4 py-16">
-        <div className="flex justify-center items-center ">
+        <div className="flex  flex-col justify-center items-center ">
           <div ref={heroRef} className="text-start mb-16 w-1/2 relative">
             {/* Text Content */}
-            <div className="relative z-20 flex flex-col justify-center p-6 h-full">
-              <h2>
-                <TextWithTexture
-                  text="Get in Touch"
-                  className="text-5xl md:text-7xl font-bold mb-6"
-                />
+            <div className="relative z-20 flex flex-col justify-center h-full">
+              <h2 className="text-4xl md:text-6xl capitalize pb-6 pt-44 font-medium montserrat text-[#FFD700]">
+                Partner with us
               </h2>
-              <p className="text-xl md:text-2xl text-zinc-300 w-2/3 leading-relaxed">
+
+              <p className="text-sm md:text-lg poppins leading-relaxed">
                 Have questions about our eyewear? Want to learn more about our
                 products? We&apos;d love to hear from you.
               </p>
@@ -110,72 +108,54 @@ const Contact = () => {
             {/* Image with gradient overlay */}
             <div className="absolute right-0 bottom-0 w-full h-full">
               <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-b from-black"></div>
-                <img
-                  src="https://static.vecteezy.com/system/resources/thumbnails/053/736/050/small_2x/two-hands-shaking-over-a-networked-background-photo.jpeg"
+                <div className="absolute inset-0 bg-gradient-to-t from-black"></div>
+                <Image
+                  src={"/contact/shake-hand.jpeg"}
                   alt="Cliff lens"
                   width={1000}
                   height={1000}
                   className="object-contain"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black via- to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-l from-black/90 via- to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-black/90 via- to-transparent"></div>
               </div>
             </div>
           </div>
 
           {/* Contact Form */}
-          <div className=" w-1/2 rounded-2xl sm:p-8 ">
-            <h2 className="text-3xl font-bold font-ramro mb-8 text-white">
-              Have any quires?
-            </h2>
-
-            <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid md:grid-cols-2 gap-6">
-                <div className="space-y-2">
-                  <label
-                    htmlFor="name"
-                    className="text-sm font-medium text-zinc-300"
-                  >
-                    First Name <span className="text-red-500">*</span>
-                  </label>
-                  <input
-                    type="text"
-                    id="firstname"
-                    name="firstname"
-                    value={formData.firstname}
-                    onChange={handleInputChange}
-                    required
-                    className="w-full px-4 py-3 bg-zinc-800 border-none border-zinc-600 rounded-lg text-white placeholder-zinc-400 focus:outline-none focus:ring-1 focus:ring-yellow-500 focus:border-transparent transition-all duration-300"
-                    placeholder="John"
-                  />
-                </div>
-
-                <div className="space-y-2">
-                  <label
-                    htmlFor="lastname"
-                    className="text-sm font-medium text-zinc-300"
-                  >
-                    Last Name <span className="text-red-500">*</span>
-                  </label>
-                  <input
-                    type="text"
-                    id="lastname"
-                    name="lastname"
-                    value={formData.lastname}
-                    onChange={handleInputChange}
-                    required
-                    className="w-full px-4 py-3 bg-zinc-800 border-none border-zinc-600 rounded-lg text-white placeholder-zinc-400 focus:outline-none focus:ring-1 focus:ring-yellow-500 focus:border-transparent transition-all duration-300"
-                    placeholder="Doe"
-                  />
-                </div>
+          <div className="lg:w-1/2 w-full">
+            <form onSubmit={handleSubmit} className="space-y-8" ref={formRef}>
+              {/* Name Fields */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {["firstname", "lastname"].map((field) => (
+                  <div key={field}>
+                    <label
+                      htmlFor={field}
+                      className="text-sm uppercase tracking-widest text-[#FFD700]"
+                    >
+                      {field === "firstname" ? "First Name" : "Last Name"}{" "}
+                      <span className="text-red-500">*</span>
+                    </label>
+                    <input
+                      type="text"
+                      id={field}
+                      name={field}
+                      value={formData[field as keyof typeof formData]}
+                      onChange={handleInputChange}
+                      required
+                      className="w-full bg-transparent border-b border-[#FFD700]/70 focus:border-[#FFD700] focus:outline-none text-[#FFD700] py-2 text-sm tracking-wider transition-all"
+                    />
+                  </div>
+                ))}
               </div>
 
-              <div className="space-y-2">
+              {/* Email */}
+              <div>
                 <label
                   htmlFor="email"
-                  className="text-sm font-medium text-zinc-300"
+                  className="text-sm uppercase tracking-widest text-[#FFD700]"
                 >
-                  Email <span className="text-red-500">*</span>
+                  Your Email <span className="text-red-500">*</span>
                 </label>
                 <input
                   type="email"
@@ -183,14 +163,16 @@ const Contact = () => {
                   name="email"
                   value={formData.email}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 bg-zinc-800 border-none border-zinc-600 rounded-lg text-white placeholder-zinc-400 focus:outline-none focus:ring-1 focus:ring-yellow-500 focus:border-transparent transition-all duration-300"
-                  placeholder="example@email.com"
+                  required
+                  className="w-full bg-transparent border-b border-[#FFD700]/70 focus:border-[#FFD700] focus:outline-none text-[#FFD700] py-2 text-sm tracking-wider transition-all"
                 />
               </div>
-              <div className="space-y-2">
+
+              {/* Subject */}
+              <div>
                 <label
                   htmlFor="subject"
-                  className="text-sm font-medium text-zinc-300"
+                  className="text-sm uppercase tracking-widest text-[#FFD700]"
                 >
                   Subject <span className="text-red-500">*</span>
                 </label>
@@ -200,73 +182,50 @@ const Contact = () => {
                   name="subject"
                   value={formData.subject}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 bg-zinc-800 border-none border-zinc-600 rounded-lg text-white placeholder-zinc-400 focus:outline-none focus:ring-1 focus:ring-yellow-500 focus:border-transparent transition-all duration-300"
-                  placeholder="How can we help you?"
+                  required
+                  className="w-full bg-transparent border-b border-[#FFD700]/70 focus:border-[#FFD700] focus:outline-none text-[#FFD700] py-2 text-sm tracking-wider transition-all"
                 />
               </div>
 
-              <div className="space-y-2">
+              {/* Message */}
+              <div>
                 <label
                   htmlFor="message"
-                  className="text-sm font-medium text-zinc-300"
+                  className="text-sm uppercase tracking-widest text-[#FFD700]"
                 >
-                  Message <span className="text-yellow-300">(Optional)</span>
+                  Message <span className="text-yellow-400">(Optional)</span>
                 </label>
                 <textarea
                   id="message"
                   name="message"
+                  rows={5}
                   value={formData.message}
                   onChange={handleInputChange}
-                  required
-                  rows={6}
-                  className="w-full px-4 py-3 bg-zinc-800 border-none border-zinc-600 rounded-lg text-white placeholder-zinc-400 focus:outline-none focus:ring-1 focus:ring-yellow-500  focus:border-transparent transition-all duration-300 resize-none"
-                  placeholder="Tell us about your needs, questions, or feedback..."
+                  className="w-full bg-transparent border-b border-[#FFD700]/70 focus:border-[#FFD700] focus:outline-none text-[#FFD700] py-2 text-sm tracking-wider resize-none transition-all"
+                  placeholder="Write your message..."
                 />
               </div>
 
-              {/* Submit Status Messages */}
+              {/* Status */}
               {submitStatus === "success" && (
-                <div className="p-4 bg-green-900/30 border border-green-600/50 rounded-lg">
-                  <p className="text-green-400 text-center">
-                    Thank you! We will get back to you as soon as possible.
-                  </p>
-                </div>
+                <p className="text-green-400 text-sm text-center">
+                  Thank you! We’ll get back to you soon.
+                </p>
               )}
-
               {submitStatus === "error" && (
-                <div className="p-4 bg-red-900/30 border border-red-600/50 rounded-lg">
-                  <p className="text-red-400 text-center">
-                    There was an error. Please try again or email us directly.
-                  </p>
-                </div>
+                <p className="text-red-400 text-sm text-center">
+                  Something went wrong. Please try again.
+                </p>
               )}
 
+              {/* Submit Button */}
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="    w-fit text-black cursor-pointer py-4 px-6 rounded-lg font-semibold text-lg
-    flex items-center justify-center space-x-2
-    bg-gradient-to-r from-yellow-200 to-yellow-600
-    transition-all duration-300 ease-in-out
-    hover:bg-gradient-to-l hover:text-xl"
+                className="uppercase tracking-widest text-[#FFD700] hover:text-[#FFD700] cursor-pointer transition-all border border-[#FFD700] px-8 py-3 rounded-none"
               >
-                {isSubmitting ? (
-                  <>
-                    <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
-                    <span>Opening Email Client...</span>
-                  </>
-                ) : (
-                  <>
-                    <Send className="h-5 w-5" />
-                    <span>Send Message</span>
-                  </>
-                )}
+                [ {isSubmitting ? "Sending..." : "Send Message"} ]
               </button>
-
-              {/* <p className="text-sm text-zinc-500 text-center">
-                * Required fields. Your message will open in your default email
-                application.
-              </p> */}
             </form>
           </div>
         </div>

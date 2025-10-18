@@ -36,7 +36,7 @@ const Footer = () => {
                 type="submit"
                 className="text-[#FFD700] uppercase text-nowrap cursor-pointer text-sm ml-3 tracking-widest hover:text-white transition-colors"
               >
-                [ Join ]
+                [ Submit ]
               </button>
             </div>
           </form>

@@ -1,15 +1,14 @@
 "use client";
 
 import React, { useEffect } from "react";
-import Image from "next/image";
 import { Calendar, Clock, ArrowRight, Eye } from "lucide-react";
 import TransitionLink from "@/components/PreLoader/TransitionLink";
 import TextWithTexture from "@/components/textwithgoldentexture";
+import Image from "next/image";
 
 interface BlogPost {
   id: number;
   title: string;
-  excerpt: string;
   content: string;
   image: string;
   date: string;
@@ -24,8 +23,6 @@ const blogPosts: BlogPost[] = [
   {
     id: 1,
     title: "Revolutionary Lens Technology: The Future of Vision Correction",
-    excerpt:
-      "Discover how our latest lens innovations are transforming the way people see the world, with cutting-edge technology that adapts to every lifestyle.",
     content: "Full article content here...",
     image: "/ai1.jpg",
     date: "2024-03-15",
@@ -38,10 +35,8 @@ const blogPosts: BlogPost[] = [
   {
     id: 2,
     title: "Progressive Lenses: A Complete Guide to Better Vision",
-    excerpt:
-      "Everything you need to know about progressive lenses, from benefits to choosing the right type for your needs.",
     content: "Full article content here...",
-    image: "/progreesive.png",
+    image: "/ai1.jpg",
     date: "2024-03-12",
     readTime: "7 min read",
     category: "Education",
@@ -51,8 +46,6 @@ const blogPosts: BlogPost[] = [
   {
     id: 3,
     title: "The Science Behind Blue Light Protection",
-    excerpt:
-      "Understanding how blue light affects your eyes and why our protective coatings are essential for digital wellness.",
     content: "Full article content here...",
     image: "/ai2.jpg",
     date: "2024-03-10",
@@ -64,8 +57,6 @@ const blogPosts: BlogPost[] = [
   {
     id: 4,
     title: "Photochromic Lenses: Adapting to Every Environment",
-    excerpt:
-      "Explore the benefits of photochromic lenses that automatically adjust to changing light conditions.",
     content: "Full article content here...",
     image: "/ai3.jpg",
     date: "2024-03-08",
@@ -77,8 +68,6 @@ const blogPosts: BlogPost[] = [
   {
     id: 5,
     title: "Eye Health in the Digital Age",
-    excerpt:
-      "Tips and insights for maintaining healthy vision while navigating our increasingly digital world.",
     content: "Full article content here...",
     image: "/eyetest.jpg",
     date: "2024-03-05",
@@ -90,8 +79,6 @@ const blogPosts: BlogPost[] = [
   {
     id: 6,
     title: "Custom Lens Solutions for Professional Athletes",
-    excerpt:
-      "How specialized lens technology is helping athletes perform at their peak with enhanced visual clarity.",
     content: "Full article content here...",
     image: "/ai4.jpg",
     date: "2024-03-02",
@@ -102,16 +89,7 @@ const blogPosts: BlogPost[] = [
   },
 ];
 
-const categories = [
-  "All",
-  "Technology",
-  "Health",
-  "Education",
-  "Product",
-  "Sports",
-];
-
-export default function BlogPage() {
+export default function Blog() {
   const [selectedCategory, setSelectedCategory] = React.useState("All");
   const [filteredPosts, setFilteredPosts] = React.useState(blogPosts);
 
@@ -132,15 +110,14 @@ export default function BlogPage() {
   };
 
   return (
-    <div className="min-h-screen ">
+    <div className="min-h-screen bg-black">
       {/* Hero Section */}
-      <div className="relative pt-16 pb-4 px-4 sm:px-6 lg:px-8  mb-10">
-        <div className=" mx-auto text-center ">
-          <TextWithTexture
-            text="Insights & Innovation"
-            className="!h-26  text-5xl md:text-7xl font-bold  p-1"
-          />
-          <p className="text-xl md:text-2xl text-zinc-300 max-w-3xl mx-auto leading-">
+      <div className="relative pt-32 pb-20 px-5 ">
+        <div className="mx-auto text-left">
+          <h2 className="text-4xl md:text-8xl font-medium montserrat text-[#FFD700]">
+            Latest Technologies Update
+          </h2>
+          <p className="text-xl md:text-2xl text-[#FFD700] max-w-3xl leading-relaxed poppins">
             Discover the latest in lens technology, eye health, and vision
             science through our expert insights and cutting-edge research.
           </p>
@@ -148,35 +125,35 @@ export default function BlogPage() {
       </div>
 
       {/* Blog Grid */}
-      <div className="px-2 sm:px-4 md:px-8 pb-20 ">
-        <div className="w-full mx-auto">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 ">
+      <div className="px-5  pb-20">
+        <div className="mx-auto">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredPosts
               .filter((post) => !post.featured)
               .map((post) => (
-                <article
+                <div
+                  className="group border border-black/20 sm:border-none relative overflow-hidden rounded-xl transition-all duration-700 hover:-translate-y-3 transform-gpu"
                   key={post.id}
-                  className="group relative overflow-hidden rounded-3xl transition-all duration-700 hover:-translate-y-3 transform-gpu"
-                  style={{
-                    background: `linear-gradient(135deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.5) 100%), url(${post.image})`,
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                    backgroundRepeat: "no-repeat",
-                    minHeight: "400px",
-                  }}
                 >
+                  <Image
+                    src={post.image}
+                    height={1000}
+                    width={1000}
+                    alt="Cliff Lens"
+                    className="h-64 object-cover"
+                  />
                   {/* Premium glass morphism overlay */}
-                  {/* <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/50 backdrop-blur-[1px]"></div> */}
+                  {/* <div className="absolute inset-0 bg-gradient-to-t from-white/50 via-transparent to-white/50 backdrop-blur-[1px]"></div> */}
 
                   {/* Content Container */}
-                  <div className="relative z-10 flex flex-col justify-between h-full p-8">
+                  <div className="relative z-10 flex flex-col justify-between p-8">
                     {/* Top Section - Category & Meta */}
                     <div className="flex items-start justify-between mb-4">
-                      <div className="w-full flex justify-between items-center">
-                        <span className="inline-block px-4 py-2 bg-white/10 backdrop-blur-xl text-yellow-300 rounded-full text-xs font-semibold">
+                      <div className="w-full flex flex-wrap justify-between items-center poppins">
+                        <span className="inline-block px-4 py-2 bg-black/10 backdrop-blur-xl text-yellow-300 rounded-full text-xs font-semibold">
                           {post.category}
                         </span>
-                        <div className="flex items-center gap-4 text-xs text-white/70">
+                        <div className="flex items-center gap-4 text-xs text-[#FFD700]">
                           <div className="flex items-center gap-1">
                             <Calendar size={12} />
                             <span>{formatDate(post.date)}</span>
@@ -195,19 +172,19 @@ export default function BlogPage() {
 
                     {/* Bottom Section - Title & CTA */}
                     <div className="space-y-6">
-                      <h3 className="text-2xl font-bold font-family-playfair leading-tight text-transparent bg-gradient-to-r from-white via-yellow-100 to-yellow-200 bg-clip-text transition-all duration-500 line-clamp-3">
+                      <h3 className="text-lg md:text-2xl font-medium montserrat leading-tight text-[#FFD700] transition-all duration-500 line-clamp-3">
                         {post.title}
                       </h3>
 
                       <div className="flex items-center  justify-start">
                         <TransitionLink
                           href={`/Blogs/${post.id}`}
-                          className="group/cta inline-flex items-center gap-3 px-5 py-2 bg-white/10 hover:bg-white/20 backdrop-blur-xl border border-bg-gradient-to-r from-white via-yellow-100 to-yellow-200   rounded-full text-white font-semibold text-sm transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/25 hover:scale-105"
+                          className="group/cta inline-flex items-center gap-3 px-5 py-2 bg-black/10 hover:bg-black/20 backdrop-blur-xl border border-[#FFD700]   rounded-full text-black font-semibold text-sm transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/25 hover:scale-105"
                         >
-                          <span>Read Article</span>
+                          <span className="text-[#FFD700]">Read Article</span>
                           <ArrowRight
                             size={16}
-                            className="transition-transform duration-500 group-hover/cta:translate-x-2 group-hover/cta:scale-110"
+                            className="transition-transform duration-500 group-hover/cta:translate-x-2 group-hover/cta:scale-110 "
                           />
                         </TransitionLink>
                       </div>
@@ -215,15 +192,15 @@ export default function BlogPage() {
                   </div>
 
                   {/* Subtle animation lines */}
-                  <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
-                  <div className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200 delay-300"></div>
-                </article>
+                  <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
+                  <div className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200 delay-300"></div>
+                </div>
               ))}
           </div>
 
           {filteredPosts.length === 0 && (
             <div className="text-center py-20">
-              <p className="text-zinc-400 text-lg">
+              <p className="text-zinc-500 text-lg">
                 No articles found in this category.
               </p>
             </div>

@@ -335,15 +335,34 @@ export default function BlogPost() {
     if (!post) return;
 
     const ctx = gsap.context(() => {
-
-
       // Hero content animation
       const tl = gsap.timeline({ delay: 0.5 });
-      tl.from(".hero-category", { y: 30, opacity: 0, duration: 0.8, ease: "power3.out" })
-        .from(".hero-title", { y: 50, opacity: 0, duration: 1, ease: "power3.out" }, "-=0.6")
-        .from(".hero-excerpt", { y: 30, opacity: 0, duration: 0.8, ease: "power3.out" }, "-=0.4")
-        .from(".hero-meta", { y: 20, opacity: 0, duration: 0.6, ease: "power3.out" }, "-=0.2")
-        .from(".hero-actions", { y: 20, opacity: 0, duration: 0.6, ease: "power3.out" }, "-=0.1");
+      tl.from(".hero-category", {
+        y: 30,
+        opacity: 0,
+        duration: 0.8,
+        ease: "power3.out",
+      })
+        .from(
+          ".hero-title",
+          { y: 50, opacity: 0, duration: 1, ease: "power3.out" },
+          "-=0.6"
+        )
+        .from(
+          ".hero-excerpt",
+          { y: 30, opacity: 0, duration: 0.8, ease: "power3.out" },
+          "-=0.4"
+        )
+        .from(
+          ".hero-meta",
+          { y: 20, opacity: 0, duration: 0.6, ease: "power3.out" },
+          "-=0.2"
+        )
+        .from(
+          ".hero-actions",
+          { y: 20, opacity: 0, duration: 0.6, ease: "power3.out" },
+          "-=0.1"
+        );
 
       // Floating cards animation
       gsap.from(".floating-card", {
@@ -355,7 +374,7 @@ export default function BlogPost() {
         scrollTrigger: {
           trigger: ".floating-cards",
           start: "top 80%",
-        }
+        },
       });
 
       // Content reveal animation
@@ -368,7 +387,7 @@ export default function BlogPost() {
         scrollTrigger: {
           trigger: ".content-section",
           start: "top 70%",
-        }
+        },
       });
 
       // Sticky sidebar animation
@@ -381,9 +400,8 @@ export default function BlogPost() {
         scrollTrigger: {
           trigger: ".article-sidebar",
           start: "top 60%",
-        }
+        },
       });
-
     }, containerRef);
 
     return () => {
@@ -396,13 +414,14 @@ export default function BlogPost() {
       <div className="min-h-screen bg-gradient-to-br from-black via-zinc-900 to-black text-white flex items-center justify-center">
         <div className="text-center space-y-6">
           <div className=" rounded-2xl flex items-center justify-center mb-8">
-            <h2 className="text-5xl lg:text-7xl font-semibold" >404</h2>
+            <h2 className="text-5xl lg:text-7xl font-semibold">404</h2>
           </div>
           <h1 className="text-5xl font-bold bg-gradient-to-r from-white to-zinc-400 bg-clip-text text-transparent">
             Article Not Found
           </h1>
           <p className="text-xl text-zinc-400 max-w-md mx-auto">
-            The article you&apos;re looking for doesn&apos;t exist or has been moved.
+            The article you&apos;re looking for doesn&apos;t exist or has been
+            moved.
           </p>
           <TransitionLink
             href="/Blogs"
@@ -424,8 +443,7 @@ export default function BlogPost() {
     });
   };
 
-  const shareUrl = typeof window !== 'undefined' ? window.location.href : '';
-
+  const shareUrl = typeof window !== "undefined" ? window.location.href : "";
 
   // latest
 
@@ -434,10 +452,15 @@ export default function BlogPost() {
   };
 
   return (
-    <div ref={containerRef} className="min-h-screen bg-black text-white overflow-x-hidden">
-
+    <div
+      ref={containerRef}
+      className="min-h-screen bg-black text-white overflow-x-hidden"
+    >
       {/* Hero Section with Parallax */}
-      <section ref={heroRef} className="relative min-h-[80vh] flex items-center justify-center overflow-hidden">
+      <section
+        ref={heroRef}
+        className="relative min-h-[80vh] flex items-center justify-center overflow-hidden"
+      >
         {/* Parallax Background */}
         <div ref={parallaxRef} className="absolute h-full w-full inset-0 ">
           <Image
@@ -460,7 +483,6 @@ export default function BlogPost() {
 
         {/* Hero Content */}
         <div className="relative z-10 max-w-6xl mx-auto px-6 text-center">
-
           <div className="hero-category mb-6">
             <span className="inline-flex items-center gap-2 px-6 py-2 text-sm bg-gradient-to-r from-blue-500/20 to-purple-500/20 backdrop-blur-md border border-blue-500/30 rounded-full text-blue-300 ">
               <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse" />
@@ -500,22 +522,27 @@ export default function BlogPost() {
           <div className="hero-actions flex flex-wrap items-center justify-center gap-4">
             <button
               onClick={() => setIsLiked(!isLiked)}
-              className={`flex items-center gap-2 px-6 py-3 rounded-full border transition-all duration-300 ${isLiked
-                ? 'bg-red-500 border-red-500 text-white'
-                : 'bg-white/10 border-white/20 text-white hover:bg-red-500/20 hover:border-red-500/50'
-                }`}
+              className={`flex items-center gap-2 px-6 py-3 rounded-full border transition-all duration-300 ${
+                isLiked
+                  ? "bg-red-500 border-red-500 text-white"
+                  : "bg-white/10 border-white/20 text-white hover:bg-red-500/20 hover:border-red-500/50"
+              }`}
             >
-              <Heart size={18} className={isLiked ? 'fill-current' : ''} />
+              <Heart size={18} className={isLiked ? "fill-current" : ""} />
               Like
             </button>
             <button
               onClick={() => setIsBookmarked(!isBookmarked)}
-              className={`flex items-center gap-2 px-6 py-3 rounded-full border transition-all duration-300 ${isBookmarked
-                ? 'bg-yellow-500 border-yellow-500 text-black'
-                : 'bg-white/10 border-white/20 text-white hover:bg-yellow-500/20 hover:border-yellow-500/50'
-                }`}
+              className={`flex items-center gap-2 px-6 py-3 rounded-full border transition-all duration-300 ${
+                isBookmarked
+                  ? "bg-yellow-500 border-yellow-500 text-black"
+                  : "bg-white/10 border-white/20 text-white hover:bg-yellow-500/20 hover:border-yellow-500/50"
+              }`}
             >
-              <Bookmark size={18} className={isBookmarked ? 'fill-current' : ''} />
+              <Bookmark
+                size={18}
+                className={isBookmarked ? "fill-current" : ""}
+              />
               Save
             </button>
             <button className="flex items-center gap-2 px-6 py-3 bg-white/10 border border-white/20 rounded-full text-white hover:shadow-2xl hover:shadow-blue-500/25 transition-all duration-300 transform hover:scale-105">
@@ -524,7 +551,6 @@ export default function BlogPost() {
             </button>
           </div>
         </div>
-
       </section>
 
       {/* Main Content */}
@@ -536,9 +562,14 @@ export default function BlogPost() {
               <div className="content-section bg-gradient-to-br from-zinc-900/60 to-zinc-800/40 backdrop-blur-xl border border-zinc-700/30 rounded-3xl p-8 md:p-12">
                 {/* Quote Highlight */}
                 <div className="flex items-start gap-4 mb-12 p-6 bg-gradient-to-r from-amber-500/10 to-amber-500/10 border-l-4 border-amber-500 rounded-2xl">
-                  <Quote size={24} className="text-amber-400 mt-1 flex-shrink-0" />
+                  <Quote
+                    size={24}
+                    className="text-amber-400 mt-1 flex-shrink-0"
+                  />
                   <blockquote className="text-xl text-zinc-300  leading-relaxed">
-                    &ldquo;The future of vision correction isn&rsquo;t just about seeing clearly – it&rsquo;s about seeing intelligently.&rdquo;
+                    &ldquo;The future of vision correction isn&rsquo;t just
+                    about seeing clearly – it&rsquo;s about seeing
+                    intelligently.&rdquo;
                   </blockquote>
                 </div>
 
@@ -550,7 +581,9 @@ export default function BlogPost() {
 
                 {/* Tags */}
                 <div className="mt-16 pt-8 border-t border-zinc-700/50">
-                  <h3 className="text-lg font-semibold mb-6 text-white">Article Tags</h3>
+                  <h3 className="text-lg font-semibold mb-6 text-white">
+                    Article Tags
+                  </h3>
                   <div className="flex flex-wrap gap-3">
                     {post.tags.map((tag, index) => (
                       <span
@@ -565,7 +598,9 @@ export default function BlogPost() {
 
                 {/* Share Section */}
                 <div className="mt-12 pt-8 border-t border-zinc-700/50">
-                  <h3 className="text-lg font-semibold mb-6 text-white">Share this article</h3>
+                  <h3 className="text-lg font-semibold mb-6 text-white">
+                    Share this article
+                  </h3>
                   <div className="flex flex-wrap gap-4">
                     <button
                       onClick={copyToClipboard}
@@ -574,13 +609,46 @@ export default function BlogPost() {
                       <Copy size={18} />
                     </button>
                     <button className="flex items-center gap-2  transition-all duration-300">
-                      <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 24 24"><path fill="currentColor" fillRule="evenodd" d="M5 1a4 4 0 0 0-4 4v14a4 4 0 0 0 4 4h14a4 4 0 0 0 4-4V5a4 4 0 0 0-4-4zm-.334 3.5a.75.75 0 0 0-.338 1.154l5.614 7.45l-5.915 6.345l-.044.051H6.03l4.83-5.179l3.712 4.928a.75.75 0 0 0 .337.251h4.422a.75.75 0 0 0 .336-1.154l-5.614-7.45L20.017 4.5h-2.05l-4.83 5.18l-3.714-4.928a.75.75 0 0 0-.337-.252zm10.88 13.548L6.431 5.952H8.45l9.114 12.095z" clipRule="evenodd"></path></svg>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width={24}
+                        height={24}
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          fill="currentColor"
+                          fillRule="evenodd"
+                          d="M5 1a4 4 0 0 0-4 4v14a4 4 0 0 0 4 4h14a4 4 0 0 0 4-4V5a4 4 0 0 0-4-4zm-.334 3.5a.75.75 0 0 0-.338 1.154l5.614 7.45l-5.915 6.345l-.044.051H6.03l4.83-5.179l3.712 4.928a.75.75 0 0 0 .337.251h4.422a.75.75 0 0 0 .336-1.154l-5.614-7.45L20.017 4.5h-2.05l-4.83 5.18l-3.714-4.928a.75.75 0 0 0-.337-.252zm10.88 13.548L6.431 5.952H8.45l9.114 12.095z"
+                          clipRule="evenodd"
+                        ></path>
+                      </svg>
                     </button>
                     <button className="flex items-center gap-2  transition-all duration-300">
-                      <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 24 24"><path fill="currentColor" d="M20.9 2H3.1A1.1 1.1 0 0 0 2 3.1v17.8A1.1 1.1 0 0 0 3.1 22h9.58v-7.75h-2.6v-3h2.6V9a3.64 3.64 0 0 1 3.88-4a20 20 0 0 1 2.33.12v2.7H17.3c-1.26 0-1.5.6-1.5 1.47v1.93h3l-.39 3H15.8V22h5.1a1.1 1.1 0 0 0 1.1-1.1V3.1A1.1 1.1 0 0 0 20.9 2"></path></svg>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width={24}
+                        height={24}
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          fill="currentColor"
+                          d="M20.9 2H3.1A1.1 1.1 0 0 0 2 3.1v17.8A1.1 1.1 0 0 0 3.1 22h9.58v-7.75h-2.6v-3h2.6V9a3.64 3.64 0 0 1 3.88-4a20 20 0 0 1 2.33.12v2.7H17.3c-1.26 0-1.5.6-1.5 1.47v1.93h3l-.39 3H15.8V22h5.1a1.1 1.1 0 0 0 1.1-1.1V3.1A1.1 1.1 0 0 0 20.9 2"
+                        ></path>
+                      </svg>
                     </button>
                     <button className="flex items-center gap-2  transition-all duration-300">
-                      <svg xmlns="http://www.w3.org/2000/svg" width={20} height={20} viewBox="0 0 20 20"><path fill="currentColor" d="M17.04 17.043h-2.962v-4.64c0-1.107-.023-2.531-1.544-2.531c-1.544 0-1.78 1.204-1.78 2.449v4.722H7.793V7.5h2.844v1.3h.039c.397-.75 1.364-1.54 2.808-1.54c3.001 0 3.556 1.974 3.556 4.545zM4.447 6.194c-.954 0-1.72-.771-1.72-1.72s.767-1.72 1.72-1.72a1.72 1.72 0 0 1 0 3.44m1.484 10.85h-2.97V7.5h2.97zM18.522 0H1.476C.66 0 0 .645 0 1.44v17.12C0 19.355.66 20 1.476 20h17.042c.815 0 1.482-.644 1.482-1.44V1.44C20 .646 19.333 0 18.518 0z"></path></svg>                    </button>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width={20}
+                        height={20}
+                        viewBox="0 0 20 20"
+                      >
+                        <path
+                          fill="currentColor"
+                          d="M17.04 17.043h-2.962v-4.64c0-1.107-.023-2.531-1.544-2.531c-1.544 0-1.78 1.204-1.78 2.449v4.722H7.793V7.5h2.844v1.3h.039c.397-.75 1.364-1.54 2.808-1.54c3.001 0 3.556 1.974 3.556 4.545zM4.447 6.194c-.954 0-1.72-.771-1.72-1.72s.767-1.72 1.72-1.72a1.72 1.72 0 0 1 0 3.44m1.484 10.85h-2.97V7.5h2.97zM18.522 0H1.476C.66 0 0 .645 0 1.44v17.12C0 19.355.66 20 1.476 20h17.042c.815 0 1.482-.644 1.482-1.44V1.44C20 .646 19.333 0 18.518 0z"
+                        ></path>
+                      </svg>{" "}
+                    </button>
                   </div>
                 </div>
               </div>
@@ -592,19 +660,30 @@ export default function BlogPost() {
                 <div className="sidebar-item bg-gradient-to-br from-zinc-900/90 to-zinc-800/60 backdrop-blur-xl border border-zinc-700/30 rounded-2xl p-6">
                   <div className="text-center">
                     <div className="size-16 overflow-hidden bg-gradient-to-br from-purple-500 to-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <img src={post.image} alt={post.author} className="h-full w-full object-cover" />
+                      <img
+                        src={post.image}
+                        alt={post.author}
+                        className="h-full w-full object-cover"
+                      />
                     </div>
-                    <h3 className="font-semibold text-white mb-1">{post.author}</h3>
-                    <p className="text-sm text-zinc-400 mb-4">Vision Technology Expert</p>
+                    <h3 className="font-semibold text-white mb-1">
+                      {post.author}
+                    </h3>
+                    <p className="text-sm text-zinc-400 mb-4">
+                      Vision Technology Expert
+                    </p>
                     <p className="text-xs text-zinc-500 leading-relaxed">
-                      Specializing in advanced lens technologies and future vision solutions.
+                      Specializing in advanced lens technologies and future
+                      vision solutions.
                     </p>
                   </div>
                 </div>
 
                 {/* Related Articles */}
                 <div className="sidebar-item bg-gradient-to-br from-zinc-900/90 to-zinc-800/60 backdrop-blur-xl border border-zinc-700/30 rounded-2xl p-6">
-                  <h3 className="font-semibold text-white mb-4">Related Articles</h3>
+                  <h3 className="font-semibold text-white mb-4">
+                    Related Articles
+                  </h3>
                   <div className="space-y-3">
                     {Object.values(blogPosts)
                       .filter((p) => p.id !== post.id)
@@ -629,21 +708,38 @@ export default function BlogPost() {
 
                 {/* Table of Contents */}
                 <div className="sidebar-item bg-gradient-to-br from-zinc-900/90 to-zinc-800/60 backdrop-blur-xl border border-zinc-700/30 rounded-2xl p-6">
-                  <h3 className="font-semibold text-white mb-4">Table of Contents</h3>
+                  <h3 className="font-semibold text-white mb-4">
+                    Table of Contents
+                  </h3>
                   <nav className="space-y-2 text-sm">
-                    <a href="#adaptive-intelligence" className="block text-zinc-400 hover:text-blue-400 transition-colors py-1">
+                    <a
+                      href="#adaptive-intelligence"
+                      className="block text-zinc-400 hover:text-blue-400 transition-colors py-1"
+                    >
                       Adaptive Intelligence
                     </a>
-                    <a href="#personalized-experiences" className="block text-zinc-400 hover:text-blue-400 transition-colors py-1">
+                    <a
+                      href="#personalized-experiences"
+                      className="block text-zinc-400 hover:text-blue-400 transition-colors py-1"
+                    >
                       Personalized Experiences
                     </a>
-                    <a href="#key-innovations" className="block text-zinc-400 hover:text-blue-400 transition-colors py-1">
+                    <a
+                      href="#key-innovations"
+                      className="block text-zinc-400 hover:text-blue-400 transition-colors py-1"
+                    >
                       Key Innovations
                     </a>
-                    <a href="#science-behind" className="block text-zinc-400 hover:text-blue-400 transition-colors py-1">
+                    <a
+                      href="#science-behind"
+                      className="block text-zinc-400 hover:text-blue-400 transition-colors py-1"
+                    >
                       The Science Behind
                     </a>
-                    <a href="#future-outlook" className="block text-zinc-400 hover:text-blue-400 transition-colors py-1">
+                    <a
+                      href="#future-outlook"
+                      className="block text-zinc-400 hover:text-blue-400 transition-colors py-1"
+                    >
                       Looking to the Future
                     </a>
                   </nav>

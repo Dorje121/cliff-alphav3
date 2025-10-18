@@ -203,7 +203,7 @@ const List = () => {
       : services.filter((service) => service.category === selectedCategory);
 
   return (
-    <div className="min-h-screen bg-black text-white overflow-x-hidden">
+    <div className="min-h-screen bg-black text-[#FFD700] overflow-x-hidden">
       <section className="relative h-screen flex flex-col justify-between items-center py-8 md:pb-16 overflow-hidden">
         {/* Background video */}
         <video
@@ -222,7 +222,7 @@ const List = () => {
 
         {/* Foreground Content */}
         <div className="relative z-[2] flex flex-col items-center justify-center h-full">
-          <h1 className="text-white poppins font-semibold text-5xl uppercase text-center">
+          <h1 className=" montserrat font-medium text-6xl capitalize text-center">
             Cliff product and solutions
           </h1>
         </div>
@@ -281,10 +281,10 @@ const List = () => {
                 width={1000}
                 className="w-12 sm:w-16 h-12 sm:h-16 mx-auto mb-3 sm:mb-4"
               />
-              <h3 className="font-semibold text-sm sm:text-md text-white mb-1 sm:mb-2 uppercase">
+              <h3 className="font-semibold text-sm sm:text-md  mb-1 sm:mb-2 uppercase">
                 {feature.title}
               </h3>
-              <p className="text-xs sm:text-sm text-zinc-300">{feature.desc}</p>
+              <p className="text-xs sm:text-sm ">{feature.desc}</p>
             </div>
           ))}
         </div>
@@ -296,11 +296,10 @@ const List = () => {
           <div className="flex flex-col mt-8 lg:flex-row lg:items-center lg:justify-between gap-6 lg:gap-8">
             {/* Title and Description */}
             <div className="flex-1">
-              <TextWithTexture
-                text="The Best of Cliff"
-                className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-semibold montserrat mb-4 md:mb-6 bg-gradient-to-r from-[#FFF9DC] via-yellow-100 to-[#FFCC00] bg-clip-text text-transparent"
-              />
-              <p className="text-base sm:text-lg md:text-xl text-zinc-300 max-w-4xl poppins">
+              <h2 className="text-4xl md:text-6xl capitalize pb-6 pt-44 font-medium montserrat text-[#FFD700]">
+                The Best of Cliff
+              </h2>
+              <p className="text-base sm:text-lg md:text-xl max-w-4xl poppins">
                 Discover our comprehensive range of premium optical solutions,
                 advanced lens technologies, and professional services designed
                 to enhance your vision experience.
@@ -315,7 +314,7 @@ const List = () => {
               >
                 <button
                   onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                  className="flex items-center justify-between w-full sm:w-64 px-4 sm:px-6 py-3 sm:py-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl text-white hover:bg-white/20 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-amber-400/50"
+                  className="flex items-center justify-between w-full sm:w-64 px-4 sm:px-6 py-3 sm:py-4 bg-white/10 backdrop-blur-sm border border-[#FFD700] rounded-xl hover:bg-white/20 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-amber-400/50"
                 >
                   <span className="font-medium text-sm sm:text-base">
                     {selectedCategory === "All"
@@ -389,7 +388,7 @@ const List = () => {
         </div>
 
         {/* Services List */}
-        <div className="space-y-4 md:space-y-4">
+        <div className="space-y-4 md:space-y-4 md:pb-32">
           {filteredServices.map((service, index) => (
             <Link
               key={service.id}
@@ -397,7 +396,7 @@ const List = () => {
               className="cursor-pointer block group"
             >
               <div
-                className={` relative backdrop-blur-sm border border-zinc-800 transition-all duration-500  overflow-hidden group-hover:bg-zinc-900 rounded-lg md:rounded-xl`}
+                className={` relative backdrop-blur-sm border border-zinc-800 transition-all duration-500  overflow-hidden bg-[#322b00] rounded-lg md:rounded-xl`}
               >
                 {/* Mobile Layout */}
                 <div className="block md:hidden">
@@ -496,12 +495,12 @@ const List = () => {
                     }`}
                   >
                     {/* Service Title */}
-                    <h3 className="text-2xl lg:text-3xl xl:text-3xl font-bold montserrat mb-2 text-white group-hover:text-amber-400 transition-colors duration-300">
+                    <h3 className="text-2xl lg:text-3xl xl:text-3xl font-bold montserrat mb-2 text-[#FFD700] transition-colors duration-300">
                       {service.title}
                     </h3>
 
                     {/* Service Description */}
-                    <p className="text-zinc-300 group-hover:text-white transition-colors duration-300 leading-relaxed text-base lg:text-lg mb-8 poppins">
+                    <p className="text-[#FFD700] transition-colors duration-300 leading-relaxed text-base lg:text-lg mb-8 poppins">
                       {service.description}
                     </p>
                   </div>
@@ -518,7 +517,7 @@ const List = () => {
         </div>
 
         {/* Call to Action */}
-        <CTA />
+        {/* <CTA /> */}
       </div>
     </div>
   );
