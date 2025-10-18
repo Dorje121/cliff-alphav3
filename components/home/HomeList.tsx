@@ -5,6 +5,7 @@ import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import TransitionLink from "../PreLoader/TransitionLink";
 import TextWithTexture from "@/components/textwithgoldentexture";
+import { Icon } from "@iconify-icon/react";
 
 const HomeList = () => {
   const services = [
@@ -131,7 +132,6 @@ const HomeList = () => {
     },
   ];
 
-
   const [selectedCategory, setSelectedCategory] = React.useState("All");
   const [isDropdownOpen, setIsDropdownOpen] = React.useState(false);
   const dropdownRef = React.useRef<HTMLDivElement>(null);
@@ -179,12 +179,11 @@ const HomeList = () => {
         {/* Header Section */}
         <div className=" mb-8 md:mb-16">
           <div className="flex mb-4 md:mb-6"></div>
-          <TextWithTexture
-            text="Our Products"
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-9xl font-semibold montserrat mb-4 md:mb-6  bg-gradient-to-r from-black via-yellow-100 to-yellow-200 bg-clip-text text-transparent"
-          />
+          <h2 className="text-4xl md:text-8xl font-medium montserrat text-[#FFD700]">
+            The Best of Cliff
+          </h2>
 
-          <p className="text-base sm:text-lg md:text-xl text-zinc-800 max-w-3xl poppins">
+          <p className="text-base sm:text-lg md:text-xl text-[#FFD700] max-w-3xl poppins">
             Discover our comprehensive range of premium optical solutions,
             advanced lens technologies, and professional services designed to
             enhance your vision experience.
@@ -192,134 +191,127 @@ const HomeList = () => {
         </div>
 
         {/* Services List */}
-        <div className="space-y-6 md:space-y-8">
-          {filteredServices.slice(0, 4).map((service, index) => (
+        <div className="space-y-4 md:space-y-4">
+          {filteredServices.map((service, index) => (
             <Link
               key={service.id}
               href={`/Services/${service.slug}`}
-              className="cursor-pointer block"
+              className="cursor-pointer block group"
             >
               <div
-                className={`group relative backdrop-blur-sm border-t border-t-zinc-700 transition-all duration-500 hover:scale-102 overflow-hidden`}
+                className={` relative backdrop-blur-sm border border-zinc-800 transition-all duration-500  overflow-hidden bg-[#322b00] rounded-lg md:rounded-xl`}
               >
-                {/* Mobile Layout (Stack Vertically) */}
-                <div className="flex flex-col md:hidden p-4">
-                  {/* Service Number and Image Section for Mobile */}
-                  <div className="relative mb-4">
-                    <div className="h-[200px] relative overflow-hidden rounded-lg">
+                {/* Mobile Layout */}
+                <div className="block md:hidden">
+                  <div className="relative">
+                    {/* Image Section - Mobile */}
+                    <div className="w-full h-[200px] relative overflow-hidden">
                       <Image
                         src={service.image}
                         alt={service.title}
                         fill
-                        className="object-cover h-full transition-transform duration-500 group-hover:scale-110"
+                        className="object-cover transition-transform duration-500 group-hover:scale-110"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-                      {/* Service Number Overlay on Mobile */}
-                      <div className="absolute top-4 right-4 text-4xl font-bold text-black/60 group-hover:text-amber-400/80 transition-all duration-500">
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+
+                      {/* Content Section - Mobile */}
+                      <div className="p-4">
+                        {/* Category Badge */}
+                        <div className="inline-flex items-center px-3 py-1 rounded-full bg-amber-400/20 text-amber-400 text-xs font-medium mb-3">
+                          {service.category}
+                        </div>
+
+                        {/* Service Title */}
+                        <h3 className="text-xl font-bold mb-3 montserrat bg-gradient-to-r from-white via-yellow-100 to-yellow-200  bg-clip-text text-transparent group-hover:text-amber-400 transition-colors duration-300 font-family-montserrat">
+                          {service.title}
+                        </h3>
+
+                        {/* Service Description */}
+                        <p className="text-zinc-300 group-hover:text-white transition-colors duration-300 leading-relaxed text-sm mb-4 poppins">
+                          {service.description}
+                        </p>
+
+                        {/* Learn More Button */}
+                        <div className="inline-flex items-center text-amber-400 font-medium group-hover:text-white transition-colors duration-300 text-sm poppins">
+                          <span className="mr-2">Learn More</span>
+                          <svg
+                            className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M17 8l4 4m0 0l-4 4m4-4H3"
+                            />
+                          </svg>
+                        </div>
+                      </div>
+                      {/* Service Number Overlay - Mobile */}
+                      <div className="absolute top-4 right-4 text-4xl font-bold text-zinc-400 group-hover:text-amber-400/50 transition-all duration-500">
                         {service.id}
                       </div>
                     </div>
                   </div>
-
-                  {/* Content Section for Mobile */}
-                  <div className="space-y-3">
-                    {/* Category Badge */}
-                    <div className="inline-flex items-center px-3 py-1.5 rounded-full bg-amber-400/20 text-amber-400 text-xs font-medium">
-                      {service.category}
-                    </div>
-
-                    {/* Service Title */}
-                    <h3 className="text-xl font-bold montserrat bg-gradient-to-r from-white via-yellow-100 to-yellow-200  bg-clip-text text-transparent group-hover:text-amber-400 transition-colors duration-300 leading-tight">
-                      {service.title}
-                    </h3>
-
-                    {/* Service Description */}
-                    <p className="text-zinc-700 group-hover:text-black transition-colors duration-300 leading-relaxed text-sm">
-                      {service.description}
-                    </p>
-
-                    {/* Learn More Button */}
-                    <div className="inline-flex items-center text-amber-400 font-medium group-hover:text-black transition-colors duration-300 text-sm poppins">
-                      <span className="mr-2">View Details</span>
-                      <svg
-                        className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M17 8l4 4m0 0l-4 4m4-4H3"
-                        />
-                      </svg>
-                    </div>
-                  </div>
                 </div>
 
-                {/* Desktop Layout (Side by Side) */}
+                {/* Desktop Layout */}
                 <div
-                  className={`   w-full hidden md:flex p-5 ${index % 2 === 0 ? "flex-row" : "flex-row-reverse"
-                    } items-center min-h-[300px]`}
+                  className={`hidden md:flex p-5 ${
+                    index % 1 === 0 ? "flex-row" : "flex-row-reverse"
+                  } items-start justify-between `}
                 >
-                  <div className="w-1/3 text-left">
-                    {/* Service Number Overlay */}
-                    <div className="text-center text-6xl lg:text-8xl font-bold text-black/60 group-hover:text-amber-400/40 transition-all duration-500">
-                      {service.id}
+                  {/* Service Number Overlay - Desktop */}
+                  <div className={``}>
+                    <div className="text-center text-6xl lg:text-6xl font-bold text-white/20 group-hover:text-amber-400/40 transition-all duration-500">
+                      {index + 1 < 10 ? "0" + (index + 1) : index + 1}
                     </div>
                   </div>
 
-                  {/* Content Section */}
-                  <div
-                    className={`w-1/3 p-8 lg:p-12 ${index % 2 === 0
-                      ? "lg:pl-12 lg:pr-16"
-                      : "lg:pr-12 lg:pl-16"
-                      }`}
-                  >
-                    {/* Category Badge */}
-                    <div className="inline-flex items-center px-4 py-2 rounded-full bg-amber-400/20 text-amber-400 text-sm font-medium mb-6">
-                      {service.category}
-                    </div>
-
-                    {/* Service Title */}
-                    <h3 className="text-2xl lg:text-3xl xl:text-4xl montserrate font-bold mb-6 bg-gradient-to-r from-black via-yellow-300 to-yellow-400  bg-clip-text text-transparent group-hover:text-amber-400 transition-colors duration-300">
-                      {service.title}
-                    </h3>
-
-                    {/* Service Description */}
-                    <p className="text-zinc-700 group-hover:text-black transition-colors duration-300 leading-relaxed text-base lg:text-lg mb-8 poppins">
-                      {service.description}
-                    </p>
-
-                    {/* Learn More Button */}
-                    <div className="inline-flex items-center text-black font-medium group-hover:text-amber-400 transition-colors duration-300 poppins ">
-                      <span className="mr-2">View Details</span>
-                      <svg
-                        className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-2"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M17 8l4 4m0 0l-4 4m4-4H3"
-                        />
-                      </svg>
-                    </div>
-                  </div>
-
-                  {/* Image Section */}
-                  <div className="w-1/3 h-[300px] relative overflow-hidden">
+                  {/* Image Section - Desktop */}
+                  <div className="w-[300px] h-[200px] relative overflow-hidden rounded-2xl">
                     <Image
                       src={service.image}
                       alt={service.title}
                       fill
-                      className="object-cover transition-transform duration-500 group-hover:scale-110"
+                      className="object-cover rounded-2xl transition-transform duration-500 group-hover:scale-110"
                     />
                     <div className="absolute inset-0 bg-gradient-to-r from-black/50 to-transparent"></div>
+                  </div>
+                  {/* Category Badge */}
+                  <div className="flex flex-col gap-2">
+                    <h3 className="text-center">Type</h3>
+
+                    <div className="inline-flex items-center px-4 py-2 rounded-full bg-amber-400/20 text-amber-400 text-sm font-medium mb-6">
+                      {service.category}
+                    </div>
+                  </div>
+
+                  {/* Content Section - Desktop */}
+                  <div
+                    className={`w-1/3 ${
+                      index % 2 === 0
+                        ? "lg:pl-12 lg:pr-16"
+                        : "lg:pr-12 lg:pl-16"
+                    }`}
+                  >
+                    {/* Service Title */}
+                    <h3 className="text-2xl lg:text-3xl xl:text-3xl font-bold montserrat mb-2 text-[#FFD700] transition-colors duration-300">
+                      {service.title}
+                    </h3>
+
+                    {/* Service Description */}
+                    <p className="text-[#FFD700] transition-colors duration-300 leading-relaxed text-base lg:text-lg mb-8 poppins">
+                      {service.description}
+                    </p>
+                  </div>
+
+                  {/* Learn More Button */}
+                  <div className="inline-flex items-center text-amber-400 font-medium group-hover:text-white transition-colors duration-300">
+                    <span className="mr-2 poppins">Learn More</span>
+                    <Icon icon="mage:external-link" width="24" height="24" />
                   </div>
                 </div>
               </div>

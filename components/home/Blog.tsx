@@ -4,6 +4,7 @@ import React, { useEffect } from "react";
 import { Calendar, Clock, ArrowRight, Eye } from "lucide-react";
 import TransitionLink from "@/components/PreLoader/TransitionLink";
 import TextWithTexture from "@/components/textwithgoldentexture";
+import Image from "next/image";
 
 interface BlogPost {
   id: number;
@@ -88,7 +89,6 @@ const blogPosts: BlogPost[] = [
   },
 ];
 
-
 export default function Blog() {
   const [selectedCategory, setSelectedCategory] = React.useState("All");
   const [filteredPosts, setFilteredPosts] = React.useState(blogPosts);
@@ -110,15 +110,14 @@ export default function Blog() {
   };
 
   return (
-    <div className="min-h-screen text-white">
+    <div className="min-h-screen ">
       {/* Hero Section */}
       <div className="relative pt-32 pb-20 px-5 ">
         <div className="mx-auto text-left">
-          <TextWithTexture
-            text="Cliff Insights & Updates"
-            className="text-3xl  sm:text-4xl md:text-5xl lg:text-9xl font-bold montserrat mb-6 py-6 bg-gradient-to-r from-black via-yellow-300 to-yellow-400 bg-clip-text text-transparent"
-          />
-          <p className="text-xl md:text-2xl text-zinc-800 max-w-3xl leading-relaxed poppins">
+          <h2 className="text-4xl md:text-8xl font-medium montserrat text-[#FFD700]">
+            Latest Technologies Update
+          </h2>
+          <p className="text-xl md:text-2xl text-[#FFD700] max-w-3xl leading-relaxed poppins">
             Discover the latest in lens technology, eye health, and vision
             science through our expert insights and cutting-edge research.
           </p>
@@ -132,29 +131,29 @@ export default function Blog() {
             {filteredPosts
               .filter((post) => !post.featured)
               .map((post) => (
-                <article
+                <div
+                  className="group border border-black/20 sm:border-none relative overflow-hidden rounded-xl transition-all duration-700 hover:-translate-y-3 transform-gpu"
                   key={post.id}
-                  className="group border border-black/20 sm:border-none relative overflow-hidden rounded-3xl shadow-2xl hover:shadow-blue-900/25 transition-all duration-700 hover:-translate-y-3 transform-gpu"
-                  style={{
-                    background: `linear-gradient(135deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.5) 100%), url(${post.image})`,
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                    backgroundRepeat: "no-repeat",
-                    minHeight: "400px",
-                  }}
                 >
+                  <Image
+                    src={post.image}
+                    height={1000}
+                    width={1000}
+                    alt="Cliff Lens"
+                    className="h-64 object-cover"
+                  />
                   {/* Premium glass morphism overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-white/50 via-transparent to-white/50 backdrop-blur-[1px]"></div>
+                  {/* <div className="absolute inset-0 bg-gradient-to-t from-white/50 via-transparent to-white/50 backdrop-blur-[1px]"></div> */}
 
                   {/* Content Container */}
-                  <div className="relative z-10 flex flex-col justify-between h-full p-8">
+                  <div className="relative z-10 flex flex-col justify-between p-8">
                     {/* Top Section - Category & Meta */}
                     <div className="flex items-start justify-between mb-4">
-                      <div className="w-full flex flex-wrap justify-between items-center">
+                      <div className="w-full flex flex-wrap justify-between items-center poppins">
                         <span className="inline-block px-4 py-2 bg-black/10 backdrop-blur-xl text-yellow-300 rounded-full text-xs font-semibold">
                           {post.category}
                         </span>
-                        <div className="flex items-center gap-4 text-xs text-black/70">
+                        <div className="flex items-center gap-4 text-xs text-[#FFD700]">
                           <div className="flex items-center gap-1">
                             <Calendar size={12} />
                             <span>{formatDate(post.date)}</span>
@@ -173,19 +172,19 @@ export default function Blog() {
 
                     {/* Bottom Section - Title & CTA */}
                     <div className="space-y-6">
-                      <h3 className="text-lg sm:text-2xl font-bold montserrat leading-tight text-transparent bg-gradient-to-r from-black via-yellow-300 to-yellow-400 bg-clip-text transition-all duration-500 line-clamp-3">
+                      <h3 className="text-lg md:text-2xl font-medium montserrat leading-tight text-[#FFD700] transition-all duration-500 line-clamp-3">
                         {post.title}
                       </h3>
 
                       <div className="flex items-center  justify-start">
                         <TransitionLink
                           href={`/Blogs/${post.id}`}
-                          className="group/cta inline-flex items-center gap-3 px-5 py-2 bg-black/10 hover:bg-black/20 backdrop-blur-xl border border-bg-gradient-to-r from-black via-yellow-300 to-yellow-400   rounded-full text-black font-semibold text-sm transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/25 hover:scale-105"
+                          className="group/cta inline-flex items-center gap-3 px-5 py-2 bg-black/10 hover:bg-black/20 backdrop-blur-xl border border-[#FFD700]   rounded-full text-black font-semibold text-sm transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/25 hover:scale-105"
                         >
-                          <span>Read Article</span>
+                          <span className="text-[#FFD700]">Read Article</span>
                           <ArrowRight
                             size={16}
-                            className="transition-transform duration-500 group-hover/cta:translate-x-2 group-hover/cta:scale-110"
+                            className="transition-transform duration-500 group-hover/cta:translate-x-2 group-hover/cta:scale-110 "
                           />
                         </TransitionLink>
                       </div>
@@ -195,7 +194,7 @@ export default function Blog() {
                   {/* Subtle animation lines */}
                   <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
                   <div className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200 delay-300"></div>
-                </article>
+                </div>
               ))}
           </div>
 

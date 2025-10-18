@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function LensDemo() {
   return (
-    <Lens zoomFactor={2} lensSize={190} isStatic={false} ariaLabel="Zoom Area">
+    <Lens zoomFactor={3} lensSize={190} isStatic={false} ariaLabel="Zoom Area">
       <Image
         src="/lens-zoom.png"
         alt="image placeholder"

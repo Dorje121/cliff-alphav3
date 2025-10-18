@@ -108,7 +108,7 @@ export function Lens({
   return (
     <div
       ref={containerRef}
-      className="relative z-[9999] overflow-hidden "
+      className="relative z-[999999] overflow-hidden "
       onMouseEnter={() => setIsHovering(true)}
       onMouseLeave={() => setIsHovering(false)}
       onMouseMove={handleMouseMove}

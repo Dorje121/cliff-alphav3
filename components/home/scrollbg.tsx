@@ -22,7 +22,7 @@ export default function ScrollBackground() {
         start: "top 0%",
         onEnter: () => {
           gsap.to("body", { 
-            backgroundColor: "white", 
+            backgroundColor: "black", 
             duration: 0.9,
             overwrite: true
           });
@@ -40,7 +40,7 @@ export default function ScrollBackground() {
         start: "top 0%",
         onEnter: () => {
           gsap.to("body", { 
-            backgroundColor: "white", 
+            backgroundColor: "black", 
             duration: 0.9,
             overwrite: true
           });
@@ -70,7 +70,7 @@ export default function ScrollBackground() {
         },
         onLeaveBack: () => {
           gsap.to("body", { 
-            backgroundColor: "white", 
+            backgroundColor: "black", 
             duration: 0.8,
             overwrite: true
           });

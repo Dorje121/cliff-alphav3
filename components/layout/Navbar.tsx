@@ -191,7 +191,7 @@ export default function Navbar() {
           {/* Menu Button */}
           <button
             onClick={isOpen ? handleGoHome : () => setIsOpen(true)}
-            className="relative flex items-center space-x-2 cursor-pointer"
+            className="relative flex items-center montserrat text-[#FFD700] space-x-2 cursor-pointer"
           >
             <span className="text-sm font-semibold uppercase">
               {isOpen ? "Close" : "Menu"}
