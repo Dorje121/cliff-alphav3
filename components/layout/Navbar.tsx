@@ -11,7 +11,6 @@ const links = [
   { href: "/", label: "Home" },
   { href: "/Services", label: "Products" },
   { href: "/Coating", label: "Coatings" },
-  // { href: "/AboutUs", label: "About Us" },
   { href: "/Technologies", label: "Technologies" },
   { href: "/Contact", label: "Contact" },
 ];
@@ -19,6 +18,7 @@ const links = [
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
+  const overlayRef = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
   const [isInFirstSection, setIsInFirstSection] = useState(false);
 
@@ -27,28 +27,51 @@ export default function Navbar() {
     const tl = gsap.timeline({
       onComplete: () => {
         setIsOpen(false);
-        if (onCompleteCallback) {
-          onCompleteCallback();
-        }
+        if (onCompleteCallback) onCompleteCallback();
       },
     });
 
+    // Fade out menu links
     tl.to(menuLinks, {
       opacity: 0,
       y: 20,
-      duration: 0.3,
-      stagger: -0.05,
+      duration: 0.4,
+      stagger: 0.05,
       ease: "power2.in",
     });
 
+    // Fade out right panel image
+    tl.to(
+      ".lense",
+      {
+        opacity: 0,
+        y: 50,
+        duration: 0.4,
+        ease: "power2.in",
+      },
+      "-=0.3"
+    );
+
+    // Shrink the white content layer into U-shape (mirrors opening)
     tl.to(
       menuRef.current,
       {
-        clipPath: "circle(0% at 100% 0%)",
+        clipPath: "ellipse(100% 0% at 50% 100%)",
         duration: 0.8,
         ease: "power3.inOut",
       },
       "-=0.2"
+    );
+
+    // Shrink the dark overlay into U-shape
+    tl.to(
+      overlayRef.current,
+      {
+        clipPath: "ellipse(100% 0% at 50% 100%)",
+        duration: 0.8,
+        ease: "power3.inOut",
+      },
+      "-=0.6"
     );
   };
 
@@ -60,59 +83,85 @@ export default function Navbar() {
     closeMenu();
   };
 
-  const handleGoHome = () => {
-    if (pathname === "/") {
-      closeMenu();
-    } else {
-      closeMenu();
-    }
-  };
+  const handleGoHome = () => closeMenu();
 
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
       const menuLinks = gsap.utils.toArray(".menu-link");
-      gsap.set(menuLinks, { opacity: 0, y: 20 });
+
+      // Set initial state (U-shape at bottom)
+      gsap.set([overlayRef.current, menuRef.current], {
+        clipPath: "ellipse(100% 0% at 50% 100%)",
+        display: "block",
+      });
+      gsap.set(menuLinks, { opacity: 0, y: 50 });
+      gsap.set(".lense", { opacity: 0, y: 100 });
 
       const tl = gsap.timeline();
-      tl.to(menuRef.current, {
-        clipPath: "circle(150% at 100% 0%)",
-        duration: 1.2,
+
+      // Animate overlay expanding
+      tl.to(overlayRef.current, {
+        clipPath: "ellipse(100% 150% at 50% 100%)",
+        duration: 0.8,
         ease: "power3.inOut",
       });
+
+      // Animate white content layer expanding
+      tl.to(
+        menuRef.current,
+        {
+          clipPath: "ellipse(100% 150% at 50% 100%)",
+          duration: 0.8,
+          ease: "power3.inOut",
+        },
+        "-=0.3"
+      );
+
+      // Fade in menu links
       tl.to(
         menuLinks,
         {
           opacity: 1,
           y: 0,
-          duration: 0.5,
+          duration: 0.8,
           stagger: 0.1,
-          ease: "power3.out",
+          ease: "back.out(1.7)",
         },
-        "-=0.8"
+        "-=0.5"
       );
-      gsap.from(".lense", {
-        opacity: 0,
-        y: 200,
-        scale: 0.9,
-        duration: 3,
-        delay: 0.5,
-      });
+
+      // Fade in right image
+      tl.to(
+        ".lense",
+        {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          duration: 1.2,
+          ease: "power2.out",
+        },
+        "-=0.7"
+      );
     } else {
       document.body.style.overflow = "auto";
     }
+
     return () => {
       document.body.style.overflow = "auto";
     };
   }, [isOpen]);
 
   useEffect(() => {
-    if (menuRef.current) {
-      gsap.set(menuRef.current, { clipPath: "circle(0% at 100% 0%)" });
+    if (overlayRef.current && menuRef.current) {
+      gsap.set([overlayRef.current, menuRef.current], {
+        clipPath: "ellipse(100% 0% at 50% 100%)",
+        display: "block",
+      });
     }
   }, []);
 
-  // Scroll detection for cliff-coatings and cliff-blue-safe-coating pages
+  // Scroll detection
   useEffect(() => {
     if (typeof window === "undefined") return;
 
@@ -122,16 +171,12 @@ export default function Navbar() {
     ) {
       const handleScroll = () => {
         const scrollPosition = window.scrollY;
-        const firstSectionHeight = window.innerHeight * 0.9; // 90vh
+        const firstSectionHeight = window.innerHeight * 0.9;
         setIsInFirstSection(scrollPosition < firstSectionHeight);
       };
-
       window.addEventListener("scroll", handleScroll);
-      handleScroll(); // Initial check
-
-      return () => {
-        window.removeEventListener("scroll", handleScroll);
-      };
+      handleScroll();
+      return () => window.removeEventListener("scroll", handleScroll);
     } else {
       setIsInFirstSection(false);
     }
@@ -152,7 +197,6 @@ export default function Navbar() {
       >
         <div className="max-w-[1500px] mx-auto p-4 flex items-center justify-between">
           {/* Logo */}
-
           <TransitionLink
             href="/"
             onClick={handleGoHome}
@@ -201,45 +245,52 @@ export default function Navbar() {
         </div>
       </header>
 
-      {/* Fullscreen Menu */}
+      {/* Overlay + Menu */}
       {isOpen && (
-        <div
-          ref={menuRef}
-          className="fixed top-0 right-0 w-screen h-screen bg-[#fff] flex z-[99999]"
-          style={{ clipPath: "circle(0% at 100% 0%)" }}
-        >
-          <div className="w-full md:w-1/2 h-full flex flex-col justify-center items-center md:text-left text-center md:items-start p-8 md:py-24 text-black">
-            {/* left Panel Image */}
-            <div className="flex flex-col items-start group text-zinc-700 hover:text-zinc-200 space-y-2 xs:space-y-7 md:space-y-7 mx-10 ">
-              {links.map((link) => {
-                const isActive = pathname === link.href;
-                return (
-                  <TransitionLink
-                    key={link.href}
-                    href={link.href}
-                    onClick={() => handleLinkClick(link.href)}
-                    className={`menu-link text-[2rem] xs:text-4xl md:text-6xl font-bold uppercase tracking-wide ${
-                      isActive ? " " : " transition-colors duration-300"
-                    } hover:text-zinc-800 transition-all duration-900`}
-                  >
-                    {link.label}
-                  </TransitionLink>
-                );
-              })}
+        <>
+          <div
+            ref={overlayRef}
+            className="fixed top-0 left-0 w-screen h-screen bg-[#EEF3F3] z-[99998] will-change-transform"
+          />
+
+          <div
+            ref={menuRef}
+            className="fixed top-0 left-0 w-screen h-screen bg-white !flex z-[99999] will-change-transform"
+          >
+            {/* Left panel (links) */}
+            <div className="w-full md:w-1/2 h-full flex flex-col justify-center items-center md:text-left text-center md:items-start p-8 md:py-24 text-black">
+              <div className="flex flex-col items-start group text-zinc-700 hover:text-zinc-200 space-y-2 xs:space-y-7 md:space-y-7 mx-10">
+                {links.map((link) => {
+                  const isActive = pathname === link.href;
+                  return (
+                    <TransitionLink
+                      key={link.href}
+                      href={link.href}
+                      onClick={() => handleLinkClick(link.href)}
+                      className={`menu-link text-[2rem] xs:text-4xl md:text-6xl font-bold uppercase tracking-wide ${
+                        isActive ? "" : " transition-colors duration-300"
+                      } hover:text-zinc-800 transition-all duration-900`}
+                    >
+                      {link.label}
+                    </TransitionLink>
+                  );
+                })}
+              </div>
             </div>
-          </div>
-          {/* Right Panel */}
-          <div className=" md:-z-10 hidden lense md:flex w-1/2 justify-start  items-end h-full relative">
+
+            <div className=" md:-z-10 hidden lense md:flex w-1/2 justify-start items-end h-full relative">
             <Image
               src="/hand.jpg"
               alt="Decorative lens flare"
               height={1000}
               width={1000}
-              className="w-[500px] h-fit object-contain"
+              className="w-[500px] h-fit object-contain transform translate-y-12"
             />
           </div>
-        </div>
+          
+          </div>
+        </>
       )}
     </>
   );
-}
+} 

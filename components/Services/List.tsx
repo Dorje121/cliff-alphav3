@@ -151,14 +151,14 @@ const List = () => {
 
   const categories = [
     "All",
-    // "Coatings",
-    "Lenses",
-    "Progressive",
-    "Technology",
-    "Prescription",
-    "Premium",
-    "Specialty",
-    "Services",
+   
+    "Coatings",
+    "Products",
+    "Technologies",
+    "Speciality lenses",
+    // "Premium",
+    // "Speciality",
+    // "Services",
   ];
 
   const [selectedCategory, setSelectedCategory] = React.useState("All");
