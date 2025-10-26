@@ -9,10 +9,10 @@ const Preloader = dynamic(() => import('@/components/Preloader'), {
 
 export default function PreloaderWrapper() {
   const [isLoading, setIsLoading] = useState(true);
-  const hasLoaded = useRef(false); // track if preloader has already run
+  const hasLoaded = useRef(false); 
 
   useEffect(() => {
-    if (hasLoaded.current) return; // skip if already shown
+    if (hasLoaded.current) return; 
     hasLoaded.current = true;
 
     document.body.classList.add('preloader-active');

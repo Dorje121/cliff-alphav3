@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Montserrat } from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import SmoothScroller from "@/components/lenis/SmoothScroller";
 import { Suspense } from "react";
@@ -7,9 +8,10 @@ import PageTransitionProvider from "@/components/PreLoader/PageTransitionProvide
 import LayoutContent from "@/components/LayoutContent";
 import PreloaderWrapper from "@/components/PreloaderWrapper";
 
-const montserrat = Montserrat({
-  subsets: ["latin"],
-  weight: ["400", "700"],
+const montserrat = localFont({
+  src: "../public/Montserrat.ttf",
+  display: "swap",
+  variable: "--font-montserrat",
 });
 
 const geistSans = Geist({
@@ -35,13 +37,13 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${montserrat.className} antialiased cursor-none`}
+        className={`${geistSans.variable} ${geistMono.variable} ${montserrat.variable} antialiased cursor-none`}
         style={{
           overflow: "auto",
           height: "100%",
         }}
       >
-        <PreloaderWrapper />
+        <PreloaderWrapper />    
         <PageTransitionProvider>
           <Suspense fallback={<div>Loading...</div>}>
             <SmoothScroller />

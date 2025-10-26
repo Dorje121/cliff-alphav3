@@ -18,7 +18,7 @@
 
 html,
 body {
-  /* @apply bg-gradient-to-br from-black via-zinc-900 to-black text-white font-sans antialiased; */
+  /* @apply bg-gradient-to-br from-black via-zinc-900 to-bllack text-white font-sans antialiased; */
   @apply bg-[#1a190b] text-white font-sans antialiased;
 
   scrollbar-width: none;
@@ -43,7 +43,7 @@ p {
 }
 
 @font-face {
-  font-family: "surendra";
+  font-family: "Montserrat";
   src: url("../public/Montserrat.ttf");
 }
 
@@ -83,7 +83,7 @@ p {
 
 
 .font-ramro {
-  font-family: "surendra";
+  font-family: "Montserrat";
 }
 
 .font-dm-sans {

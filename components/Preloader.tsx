@@ -10,8 +10,8 @@ export default function Preloader() {
     const ctx = gsap.context(() => {
       const tl = gsap.timeline({ defaults: { ease: "power2.out" } });
 
-      const middle = ".logo-middle";
       const top = ".logo-top";
+      const thirdLogo = ".logo-third"; // NEW: Third logo shows early
       const bottom = ".logo-bottom";
       const group = ".logo-group";
 
@@ -35,16 +35,20 @@ export default function Preloader() {
       const rightTop2 = ".right-logo-top-2";
       const rightBottom2 = ".right-logo-bottom-2";
 
+      // Selectors for first group's first middle and fourth logos
+      const firstGroupFirstMiddle = ".first-group-first-middle"; // NEW: First middle shows with groups
+      const firstGroupFourth = ".first-group-fourth";
+
       document.body.style.overflow = "hidden";
 
-      // Animate middle logo
+      // Animate only third logo, top, and bottom in first group (early)
       tl.fromTo(
-        middle,
+        [top, thirdLogo, bottom], // CHANGED: Now animating third logo early instead of first middle
         { opacity: 0, scale: 0.8 },
         { opacity: 1, scale: 1, duration: 0.8, ease: "power3.out" }
       );
 
-      // Animate top and bottom logos
+      // Animate top and bottom logos (only in first group)
       tl.fromTo(
         [top, bottom],
         { opacity: 0, y: (i) => (i === 0 ? -30 : 30) },
@@ -54,19 +58,27 @@ export default function Preloader() {
 
       // Move the first group to the left
       tl.to(group, {
-        x: "-38vw",
+        x: "-49vw",
         duration: 1,
         ease: "power3.inOut",
       });
 
-      // Show all other groups
+      // Show all other groups INCLUDING first group's first middle and fourth logos
       const showGroups = gsap.timeline();
 
+      // Animate first group's first middle and fourth logos along with left group
       showGroups.fromTo(
-        [leftTop, leftMiddle, leftBottom],
+        [leftTop, leftMiddle, leftBottom, firstGroupFirstMiddle, firstGroupFourth], // CHANGED: firstGroupSecond to firstGroupFirstMiddle
         {
           opacity: 0,
-          y: (i) => (i === 0 ? -30 : i === 2 ? 30 : 0),
+          y: (i) => {
+            // Handle the mixed array: first 3 are left group, last 2 are first group's positions
+            if (i < 3) {
+              return i === 0 ? -30 : i === 2 ? 30 : 0;
+            } else {
+              return 0; // For the first group's logos, no vertical movement
+            }
+          },
           scale: 0.8,
         },
         {
@@ -137,78 +149,64 @@ export default function Preloader() {
       // Add showGroups to main timeline
       tl.add(showGroups);
 
-      // Zoom into middle group after reveal
-      // tl.to({}, { duration: 0.5 }).call(() => {
-      //   const middleGroupEl = container.current?.querySelector(
-      //     ".middle-logo-group"
-      //   ) as HTMLElement;
+      // Small pause after showing all groups
+      tl.to({}, { duration: 0.5 });
 
-      //   if (middleGroupEl && container.current) {
-      //     const containerRect = container.current.getBoundingClientRect();
-      //     const middleRect = middleGroupEl.getBoundingClientRect();
-
-      //     const offsetX =
-      //       containerRect.left +
-      //       containerRect.width / 2 -
-      //       (middleRect.left + middleRect.width / 2);
-      //     const offsetY =
-      //       containerRect.top +
-      //       containerRect.height / 2 -
-      //       (middleRect.top + middleRect.height / 2);
-
-      //     gsap.to(".zoom-wrapper", {
-      //       scale: 2,
-      //       x: offsetX,
-      //       y: offsetY,
-      //       duration: 1.5,
-      //       ease: "power3.inOut",
-      //     });
-      //   }
-      // });
-      // Zoom into middle group after reveal
-tl.to({}, { duration: 0.5 }).call(() => {
-  const middleGroupEl = container.current?.querySelector(
-    ".middle-logo-group"
-  ) as HTMLElement;
-
-  if (middleGroupEl && container.current) {
-    const containerRect = container.current.getBoundingClientRect();
-    const middleRect = middleGroupEl.getBoundingClientRect();
-
-    const offsetX =
-      containerRect.left +
-      containerRect.width / 2 -
-      (middleRect.left + middleRect.width / 2);
-    const offsetY =
-      containerRect.top +
-      containerRect.height / 2 -
-      (middleRect.top + middleRect.height / 2);
-
-     gsap.to(".zoom-wrapper", {
-      scale: 48, 
-      x: 0, 
-      y: 0,
-      transformOrigin: "center center", 
-      duration: 1.5,
-      ease: "power3.inOut",
-    });
-
-  }
-});
-
-
-      // Fade out entire preloader after zoom
+      // Fade out everything except the third group's third logo
       tl.to(container.current, {
         opacity: 0,
         duration: 0.8,
-        delay: 1.5, // wait for zoom to finish
         onComplete: () => {
           if (container.current) {
-            container.current.style.display = "none";
-            document.body.style.overflow = "auto";
+            // Keep the third group's third logo visible
+            const thirdGroupThirdLogo = container.current.querySelector<HTMLElement>('.right-logo-bottom-2');
+            if (thirdGroupThirdLogo) {
+              thirdGroupThirdLogo.style.opacity = '1';
+            }
           }
         },
       });
+
+      // After 1 second, fade out the third group's third logo and apply zoom effect
+      tl.call(() => {
+        const zoomWrapper = document.querySelector('.zoom-wrapper') as HTMLElement;
+        if (zoomWrapper) {
+          // Reset any transforms before starting the zoom
+          gsap.set(zoomWrapper, {
+            x: 0,
+            y: 0,
+            scale: 1,
+            transformOrigin: 'center center',
+            transformStyle: 'preserve-3d',
+            backfaceVisibility: 'hidden',
+            willChange: 'transform'
+          });
+          
+          // Force reflow to ensure the reset takes effect
+          void zoomWrapper.offsetWidth;
+          
+          // Apply the zoom animation
+          gsap.to(zoomWrapper, {
+            scale: 200,
+            duration: 1.5,
+            ease: 'power3.inOut',
+            onStart: () => {
+              // Ensure the wrapper is properly positioned
+              zoomWrapper.style.transform = 'translate3d(0, 0, 0) scale(1)';
+            },
+            onUpdate: () => {
+              // Force hardware acceleration and ensure smooth scaling
+              zoomWrapper.style.transform = `translate3d(0, 0, 0) scale(${zoomWrapper._gsap.scale})`;
+            },
+            onComplete: () => {
+              if (container.current) {
+                container.current.style.display = "none";
+                document.body.style.overflow = "auto";
+              }
+            }
+          });
+        }
+      }, undefined, "+=1");
     }, container);
 
     return () => ctx.revert();
@@ -220,22 +218,34 @@ tl.to({}, { duration: 0.5 }).call(() => {
       className="fixed inset-0 z-50 flex items-center justify-center bg-black overflow-hidden"
     >
       <div className="zoom-wrapper relative w-full h-full flex items-center justify-center">
-        {/* Middle group */}
-        <div className="logo-group flex flex-col items-center justify-between h-[70vh] absolute left-1/2 transform -translate-x-1/2 z-10">
+        
+        <div className="logo-group flex flex-col items-center top-0 bottom-0 justify-between h-[100vh] absolute left-1/2 transform translate-x-[-40%] z-10">
           <div className="logo-top opacity-0">
             <CliffLogo />
           </div>
-          <div className="logo-middle opacity-0">
+          <div className="first-group-first-middle opacity-0">
             <CliffLogo />
+          </div>
+          <div className="logo-third opacity-0">
+            <CliffLogo />
+          </div>
+          <div className="first-group-fourth opacity-0">  
+                       <CliffLogo />
           </div>
           <div className="logo-bottom opacity-0">
             <CliffLogo />
           </div>
         </div>
 
-        {/* Left Group */}
-        <div className="left-logo-group flex flex-col items-center justify-between h-[70vh] absolute left-[15%] ml-[15%] transform -translate-x-1/2">
+        {/* Second Group */}
+        <div className="left-logo-group flex flex-col items-center justify-between h-[100vh] absolute left-[15%] ml-[15%] transform -translate-x-1/2">
           <div className="left-logo-top opacity-0">
+            <CliffLogo />
+          </div>
+          <div className="left-logo-middle opacity-0">
+            <CliffLogo />
+          </div>
+          <div className="left-logo-middle opacity-0">
             <CliffLogo />
           </div>
           <div className="left-logo-middle opacity-0">
@@ -246,8 +256,8 @@ tl.to({}, { duration: 0.5 }).call(() => {
           </div>
         </div>
 
-        {/* Middle Left Group */}
-        <div className="middle-logo-group flex flex-col items-center justify-between h-[70vh] absolute left-[30%] ml-[22%] transform -translate-x-1/2">
+        {/* Third Group */}
+        <div className="middle-logo-group flex flex-col items-center justify-between h-[100vh] absolute left-[30%] ml-[22%] transform -translate-x-1/2">
           <div className="middle-logo-top opacity-0">
             <CliffLogo />
           </div>
@@ -257,10 +267,16 @@ tl.to({}, { duration: 0.5 }).call(() => {
           <div className="middle-logo-bottom opacity-0">
             <CliffLogo />
           </div>
+          <div className="middle-logo-bottom opacity-0">
+            <CliffLogo />
+          </div>
+          <div className="middle-logo-bottom opacity-0">
+            <CliffLogo />
+          </div>
         </div>
 
-        {/* Middle Right Group */}
-        <div className="right-logo-group-1 flex flex-col items-center justify-between h-[70vh] absolute right-[25%] transform translate-x-1/2">
+        {/* Fourth Group */}
+        <div className="right-logo-group-1 flex flex-col items-center justify-between h-[100vh] absolute right-[25%] transform translate-x-1/2">
           <div className="right-logo-top-1 opacity-0">
             <CliffLogo />
           </div>
@@ -270,14 +286,26 @@ tl.to({}, { duration: 0.5 }).call(() => {
           <div className="right-logo-bottom-1 opacity-0">
             <CliffLogo />
           </div>
+          <div className="right-logo-bottom-1 opacity-0">
+            <CliffLogo />
+          </div>
+          <div className="right-logo-bottom-1 opacity-0">
+            <CliffLogo />
+          </div>
         </div>
 
-        {/* Right Group */}
-        <div className="right-logo-group-2 flex flex-col items-center justify-between h-[70vh] absolute right-[2%] transform translate-x-1/2">
+        {/* Fifth Group */}
+        <div className="right-logo-group-2 flex flex-col items-center justify-between h-[100vh] absolute right-[2%] transform translate-x-1/2">
           <div className="right-logo-top-2 opacity-0">
             <CliffLogo />
           </div>
           <div className="right-logo-middle-2 opacity-0">
+            <CliffLogo />
+          </div>
+          <div className="right-logo-bottom-2 opacity-0">
+            <CliffLogo />
+          </div>
+          <div className="right-logo-bottom-2 opacity-0">
             <CliffLogo />
           </div>
           <div className="right-logo-bottom-2 opacity-0">
@@ -289,14 +317,13 @@ tl.to({}, { duration: 0.5 }).call(() => {
   );
 }
 
-
-// Reusable SVG
+// Reusable SVG (unchanged)
 const CliffLogo = () => (
   <div className="w-full h-full flex items-center justify-center">
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 200 60"
-      className="w-full h-full"
+      className="w-[w00px] h-[100px]"
       fill="#FFD700"
       preserveAspectRatio="xMidYMid meet"
     >
