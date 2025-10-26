@@ -19,7 +19,7 @@
 html,
 body {
   /* @apply bg-gradient-to-br from-black via-zinc-900 to-black text-white font-sans antialiased; */
-  @apply bg-[#1a190b] text-white font-sans antialiased;
+  @apply bg-[#000000] text-[#FFD700] font-sans antialiased;
 
   scrollbar-width: none;
   scrollbehaviour: smooth;
