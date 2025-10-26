@@ -12,6 +12,11 @@ import WhiteFooter from "@/components/home/whitefoot";
 import BlackTinted from "@/components/home/blackTinted";
 import AnimateSection from "@/components/home/animate";
 import ScrollBackground from "@/components/home/scrollbg";
+import TextScroll from "@/components/home/textscroll";
+import Ourcoatings from "@/components/home/ourcoatings";
+import HomeProducts from "@/components/home/homeproducts";
+import HomeTechnology from "@/components/home/hometechnology";
+
 
 const Page = () => {
   const [pageState, setPageState] = useState<"landing" | "main">("landing");
@@ -59,15 +64,12 @@ const Page = () => {
       <div className="relative">
         <ScrollBackground />
         <Demo />
-
-        <section id="animate-section" className="min-h-screen">
-          <AnimateSection />
-        </section>
-
-        <section id="home-list" className="min-h-screen">
-          <HomeList />
-        </section>
-
+      
+      
+          <TextScroll />
+           <Ourcoatings />
+        <HomeProducts />        
+        <HomeTechnology />
         <div id="blog" className="min-h-screen">
           <Blog />
         </div>

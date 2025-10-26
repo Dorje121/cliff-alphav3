@@ -258,7 +258,7 @@ export default function Navbar() {
             className="fixed top-0 left-0 w-screen h-screen bg-white !flex z-[99999] will-change-transform"
           >
             {/* Left panel (links) */}
-            <div className="w-full md:w-1/2 h-full flex flex-col justify-center items-center md:text-left text-center md:items-start p-8 md:py-24 text-black">
+            <div className="w-full md:w-11/12 h-full flex flex-col justify-center items-center md:text-left text-center md:items-start p-8 md:py-24 text-black">
               <div className="flex flex-col items-start group text-zinc-700 hover:text-zinc-200 space-y-2 xs:space-y-7 md:space-y-7 mx-10">
                 {links.map((link) => {
                   const isActive = pathname === link.href;
@@ -284,9 +284,9 @@ export default function Navbar() {
               alt="Decorative lens flare"
               height={1000}
               width={1000}
-              className="w-[500px] h-fit object-contain transform translate-y-12"
+              className="w-[500px] h-fit object-contain transform -translate-x-28 translate-y-12"
             />
-          </div>
+            </div>
           
           </div>
         </>
