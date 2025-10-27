@@ -1,21 +1,27 @@
-import React from 'react';
+"use client";
+import React from "react";
 import TextPressure from "../ui/textpressure";
 
 const TextAnimation = () => {
   return (
-    <div className="bg-black" style={{position: 'relative', height: '100vh', width: '100%'}}>
-      <TextPressure
-        text="Cliff"
-        flex={true}
-        alpha={false}
-        stroke={false}
-        width={true}
-        weight={true}
-        italic={true}
-        textColor="#FFD700"
-        strokeColor="#FFD700"
-        minFontSize={36}
-      />
+    <div
+      className="flex items-center justify-center w-full bg-black"
+      style={{ height: '30vh' }}
+    >
+      <div className="w-full max-w-8xl px-4 text-center">
+        <TextPressure
+          text="Cliff"
+          flex={true}
+          alpha={false}
+          stroke={false}
+          width={true}
+          weight={true}
+          italic={true}
+          textColor="#FFD700"
+          strokeColor="#FFD700"
+          minFontSize={120}
+        />
+      </div>
     </div>
   );
 };

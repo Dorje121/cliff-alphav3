@@ -18,6 +18,7 @@ import HomeProducts from "@/components/home/homeproducts";
 import HomeTechnology from "@/components/home/hometechnology";
 
 
+
 const Page = () => {
   const [pageState, setPageState] = useState<"landing" | "main">("landing");
   const [showLayout, setShowLayout] = useState(true);
@@ -64,7 +65,8 @@ const Page = () => {
       <div className="relative">
         <ScrollBackground />
         <Demo />
-      <TextScroll />  
+         <TextScroll /> 
+      
       
         
            <Ourcoatings />
@@ -75,8 +77,8 @@ const Page = () => {
           <Blog />
  
 
-        {/* <BlackTinted /> */}
-    
+        <BlackTinted />
+       
         </div>
       </div>
     </div>
