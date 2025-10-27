@@ -23,12 +23,10 @@ export default function TextScroll() {
     const text = textRef.current;
     if (!section || !text) return;
 
-    // Calculate movement distance
     const textWidth = text.scrollWidth;
     const viewportWidth = window.innerWidth;
     
-    // Add right padding to ensure last character is fully visible
-    const rightPadding = 40; // pixels of extra space for the last character
+    const rightPadding = 40; 
     const totalScrollDistance = textWidth - viewportWidth + rightPadding;
 
     // Set initial position with hardware acceleration
@@ -47,12 +45,12 @@ export default function TextScroll() {
         scrollTrigger: {
           trigger: section,
           start: "top top",
-          end: () => `+=${totalScrollDistance * 1.5}`, // Slightly longer scroll
-          scrub: 0.8, // Smoother scrubbing
+          end: () => `+=${totalScrollDistance * 1.5}`, 
+          scrub: 0.8, 
           pin: true,
           anticipatePin: 1,
           onUpdate: (self) => {
-            // Use requestAnimationFrame for smoother animation
+          
             requestAnimationFrame(() => {
               if (text) {
                 const progress = self.progress;
@@ -83,12 +81,12 @@ export default function TextScroll() {
     >
       <div
         ref={textRef}
-        className="whitespace-nowrap text-[#FFD700] text-[8vw] md:text-[14vw] montserrat tracking-wider"
+        className="whitespace-nowrap text-[#FFD700] text-[8vw] md:text-[16vw] montserrat tracking-wider"
         style={{
           willChange: "transform",
           transform: "translate3d(0,0,0)",
           fontFamily: '"Montserrat", sans-serif',
-          fontWeight: 400,
+          fontWeight: 500,
           fontFeatureSettings: '"liga" 1, "calt" 1',
           WebkitFontSmoothing: "antialiased",
           MozOsxFontSmoothing: "grayscale",
@@ -98,10 +96,10 @@ export default function TextScroll() {
           transformStyle: 'preserve-3d',
           display: 'inline-block',
           whiteSpace: 'nowrap',
-          paddingRight: '40px' // Ensure last character is fully visible
+          paddingRight: '40px' 
         }}
       >
-        See the World Differently Together  Designed to See Better
+        See the World Differently Together
       </div>
     </section>
   );

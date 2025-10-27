@@ -18,8 +18,9 @@ export default function LayoutContent({ children }: LayoutContentProps) {
       {showLayout && <Navbar />}
       <CustomCursor />
     {children}
-      {showLayout && <TextAnimation />}
+     
       {showLayout && <Footer />}
+       {showLayout && <TextAnimation />}
       
     </>
   );
