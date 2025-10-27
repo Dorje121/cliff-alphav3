@@ -18,8 +18,8 @@ const Coatings = () => {
       description:
         "Complete blue light protection lenses for modern digital lifestyle",
       category: "Lenses",
-      slug: "cliff-blue-safe-lenses",
-      image: "/product/03.jpeg",
+      slug: "cliff-zenn-single-vision",
+      image: "/product/13.jpg",
     },
     {
       id: "02",
@@ -27,8 +27,8 @@ const Coatings = () => {
       description:
         "Photochromic lenses that adapt to changing light conditions automatically",
       category: "Lenses",
-      slug: "cliff-photo-z-lenses",
-      image: "/bluesafe/Bluesafe.jpg",
+      slug: "cliff-progressive-versatile",
+      image: "/homeimage/progressive.jpg",
     },
     {
       id: "03",
@@ -36,8 +36,8 @@ const Coatings = () => {
       description:
         "Specialized lenses optimized for driving and enhanced road visibility",
       category: "Lenses",
-      slug: "cliff-drive-clear-lenses",
-      image: "/product/5.jpg",
+      slug: "cliff-dynamix-progressive",
+      image: "/product/9.jpg",
     },
     {
       id: "04",
@@ -46,7 +46,7 @@ const Coatings = () => {
         "Multi-focal progressive lenses for seamless vision at all distances",
       category: "Progressive",
       slug: "cliff-progressive-versatile",
-      image: "/bluesafe/photoz.jpg",
+      image: "/product/10.jpg",
     },
     {
       id: "05",
@@ -54,7 +54,7 @@ const Coatings = () => {
       description:
         "Specialty lenses designed for unique vision needs and conditions",
       category: "Progressive",
-      slug: "cliff-speciality-lenses",
+      slug: "cliff-progressive-versatile",
       image: "/product/6.jpg",
     },
   ];
@@ -148,22 +148,22 @@ const Coatings = () => {
                         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent z-10 opacity-0 group-hover:opacity-100" />
                       </div>
                       <div className="p-4">
-                        {/* Category Badge */}
+                        
                           <div className="inline-flex items-center px-3 py-1 rounded-full bg-amber-400/20 text-amber-400 text-xs font-medium mb-3">
                             {service.category}
                           </div>
 
-                          {/* Title */}
+                          
                           <h3 className="text-xl font-bold mb-3 montserrat bg-gradient-to-r from-white via-yellow-100 to-yellow-200 bg-clip-text text-transparent group-hover:text-amber-400">
                             {service.title}
                           </h3>
 
-                          {/* Description */}
+                          
                           <p className="text-zinc-300 group-hover:text-white leading-relaxed text-sm mb-4 poppins">
                             {service.description}
                           </p>
 
-                          {/* Learn More Button */}
+                          
                           <div className="inline-flex items-center text-amber-400 font-medium group-hover:text-white text-sm poppins">
                             <span className="mr-2">Learn More</span>
                             <svg
@@ -196,9 +196,9 @@ const Coatings = () => {
                           fill
                           className="object-cover rounded-2xl"
                         />
-                        {/* Dark overlay */}
+                        
                         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent z-10 flex flex-col justify-end p-4">
-                          {/* Category Badge - Desktop */}
+                          
                           <div className="inline-flex items-center px-3 py-1 rounded-full bg-amber-400/20 text-amber-400 text-xs font-medium mb-2 self-start">
                             {service.category}
                           </div>
@@ -206,9 +206,9 @@ const Coatings = () => {
                       </div>
                     </div>
                     
-                    {/* Content - Right Side */}
+                    
                     <div className="flex-1 flex flex-col h-full">
-                      {/* Title */}
+                      
                       <h3 className="text-2xl font-bold mb-3 montserrat bg-gradient-to-r from-white via-yellow-100 to-yellow-200 bg-clip-text text-transparent">
                         {service.title}
                       </h3>

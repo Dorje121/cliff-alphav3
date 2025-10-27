@@ -124,7 +124,7 @@ const Coatings = () => {
               className={`h-full ${parseInt(service.id) % 2 === 0 ? 'mt-16' : ''}`}
             >
               <Link
-                href={`/Services/${service.slug}`}
+                href="/Services/cliff-coatings"
                 className="cursor-pointer block group"
               >
                 <div className="relative backdrop-blur-sm border border-zinc-800 overflow-hidden bg-[#322b00] rounded-lg md:rounded-xl">
