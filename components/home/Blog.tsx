@@ -117,7 +117,7 @@ export default function Blog() {
           <h2 className="text-4xl md:text-8xl font-medium montserrat text-[#FFD700]">
             Latest Technologies Update
           </h2>
-          <p className="text-xl md:text-2xl text-[#FFD700] max-w-3xl leading-relaxed poppins">
+          <p className="text-xl md:text-2xl text-[#FFD700] max-w-3xl leading-relaxed py-4 poppins">
             Discover the latest in lens technology, eye health, and vision
             science through our expert insights and cutting-edge research.
           </p>
