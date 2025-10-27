@@ -6,11 +6,11 @@ const TextAnimation = () => {
   return (
     <div
       className="flex items-center justify-center w-full bg-black"
-      style={{ height: '30vh' }}
+      style={{ height: '10vh' }}
     >
       <div className="w-full max-w-8xl px-4 text-center">
         <TextPressure
-          text="Cliff"
+          text="Cliff Eyewear"
           flex={true}
           alpha={false}
           stroke={false}
