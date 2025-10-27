@@ -8,157 +8,117 @@ import { Icon } from "@iconify-icon/react";
 
 const List = () => {
   const services = [
-    // {
-    //   id: "01",
-    //   title: "CLIFF COATINGS",
-    //   description:
-    //     "Premium protective coatings for enhanced lens durability and performance",
-    //   category: "Coatings",
-    //   slug: "cliff-coatings",
-    //   image: "/product/01.jpeg",
-    // },
-    // {
-    //   id: "02",
-    //   title: "CLIFF BLUE SAFE COATING",
-    //   description:
-    //     "Advanced blue light filtering coating for digital eye strain protection",
-    //   category: "Coatings",
-    //   slug: "cliff-blue-safe-coating",
-    //   image: "/product/02.jpeg",
-    // },
+    // Coatings
     {
-      id: "01",
+      id: "c01",
       title: "CLIFF BLUE SAFE UV",
-      description:
-        "Complete blue light protection lenses for modern digital lifestyle",
-      category: "Lenses",
+      description: "Complete blue light protection for modern digital lifestyle",
+      category: "Coatings",
+      slug: "cliff-blue-safe-uv",
+      image: "/product/03.jpeg",
+    },
+    {
+      id: "c02",
+      title: "CLIFF PHOTO-Z UV",
+      description: "Photochromic lenses that adapt to changing light conditions",
+      category: "Coatings",
+      slug: "cliff-photo-z-uv",
+      image: "/product/04.jpeg",
+    },
+    {
+      id: "c03",
+      title: "CLIFF DRIVE CLEAR",
+      description: "Specialized coatings for enhanced driving visibility",
+      category: "Coatings",
+      slug: "cliff-drive-clear",
+      image: "/product/5.jpg",
+    },
+    // Products
+    {
+      id: "p01",
+      title: "CLIFF ZENN SERIES",
+      description: "Premium lens series with advanced optical performance",
+      category: "Products",
+      slug: "cliff-zenn-series",
+      image: "/product/10.jpg",
+    },
+    // Products
+    {
+      id: "p02",
+      title: "CLIFF BLUE SAFE UV LENSES",
+      description: "Complete blue light protection for digital lifestyle",
+      category: "Products",
       slug: "cliff-blue-safe-lenses",
       image: "/product/03.jpeg",
     },
     {
-      id: "02",
-      title: "CLIFF PHOTO-Z UV",
-      description:
-        "Photochromic lenses that adapt to changing light conditions automatically",
-      category: "Lenses",
+      id: "p03",
+      title: "CLIFF PHOTO-Z LENSES",
+      description: "Photochromic lenses that adapt to light conditions",
+      category: "Products",
       slug: "cliff-photo-z-lenses",
       image: "/product/04.jpeg",
     },
     {
-      id: "03",
+      id: "p04",
       title: "CLIFF DRIVE CLEAR LENSES",
-      description:
-        "Specialized lenses optimized for driving and enhanced road visibility",
-      category: "Lenses",
+      description: "Specialized lenses for enhanced driving visibility",
+      category: "Products",
       slug: "cliff-drive-clear-lenses",
       image: "/product/5.jpg",
     },
+    
+    // Technologies
     {
-      id: "04",
-      title: "CLIFF PROGRESSIVE VERSATILE",
-      description:
-        "Multi-focal progressive lenses for seamless vision at all distances",
-      category: "Progressive",
-      slug: "cliff-progressive-versatile",
-      image: "/product/6.jpg",
-    },
-    {
-      id: "05",
-      title: "CLIFF TECHNOLOGY",
-      description: "Cutting-edge optical technology and innovation solutions",
-      category: "Technology",
-      slug: "cliff-technology",
+      id: "t01",
+      title: "ADVANCED LENS TECHNOLOGY",
+      description: "Cutting-edge optical innovations for superior vision",
+      category: "Technologies",
+      slug: "advanced-lens-technology",
       image: "/product/7.jpg",
     },
     {
-      id: "06",
-      title: "CLIFF SINGLE VISION RX",
-      description: "Prescription single vision lenses for clear, focused sight",
-      category: "Prescription",
-      slug: "cliff-single-vision-rx",
-      image: "/product/8.jpg",
-    },
-    {
-      id: "7",
-      title: "CLIFF DYNAMIX PROGRESSIVE",
-      description:
-        "Dynamic progressive lenses with superior adaptation and comfort",
-      category: "Progressive",
-      slug: "cliff-dynamix-progressive",
-      image: "/product/9.jpg",
-    },
-    {
-      id: "8",
-      title: "CLIFF ZENN SERIES",
-      description:
-        "Premium lens series combining style with advanced optical performance",
-      category: "Premium",
-      slug: "cliff-zenn-series",
-      image: "/product/10.jpg",
-    },
-    {
-      id: "9",
-      title: "CLIFF ZENN SINGLE VISION LENSES",
-      description: "Single vision lenses from the premium Zenn collection",
-      category: "Premium",
-      slug: "cliff-zenn-single-vision-lenses",
-      image: "/product/11.jpg",
-    },
-    {
-      id: "10",
-      title: "CLIFF ZENN PROGRESSIVE LENSES",
-      description:
-        "Progressive lenses featuring Zenn series advanced technology",
-      category: "Premium",
-      slug: "cliff-zenn-progressive-lenses",
-      image: "/product/12.jpg",
-    },
-    {
-      id: "11",
-      title: "CLIFF ZENN SINGLE VISION",
-      description: "Enhanced single vision experience with Zenn technology",
-      category: "Premium",
-      slug: "cliff-zenn-single-vision",
-      image: "/product/13.jpg",
-    },
-    {
-      id: "12",
-      title: "REFRACTIVE INDEX",
-      description:
-        "Custom refractive index solutions for optimal lens thickness and clarity",
-      category: "Technology",
-      slug: "refractive-index",
+      id: "t02",
+      title: "REFRACTIVE INDEX TECHNOLOGY",
+      description: "Custom solutions for optimal lens performance",
+      category: "Technologies",
+      slug: "refractive-index-technology",
       image: "/product/14.jpg",
     },
+    
+    // Speciality Lenses
     {
-      id: "13",
-      title: "CLIFF TINTED LENSES",
-      description: "Fashionable tinted lenses with UV protection and style",
-      category: "Specialty",
-      slug: "cliff-tinted-lenses",
+      id: "s01",
+      title: "PROGRESSIVE VERSATILE",
+      description: "Multi-focal lenses for seamless vision at all distances",
+      category: "Speciality Lenses",
+      slug: "progressive-versatile",
+      image: "/product/6.jpg",
+    },
+    {
+      id: "s02",
+      title: "TINTED LENSES",
+      description: "Fashionable lenses with UV protection and style",
+      category: "Speciality Lenses",
+      slug: "tinted-lenses",
       image: "/product/15.jpg",
     },
     {
-      id: "14",
-      title: "PROGRESSIVE MEASUREMENT CHART",
-      description:
-        "Professional fitting and measurement services for progressive lenses",
-      category: "Services",
-      slug: "progressive-measurement-chart",
-      image: "/product/16.jpg",
+      id: "s03",
+      title: "DYNAMIX PROGRESSIVE",
+      description: "Dynamic lenses with superior adaptation and comfort",
+      category: "Speciality Lenses",
+      slug: "dynamix-progressive",
+      image: "/product/9.jpg",
     },
   ];
 
   const categories = [
     "All",
-   
     "Coatings",
     "Products",
     "Technologies",
-    "Speciality lenses",
-    // "Premium",
-    // "Speciality",
-    // "Services",
+    "Speciality Lenses"
   ];
 
   const [selectedCategory, setSelectedCategory] = React.useState("All");
@@ -197,14 +157,27 @@ const List = () => {
     };
   }, [isDropdownOpen]);
 
-  const filteredServices =
-    selectedCategory === "All"
-      ? services
-      : services.filter((service) => service.category === selectedCategory);
+const filteredServices =
+  selectedCategory === "All"
+    ? services
+    : selectedCategory === "Coatings"
+    ? services.filter((service) => service.category === "Coatings" && ["c01", "c02", "c03"].includes(service.id))
+    : services.filter((service) => service.category === selectedCategory);
 
-  return (
-    <div className="min-h-screen bg-black text-[#FFD700] overflow-x-hidden">
-      <section className="relative h-screen flex flex-col justify-between items-center py-8 md:pb-16 overflow-hidden">
+return (
+  <div className="min-h-screen bg-black text-[#FFD700] overflow-x-hidden">
+    <section className="relative h-screen flex flex-col justify-between items-center py-8 md:pb-16 overflow-hidden">
+      {/* Background video */}
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover object-center z-0"
+      >
+        <source src="/videos/22222.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
         {/* Background video */}
         <video
           autoPlay

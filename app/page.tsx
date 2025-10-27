@@ -16,6 +16,7 @@ import TextScroll from "@/components/home/textscroll";
 import Ourcoatings from "@/components/home/ourcoatings";
 import HomeProducts from "@/components/home/homeproducts";
 import HomeTechnology from "@/components/home/hometechnology";
+import TextAnimation from "@/components/home/textanimation";
 
 
 const Page = () => {
@@ -66,16 +67,18 @@ const Page = () => {
         <Demo />
       
       
-          <TextScroll />
+        
            <Ourcoatings />
-        <HomeProducts />        
+        <HomeProducts />  
+          <TextScroll />      
         <HomeTechnology />
         <div id="blog" className="min-h-screen">
           <Blog />
-        </div>
+ 
 
-        {/* <LensDemo /> */}
         <BlackTinted />
+        <TextAnimation />
+        </div>
       </div>
     </div>
   );
