@@ -16,7 +16,6 @@ import TextScroll from "@/components/home/textscroll";
 import Ourcoatings from "@/components/home/ourcoatings";
 import HomeProducts from "@/components/home/homeproducts";
 import HomeTechnology from "@/components/home/hometechnology";
-import TextAnimation from "@/components/home/textanimation";
 
 
 const Page = () => {
@@ -65,19 +64,19 @@ const Page = () => {
       <div className="relative">
         <ScrollBackground />
         <Demo />
-      
+      <TextScroll />  
       
         
            <Ourcoatings />
         <HomeProducts />  
-          <TextScroll />      
+              
         <HomeTechnology />
         <div id="blog" className="min-h-screen">
           <Blog />
  
 
-        <BlackTinted />
-        <TextAnimation />
+        {/* <BlackTinted /> */}
+    
         </div>
       </div>
     </div>

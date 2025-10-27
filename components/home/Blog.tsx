@@ -115,7 +115,7 @@ export default function Blog() {
       <div className="relative pt-32 pb-20 px-5 ">
         <div className="mx-auto text-left">
           <h2 className="text-4xl md:text-8xl font-medium montserrat text-[#FFD700]">
-            Latest Technologies Update
+            Cliff Updates
           </h2>
           <p className="text-xl md:text-2xl text-[#FFD700] max-w-3xl leading-relaxed py-4 poppins">
             Discover the latest in lens technology, eye health, and vision
