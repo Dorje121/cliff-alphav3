@@ -199,7 +199,7 @@ const HomeTechnology = () => {
                   </p>
 
                   <Link
-                    href={`/technology/${category.slug}`}
+                    href={`/technology`}
                     className="category-button group relative inline-flex items-center px-6 py-3 bg-amber-400/10 border border-amber-400/30 rounded-2xl text-amber-400 font-semibold poppins overflow-hidden"
                   >
                     <span className="mr-3">{category.buttonText}</span>
