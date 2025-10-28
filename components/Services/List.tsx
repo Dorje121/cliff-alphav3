@@ -489,8 +489,7 @@ return (
           ))}
         </div>
 
-        {/* Call to Action */}
-        {/* <CTA /> */}
+      
       </div>
     </div>
   );
