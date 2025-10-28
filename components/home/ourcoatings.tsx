@@ -16,7 +16,7 @@ const Coatings = () => {
       id: "01",
       title: "NOX",
       description:
-        "Complete blue light protection lenses for modern digital lifestyle",
+        "Complete blue light protection lenses for modern digital lifestyle and visibility",
       category: "Lenses",
       slug: "cliff-blue-safe-lenses",
       image: "/product/03.jpeg",
@@ -43,7 +43,7 @@ const Coatings = () => {
       id: "04",
       title: "PHOTO Z",
       description:
-        "Multi-focal progressive lenses for seamless vision at all distances",
+        "Multi-focal progressive lenses for seamless vision at all distances and visibility",
       category: "Progressive",
       slug: "cliff-progressive-versatile",
       image: "/bluesafe/photoz.jpg",
@@ -100,7 +100,7 @@ const Coatings = () => {
   };
 
   return (
-    <div ref={sectionRef} className="min-h-screen text-black overflow-hidden w-full">
+    <div ref={sectionRef} className="min-h-screen py-10 text-black overflow-hidden w-full">
       <div className="w-full mx-auto shrink-0 py-6 md:py-8 lg:py-16 relative px-4 md:px-8">
         {/* Header Section */}
         <div className="mb-8 md:mb-16">
@@ -130,9 +130,9 @@ const Coatings = () => {
                 <div className="relative backdrop-blur-sm border border-zinc-800 overflow-hidden bg-[#322b00] rounded-lg md:rounded-xl">
                   
                   {/* Mobile Layout */}
-                  <div className="block md:hidden">
-                    <div className="relative">
-                      <div className="w-full h-[200px] relative overflow-hidden">
+                  <div className="block md:hidden h-full">
+                    <div className="relative h-full">
+                      <div className="w-full h-[280px] relative overflow-hidden">
                         <Image
                           src={service.image}
                           alt={service.title}
@@ -147,14 +147,14 @@ const Coatings = () => {
                           </div>
 
                           {/* Title */}
-                          <h3 className="text-xl font-bold mb-3 montserrat bg-gradient-to-r from-white via-yellow-100 to-yellow-200 bg-clip-text text-transparent group-hover:text-amber-400">
-                            {service.title}
-                          </h3>
-
-                          {/* Description */}
-                          <p className="text-zinc-300 group-hover:text-white leading-relaxed text-sm mb-4 poppins">
-                            {service.description}
-                          </p>
+                          <div className="flex-1 py-6 pr-6 flex flex-col justify-center">
+                            <h3 className="text-2xl xl:text-3xl font-bold mb-4 montserrat text-white group-hover:text-amber-400 transition-colors">
+                              {service.title}
+                            </h3>
+                            <p className="text-zinc-300 group-hover:text-white leading-relaxed mb-6 text-base xl:text-lg poppins">
+                              {service.description}
+                            </p>
+                          </div>
 
                           {/* Learn More Button */}
                           <div className="inline-flex items-center text-amber-400 font-medium group-hover:text-white text-sm poppins">
@@ -179,10 +179,10 @@ const Coatings = () => {
                   </div>
 
                   {/* Desktop Layout */}
-                  <div className="hidden md:flex p-5 items-start">
+                  <div className="hidden md:flex p-6 items-stretch h-full">
                     {/* Image - Left Side */}
-                    <div className="w-[300px] flex-shrink-0 mr-6">
-                      <div className="relative overflow-hidden rounded-2xl group h-[200px]">
+                    <div className="w-[350px] flex-shrink-0 mr-8">
+                      <div className="relative overflow-hidden rounded-2xl group h-[280px] w-full">
                         <Image
                           src={service.image}
                           alt={service.title}
@@ -211,7 +211,7 @@ const Coatings = () => {
                       </p>
 
                       {/* Learn More Button - Bottom Right */}
-                      <div className="mt-auto pt-16 flex justify-end">
+                      <div className="mt-auto pt-24 flex justify-end">
                         <div className="inline-flex items-center text-amber-400 font-medium group-hover:text-white transition-colors duration-300">
                           <span className="mr-2 poppins">Learn More</span>
                           <Icon icon="mage:external-link" width="20" height="20" />

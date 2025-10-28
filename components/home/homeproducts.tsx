@@ -136,9 +136,9 @@ const Coatings = () => {
               >
                 <div className="relative overflow-hidden ">
                   {/* Mobile Layout */}
-                  <div className="block md:hidden">
-                    <div className="relative">
-                      <div className="w-full h-[200px] relative overflow-hidden">
+                  <div className="block md:hidden h-full">
+                    <div className="relative h-full">
+                      <div className="w-full h-[280px] relative overflow-hidden">
                         <Image
                           src={service.image}
                           alt={service.title}
@@ -146,22 +146,17 @@ const Coatings = () => {
                           className="object-cover"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent z-10 opacity-0 group-hover:opacity-100" />
-                      </div>
-                      <div className="p-4">
-                        
+                        <div className="absolute bottom-0 left-0 right-0 p-4 z-20">
                           <div className="inline-flex items-center px-3 py-1 rounded-full bg-amber-400/20 text-amber-400 text-xs font-medium mb-3">
                             {service.category}
                           </div>
-
-                          
-                          <h3 className="text-xl font-bold mb-3 montserrat bg-gradient-to-r from-white via-yellow-100 to-yellow-200 bg-clip-text text-transparent group-hover:text-amber-400">
+                          <h3 className="text-2xl font-bold mb-2 montserrat text-white group-hover:text-amber-400">
                             {service.title}
                           </h3>
-
-                          
                           <p className="text-zinc-300 group-hover:text-white leading-relaxed text-sm mb-4 poppins">
                             {service.description}
                           </p>
+                        </div>
 
                           
                           <div className="inline-flex items-center text-amber-400 font-medium group-hover:text-white text-sm poppins">
@@ -186,10 +181,10 @@ const Coatings = () => {
                   </div>
 
                   {/* Desktop Layout */}
-                  <div className="hidden md:flex p-5 items-start">
+                  <div className="hidden md:flex p-6 items-stretch h-full">
                     {/* Image - Left Side */}
-                    <div className="w-[300px] flex-shrink-0 mr-6">
-                      <div className="relative overflow-hidden rounded-2xl group h-[200px]">
+                    <div className="w-[350px] flex-shrink-0 mr-8">
+                      <div className="relative overflow-hidden rounded-2xl group h-[280px] w-full">
                         <Image
                           src={service.image}
                           alt={service.title}
@@ -207,23 +202,22 @@ const Coatings = () => {
                     </div>
                     
                     
-                    <div className="flex-1 flex flex-col h-full">
-                      
-                      <h3 className="text-2xl font-bold mb-3 montserrat bg-gradient-to-r from-white via-yellow-100 to-yellow-200 bg-clip-text text-transparent">
+                    <div className="flex-1 py-6 pr-6 flex flex-col">
+                      <h3 className="text-2xl xl:text-3xl font-bold mb-4 montserrat text-white group-hover:text-amber-400 transition-colors">
                         {service.title}
                       </h3>
-                      {/* Description */}
-                      <p className="text-[#FFD700] leading-relaxed text-base lg:text-lg poppins mb-4">
+                      <p className="text-amber-200 group-hover:text-white leading-relaxed text-base xl:text-lg poppins mb-6">
                         {service.description}
                       </p>
 
                       {/* Learn More Button - Bottom Right */}
-                      <div className="mt-auto pt-16 flex justify-end">
+                      <div className="mt-auto pt-6 flex justify-end">
                         <div className="inline-flex items-center text-amber-400 font-medium group-hover:text-white transition-colors duration-300">
-                          <span className="mr-2 poppins">Learn More</span>
+                          <span className="mr-2">Learn More</span>
                           <Icon icon="mage:external-link" width="20" height="20" />
                         </div>
                       </div>
+                   
                     </div>
                   </div>
                 </Link>
