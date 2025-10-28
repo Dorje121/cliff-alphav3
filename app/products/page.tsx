@@ -1,14 +1,6 @@
-
-
-
-
-
-
 "use client";
 import React from "react";
-import Link from "next/link";
 import Image from "next/image";
-import { Icon } from "@iconify-icon/react";
 import Coatings from "@/components/home/homeproducts";
 
 const List = () => {

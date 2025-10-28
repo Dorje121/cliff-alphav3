@@ -1,10 +1,10 @@
 "use client";
 import React, { useRef, useEffect } from "react";
-import Link from "next/link";
 import Image from "next/image";
 import { Icon } from "@iconify-icon/react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { TransitionLink } from "../ui/transitionlink";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -130,7 +130,7 @@ const Coatings = () => {
               ref={(el) => addToRefs(el, index)}
               className={`h-full ${parseInt(service.id) % 2 === 0 ? 'mt-16' : ''}`}
             >
-              <Link
+              <TransitionLink
                 href={`/Services/${service.slug}`}
                 className="cursor-pointer block group rounded-lg md:rounded-xl bg-[#322b00]"
               >
@@ -220,7 +220,7 @@ const Coatings = () => {
                    
                     </div>
                   </div>
-                </Link>
+                </TransitionLink>
               </div>
             ))}
         </div>

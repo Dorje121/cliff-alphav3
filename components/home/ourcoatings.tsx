@@ -5,6 +5,9 @@ import Image from "next/image";
 import { Icon } from "@iconify-icon/react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { TransitionLink } from "../ui/transitionlink";
+
+
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -123,7 +126,7 @@ const Coatings = () => {
               ref={(el) => addToRefs(el, index)}
               className={`h-full ${parseInt(service.id) % 2 === 0 ? 'mt-16' : ''}`}
             >
-              <Link
+              <TransitionLink
                 href="/Services/cliff-coatings"
                 className="cursor-pointer block group"
               >
@@ -220,7 +223,7 @@ const Coatings = () => {
                     </div>
                   </div>
                 </div>
-              </Link>
+              </TransitionLink>
             </div>
           ))}
         </div>

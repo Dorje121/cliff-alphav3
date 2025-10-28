@@ -1,6 +1,6 @@
 "use client";
 import React, { useRef, useEffect } from "react";
-import Link from "next/link";
+import { TransitionLink } from "../ui/transitionlink";
 import Image from "next/image";
 import { gsap } from "gsap";
 import { Icon } from "@iconify/react";
@@ -198,7 +198,7 @@ const HomeTechnology = () => {
                     {category.description}
                   </p>
 
-                  <Link
+                  <TransitionLink
                     href={`/technology`}
                     className="category-button group relative inline-flex items-center px-6 py-3 bg-amber-400/10 border border-amber-400/30 rounded-2xl text-amber-400 font-semibold poppins overflow-hidden"
                   >
@@ -217,7 +217,7 @@ const HomeTechnology = () => {
                         className="absolute rotate-45 transition-all duration-500 translate-y-6 opacity-0 group-hover:translate-y-0 group-hover:opacity-100"
                       />
                     </div>
-                  </Link>
+                  </TransitionLink>
                 </div>
               </div>
 

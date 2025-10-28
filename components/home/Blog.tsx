@@ -2,7 +2,7 @@
 
 import React, { useEffect } from "react";
 import { Calendar, Clock, ArrowRight, Eye } from "lucide-react";
-import TransitionLink from "@/components/PreLoader/TransitionLink";
+import { TransitionLink } from "../ui/transitionlink";
 import Image from "next/image";
 
 interface BlogPost {
@@ -178,7 +178,7 @@ export default function Blog() {
                       <div className="flex items-center  justify-start">
                         <TransitionLink
                           href={`/Technologies/${post.id}`}
-                          className="group/cta inline-flex items-center gap-3 px-5 py-2 bg-black/10 hover:bg-black/20 backdrop-blur-xl border border-[#FFD700]   rounded-full text-black font-semibold text-sm transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/25 hover:scale-105"
+                          className="group/cta inline-flex items-center gap-3 px-5 py-2 bg-black/10 hover:bg-black/20 backdrop-blur-xl border border-[#FFD700] rounded-full text-black font-semibold text-sm transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/25 hover:scale-105"
                         >
                           <span className="text-[#FFD700]">Read Article</span>
                           <ArrowRight

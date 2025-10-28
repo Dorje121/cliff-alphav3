@@ -16,6 +16,11 @@ import {
   Bookmark,
   Quote,
   Copy,
+  Check,
+  Facebook,
+  Twitter,
+  Linkedin,
+  MessageCircle,
 } from "lucide-react";
 import TransitionLink from "@/components/PreLoader/TransitionLink";
 
@@ -31,293 +36,93 @@ interface BlogPost {
   readTime: string;
   category: string;
   author: string;
+  authorImage: string;
+  authorBio: string;
   views: number;
   tags: string[];
 }
 
-// This would typically come from a CMS or API
 const blogPosts: Record<number, BlogPost> = {
   1: {
     id: 1,
     title: "Revolutionary Lens Technology: The Future of Vision Correction",
-    excerpt:
-      "Discover how our latest lens innovations are transforming the way people see the world, with cutting-edge technology that adapts to every lifestyle.",
+    excerpt: "Discover how our latest lens innovations are transforming the way people see the world with cutting-edge adaptive technology.",
     content: `
-      <div class="prose prose-lg prose-invert max-w-none">
-        <p class="text-xl leading-relaxed text-zinc-300 mb-8">
+      <div class="w-full max-w-none">
+        <p class="text-xl leading-relaxed text-gray-300 mb-8 font-light w-full">
           The world of vision correction is undergoing a revolutionary transformation. With advances in materials science, digital manufacturing, and personalized medicine, we're witnessing the emergence of lens technologies that seemed impossible just a decade ago.
         </p>
 
-        <h2 class="text-3xl font-bold text-white mt-12 mb-6">Adaptive Intelligence in Every Lens</h2>
-        <p class="text-zinc-300 leading-relaxed mb-6">
+        <h2 class="text-3xl font-bold text-white mt-16 mb-8 border-l-4 border-blue-500 pl-6">Adaptive Intelligence in Every Lens</h2>
+        <p class="text-gray-300 leading-relaxed mb-8 text-lg">
           Our latest generation of smart lenses incorporates micro-sensors that continuously monitor environmental conditions and adjust accordingly. Whether you're transitioning from indoor lighting to bright sunlight, or moving between different visual tasks, these lenses adapt in real-time to provide optimal visual comfort.
         </p>
 
-        <blockquote class="border-l-4 border-blue-500 pl-6 my-8  text-lg text-zinc-300">
-          "The future of vision correction isn't just about seeing clearly – it's about seeing intelligently."
-        </blockquote>
+        <div class="bg-gradient-to-r from-blue-900/20 to-purple-900/20 border-l-4 border-blue-500 p-8 my-12 rounded-r-lg">
+          <Quote className="w-8 h-8 text-blue-400 mb-4" />
+          <blockquote class="text-2xl font-light text-white leading-relaxed">
+            "The future of vision correction isn't just about seeing clearly – it's about seeing intelligently."
+          </blockquote>
+          <p class="text-gray-400 mt-4 text-sm">Dr. Sarah Johnson, Chief Innovation Officer</p>
+        </div>
 
-        <h2 class="text-3xl font-bold text-white mt-12 mb-6">Personalized Visual Experiences</h2>
-        <p class="text-zinc-300 leading-relaxed mb-6">
-          Using advanced biometric analysis and AI-driven customization, we can now create lenses that are uniquely tailored to each individual's visual patterns, lifestyle, and physiological characteristics. This level of personalization was unimaginable in traditional lens manufacturing.
+        <h2 class="text-3xl font-bold text-white mt-16 mb-8 border-l-4 border-blue-500 pl-6">Personalized Visual Experiences</h2>
+        <p class="text-gray-300 leading-relaxed mb-8 text-lg">
+          Using advanced biometric analysis and AI-driven customization, we can now create lenses that are uniquely tailored to each individual's visual patterns, lifestyle, and physiological characteristics.
         </p>
 
-        <h3 class="text-2xl font-semibold text-white mt-10 mb-4">Key Innovations Include:</h3>
-        <ul class="list-disc list-inside space-y-3 text-zinc-300 mb-8">
-          <li>Dynamic focal adjustment based on gaze tracking</li>
-          <li>Automatic blue light filtering that adapts to screen time</li>
-          <li>Enhanced contrast in low-light conditions</li>
-          <li>Seamless integration with digital devices</li>
-          <li>Self-cleaning nano-coating technology</li>
-        </ul>
+        <div class="grid md:grid-cols-2 gap-8 my-12">
+          <div class="bg-gray-800/50 p-6 rounded-xl border border-gray-700">
+            <h3 class="text-xl font-semibold text-white mb-4">Dynamic Focal Adjustment</h3>
+            <p class="text-gray-300">Real-time adjustment based on gaze tracking and environmental factors</p>
+          </div>
+          <div class="bg-gray-800/50 p-6 rounded-xl border border-gray-700">
+            <h3 class="text-xl font-semibold text-white mb-4">Smart Blue Light Filtering</h3>
+            <p class="text-gray-300">Adaptive filtering that responds to screen time and ambient lighting</p>
+          </div>
+        </div>
 
-        <h2 class="text-3xl font-bold text-white mt-12 mb-6">The Science Behind the Innovation</h2>
-        <p class="text-zinc-300 leading-relaxed mb-6">
-          Our research team has spent over five years developing proprietary materials that can change their optical properties in response to various stimuli. These smart materials are embedded at the molecular level, ensuring durability while maintaining the highest optical clarity.
-        </p>
-
-        <p class="text-zinc-300 leading-relaxed mb-6">
-          The manufacturing process involves precision layering techniques that build up the lens structure atom by atom, allowing for unprecedented control over the final optical properties. This level of precision ensures that each lens delivers consistent performance across its entire surface area.
-        </p>
-
-        <h2 class="text-3xl font-bold text-white mt-12 mb-6">Looking to the Future</h2>
-        <p class="text-zinc-300 leading-relaxed mb-6">
-          As we continue to push the boundaries of what's possible in vision correction, we're exploring technologies like augmented reality integration, health monitoring capabilities, and even more advanced adaptive features that will make these lenses true extensions of human visual capability.
-        </p>
-
-        <p class="text-zinc-300 leading-relaxed">
-          The future of vision is not just about correction – it's about enhancement, intelligence, and creating a seamless interface between human vision and the digital world around us.
+        <h2 class="text-3xl font-bold text-white mt-16 mb-8 border-l-4 border-blue-500 pl-6">The Science Behind Innovation</h2>
+        <p class="text-gray-300 leading-relaxed mb-8 text-lg">
+          Our research team has spent over five years developing proprietary materials that can change their optical properties in response to various stimuli. These smart materials ensure durability while maintaining the highest optical clarity.
         </p>
       </div>
     `,
     image: "/ai1.jpg",
     date: "2024-03-15",
-    readTime: "5 min read",
+    readTime: "6 min read",
     category: "Technology",
     author: "Dr. Sarah Johnson",
+    authorImage: "/author1.jpg",
+    authorBio: "Vision technology specialist with 15 years of experience in optical innovation and research.",
     views: 1250,
     tags: ["Innovation", "Technology", "Smart Lenses", "Future Vision"],
   },
   2: {
     id: 2,
     title: "Progressive Lenses: A Complete Guide to Better Vision",
-    excerpt:
-      "Everything you need to know about progressive lenses, from benefits to choosing the right type for your needs.",
+    excerpt: "Everything you need to know about progressive lenses, from benefits to choosing the right type for your needs.",
     content: `
-      <div class="prose prose-lg prose-invert max-w-none">
-        <p class="text-xl leading-relaxed text-zinc-300 mb-8">
-          Progressive lenses represent one of the most significant advances in vision correction technology, offering a seamless solution for those who need multiple vision corrections in a single lens.
+      <div class="w-full max-w-none">
+        <p class="text-xl leading-relaxed text-gray-300 mb-8 font-light w-full">
+          Progressive lenses represent one of the most significant advances in vision correction technology, offering a seamless solution for presbyopia.
         </p>
-
-        <h2 class="text-3xl font-bold text-white mt-12 mb-6">Understanding Progressive Lenses</h2>
-        <p class="text-zinc-300 leading-relaxed mb-6">
-          Unlike traditional bifocals or trifocals, progressive lenses provide a smooth transition between different vision zones, eliminating the visible lines that can be both aesthetically unappealing and functionally limiting.
-        </p>
-
-        <h3 class="text-2xl font-semibold text-white mt-10 mb-4">Benefits of Progressive Lenses:</h3>
-        <ul class="list-disc list-inside space-y-3 text-zinc-300 mb-8">
-          <li>Seamless vision at all distances</li>
-          <li>Natural appearance without visible lines</li>
-          <li>Reduced eye strain during computer work</li>
-          <li>Better peripheral vision</li>
-          <li>Age-appropriate vision correction</li>
-        </ul>
-
-        <p class="text-zinc-300 leading-relaxed">
-          Modern progressive lens technology has evolved to address the specific visual challenges of our digital age, providing optimal solutions for both traditional tasks and modern screen-based activities.
+        
+        <h2 class="text-3xl font-bold text-white mt-16 mb-8 border-l-4 border-blue-500 pl-6">Understanding Progressive Technology</h2>
+        <p class="text-gray-300 leading-relaxed mb-8 text-lg">
+          Unlike traditional bifocals, progressive lenses provide smooth transitions between distance, intermediate, and near vision zones.
         </p>
       </div>
     `,
-    image: "/progreesive.png",
+    image: "/progressive.png",
     date: "2024-03-12",
     readTime: "7 min read",
     category: "Education",
     author: "Mark Williams",
+    authorImage: "/author2.jpg",
+    authorBio: "Optical specialist focusing on patient education and lens technology.",
     views: 890,
-    tags: ["Progressive Lenses", "Vision Correction", "Presbyopia", "Eye Care"],
-  },
-  3: {
-    id: 3,
-    title: "Revolutionary Lens Technology: The Future of Vision Correction",
-    excerpt:
-      "Discover how our latest lens innovations are transforming the way people see the world, with cutting-edge technology that adapts to every lifestyle.",
-    content: `
-      <div class="prose prose-lg prose-invert max-w-none">
-        <p class="text-xl leading-relaxed text-zinc-300 mb-8">
-          The world of vision correction is undergoing a revolutionary transformation. With advances in materials science, digital manufacturing, and personalized medicine, we're witnessing the emergence of lens technologies that seemed impossible just a decade ago.
-        </p>
-
-        <h2 class="text-3xl font-bold text-white mt-12 mb-6">Adaptive Intelligence in Every Lens</h2>
-        <p class="text-zinc-300 leading-relaxed mb-6">
-          Our latest generation of smart lenses incorporates micro-sensors that continuously monitor environmental conditions and adjust accordingly. Whether you're transitioning from indoor lighting to bright sunlight, or moving between different visual tasks, these lenses adapt in real-time to provide optimal visual comfort.
-        </p>
-
-        <blockquote class="border-l-4 border-blue-500 pl-6 my-8  text-lg text-zinc-300">
-          "The future of vision correction isn't just about seeing clearly – it's about seeing intelligently."
-        </blockquote>
-
-        <h2 class="text-3xl font-bold text-white mt-12 mb-6">Personalized Visual Experiences</h2>
-        <p class="text-zinc-300 leading-relaxed mb-6">
-          Using advanced biometric analysis and AI-driven customization, we can now create lenses that are uniquely tailored to each individual's visual patterns, lifestyle, and physiological characteristics. This level of personalization was unimaginable in traditional lens manufacturing.
-        </p>
-
-        <h3 class="text-2xl font-semibold text-white mt-10 mb-4">Key Innovations Include:</h3>
-        <ul class="list-disc list-inside space-y-3 text-zinc-300 mb-8">
-          <li>Dynamic focal adjustment based on gaze tracking</li>
-          <li>Automatic blue light filtering that adapts to screen time</li>
-          <li>Enhanced contrast in low-light conditions</li>
-          <li>Seamless integration with digital devices</li>
-          <li>Self-cleaning nano-coating technology</li>
-        </ul>
-
-        <h2 class="text-3xl font-bold text-white mt-12 mb-6">The Science Behind the Innovation</h2>
-        <p class="text-zinc-300 leading-relaxed mb-6">
-          Our research team has spent over five years developing proprietary materials that can change their optical properties in response to various stimuli. These smart materials are embedded at the molecular level, ensuring durability while maintaining the highest optical clarity.
-        </p>
-
-        <p class="text-zinc-300 leading-relaxed mb-6">
-          The manufacturing process involves precision layering techniques that build up the lens structure atom by atom, allowing for unprecedented control over the final optical properties. This level of precision ensures that each lens delivers consistent performance across its entire surface area.
-        </p>
-
-        <h2 class="text-3xl font-bold text-white mt-12 mb-6">Looking to the Future</h2>
-        <p class="text-zinc-300 leading-relaxed mb-6">
-          As we continue to push the boundaries of what's possible in vision correction, we're exploring technologies like augmented reality integration, health monitoring capabilities, and even more advanced adaptive features that will make these lenses true extensions of human visual capability.
-        </p>
-
-        <p class="text-zinc-300 leading-relaxed">
-          The future of vision is not just about correction – it's about enhancement, intelligence, and creating a seamless interface between human vision and the digital world around us.
-        </p>
-      </div>
-    `,
-    image: "/ai1.jpg",
-    date: "2024-03-15",
-    readTime: "5 min read",
-    category: "Technology",
-    author: "Dr. Sarah Johnson",
-    views: 1250,
-    tags: ["Innovation", "Technology", "Smart Lenses", "Future Vision"],
-  },
-  4: {
-    id: 4,
-    title: "Revolutionary Lens Technology: The Future of Vision Correction",
-    excerpt:
-      "Discover how our latest lens innovations are transforming the way people see the world, with cutting-edge technology that adapts to every lifestyle.",
-    content: `
-      <div class="prose prose-lg prose-invert max-w-none">
-        <p class="text-xl leading-relaxed text-zinc-300 mb-8">
-          The world of vision correction is undergoing a revolutionary transformation. With advances in materials science, digital manufacturing, and personalized medicine, we're witnessing the emergence of lens technologies that seemed impossible just a decade ago.
-        </p>
-
-        <h2 class="text-3xl font-bold text-white mt-12 mb-6">Adaptive Intelligence in Every Lens</h2>
-        <p class="text-zinc-300 leading-relaxed mb-6">
-          Our latest generation of smart lenses incorporates micro-sensors that continuously monitor environmental conditions and adjust accordingly. Whether you're transitioning from indoor lighting to bright sunlight, or moving between different visual tasks, these lenses adapt in real-time to provide optimal visual comfort.
-        </p>
-
-        <blockquote class="border-l-4 border-blue-500 pl-6 my-8  text-lg text-zinc-300">
-          "The future of vision correction isn't just about seeing clearly – it's about seeing intelligently."
-        </blockquote>
-
-        <h2 class="text-3xl font-bold text-white mt-12 mb-6">Personalized Visual Experiences</h2>
-        <p class="text-zinc-300 leading-relaxed mb-6">
-          Using advanced biometric analysis and AI-driven customization, we can now create lenses that are uniquely tailored to each individual's visual patterns, lifestyle, and physiological characteristics. This level of personalization was unimaginable in traditional lens manufacturing.
-        </p>
-
-        <h3 class="text-2xl font-semibold text-white mt-10 mb-4">Key Innovations Include:</h3>
-        <ul class="list-disc list-inside space-y-3 text-zinc-300 mb-8">
-          <li>Dynamic focal adjustment based on gaze tracking</li>
-          <li>Automatic blue light filtering that adapts to screen time</li>
-          <li>Enhanced contrast in low-light conditions</li>
-          <li>Seamless integration with digital devices</li>
-          <li>Self-cleaning nano-coating technology</li>
-        </ul>
-
-        <h2 class="text-3xl font-bold text-white mt-12 mb-6">The Science Behind the Innovation</h2>
-        <p class="text-zinc-300 leading-relaxed mb-6">
-          Our research team has spent over five years developing proprietary materials that can change their optical properties in response to various stimuli. These smart materials are embedded at the molecular level, ensuring durability while maintaining the highest optical clarity.
-        </p>
-
-        <p class="text-zinc-300 leading-relaxed mb-6">
-          The manufacturing process involves precision layering techniques that build up the lens structure atom by atom, allowing for unprecedented control over the final optical properties. This level of precision ensures that each lens delivers consistent performance across its entire surface area.
-        </p>
-
-        <h2 class="text-3xl font-bold text-white mt-12 mb-6">Looking to the Future</h2>
-        <p class="text-zinc-300 leading-relaxed mb-6">
-          As we continue to push the boundaries of what's possible in vision correction, we're exploring technologies like augmented reality integration, health monitoring capabilities, and even more advanced adaptive features that will make these lenses true extensions of human visual capability.
-        </p>
-
-        <p class="text-zinc-300 leading-relaxed">
-          The future of vision is not just about correction – it's about enhancement, intelligence, and creating a seamless interface between human vision and the digital world around us.
-        </p>
-      </div>
-    `,
-    image: "/ai1.jpg",
-    date: "2024-03-15",
-    readTime: "5 min read",
-    category: "Technology",
-    author: "Dr. Sarah Johnson",
-    views: 1250,
-    tags: ["Innovation", "Technology", "Smart Lenses", "Future Vision"],
-  },
-  5: {
-    id: 5,
-    title: "Revolutionary Lens Technology: The Future of Vision Correction",
-    excerpt:
-      "Discover how our latest lens innovations are transforming the way people see the world, with cutting-edge technology that adapts to every lifestyle.",
-    content: `
-      <div class="prose prose-lg prose-invert max-w-none">
-        <p class="text-xl leading-relaxed text-zinc-300 mb-8">
-          The world of vision correction is undergoing a revolutionary transformation. With advances in materials science, digital manufacturing, and personalized medicine, we're witnessing the emergence of lens technologies that seemed impossible just a decade ago.
-        </p>
-
-        <h2 class="text-3xl font-bold text-white mt-12 mb-6">Adaptive Intelligence in Every Lens</h2>
-        <p class="text-zinc-300 leading-relaxed mb-6">
-          Our latest generation of smart lenses incorporates micro-sensors that continuously monitor environmental conditions and adjust accordingly. Whether you're transitioning from indoor lighting to bright sunlight, or moving between different visual tasks, these lenses adapt in real-time to provide optimal visual comfort.
-        </p>
-
-        <blockquote class=" pl-6 my-8  text-lg text-zinc-300">
-          "The future of vision correction isn't just about seeing clearly – it's about seeing intelligently."
-        </blockquote>
-
-        <h2 class="text-3xl font-bold text-white mt-12 mb-6">Personalized Visual Experiences</h2>
-        <p class="text-zinc-300 leading-relaxed mb-6">
-          Using advanced biometric analysis and AI-driven customization, we can now create lenses that are uniquely tailored to each individual's visual patterns, lifestyle, and physiological characteristics. This level of personalization was unimaginable in traditional lens manufacturing.
-        </p>
-
-        <h3 class="text-2xl font-semibold text-white mt-10 mb-4">Key Innovations Include:</h3>
-        <ul class="list-disc list-inside space-y-3 text-zinc-300 mb-8">
-          <li>Dynamic focal adjustment based on gaze tracking</li>
-          <li>Automatic blue light filtering that adapts to screen time</li>
-          <li>Enhanced contrast in low-light conditions</li>
-          <li>Seamless integration with digital devices</li>
-          <li>Self-cleaning nano-coating technology</li>
-        </ul>
-
-        <h2 class="text-3xl font-bold text-white mt-12 mb-6">The Science Behind the Innovation</h2>
-        <p class="text-zinc-300 leading-relaxed mb-6">
-          Our research team has spent over five years developing proprietary materials that can change their optical properties in response to various stimuli. These smart materials are embedded at the molecular level, ensuring durability while maintaining the highest optical clarity.
-        </p>
-
-        <p class="text-zinc-300 leading-relaxed mb-6">
-          The manufacturing process involves precision layering techniques that build up the lens structure atom by atom, allowing for unprecedented control over the final optical properties. This level of precision ensures that each lens delivers consistent performance across its entire surface area.
-        </p>
-
-        <h2 class="text-3xl font-bold text-white mt-12 mb-6">Looking to the Future</h2>
-        <p class="text-zinc-300 leading-relaxed mb-6">
-          As we continue to push the boundaries of what's possible in vision correction, we're exploring technologies like augmented reality integration, health monitoring capabilities, and even more advanced adaptive features that will make these lenses true extensions of human visual capability.
-        </p>
-
-        <p class="text-zinc-300 leading-relaxed">
-          The future of vision is not just about correction – it's about enhancement, intelligence, and creating a seamless interface between human vision and the digital world around us.
-        </p>
-      </div>
-    `,
-    image: "/ai1.jpg",
-    date: "2024-03-15",
-    readTime: "5 min read",
-    category: "Technology",
-    author: "Dr. Sarah Johnson",
-    views: 1250,
-    tags: ["Innovation", "Technology", "Smart Lenses", "Future Vision"],
+    tags: ["Progressive Lenses", "Vision Correction", "Eye Care"],
   },
 };
 
@@ -325,107 +130,69 @@ export default function BlogPost() {
   const params = useParams();
   const containerRef = useRef<HTMLDivElement>(null);
   const heroRef = useRef<HTMLDivElement>(null);
-  const parallaxRef = useRef<HTMLDivElement>(null);
   const postId = parseInt(params.id as string);
   const post = blogPosts[postId];
   const [isLiked, setIsLiked] = useState(false);
   const [isBookmarked, setIsBookmarked] = useState(false);
+  const [isCopied, setIsCopied] = useState(false);
+  const [readingProgress, setReadingProgress] = useState(0);
+
+  useEffect(() => {
+    if (!post) return;
+
+    const updateReadingProgress = () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = (scrollTop / docHeight) * 100;
+      setReadingProgress(progress);
+    };
+
+    window.addEventListener("scroll", updateReadingProgress);
+    return () => window.removeEventListener("scroll", updateReadingProgress);
+  }, [post]);
 
   useEffect(() => {
     if (!post) return;
 
     const ctx = gsap.context(() => {
-      // Hero content animation
-      const tl = gsap.timeline({ delay: 0.5 });
-      tl.from(".hero-category", {
+      // Subtle fade-in animations
+      gsap.from(".animate-in", {
         y: 30,
         opacity: 0,
         duration: 0.8,
+        stagger: 0.1,
         ease: "power3.out",
-      })
-        .from(
-          ".hero-title",
-          { y: 50, opacity: 0, duration: 1, ease: "power3.out" },
-          "-=0.6"
-        )
-        .from(
-          ".hero-excerpt",
-          { y: 30, opacity: 0, duration: 0.8, ease: "power3.out" },
-          "-=0.4"
-        )
-        .from(
-          ".hero-meta",
-          { y: 20, opacity: 0, duration: 0.6, ease: "power3.out" },
-          "-=0.2"
-        )
-        .from(
-          ".hero-actions",
-          { y: 20, opacity: 0, duration: 0.6, ease: "power3.out" },
-          "-=0.1"
-        );
-
-      // Floating cards animation
-      gsap.from(".floating-card", {
-        y: 100,
-        opacity: 0,
-        duration: 1,
-        stagger: 0.2,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: ".floating-cards",
-          start: "top 80%",
-        },
       });
 
       // Content reveal animation
-      gsap.from(".content-section > *", {
+      gsap.from(".content-block", {
         y: 40,
         opacity: 0,
-        duration: 0.8,
-        stagger: 0.1,
+        duration: 0.6,
+        stagger: 0.05,
         ease: "power3.out",
         scrollTrigger: {
           trigger: ".content-section",
-          start: "top 70%",
-        },
-      });
-
-      // Sticky sidebar animation
-      gsap.from(".sidebar-item", {
-        x: 50,
-        opacity: 0,
-        duration: 0.6,
-        stagger: 0.1,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: ".article-sidebar",
-          start: "top 60%",
+          start: "top 80%",
         },
       });
     }, containerRef);
 
-    return () => {
-      ctx.revert();
-    };
+    return () => ctx.revert();
   }, [post]);
 
   if (!post) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-black via-zinc-900 to-black text-white flex items-center justify-center">
-        <div className="text-center space-y-6">
-          <div className=" rounded-2xl flex items-center justify-center mb-8">
-            <h2 className="text-5xl lg:text-7xl font-semibold">404</h2>
-          </div>
-          <h1 className="text-5xl font-bold bg-gradient-to-r from-white to-zinc-400 bg-clip-text text-transparent">
-            Article Not Found
-          </h1>
-          <p className="text-xl text-zinc-400 max-w-md mx-auto">
-            The article you&apos;re looking for doesn&apos;t exist or has been
-            moved.
+      <div className="min-h-screen bg-black text-white flex items-center justify-center px-6">
+        <div className="text-center space-y-8 max-w-md">
+          <div className="text-6xl font-light text-gray-400">404</div>
+          <h1 className="text-4xl font-bold text-white">Article Not Found</h1>
+          <p className="text-gray-400 text-lg">
+            The article you're looking for doesn't exist or has been moved.
           </p>
           <TransitionLink
             href="/Blogs"
-            className="inline-flex items-center gap-3 text-white  py-4 rounded-2xl hover:text-yellow-500 transition-all duration-300 transform hover:scale-105"
+            className="inline-flex items-center gap-3 px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-all duration-300"
           >
             <ArrowLeft size={20} />
             Back to Blogs
@@ -445,311 +212,337 @@ export default function BlogPost() {
 
   const shareUrl = typeof window !== "undefined" ? window.location.href : "";
 
-  // latest
+  const handleCopy = async () => {
+    try {
+      await navigator.clipboard.writeText(shareUrl);
+      setIsCopied(true);
+      setTimeout(() => setIsCopied(false), 2000);
+    } catch (err) {
+      console.error("Failed to copy: ", err);
+    }
+  };
 
-  const copyToClipboard = () => {
-    navigator.clipboard.writeText(shareUrl);
+  const shareToTwitter = () => {
+    window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(post.title)}&url=${encodeURIComponent(shareUrl)}`, "_blank");
+  };
+
+  const shareToFacebook = () => {
+    window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`, "_blank");
+  };
+
+  const shareToLinkedIn = () => {
+    window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}`, "_blank");
   };
 
   return (
-    <div
-      ref={containerRef}
-      className="min-h-screen bg-black text-white overflow-x-hidden"
-    >
-      {/* Hero Section with Parallax */}
-      <section
-        ref={heroRef}
-        className="relative min-h-[80vh] flex items-center justify-center overflow-hidden"
-      >
-        {/* Parallax Background */}
-        <div ref={parallaxRef} className="absolute h-full w-full inset-0 ">
+    <div ref={containerRef} className="min-h-screen bg-black text-white w-full">
+      <div className="w-full max-w-[100vw] overflow-x-hidden">
+      {/* Back to Blogs Button */}
+      <div className="fixed top-16 left-4 z-40">
+        <TransitionLink
+          href="/Technologies"
+          className="inline-flex items-center gap-2 text-gray-300 hover:text-white transition-colors bg-black/80 backdrop-blur-lg border border-gray-800 rounded-full px-4 py-2 text-sm"
+        >
+          <ArrowLeft size={16} />
+          <span>Back to Blogs</span>
+        </TransitionLink>
+      </div>
+
+      {/* Hero Section - Human-Centric Design */}
+      <section ref={heroRef} className="relative min-h-[50vh] flex items-center justify-center pt-32 overflow-hidden">
+        {/* Background with subtle noise */}
+        <div className="absolute inset-0 bg-black">
           <Image
             src={post.image}
             alt={post.title}
             fill
-            className="object-contain  h-full w-full"
+            className="object-cover opacity-10"
             priority
+            quality={100}
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-black/20" />
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-900/20 to-purple-900/20" />
+          <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIxMCIgaGVpZ2h0PSIxMCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjAzKSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNwYXR0ZXJuKSIvPjwvc3ZnPg==')]" />
         </div>
-
-        {/* Floating Geometric Elements */}
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-gradient-to-br from-blue-500/20 to-transparent rounded-full blur-xl animate-pulse" />
-          <div className="absolute bottom-1/3 right-1/3 w-48 h-48 bg-gradient-to-br from-purple-500/10 to-transparent rounded-full blur-2xl animate-pulse delay-1000" />
-          <div className="absolute top-1/2 right-1/4 w-24 h-24 bg-gradient-to-br from-cyan-500/15 to-transparent rounded-full blur-lg animate-pulse delay-500" />
-        </div>
-
-        {/* Hero Content */}
-        <div className="relative z-10 max-w-6xl mx-auto px-6 text-center">
-          <div className="hero-category mb-6">
-            <span className="inline-flex items-center gap-2 px-6 py-2 text-sm bg-gradient-to-r from-blue-500/20 to-purple-500/20 backdrop-blur-md border border-blue-500/30 rounded-full text-blue-300 ">
-              <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse" />
-              {post.category}
-            </span>
-          </div>
-
-          <h1 className="hero-title text-5xl max-w-4xl   font-bold mb-8 leading-tight">
-            <span className="bg-gradient-to-r from-white via-blue-100 to-purple-100 bg-clip-text text-transparent">
-              {post.title}
-            </span>
+        
+        <div className="relative z-10 w-full max-w-[90vw] mx-auto px-6 text-center">
+          {/* Title */}
+          <h1 className="animate-in text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-8 leading-tight">
+            {post.title}
           </h1>
 
-          <p className="hero-excerpt text-xl md:text- text-zinc-300 leading-relaxed mb-12 max-w-4xl mx-auto">
-            {post.excerpt}
-          </p>
-
-          <div className="hero-meta flex flex-wrap items-center justify-center gap-6 mb-8">
-            <div className="flex items-center gap-2 text-zinc-400">
-              <User size={18} />
-              <span>{post.author}</span>
-            </div>
-            <div className="flex items-center gap-2 text-zinc-400">
-              <Calendar size={18} />
-              <span>{formatDate(post.date)}</span>
-            </div>
-            <div className="flex items-center gap-2 text-zinc-400">
-              <Clock size={18} />
-              <span>{post.readTime}</span>
-            </div>
-            <div className="flex items-center gap-2 text-zinc-400">
-              <Eye size={18} />
-              <span>{post.views.toLocaleString()} views</span>
-            </div>
+          {/* Excerpt */}
+          <div className="max-w-4xl mx-auto mb-14">
+            <p className="text-xl text-gray-300 leading-relaxed px-4">
+              {post.excerpt}
+            </p>
           </div>
 
-          <div className="hero-actions flex flex-wrap items-center justify-center gap-4">
-            <button
-              onClick={() => setIsLiked(!isLiked)}
-              className={`flex items-center gap-2 px-6 py-3 rounded-full border transition-all duration-300 ${
-                isLiked
-                  ? "bg-red-500 border-red-500 text-white"
-                  : "bg-white/10 border-white/20 text-white hover:bg-red-500/20 hover:border-red-500/50"
-              }`}
-            >
-              <Heart size={18} className={isLiked ? "fill-current" : ""} />
-              Like
-            </button>
-            <button
-              onClick={() => setIsBookmarked(!isBookmarked)}
-              className={`flex items-center gap-2 px-6 py-3 rounded-full border transition-all duration-300 ${
-                isBookmarked
-                  ? "bg-yellow-500 border-yellow-500 text-black"
-                  : "bg-white/10 border-white/20 text-white hover:bg-yellow-500/20 hover:border-yellow-500/50"
-              }`}
-            >
-              <Bookmark
-                size={18}
-                className={isBookmarked ? "fill-current" : ""}
-              />
-              Save
-            </button>
-            <button className="flex items-center gap-2 px-6 py-3 bg-white/10 border border-white/20 rounded-full text-white hover:shadow-2xl hover:shadow-blue-500/25 transition-all duration-300 transform hover:scale-105">
-              <Share2 size={18} />
-              Share
-            </button>
+          {/* Author, metadata, and action buttons */}
+          <div className="animate-in flex flex-wrap items-center justify-center gap-6 text-gray-400 mb-10">
+            <div className="flex items-center gap-3 group">
+              <div className="relative">
+                <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-blue-500/30 group-hover:border-blue-400 transition-colors duration-300">
+                  <Image
+                    src={post.authorImage}
+                    alt={post.author}
+                    width={40}
+                    height={40}
+                    className="object-cover"
+                  />
+                </div>
+                <span className="absolute -bottom-1 -right-1 w-3 h-3 bg-green-500 rounded-full border-2 border-gray-900" />
+              </div>
+              <span className="text-white group-hover:text-blue-400 transition-colors duration-300">
+                {post.author}
+              </span>
+            </div>
+            
+            <div className="h-6 w-px bg-gray-700" />
+            
+            <div className="flex items-center gap-2 group">
+              <Calendar size={16} className="text-blue-400 group-hover:scale-110 transition-transform duration-300" />
+              <span className="group-hover:text-white transition-colors duration-300">
+                {formatDate(post.date)}
+              </span>
+            </div>
+            
+            <div className="h-6 w-px bg-gray-700" />
+            
+            <div className="flex items-center gap-2 group">
+              <Clock size={16} className="text-purple-400 group-hover:rotate-180 transition-transform duration-700" />
+              <span className="group-hover:text-white transition-colors duration-300">
+                {post.readTime}
+              </span>
+            </div>
+            
+            <div className="h-6 w-px bg-gray-700" />
+            
+            <div className="flex items-center gap-2 group">
+              <Eye size={16} className="text-amber-400 group-hover:animate-pulse" />
+              <span className="group-hover:text-white transition-colors duration-300">
+                {post.views.toLocaleString()} views
+              </span>
+            </div>
+            
+            <div className="h-6 w-px bg-gray-700" />
+            
+            <div className="flex items-center gap-2 group">
+              <button
+                onClick={() => setIsLiked(!isLiked)}
+                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full ${isLiked ? 'text-red-500' : 'text-gray-400 hover:text-white'} transition-colors duration-300`}
+              >
+                <Heart size={16} className={isLiked ? 'fill-current' : ''} />
+                <span className="text-sm">{isLiked ? "Liked" : "Like"}</span>
+              </button>
+            </div>
+            
+            <div className="h-6 w-px bg-gray-700" />
+            
+            <div className="flex items-center group">
+              <button
+                onClick={() => setIsBookmarked(!isBookmarked)}
+                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full ${isBookmarked ? 'text-blue-500' : 'text-gray-400 hover:text-white'} transition-colors duration-300`}
+              >
+                <Bookmark size={16} className={isBookmarked ? 'fill-current' : ''}/>
+                <span className="text-sm">{isBookmarked ? 'Saved' : 'Save'}</span>
+              </button>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Main Content */}
-      <div className="relative z-10 mt-24 px-6">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-4 gap-6">
-            {/* Article Content */}
-            <article className="lg:col-span-3">
-              <div className="content-section bg-gradient-to-br from-zinc-900/60 to-zinc-800/40 backdrop-blur-xl border border-zinc-700/30 rounded-3xl p-8 md:p-12">
-                {/* Quote Highlight */}
-                <div className="flex items-start gap-4 mb-12 p-6 bg-gradient-to-r from-amber-500/10 to-amber-500/10 border-l-4 border-amber-500 rounded-2xl">
-                  <Quote
-                    size={24}
-                    className="text-amber-400 mt-1 flex-shrink-0"
-                  />
-                  <blockquote className="text-xl text-zinc-300  leading-relaxed">
-                    &ldquo;The future of vision correction isn&rsquo;t just
-                    about seeing clearly – it&rsquo;s about seeing
-                    intelligently.&rdquo;
-                  </blockquote>
-                </div>
+      {/* Main Content - Clean and Wide */}
+      <div className="relative w-full max-w-7xl mx-auto px-4 py-12 md:px-8">
+        <div className="w-full">
+          {/* Article Content */}
+          <article className="w-full">
+            <div className="content-section">
+              {/* Content Blocks */}
+              <div 
+                className="content-block"
+                dangerouslySetInnerHTML={{ __html: post.content }}
+              />
 
-                {/* Content */}
-                <div
-                  className="prose prose-lg prose-invert max-w-none prose-headings:text-white prose-h2:text-3xl prose-h2:font-bold prose-h2:mb-6 prose-h2:mt-12 prose-h3:text-2xl prose-h3:font-semibold prose-h3:mb-4 prose-h3:mt-10 prose-p:text-zinc-300 prose-p:leading-relaxed prose-p:mb-6 prose-li:text-zinc-300 prose-ul:space-y-3 prose-strong:text-white"
-                  dangerouslySetInnerHTML={{ __html: post.content }}
-                />
-
-                {/* Tags */}
-                <div className="mt-16 pt-8 border-t border-zinc-700/50">
-                  <h3 className="text-lg font-semibold mb-6 text-white">
-                    Article Tags
-                  </h3>
-                  <div className="flex flex-wrap gap-3">
-                    {post.tags.map((tag, index) => (
-                      <span
-                        key={index}
-                        className="px-4 py-2 bg-gradient-to-r from-zinc-800/80 to-zinc-700/80 backdrop-blur-sm border border-zinc-600/30 text-zinc-300 rounded-full text-sm hover:from-blue-500/20 hover:to-purple-500/20 hover:border-blue-500/30 transition-all duration-300 cursor-pointer"
-                      >
-                        #{tag}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Share Section */}
-                <div className="mt-12 pt-8 border-t border-zinc-700/50">
-                  <h3 className="text-lg font-semibold mb-6 text-white">
-                    Share this article
-                  </h3>
-                  <div className="flex flex-wrap gap-4">
-                    <button
-                      onClick={copyToClipboard}
-                      className="flex items-center gap-2   transition-all duration-300"
+              {/* Tags */}
+              <div className="content-block mt-16 pt-8">
+                <h3 className="text-lg font-semibold text-white mb-6">Topics</h3>
+                <div className="flex flex-wrap gap-3">
+                  {post.tags.map((tag, index) => (
+                    <span
+                      key={index}
+                      className="px-4 py-2 bg-gray-800 text-gray-300 rounded-lg text-sm hover:bg-gray-700 transition-colors cursor-pointer"
                     >
-                      <Copy size={18} />
-                    </button>
-                    <button className="flex items-center gap-2  transition-all duration-300">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width={24}
-                        height={24}
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          fill="currentColor"
-                          fillRule="evenodd"
-                          d="M5 1a4 4 0 0 0-4 4v14a4 4 0 0 0 4 4h14a4 4 0 0 0 4-4V5a4 4 0 0 0-4-4zm-.334 3.5a.75.75 0 0 0-.338 1.154l5.614 7.45l-5.915 6.345l-.044.051H6.03l4.83-5.179l3.712 4.928a.75.75 0 0 0 .337.251h4.422a.75.75 0 0 0 .336-1.154l-5.614-7.45L20.017 4.5h-2.05l-4.83 5.18l-3.714-4.928a.75.75 0 0 0-.337-.252zm10.88 13.548L6.431 5.952H8.45l9.114 12.095z"
-                          clipRule="evenodd"
-                        ></path>
-                      </svg>
-                    </button>
-                    <button className="flex items-center gap-2  transition-all duration-300">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width={24}
-                        height={24}
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          fill="currentColor"
-                          d="M20.9 2H3.1A1.1 1.1 0 0 0 2 3.1v17.8A1.1 1.1 0 0 0 3.1 22h9.58v-7.75h-2.6v-3h2.6V9a3.64 3.64 0 0 1 3.88-4a20 20 0 0 1 2.33.12v2.7H17.3c-1.26 0-1.5.6-1.5 1.47v1.93h3l-.39 3H15.8V22h5.1a1.1 1.1 0 0 0 1.1-1.1V3.1A1.1 1.1 0 0 0 20.9 2"
-                        ></path>
-                      </svg>
-                    </button>
-                    <button className="flex items-center gap-2  transition-all duration-300">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width={20}
-                        height={20}
-                        viewBox="0 0 20 20"
-                      >
-                        <path
-                          fill="currentColor"
-                          d="M17.04 17.043h-2.962v-4.64c0-1.107-.023-2.531-1.544-2.531c-1.544 0-1.78 1.204-1.78 2.449v4.722H7.793V7.5h2.844v1.3h.039c.397-.75 1.364-1.54 2.808-1.54c3.001 0 3.556 1.974 3.556 4.545zM4.447 6.194c-.954 0-1.72-.771-1.72-1.72s.767-1.72 1.72-1.72a1.72 1.72 0 0 1 0 3.44m1.484 10.85h-2.97V7.5h2.97zM18.522 0H1.476C.66 0 0 .645 0 1.44v17.12C0 19.355.66 20 1.476 20h17.042c.815 0 1.482-.644 1.482-1.44V1.44C20 .646 19.333 0 18.518 0z"
-                        ></path>
-                      </svg>{" "}
-                    </button>
-                  </div>
+                      #{tag}
+                    </span>
+                  ))}
                 </div>
               </div>
-            </article>
 
-            {/* Enhanced Sidebar */}
-            <aside className="lg:col-span-1 article-sidebar">
-              <div className="sticky top-32 space-y-6">
-                <div className="sidebar-item bg-gradient-to-br from-zinc-900/90 to-zinc-800/60 backdrop-blur-xl border border-zinc-700/30 rounded-2xl p-6">
-                  <div className="text-center">
-                    <div className="size-16 overflow-hidden bg-gradient-to-br from-purple-500 to-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <img
-                        src={post.image}
-                        alt={post.author}
-                        className="h-full w-full object-cover"
-                      />
-                    </div>
-                    <h3 className="font-semibold text-white mb-1">
-                      {post.author}
-                    </h3>
-                    <p className="text-sm text-zinc-400 mb-4">
-                      Vision Technology Expert
-                    </p>
-                    <p className="text-xs text-zinc-500 leading-relaxed">
-                      Specializing in advanced lens technologies and future
-                      vision solutions.
-                    </p>
+              {/* Share Section */}
+              <div className="content-block mt-12 pt-8 border-t border-gray-800">
+                <h3 className="text-lg font-semibold text-white mb-6">Share this article</h3>
+                <div className="flex flex-wrap gap-4">
+                  <button
+                    onClick={handleCopy}
+                    className="flex items-center gap-2 px-4 py-2 bg-gray-800 hover:bg-gray-700 rounded-lg transition-colors"
+                  >
+                    {isCopied ? <Check size={18} className="text-green-400" /> : <Copy size={18} />}
+                    <span>{isCopied ? "Copied!" : "Copy Link"}</span>
+                  </button>
+                  <button
+                    onClick={shareToTwitter}
+                    className="flex items-center gap-2 px-4 py-2 bg-gray-800 hover:bg-blue-500 rounded-lg transition-colors"
+                  >
+                    <Twitter size={18} />
+                    <span>Twitter</span>
+                  </button>
+                  <button
+                    onClick={shareToFacebook}
+                    className="flex items-center gap-2 px-4 py-2 bg-gray-800 hover:bg-blue-600 rounded-lg transition-colors"
+                  >
+                    <Facebook size={18} />
+                    <span>Facebook</span>
+                  </button>
+                  <button
+                    onClick={shareToLinkedIn}
+                    className="flex items-center gap-2 px-4 py-2 bg-gray-800 hover:bg-blue-700 rounded-lg transition-colors"
+                  >
+                    <Linkedin size={18} />
+                    <span>LinkedIn</span>
+                  </button>
+                </div>
+              </div>
+
+              {/* Author Bio */}
+              {/* <div className="content-block mt-12 pt-8 border-t border-gray-800">
+                <div className="flex items-start gap-6">
+                  <div className="w-16 h-16 bg-gray-700 rounded-full overflow-hidden flex-shrink-0">
+                    <Image
+                      src={post.authorImage}
+                      alt={post.author}
+                      width={64}
+                      height={64}
+                      className="object-cover"
+                    />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold text-white mb-2">{post.author}</h3>
+                    <p className="text-gray-400 leading-relaxed">{post.authorBio}</p>
                   </div>
                 </div>
+              </div> */}
+            </div>
+          </article>
 
-                {/* Related Articles */}
-                <div className="sidebar-item bg-gradient-to-br from-zinc-900/90 to-zinc-800/60 backdrop-blur-xl border border-zinc-700/30 rounded-2xl p-6">
-                  <h3 className="font-semibold text-white mb-4">
-                    Related Articles
-                  </h3>
-                  <div className="space-y-3">
-                    {Object.values(blogPosts)
-                      .filter((p) => p.id !== post.id)
-                      .slice(0, 3)
-                      .map((relatedPost) => (
-                        <TransitionLink
-                          key={relatedPost.id}
-                          href={`/Blogs/${relatedPost.id}`}
-                          className="block p-4 rounded-xl bg-gradient-to-r from-zinc-800/50 to-zinc-700/30 hover:from-blue-500/10 hover:to-purple-500/10 border border-zinc-700/30 hover:border-blue-500/30 transition-all duration-300 group"
-                        >
-                          <h4 className="font-medium text-sm text-white group-hover:text-blue-300 transition-colors line-clamp-2 mb-2">
+          {/* Sidebar */}
+          <aside className="lg:col-span-1">
+            <div className="sticky top-32 space-y-8">
+          
+              {/* <div className="bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-2xl p-6">
+                <h3 className="text-lg font-semibold text-white mb-4">In this article</h3>
+                <nav className="space-y-3 text-sm">
+                  {[
+                    "Adaptive Intelligence",
+                    "Personalized Experiences", 
+                    "Key Innovations",
+                    "Science Behind Innovation",
+                    "Future Outlook"
+                  ].map((item, index) => (
+                    <a
+                      key={index}
+                      href={`#${item.toLowerCase().replace(/\s+/g, '-')}`}
+                      className="block text-gray-400 hover:text-blue-400 transition-colors py-2 border-b border-gray-800 last:border-b-0"
+                    >
+                      {item}
+                    </a>
+                  ))}
+                </nav>
+              </div> */}
+
+            
+              {/* <div className="bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-2xl p-6">
+                <h3 className="text-lg font-semibold text-white mb-4">Related reads</h3>
+                <div className="space-y-4">
+                  {Object.values(blogPosts)
+                    .filter((p) => p.id !== post.id)
+                    .slice(0, 2)
+                    .map((relatedPost) => (
+                      <TransitionLink
+                        key={relatedPost.id}
+                        href={`/Blogs/${relatedPost.id}`}
+                        className="block group"
+                      >
+                        <div className="p-4 rounded-lg bg-gray-800/50 hover:bg-gray-700/50 transition-all duration-300 border border-gray-700 group-hover:border-gray-600">
+                          <h4 className="font-medium text-white group-hover:text-blue-300 transition-colors line-clamp-2 mb-2 text-sm">
                             {relatedPost.title}
                           </h4>
-                          <div className="flex items-center justify-between text-xs text-zinc-400">
+                          <div className="flex items-center justify-between text-xs text-gray-400">
                             <span>{relatedPost.readTime}</span>
-                            <span>{relatedPost.category}</span>
+                            <span className="px-2 py-1 bg-blue-600/20 text-blue-400 rounded text-xs">
+                              {relatedPost.category}
+                            </span>
                           </div>
-                        </TransitionLink>
-                      ))}
-                  </div>
+                        </div>
+                      </TransitionLink>
+                    ))}
                 </div>
+              </div> */}
 
-                {/* Table of Contents */}
-                <div className="sidebar-item bg-gradient-to-br from-zinc-900/90 to-zinc-800/60 backdrop-blur-xl border border-zinc-700/30 rounded-2xl p-6">
-                  <h3 className="font-semibold text-white mb-4">
-                    Table of Contents
-                  </h3>
-                  <nav className="space-y-2 text-sm">
-                    <a
-                      href="#adaptive-intelligence"
-                      className="block text-zinc-400 hover:text-blue-400 transition-colors py-1"
-                    >
-                      Adaptive Intelligence
-                    </a>
-                    <a
-                      href="#personalized-experiences"
-                      className="block text-zinc-400 hover:text-blue-400 transition-colors py-1"
-                    >
-                      Personalized Experiences
-                    </a>
-                    <a
-                      href="#key-innovations"
-                      className="block text-zinc-400 hover:text-blue-400 transition-colors py-1"
-                    >
-                      Key Innovations
-                    </a>
-                    <a
-                      href="#science-behind"
-                      className="block text-zinc-400 hover:text-blue-400 transition-colors py-1"
-                    >
-                      The Science Behind
-                    </a>
-                    <a
-                      href="#future-outlook"
-                      className="block text-zinc-400 hover:text-blue-400 transition-colors py-1"
-                    >
-                      Looking to the Future
-                    </a>
-                  </nav>
+              {/* Newsletter Signup */}
+              {/* <div className="bg-gradient-to-br from-blue-900/20 to-purple-900/20 border border-blue-500/30 rounded-2xl p-6">
+                <MessageCircle className="w-8 h-8 text-blue-400 mb-4" />
+                <h3 className="text-lg font-semibold text-white mb-2">Stay updated</h3>
+                <p className="text-gray-400 text-sm mb-4">
+                  Get the latest articles on vision technology and eye care.
+                </p>
+                <div className="space-y-3">
+                  <input
+                    type="email"
+                    placeholder="Enter your email"
+                    className="w-full px-4 py-2 bg-black/30 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-blue-500"
+                  />
+                  <button className="w-full px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors">
+                    Subscribe
+                  </button>
                 </div>
-              </div>
-            </aside>
-          </div>
+              </div> */}
+            </div>
+          </aside>
         </div>
       </div>
-      <div className="h-32" />
+
+      {/* Comments Section */}
+      {/* <div className="max-w-4xl mx-auto px-6 py-16">
+        <div className="bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-2xl p-8">
+          <h3 className="text-2xl font-bold text-white mb-8">Discussion (24)</h3>
+          <div className="space-y-6">
+            <div className="flex gap-4">
+              <div className="w-10 h-10 bg-gray-700 rounded-full flex-shrink-0" />
+              <div className="flex-1">
+                <div className="flex items-center gap-3 mb-2">
+                  <span className="font-semibold text-white">John Doe</span>
+                  <span className="text-gray-500 text-sm">2 days ago</span>
+                </div>
+                <p className="text-gray-300">
+                  Great insights on the future of lens technology. The adaptive features are particularly impressive!
+                </p>
+              </div>
+            </div>
+          </div>
+          
+          <div className="mt-8 pt-8 border-t border-gray-800">
+            <h4 className="text-lg font-semibold text-white mb-4">Add your comment</h4>
+            <textarea
+              placeholder="Share your thoughts..."
+              rows={4}
+              className="w-full px-4 py-3 bg-black/30 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 resize-none"
+            />
+            <button className="mt-4 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors">
+              Post Comment
+            </button>
+          </div>
+        </div>
+      </div> */}
+      </div>
     </div>
   );
 }

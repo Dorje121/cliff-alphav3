@@ -2,10 +2,12 @@
 
 import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
+import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import gsap from "gsap";
-import TransitionLink from "@/components/PreLoader/TransitionLink";
 import Image from "next/image";
+ 
+
 
 const links = [
   { href: "/", label: "Home" },
@@ -31,7 +33,7 @@ export default function Navbar() {
       },
     });
 
-    // Fade out menu links
+    
     tl.to(menuLinks, {
       opacity: 0,
       y: 20,
@@ -40,7 +42,7 @@ export default function Navbar() {
       ease: "power2.in",
     });
 
-    // Fade out right panel image
+    
     tl.to(
       ".lense",
       {
@@ -52,7 +54,7 @@ export default function Navbar() {
       "-=0.3"
     );
 
-    // Shrink the white content layer into U-shape (mirrors opening)
+    
     tl.to(
       menuRef.current,
       {
@@ -63,7 +65,7 @@ export default function Navbar() {
       "-=0.2"
     );
 
-    // Shrink the dark overlay into U-shape
+
     tl.to(
       overlayRef.current,
       {
@@ -80,7 +82,7 @@ export default function Navbar() {
       closeMenu();
       return;
     }
-    // Set a flag in session storage to indicate this is a navbar navigation
+  
     sessionStorage.setItem('isNavbarNavigation', 'true');
     closeMenu();
   };
@@ -199,18 +201,19 @@ export default function Navbar() {
       >
         <div className="max-w-[1500px] mx-auto p-4 flex items-center justify-between">
           {/* Logo */}
-          <TransitionLink
+          <Link
             href="/"
             onClick={handleGoHome}
-            className="relative flex items-center space-x-2 text-sm font-normal"
+            className="relative flex items-center h-12"
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="106"
-              height="33"
-              viewBox="0 0 106 33"
-              fill="currentColor"
-            >
+            <div className="w-24 h-6 flex items-center">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 106 33"
+                fill="currentColor"
+                className="w-full h-auto"
+                preserveAspectRatio="xMidYMid meet"
+              >
               <path
                 d="M15.5938 6.19486L25.8391 16.4402C26.4047 17.0058 26.4049 17.9231 25.8391 18.4891C25.2733 19.0552 24.3558 19.0555 23.79 18.4894L14.57 9.26994L5.34606 18.4928C4.77999 19.0589 3.86243 19.0589 3.29662 18.4928C2.73055 17.9267 2.73055 17.0094 3.29662 16.4434L13.5446 6.19486C14.1104 5.62906 15.0277 5.62906 15.5935 6.19486H15.5938Z"
                 fill={isTestProductPage ? "#FFFFFF" : "#FFD700"}
@@ -231,8 +234,9 @@ export default function Navbar() {
                 d="M45.2691 25.8995C42.957 25.8995 41.194 25.3747 39.9803 24.3249C38.7666 23.259 38.1602 21.693 38.1602 19.6265V14.3624C38.1602 12.2963 38.767 10.7381 39.9803 9.68868C41.194 8.62279 42.9567 8.08984 45.2691 8.08984C46.8761 8.08984 48.188 8.36042 49.205 8.90158C50.238 9.42631 51.058 10.2216 51.6648 11.2875L49.1803 13.0095C48.672 12.2224 48.1391 11.6566 47.5815 11.3121C47.0403 10.9677 46.2697 10.7956 45.2691 10.7956C44.0065 10.7956 43.0798 11.099 42.4894 11.7059C41.9154 12.2963 41.6284 13.1819 41.6284 14.3624V19.6265C41.6284 20.8074 41.9154 21.7008 42.4894 22.3077C43.0798 22.8981 44.0061 23.1933 45.2691 23.1933C46.3514 23.1933 47.1878 23.0131 47.7782 22.6522C48.385 22.2748 48.9262 21.6766 49.4016 20.8563L51.8615 22.6764C51.3367 23.4307 50.7956 24.0375 50.238 24.4966C49.6804 24.9556 48.9997 25.3083 48.1962 25.5542C47.4091 25.7838 46.4335 25.8987 45.2691 25.8987V25.8995ZM59.8243 25.6043C57.7254 25.6043 56.2165 25.1452 55.298 24.2267C54.3959 23.3083 53.9451 21.98 53.9451 20.242V8.38543H57.4134V20.242C57.4134 21.144 57.6104 21.8162 58.0038 22.2588C58.3971 22.685 59.004 22.8985 59.8239 22.8985H65.334V25.6043H59.8239H59.8243ZM68.0364 8.38543H71.5047V25.6043H68.0364V8.38543ZM75.0603 13.7477C75.0603 12.0093 75.5357 10.681 76.487 9.76295C77.438 8.84448 79.0044 8.38543 81.1854 8.38543H86.9414V11.0912H81.1854C80.2834 11.0912 79.6112 11.3043 79.1682 11.7309C78.742 12.1571 78.5285 12.8296 78.5285 13.7481V16.134H85.8587V18.8398H78.5285V25.6043H75.0603V13.7477ZM89.2811 13.7477C89.2811 12.0093 89.7566 10.681 90.7079 9.76295C91.6592 8.84448 93.2252 8.38543 95.4062 8.38543H101.162V11.0912H95.4062C94.5042 11.0912 93.8316 11.3043 93.389 11.7309C92.9628 12.1571 92.7493 12.8296 92.7493 13.7481V16.134H100.08V18.8398H92.7493V25.6043H89.2811V13.7477Z"
                 fill={isTestProductPage ? "#FFFFFF" : "#FFD700"}
               />
-            </svg>
-          </TransitionLink>
+              </svg>
+            </div>
+          </Link>
 
           {/* Menu Button */}
           <button
@@ -265,7 +269,7 @@ export default function Navbar() {
                 {links.map((link) => {
                   const isActive = pathname === link.href;
                   return (
-                    <TransitionLink
+                    <Link
                       key={link.href}
                       href={link.href}
                       onClick={() => handleLinkClick(link.href)}
@@ -274,7 +278,7 @@ export default function Navbar() {
                       } hover:text-zinc-800 transition-all duration-900`}
                     >
                       {link.label}
-                    </TransitionLink>
+                    </Link>
                   );
                 })}
               </div>

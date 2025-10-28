@@ -4,7 +4,6 @@ import localFont from "next/font/local";
 import "./globals.css";
 import SmoothScroller from "@/components/lenis/SmoothScroller";
 import { Suspense } from "react";
-import PageTransitionProvider from "@/components/PreLoader/PageTransitionProvider";
 import LayoutContent from "@/components/LayoutContent";
 import PreloaderWrapper from "@/components/PreloaderWrapper";
 
@@ -44,15 +43,17 @@ export default function RootLayout({
         }}
       >
         <PreloaderWrapper />    
-        <PageTransitionProvider>
+   
           <Suspense fallback={<div>Loading...</div>}>
             <SmoothScroller />
           </Suspense>
+         
           <LayoutContent>
+            
             {children}
+        
           </LayoutContent>
     
-        </PageTransitionProvider>
       </body>
     </html>
   );
