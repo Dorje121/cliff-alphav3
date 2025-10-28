@@ -13,12 +13,21 @@ const TimeLoading: React.FC<TimeLoadingProps> = ({ isVisible, onComplete }) => {
 
   useEffect(() => {
     if (!isVisible) return;
+    
+    // Check if this is a navbar navigation
+    const isNavbarNavigation = sessionStorage.getItem('isNavbarNavigation') === 'true';
+    
+    if (isNavbarNavigation) {
+      // Clear the flag for future navigations
+      sessionStorage.removeItem('isNavbarNavigation');
+      if (onComplete) onComplete();
+      return;
+    }
+    
     document.body.style.overflow = "hidden";
-
     const el = overlayRef.current;
     if (!el) return;
 
-   
     gsap.set(el, { yPercent: 100 });
 
     const tl = gsap.timeline({
@@ -29,13 +38,10 @@ const TimeLoading: React.FC<TimeLoadingProps> = ({ isVisible, onComplete }) => {
       },
     });
 
-    
     tl.to(el, {
       yPercent: -100,
-      duration: 1.5, 
-        });
-
-        
+      duration: 1.5,
+    });
 
     return () => {
       document.body.style.overflow = "auto";

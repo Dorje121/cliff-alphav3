@@ -80,6 +80,8 @@ export default function Navbar() {
       closeMenu();
       return;
     }
+    // Set a flag in session storage to indicate this is a navbar navigation
+    sessionStorage.setItem('isNavbarNavigation', 'true');
     closeMenu();
   };
 
