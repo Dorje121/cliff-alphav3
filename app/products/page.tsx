@@ -5,7 +5,7 @@ import Coatings from "@/components/home/homeproducts";
 
 const List = () => {
   const services = [
-    // Coatings
+   
     {
       id: "c01",
       title: "CLIFF BLUE SAFE UV",
