@@ -1,7 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Navbar from "./layout/Navbar";
-import TextAnimation from "./home/textanimation";
 import Footer from "./layout/Footer";
 import CustomCursor from "./CustomCursor";
 
@@ -20,8 +19,7 @@ export default function LayoutContent({ children }: LayoutContentProps) {
     {children}
      
       {showLayout && <Footer />}
-       {showLayout && <TextAnimation />}
-      
+  
     </>
   );
 }

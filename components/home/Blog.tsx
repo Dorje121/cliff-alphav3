@@ -114,7 +114,7 @@ export default function Blog() {
       <div className="relative pt-32 pb-20 px-5 ">
         <div className="mx-auto text-left">
           <h2 className="text-4xl md:text-8xl font-medium montserrat text-[#FFD700]">
-            Cliff Updates
+            Cliff Insights and Updates
           </h2>
           <p className="text-xl md:text-2xl text-[#FFD700] max-w-3xl leading-relaxed py-4 poppins">
             Discover the latest in lens technology, eye health, and vision
@@ -124,28 +124,29 @@ export default function Blog() {
       </div>
 
       {/* Blog Grid */}
-      <div className="px-5  pb-20">
-        <div className="mx-auto">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredPosts
-              .filter((post) => !post.featured)
-              .map((post) => (
-                <div
-                  className="group border border-black/20 sm:border-none relative overflow-hidden rounded-xl transition-all duration-700 hover:-translate-y-3 transform-gpu"
-                  key={post.id}
-                >
+      <div className="w-full px-4 pb-20">
+        <div className="mx-auto mt-16 grid w-full max-w-[1600px] auto-rows-fr grid-cols-1 gap-8 md:gap-6 lg:gap-8 xl:grid-cols-[1.3fr_1.3fr_1fr]">
+          {filteredPosts
+            .filter((post) => !post.featured)
+            .slice(0, 2) // Show only first 2 posts
+            .map((post) => (
+              <div
+                className="group border border-black/20 sm:border-none relative overflow-hidden rounded-xl transition-all duration-700 hover:-translate-y-3 transform-gpu w-full h-full"
+                key={post.id}
+              >
+                <div className="relative h-80 overflow-hidden">
                   <Image
                     src={post.image}
-                    height={1000}
-                    width={1000}
-                    alt="Cliff Lens"
-                    className="h-64 object-cover"
+                    fill
+                    alt={post.title}
+                    className="object-cover"
                   />
                   {/* Premium glass morphism overlay */}
                   {/* <div className="absolute inset-0 bg-gradient-to-t from-white/50 via-transparent to-white/50 backdrop-blur-[1px]"></div> */}
+                </div>
 
                   {/* Content Container */}
-                  <div className="relative z-10 flex flex-col justify-between p-8">
+                  <div className="relative z-10 flex flex-col justify-between p-8 xl:p-10">
                     {/* Top Section - Category & Meta */}
                     <div className="flex items-start justify-between mb-4">
                       <div className="w-full flex flex-wrap justify-between items-center poppins">
@@ -190,21 +191,35 @@ export default function Blog() {
                     </div>
                   </div>
 
-                  {/* Subtle animation lines */}
+                
                   <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
                   <div className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200 delay-300"></div>
                 </div>
               ))}
-          </div>
 
-          {filteredPosts.length === 0 && (
-            <div className="text-center py-20">
-              <p className="text-zinc-500 text-lg">
-                No articles found in this category.
-              </p>
-            </div>
-          )}
-        </div>
+          
+              <div className="group border-2 border-dashed border-[#FFD700]/30 relative h-full overflow-hidden rounded-xl transition-all duration-700 hover:border-[#FFD700]/60 hover:bg-black/10 flex flex-col items-center justify-center p-8 text-center lg:col-span-1">
+                <h3 className="text-2xl font-medium montserrat text-[#FFD700] mb-4">Explore More</h3>
+                <p className="text-[#FFD700]/80 mb-6 max-w-xs">
+                  Discover more articles and insights in our blog
+                </p>
+                <TransitionLink
+                  href="/Technologies"
+                  className="group/cta inline-flex items-center gap-2 px-6 py-3 bg-[#FFD700] hover:bg-[#FFD700]/90 text-black font-semibold rounded-full text-sm transition-all duration-300 hover:scale-105"
+                >
+                  <span>View All Articles</span>
+                  <ArrowRight size={16} className="transition-transform duration-300 group-hover/cta:translate-x-1" />
+                </TransitionLink>
+              </div>
+
+            {filteredPosts.length === 0 && (
+              <div className="text-center py-20 col-span-3">
+                <p className="text-[#FFD700] text-lg">
+                  No articles found in this category.
+                </p>
+              </div>
+            )}
+          </div>
       </div>
     </div>
   );

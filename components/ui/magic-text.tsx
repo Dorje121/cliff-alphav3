@@ -2,56 +2,15 @@
 
 import * as React from "react";
 
-import { motion, MotionValue, useScroll, useTransform } from "motion/react";
-import { useRef } from "react";
-
 export interface MagicTextProps {
   text: string;
+  className?: string;
 }
 
-interface WordProps {
-  children: string;
-  progress: MotionValue<number>;
-  range: number[];
-}
-
-const Word: React.FC<WordProps> = ({ children, progress, range }) => {
-  const opacity = useTransform(progress, range, [0, 1]);
-
+export const MagicText: React.FC<MagicTextProps> = ({ text, className = "" }) => {
   return (
-    <span className="relative mt-[12px] mr-1 text-xl sm:text-2xl text-center font-normal text-[#FFD700]">
-      <span className="absolute opacity-20">{children}</span>
-      <motion.span style={{ opacity: opacity }}>{children}</motion.span>
-    </span>
-  );
-};
-
-export const MagicText: React.FC<MagicTextProps> = ({ text }) => {
-  const container = useRef(null);
-
-  const { scrollYProgress } = useScroll({
-    target: container,
-    offset: ["start 0.9", "start 0.25"],
-  });
-
-  const words = text.split(" ");
-
-  return (
-    <p
-      ref={container}
-      className="flex flex-wrap poppins items-center justify-center leading-0 sm:leading-[0.5] gap-0 p-0 sm:gap-1 sm:p-4"
-    >
-      {words.map((word, i) => {
-        const start = i / words.length;
-
-        const end = start + 1 / words.length;
-
-        return (
-          <Word key={i} progress={scrollYProgress} range={[start, end]}>
-            {word}
-          </Word>
-        );
-      })}
-    </p>
+    <div className={`poppins text-[#FFD700] leading-relaxed text-lg sm:text-xl md:text-2xl text-center ${className}`}>
+      {text}
+    </div>
   );
 };

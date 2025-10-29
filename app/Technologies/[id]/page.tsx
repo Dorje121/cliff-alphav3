@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useParams } from "next/navigation";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Link from "next/link";
 import {
   Calendar,
   ArrowLeft,
@@ -22,7 +23,7 @@ import {
   Linkedin,
   MessageCircle,
 } from "lucide-react";
-import TransitionLink from "@/components/PreLoader/TransitionLink";
+
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -190,13 +191,13 @@ export default function BlogPost() {
           <p className="text-gray-400 text-lg">
             The article you're looking for doesn't exist or has been moved.
           </p>
-          <TransitionLink
+          <Link
             href="/Blogs"
             className="inline-flex items-center gap-3 px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-all duration-300"
           >
             <ArrowLeft size={20} />
             Back to Blogs
-          </TransitionLink>
+          </Link>
         </div>
       </div>
     );
@@ -239,13 +240,13 @@ export default function BlogPost() {
       <div className="w-full max-w-[100vw] overflow-x-hidden">
       {/* Back to Blogs Button */}
       <div className="fixed top-16 left-4 z-40">
-        <TransitionLink
+        <Link
           href="/Technologies"
           className="inline-flex items-center gap-2 text-gray-300 hover:text-white transition-colors bg-black/80 backdrop-blur-lg border border-gray-800 rounded-full px-4 py-2 text-sm"
         >
           <ArrowLeft size={16} />
           <span>Back to Blogs</span>
-        </TransitionLink>
+        </Link>
       </div>
 
       {/* Hero Section - Human-Centric Design */}

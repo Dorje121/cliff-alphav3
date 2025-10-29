@@ -23,6 +23,7 @@ export default function Navbar() {
   const overlayRef = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
   const [isInFirstSection, setIsInFirstSection] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   const closeMenu = (onCompleteCallback?: () => void) => {
     const menuLinks = gsap.utils.toArray(".menu-link");
@@ -165,25 +166,30 @@ export default function Navbar() {
     }
   }, []);
 
-  // Scroll detection
+  // Scroll detection for first section
   useEffect(() => {
     if (typeof window === "undefined") return;
 
-    if (
-      pathname === "/Services/cliff-coatings" ||
-      pathname === "/Services/cliff-blue-safe-coating"
-    ) {
-      const handleScroll = () => {
-        const scrollPosition = window.scrollY;
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      // For backdrop blur effect
+      setIsScrolled(scrollPosition > 10);
+      
+      // For first section detection (existing functionality)
+      if (
+        pathname === "/Services/cliff-coatings" ||
+        pathname === "/Services/cliff-blue-safe-coating"
+      ) {
         const firstSectionHeight = window.innerHeight * 0.9;
         setIsInFirstSection(scrollPosition < firstSectionHeight);
-      };
-      window.addEventListener("scroll", handleScroll);
-      handleScroll();
-      return () => window.removeEventListener("scroll", handleScroll);
-    } else {
-      setIsInFirstSection(false);
-    }
+      } else {
+        setIsInFirstSection(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Initialize
+    return () => window.removeEventListener("scroll", handleScroll);
   }, [pathname]);
 
   const isTestProductPage = pathname === "/testProduct";
@@ -191,22 +197,26 @@ export default function Navbar() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 w-full z-[9999999999] transition-colors duration-300 ${
+        className={`fixed top-0 left-0 w-full z-[9999999999] transition-all duration-300 ${
           isOpen
             ? "text-black"
             : isTestProductPage || isInFirstSection
             ? "text-white"
             : "text-white"
+        } ${
+          isScrolled && !isOpen
+            ? "backdrop-blur-md bg-black/70 py-1 shadow-lg"
+            : "bg-transparent py-2"
         }`}
       >
-        <div className="max-w-[1500px] mx-auto p-4 flex items-center justify-between">
+        <div className="max-w-[1500px] mx-auto px-4 py-2 flex items-center justify-between">
           {/* Logo */}
           <Link
             href="/"
             onClick={handleGoHome}
-            className="relative flex items-center h-12"
+            className="relative flex items-center h-10"
           >
-            <div className="w-24 h-6 flex items-center">
+            <div className="w-20 h-5 flex items-center">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 106 33"
@@ -241,7 +251,7 @@ export default function Navbar() {
           {/* Menu Button */}
           <button
             onClick={isOpen ? handleGoHome : () => setIsOpen(true)}
-            className="relative flex items-center montserrat text-[#FFD700] space-x-2 cursor-pointer"
+            className="relative flex items-center montserrat text-[#FFD700] space-x-1.5 cursor-pointer text-sm"
           >
             <span className="text-sm font-semibold uppercase">
               {isOpen ? "Close" : "Menu"}

@@ -12,7 +12,6 @@ import WhiteFooter from "@/components/home/whitefoot";
 import BlackTinted from "@/components/home/blackTinted";
 import AnimateSection from "@/components/home/animate";
 import ScrollBackground from "@/components/home/scrollbg";
-import TextScroll from "@/components/home/textscroll";
 import Ourcoatings from "@/components/home/ourcoatings";
 import HomeProducts from "@/components/home/homeproducts";
 import HomeTechnology from "@/components/home/hometechnology";
@@ -65,7 +64,8 @@ const Page = () => {
       <div className="relative">
         <ScrollBackground />
         <Demo />
-         <TextScroll /> 
+         {/* <TextScroll />  */}
+         <CircleAttachment />
       
       
         

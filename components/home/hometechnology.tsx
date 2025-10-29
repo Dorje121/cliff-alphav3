@@ -40,7 +40,7 @@ const HomeTechnology = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Title animation - works both directions
+      
       gsap.fromTo(titleRef.current, 
         { opacity: 0, y: 100 },
         {
@@ -51,12 +51,12 @@ const HomeTechnology = () => {
           scrollTrigger: {
             trigger: titleRef.current,
             start: "top 80%",
-            toggleActions: "play reverse play reverse", // Changed this line
+            toggleActions: "play reverse play reverse", 
           }
         }
       );
 
-      // Subtitle animation - works both directions
+      
       gsap.fromTo(subtitleRef.current,
         { opacity: 0, y: 80 },
         {
@@ -68,18 +68,17 @@ const HomeTechnology = () => {
           scrollTrigger: {
             trigger: subtitleRef.current,
             start: "top 80%",
-            toggleActions: "play reverse play reverse", // Changed this line
-          }
+            toggleActions: "play reverse play reverse",            }
         }
       );
 
-      // Category sections animation
+      
       gsap.utils.toArray(".category-section").forEach((section: any, index) => {
         const content = section.querySelector(".category-content");
         const contentWrapper = section.querySelector(".content-wrapper");
         const imageContainer = section.querySelector(".category-image");
 
-        // Content wrapper animation - works both directions
+        
         gsap.fromTo(contentWrapper,
           { y: -150, opacity: 0 },
           {
@@ -90,12 +89,12 @@ const HomeTechnology = () => {
             scrollTrigger: {
               trigger: section,
               start: "top 70%",
-              toggleActions: "play reverse play", // Changed this line
+              toggleActions: "play reverse play", 
             }
           }
         );
 
-        // Content children animation - works both directions
+        
         gsap.fromTo(content.children,
           { opacity: 0, y: 30 },
           {
@@ -108,12 +107,12 @@ const HomeTechnology = () => {
             scrollTrigger: {
               trigger: content,
               start: "top 70%",
-              toggleActions: "play reverse play reverse", // Changed this line
+              toggleActions: "play reverse play reverse", 
             }
           }
         );
 
-        // Enhanced image animation with more extreme movement - works both directions
+        
         const initialRotation = index === 0 ? 25 : -25;
         const initialX = index === 0 ? 300 : -300;
         
@@ -134,13 +133,13 @@ const HomeTechnology = () => {
             scrollTrigger: {
               trigger: imageContainer,
               start: "top 75%",
-              toggleActions: "play reverse play reverse", // Changed this line
+              toggleActions: "play reverse play reverse", 
             }
           }
         );
       });
 
-      // Button hover animations (these don't need scroll trigger changes)
+      
       const buttons = document.querySelectorAll('.category-button');
       buttons.forEach(button => {
         button.addEventListener('mouseenter', () => {

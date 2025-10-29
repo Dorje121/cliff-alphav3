@@ -113,11 +113,11 @@ const Footer = () => {
         </div>
 
         {/* Footer Bottom */}
-        {/* <div className="w-full py-3 sm:py-4 px-4 sm:px-6 border-t border-yellow-600/40 absolute bottom-4 mt-4 sm:mt-6 ">
+        <div className="w-full py-3 sm:py-4 px-4 sm:px-6 border-t border-yellow-600/40 absolute bottom-4 mt-4 sm:mt-6 ">
           <p className="text-[#FFD700] poppins text-xs text-center">
             © 2025 Cliff Eyewear. All rights reserved.
           </p>
-        </div> */}
+        </div>
       </div>
     </footer>
   );

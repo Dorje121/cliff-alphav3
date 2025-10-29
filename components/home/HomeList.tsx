@@ -3,7 +3,6 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
-import TransitionLink from "../PreLoader/TransitionLink";
 import TextWithTexture from "@/components/textwithgoldentexture";
 import { Icon } from "@iconify-icon/react";
 
@@ -321,7 +320,7 @@ const HomeList = () => {
 
         {/* Explore More Section */}
         <div className="text-center mt-8 md:mt-12 px-4">
-          <TransitionLink
+          <Link
             href={`/Services`}
             className="group/cta inline-flex items-center gap-3 px-6 py-3 bg-black/10 hover:bg-white/20 backdrop-blur-xl border-2 border-black/50 rounded-full text-black font-semibold text-sm transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/25 hover:scale-105"
           >
@@ -330,7 +329,7 @@ const HomeList = () => {
               size={16}
               className="transition-transform duration-500 group-hover/cta:translate-x-2 group-hover/cta:scale-110"
             />
-          </TransitionLink>
+          </Link>
         </div>
       </div>
     </div>
