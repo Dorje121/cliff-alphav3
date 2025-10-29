@@ -100,7 +100,7 @@ const List = () => {
       title: "TINTED LENSES",
       description: "Fashionable lenses with UV protection and style",
       category: "Speciality Lenses",
-      slug: "cliff-tinted-lenses",
+      slug: "tinted-lenses",
       image: "/product/15.jpg",
     },
     {
@@ -190,10 +190,10 @@ return (
           Your browser does not support the video tag.
         </video>
 
-        
+        {/* Overlay (optional for better text readability) */}
         <div className="absolute inset-0 bg-black/60 z-[1]" />
 
-        
+        {/* Foreground Content */}
         <div className="relative z-[2] flex flex-col items-center justify-center h-full">
           <h1 className=" montserrat font-medium text-6xl capitalize text-center">
             Cliff product and solutions
