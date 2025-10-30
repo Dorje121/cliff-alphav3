@@ -1,8 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import Demo from "@/components/home/Demo";
-import BgAttached from "@/components/home/BgAttached";
+
 import LandingVideo from "@/components/home/hero";
 import HomeList from "@/components/home/HomeList";
 import CircleAttachment from "@/components/home/CircleAttachment";
@@ -15,6 +14,7 @@ import ScrollBackground from "@/components/home/scrollbg";
 import Ourcoatings from "@/components/home/ourcoatings";
 import HomeProducts from "@/components/home/homeproducts";
 import HomeTechnology from "@/components/home/hometechnology";
+import AboutSection from "@/components/home/aboutus";
 
 
 
@@ -63,7 +63,7 @@ const Page = () => {
 
       <div className="relative">
         <ScrollBackground />
-        <Demo />
+        <AboutSection />
          {/* <TextScroll />  */}
          <CircleAttachment />
       

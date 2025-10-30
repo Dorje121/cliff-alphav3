@@ -255,7 +255,7 @@ const Coatings = () => {
       subtitle: "Advanced Progressive Technology",
       description: "Complete blue light protection lenses for modern digital lifestyle and visibility",
       slug: "cliff-dynamic",
-      image: "/homeimage/nox.jpg",
+      image: "/homeimage/nox.png",
       alignment: "left",
       buttonText: "Explore Series"
     },
@@ -275,7 +275,7 @@ const Coatings = () => {
       subtitle: "Premium Optical Excellence",
       description: "Specialized lenses optimized for driving and enhanced road visibility",
       slug: "cliff-zenn-series",
-      image: "/product/5.jpg",
+      image: "/homeimage/driveclear.png",
       alignment: "left",
       buttonText: "Learn More"
     },

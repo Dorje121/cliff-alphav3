@@ -51,16 +51,14 @@ export default function AboutSection() {
             className="absolute z-30 mb-6 text-4xl text-[#FFD700] montserrat md:text-6xl"
             style={{ opacity: aboutOpacity }}
           >
-            About Us
+            About Cliff Eyewear
           </motion.p>
 
           <motion.div
             className="relative z-40 w-full max-w-3xl px-4 sm:px-8 text-white text-center"
             style={{ y: translateY }}
           >
-            <h1 className="mb-9 text-4xl text-[#FFD700] montserrat">
-              About <span className="text-[#FFD700] ">Cliff Eyewear</span>
-            </h1>
+         
 
             <div className="space-y-6  text-base sm:text-lg md:text-xl text-[#FFD700] font-sans max-w-3xl mx-auto">
               

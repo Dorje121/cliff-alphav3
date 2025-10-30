@@ -51,9 +51,9 @@ export default function Preloader() {
       ref={container}
       className="fixed inset-0 z-50 flex items-center justify-center bg-black overflow-hidden"
     >
-      <div className="logo opacity-0">
+      {/* <div className="logo opacity-0">
         <CliffLogo />
-      </div>
+      </div> */}
     </div>
   );
 }
