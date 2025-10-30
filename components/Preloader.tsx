@@ -54,9 +54,7 @@ export default function Preloader() {
       {/* <div className="logo opacity-0">
         <CliffLogo />
       </div> */}
-      {/* <div className="logo opacity-0">
-        <CliffLogo />
-      </div> */}
+     
     </div>
   );
 }
