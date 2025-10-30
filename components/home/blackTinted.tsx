@@ -3,7 +3,6 @@ import Image from "next/image";
 import { useRef, useLayoutEffect, useState } from "react";
 import { gsap } from "gsap";
 import HeroSection from "@/components/Services/heropage";
-import TransitionLink from "../PreLoader/TransitionLink";
 import { ArrowRight } from "lucide-react";
 
 const CliffTintedLenses = () => {

@@ -128,7 +128,7 @@ export default function Blog() {
         <div className="mx-auto mt-16 grid w-full max-w-[1600px] auto-rows-fr grid-cols-1 gap-8 md:gap-6 lg:gap-8 xl:grid-cols-[1.3fr_1.3fr_1fr]">
           {filteredPosts
             .filter((post) => !post.featured)
-            .slice(0, 2) // Show only first 2 posts
+            .slice(0, 2) 
             .map((post) => (
               <div
                 className="group border border-black/20 sm:border-none relative overflow-hidden rounded-xl transition-all duration-700 hover:-translate-y-3 transform-gpu w-full h-full"
@@ -141,8 +141,7 @@ export default function Blog() {
                     alt={post.title}
                     className="object-cover"
                   />
-                  {/* Premium glass morphism overlay */}
-                  {/* <div className="absolute inset-0 bg-gradient-to-t from-white/50 via-transparent to-white/50 backdrop-blur-[1px]"></div> */}
+                 
                 </div>
 
                   {/* Content Container */}
