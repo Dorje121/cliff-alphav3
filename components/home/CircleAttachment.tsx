@@ -20,7 +20,7 @@ export default function CircleAttachment() {
         end: "+100%",
         scrub: true,
         pin: true,
-        // markers: true,
+        markers: true,
       },
     });
     // t.fromTo(
