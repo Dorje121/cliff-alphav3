@@ -4,6 +4,7 @@ import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import Globe from "@/components/ui/globe";
 
 export default function CircleAttachment() {
   const mainRef = useRef<HTMLDivElement>(null);
@@ -48,7 +49,7 @@ export default function CircleAttachment() {
   });
 
   return (
-    <div ref={mainRef} className="relative h-[50dvh] md:h-dvh">
+    <div ref={mainRef} className="relative h-[50dvh] md:h-dvh ">
       <div className="absolute  inset-0 z-50 bg-gradient-to-t from-black via-transparent to-transparent"></div>
       {/* Background blurred image */}
       {/* <div className="h-full w-full relative">
@@ -62,34 +63,43 @@ export default function CircleAttachment() {
       </div> */}
 
       {/* Revealed clear image layer */}
-      <div className="absolute inset-0 h-[50dvh] md:h-screen overflow-hidden flex justify-end items-end">
-        <div className="relative w-full h-full">
+      <div className="absolute inset-0 h-[50dvh] md:h-screen mt-10 overflow-hidden flex justify-end items-end">
+        <div className="relative  w-full h-full">
           <Image
             src="/earth2.png"
             alt="Revealed Image"
             fill
             // objectFit="cover"
             quality={100}
-            className="md:object-cover object-contain object-right"
+            className="md:object-cover object-contain object-right transalte-y-50 -rotate-12"
           />
           {/* <div className="absolute z-50 -bottom-1 h-32 w-full bg-gradient-to-b from-transparent to-black "></div> */}
         </div>
       </div>
       <div
         ref={revealLayerSecondRef}
-        className="absolute inset-0 h-[50dvh] md:h-screen overflow-hidden flex justify-end items-end"
+        className="absolute inset-0 h-[40dvh] md:h-screen mt-10 overflow-hidden flex justify-end items-end"
       >
-        <div className="relative w-full h-full">
+          
+          <div className="absolute -top-34 left-30 z-10">
+            <Globe />
+          </div>
+        
+         
+        <div className="relative w-full h-full transalte-y-50">
           <Image
-            src="/earth.webp"
+            src="/earth.jpg"
             alt="Revealed Image"
             fill
             // objectFit="cover"
             quality={100}
-            className="object-contain md:object-cover object-right"
+            className="object-contain md:object-cover object-right transalte-y-50 -rotate-12"
+            
           />
           {/* <div className="absolute z-50 -bottom-1 h-32 w-full bg-gradient-to-b from-transparent to-black "></div> */}
         </div>
+ 
+       
       </div>
     </div>
   );

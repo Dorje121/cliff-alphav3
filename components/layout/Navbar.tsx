@@ -266,16 +266,16 @@ export default function Navbar() {
         <>
           <div
             ref={overlayRef}
-            className="fixed top-0 left-0 w-screen h-screen bg-[#EEF3F3] z-[99998] will-change-transform"
+            className="fixed top-0 left-0 w-screen h-screen bg-[#F7F3C2] z-[99998] will-change-transform"
           />
 
           <div
             ref={menuRef}
-            className="fixed top-0 left-0 w-screen h-screen bg-white !flex z-[99999] will-change-transform"
+            className="fixed top-0 left-0 w-screen h-screen bg-black !flex z-[99999] will-change-transform"
           >
             {/* Left panel (links) */}
             <div className="w-full md:w-11/12 h-full flex flex-col justify-center items-center md:text-left text-center md:items-start p-8 md:py-24 text-black">
-              <div className="flex flex-col items-start group text-zinc-700 hover:text-zinc-200 space-y-2 xs:space-y-7 md:space-y-7 mx-10">
+              <div className="flex flex-col items-start space-y-2 xs:space-y-7 md:space-y-7 mx-10">
                 {links.map((link) => {
                   const isActive = pathname === link.href;
                   return (
@@ -283,9 +283,9 @@ export default function Navbar() {
                       key={link.href}
                       href={link.href}
                       onClick={() => handleLinkClick(link.href)}
-                      className={`menu-link text-[2rem] xs:text-4xl md:text-6xl font-bold uppercase tracking-wide ${
+                      className={`menu-link text-white text-[2rem] xs:text-4xl md:text-6xl font-bold uppercase tracking-wide ${
                         isActive ? "" : " transition-colors duration-300"
-                      } hover:text-zinc-800 transition-all duration-900`}
+                      } hover:text-[#FFD700] transition-all duration-300`}
                     >
                       {link.label}
                     </Link>
@@ -296,11 +296,11 @@ export default function Navbar() {
 
             <div className=" md:-z-10 hidden lense md:flex w-1/2 justify-start items-end h-full relative">
             <Image
-              src="/hand.jpg"
+              src="/handd.png"
               alt="Decorative lens flare"
               height={1000}
               width={1000}
-              className="w-[500px] h-fit object-contain transform -translate-x-28 translate-y-12"
+              className="w-[500px] h-fit object-contain transform -translate-x-32"
             />
             </div>
           

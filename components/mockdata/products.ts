@@ -31,15 +31,15 @@ export const products: Record<string, Product> = {
   'single-vision': {
     id: '01',
     title: 'Single Vision',
-    subtitle: 'Like Super Power for Your Eyes',
-    description: 'Complete blue light protection lenses for modern digital lifestyle and visibility',
+    subtitle: 'Sharper Vision. Smarter Design.',
+    description: 'Cliff Single Vision Lenses are engineered to deliver precise, comfortable, and natural vision correction for every lifestyle. Whether for reading, driving, or digital use, each lens is crafted with advanced Digital Ray Path Technology to provide exceptional optical accuracy and clarity.',
     features: [
       'Blue light filtering technology',
       'Reduced digital eye strain',
       'Enhanced contrast and clarity',
       'Anti-reflective coating'
     ],
-    image: '/homeimage/cliff.png',
+    image: '/homeimage/singlelense.png',
     benefits: [
       'Perfect for digital device users',
       'Reduces eye fatigue',

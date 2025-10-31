@@ -37,9 +37,11 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${montserrat.variable} antialiased cursor-none`}
+        suppressHydrationWarning
         style={{
-          overflow: "auto",
           height: "100%",
+          overflowX: "hidden",
+          overflowY: "auto"
         }}
       >
         <PreloaderWrapper />    

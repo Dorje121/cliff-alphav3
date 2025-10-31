@@ -5,6 +5,7 @@ import { Calendar, Clock, ArrowRight, Eye } from "lucide-react";
 import { TransitionLink } from "../ui/transitionlink";
 import Image from "next/image";
 
+
 interface BlogPost {
   id: number;
   title: string;
@@ -110,6 +111,7 @@ export default function Blog() {
 
   return (
     <div className="min-h-screen ">
+     
       {/* Hero Section */}
       <div className="relative pt-32 pb-20 px-5 ">
         <div className="mx-auto text-left">
@@ -124,14 +126,14 @@ export default function Blog() {
       </div>
 
       {/* Blog Grid */}
-      <div className="w-full px-4 pb-20">
-        <div className="mx-auto mt-16 grid w-full max-w-[1600px] auto-rows-fr grid-cols-1 gap-8 md:gap-6 lg:gap-8 xl:grid-cols-[1.3fr_1.3fr_1fr]">
+      <div className="w-full px-6 pb-20">
+        <div className="mx-auto mt-16 grid w-full max-w-[91rem] auto-rows-fr grid-cols-1 gap-10 md:gap-10 lg:gap-12 xl:grid-cols-[1.3fr_1.3fr_1fr]">
           {filteredPosts
             .filter((post) => !post.featured)
             .slice(0, 2) 
             .map((post) => (
               <div
-                className="group border border-black/20 sm:border-none relative overflow-hidden rounded-xl transition-all duration-700 hover:-translate-y-3 transform-gpu w-full h-full"
+                className="border-2 border-yellow-500/30 relative overflow-hidden rounded-xl w-full h-full shadow-lg"
                 key={post.id}
               >
                 <div className="relative h-80 overflow-hidden">
@@ -178,12 +180,12 @@ export default function Blog() {
                       <div className="flex items-center  justify-start">
                         <TransitionLink
                           href={`/Technologies/${post.id}`}
-                          className="group/cta inline-flex items-center gap-3 px-5 py-2 bg-black/10 hover:bg-black/20 backdrop-blur-xl border border-[#FFD700] rounded-full text-black font-semibold text-sm transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/25 hover:scale-105"
+                          className="group/cta inline-flex items-center gap-3 px-5 py-2 bg-black/10 hover:bg-black/20 backdrop-blur-xl border border-[#FFD700] rounded-full text-black font-semibold text-sm transition-all duration-500"
                         >
                           <span className="text-[#FFD700]">Read Article</span>
                           <ArrowRight
                             size={16}
-                            className="transition-transform duration-500 group-hover/cta:translate-x-2 group-hover/cta:scale-110 "
+                            className="transition-transform duration-500 group-hover/cta:translate-x-2  "
                           />
                         </TransitionLink>
                       </div>
@@ -191,20 +193,18 @@ export default function Blog() {
                   </div>
 
                 
-                  <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
-                  <div className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200 delay-300"></div>
                 </div>
               ))}
 
           
-              <div className="group border-2 border-dashed border-[#FFD700]/30 relative h-full overflow-hidden rounded-xl transition-all duration-700 hover:border-[#FFD700]/60 hover:bg-black/10 flex flex-col items-center justify-center p-8 text-center lg:col-span-1">
+              <div className="border-2 border-[#FFD700]/30 bg-[#322b00]/50 relative h-full overflow-hidden rounded-xl flex flex-col items-center justify-center p-8 text-center lg:col-span-1">
                 <h3 className="text-2xl font-medium montserrat text-[#FFD700] mb-4">Explore More</h3>
                 <p className="text-[#FFD700]/80 mb-6 max-w-xs">
                   Discover more articles and insights in our blog
                 </p>
                 <TransitionLink
                   href="/Technologies"
-                  className="group/cta inline-flex items-center gap-2 px-6 py-3 bg-[#FFD700] hover:bg-[#FFD700]/90 text-black font-semibold rounded-full text-sm transition-all duration-300 hover:scale-105"
+                  className="group/cta inline-flex items-center gap-2 px-6 py-3 bg-[#FFD700] hover:bg-[#FFD700]/90 text-black font-semibold rounded-full text-sm transition-all duration-300 "
                 >
                   <span>View All Articles</span>
                   <ArrowRight size={16} className="transition-transform duration-300 group-hover/cta:translate-x-1" />

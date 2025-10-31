@@ -40,7 +40,7 @@ const ProductDropdown = () => {
         {/* Title and Dropdown Row */}
         <div className="flex flex-col md:flex-row md:items-center justify-between mb-8">
           <div>
-            <h2 className="text-2xl md:text-8xl montserrat text-[#FFD700] mb-4">
+            <h2 className="text-2xl md:text-6xl montserrat text-[#FFD700] mb-4">
               Products Highlights
             </h2>
             <p className="text-lg md:text-xl !text-yellow-400 max-w-3xl">

@@ -1,236 +1,3 @@
-// "use client";
-// import React, { useRef, useEffect } from "react";
-// import Link from "next/link";
-// import Image from "next/image";
-// import { Icon } from "@iconify-icon/react";
-// import { gsap } from "gsap";
-// import { ScrollTrigger } from "gsap/ScrollTrigger";
-// import { TransitionLink } from "../ui/transitionlink";
-
-
-
-// if (typeof window !== "undefined") {
-//   gsap.registerPlugin(ScrollTrigger);
-// }
-
-// const Coatings = () => {
-//   const services = [
-//     {
-//       id: "01",
-//       title: "NOX",
-//       description:
-//         "Complete blue light protection lenses for modern digital lifestyle and visibility",
-//       category: "Lenses",
-//       slug: "cliff-blue-safe-lenses",
-//       image: "/product/03.jpeg",
-//     },
-//     {
-//       id: "02",
-//       title: "BLUE SAFE",
-//       description:
-//         "Photochromic lenses that adapt to changing light conditions automatically",
-//       category: "Lenses",
-//       slug: "cliff-photo-z-lenses",
-//       image: "/bluesafe/Bluesafe.jpg",
-//     },
-//     {
-//       id: "03",
-//       title: "DRIVE CLEAR",
-//       description:
-//         "Specialized lenses optimized for driving and enhanced road visibility",
-//       category: "Lenses",
-//       slug: "cliff-drive-clear-lenses",
-//       image: "/product/5.jpg",
-//     },
-//     {
-//       id: "04",
-//       title: "PHOTO Z",
-//       description:
-//         "Multi-focal progressive lenses for seamless vision at all distances and visibility",
-//       category: "Progressive",
-//       slug: "cliff-progressive-versatile",
-//       image: "/bluesafe/photoz.jpg",
-//     },
-//   ];
-
-//   const sectionRef = useRef<HTMLDivElement>(null);
-//   const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
-
-//   useEffect(() => {
-//     const ctx = gsap.context(() => {
-     
-//       cardsRef.current.forEach((card, index) => {
-//         if (!card) return;
-
-//         const isLeftCard = index % 2 === 0; 
-//         const directionX = isLeftCard ? -100 : 100;
-        
-//         gsap.fromTo(card,
-//           {
-//             opacity: 0,
-//             x: directionX,
-//             y: 50,
-//             scale: 0.9,
-//           },
-//           {
-//             opacity: 1,
-//             x: 0,
-//             y: 0,
-//             scale: 1,
-//             duration: 1.2,
-//             ease: "power3.out",
-//             scrollTrigger: {
-//               trigger: card,
-//               start: "top 80%",
-//               toggleActions: "play reverse play reverse",
-//             }
-//           }
-//         );
-//       });
-
-     
-
-//     }, sectionRef);
-
-//     return () => ctx.revert();
-//   }, []);
-
-
-//   const addToRefs = (el: HTMLDivElement | null, index: number) => {
-//     if (el && !cardsRef.current.includes(el)) {
-//       cardsRef.current[index] = el;
-//     }
-//   };
-
-//   return (
-//     <div ref={sectionRef} className="min-h-screen py-10 text-black overflow-hidden w-full">
-//       <div className="w-full mx-auto shrink-0 py-6 md:py-8 lg:py-16 relative px-4 md:px-8">
-        
-//         <div className="mb-8 md:mb-16">
-//           <h2 className="text-4xl md:text-8xl font-medium montserrat text-[#FFD700]">
-//             Discover Our Coatings
-//           </h2>
-
-//           <p className="text-base sm:text-lg md:text-xl text-[#FFD700] max-w-3xl poppins mt-4">
-//             Discover our comprehensive range of premium optical solutions,
-//             advanced lens technologies, and professional services designed to
-//             enhance your vision experience.
-//           </p>
-//         </div>
-
-        
-//         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-14 gap-y-0 relative">
-//           {services.map((service, index) => (
-//             <div 
-//               key={service.id} 
-//               ref={(el) => addToRefs(el, index)}
-//               className={`h-full ${parseInt(service.id) % 2 === 0 ? 'mt-16' : ''}`}
-//             >
-//               <TransitionLink
-//                 href="/Services/cliff-coatings"
-//                 className="cursor-pointer block group"
-//               >
-//                 <div className="relative backdrop-blur-sm border border-zinc-800 overflow-hidden bg-[#322b00] rounded-lg md:rounded-xl">
-                  
-                  
-//                   <div className="block md:hidden h-full">
-//                     <div className="relative h-full">
-//                       <div className="w-full h-[280px] relative overflow-hidden">
-//                         <Image
-//                           src={service.image}
-//                           alt={service.title}
-//                           fill
-//                           className="object-cover"
-//                         />
-//                         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent z-10 opacity-0 group-hover:opacity-100" />
-//                         <div className="p-4">
-                          
-//                           <div className="inline-flex items-center px-3 py-1 rounded-full bg-amber-400/20 text-amber-400 text-xs font-medium mb-3">
-//                             {service.category}
-//                           </div>
-
-                          
-//                           <div className="flex-1 py-6 pr-6 flex flex-col justify-center">
-//                             <h3 className="text-2xl xl:text-3xl font-bold mb-4 montserrat text-white group-hover:text-amber-400 transition-colors">
-//                               {service.title}
-//                             </h3>
-//                             <p className="text-zinc-300 group-hover:text-white leading-relaxed mb-6 text-base xl:text-lg poppins">
-//                               {service.description}
-//                             </p>
-//                           </div>
-
-                          
-//                           <div className="inline-flex items-center text-amber-400 font-medium group-hover:text-white text-sm poppins">
-//                             <span className="mr-2">Learn More</span>
-//                             <svg
-//                               className="w-4 h-4"
-//                               fill="none"
-//                               stroke="currentColor"
-//                               viewBox="0 0 24 24"
-//                             >
-//                               <path
-//                                 strokeLinecap="round"
-//                                 strokeLinejoin="round"
-//                                 strokeWidth={2}
-//                                 d="M17 8l4 4m0 0l-4 4m4-4H3"
-//                               />
-//                             </svg>
-//                           </div>
-//                         </div>
-//                       </div>
-//                     </div>
-//                   </div>
-
-                  
-//                   <div className="hidden md:flex p-6 items-stretch h-full">
-//                     <div className="w-[350px] flex-shrink-0 mr-8">
-//                       <div className="relative overflow-hidden rounded-2xl group h-[280px] w-full">
-//                         <Image
-//                           src={service.image}
-//                           alt={service.title}
-//                           fill
-//                           className="object-cover rounded-2xl"
-//                         />
-                        
-//                         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent z-10 flex flex-col justify-end p-4">
-                       
-//                           <div className="inline-flex items-center px-3 py-1 rounded-full bg-amber-400/20 text-amber-400 text-xs font-medium mb-2 self-start">
-//                             {service.category}
-//                           </div>
-//                         </div>
-//                       </div>
-//                     </div>
-                    
-//                     <div className="flex-1 flex flex-col h-full">
-//                       <h3 className="text-2xl font-bold mb-3 montserrat bg-gradient-to-r from-white via-yellow-100 to-yellow-200 bg-clip-text text-transparent">
-//                         {service.title}
-//                       </h3>
-//                       <p className="text-[#FFD700] leading-relaxed text-base lg:text-lg poppins mb-4">
-//                         {service.description}
-//                       </p>
-
-                    
-//                       <div className="mt-auto pt-24 flex justify-end">
-//                         <div className="inline-flex items-center text-amber-400 font-medium group-hover:text-white transition-colors duration-300">
-//                           <span className="mr-2 poppins">Learn More</span>
-//                           <Icon icon="mage:external-link" width="20" height="20" />
-//                         </div>
-//                       </div>
-//                     </div>
-//                   </div>
-//                 </div>
-//               </TransitionLink>
-//             </div>
-//           ))}
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Coatings;
-
-
 "use client";
 import React, { useRef, useEffect } from "react";
 import { TransitionLink } from "../ui/transitionlink";
@@ -251,27 +18,27 @@ const Coatings = () => {
   const categories = [
     {
       id: "01",
-      title: "NOX",
+      title: "NOX COATING",
       subtitle: "Advanced Progressive Technology",
       description: "Complete blue light protection lenses for modern digital lifestyle and visibility",
       slug: "cliff-dynamic",
-      image: "/homeimage/nox.png",
+      image: "/bluesafe/lense.jpg",
       alignment: "left",
       buttonText: "Explore Series"
     },
     {
       id: "02", 
-      title: "BLUE SAFE",
+      title: "BLUE SAFE COATING",
       subtitle: "Premium Optical Excellence",
       description: "Photochromic lenses that adapt to changing light conditions automatically",
       slug: "cliff-zenn-series",
-      image: "/product/03.jpeg",
+      image: "/benefits.jpeg",
       alignment: "right",
       buttonText: "Learn More"
     },
     {
       id: "03", 
-      title: "DRIVE CLEAR",
+      title: "DRIVE CLEAR COATING",
       subtitle: "Premium Optical Excellence",
       description: "Specialized lenses optimized for driving and enhanced road visibility",
       slug: "cliff-zenn-series",
@@ -281,7 +48,7 @@ const Coatings = () => {
     },
     {
       id: "04", 
-      title: "Photo Z",
+      title: "PHOTO Z COATING",
       subtitle: "Premium Optical Excellence",
       description: "Multi-focal progressive lenses for seamless vision at all distances and visibility",
       slug: "cliff-zenn-series",
@@ -413,82 +180,67 @@ const Coatings = () => {
   }, []);
 
   return (
-    <div ref={sectionRef} className="min-h-screen bg-black text-[#FFD700] overflow-hidden w-full">
-      <div className="w-full mx-auto py-6 md:py-8 lg:py-16 px-4 md:px-8">
-        {/* Header Section */}
+    <div ref={sectionRef} className="min-h-screen py-10 text-white overflow-hidden w-full">
+      <div className="w-full mx-auto shrink-0 py-6 md:py-8 lg:py-16 relative px-4 md:px-8">
+        {/* Title and Subtitle */}
         <div className="mb-8 md:mb-16">
-          <div className="flex mb-4 md:mb-6">
-            <h2 
-              ref={titleRef}
-              className="text-4xl md:text-8xl font-medium montserrat text-[#FFD700]"
-            >
-              Discover Our Coatings
-            </h2>
-          </div>
-          <p 
-            ref={subtitleRef}
-            className="text-lg md:text-xl text-[#FFD700]/80 max-w-4xl poppins leading-relaxed"
-          >
-             Discover our comprehensive range of premium optical solutions, advanced lens technologies, and professional services designed to enhance your vision experience.
+          <h2 ref={titleRef} className="text-4xl md:text-8xl font-medium montserrat text-[#FFD700]">
+            Discover Our Coatings
+          </h2>
+          <p ref={subtitleRef} className="text-base sm:text-lg md:text-xl text-[#FFD700] max-w-3xl poppins mt-4">
+            Explore our premium range of lens coatings designed to enhance your vision experience.
           </p>
         </div>
 
-        {/* Categories Grid */}
-        <div className="space-y-28 py-8 lg:space-y-36">
+        {/* 2x2 Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
           {categories.map((category, index) => (
-            <div
+            <div 
               key={category.id}
-              className={`category-section flex flex-col lg:flex-row items-center gap-8 lg:gap-16 ${
-                category.alignment === "left" ? "lg:flex-row" : "lg:flex-row-reverse"
+              className={`group relative overflow-hidden border border-zinc-800 hover:border-amber-400/30 transition-all duration-300 hover:shadow-lg hover:shadow-amber-400/10 flex flex-col ${
+                index === 0 
+                  ? 'bg-[#BFBFBF]' 
+                  : index === 1 
+                    ? 'bg-black' 
+                    : 'bg-[#BFBFBF]'
               }`}
             >
-              {/* Content */}
-              <div className="content-wrapper flex-1">
-                <div className="category-content space-y-6 lg:space-y-8">
-                  <h3 className="text-4xl md:text-5xl lg:text-6xl font-medium montserrat text-white">
-                    {category.title}
-                  </h3>
-                  
-                  <p className="text-lg md:text-xl text-[#FFD700]/90 leading-relaxed poppins mb-6">
-                    {category.description}
-                  </p>
-
-                  <TransitionLink
-                    href={`/technology`}
-                    className="category-button group relative inline-flex items-center px-6 py-3 bg-amber-400/10 border border-amber-400/30 rounded-2xl text-amber-400 font-semibold poppins overflow-hidden"
+              {/* Content section above image */}
+              <div className={`p-6 text-center flex-1 flex flex-col ${
+                index === 0 ? 'bg-[#BFBFBF]' : 'bg-black/50'
+              }`}>
+                <h3 className="text-2xl font-bold text-white mb-3">{category.title}</h3>
+                {/* {category.subtitle && (
+                  <p className="text-amber-100 font-medium text-sm mb-4">{category.subtitle}</p>
+                )} */}
+                <p className="text-zinc-100 text-sm mb-6 flex-grow">{category.description}</p>
+                <button className="inline-flex items-center justify-center text-amber-300 hover:text-white group transition-colors text-sm font-medium mt-auto">
+                  {category.buttonText}
+                  <svg
+                    className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
                   >
-                    <span className="mr-3">{category.buttonText}</span>
-                    <div className="relative w-5 h-5">
-                      <Icon 
-                        icon="mage:arrow-up" 
-                        width="20" 
-                        height="20" 
-                        className="absolute rotate-45 transition-all duration-500 group-hover:-translate-y-6 group-hover:opacity-0"
-                      />
-                      <Icon 
-                        icon="mage:arrow-up" 
-                        width="20" 
-                        height="20" 
-                        className="absolute rotate-45 transition-all duration-500 translate-y-6 opacity-0 group-hover:translate-y-0 group-hover:opacity-100"
-                      />
-                    </div>
-                  </TransitionLink>
-                </div>
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                  </svg>
+                </button>
               </div>
-
-              {/* Image */}
-              <div className="category-image flex-1 relative">
-                <div className="category-image-inner relative rounded-3xl overflow-hidden h-[400px] lg:h-[450px]">
-                  <Image
-                    src={category.image}
-                    alt={category.title}
-                    width={600}
-                    height={400}
-                    className="w-full h-full object-cover rounded-3xl"
-                    priority
-                  />
-                </div>
-                <div className="absolute -inset-4 bg-gradient-to-r from-amber-400/10 to-transparent rounded-2xl -z-10 blur-xl opacity-50"></div>
+              
+              {/* Image section */}
+              <div className={`relative w-full aspect-[16/9] overflow-hidden ${
+                index === 0 ? 'bg-[#BFBFBF]' : index === 1 ? 'bg-black' : 'bg-zinc-900'
+              }`}>
+                <Image
+                  src={category.image}
+                  alt={category.title}
+                  fill
+                  className="object-cover w-full h-full transition-transform duration-700 "
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  priority
+                />
+                {/* Dark overlay */}
+                <div className="absolute inset-0 bg-black/20" />
               </div>
             </div>
           ))}
