@@ -80,9 +80,20 @@ export default function CircleAttachment() {
         ref={revealLayerSecondRef}
         className="absolute inset-0 h-[40dvh] md:h-screen mt-10 overflow-hidden flex justify-end items-end"
       >
-          
-          <div className="absolute -top-34 left-30 z-10">
+           {/* <div className="absolute -top-34 left-30 z-10">
             <Globe />
+          </div> */}
+
+          <div className="absolute top-15 left-14 z-50 w-96 h-96 md:w-96 md:h-96">
+            <Image
+              src="/homevideo/gifyearth.gif"
+              alt="Earth Animation"
+              width={400}
+              height={400}
+              className="w-full h-full object-contain"
+              unoptimized
+              priority
+            />
           </div>
         
          

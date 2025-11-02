@@ -283,11 +283,18 @@ export default function Navbar() {
                       key={link.href}
                       href={link.href}
                       onClick={() => handleLinkClick(link.href)}
-                      className={`menu-link text-white text-[2rem] xs:text-4xl md:text-6xl font-bold uppercase tracking-wide ${
-                        isActive ? "" : " transition-colors duration-300"
-                      } hover:text-[#FFD700] transition-all duration-300`}
+                      className={`menu-link relative text-[2rem] xs:text-4xl md:text-6xl font-bold uppercase tracking-wide group overflow-hidden`}
                     >
-                      {link.label}
+                      <span className="relative z-10">
+                        <span className="relative inline-block">
+                          <span className="relative z-10 text-white group-hover:text-transparent transition-colors duration-300">
+                            {link.label}
+                          </span>
+                          <span className="absolute inset-0 w-0 h-full bg-clip-text text-transparent bg-gradient-to-r from-[#FFD700] to-[#FFD700] transition-all duration-500 ease-in-out group-hover:w-full">
+                            {link.label}
+                          </span>
+                        </span>
+                      </span>
                     </Link>
                   );
                 })}

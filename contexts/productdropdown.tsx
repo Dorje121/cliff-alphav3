@@ -2,8 +2,9 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { ChevronDown } from 'lucide-react';
 import dynamic from 'next/dynamic';
+import SpecialityLenses from './specialitylenses';
 
-// Dynamically import DropProducts with no SSR
+
 const DropProducts = dynamic(
   () => import('./dropproducts'),
   { ssr: false }
@@ -20,7 +21,48 @@ const ProductDropdown = () => {
   ];
   const [selectedCategory, setSelectedCategory] = useState('All Categories');
 
-  // Close dropdown when clicking outside
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      // Calculate the position to scroll to
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - 80; // Adjust offset as needed
+      
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
+
+  const handleCategorySelect = (category: string) => {
+    setSelectedCategory(category);
+    setIsOpen(false);
+    
+    switch(category) {
+      case 'Speciality Lenses':
+        // Scroll to the specialty lenses section
+        setTimeout(() => {
+          scrollToSection('specialty-lenses');
+        }, 50);
+        break;
+      case 'Coatings':
+        // Navigate to the Coatings page
+        window.location.href = '/Coating';
+        break;
+      case 'Technologies':
+        // Navigate to the Technologies page
+        window.location.href = '/technology';
+        break;
+      case 'Products':
+        // Scroll to top if Products is selected
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        break;
+      default:
+        break;
+    }
+  };
+
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
@@ -37,7 +79,7 @@ const ProductDropdown = () => {
   return (
     <div className="w-full max-w-[94rem] mx-auto px-4 py-12">
       <div className="flex flex-col">
-        {/* Title and Dropdown Row */}
+        
         <div className="flex flex-col md:flex-row md:items-center justify-between mb-8">
           <div>
             <h2 className="text-2xl md:text-6xl montserrat text-[#FFD700] mb-4">
@@ -49,7 +91,7 @@ const ProductDropdown = () => {
             </p>
           </div>
           
-          {/* Dropdown on the right */}
+          
           <div className="relative w-full md:w-64 pt-12 md:mt-0" ref={dropdownRef}>
             <button
               type="button"
@@ -60,7 +102,7 @@ const ProductDropdown = () => {
               <ChevronDown className={`h-5 w-5 text-gray-400 transition-transform ${isOpen ? 'transform rotate-180' : ''}`} />
             </button>
 
-            {/* Dropdown menu */}
+            
             {isOpen && (
               <div className="absolute right-0 mt-2 w-full bg-black border border-gray-700 rounded-md shadow-lg z-10">
                 <div className="py-1">
@@ -69,6 +111,7 @@ const ProductDropdown = () => {
                     onClick={() => {
                       setSelectedCategory('All Categories');
                       setIsOpen(false);
+                      window.scrollTo({ top: 0, behavior: 'smooth' });
                     }}
                   >
                     All Categories
@@ -77,10 +120,7 @@ const ProductDropdown = () => {
                     <button
                       key={category}
                       className={`block w-full text-left px-4 py-2 text-white hover:bg-gray-800 ${selectedCategory === category ? 'bg-gray-800' : ''}`}
-                      onClick={() => {
-                        setSelectedCategory(category);
-                        setIsOpen(false);
-                      }}
+                      onClick={() => handleCategorySelect(category)}
                     >
                       {category}
                     </button>
@@ -91,9 +131,12 @@ const ProductDropdown = () => {
           </div>
         </div>
 
-        {/* Content Section */}
+        
         <div className="w-full">
           <DropProducts />
+        </div>
+        <div className="w-full">
+        <SpecialityLenses />
         </div>
       </div>
     </div>

@@ -117,7 +117,7 @@ const zennseries = () => {
             >
               <Link
                 href={`/technology/${service.slug}`}
-                className="cursor-pointer block group rounded-lg md:rounded-xl bg-[#322b00]"
+                className="cursor-pointer block group rounded-lg md:rounded-none bg-[#322b00]"
               >
                 <div className="relative overflow-hidden h-full">
                   {/* Mobile Layout */}
@@ -141,7 +141,7 @@ const zennseries = () => {
                       <p className="text-zinc-300 group-hover:text-white leading-relaxed text-xs mb-2 poppins">
                         {service.description}
                       </p>
-                      <div className="inline-flex items-center text-amber-400 font-medium group-hover:text-white text-sm poppins">
+                      <Link href={`/technology/${service.slug}`} className="inline-flex items-center text-amber-400 font-medium group-hover:text-white text-sm poppins">
                         <span className="mr-2">Learn More</span>
                         <svg
                           className="w-4 h-4"
@@ -156,19 +156,19 @@ const zennseries = () => {
                             d="M17 8l4 4m0 0l-4 4m4-4H3"
                           />
                         </svg>
-                      </div>
+                      </Link>
                     </div>
                   </div>
 
                   {/* Desktop Layout */}
                   <div className="hidden md:flex p-4 items-stretch h-full">
                     <div className="w-[280px] flex-shrink-0 mr-6">
-                      <div className="relative overflow-hidden rounded-xl group h-[220px] w-full">
+                      <div className="relative overflow-hidden rounded-none group h-[220px] w-full">
                         <Image
                           src={service.image}
                           alt={service.title}
                           fill
-                          className="object-cover rounded-xl"
+                          className="object-cover rounded-none"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent z-10" />
                       </div>

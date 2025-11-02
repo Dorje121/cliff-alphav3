@@ -1,9 +1,16 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { Calendar, Clock, ArrowRight, Eye } from "lucide-react";
 import { TransitionLink } from "../ui/transitionlink";
 import Image from "next/image";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+// Register ScrollTrigger plugin
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
 
 interface BlogPost {
@@ -45,7 +52,7 @@ const blogPosts: BlogPost[] = [
   },
   {
     id: 3,
-    title: "The Science Behind Blue Light Protection",
+    title: "The Science Behind Blue Light Protection/How to Protect Your Eyes",
     content: "Full article content here...",
     image: "/ai2.jpg",
     date: "2024-03-10",
@@ -92,6 +99,9 @@ const blogPosts: BlogPost[] = [
 export default function Blog() {
   const [selectedCategory, setSelectedCategory] = React.useState("All");
   const [filteredPosts, setFilteredPosts] = React.useState(blogPosts);
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const heroTitleRef = useRef<HTMLHeadingElement>(null);
+  const heroSubtitleRef = useRef<HTMLParagraphElement>(null);
 
   useEffect(() => {
     const filtered =
@@ -100,6 +110,32 @@ export default function Blog() {
         : blogPosts.filter((post) => post.category === selectedCategory);
     setFilteredPosts(filtered);
   }, [selectedCategory]);
+
+  useEffect(() => {
+    
+    if (typeof window === 'undefined') return;
+
+   
+    if (heroTitleRef.current) {
+      gsap.to(heroTitleRef.current, {
+        opacity: 1,
+        y: 0,
+        duration: 1.2,
+        ease: "power2.out"
+      });
+    }
+
+   
+    if (heroSubtitleRef.current) {
+      gsap.to(heroSubtitleRef.current, {
+        opacity: 1,
+        y: 0,
+        duration: 1.2,
+        delay: 0.3,
+        ease: "power2.out"
+      });
+    }
+  }, []);
 
   const formatDate = (dateString: string) => {
     return new Date(dateString).toLocaleDateString("en-US", {
@@ -110,33 +146,39 @@ export default function Blog() {
   };
 
   return (
-    <div className="min-h-screen ">
+    <div ref={sectionRef} className="min-h-screen">
      
-      {/* Hero Section */}
-      <div className="relative pt-32 pb-20 px-5 ">
+      
+      <div className="relative pt-32 pb-20 px-9 ">
         <div className="mx-auto text-left">
-          <h2 className="text-4xl md:text-8xl font-medium montserrat text-[#FFD700]">
+          <h2 
+            ref={heroTitleRef}
+            className="text-4xl md:text-8xl font-medium montserrat text-[#FFD700] opacity-0 translate-y-8"
+          >
             Cliff Insights and Updates
           </h2>
-          <p className="text-xl md:text-2xl text-[#FFD700] max-w-3xl leading-relaxed py-4 poppins">
+          <p 
+            ref={heroSubtitleRef}
+            className="text-xl md:text-2xl text-[#FFD700] max-w-3xl leading-relaxed py-4 poppins opacity-0 translate-y-8"
+          >
             Discover the latest in lens technology, eye health, and vision
             science through our expert insights and cutting-edge research.
           </p>
         </div>
       </div>
 
-      {/* Blog Grid */}
-      <div className="w-full px-6 pb-20">
-        <div className="mx-auto mt-16 grid w-full max-w-[91rem] auto-rows-fr grid-cols-1 gap-10 md:gap-10 lg:gap-12 xl:grid-cols-[1.3fr_1.3fr_1fr]">
+      
+      <div className="w-full px-4 pb-20">
+        <div className="mx-auto grid w-full max-w-[94rem] grid-cols-1 md:grid-cols-3 lg:grid-cols-[1.4fr_1.4fr_1.4fr_1fr] gap-2 md:gap-2 px-4">
           {filteredPosts
             .filter((post) => !post.featured)
-            .slice(0, 2) 
+            .slice(0, 3) 
             .map((post) => (
               <div
-                className="border-2 border-yellow-500/30 relative overflow-hidden rounded-xl w-full h-full shadow-lg"
+                className="border-2 border-yellow-500/30 relative overflow-hidden rounded-none w-full h-full shadow-lg hover:shadow-xl transition-shadow duration-300"
                 key={post.id}
               >
-                <div className="relative h-80 overflow-hidden">
+                <div className="relative h-52 overflow-hidden">
                   <Image
                     src={post.image}
                     fill
@@ -146,49 +188,53 @@ export default function Blog() {
                  
                 </div>
 
-                  {/* Content Container */}
-                  <div className="relative z-10 flex flex-col justify-between p-8 xl:p-10">
-                    {/* Top Section - Category & Meta */}
+                  
+                  <div className="relative z-10 flex flex-col h-full px-6 py-8 xl:px-8 xl:py-10">
+                    
+                    <div className="flex-1">
                     <div className="flex items-start justify-between mb-4">
                       <div className="w-full flex flex-wrap justify-between items-center poppins">
-                        <span className="inline-block px-4 py-2 bg-black/10 backdrop-blur-xl text-yellow-300 rounded-full text-xs font-semibold">
+                        {/* <span className="inline-block px-4 py-2 bg-black/10 backdrop-blur-xl text-yellow-300 rounded-full text-xs font-semibold">
                           {post.category}
-                        </span>
-                        <div className="flex items-center gap-4 text-xs text-[#FFD700]">
+                        </span> */}
+                        <div className="flex items-center gap-8 text-xs text-[#FFD700]">
                           <div className="flex items-center gap-1">
-                            <Calendar size={12} />
+                            <Calendar size={16} />
                             <span>{formatDate(post.date)}</span>
                           </div>
                           <div className="flex items-center gap-1">
-                            <Clock size={12} />
+                            <Clock size={16} />
                             <span>{post.readTime}</span>
                           </div>
                           <div className="flex items-center gap-1">
-                            <Eye size={12} />
+                            <Eye size={16} />
                             <span>{post.views}</span>
                           </div>
                         </div>
                       </div>
                     </div>
 
-                    {/* Bottom Section - Title & CTA */}
-                    <div className="space-y-6">
+                    
+                    <div className="space-y-6 py-6">
                       <h3 className="text-lg md:text-2xl font-medium montserrat leading-tight text-[#FFD700] transition-all duration-500 line-clamp-3">
                         {post.title}
                       </h3>
 
-                      <div className="flex items-center  justify-start">
-                        <TransitionLink
-                          href={`/Technologies/${post.id}`}
-                          className="group/cta inline-flex items-center gap-3 px-5 py-2 bg-black/10 hover:bg-black/20 backdrop-blur-xl border border-[#FFD700] rounded-full text-black font-semibold text-sm transition-all duration-500"
-                        >
-                          <span className="text-[#FFD700]">Read Article</span>
-                          <ArrowRight
-                            size={16}
-                            className="transition-transform duration-500 group-hover/cta:translate-x-2  "
-                          />
-                        </TransitionLink>
-                      </div>
+                    </div>
+                    <div className="mt-auto pt-4 -mr-2 flex justify-end">
+                      <TransitionLink
+                        href={`/Technologies/${post.id}`}
+                        className="group/cta inline-flex items-center gap-2 text-[#FFD700] font-medium text-sm transition-all duration-300 hover:text-[#FFD700]/80"
+                      >
+                        <span className="border-b border-transparent group-hover/cta:border-[#FFD700] transition-all duration-300">
+                          Read Article
+                        </span>
+                        <ArrowRight
+                          size={16}
+                          className="transition-transform duration-300 group-hover/cta:translate-x-1"
+                        />
+                      </TransitionLink>
+                    </div>
                     </div>
                   </div>
 
@@ -197,7 +243,7 @@ export default function Blog() {
               ))}
 
           
-              <div className="border-2 border-[#FFD700]/30 bg-[#322b00]/50 relative h-full overflow-hidden rounded-xl flex flex-col items-center justify-center p-8 text-center lg:col-span-1">
+              <div className="border-2 border-yellow-500/30 bg-[#322b00]/50 relative overflow-hidden rounded-none w-full max-w-[300px] h-full shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col items-center justify-center p-8 text-center">
                 <h3 className="text-2xl font-medium montserrat text-[#FFD700] mb-4">Explore More</h3>
                 <p className="text-[#FFD700]/80 mb-6 max-w-xs">
                   Discover more articles and insights in our blog

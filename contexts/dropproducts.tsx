@@ -95,12 +95,12 @@ export default function VisionCategories() {
         
         <div
           ref={scrollRef}
-          className="flex gap-8 overflow-x-auto scrollbar-hide scroll-smooth snap-x snap-mandatory"
+          className="flex gap-4 overflow-x-auto scrollbar-hide scroll-smooth snap-x snap-mandatory"
         >
           {cards.map((card) => (
             <div
               key={card.id}
-              className="bg-[#322b00]/50 min-w-[320px] md:min-w-[380px] rounded-xl lg:min-w-[400px] h-auto flex flex-col shadow-md overflow-hidden border border-yellow-900/30 hover:shadow-lg transition snap-center"
+              className="bg-[#322b00]/50 min-w-[340px] md:min-w-[420px] rounded-none lg:min-w-[440px] h-auto flex flex-col shadow-md overflow-hidden border border-yellow-900/30 hover:shadow-lg transition snap-center"
             >
               {/* Image with Title Overlay */}
               <div className="w-full h-[280px] relative flex-shrink-0">

@@ -321,6 +321,8 @@ const Technology = () => {
 
   const sectionRef = useRef<HTMLDivElement>(null);
   const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
+  const titleRef = useRef<HTMLHeadingElement>(null);
+  const subtitleRef = useRef<HTMLParagraphElement>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -365,16 +367,63 @@ const Technology = () => {
     }
   };
 
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      // Title animation
+      gsap.fromTo(titleRef.current, 
+        { opacity: 0, y: 100 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1.2,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: titleRef.current,
+            start: "top 80%",
+            toggleActions: "play reverse play reverse",
+          }
+        }
+      );
+
+      // Subtitle animation
+      gsap.fromTo(subtitleRef.current,
+        { opacity: 0, y: 80 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1.2,
+          delay: 0.5,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: subtitleRef.current,
+            start: "top 80%",
+            toggleActions: "play reverse play reverse",
+          }
+        }
+      );
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
     <div ref={sectionRef} className="min-h-screen text-black overflow-hidden w-full">
       <div className="w-full mx-auto shrink-0 py-6 md:py-8 lg:py-16 relative px-4 md:px-8">
         
         <div className="mb-8 md:mb-16">
-          <h2 className="text-4xl md:text-8xl font-medium montserrat text-[#FFD700]">
-            Cliff Technologies
-          </h2>
+          <div className="flex mb-4 md:mb-6">
+            <h2 
+              ref={titleRef}
+              className="text-4xl md:text-8xl font-medium montserrat text-[#FFD700]"
+            >
+              Cliff Technologies
+            </h2>
+          </div>
 
-          <p className="text-base sm:text-lg md:text-xl text-[#FFD700] max-w-3xl poppins mt-4">
+          <p 
+            ref={subtitleRef}
+            className="text-base sm:text-lg md:text-xl text-[#FFD700]/80 max-w-3xl poppins leading-relaxed"
+          >
             Discover our comprehensive range of premium optical solutions,
             advanced lens technologies, and professional services designed to
             enhance your vision experience.
@@ -391,7 +440,7 @@ const Technology = () => {
             >
               <TransitionLink
                 href={`/technology`}
-                className="cursor-pointer block group rounded-lg md:rounded-xl bg-[#322b00]"
+                className="cursor-pointer block group rounded-lg md:rounded-none bg-[#322b00]"
               >
                 <div className="relative overflow-hidden h-full">
                   {/* Mobile Layout */}
@@ -437,12 +486,12 @@ const Technology = () => {
                   {/* Desktop Layout */}
                   <div className="hidden md:flex p-4 items-stretch h-full">
                     <div className="w-[280px] flex-shrink-0 mr-6">
-                      <div className="relative overflow-hidden rounded-xl group h-[220px] w-full">
+                      <div className="relative overflow-hidden rounded-none group h-[220px] w-full">
                         <Image
                           src={service.image}
                           alt={service.title}
                           fill
-                          className="object-cover rounded-xl"
+                          className="object-cover rounded-none"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent z-10" />
                       </div>

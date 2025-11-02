@@ -8,9 +8,9 @@ const ProductsPage = () => {
 
   return (
     <div className="min-h-screen bg-black text-[#FFD700] overflow-x-hidden">
-      {/* Hero Section - 60vh */}
+     
       <section className="relative h-[60vh] min-h-[450px] flex flex-col justify-center items-start overflow-hidden">
-        {/* Background video */}
+        
         <video
           autoPlay
           muted
@@ -22,10 +22,10 @@ const ProductsPage = () => {
           Your browser does not support the video tag.
         </video>
 
-        {/* Overlay for better text readability */}
+        
         <div className="absolute inset-0 bg-black/60 z-[1]" />
 
-        {/* Hero Content - Left Aligned */}
+        
         <div className="relative z-10 text-left w-full px-8">
           <h1 className="montserrat font-medium text-4xl md:text-6xl lg:text-7xl !text-white capitalize mb-6">
             Cliff Products & Solutions
