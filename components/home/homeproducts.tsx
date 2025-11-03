@@ -1,15 +1,11 @@
 
 "use client";
-import React, { useRef, useEffect } from "react";
-import { ChevronLeft, ChevronRight, ExternalLink } from "lucide-react";
-import { TransitionLink } from "../ui/transitionlink";
+import React, { useRef, useEffect, useState } from "react";
+import { ChevronLeft, ChevronRight, ExternalLink, Check } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { gsap } from "gsap";
-import VisionCategories from "../../contexts/dropproducts";
-import { Icon } from "@iconify/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Check } from "lucide-react";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -20,6 +16,7 @@ const Products = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const subtitleRef = useRef<HTMLParagraphElement>(null);
+  const [selectedCard, setSelectedCard] = useState<ProductCard | null>(null);
 
   interface ProductCard {
     id: string;
@@ -159,73 +156,81 @@ const Products = () => {
       );
 
       
-      gsap.utils.toArray(".category-section").forEach((section: any, index) => {
-        const [selectedCard, setSelectedCard] = React.useState<ProductCard>(categories[0]);
+      gsap.utils.toArray<HTMLElement>(".category-section").forEach((section, index) => {
         const content = section.querySelector(".category-content");
         const contentWrapper = section.querySelector(".content-wrapper");
-        const imageContainer = section.querySelector(".category-image");
+        const imageContainer = section.querySelector<HTMLElement>(".category-image");
+        
+        if (!selectedCard && categories.length > 0) {
+          setSelectedCard(categories[0]);
+        }
 
-        
-        gsap.fromTo(contentWrapper,
-          { y: -150, opacity: 0 },
-          {
-            y: 0,
-            opacity: 1,
-            duration: 1.2,
-            ease: "power3.out",
-            scrollTrigger: {
-              trigger: section,
-              start: "top 70%",
-              toggleActions: "play reverse play reverse",
+        // Animate content wrapper if it exists
+        if (contentWrapper) {
+          gsap.fromTo(contentWrapper,
+            { y: -150, opacity: 0 },
+            {
+              y: 0,
+              opacity: 1,
+              duration: 1.2,
+              ease: "power3.out",
+              scrollTrigger: {
+                trigger: section,
+                start: "top 70%",
+                toggleActions: "play reverse play reverse",
+              }
             }
-          }
-        );
+          );
+        }
 
-        
-        gsap.fromTo(content.children,
-          { opacity: 0, y: 30 },
-          {
-            opacity: 1,
-            y: 0,
-            duration: 0.8,
-            stagger: 0.15,
-            delay: 0.3,
-            ease: "power2.out",
-            scrollTrigger: {
-              trigger: content,
-              start: "top 70%",
-              toggleActions: "play reverse play reverse",
+        // Animate content children if content exists
+        if (content) {
+          gsap.fromTo(content.children,
+            { opacity: 0, y: 30 },
+            {
+              opacity: 1,
+              y: 0,
+              duration: 0.8,
+              stagger: 0.15,
+              delay: 0.3,
+              ease: "power2.out",
+              scrollTrigger: {
+                trigger: content,
+                start: "top 70%",
+                toggleActions: "play reverse play reverse",
+              }
             }
-          }
-        );
+          );
+        }
 
-        
-        
-        const isRightToLeft = index % 2 === 0; 
-        const initialRotation = isRightToLeft ? 25 : -25;
-        const initialX = isRightToLeft ? 300 : -300;
-        
-        gsap.fromTo(imageContainer,
-          {
-            rotation: initialRotation,
-            x: initialX,
-            opacity: 0,
-            scale: 0.9
-          },
-          {
-            rotation: 0,
-            x: 0,
-            opacity: 1,
-            scale: 1,
-            duration: 1.4,
-            ease: "power2.out",
-            scrollTrigger: {
-              trigger: imageContainer,
-              start: "top 75%",
-              toggleActions: "play reverse play reverse",
+        // Animate image container if it exists
+        if (imageContainer) {
+          const isRightToLeft = index % 2 === 0; 
+          const initialRotation = isRightToLeft ? 25 : -25;
+          const initialX = isRightToLeft ? 300 : -300;
+          
+          gsap.fromTo(imageContainer,
+            {
+              rotation: initialRotation,
+              x: initialX,
+              opacity: 0,
+              scale: 0.9
+            },
+            {
+              rotation: 0,
+              x: 0,
+              opacity: 1,
+              scale: 1,
+              duration: 1.4,
+              ease: "power2.out",
+              scrollTrigger: {
+                trigger: imageContainer,
+                start: "top 75%",
+                toggleActions: "play reverse play reverse",
+              }
             }
-          }
-        );
+          );
+        }
       });
 
 
@@ -243,7 +248,7 @@ const Products = () => {
     }, sectionRef);
 
     return () => ctx.revert();
-  }, []);
+  }, [categories]);
 
   return (
     <div ref={sectionRef} className="min-h-screen bg-black text-[#FFD700] overflow-hidden w-full">

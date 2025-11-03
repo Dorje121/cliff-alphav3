@@ -10,20 +10,15 @@ import {
   Calendar,
   ArrowLeft,
   Eye,
-  User,
-  Share2,
   Clock,
   Heart,
   Bookmark,
-  Quote,
   Copy,
   Check,
   Facebook,
   Twitter,
   Linkedin,
-  MessageCircle,
 } from "lucide-react";
-
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -62,7 +57,7 @@ const blogPosts: Record<number, BlogPost> = {
         <div class="bg-gradient-to-r from-blue-900/20 to-purple-900/20 border-l-4 border-blue-500 p-8 my-12 rounded-r-lg">
           <Quote className="w-8 h-8 text-blue-400 mb-4" />
           <blockquote class="text-2xl font-light text-white leading-relaxed">
-            "The future of vision correction isn't just about seeing clearly – it's about seeing intelligently."
+            &ldquo;The future of vision correction isn't just about seeing clearly &ndash; it's about seeing intelligently.&rdquo;
           </blockquote>
           <p class="text-gray-400 mt-4 text-sm">Dr. Sarah Johnson, Chief Innovation Officer</p>
         </div>
