@@ -15,7 +15,6 @@ export default async function CoatingPage({
   params,
 }: {
   params: { slug: string };
-  searchParams?: { [key: string]: string | string[] | undefined };
 }) {
   const coating = categories.find((cat) => cat.slug === params.slug);
 
