@@ -175,7 +175,7 @@ export default function Blog() {
             .slice(0, 3) 
             .map((post) => (
               <div
-                className="border-2 border-yellow-500/30 relative overflow-hidden rounded-none w-full h-full shadow-lg hover:shadow-xl transition-shadow duration-300"
+                className="border-2 border-yellow-500/30 relative overflow-hidden rounded-sm w-full h-full shadow-lg hover:shadow-xl transition-shadow duration-300"
                 key={post.id}
               >
                 <div className="relative h-52 overflow-hidden">
@@ -243,7 +243,7 @@ export default function Blog() {
               ))}
 
           
-              <div className="border-2 border-yellow-500/30 bg-[#322b00]/50 relative overflow-hidden rounded-none w-full max-w-[300px] h-full shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col items-center justify-center p-8 text-center">
+              <div className="border-2 border-yellow-500/30 bg-[#322b00]/50 relative overflow-hidden rounded-sm w-full max-w-[300px] h-full shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col items-center justify-center p-8 text-center">
                 <h3 className="text-2xl font-medium montserrat text-[#FFD700] mb-4">Explore More</h3>
                 <p className="text-[#FFD700]/80 mb-6 max-w-xs">
                   Discover more articles and insights in our blog

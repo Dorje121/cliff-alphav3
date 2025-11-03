@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 
 import LandingVideo from "@/components/home/hero";
 import HomeList from "@/components/home/HomeList";
-import CircleAttachment from "@/components/home/CircleAttachment";
+import CircleAttachment from "@/components/home/creative";
 import Blog from "@/components/home/Blog";
 import LensDemo from "@/components/home/Focus";
 import WhiteFooter from "@/components/home/whitefoot";

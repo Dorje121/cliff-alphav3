@@ -1,3 +1,14 @@
+interface TechnologyBenefit {
+  title: string;
+  description: string;
+}
+
+interface TechnologySection {
+  title: string;
+  description: string;
+  benefits: TechnologyBenefit[];
+}
+
 export interface Product {
   id: string;
   title: string;
@@ -6,7 +17,9 @@ export interface Product {
   features: string[];
   benefits: string[];
   image: string;
+  video: string;
   slug: string;
+  technology?: TechnologySection;
   comparisonImages?: {
     standard: string;
     product: string;
@@ -40,6 +53,25 @@ export const products: Record<string, Product> = {
       'Anti-reflective coating'
     ],
     image: '/homeimage/singlelense.png',
+    video: '/videos/single.webm',
+    technology: {
+      title: 'Digital Ray Path Technology',
+      description: 'Our lenses incorporate advanced Digital Ray Path technology, which precisely calculates and optimizes the path of light through the lens to your eye. This results in sharper, clearer vision with reduced distortion, especially in higher prescriptions.',
+      benefits: [
+        {
+          title: 'Versatile Design',
+          description: 'The most versatile design for Single Vision Lenses'
+        },
+        {
+          title: '76% More Stable',
+          description: '76% more stable than conventional lenses in higher prescriptions'
+        },
+        {
+          title: 'Superior Vision',
+          description: 'Better vision in all gaze directions'
+        }
+      ]
+    },
     benefits: [
       'Perfect for digital device users',
       'Reduces eye fatigue',
@@ -78,6 +110,8 @@ export const products: Record<string, Product> = {
     id: '02',
     title: 'VERSATILE PROGRESSIVE',
     subtitle: 'Premium Optical Excellence',
+    image: '/homeimage/progressive.jpg',
+    video: '/videos/progressive.webm',
     description: 'Photochromic lenses that adapt to changing light conditions automatically',
     features: [
       'Light-adaptive technology',
@@ -85,7 +119,6 @@ export const products: Record<string, Product> = {
       'Scratch-resistant coating',
       'Glare reduction'
     ],
-    image: '/homeimage/progressive.jpg',
     benefits: [
       'Seamless indoor-outdoor transition',
       '100% UV protection',
@@ -101,33 +134,58 @@ export const products: Record<string, Product> = {
   },
   'dynamic-progressive': {
     id: '03',
-    title: 'DYNAMIC PROGRESSIVE',
-    subtitle: 'Premium Optical Excellence',
-    description: 'Specialized lenses optimized for driving and enhanced road visibility',
+    title: 'Dynamix Progressive',
+    subtitle: 'Seamless Vision. Natural Transitions.',
+    description: 'Cliff Dynamix Progressive Lenses provide smooth, natural vision at all distances. Experience seamless transitions between near, intermediate, and distance vision with our advanced progressive lens technology, designed for comfort and clarity in every situation.',
     features: [
       'Wider viewing zones',
       'Enhanced distance vision',
       'Reduced distortion',
       'Anti-glare technology'
     ],
-    image: '/product/9.jpg',
+    image: '/homeimage/dynamix.png',
+    video: '/videos/dynamic.webm',
+    technology: {
+      title: 'Balance Process Design, Continuum Design Technology (6K Definition), Wear Fit Customization, AdaptEase Technology',
+      description: 'Our Dynamix Progressive lenses feature state-of-the-art technology that provides a smooth transition between different vision zones, eliminating the visible lines of traditional bifocals while offering clear vision at all distances.',
+      benefits: [
+        {
+          title: 'Seamless Transitions',
+          description: 'Natural vision from near to far without image jumps'
+        },
+        {
+          title: 'Wider Viewing Areas',
+          description: 'Expanded vision zones for better peripheral vision'
+        },
+        {
+          title: 'Reduced Distortion',
+          description: 'Minimized peripheral distortion for more comfortable vision'
+        }
+      ]
+    },
     benefits: [
       'Improved peripheral vision',
       'Better depth perception',
       'Reduced eye strain',
-      'Enhanced night vision'
+      'Enhanced night vision',
+      'Ideal for active lifestyles'
     ],
     slug: 'dynamic-progressive',
+    comparisonImages: {
+      standard: 'traditional.png',
+      product: 'cliffprogressive.png'
+    },
     durabilityAndCare: {
       title: 'CLIFF DuraVision Lens Coatings',
       subtitle: 'Durability & Care',
-      description: 'Like superpowers for your glasses.'
+      description: 'Advanced coatings that protect your lenses and enhance visual clarity.'
     }
   },
   'zenn-series': {
     id: '04',
     title: 'ZENN SERIES',
     subtitle: 'Premium Optical Excellence',
+    video: '/videos/zenn.webm',
     description: 'Multi-focal progressive lenses for seamless vision at all distances and visibility',
     features: [
       'Advanced multi-focal technology',
@@ -153,6 +211,7 @@ export const products: Record<string, Product> = {
     id: '05',
     title: 'SPECIALITY LENSES',
     subtitle: 'Premium Optical Excellence',
+    video: '/videos/speciality.webm',
     description: 'Specialized lenses for specific needs and conditions',
     features: [
       'Custom solutions for unique needs',

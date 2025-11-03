@@ -1,11 +1,12 @@
 "use client";
 import React from "react";
 import CoatingContents from "@/contexts/coatingcontents";
+import CoatingsUV from "@/contexts/coatingsUV";
 
 const List = () => {
  
 return (
-  <div className="min-h-screen bg-black text-[#FFD700] overflow-x-hidden">
+  <div className="min-h-screen bg-black text-[#FFD700] overflow-hidden">
     {/* <section className="relative h-[60vh] min-h-[450px] flex flex-col justify-center items-start overflow-hidden">
      
       <video
@@ -67,6 +68,7 @@ return (
         </div>
       </section>     
       <CoatingContents />
+      <CoatingsUV />  
    
 
     </div>

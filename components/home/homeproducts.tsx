@@ -292,7 +292,7 @@ const Products = () => {
           {categories.map((card) => (
             <div
               key={card.id}
-              className="bg-[#322b00]/50 min-w-[340px] md:min-w-[420px] rounded-none lg:min-w-[440px] h-auto flex flex-col shadow-md overflow-hidden border border-yellow-900/30 hover:shadow-lg transition snap-center"
+              className="bg-[#322b00]/50 min-w-[340px] md:min-w-[420px] rounded-lg lg:min-w-[440px] h-auto flex flex-col shadow-md overflow-hidden border border-yellow-900/30 hover:shadow-lg transition snap-center"
             >
               {/* Image with Title Overlay */}
               <div className="w-full h-[280px] relative flex-shrink-0">

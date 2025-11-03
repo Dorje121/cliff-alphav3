@@ -22,9 +22,9 @@ const Coatings = () => {
       subtitle: "Advanced Progressive Technology",
       description: "Complete blue light protection lenses for modern digital lifestyle and visibility",
       slug: "cliff-dynamic",
-      image: "/bluesafe/lense.jpg",
+      image: "/bluesafecoatings/nox.png",
       alignment: "left",
-      buttonText: "Learn More"
+      buttonText: "View Details"
     },
     {
       id: "02", 
@@ -32,9 +32,9 @@ const Coatings = () => {
       subtitle: "Premium Optical Excellence",
       description: "Photochromic lenses that adapt to changing light conditions automatically",
       slug: "cliff-zenn-series",
-      image: "/homeimage/bluecoating.png",
+      image: "/bluesafecoatings/blue.png",
       alignment: "right",
-      buttonText: "Learn More"
+      buttonText: "View Details"
     },
     {
       id: "03", 
@@ -42,9 +42,9 @@ const Coatings = () => {
       subtitle: "Premium Optical Excellence",
       description: "Specialized lenses optimized for driving and enhanced road visibility",
       slug: "cliff-zenn-series",
-      image: "/homeimage/driceclear.jpg",
+      image: "/homeimage/photz.png",
       alignment: "left",
-      buttonText: "Learn More"
+      buttonText: "View Details"
     },
     {
       id: "04", 
@@ -52,9 +52,9 @@ const Coatings = () => {
       subtitle: "Premium Optical Excellence",
       description: "Multi-focal progressive lenses for seamless vision at all distances and visibility",
       slug: "cliff-zenn-series",
-      image: "/bluesafe/photoz.jpg",
+      image: "/homeimage/lense6.png",
       alignment: "right",
-      buttonText: "Learn More"
+      buttonText: "View Details"
     }
   ];
 
@@ -194,57 +194,14 @@ const Coatings = () => {
         {/* 2x2 Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
           {categories.map((category, index) => (
-            <div 
-              key={category.id}
-              className={`group relative overflow-hidden hover:border-amber-400/30 transition-all duration-300 hover:shadow-lg hover:shadow-amber-400/10 flex flex-col ${
-                index === 0 
-                  ? 'bg-[#BFBFBF]' 
-                  : index === 1 
-                    ? 'bg-black' 
-                    : index === 2
-                      ? 'bg-black'
-                      : 'bg-[#BFBFBF]'
-              }`}
-            >
-             
-              <div className={`p-6 text-center flex-1 flex flex-col ${
-                index === 0 ? 'bg-[#BFBFBF]' : index === 2 ? 'bg-black' : 'bg-black/50'
-              }`}>
-                <h3 className="text-4xl font-bold text-white mb-3 capitalize">{category.title}</h3>
-                {/* {category.subtitle && (
-                  <p className="text-amber-100 font-medium text-sm mb-4">{category.subtitle}</p>
-                )} */}
-                <p className="text-zinc-100 text-xl mb-6 flex-grow">{category.description}</p>
-                <button className="inline-flex items-center justify-center px-3 py-1 text-white rounded-full group transition-all duration-300 hover:from-amber-600 hover:to-amber-700 shadow-md hover:shadow-lg hover:shadow-amber-500/30 text-xs font-medium mt-auto w-fit mx-auto whitespace-nowrap">
-                <span className="flex items-center">
-                  <span className="mr-1">{category.buttonText}</span>
-                  <svg
-                    className="w-3 h-3 transition-transform group-hover:translate-x-0.5"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth={2}
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                  </svg>
-                </span>
-              </button>
-              </div>
-              
-              
-              <div className={`relative w-full aspect-[16/9] overflow-hidden ${
-                index === 0 ? 'bg-[#BFBFBF]' : index === 1 ? 'bg-black' : 'bg-zinc-900'
-              }`}>
-                <Image
-                  src={category.image}
-                  alt={category.title}
-                  fill
-                  className="object-cover w-full h-full transition-transform duration-700 "
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                  priority
-                />
-                {/* Dark overlay */}
-                <div className="absolute inset-0 bg-black/20" />
+            <div key={category.id} className="relative h-[560px] bg-white rounded-lg overflow-hidden">
+              <Image src={category.image} alt={category.title} fill className="object-cover" />
+              <div className="absolute inset-0 flex p-6 text-white flex-col items-center pt-10 text-center">
+                <h3 className={`text-2xl font-bold lg:text-3xl mb-3 px-4 w-full break-words ${category.id === '02' ? 'text-black' : ''}`}>{category.title}</h3>
+                <p className={`text-base lg:text-lg mb-6 px-4 max-w-md ${category.id === '02' ? 'text-black' : ''}`}>{category.subtitle}</p>
+                <button className="px-6 py-2 bg-[#FDD600] rounded-full text-black font-bold hover:bg-[#FFD700]/80 transition-colors duration-300 whitespace-nowrap">
+                  {category.buttonText}
+                </button>
               </div>
             </div>
           ))}

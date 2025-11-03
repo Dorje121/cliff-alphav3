@@ -32,7 +32,7 @@ export default function VisionCategories() {
     },
     {
       id: "03",
-      title: "DYNAMIC PROGRESSIVE",
+      title: "DYNAMIX PROGRESSIVE",
       subtitle: "Premium Optical Excellence",
       image: "/product/9.jpg",
       points: [
@@ -97,50 +97,64 @@ export default function VisionCategories() {
           ref={scrollRef}
           className="flex gap-4 overflow-x-auto scrollbar-hide scroll-smooth snap-x snap-mandatory"
         >
-          {cards.map((card) => (
-            <div
-              key={card.id}
-              className="bg-[#322b00]/50 min-w-[340px] md:min-w-[420px] rounded-none lg:min-w-[440px] h-auto flex flex-col shadow-md overflow-hidden border border-yellow-900/30 hover:shadow-lg transition snap-center"
-            >
-              {/* Image with Title Overlay */}
-              <div className="w-full h-[280px] relative flex-shrink-0">
-                <Image
-                  src={card.image}
-                  alt={card.title}
-                  fill
-                  className="w-full h-full object-cover"
-                />
-               
-              </div>
-
-              {/* Description */}
-              <div className="px-6 pt-6 pb-6 flex-grow flex flex-col">
-                <div className="mb-4">
-                  <h3 className="text-xl font-bold text-white mb-1">{card.title}</h3>
-                  <p className="text-amber-400 text-sm">{card.subtitle}</p>
+          {cards.map((card) => {
+            // Only wrap ZENN SERIES card with Link
+            const cardContent = (
+              <>
+                {/* Image with Title Overlay */}
+                <div className="w-full h-[280px] relative flex-shrink-0">
+                  <Image
+                    src={card.image}
+                    alt={card.title}
+                    fill
+                    className="w-full h-full object-cover"
+                  />
                 </div>
-                <ul className="space-y-2 text-gray-300 text-sm">
-                  {card.points.map((point, i) => (
-                    <li key={i} className="flex gap-2 items-start">
-                      <Check size={16} className="text-yellow-400 mt-0.5" />
-                      <span>{point}</span>
-                    </li>
-                  ))}
-                </ul>
 
-                {/* View Product Button */}
-                <div className="mt-6 flex justify-end">
-                  <Link
-                    href={`/products/${card.slug}`}
-                    className="inline-flex items-center text-amber-400 text-base font-medium hover:text-white transition-colors duration-300 group"
-                  >
-                    Learn More
-                    <ExternalLink className="w-5 h-5 ml-2" />
-                  </Link>
+                {/* Description */}
+                <div className="px-6 pt-6 pb-6 flex-grow flex flex-col">
+                  <div className="mb-4">
+                    <h3 className="text-xl font-bold text-white mb-1">{card.title}</h3>
+                    <p className="text-amber-400 text-sm">{card.subtitle}</p>
+                  </div>
+                  <ul className="space-y-2 text-gray-300 text-sm">
+                    {card.points.map((point, i) => (
+                      <li key={i} className="flex gap-2 items-start">
+                        <Check size={16} className="text-yellow-400 mt-0.5" />
+                        <span>{point}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  {/* View Product Button */}
+                  <div className="mt-6 flex justify-end">
+                    <div className="inline-flex items-center text-amber-400 text-base font-medium hover:text-white transition-colors duration-300 group">
+                      {card.slug === 'zenn-series' ? 'View Collection' : 'Learn More'}
+                      <ExternalLink className="w-5 h-5 ml-2" />
+                    </div>
+                  </div>
                 </div>
+              </>
+            );
+
+            return card.slug === 'zenn-series' ? (
+              <Link 
+                href="/zennseries" 
+                key={card.id}
+                className="bg-[#322b00]/50 min-w-[340px] md:min-w-[420px] rounded-lg lg:min-w-[440px] h-auto flex flex-col shadow-md overflow-hidden border border-yellow-900/30 hover:shadow-lg transition snap-center hover:border-amber-500/50"
+              >
+                {cardContent}
+              </Link>
+            ) : (
+              <div
+                key={card.id}
+                className="bg-[#322b00]/50 min-w-[340px] md:min-w-[420px] rounded-lg lg:min-w-[440px] h-auto flex flex-col shadow-md overflow-hidden border border-yellow-900/30 hover:shadow-lg transition snap-center"
+              >
+                {cardContent}
               </div>
-            </div>
-          ))}
+            );
+          })}
+       
         </div>
       </div>
     </section>

@@ -222,7 +222,7 @@ const Contact = () => {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="uppercase tracking-widest text-[#FFD700] hover:text-[#FFD700] cursor-pointer transition-all border border-[#FFD700] px-8 py-3 rounded-none"
+                className="uppercase tracking-widest text-[#FFD700] hover:text-[#FFD700] cursor-pointer transition-all border border-[#FFD700] px-8 py-3 rounded-full"
               >
                 [ {isSubmitting ? "Sending..." : "Send Message"} ]
               </button>
