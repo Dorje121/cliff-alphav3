@@ -11,14 +11,12 @@ interface Feature {
   description?: string | string[];
 }
 
-interface CoatingPageProps {
-  params: {
-    slug: string;
-  };
+type PageProps = {
+  params: { slug: string };
   searchParams?: { [key: string]: string | string[] | undefined };
-}
+};
 
-export default async function CoatingPage({ params }: CoatingPageProps) {
+export default async function CoatingPage({ params }: PageProps) {
   const coating = categories.find(cat => cat.slug === params.slug);
 
   if (!coating) {
