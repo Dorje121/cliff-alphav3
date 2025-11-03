@@ -1,6 +1,6 @@
 "use client";
 
-import { ReactNode, useEffect, useRef } from "react";
+import { ReactNode, useCallback, useEffect, useRef } from "react";
 import { useRouter, usePathname } from "next/navigation";
 import { gsap } from "gsap";
 
@@ -14,6 +14,35 @@ const TransitionAnimate = ({ children }: TransitionAnimateProps) => {
   const overlayRef = useRef<HTMLDivElement>(null);
   const blockRef = useRef<HTMLDivElement[]>([]);
   const isTransitioning = useRef(false);
+
+  const coverPage = useCallback((url: string) => {
+    const tl = gsap.timeline({
+      onComplete: () => router.push(url),
+    });
+
+    tl.to(blockRef.current, {
+      scaleX: 1,
+      duration: 0.4,
+      stagger: 0.02,
+      ease: "power2.out",
+      transformOrigin: "left",
+    });
+  }, [router]);
+
+  const revealPage = useCallback(() => {
+    gsap.set(blockRef.current, { scaleX: 1, transformOrigin: "right" });
+
+    gsap.to(blockRef.current, {
+      scaleX: 0,
+      duration: 0.4,
+      stagger: 0.02,
+      ease: "power2.out",
+      transformOrigin: "right",
+      onComplete: () => {
+        isTransitioning.current = false;
+      },
+    });
+  }, []);
 
   useEffect(() => {
     const createBlocks = () => {
@@ -40,53 +69,32 @@ const TransitionAnimate = ({ children }: TransitionAnimateProps) => {
       coverPage(url);
     };
 
-    const links = document.querySelectorAll('a[href^="/"]');
-    links.forEach((link: any) => {
+    const links = document.querySelectorAll<HTMLAnchorElement>('a[href^="/"]');
+    const clickHandlers = new Map<HTMLAnchorElement, (e: Event) => void>();
+
+    links.forEach((link) => {
       const clickHandler = (e: Event) => {
         e.preventDefault();
         const target = e.currentTarget as HTMLAnchorElement;
         const href = new URL(target.href);
         if (href.pathname !== pathname) handleRouteChange(href.pathname);
       };
+      
+      clickHandlers.set(link, clickHandler);
       link.addEventListener("click", clickHandler);
-      link.clickHandler = clickHandler; // store for cleanup
     });
 
     return () => {
-      links.forEach((link: any) => {
-        if (link.clickHandler) link.removeEventListener("click", link.clickHandler);
+      links.forEach((link) => {
+        const handler = clickHandlers.get(link);
+        if (handler) {
+          link.removeEventListener("click", handler);
+        }
       });
+      clickHandlers.clear();
     };
-  }, [router, pathname]);
+  }, [router, pathname, coverPage]);
 
-  const coverPage = (url: string) => {
-    const tl = gsap.timeline({
-      onComplete: () => router.push(url),
-    });
-
-    tl.to(blockRef.current, {
-      scaleX: 1,
-      duration: 0.4,
-      stagger: 0.02,
-      ease: "power2.out",
-      transformOrigin: "left",
-    });
-  };
-
-  const revealPage = () => {
-    gsap.set(blockRef.current, { scaleX: 1, transformOrigin: "right" });
-
-    gsap.to(blockRef.current, {
-      scaleX: 0,
-      duration: 0.4,
-      stagger: 0.02,
-      ease: "power2.out",
-      transformOrigin: "right",
-      onComplete: () => {
-        isTransitioning.current = false;
-      },
-    });
-  };
 
   return (
     <>
