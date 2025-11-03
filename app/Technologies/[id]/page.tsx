@@ -57,7 +57,7 @@ const blogPosts: Record<number, BlogPost> = {
         <div class="bg-gradient-to-r from-blue-900/20 to-purple-900/20 border-l-4 border-blue-500 p-8 my-12 rounded-r-lg">
           <Quote className="w-8 h-8 text-blue-400 mb-4" />
           <blockquote class="text-2xl font-light text-white leading-relaxed">
-            &ldquo;The future of vision correction isn't just about seeing clearly &ndash; it's about seeing intelligently.&rdquo;
+            &ldquo;The future of vision correction isn&apos;t just about seeing clearly &ndash; it&apos;s about seeing intelligently.&rdquo;
           </blockquote>
           <p class="text-gray-400 mt-4 text-sm">Dr. Sarah Johnson, Chief Innovation Officer</p>
         </div>
@@ -131,21 +131,6 @@ export default function BlogPost() {
   const [isLiked, setIsLiked] = useState(false);
   const [isBookmarked, setIsBookmarked] = useState(false);
   const [isCopied, setIsCopied] = useState(false);
-  const [readingProgress, setReadingProgress] = useState(0);
-
-  useEffect(() => {
-    if (!post) return;
-
-    const updateReadingProgress = () => {
-      const scrollTop = window.scrollY;
-      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-      const progress = (scrollTop / docHeight) * 100;
-      setReadingProgress(progress);
-    };
-
-    window.addEventListener("scroll", updateReadingProgress);
-    return () => window.removeEventListener("scroll", updateReadingProgress);
-  }, [post]);
 
   useEffect(() => {
     if (!post) return;
@@ -184,7 +169,7 @@ export default function BlogPost() {
           <div className="text-6xl font-light text-gray-400">404</div>
           <h1 className="text-4xl font-bold text-white">Article Not Found</h1>
           <p className="text-gray-400 text-lg">
-            The article you're looking for doesn't exist or has been moved.
+            The article you&apos;re looking for doesn&apos;t exist or has been moved.
           </p>
           <Link
             href="/Blogs"
