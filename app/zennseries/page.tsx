@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowLeft } from 'lucide-react';
 
 // Fixed images for each lens type
 const lensImages = {
@@ -32,7 +31,7 @@ export default function ZennSeries() {
                 Cliff Zen Series 
               </h1>
               <p className="text-lg md:text-xl text-gray-300 mt-4 max-w-2xl">
-                In today's connected world, people expect more than vision correction - They want clarity, comfort, and adaptability.
+                In today&apos;s connected world, people expect more than vision correction - They want clarity, comfort, and adaptability.
               </p>
             </div>
             <div className="relative h-80 md:h-[500px] w-full">
@@ -149,7 +148,7 @@ export default function ZennSeries() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 py-8">
             {/* Clear Lens */}
-            <a href="/products/single-vision" className="group block h-full">
+            <Link href="/products/single-vision" className="group block h-full">
               <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg overflow-hidden h-full   flex flex-col">
                 <div className="relative h-48 bg-gray-800 flex items-center justify-center">
                   <Image 
@@ -164,9 +163,9 @@ export default function ZennSeries() {
                   <p className="text-gray-400">Perfect for indoor use and low-light conditions, providing true color vision.</p>
                 </div>
               </div>
-            </a>
+            </Link>
             {/* Photoz Lens */}
-            <a href="/products/single-vision" className="group block h-full">
+            <Link href="/products/single-vision" className="group block h-full">
               <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg overflow-hidden h-full flex flex-col">
                 <div className="relative h-48 bg-gray-800 flex items-center justify-center">
                   <Image 
@@ -181,9 +180,9 @@ export default function ZennSeries() {
                   <p className="text-gray-400">Light-adaptive lenses that automatically adjust to changing light conditions.</p>
                 </div>
               </div>
-            </a>
+            </Link>
             {/* Photochrome Lens */}
-            <a href="/products/single-vision" className="group block h-full">
+            <Link href="/products/single-vision" className="group block h-full">
               <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg overflow-hidden h-full flex flex-col">
                 <div className="relative h-48 bg-gray-800 flex items-center justify-center">
                   <Image 
@@ -198,9 +197,9 @@ export default function ZennSeries() {
                   <p className="text-gray-400">Transitions from clear to dark outdoors, offering UV protection and comfort.</p>
                 </div>
               </div>
-            </a>
+            </Link>
             {/* Polarized Lens */}
-            <a href="/products/single-vision" className="group block h-full">
+            <Link href="/products/single-vision" className="group block h-full">
               <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg overflow-hidden h-full flex flex-col">
                 <div className="relative h-48 bg-gray-800 flex items-center justify-center">
                   <Image 
@@ -215,7 +214,7 @@ export default function ZennSeries() {
                   <p className="text-gray-400">Reduces glare from reflective surfaces, ideal for driving and outdoor activities.</p>
                 </div>
               </div>
-            </a>
+            </Link>
           </div>
         </div>
       </section>
@@ -225,7 +224,7 @@ export default function ZennSeries() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 py-8">
             {/* Clear Lens */}
-            <a href="/products/progressive" className="group block h-full">
+            <Link href="/products/progressive" className="group block h-full">
               <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg overflow-hidden h-full   flex flex-col">
                 <div className="relative h-48 bg-gray-800 flex items-center justify-center">
                   <Image 
@@ -240,10 +239,10 @@ export default function ZennSeries() {
                   <p className="text-gray-400">Perfect for indoor use and low-light conditions, providing true color vision.</p>
                 </div>
               </div>
-            </a>
+            </Link>
 
             {/* Photoz Lens */}
-            <a href="/products/single-vision" className="group block h-full">
+            <Link href="/products/single-vision" className="group block h-full">
               <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg overflow-hidden h-full flex flex-col">
                 <div className="relative h-48 bg-gray-800 flex items-center justify-center">
                   <Image 
@@ -258,10 +257,10 @@ export default function ZennSeries() {
                   <p className="text-gray-400">Light-adaptive lenses that automatically adjust to changing light conditions.</p>
                 </div>
               </div>
-            </a>
+            </Link>
 
             {/* Photochrome Lens */}
-            <a href="/products/single-vision" className="group block h-full">
+            <Link href="/products/single-vision" className="group block h-full">
               <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg overflow-hidden h-full flex flex-col">
                 <div className="relative h-48 bg-gray-800 flex items-center justify-center">
                   <Image 
@@ -276,10 +275,10 @@ export default function ZennSeries() {
                   <p className="text-gray-400">Transitions from clear to dark outdoors, offering UV protection and comfort.</p>
                 </div>
               </div>
-            </a>
+            </Link>
 
             {/* Polarized Lens */}
-            <a href="/products/single-vision" className="group block h-full">
+            <Link href="/products/single-vision" className="group block h-full">
               <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg overflow-hidden h-full flex flex-col">
                 <div className="relative h-48 bg-gray-800 flex items-center justify-center">
                   <Image 
@@ -294,7 +293,7 @@ export default function ZennSeries() {
                   <p className="text-gray-400">Reduces glare from reflective surfaces, ideal for driving and outdoor activities.</p>
                 </div>
               </div>
-            </a>
+            </Link>
           </div>
         </div>
       </section>
