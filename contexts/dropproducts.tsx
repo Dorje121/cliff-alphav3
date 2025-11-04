@@ -12,7 +12,7 @@ export default function VisionCategories() {
       id: "01",
       title: "SINGLE VISION",
       subtitle: "Advanced Progressive Technology",
-      image: "/homeimage/singleee.jpg",
+      image: "/homeimage/cliffsingle.png",
       points: [
         "Complete blue light protection lenses for modern digital lifestyle.",
         "Provides superior clarity and comfort for daily use.",
@@ -98,7 +98,6 @@ export default function VisionCategories() {
           className="flex gap-4 overflow-x-auto scrollbar-hide scroll-smooth snap-x snap-mandatory"
         >
           {cards.map((card) => {
-            // Only wrap ZENN SERIES card with Link
             const cardContent = (
               <>
                 {/* Image with Title Overlay */}
@@ -137,21 +136,24 @@ export default function VisionCategories() {
               </>
             );
 
-            return card.slug === 'zenn-series' ? (
+            // Determine the correct href based on the card type
+            let href = '';
+            if (card.slug === 'zenn-series') {
+              href = '/zennseries';
+            } else if (card.slug === 'speciality-lenses') {
+              href = '/speciality-lenses';
+            } else {
+              href = `/products/${card.slug}`;
+            }
+
+            return (
               <Link 
-                href="/zennseries" 
+                href={href}
                 key={card.id}
                 className="bg-[#322b00]/50 min-w-[340px] md:min-w-[420px] rounded-lg lg:min-w-[440px] h-auto flex flex-col shadow-md overflow-hidden border border-yellow-900/30 hover:shadow-lg transition snap-center hover:border-amber-500/50"
               >
                 {cardContent}
               </Link>
-            ) : (
-              <div
-                key={card.id}
-                className="bg-[#322b00]/50 min-w-[340px] md:min-w-[420px] rounded-lg lg:min-w-[440px] h-auto flex flex-col shadow-md overflow-hidden border border-yellow-900/30 hover:shadow-lg transition snap-center"
-              >
-                {cardContent}
-              </div>
             );
           })}
        

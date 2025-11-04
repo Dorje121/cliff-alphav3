@@ -15,18 +15,18 @@ const TechDynamix = () => {
   const services = [
     {
       id: "01",
-        title: "Psicoptix Technology™",
+      title: "Psicoptix Technology™",
       description:
         "Psicoptix Technology™ helps protect your eyes from harmful blue light. It keeps your vision clear and comfortable while using phones, computers, or any digital screen.",
-      slug: "cliff-zenn-single-vision",
+      slug: "psicoptix-technology",
       image: "/homeimage/technology.png",
     },
     {
       id: "02",
-       title: "CDT® (Continuum Design) 8K Definition",
+      title: "CDT® (Continuum Design) 8K Definition",
       description:
-        "This technology uses advanced light-sensitive technology to give you sharp vision and balanced brightness in every environment. ",
-      slug: "cliff-progressive-versatile",
+        "This technology uses advanced light-sensitive technology to give you sharp vision and balanced brightness in every environment.",
+      slug: "cdt-continuum-design-8k-definition",
       image: "/homeimage/8k.png",
     },
     {
@@ -34,16 +34,15 @@ const TechDynamix = () => {
       title: "Wear Fit Customization",
       description:
         "With Wear Fit Customization, each lens is shaped to match how you wear your glasses, offering clearer vision and improved safety while driving day or night.",
-   
-      slug: "cliff-dynamix-progressive",
+      slug: "wear-fit-customization",
       image: "/homeimage/wearfit.png",
     },
     {
       id: "04",
-      title: "Thikness Control Technology",
+      title: "Thickness Control Technology",
       description:
         "With Thickness Control Technology, each lens is made to stay slim and balanced, offering smooth vision from near to far without extra weight.",
-      slug: "cliff-progressive-versatile",
+      slug: "thickness-control-technology",
       image: "/technology.jpeg",
     },
    
@@ -117,7 +116,7 @@ const TechDynamix = () => {
             >
               <Link
                 href={`/technology/${service.slug}`}
-                className="cursor-pointer block group rounded-none md:rounded-none bg-[#322b00]"
+                className="cursor-pointer block group rounded-lg md:rounded-lg bg-[#322b00]"
               >
                 <div className="relative overflow-hidden h-full">
                   {/* Mobile Layout */}
@@ -128,7 +127,7 @@ const TechDynamix = () => {
                           src={service.image}
                           alt={service.title}
                           fill
-                          className="object-cover"
+                          className="object-cover rounded-lg"
                           style={{ objectPosition: 'left' }}
                         />
                       </div>
@@ -163,12 +162,12 @@ const TechDynamix = () => {
                   {/* Desktop Layout */}
                   <div className="hidden md:flex p-4 items-stretch h-full">
                     <div className="w-[280px] flex-shrink-0 mr-6">
-                      <div className="relative overflow-hidden rounded-none group h-[220px] w-full">
+                      <div className="relative overflow-hidden rounded-lg group h-[220px] w-full">
                         <Image
                           src={service.image}
                           alt={service.title}
                           fill
-                          className="object-cover rounded-none"
+                          className="object-cover rounded-lg"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent z-10" />
                       </div>

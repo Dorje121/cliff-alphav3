@@ -80,8 +80,8 @@ export const products: Record<string, Product> = {
     ],
     slug: 'single-vision',
     comparisonImages: {
-      standard: 'single1.png',
-      product: 'single2.png'
+      standard: 'cliffsingle2.png',
+      product: 'cliffsingle.png'
     },
     comparisonLabels: {
       standard: 'STANDARD LENS',
@@ -109,27 +109,72 @@ export const products: Record<string, Product> = {
   'versatile-progressive': {
     id: '02',
     title: 'VERSATILE PROGRESSIVE',
-    subtitle: 'Premium Optical Excellence',
+    subtitle: 'Seamless Vision at Every Distance',
     image: '/homeimage/progressive.jpg',
     video: '/videos/progressive.webm',
-    description: 'Photochromic lenses that adapt to changing light conditions automatically',
+    description: 'Cliff Versatile Progressive Lenses offer a sophisticated solution for presbyopia, providing clear vision at all distances with a smooth, natural transition. Our advanced lens technology ensures maximum comfort and visual acuity whether you\'re reading, working on a computer, or driving.',
     features: [
-      'Light-adaptive technology',
-      'UV protection',
-      'Scratch-resistant coating',
-      'Glare reduction'
-    ],
-    benefits: [
-      'Seamless indoor-outdoor transition',
+      'Wide, distortion-free viewing zones',
+      'Light-adaptive photochromic technology',
       '100% UV protection',
-      'Durable and long-lasting',
-      'Enhanced visual clarity'
+      'Scratch-resistant and anti-reflective coating',
+      'Reduced peripheral distortion',
+      'Enhanced contrast and clarity'
+    ],
+    technology: {
+      title: 'Adaptive Focus Technology',
+      description: 'Our Versatile Progressive lenses incorporate cutting-edge Adaptive Focus Technology that dynamically adjusts to your visual needs. The lenses feature a sophisticated design with optimized progression corridors, ensuring a wider field of view and smoother transitions between distances. The precision-crafted surface provides consistent visual performance across all gaze angles.',
+      benefits: [
+        {
+          title: 'Natural Vision',
+          description: 'Smooth, natural transitions between near, intermediate, and distance vision'
+        },
+        {
+          title: 'Wider Viewing Zones',
+          description: 'Expanded areas for comfortable reading and computer use'
+        },
+        {
+          title: 'Faster Adaptation',
+          description: 'Reduced adaptation time compared to conventional progressives'
+        }
+      ]
+    },
+    benefits: [
+      'Crystal clear vision at all distances',
+      'Reduced eye strain during prolonged screen use',
+      'Enhanced depth perception',
+      'Improved night vision',
+      'Ideal for active lifestyles',
+      'Stylish and lightweight design'
     ],
     slug: 'versatile-progressive',
+    comparisonImages: {
+      standard: 'progressive.png',
+      product: 'progressive.png'
+    },
+    comparisonLabels: {
+      standard: 'STANDARD PROGRESSIVE',
+      product: 'CLIFF VERSATILE PROGRESSIVE'
+    },
     durabilityAndCare: {
       title: 'CLIFF DuraVision Lens Coatings',
       subtitle: 'Durability & Care',
-      description: 'Like superpowers for your glasses.'
+      description: 'Advanced coatings that protect your investment and enhance visual clarity.'
+    },
+    professionalContent: {
+      description: 'The CLIFF Versatile Progressive lens is designed for today\'s dynamic lifestyles, offering exceptional visual comfort and performance. Whether your patients are professionals working long hours on digital devices or active individuals who demand clear vision at all distances, these lenses deliver uncompromising quality and comfort.',
+      benefits: [
+        'Reduced adaptation period for new wearers',
+        'Enhanced visual comfort in all lighting conditions',
+        'Ideal for patients with active, on-the-go lifestyles',
+        'Available in various materials including high-index and photochromic options'
+      ],
+      features: [
+        'Customizable for individual prescriptions',
+        'Multiple design options for different visual needs',
+        'Compatible with all frame types',
+        'Premium anti-reflective treatments available'
+      ]
     }
   },
   'dynamic-progressive': {
@@ -147,7 +192,11 @@ export const products: Record<string, Product> = {
     video: '/videos/dynamic.webm',
     technology: {
       title: 'Balance Process Design, Continuum Design Technology (6K Definition), Wear Fit Customization, AdaptEase Technology',
-      description: 'Our Dynamix Progressive lenses feature state-of-the-art technology that provides a smooth transition between different vision zones, eliminating the visible lines of traditional bifocals while offering clear vision at all distances.',
+      description: `Our Dynamix Progressive lenses feature state-of-the-art optical engineering that ensures a seamless transition between near, intermediate, and distance vision zones. 
+      By eliminating the harsh dividing lines of traditional bifocals, these lenses provide a completely natural visual experience — allowing your eyes to move effortlessly across all focal lengths. 
+      Engineered with high-precision 6K digital surfacing technology, Dynamix lenses deliver exceptional clarity, sharper focus, and smoother vision across the entire lens surface. 
+      Whether you're reading, driving, or using digital devices, these lenses are designed to adapt to your lifestyle, offering all-day comfort, reduced eye strain, and crystal-clear vision at every distance.`,
+
       benefits: [
         {
           title: 'Seamless Transitions',

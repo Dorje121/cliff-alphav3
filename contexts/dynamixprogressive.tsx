@@ -4,6 +4,7 @@ import React, { useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Image from 'next/image';
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 // SVG Checkmark Icon
 const CheckIcon = ({ className = 'w-6 h-6' }) => (
@@ -138,8 +139,9 @@ const DynamicProgressive: React.FC<DynamicProgressiveProps> = ({ product }) => {
           <div className="max-w-[94rem] mx-auto">
             <h2 className="text-3xl font-bold mb-8 text-left">Cliff Dynamix Progressive Features</h2>
 
-            <div className="flex overflow-x-auto pb-6 -mx-4 px-4 scrollbar-hide">
-              <div className="flex gap-4">
+            <div className="relative max-w-[94rem] mx-auto">
+              <div className="flex overflow-x-auto pb-6 scrollbar-hide">
+                <div className="flex gap-4 px-4">
                 {[
                   { icon: "/svgs/scratchresistance.svg", title: "Scratch Resistance", desc: "Durable and long-lasting" },
                   { icon: "/svgs/antireflective.svg", title: "Wider Vision Zones", desc: "Expanded fields of view" },
@@ -166,16 +168,26 @@ const DynamicProgressive: React.FC<DynamicProgressiveProps> = ({ product }) => {
                     <p className="text-xs sm:text-sm text-gray-300">{feature.desc}</p>
                   </div>
                 ))}
+                </div>
               </div>
             </div>
           </div>
         </div>
 
         {/* Lens Type Cards Section */}
-        <div className="py-16 px-8">
-          <h2 className="text-3xl font-bold mb-14 text-left">Dynamix Progressive Lens Options</h2>
-          <div className="relative max-w-[94rem] mx-auto">
-            <div className="flex overflow-x-auto pb-8 -mx-4 px-4 scrollbar-hide snap-x snap-mandatory">
+        <div className="py-16 pl-0 pr-0">
+          <h2 className="text-3xl font-bold mb-14 pl-8">Dynamix Progressive Lens Options</h2>
+          <div className="relative max-w-[88rem] mx-auto">
+            <button 
+              className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white/30 backdrop-blur-md hover:bg-black/50 text-yellow-400 p-3 rounded-full shadow-lg -translate-x-8 transition-all duration-200 hover:scale-110"
+              onClick={() => {
+                const container = document.querySelector('.lens-options-container');
+                if (container) container.scrollBy({ left: -300, behavior: 'smooth' });
+              }}
+            >
+              <ChevronLeft className="w-6 h-6 text-yellow-400" />
+            </button>
+            <div className="flex overflow-x-auto pb-8 scrollbar-hide snap-x snap-mandatory lens-options-container">
               {[
                 {
                   title: "Clear",
@@ -278,10 +290,19 @@ const DynamicProgressive: React.FC<DynamicProgressiveProps> = ({ product }) => {
                 </div>
               ))}
             </div>
+            <button 
+              className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white/30 backdrop-blur-md hover:bg-black/50 text-yellow-400 p-3 rounded-full shadow-lg translate-x-8 transition-all duration-200 hover:scale-110"
+              onClick={() => {
+                const container = document.querySelector('.lens-options-container');
+                if (container) container.scrollBy({ left: 300, behavior: 'smooth' });
+              }}
+            >
+              <ChevronRight className="w-6 h-6 text-yellow-400" />
+            </button>
           </div>
         </div>
       </div>
-
+ 
   );
 };
 

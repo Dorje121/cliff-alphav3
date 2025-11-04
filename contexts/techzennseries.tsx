@@ -15,18 +15,18 @@ const zennseries = () => {
   const services = [
     {
       id: "01",
-        title: "Digital Ray Path Technology™",
+      title: "Digital Ray Path Technology™",
       description:
         "Each lens is digitally designed to match your eyes, offering sharp, accurate vision and helping reduce eye strain during long screen hours.",
-      slug: "cliff-zenn-single-vision",
+      slug: "digital-ray-path-technology",
       image: "/homeimage/smart.png",
     },
     {
       id: "02",
-       title: "Smart Add Technology™",
+      title: "Smart Add Technology™",
       description:
         "With Smart Add Technology™, your lenses automatically adapt to sunlight or shade, ensuring clear, comfortable vision and protection in every environment.",
-      slug: "cliff-progressive-versatile",
+      slug: "smart-add-technology",
       image: "/homeimage/raypath.png",
     },
     {
@@ -34,8 +34,7 @@ const zennseries = () => {
       title: "Personalization Parameters",
       description:
         "Adjust lens settings to match your vision needs and lifestyle preferences for ultimate comfort and clarity",
-   
-      slug: "cliff-dynamix-progressive",
+      slug: "personalization-parameters",
       image: "/homeimage/personal.png",
     },
     {
@@ -43,7 +42,7 @@ const zennseries = () => {
       title: "Automatic Corridor Select & Insect Optimization",
       description:
          "Lenses intelligently adjust focus for every corridor of vision while minimizing distractions from small visual obstacles.",
-      slug: "cliff-progressive-versatile",
+      slug: "automatic-corridor-select-insect-optimization",
       image: "/homeimage/auto.png",
     },
    
@@ -103,8 +102,6 @@ const zennseries = () => {
           <h2 className="text-3xl md:text-6xl font-medium montserrat text-[#FFD700]">
             Technologies used in Zenn Series
           </h2>
-
-         
         </div>
 
         
@@ -117,7 +114,7 @@ const zennseries = () => {
             >
               <Link
                 href={`/technology/${service.slug}`}
-                className="cursor-pointer block group rounded-lg md:rounded-none bg-[#322b00]"
+                className="cursor-pointer block group rounded-lg md:rounded-lg bg-[#322b00]"
               >
                 <div className="relative overflow-hidden h-full">
                   {/* Mobile Layout */}
@@ -163,12 +160,12 @@ const zennseries = () => {
                   {/* Desktop Layout */}
                   <div className="hidden md:flex p-4 items-stretch h-full">
                     <div className="w-[280px] flex-shrink-0 mr-6">
-                      <div className="relative overflow-hidden rounded-none group h-[220px] w-full">
+                      <div className="relative overflow-hidden rounded-lg group h-[220px] w-full">
                         <Image
                           src={service.image}
                           alt={service.title}
                           fill
-                          className="object-cover rounded-none"
+                          className="object-cover rounded-lg"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent z-10" />
                       </div>

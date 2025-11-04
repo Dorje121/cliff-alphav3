@@ -46,7 +46,7 @@ export default function AboutSection() {
         
 
         {/* Desktop View */}
-        <div className="hidden md:sticky top-0 z-20 md:flex items-center justify-center overflow-hidden h-screen bg-black">
+        <div className="hidden md:sticky top-0 z-20 md:flex items-center justify-center overflow-hidden h-screen bg-black w-full">
           <motion.p
             className="absolute z-30 mb-6 text-4xl text-[#FFD700] montserrat md:text-6xl"
             style={{ opacity: aboutOpacity }}
@@ -55,18 +55,18 @@ export default function AboutSection() {
           </motion.p>
 
           <motion.div
-            className="relative z-40 w-full max-w-3xl px-4 sm:px-8 text-white text-center"
+            className="relative z-40 w-full max-w-6xl px-4 sm:px-8 text-white text-center"
             style={{ y: translateY }}
           >
          
 
-            <div className="space-y-10 text-[#FFD700] font-sans max-w-6xl mx-auto px-4">
+            <div className="space-y-10 text-[#FFD700] font-sans w-full max-w-[90rem] mx-auto px-8">
               
 
               {/* MagicText Section */}
               <div className="space-y-10">
-                <div className="text-center">
-                  <div className="inline-block text-2xl sm:text-3xl md:text-4xl text-[#FFD700] font-sans whitespace-nowrap">
+                <div className="text-center w-full">
+                  <div className="text-2xl sm:text-3xl md:text-5xl text-[#FFD700] montserrat w-full max-w-4xl mx-auto">
                     At Cliff Eyewear
                   </div>
                   <MagicText
@@ -84,16 +84,23 @@ export default function AboutSection() {
               </div>
               
               {/* Key Points */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12 mb-8">
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-12 mb-8 w-full">
                 <motion.div 
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.2 }}
                   viewport={{ once: true }}
-                  className="p-4 border border-[#FFD700]/30 rounded-xl bg-black/30 backdrop-blur-sm"
+                  className="p-6 border border-[#FFD700]/30 rounded-xl bg-black/30 backdrop-blur-sm h-full"
                 >
-                  <h3 className="text-[#FFD700] text-lg font-semibold mb-2">Advance Coatings and Index Options</h3>
-                  
+                  <div className="flex items-start gap-3">
+                    <svg className="w-6 h-6 text-[#FFD700] mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                    <div>
+                      <h3 className="text-[#FFD700] text-lg font-semibold mb-2 montserrat">Advance Coatings and Index Options</h3>
+                     
+                    </div>
+                  </div>
                 </motion.div>
                 
                 <motion.div 
@@ -101,10 +108,17 @@ export default function AboutSection() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.4 }}
                   viewport={{ once: true }}
-                  className="p-4 border border-[#FFD700]/30 rounded-xl bg-black/30 backdrop-blur-sm"
+                  className="p-6 border border-[#FFD700]/30 rounded-xl bg-black/30 backdrop-blur-sm h-full"
                 >
-                  <h3 className="text-[#FFD700] text-lg font-semibold mb-2">Certified Quality and Durability</h3>
-                 
+                  <div className="flex items-start gap-3">
+                    <svg className="w-6 h-6 text-[#FFD700] mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                    <div>
+                      <h3 className="text-[#FFD700] text-lg font-semibold mb-2 montserrat">Certified Quality and Durability</h3>
+                     
+                    </div>
+                  </div>
                 </motion.div>
                 
                 <motion.div 
@@ -112,10 +126,17 @@ export default function AboutSection() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.6 }}
                   viewport={{ once: true }}
-                  className="p-4 border border-[#FFD700]/30 rounded-xl bg-black/30 backdrop-blur-sm"
+                  className="p-6 border border-[#FFD700]/30 rounded-xl bg-black/30 backdrop-blur-sm h-full"
                 >
-                  <h3 className="text-[#FFD700] text-lg font-semibold mb-2">Global Service Network</h3>
-                 
+                  <div className="flex items-start gap-3">
+                    <svg className="w-6 h-6 text-[#FFD700] mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                    <div>
+                      <h3 className="text-[#FFD700] text-lg font-semibold mb-2 montserrat">Global Service Network</h3>
+                     
+                    </div>
+                  </div>
                 </motion.div>
               </div>
               

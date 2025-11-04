@@ -1,8 +1,5 @@
 
-// "use client";
-// import React, { useRef, useEffect } from "react";
-// import { TransitionLink } from "../ui/transitionlink";
-// import Image from "next/image";
+
 // import { gsap } from "gsap";
 // import { Icon } from "@iconify/react";
 // import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -269,34 +266,40 @@
 // export default HomeTechnology;
 
 
+
+
+
 "use client";
 import React, { useRef, useEffect } from "react";
 import Image from "next/image";
 import { Icon } from "@iconify-icon/react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { TransitionLink } from "../ui/transitionlink";
+import Link from "next/link";
+
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
 }
 
 const Technology = () => {
+  const titleRef = useRef<HTMLHeadingElement>(null);
+  const subtitleRef = useRef<HTMLParagraphElement>(null);
   const services = [
-      {
+    {
       id: "01",
-        title: "Psicoptix Technology™",
+      title: "Psicoptix Technology™",
       description:
         "Psicoptix Technology™ helps protect your eyes from harmful blue light. It keeps your vision clear and comfortable while using phones, computers, or any digital screen.",
-      slug: "cliff-zenn-single-vision",
+      slug: "psicoptix-technology",
       image: "/homeimage/technology.png",
     },
     {
       id: "02",
-       title: "CDT® (Continuum Design) 8K Definition",
+      title: "CDT® (Continuum Design) 8K Definition",
       description:
-        "This technology uses advanced light-sensitive technology to give you sharp vision and balanced brightness in every environment. ",
-      slug: "cliff-progressive-versatile",
+        "This technology uses advanced light-sensitive technology to give you sharp vision and balanced brightness in every environment.",
+      slug: "cdt-continuum-design-8k-definition",
       image: "/homeimage/8k.png",
     },
     {
@@ -304,16 +307,15 @@ const Technology = () => {
       title: "Wear Fit Customization",
       description:
         "With Wear Fit Customization, each lens is shaped to match how you wear your glasses, offering clearer vision and improved safety while driving day or night.",
-   
-      slug: "cliff-dynamix-progressive",
+      slug: "wear-fit-customization",
       image: "/homeimage/wearfit.png",
     },
     {
       id: "04",
-      title: "Thikness Control Technology",
+      title: "Thickness Control Technology",
       description:
         "With Thickness Control Technology, each lens is made to stay slim and balanced, offering smooth vision from near to far without extra weight.",
-      slug: "cliff-progressive-versatile",
+      slug: "thickness-control-technology",
       image: "/technology.jpeg",
     },
    
@@ -321,8 +323,6 @@ const Technology = () => {
 
   const sectionRef = useRef<HTMLDivElement>(null);
   const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
-  const titleRef = useRef<HTMLHeadingElement>(null);
-  const subtitleRef = useRef<HTMLParagraphElement>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -367,50 +367,11 @@ const Technology = () => {
     }
   };
 
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      // Title animation
-      gsap.fromTo(titleRef.current, 
-        { opacity: 0, y: 100 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 1.2,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: titleRef.current,
-            start: "top 80%",
-            toggleActions: "play reverse play reverse",
-          }
-        }
-      );
-
-      // Subtitle animation
-      gsap.fromTo(subtitleRef.current,
-        { opacity: 0, y: 80 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 1.2,
-          delay: 0.5,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: subtitleRef.current,
-            start: "top 80%",
-            toggleActions: "play reverse play reverse",
-          }
-        }
-      );
-    }, sectionRef);
-
-    return () => ctx.revert();
-  }, []);
-
   return (
     <div ref={sectionRef} className="min-h-screen text-black overflow-hidden w-full">
-      <div className="w-full mx-auto shrink-0 py-6 md:py-8 lg:py-16 relative px-4 md:px-8">
+      <div className="w-full mx-auto shrink-0 py-4 md:py-6 lg:py-8 relative px-3 md:px-6">
         
-        <div className="mb-8 md:mb-16">
+           <div className="mb-8 md:mb-16">
           <div className="flex mb-4 md:mb-6">
             <h2 
               ref={titleRef}
@@ -438,8 +399,8 @@ const Technology = () => {
               ref={(el) => addToRefs(el, index)}
               className={`h-full ${parseInt(service.id) % 2 === 0 ? 'mt-16' : ''}`}
             >
-              <TransitionLink
-                href={`/technology`}
+              <Link
+                href={`/technology/${service.slug}`}
                 className="cursor-pointer block group rounded-lg md:rounded-lg bg-[#322b00]"
               >
                 <div className="relative overflow-hidden h-full">
@@ -451,7 +412,7 @@ const Technology = () => {
                           src={service.image}
                           alt={service.title}
                           fill
-                          className="object-cover"
+                          className="object-cover rounded-lg"
                           style={{ objectPosition: 'left' }}
                         />
                       </div>
@@ -464,7 +425,7 @@ const Technology = () => {
                       <p className="text-zinc-300 group-hover:text-white leading-relaxed text-xs mb-2 poppins">
                         {service.description}
                       </p>
-                      <div className="inline-flex items-center text-amber-400 font-medium group-hover:text-white text-sm poppins">
+                      <Link href={`/technology/${service.slug}`} className="inline-flex items-center text-amber-400 font-medium group-hover:text-white text-sm poppins">
                         <span className="mr-2">Learn More</span>
                         <svg
                           className="w-4 h-4"
@@ -479,7 +440,7 @@ const Technology = () => {
                             d="M17 8l4 4m0 0l-4 4m4-4H3"
                           />
                         </svg>
-                      </div>
+                      </Link>
                     </div>
                   </div>
 
@@ -513,14 +474,17 @@ const Technology = () => {
                     </div>
                   </div>
                 </div>
-              </TransitionLink>
+              </Link>
             </div>
           ))}
         </div>
+
       </div>
     </div>
   );
 };
 
 export default Technology;
+
+
 

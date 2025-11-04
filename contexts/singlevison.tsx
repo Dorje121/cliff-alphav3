@@ -4,8 +4,8 @@ import React, { useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Image from 'next/image';
-import { div } from 'three/src/nodes/TSL.js';
-import { Check, ChevronLeft, ChevronRight, ExternalLink } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+
 // SVG Checkmark Icon
 const CheckIcon = ({ className = 'w-6 h-6' }) => (
   <svg 
@@ -29,10 +29,10 @@ gsap.registerPlugin(ScrollTrigger);
 interface SingleVisionProps {
   product: {
     title: string;
-    subtitle: string;
+    subtitle?: string;
     description: string;
-    features: string[];
-    benefits: string[];
+    features?: string[];
+    benefits?: string[];
     image: string;
     comparisonImages?: {
       standard: string;
@@ -139,20 +139,19 @@ const SingleVision: React.FC<SingleVisionProps> = ({ product }) => {
                       <span>Custom-crafted with precision back-surface freeform technology for optimal accuracy</span>
                     </li>
                   </ul>
-                  </div>
                 </div>
-                {/* Main Image */}
-                <div className="lg:w-1/2 relative">
-                  <div className="relative w-full h-full min-h-[350px] lg:absolute lg:right-0 lg:top-1/2 lg:-translate-y-1/2">
-                    <Image 
-                      src="/imAGES/singlevision.png" 
-                      alt="Cliff Single Vision Lenses" 
-                      className="w-full h-full object-contain object-right"
-                      fill
-                      priority
-                      sizes="(max-width: 768px) 100vw, 50vw"
-                    />
-                  </div>
+              </div>
+              {/* Main Image */}
+              <div className="lg:w-1/2 relative">
+                <div className="relative w-full h-full min-h-[350px] lg:absolute lg:right-0 lg:top-1/2 lg:-translate-y-1/2">
+                  <Image 
+                    src="/imAGES/singlevision.png" 
+                    alt="Cliff Single Vision Lenses" 
+                    className="w-full h-full object-contain object-right"
+                    fill
+                    priority
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
                 </div>
               </div>
             </div>
@@ -180,7 +179,7 @@ const SingleVision: React.FC<SingleVisionProps> = ({ product }) => {
           )}
         </div>
 
-       {/* Product Icons Section */}
+        {/* Product Icons Section */}
         <div className="py-16 px-8">
           <div className="max-w-[94rem] mx-auto">
             {/* Left-aligned title */}
@@ -219,126 +218,122 @@ const SingleVision: React.FC<SingleVisionProps> = ({ product }) => {
           </div>
         </div>
 
-       
-
-         {/* Lens Type Cards Section */}
-        <div className="py-16 px-8">
-          <h2 className="text-3xl font-bold mb-14 text-left">Single Vision RX Lens Options</h2>
-          <div className="relative max-w-[86rem] mx-auto">
+        {/* Lens Type Cards Section */}
+        <div className="py-16 pl-0 pr-0">
+          <h2 className="text-3xl font-bold mb-14 pl-8">Single Vision RX Lens Options</h2>
+          <div className="relative max-w-[88rem] mx-auto">
             <button 
-              className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-amber-500/80 hover:bg-amber-500 text-white p-3 rounded-full shadow-lg transform -translate-x-10 transition-all duration-200 hover:scale-110"
+              className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white/30 backdrop-blur-md hover:bg-black/50 text-yellow-400 p-3 rounded-full shadow-lg -translate-x-8 transition-all duration-200 hover:scale-110"
               onClick={() => {
                 const container = document.querySelector('.lens-options-container');
                 if (container) container.scrollBy({ left: -300, behavior: 'smooth' });
               }}
             >
-              <ChevronLeft className="w-6 h-6" />
+              <ChevronLeft className="w-6 h-6 text-yellow-400" />
             </button>
-            <div className="flex overflow-x-auto pb-8 -mx-4 px-4 scrollbar-hide snap-x snap-mandatory lens-options-container">
-            {[
-              {
-                title: "Clear",
-                description: "Ideal for everyday use with maximum clarity",
-                image: "/lenses/clear.png",
-                features: [
-                  "Crystal clear vision",
-                  "100% UV protection",
-                  "Premium anti-reflective coating",
-                  "Scratch and smudge resistant"
-                ]
-              },
-              {
-                title: "Photochromic",
-                description: "Adapts to changing light conditions",
-                image: "/lenses/brown.png",
-                features: [
-                  "Darkens in sunlight automatically",
-                  "Clears indoors within minutes",
-                  "100% UV protection",
-                  "Seamless light transition"
-                ]
-              },
-              {
-                title: "Photochromic Plus",
-                description: "Advanced light-adaptive technology",
-                image: "/lenses/gray.png",
-                features: [
-                  "Faster transition between light/dark",
-                  "Darker tint outdoors",
-                  "Enhanced color contrast",
-                  "All-day comfort"
-                ]
-              },
-              {
-                title: "Blue Shield",
-                description: "Reduces harmful blue light exposure",
-                image: "/lenses/blue.png",
-                features: [
-                  "Blocks 40% harmful blue light",
-                  "Reduces digital eye strain",
-                  "Enhances contrast and clarity",
-                  "Improves sleep quality"
-                ]
-              },
-              {
-                title: "Polarized",
-                description: "Eliminates glare for clearer vision",
-                image: "/lenses/singlevision.png",
-                features: [
-                  "99.9% UVA/UVB protection",
-                  "Reduces glare and eye fatigue",
-                  "Enhanced color perception",
-                  "Ideal for driving and outdoor activities"
-                ]
-              }
-            ].map((card, index) => (
-              <div 
-                key={index} 
-                className="flex-shrink-0 w-[24rem] mx-2 snap-center"
-                draggable="true"
-                onDragStart={(e) => e.preventDefault()}
-              >
-                <div className="bg-gradient-to-b from-zinc-900/50 to-zinc-900/10 rounded-xl border border-zinc-800 hover:border-amber-500/30 transition-all duration-300 overflow-hidden flex flex-col h-full">
-                  <div className="h-48 relative group">
-                    <Image 
-                      src={card.image}
-                      alt={card.title}
-                      fill
-                      className="object-contain"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/70 to-transparent z-0" />
-                    <h3 className="absolute bottom-4 left-0 right-0 text-center text-2xl font-bold text-white z-10 px-4">
-                      {card.title}
-                    </h3>
-                  </div>
-                  <div className="p-6 flex-1 flex flex-col">
-                    <p className="text-amber-400 mb-4 text-center text-lg font-medium">{card.description}</p>
-                    <ul className="space-y-2 flex-1">
-                      {card.features.map((feature, i) => (
-                        <li key={i} className="flex items-start">
-                          <CheckIcon className="w-5 h-5 text-amber-400 mr-2 mt-0.5 flex-shrink-0" />
-                          <span className="text-gray-300 text-sm">{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
+            <div className="flex overflow-x-auto pb-8 scrollbar-hide snap-x snap-mandatory lens-options-container space-x-2">
+              {[
+                {
+                  title: "Clear",
+                  description: "Ideal for everyday use with maximum clarity",
+                  image: "/lenses/clear.png",
+                  features: [
+                    "Crystal clear vision",
+                    "100% UV protection",
+                    "Premium anti-reflective coating",
+                    "Scratch and smudge resistant"
+                  ]
+                },
+                {
+                  title: "Photochromic",
+                  description: "Adapts to changing light conditions",
+                  image: "/lenses/brown.png",
+                  features: [
+                    "Darkens in sunlight automatically",
+                    "Clears indoors within minutes",
+                    "100% UV protection",
+                    "Seamless light transition"
+                  ]
+                },
+                {
+                  title: "Photochromic Plus",
+                  description: "Advanced light-adaptive technology",
+                  image: "/lenses/gray.png",
+                  features: [
+                    "Faster transition between light/dark",
+                    "Darker tint outdoors",
+                    "Enhanced color contrast",
+                    "All-day comfort"
+                  ]
+                },
+                {
+                  title: "Blue Shield",
+                  description: "Reduces harmful blue light exposure",
+                  image: "/lenses/blue.png",
+                  features: [
+                    "Blocks 40% harmful blue light",
+                    "Reduces digital eye strain",
+                    "Enhances contrast and clarity",
+                    "Improves sleep quality"
+                  ]
+                },
+                {
+                  title: "Polarized",
+                  description: "Eliminates glare for clearer vision",
+                  image: "/lenses/singlevision.png",
+                  features: [
+                    "99.9% UVA/UVB protection",
+                    "Reduces glare and eye fatigue",
+                    "Enhanced color perception",
+                    "Ideal for driving and outdoor activities"
+                  ]
+                }
+              ].map((card, index) => (
+                <div 
+                  key={index} 
+                   className="flex-shrink-0 w-[24rem] mx-2 snap-center"
+                >
+                  <div className="bg-gradient-to-b from-zinc-900/50 to-zinc-900/10 rounded-xl border border-zinc-800 hover:border-amber-500/30 transition-all duration-300 overflow-hidden flex flex-col h-full">
+                    <div className="h-48 relative group">
+                      <Image 
+                        src={card.image}
+                        alt={card.title}
+                        fill
+                        className="object-contain"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/70 to-transparent z-0" />
+                      <h3 className="absolute bottom-4 left-0 right-0 text-center text-2xl font-bold text-white z-10 px-4">
+                        {card.title}
+                      </h3>
+                    </div>
+                    <div className="p-6 flex-1 flex flex-col">
+                      <p className="text-amber-400 mb-4 text-center text-lg font-medium">{card.description}</p>
+                      <ul className="space-y-2 flex-1">
+                        {card.features.map((feature, i) => (
+                          <li key={i} className="flex items-start">
+                            <CheckIcon className="w-5 h-5 text-amber-400 mr-2 mt-0.5 flex-shrink-0" />
+                            <span className="text-gray-300 text-sm">{feature}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
             </div>
             <button 
-              className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-amber-500/80 hover:bg-amber-500 text-white p-3 rounded-full shadow-lg translate-x-2 transition-all duration-200 hover:scale-110"
+              className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white/30 backdrop-blur-md hover:bg-black/50 text-yellow-400 p-3 rounded-full shadow-lg translate-x-8 transition-all duration-200 hover:scale-110"
               onClick={() => {
                 const container = document.querySelector('.lens-options-container');
                 if (container) container.scrollBy({ left: 300, behavior: 'smooth' });
               }}
             >
-              <ChevronRight className="w-6 h-6" />
+              <ChevronRight className="w-6 h-6 text-yellow-400" />
             </button>
           </div>
         </div>
-     </div>
-  
+      </div>
+    </div>
   );
 };
 

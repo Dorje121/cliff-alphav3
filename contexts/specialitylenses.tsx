@@ -1,8 +1,8 @@
 "use client";
+import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Check, ChevronLeft, ChevronRight, ExternalLink } from "lucide-react";
-import { useRef } from "react";
+import { ChevronLeft, ChevronRight, ExternalLink, Check } from "lucide-react";
 
 export default function SpecialityLenses() {
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -86,7 +86,7 @@ export default function SpecialityLenses() {
         {/* Title Section */}
          <div className="pb-12">
             <h2 className="text-2xl md:text-6xl montserrat text-[#FFD700] mb-4">
-              Specialty Lenses
+              Speciality Lenses
             </h2>
             <p className="text-lg md:text-xl !text-yellow-400 max-w-3xl">
                Customized solutions for specific vision needs and lifestyles
@@ -111,10 +111,14 @@ export default function SpecialityLenses() {
           className="flex gap-4 overflow-x-auto scrollbar-hide scroll-smooth snap-x snap-mandatory"
         >
           {cards.map((card) => (
-            <div
-              key={card.id}
-              className="bg-[#322b00]/50 min-w-[340px] md:min-w-[420px] rounded-lg lg:min-w-[440px] h-auto flex flex-col shadow-md overflow-hidden border border-yellow-900/30 hover:shadow-lg transition snap-center"
+            <Link 
+              key={card.id} 
+              href={card.id === '01' ? '/cliff-tinted-lenses' : '#'}
+              className="block"
             >
+              <div
+                className="bg-[#322b00]/50 min-w-[340px] md:min-w-[420px] rounded-lg lg:min-w-[440px] h-auto flex flex-col shadow-md overflow-hidden border border-yellow-900/30 hover:shadow-lg transition snap-center hover:border-cyan-500/50"
+              >
               <div className="w-full h-[280px] relative flex-shrink-0">
                 <Image
                   src={card.image}
@@ -140,7 +144,7 @@ export default function SpecialityLenses() {
 
                 <div className="mt-6 flex justify-end">
                   <Link
-                    href={`/products/${card.slug}`}
+                    href={card.id === '01' ? '/cliff-tinted-lenses' : `/products/${card.slug}`}
                     className="inline-flex items-center text-amber-400 text-base font-medium hover:text-white transition-colors duration-300 group"
                   >
                     Learn More
@@ -148,7 +152,8 @@ export default function SpecialityLenses() {
                   </Link>
                 </div>
               </div>
-            </div>
+              </div>
+            </Link>
           ))}
         </div>
       </div>

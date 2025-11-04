@@ -2,16 +2,27 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
 
+// Fixed images for each lens type
+const lensImages = {
+  clear: '/homeimage/single1.png',
+  photoz: '/homeimage/photz.png',
+  photochrome: '/homeimage/technology.png',
+  polarized: '/homeimage/driveclear.png'
+};
+
 export default function ZennSeries() {
+  // Use fixed images for each lens type
+  const { clear, photoz, photochrome, polarized } = lensImages;
+  
   return (
     <div className="min-h-screen bg-black text-white">
       {/* Back Button */}
-      <div className="container mx-auto pt-16 px-8 py-8">
+      {/* <div className="container mx-auto pt-16 px-8 py-8">
         <Link href="/products" className="inline-flex items-center text-amber-400 hover:text-amber-300 transition-colors mb-8">
           <ArrowLeft className="w-5 h-5 mr-2" />
           Back to Products
         </Link>
-      </div>
+      </div> */}
 
       <section className="py-4 md:py-2 px-6">
         <div className="container mx-auto max-w-7xl">
@@ -20,6 +31,9 @@ export default function ZennSeries() {
               <h1 className="text-4xl md:text-5xl lg:text-6xl monserrat leading-tight">
                 Cliff Zen Series 
               </h1>
+              <p className="text-lg md:text-xl text-gray-300 mt-4 max-w-2xl">
+                In today's connected world, people expect more than vision correction - They want clarity, comfort, and adaptability.
+              </p>
             </div>
             <div className="relative h-80 md:h-[500px] w-full">
               <Image
@@ -34,93 +48,253 @@ export default function ZennSeries() {
         </div>
       </section>
 
-
       <section className="py-16 bg-black">
-        <div className="container mx-auto px-16">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          {/* First Row */}
+          <div className="grid grid-cols-3 gap-8 mb-12">
             {/* Clarity */}
-            <div className="p-4 rounded-xl">
-              <div className="flex items-center gap-4">
-                <div className="flex-shrink-0 w-18 h-18 bg-amber-500/20 rounded-full flex items-center justify-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-amber-400">
-                    <circle cx="12" cy="12" r="10" />
-                    <path d="M12 16v-4" />
-                    <path d="M12 8h.01" />
-                  </svg>
-                </div>
-                <h3 className="text-lg font-semibold">Clarity</h3>
+            <div className="flex flex-col items-center gap-4">
+              <div className="w-24 h-24 bg-[#FFD700]/70 backdrop-blur-md rounded-xl flex items-center justify-center p-4 shadow-lg border border-white/10">
+                <Image 
+                  src="/flattyicon/clarity.png" 
+                  alt="Clarity" 
+                  width={60} 
+                  height={60}
+                  className="w-14 h-14 object-contain"
+                />
               </div>
+              <h3 className="text-xl font-semibold text-white">Clarity</h3>
             </div>
 
             {/* Comfort */}
-            <div className="p-4 rounded-xl">
-              <div className="flex items-center gap-4">
-                <div className="flex-shrink-0 w-18 h-18 bg-amber-500/20 rounded-full flex items-center justify-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-amber-400">
-                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
-                  </svg>
-                </div>
-                <h3 className="text-lg font-semibold">Comfort</h3>
+            <div className="flex flex-col items-center gap-4">
+              <div className="w-24 h-24 bg-[#FFD700]/70 backdrop-blur-md rounded-xl flex items-center justify-center p-4 shadow-lg border border-white/10">
+                <Image 
+                  src="/flattyicon/comfort.png" 
+                  alt="Comfort" 
+                  width={60} 
+                  height={60}
+                  className="w-14 h-14 object-contain"
+                />
               </div>
+              <h3 className="text-xl font-semibold text-white">Comfort</h3>
             </div>
 
             {/* Digital Ready */}
-            <div className="p-4 rounded-xl">
-              <div className="flex items-center gap-4">
-                <div className="flex-shrink-0 w-18 h-18 bg-amber-500/20 rounded-full flex items-center justify-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-amber-400">
-                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
-                    <line x1="8" y1="21" x2="16" y2="21" />
-                    <line x1="12" y1="17" x2="12" y2="21" />
-                  </svg>
-                </div>
-                <h3 className="text-lg font-semibold">Digital Ready</h3>
+            <div className="flex flex-col items-center gap-4">
+              <div className="w-24 h-24 bg-[#FFD700]/70 backdrop-blur-md rounded-xl flex items-center justify-center p-4 shadow-lg border border-white/10">
+                <Image 
+                  src="/flattyicon/digitalready.png" 
+                  alt="Digital Ready" 
+                  width={60} 
+                  height={60}
+                  className="w-14 h-14 object-contain"
+                />
               </div>
+              <h3 className="text-xl font-semibold text-white">Digital Ready</h3>
             </div>
+          </div>
 
-            {/* Precise */}
-            <div className=" p-4 rounded-xl">
-              <div className="flex items-center gap-4">
-                <div className="flex-shrink-0 w-18 h-18 bg-amber-500/20 rounded-full flex items-center justify-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-amber-400">
-                    <path d="M12 2v4" />
-                    <path d="m16.24 7.76 2.83-2.83" />
-                    <path d="M17 12h4" />
-                    <path d="m16.24 16.24 2.83 2.83" />
-                    <path d="M12 18v4" />
-                    <path d="m7.76 16.24-2.83 2.83" />
-                    <path d="M7 12H3" />
-                    <path d="m7.76 7.76-2.83-2.83" />
-                  </svg>
-                </div>
-                <h3 className="text-lg font-semibold">Precise</h3>
+          {/* Second Row */}
+          <div className="grid grid-cols-3 gap-8">
+            {/* Durable */}
+            <div className="flex flex-col items-center gap-4">
+              <div className="w-24 h-24 bg-[#FFD700]/70 backdrop-blur-md rounded-xl flex items-center justify-center p-4 shadow-lg border border-white/10">
+                <Image 
+                  src="/flattyicon/durable.png" 
+                  alt="Durable" 
+                  width={60} 
+                  height={60}
+                  className="w-14 h-14 object-contain"
+                />
               </div>
+              <h3 className="text-xl font-semibold text-white">Durable</h3>
             </div>
 
             {/* Personalized */}
-            <div className=" p-4 rounded-xl">
-              <div className="flex items-center gap-4">
-                <div className="flex-shrink-0 w-18 h-18 bg-amber-500/20 rounded-full flex items-center justify-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-amber-400">
-                    <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
-                    <circle cx="12" cy="7" r="4" />
-                  </svg>
-                </div>
-                <h3 className="text-lg font-semibold">Personalized</h3>
+            <div className="flex flex-col items-center gap-4">
+              <div className="w-24 h-24 bg-[#FFD700]/70 backdrop-blur-md rounded-xl flex items-center justify-center p-4 shadow-lg border border-white/10">
+                <Image 
+                  src="/flattyicon/personalize.png" 
+                  alt="Personalized" 
+                  width={60} 
+                  height={60}
+                  className="w-14 h-14 object-contain"
+                />
               </div>
+              <h3 className="text-xl font-semibold text-white">Personalized</h3>
             </div>
 
-            {/* Durable */}
-            <div className=" p-4 rounded-xl">
-              <div className="flex items-center gap-4">
-                <div className="flex-shrink-0 w-18 h-18 bg-amber-500/20 rounded-full flex items-center justify-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-amber-400">
-                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                  </svg>
-                </div>
-                <h3 className="text-lg font-semibold">Durable</h3>
+            {/* Precise */}
+            <div className="flex flex-col items-center gap-4">
+              <div className="w-24 h-24 bg-[#FFD700]/70 backdrop-blur-md rounded-xl flex items-center justify-center p-4 shadow-lg border border-white/10">
+                <Image 
+                  src="/flattyicon/precised.png" 
+                  alt="Precise" 
+                  width={60} 
+                  height={60}
+                  className="w-14 h-14 object-contain"
+                />
               </div>
+              <h3 className="text-xl font-semibold text-white">Precise</h3>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Lens Types Section */}
+      <section className="py-16 bg-black">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl md:text-4xl font-bold text-white text-left mb-8">Choose Your Cliff Single Vision Lenses</h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 py-8">
+            {/* Clear Lens */}
+            <a href="/products/single-vision" className="group block h-full">
+              <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg overflow-hidden h-full   flex flex-col">
+                <div className="relative h-48 bg-gray-800 flex items-center justify-center">
+                  <Image 
+                    src={clear}
+                    alt="Clear Lens" 
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div className="p-6 flex-1 flex flex-col">
+                  <h3 className="text-xl font-semibold text-white mb-2">Clear</h3>
+                  <p className="text-gray-400">Perfect for indoor use and low-light conditions, providing true color vision.</p>
+                </div>
+              </div>
+            </a>
+            {/* Photoz Lens */}
+            <a href="/products/single-vision" className="group block h-full">
+              <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg overflow-hidden h-full flex flex-col">
+                <div className="relative h-48 bg-gray-800 flex items-center justify-center">
+                  <Image 
+                    src={photoz}
+                    alt="Photoz Lens" 
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div className="p-6 flex-1 flex flex-col">
+                  <h3 className="text-xl font-semibold text-white mb-2">Photoz</h3>
+                  <p className="text-gray-400">Light-adaptive lenses that automatically adjust to changing light conditions.</p>
+                </div>
+              </div>
+            </a>
+            {/* Photochrome Lens */}
+            <a href="/products/single-vision" className="group block h-full">
+              <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg overflow-hidden h-full flex flex-col">
+                <div className="relative h-48 bg-gray-800 flex items-center justify-center">
+                  <Image 
+                    src={photochrome}
+                    alt="Photochrome Lens" 
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div className="p-6 flex-1 flex flex-col">
+                  <h3 className="text-xl font-semibold text-white mb-2">Photochrome</h3>
+                  <p className="text-gray-400">Transitions from clear to dark outdoors, offering UV protection and comfort.</p>
+                </div>
+              </div>
+            </a>
+            {/* Polarized Lens */}
+            <a href="/products/single-vision" className="group block h-full">
+              <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg overflow-hidden h-full flex flex-col">
+                <div className="relative h-48 bg-gray-800 flex items-center justify-center">
+                  <Image 
+                    src={polarized}
+                    alt="Polarized Lens" 
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div className="p-6 flex-1 flex flex-col">
+                  <h3 className="text-xl font-semibold text-white mb-2">Polarized</h3>
+                  <p className="text-gray-400">Reduces glare from reflective surfaces, ideal for driving and outdoor activities.</p>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+      <section className="py-16 bg-black">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl md:text-4xl font-bold text-white text-left mb-8">Choose Your Cliff zenn Progressive Lenses</h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 py-8">
+            {/* Clear Lens */}
+            <a href="/products/progressive" className="group block h-full">
+              <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg overflow-hidden h-full   flex flex-col">
+                <div className="relative h-48 bg-gray-800 flex items-center justify-center">
+                  <Image 
+                    src={clear}
+                    alt="Clear Lens" 
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div className="p-6 flex-1 flex flex-col">
+                  <h3 className="text-xl font-semibold text-white mb-2">Clear</h3>
+                  <p className="text-gray-400">Perfect for indoor use and low-light conditions, providing true color vision.</p>
+                </div>
+              </div>
+            </a>
+
+            {/* Photoz Lens */}
+            <a href="/products/single-vision" className="group block h-full">
+              <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg overflow-hidden h-full flex flex-col">
+                <div className="relative h-48 bg-gray-800 flex items-center justify-center">
+                  <Image 
+                    src={photoz}
+                    alt="Photoz Lens" 
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div className="p-6 flex-1 flex flex-col">
+                  <h3 className="text-xl font-semibold text-white mb-2">Photoz</h3>
+                  <p className="text-gray-400">Light-adaptive lenses that automatically adjust to changing light conditions.</p>
+                </div>
+              </div>
+            </a>
+
+            {/* Photochrome Lens */}
+            <a href="/products/single-vision" className="group block h-full">
+              <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg overflow-hidden h-full flex flex-col">
+                <div className="relative h-48 bg-gray-800 flex items-center justify-center">
+                  <Image 
+                    src={photochrome}
+                    alt="Photochrome Lens" 
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div className="p-6 flex-1 flex flex-col">
+                  <h3 className="text-xl font-semibold text-white mb-2">Photochrome</h3>
+                  <p className="text-gray-400">Transitions from clear to dark outdoors, offering UV protection and comfort.</p>
+                </div>
+              </div>
+            </a>
+
+            {/* Polarized Lens */}
+            <a href="/products/single-vision" className="group block h-full">
+              <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg overflow-hidden h-full flex flex-col">
+                <div className="relative h-48 bg-gray-800 flex items-center justify-center">
+                  <Image 
+                    src={polarized}
+                    alt="Polarized Lens" 
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div className="p-6 flex-1 flex flex-col">
+                  <h3 className="text-xl font-semibold text-white mb-2">Polarized</h3>
+                  <p className="text-gray-400">Reduces glare from reflective surfaces, ideal for driving and outdoor activities.</p>
+                </div>
+              </div>
+            </a>
           </div>
         </div>
       </section>

@@ -71,7 +71,7 @@ export default function CircleAttachment() {
             fill
             // objectFit="cover"
             quality={100}
-            className="w-full h-full opacity-50 hover:opacity-100 transition-opacity duration-300 md:object-cover object-contain object-right transalte-y-50 -rotate-12"
+            className="w-full h-full md:object-cover object-contain object-right transalte-y-50 -rotate-12"
           />
           {/* <div className="absolute z-50 -bottom-1 h-32 w-full bg-gradient-to-b from-transparent to-black "></div> */}
         </div>
@@ -88,7 +88,7 @@ export default function CircleAttachment() {
               alt="Earth Animation"
               width={400}
               height={400}
-              className="w-full h-full object-contain opacity-30 hover:opacity-100 transition-opacity duration-300"
+              className="w-full h-full object-contain opacity-50 hover:opacity-100 transition-opacity duration-300"
               unoptimized
               priority
             />
@@ -96,7 +96,7 @@ export default function CircleAttachment() {
         
          
         <div className="relative w-full h-full transalte-y-50">
-          <div className="absolute inset-0 bg-black/50 z-10"></div>
+          <div className="absolute inset-0  z-10"></div>
           <Image
             src="/earth.jpg"
             alt="Revealed Image"

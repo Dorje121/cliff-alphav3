@@ -1,6 +1,7 @@
 "use client";
 import React, { useRef, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { gsap } from "gsap";
 import { Icon } from "@iconify/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -15,43 +16,42 @@ const CoatingContents = () => {
   const subtitleRef = useRef<HTMLParagraphElement>(null);
 
   const categories = [
-    
-     {
-      id: "01",
-      title: "Nox Coating",
-      subtitle: "Advanced Progressive Technology",
-      description: "Complete blue light protection lenses for modern digital lifestyle and visibility",
-      slug: "cliff-dynamic",
-      image: "/bluesafecoatings/nox.png",
+    {
+      id: "01", 
+      title: "NOX COATING",
+      subtitle: "Advanced Blue Light Protection",
+      description: "Protect your eyes with NOX Coating, designed to filter harmful blue light",
+      slug: "nox-coating",
+      image: "/homeimage/nox.png",
       alignment: "left",
       buttonText: "View Details"
     },
     {
       id: "02", 
-      title: "Blue Safe Coating",
-      subtitle: "Premium Optical Excellence",
-      description: "Photochromic lenses that adapt to changing light conditions automatically",
-      slug: "cliff-zenn-series",
-      image: "/bluesafecoatings/blue.png",
+      title: "BLUE SAFE COATING",
+      subtitle: "Advanced Blue Light Protection",
+      description: "Blue safe coating lenses provide advanced blue light protection",
+      slug: "blue-safe-coating",
+      image: "/bluesafe/Bluesafe.jpg",
       alignment: "right",
       buttonText: "View Details"
     },
     {
       id: "03", 
-      title: "Drive Clear Coating",
+      title: "DRIVE CLEAR COATING",
       subtitle: "Premium Optical Excellence",
-      description: "Specialized lenses optimized for driving and enhanced road visibility",
-      slug: "cliff-zenn-series",
-      image: "/homeimage/lense6.png",
+      description: "Lenses are specially designed to provide superior optical clarity",
+      slug: "drive-clear-coating",
+      image: "/homeimage/driveclear.png",
       alignment: "left",
       buttonText: "View Details"
     },
     {
       id: "04", 
-      title: "Photo Z Coating",
+      title: "PHOTO Z COATING",
       subtitle: "Premium Optical Excellence",
-      description: "Multi-focal progressive lenses for seamless vision at all distances and visibility",
-      slug: "cliff-zenn-series",
+      description: "Advanced multi-focal progressive lenses for all distances",
+      slug: "photo-z-coating",
       image: "/homeimage/lense6.png",
       alignment: "right",
       buttonText: "View Details"
@@ -200,9 +200,12 @@ const CoatingContents = () => {
               <div className="absolute inset-0 flex p-6 text-white flex-col items-center pt-10 text-center">
                 <h3 className="text-2xl font-bold lg:text-3xl mb-3 px-4 w-full break-words">{category.title}</h3>
                 <p className="text-base lg:text-lg mb-6 px-4 max-w-md">{category.subtitle}</p>
-                <button className="px-6 py-2 bg-[#FDD600] rounded-full text-black font-bold hover:bg-[#FFD700]/80 transition-colors duration-300 whitespace-nowrap">
+                <Link 
+                  href={`/Coating/${category.slug}`}
+                  className="px-6 py-2 bg-[#FDD600] rounded-full text-black font-bold hover:bg-[#FFD700] transition-all duration-300 whitespace-nowrap transform hover:scale-105 hover:shadow-lg"
+                >
                   {category.buttonText}
-                </button>
+                </Link>
               </div>
             </div>
           ))}
