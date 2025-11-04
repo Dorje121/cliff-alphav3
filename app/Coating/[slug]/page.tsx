@@ -4,10 +4,11 @@ import Link from "next/link";
 import { ChevronLeft } from "lucide-react";
 import { Icon } from "@iconify/react";
 import { featureSets, categories } from "@/components/mockdata/coatings";
-import type { Metadata } from 'next';
 
-interface PageProps {
-  params: { slug: string };
+type PageProps = {
+  params: { 
+    slug: string 
+  };
   searchParams?: { [key: string]: string | string[] | undefined };
 }
 
@@ -17,7 +18,7 @@ interface Feature {
   description?: string | string[];
 }
 
-export default async function CoatingPage({ params }: PageProps) {
+export default function CoatingPage({ params }: PageProps) {
   const coating = categories.find((cat) => cat.slug === params.slug);
 
   if (!coating) {
