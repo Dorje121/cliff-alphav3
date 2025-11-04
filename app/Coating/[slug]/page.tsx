@@ -5,12 +5,6 @@ import { ChevronLeft } from "lucide-react";
 import { Icon } from "@iconify/react";
 import { featureSets, categories } from "@/components/mockdata/coatings";
 
-type PageProps = {
-  params: { 
-    slug: string 
-  };
-  searchParams?: { [key: string]: string | string[] | undefined };
-}
 
 interface Feature {
   icon: string;
@@ -18,7 +12,9 @@ interface Feature {
   description?: string | string[];
 }
 
-export default function CoatingPage({ params }: PageProps) {
+export default async function CoatingPage({ params }: { params: { 
+    slug: string 
+  }}) {
   const coating = categories.find((cat) => cat.slug === params.slug);
 
   if (!coating) {
