@@ -92,75 +92,79 @@ const Coatings = () => {
         }
       );
 
-      
-      gsap.utils.toArray(".category-section").forEach((section: any, index) => {
-        const content = section.querySelector(".category-content");
-        const contentWrapper = section.querySelector(".content-wrapper");
-        const imageContainer = section.querySelector(".category-image");
+      categories.forEach((_, index) => {
+        const section = document.querySelector(`#category-${index}`);
+        if (!section) return;
 
+        const contentWrapper = section.querySelector('.content-wrapper');
+        const content = section.querySelector('.content');
+        const imageContainer = section.querySelector('.image-container');
 
-        gsap.fromTo(contentWrapper,
-          { y: -150, opacity: 0 },
-          {
-            y: 0,
-            opacity: 1,
-            duration: 1.2,
-            ease: "power3.out",
-            scrollTrigger: {
-              trigger: section,
-              start: "top 70%",
-              toggleActions: "play reverse play", 
+        if (contentWrapper) {
+          gsap.fromTo(contentWrapper,
+            { y: -150, opacity: 0 },
+            {
+              y: 0,
+              opacity: 1,
+              duration: 1.2,
+              ease: "power3.out",
+              scrollTrigger: {
+                trigger: section,
+                start: "top 70%",
+                toggleActions: "play reverse play", 
+              }
             }
-          }
-        );
+          );
+        }
 
-      
-        gsap.fromTo(content.children,
-          { opacity: 0, y: 30 },
-          {
-            opacity: 1,
-            y: 0,
-            duration: 0.8,
-            stagger: 0.15,
-            delay: 0.3,
-            ease: "power2.out",
-            scrollTrigger: {
-              trigger: content,
-              start: "top 70%",
-              toggleActions: "play reverse play reverse", 
+        if (content) {
+          gsap.fromTo(content.children,
+            { opacity: 0, y: 30 },
+            {
+              opacity: 1,
+              y: 0,
+              duration: 0.8,
+              stagger: 0.15,
+              delay: 0.3,
+              ease: "power2.out",
+              scrollTrigger: {
+                trigger: content,
+                start: "top 70%",
+                toggleActions: "play reverse play reverse", 
+              }
             }
-          }
-        );
+          );
+        }
 
-        
-        const isRightToLeft = index === 0 || index === 2; 
-        const initialRotation = isRightToLeft ? 25 : -25;
-        const initialX = isRightToLeft ? 300 : -300;
-        
-        gsap.fromTo(imageContainer,
-          {
-            rotation: initialRotation,
-            x: initialX,
-            opacity: 0,
-            scale: 0.9
-          },
-          {
-            rotation: 0,
-            x: 0,
-            opacity: 1,
-            scale: 1,
-            duration: 1.4,
-            ease: "power2.out",
-            scrollTrigger: {
-              trigger: imageContainer,
-              start: "top 75%",
-              toggleActions: "play reverse play reverse", 
+        if (imageContainer) {
+          const isRightToLeft = index === 0 || index === 2; 
+          const initialRotation = isRightToLeft ? 25 : -25;
+          const initialX = isRightToLeft ? 300 : -300;
+          
+          gsap.fromTo(imageContainer,
+            {
+              rotation: initialRotation,
+              x: initialX,
+              opacity: 0,
+              scale: 0.9
+            },
+            {
+              rotation: 0,
+              x: 0,
+              opacity: 1,
+              scale: 1,
+              duration: 1.4,
+              ease: "power2.out",
+              scrollTrigger: {
+                trigger: imageContainer,
+                start: "top 75%",
+                toggleActions: "play reverse play reverse", 
+              }
             }
-          }
-        );
+          );
+        }
       });
 
-    
       const buttons = document.querySelectorAll('.category-button');
       buttons.forEach(button => {
         button.addEventListener('mouseenter', () => {
@@ -171,11 +175,10 @@ const Coatings = () => {
           gsap.to(button, { y: 0, duration: 0.3, ease: "power2.out" });
         });
       });
-
     }, sectionRef);
 
     return () => ctx.revert();
-  }, []);
+  }, [categories]);
 
   return (
     <div ref={sectionRef} className="min-h-screen py-10 text-white overflow-hidden w-full">
@@ -193,7 +196,11 @@ const Coatings = () => {
         {/* 2x2 Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
           {categories.map((category, index) => (
-            <div key={category.id} className="relative h-[500px] bg-white rounded-none overflow-hidden">
+            <div 
+              key={category.id} 
+              id={`category-${index}`}
+              className="category-section relative h-[500px] bg-white rounded-none overflow-hidden"
+            >
               <Image src={category.image} alt={category.title} fill className="object-cover" />
               <div className="absolute inset-0 flex p-6 text-white flex-col items-center pt-10 text-center">
                 <h3 className="text-2xl font-bold lg:text-3xl mb-3 px-4 w-full break-words">{category.title}</h3>
