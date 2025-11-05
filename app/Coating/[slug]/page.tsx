@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import { ChevronLeft } from "lucide-react";
+import { ChevronLeft, HeartHandshakeIcon } from "lucide-react";
 import { Icon } from "@iconify/react";
 import { featureSets, categories } from "@/components/mockdata/coatings";
 
@@ -48,7 +48,7 @@ export default async function CoatingPage({ params }: { params: {
         </div>
       </div>
 
-      {/* Hero Section with Background Image */}
+    
       <section className="relative h-[60vh] min-h-[450px] flex flex-col justify-center items-center overflow-hidden">
         <div
           className="absolute inset-0 w-full h-full bg-cover bg-center z-0"
