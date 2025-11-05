@@ -6,6 +6,7 @@ import Image from "next/image";
 import { Skiper47 } from "@/components/ui/cardsswiper";
 import { useParams, notFound } from 'next/navigation';
 import { Target, Eye, Settings, User, Glasses } from 'lucide-react';
+import { SpecsCarousel } from '@/components/ui/SpecsCarousel';
 
 // Define the technology data type
 type Technology = {
@@ -513,6 +514,12 @@ const CliffTechnology = () => {
                 regardless of the frame that is selected. In addition,
                 Digital Ray Path® lenses can be calculated with</p>
               </div>
+            </div>
+            
+            {/* Specifications Carousel */}
+            <div className="mt-16 mb-8 py-10">
+              <h2 className="text-3xl font-bold text-[#FFD700] text-left mb-8"> Individual Personlization </h2>
+              <SpecsCarousel />
             </div>
           </div>
         </div>

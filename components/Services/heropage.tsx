@@ -47,7 +47,7 @@ export default function HeroSection({
           
           {/* Content Overlay */}
           <div className="relative z-10 h-full flex items-center">
-            <div className="w-full px-8">
+            <div className="w-full px-8 pt-40">
               <div className="max-w-4xl">
                 <h1 className="text-4xl md:text-5xl lg:text-6xl monsterrat text-white mb-4">
                   {title}
