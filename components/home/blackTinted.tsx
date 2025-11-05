@@ -185,7 +185,7 @@ const CliffTintedLenses = () => {
                     </div>
                     <div className="text-center  p-2 mb-6 sm:mb-8">
                       <h2 className="text-2xl montserrat sm:text-3xl lg:text-4xl font-medium mb-2 text-[#FFD700]">
-                        {category.name} Tints
+                        Lens Tints
                       </h2>
                       <p className="text-[#FFD700] poppins text-base sm:text-lg">
                         {category.description}
