@@ -1,22 +1,20 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
+// import { useRouter } from "next/navigation";
 
 import LandingVideo from "@/components/home/hero";
-import HomeList from "@/components/home/HomeList";
 import CircleAttachment from "@/components/home/creative";
 import Blog from "@/components/home/Blog";
-import LensDemo from "@/components/home/Focus";
-import WhiteFooter from "@/components/home/whitefoot";
 import BlackTinted from "@/components/home/blackTinted";
-import AnimateSection from "@/components/home/animate";
+// import HomeList from "@/components/home/HomeList";
+// import LensDemo from "@/components/home/Focus";
+// import WhiteFooter from "@/components/home/whitefoot";
+// import AnimateSection from "@/components/home/animate";
 import ScrollBackground from "@/components/home/scrollbg";
 import Ourcoatings from "@/components/home/ourcoatings";
 import HomeProducts from "@/components/home/homeproducts";
 import HomeTechnology from "@/components/home/hometechnology";
 import AboutSection from "@/components/home/aboutus";
-
-
 
 const Page = () => {
   const [pageState, setPageState] = useState<"landing" | "main">("landing");
@@ -64,21 +62,17 @@ const Page = () => {
       <div className="relative">
         <ScrollBackground />
         <AboutSection />
-         {/* <TextScroll />  */}
-         <CircleAttachment />
-      
-      
-        
-           <Ourcoatings />
-        <HomeProducts />  
-              
+        {/* <TextScroll />  */}
+        <CircleAttachment />
+
+        <Ourcoatings />
+        <HomeProducts />
+
         <HomeTechnology />
         <div id="blog" className="min-h-screen">
           <Blog />
- 
 
-        <BlackTinted />
-       
+          <BlackTinted />
         </div>
       </div>
     </div>

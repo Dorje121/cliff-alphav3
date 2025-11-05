@@ -14,53 +14,57 @@ const Coatings = () => {
   const titleRef = useRef<HTMLHeadingElement>(null);
   const subtitleRef = useRef<HTMLParagraphElement>(null);
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const categories = [
     {
-      id: "01", 
+      id: "01",
       title: "NOX COATING",
       subtitle: "Advanced Blue Light Protection",
-      description: "Protect your eyes with NOX Coating, designed to filter harmful blue light",
+      description:
+        "Protect your eyes with NOX Coating, designed to filter harmful blue light",
       slug: "nox-coating",
-      image: "/homeimage/lens.png",
+      image: "/homeimage/nox.jpg",
       alignment: "left",
-      buttonText: "View Details"
+      buttonText: "Learn more",
     },
     {
-      id: "02", 
+      id: "02",
       title: "BLUE SAFE COATING",
       subtitle: "Advanced Blue Light Protection",
-      description: "Blue safe coating lenses provide advanced blue light protection",
+      description:
+        "Blue safe coating lenses provide advanced blue light protection",
       slug: "blue-safe-coating",
-      image: "/homeimage/lense6.png",
+      image: "/homeimage/blue-safe2.png",
       alignment: "right",
-      buttonText: "View Details"
+      buttonText: "Learn more",
     },
     {
-      id: "03", 
+      id: "03",
       title: "DRIVE CLEAR COATING",
       subtitle: "Premium Optical Excellence",
-      description: "Lenses are specially designed to provide superior optical clarity",
+      description:
+        "Lenses are specially designed to provide superior optical clarity",
       slug: "drive-clear-coating",
-      image: "/homeimage/driveclear.png",
+      image: "/homeimage/lens.png",
       alignment: "left",
-      buttonText: "View Details"
+      buttonText: "Learn more",
     },
     {
-      id: "04", 
+      id: "04",
       title: "PHOTO Z COATING",
       subtitle: "Premium Optical Excellence",
       description: "Advanced multi-focal progressive lenses for all distances",
       slug: "photo-z-coating",
-      image: "/homeimage/photz.png",
+      image: "/homeimage/lens.png",
       alignment: "right",
-      buttonText: "View Details"
-    }
+      buttonText: "Learn more",
+    },
   ];
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      
-      gsap.fromTo(titleRef.current, 
+      gsap.fromTo(
+        titleRef.current,
         { opacity: 0, y: 100 },
         {
           opacity: 1,
@@ -70,13 +74,13 @@ const Coatings = () => {
           scrollTrigger: {
             trigger: titleRef.current,
             start: "top 80%",
-            toggleActions: "play reverse play reverse", 
-          }
+            toggleActions: "play reverse play reverse",
+          },
         }
       );
 
-      
-      gsap.fromTo(subtitleRef.current,
+      gsap.fromTo(
+        subtitleRef.current,
         { opacity: 0, y: 80 },
         {
           opacity: 1,
@@ -87,8 +91,8 @@ const Coatings = () => {
           scrollTrigger: {
             trigger: subtitleRef.current,
             start: "top 80%",
-            toggleActions: "play reverse play reverse", 
-          }
+            toggleActions: "play reverse play reverse",
+          },
         }
       );
 
@@ -96,29 +100,12 @@ const Coatings = () => {
         const section = document.querySelector(`#category-${index}`);
         if (!section) return;
 
-        const contentWrapper = section.querySelector('.content-wrapper');
-        const content = section.querySelector('.content');
-        const imageContainer = section.querySelector('.image-container');
-
-        if (contentWrapper) {
-          gsap.fromTo(contentWrapper,
-            { y: -150, opacity: 0 },
-            {
-              y: 0,
-              opacity: 1,
-              duration: 1.2,
-              ease: "power3.out",
-              scrollTrigger: {
-                trigger: section,
-                start: "top 70%",
-                toggleActions: "play reverse play", 
-              }
-            }
-          );
-        }
+        const content = section.querySelector(".content");
+        const imageContainer = section.querySelector(".image-container");
 
         if (content) {
-          gsap.fromTo(content.children,
+          gsap.fromTo(
+            content.children,
             { opacity: 0, y: 30 },
             {
               opacity: 1,
@@ -130,23 +117,24 @@ const Coatings = () => {
               scrollTrigger: {
                 trigger: content,
                 start: "top 70%",
-                toggleActions: "play reverse play reverse", 
-              }
+                toggleActions: "play reverse play reverse",
+              },
             }
           );
         }
 
         if (imageContainer) {
-          const isRightToLeft = index === 0 || index === 2; 
+          const isRightToLeft = index === 0 || index === 2;
           const initialRotation = isRightToLeft ? 25 : -25;
           const initialX = isRightToLeft ? 300 : -300;
-          
-          gsap.fromTo(imageContainer,
+
+          gsap.fromTo(
+            imageContainer,
             {
               rotation: initialRotation,
               x: initialX,
               opacity: 0,
-              scale: 0.9
+              scale: 0.9,
             },
             {
               rotation: 0,
@@ -158,20 +146,20 @@ const Coatings = () => {
               scrollTrigger: {
                 trigger: imageContainer,
                 start: "top 75%",
-                toggleActions: "play reverse play reverse", 
-              }
+                toggleActions: "play reverse play reverse",
+              },
             }
           );
         }
       });
 
-      const buttons = document.querySelectorAll('.category-button');
-      buttons.forEach(button => {
-        button.addEventListener('mouseenter', () => {
+      const buttons = document.querySelectorAll(".category-button");
+      buttons.forEach((button) => {
+        button.addEventListener("mouseenter", () => {
           gsap.to(button, { y: -2, duration: 0.3, ease: "power2.out" });
         });
-        
-        button.addEventListener('mouseleave', () => {
+
+        button.addEventListener("mouseleave", () => {
           gsap.to(button, { y: 0, duration: 0.3, ease: "power2.out" });
         });
       });
@@ -181,37 +169,76 @@ const Coatings = () => {
   }, [categories]);
 
   return (
-    <div ref={sectionRef} className="min-h-screen py-10 text-white overflow-hidden w-full">
+    <div
+      ref={sectionRef}
+      className="min-h-screen py-10 text-white overflow-hidden w-full bg-black"
+    >
       <div className="w-full mx-auto shrink-0 py-6 md:py-8 lg:py-16 relative px-4 md:px-8">
-       
-         <div className="mb-8 md:mb-16">
-          <h2 ref={titleRef} className="text-4xl md:text-8xl montserrat text-[#FFD700]">
+        <div className="mb-8 md:mb-16 text-center">
+          <h2
+            ref={titleRef}
+            className="text-5xl md:text-8xl font-semibold text-[#FFD700]"
+          >
             Discover Our Coatings
           </h2>
-          <p ref={subtitleRef} className="text-base sm:text-lg md:text-xl text-[#FFD700] max-w-3xl poppins mt-4">
-            Explore our premium range of lens coatings designed to enhance your vision experience.
+          <p
+            ref={subtitleRef}
+            className="text-xl md:text-2xl text-[#FFD700] max-w-3xl mx-auto mt-6 font-light"
+          >
+            Explore our premium range of lens coatings designed to enhance your
+            vision experience.
           </p>
         </div>
 
-        {/* 2x2 Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
+        {/* Apple-style Grid */}
+        <div className="space-y-4 md:space-y-8">
           {categories.map((category, index) => (
-            <div 
-              key={category.id} 
+            <div
+              key={category.id}
               id={`category-${index}`}
-              className="category-section relative h-[500px] bg-white rounded-none overflow-hidden"
+              className={`relative h-[80vh] min-h-[600px] rounded-3xl overflow-hidden group ${
+                index % 2 === 0 ? "md:pr-4" : "md:pl-4"
+              }`}
             >
-              <Image src={category.image} alt={category.title} fill className="object-cover" />
-              <div className="absolute inset-0 flex p-6 text-white flex-col items-center pt-10 text-center">
-                <h3 className="text-2xl font-bold lg:text-3xl mb-3 px-4 w-full break-words">{category.title}</h3>
-                <p className="text-base lg:text-lg mb-6 px-4 max-w-md">{category.subtitle}</p>
-                <Link 
-                  href={`/Coating/${category.slug}`}
-                  className="px-6 py-2 bg-[#FDD600] rounded-full text-black font-bold hover:bg-[#FFD700] transition-all duration-300 whitespace-nowrap transform hover:scale-105 hover:shadow-lg"
-                >
-                  {category.buttonText}
-                </Link>
+              <div className="absolute inset-0">
+                <Image
+                  src={category.image}
+                  alt={category.title}
+                  fill
+                  className="object-cover transition-all duration-700 group-hover:scale-105"
+                  priority
+                />
+                <div className="absolute inset-0 bg-[#FFD700]/20 group-hover:bg-black/10 transition-all duration-500" />
               </div>
+
+              {/* Content Overlay */}
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="content text-center px-8 max-w-4xl">
+                  <div className="mb-6">
+                    <h3 className="text-5xl md:text-7xl font-bold mb-4 text-zinc-900">
+                      {category.title}
+                    </h3>
+                    <p className="text-2xl md:text-3xl text-zinc-800 font-light">
+                      {category.subtitle}
+                    </p>
+                  </div>
+
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <Link
+                      href={`/Coating/${category.slug}`}
+                      className="category-button px-8 py-3 bg-[#FFD700] rounded-full text-zinc-800 text-lg font-medium hover:bg-yellow-700 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl min-w-[140px] text-center"
+                    >
+                      {category.buttonText}
+                    </Link>
+                    <button className="px-8 py-3 border border-white rounded-full text-white text-lg font-medium hover:bg-white hover:text-black transition-all duration-300 transform hover:scale-105 min-w-[140px]">
+                      Buy
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              {/* Bottom Gradient */}
+              {/* <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black/80 to-transparent" /> */}
             </div>
           ))}
         </div>
