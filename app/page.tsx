@@ -61,6 +61,7 @@ const Page = () => {
 
       <div className="relative">
         <ScrollBackground />
+
         <AboutSection />
         {/* <TextScroll />  */}
         <CircleAttachment />

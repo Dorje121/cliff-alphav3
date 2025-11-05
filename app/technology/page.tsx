@@ -7,7 +7,7 @@ import TechnologyZenn from "@/contexts/techzennseries";
 const TechnologyPage = () => {
   return (
     <div className="min-h-screen bg-black text-[#FFD700] overflow-x-hidden">
-      <section className="relative h-[60vh] min-h-[450px] flex flex-col justify-center items-center overflow-hidden">
+      <section className="relative h-[100vh] min-h-[450px] flex flex-col justify-center items-center overflow-hidden">
         {/* Background Video */}
         <video
           autoPlay
@@ -33,6 +33,8 @@ const TechnologyPage = () => {
           </p>
         </div>
       </section> 
+      
+
        {/* <section className="relative h-[60vh] min-h-[450px] flex flex-col justify-center items-center overflow-hidden">
       
         <div 
@@ -53,24 +55,7 @@ const TechnologyPage = () => {
           </p>
         </div>
       </section>   */}
-      <section className="relative py-20 bg-black text-white">
-        <div className="relative z-10 grid grid-cols-1 md:grid-cols-[1.5fr_1fr] gap-20 w-full px-4 sm:px-6 lg:px-8">
-          
-          
-          <div className="flex flex-col justify-center text-left">
-            <h1 className="montserrat text-2xl md:text-4xl lg:text-5xl leading-snug">
-              Each pair of <span className="text-yellow-400">Cliff Lenses</span> is a fusion of craftsmanship and innovation custom-engineered to your lifestyle, offering precision, clarity, and aesthetic harmony beyond ordinary vision.
-            </h1>
-          </div>
-
-        
-          <div className="flex flex-col pt-48 justify-center text-left md:text-right">
-            <p className="text-base md:text-lg lg:text-xl text-gray-300 max-w-xl ml-auto">
-              When you wear <span className="text-yellow-400">Cliff Lenses</span>, you experience the perfect balance of technology, expertise, and design delivering comfort, style, and sharp precision for every moment.
-            </p>
-          </div>
-        </div>
-      </section>
+      
 
      <TechDynamix />
    

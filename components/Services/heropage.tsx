@@ -42,7 +42,25 @@ export default function HeroSection({
             quality={100}
             sizes="100vw"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/30 to-black/70" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent" />
+          <div className="absolute inset-0 bg-black/30" />
+          
+          {/* Content Overlay */}
+          <div className="relative z-10 h-full flex items-center">
+            <div className="w-full px-8">
+              <div className="max-w-4xl">
+                <h1 className="text-4xl md:text-5xl lg:text-6xl monsterrat text-white mb-4">
+                  {title}
+                </h1>
+                <h2 className="text-2xl poppins md:text-3xl text-[#FFD700] mb-6">
+                  {subtitle}
+                </h2>
+                <p className="text-lg md:text-xl poppins text-gray-200 max-w-2xl">
+                  {description}
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

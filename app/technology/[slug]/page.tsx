@@ -3,7 +3,9 @@ import React, { useRef, useLayoutEffect, useEffect, useState } from "react";
 import { gsap } from "gsap";
 import HeroSection from "@/components/Services/heropage";
 import Image from "next/image";
+import { Skiper47 } from "@/components/ui/cardsswiper";
 import { useParams, notFound } from 'next/navigation';
+import { Target, Eye, Settings, User, Glasses } from 'lucide-react';
 
 // Define the technology data type
 type Technology = {
@@ -28,8 +30,8 @@ const technologyData: Record<string, Technology> = {
     id: '01',
     slug: 'digital-ray-path-technology',
     title: 'Digital Ray Path Technology™',
-    subtitle: 'Precision Vision Engineering',
-    description: 'Advanced digital lens design that provides superior visual clarity and comfort for all your vision needs.',
+    subtitle: 'Better Vision at every point on the lens',
+    description: 'Lenses calculated with this technology method provide a better visual experience regardless of the prescription or frame selected.',
     features: [
       'Advanced digital lens design',
       'Wider field of vision',
@@ -333,238 +335,188 @@ const CliffTechnology = () => {
       />
 
       {/* Main Content Section */}
-      <div className="min-h-screen bg-black text-white overflow-hidden relative">
-        <div className="max-w-[1500px] mx-auto w-full px-4 sm:px-6 lg:px-8 py-16 sm:py-20 relative">
+      <div className="min-h-screen bg-black text-white montserrat overflow-hidden relative">
+        {slug === 'digital-ray-path-technology' && (
+          <div className="w-full px-4 py-16 md:py-24">
+            <div className="max-w-6xl mx-auto">
+              <div className="text-center">
+                <p className="text-lg md:text-xl leading-relaxed montserrat text-gray-300 mb-8">
+                  Digital Ray-Path® is based on the realistic simulation of the optical behaviour of the lens when its placed in front of the wearer's eye. This simulation computes the oblique aberrations that have a negative impact on the lens visual performance. Oblique aberrations are reduced at every point on the lens, taking into account the rotation of the eye and the actual position of the lens.
+                </p>
+                <p className="text-lg md:text-xl leading-relaxed montserrat text-gray-300 font-semibold mb-12">
+                  Result of Digital Ray-Path®: A personalized digital lens completely optimized for each user.
+                </p>
+              </div>
+            </div>
 
-          
-          {/* Intro Paragraph */}
-          <div className="w-full mb-16">
-            <div className="max-w-3xl">
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-[#FFD700]">
-                {technology.title}
-              </h1>
-              <p className="text-base sm:text-lg md:text-xl text-zinc-300 leading-relaxed font-light">
-                {technology.description}
+            {/* Explanation Text */}
+            <div className="w-full pl-5 pr-5 py-20  mx-auto mt-16">
+              <h2 className="text-2xl md:text-3xl font-bold montserrat text-yellow-400 mb-6">
+                How Digital Ray-Path® Technology Works
+              </h2>
+              <p className="text-base montserrat text-gray-300">
+                Digital Ray-Path® computes the back surface of the lens through an optimization process that follows 3 different steps. The result is a fully personalized lens taking into account the wearer's prescription, physiological parameters and frame measurements.
               </p>
             </div>
+
+            {/* Three Image Cards Section */}
+            <div className="flex flex-col pl-5 pr-5 md:flex-row grid grid-cols-1 gap-4 md:grid-cols-3 gap-0">
+               {/* Card 1 */}
+                    <div className="bg-black rounded-sm overflow-hidden shadow-xl transition-transform">
+                      <div className="p-4">
+                        <h3 className="text-xl font-bold text-yellow-400 mb-2">Eye - Lens System</h3>
+                      </div>
+                      <div className="h-[18rem] overflow-hidden">
+                        <Image
+                          src="/homeimage/website.png"
+                          alt="Precision Engineering"
+                          width={400}
+                          height={320}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                      <div className=" bg-black pt-4">
+                        <p className="text-lg poppins text-gray-300">
+                          Digital Ray-Path® prepares a simulation of the lens in front of the eye, considering all the information available from the wearer (like tilts, back vertex distance...).
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* Card 2 */}
+                    <div className="bg-black rounded-sm overflow-hidden shadow-xl transition-transform">
+                      <div className="p-4">
+                        <h3 className="text-xl font-bold text-yellow-400 mb-2">Space Object</h3>
+                      </div>
+                      <div className="h-[18rem] overflow-hidden">
+                        <Image
+                          src="/homeimage/website.png"
+                          alt="Customized Vision"
+                          width={400}
+                          height={320}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                      <div className=" bg-black pt-4">
+                        <p className="text-lg poppins text-gray-300">
+                          Digital Ray-Path® understands which areas of
+                          the lens are meant for distance, intermediate
+                          or near vision. All this information is considered
+                          during the optimization process.
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* Card 3 */}
+                    <div className="bg-black rounded-sm overflow-hidden shadow-xl transition-transform">
+                      <div className="p-4">
+                        <h3 className="text-xl font-bold text-yellow-400 mb-2">Ray Tracing</h3>
+                      </div>
+                      <div className="h-[18rem] overflow-hidden">
+                        <Image
+                          src="/homeimage/website.png"
+                          alt="Enhanced Clarity"
+                          width={400}
+                          height={320}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                      <div className=" bg-black pt-4">
+                        <p className="text-lg poppins text-gray-300">
+                         Digital Ray-Path® simulates how the eye rotates
+                          to look in different gaze directions and at
+                          different distances. For each position of the
+                          eye, it compensates the oblique aberrations of
+                          the lens at that particular point.
+                          Thousands of rays tracings are used to optimize
+                          the back surface of the lens point by point to
+                          minimize those undesired aberrations
+                        </p>
+                      </div>
+                    </div>
+                  </div>
           </div>
+        )}
 
-          {/* Technology Details Section */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-20">
-            {/* Technology Overview */}
-            <div className="space-y-8">
-              <div className="space-y-6">
-                <h2 className="text-2xl sm:text-3xl font-bold text-white">
-                  Technology <span className="text-[#FFD700]">Overview</span>
-                </h2>
-                <p className="text-sm sm:text-base md:text-lg text-zinc-300 leading-relaxed">
-                  {technology.technology?.description || technology.description}
-                </p>
-                
-                <div className="relative w-full h-64 md:h-80 lg:h-96 rounded-xl overflow-hidden">
-                  <Image
-                    src={technology.image}
-                    alt={technology.title}
-                    fill
-                    className="object-cover"
-                    priority
-                  />
-                </div>
-              </div>
-
-              {/* Features */}
-              <div className="space-y-4">
-                <h3 className="text-xl font-bold text-white">Key Features</h3>
-                <ul className="space-y-3">
-                  {technology.features.map((feature, index) => (
-                    <li key={index} className="flex items-start">
-                      <span className="text-[#FFD700] mr-2">✓</span>
-                      <span className="text-zinc-300">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+        {/* Benefits Section */}
+        <div className="w-full py-16 bg-black">
+          <div className="max-w-9xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-left mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-yellow-400 mb-4">
+                Benefits of Digital Ray Path Technology™
+              </h2>
+             
             </div>
 
-            {/* Technology Benefits */}
-            <div className="space-y-8">
-              <div className="space-y-6">
-                <h2 className="text-2xl sm:text-3xl font-bold text-white">
-                  Benefits of <span className="text-[#FFD700]">{technology.title}</span>
-                </h2>
-                
-                <div className="space-y-6">
-                  {technology.technology?.benefits?.map((benefit, index) => (
-                    <div key={index} className="bg-gradient-to-r from-zinc-900/50 to-zinc-800/20 p-6 rounded-xl border border-zinc-800 hover:border-[#FFD700]/30 transition-colors">
-                      <h4 className="text-lg font-semibold text-[#FFD700] mb-2">{benefit.title}</h4>
-                      <p className="text-zinc-300">{benefit.description}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Additional Benefits */}
-              <div className="space-y-4">
-                <h3 className="text-xl font-bold text-white">Additional Benefits</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {technology.benefits.map((benefit, index) => (
-                    <div key={index} className="bg-gradient-to-br from-zinc-900/40 to-zinc-800/10 p-4 rounded-lg border border-zinc-800">
-                      <p className="text-sm text-zinc-300">{benefit}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Technology Features Grid */}
-      <div className="w-full bg-gradient-to-b from-black to-zinc-900 py-16">
-        <div className="max-w-[1500px] mx-auto px-4 sm:px-6">
-          <div className="text-left mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-              Why Choose <span className="text-[#FFD700]">{technology.title.split('™')[0]}</span>
-            </h2>
-            <p className="text-lg text-zinc-300 max-w-2xl">
-              Experience the difference with our advanced lens technology designed for your visual needs
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              { 
-                icon: "/svgs/clearvision.svg", 
-                title: "Superior Clarity", 
-                desc: "Experience crystal-clear vision with our advanced optical technology" 
-              },
-              { 
-                icon: "/svgs/antireflective.svg", 
-                title: "Reduced Eye Strain", 
-                desc: "Designed to minimize eye fatigue during extended use" 
-              },
-              { 
-                icon: "/svgs/uvprotection.svg", 
-                title: "Full Protection", 
-                desc: "100% UV protection and blue light filtering" 
-              },
-              { 
-                icon: "/svgs/scratchresistance.svg", 
-                title: "Durability", 
-                desc: "Scratch-resistant and long-lasting performance" 
-              },
-              { 
-                icon: "/svgs/bluelight.svg", 
-                title: "Comfort", 
-                desc: "Lightweight design for all-day comfort" 
-              },
-              { 
-                icon: "/svgs/superslippery.svg", 
-                title: "Adaptive Technology", 
-                desc: "Automatically adjusts to different lighting conditions" 
-              },
-            ].map((feature, idx) => (
-              <div
-                key={idx}
-                className="group flex flex-col p-6 bg-gradient-to-br from-zinc-900/40 to-zinc-800/10 rounded-xl border border-zinc-800 hover:border-[#FFD700]/30 transition-all duration-300 hover:-translate-y-1"
-              >
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className="bg-black/70 backdrop-blur-md p-6 rounded-lg transform transition-all duration-300 border border-gray-700/50">
                 <div className="flex items-center mb-4">
-                  <div className="p-3 bg-[#FFD700]/10 rounded-lg mr-4">
-                    <img
-                      src={feature.icon}
-                      alt={feature.title}
-                      className="w-8 h-8 sm:w-10 sm:h-10 text-[#FFD700]"
-                    />
+                  <div className="bg-yellow-400/20 p-3 rounded-full mr-4">
+                    <Target className="h-6 w-6 text-yellow-400" />
                   </div>
-                  <h3 className="text-lg font-bold text-white">{feature.title}</h3>
+                  <h3 className="text-xl font-semibold text-yellow-400">GETTING RID OF OBLIQUE ABERRATION</h3>
                 </div>
-                <p className="text-zinc-300 text-sm sm:text-base pl-14">{feature.desc}</p>
+                <p className="text-gray-300">Every person needs different insets to maximize their
+                binocular near visual fields. In Digital Ray-Path® lenses,
+                the inset is exactly calculated for each wearer
+                considering all the individual parameters.</p>
               </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* Technology Showcase Section */}
-      <section className="py-20 bg-black relative overflow-hidden">
-        <div className="max-w-[1500px] mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Left side - Content */}
-            <div className="w-full mx-auto relative z-20">
-              <div className="p-6 lg:p-10">
-                <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 text-center lg:text-left">
-                  Advanced Optical Engineering
-                </h2>
-                <p className="text-zinc-300 max-w-2xl mx-auto lg:mx-0 mb-8 text-base sm:text-lg lg:text-xl leading-relaxed text-center lg:text-left">
-                  Our cutting-edge technology portfolio represents decades of innovation in optical science, delivering unparalleled visual performance and comfort.
-                </p>
-
-                {/* Benefits list */}
-                <div className="space-y-8">
-                  {/* Benefit 1 */}
-                  <div className="flex items-start">
-                    <span className="text-[#FFD700] font-bold mr-4 mt-1 text-4xl sm:text-5xl">
-                      1
-                    </span>
-                    <div>
-                      <span className="text-white font-semibold block text-xl sm:text-2xl">
-                        Enhanced Visual Processing
-                      </span>
-                      <span className="text-zinc-400 text-sm sm:text-base mt-1 block">
-                        Merges optics with neuroscience for natural vision
-                      </span>
-                    </div>
+              
+              <div className="bg-black/70 backdrop-blur-md p-6 rounded-lg transform transition-all duration-300 border border-gray-700/50">
+                <div className="flex items-center mb-4">
+                  <div className="bg-yellow-400/20 p-3 rounded-full mr-4">
+                    <Eye className="h-6 w-6 text-yellow-400" />
                   </div>
-
-                  {/* Benefit 2 */}
-                  <div className="flex items-start">
-                    <span className="text-[#FFD700] font-bold mr-4 mt-1 text-4xl sm:text-5xl">
-                      2
-                    </span>
-                    <div>
-                      <span className="text-white font-semibold block text-xl sm:text-2xl">
-                        Ultra-High Definition
-                      </span>
-                      <span className="text-zinc-400 text-sm sm:text-base mt-1 block">
-                        8x more optical definition than standard lenses
-                      </span>
-                    </div>
-                  </div>
-
-                  {/* Benefit 3 */}
-                  <div className="flex items-start">
-                    <span className="text-[#FFD700] font-bold mr-4 mt-1 text-4xl sm:text-5xl">
-                      3
-                    </span>
-                    <div>
-                      <span className="text-white font-semibold block text-xl sm:text-2xl">
-                        Perfect Fit Technology
-                      </span>
-                      <span className="text-zinc-400 text-sm sm:text-base mt-1 block">
-                        Customized based on individual measurements
-                      </span>
-                    </div>
-                  </div>
+                  <h3 className="text-xl font-semibold text-yellow-400">ACHIEVING LARGER VISUAL FIELDS</h3>
                 </div>
+                <p className="text-gray-300">Getting rid of oblique aberrations is important both
+                in single vision and progressive lenses. Thanks to
+                Digital Ray-Path®, oblique aberrations are reduced
+                everywhere on the lens, resulting in wider viewing
+                areas with sharp and clear vision.</p>
               </div>
-            </div>
-
-            {/* Right side - Image */}
-            <div className="relative order-1 lg:order-none">
-              <Image
-                src="/imAGES/technology.png"
-                alt="Cliff Technology Innovation"
-                width={1200}
-                height={800}
-                className="w-full h-[300px] sm:h-[400px] lg:h-[500px] object-cover rounded-xl"
-              />
-              {/* Gradient overlays */}
-              <div className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-black via-black/80 to-transparent z-10 rounded-xl"></div>
-              <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-black via-black/80 to-transparent z-10 rounded-xl"></div>
+              
+              <div className="bg-black/70 backdrop-blur-md p-6 rounded-lg transform transition-all duration-300 border border-gray-700/50">
+                <div className="flex items-center mb-4">
+                  <div className="bg-yellow-400/20 p-3 rounded-full mr-4">
+                    <Settings className="h-6 w-6 text-yellow-400" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-yellow-400">VARIABLE INSET OPTIMIZATION</h3>
+                </div>
+                <p className="text-gray-300">Every person needs different insets to maximize their
+                binocular near visual fields. In Digital Ray-Path® lenses,
+                the inset is exactly calculated for each wearer
+                considering all the individual parameters.</p>
+              </div>
+              
+              <div className="bg-black/70 backdrop-blur-md p-6 rounded-lg transform transition-all duration-300 border border-gray-700/50">
+                <div className="flex items-center mb-4">
+                  <div className="bg-yellow-400/20 p-3 rounded-full mr-4">
+                    <User className="h-6 w-6 text-yellow-400" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-yellow-400">PERSONALIZATION FOR HIGH PRESCRIPTIONS & SPORT FRAMES</h3>
+                </div>
+                <p className="text-gray-300">Every person needs different insets to maximize their
+                binocular near visual fields. In Digital Ray-Path® lenses,
+                the inset is exactly calculated for each wearer
+                considering all the individual parameters.</p>
+              </div>
+              
+              <div className="bg-black/70 backdrop-blur-md p-6 rounded-lg transform transition-all duration-300 border border-gray-700/50">
+                <div className="flex items-center mb-4">
+                  <div className="bg-yellow-400/20 p-3 rounded-full mr-4">
+                    <Glasses className="h-6 w-6 text-yellow-400" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-yellow-400">FLEXIBILIDAD DE MONTURAS</h3>
+                </div>
+                <p className="text-gray-300">Digital Ray-Path® lenses, both progressive and
+                single vision, provide excellent vision for any wearer
+                regardless of the frame that is selected. In addition,
+                Digital Ray Path® lenses can be calculated with</p>
+              </div>
             </div>
           </div>
         </div>
-      </section>
+      </div>   
     </>
   );
 };
