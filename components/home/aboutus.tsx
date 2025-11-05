@@ -84,9 +84,9 @@ export default function AboutSection() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.2 }}
                   viewport={{ once: true }}
-                  className="p-6 border border-[#FFD700]/30 rounded-xl bg-black/30 backdrop-blur-sm h-full"
+                  className="p-6 border border-yellow-900/30 bg-[#322b00]/50 rounded-xl backdrop-blur-sm h-full"
                 >
-                  <div className="flex items-start gap-3">
+                  <div className="flex flex-col items-center gap-3">
                     <svg
                       className="w-6 h-6 text-[#FFD700] mt-0.5 flex-shrink-0"
                       fill="none"
@@ -101,7 +101,7 @@ export default function AboutSection() {
                       />
                     </svg>
                     <div>
-                      <h3 className="text-[#FFD700] text-lg font-semibold mb-2 montserrat">
+                      <h3 className="text-[#fff3bc] text-lg font-medium mb-2 montserrat">
                         Advance Coatings and Index Options
                       </h3>
                     </div>
@@ -113,9 +113,9 @@ export default function AboutSection() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.4 }}
                   viewport={{ once: true }}
-                  className="p-6 border border-[#FFD700]/30 rounded-xl bg-black/30 backdrop-blur-sm h-full"
+                  className="p-6 border border-yellow-900/30 bg-[#322b00]/50 rounded-xl backdrop-blur-sm h-full"
                 >
-                  <div className="flex items-start gap-3">
+                  <div className="flex flex-col items-center  gap-3">
                     <svg
                       className="w-6 h-6 text-[#FFD700] mt-0.5 flex-shrink-0"
                       fill="none"
@@ -130,7 +130,7 @@ export default function AboutSection() {
                       />
                     </svg>
                     <div>
-                      <h3 className="text-[#FFD700] text-lg font-semibold mb-2 montserrat">
+                      <h3 className="text-[#fff3bc] text-lg font-semibold mb-2 montserrat">
                         Certified Quality and Durability
                       </h3>
                     </div>
@@ -142,9 +142,9 @@ export default function AboutSection() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.6 }}
                   viewport={{ once: true }}
-                  className="p-6 border border-[#FFD700]/30 rounded-xl bg-black/30 backdrop-blur-sm h-full"
+                  className="p-6 border border-yellow-900/30 bg-[#322b00]/50 rounded-xl backdrop-blur-sm h-full"
                 >
-                  <div className="flex items-start gap-3">
+                  <div className="flex flex-col items-center  gap-3">
                     <svg
                       className="w-6 h-6 text-[#FFD700] mt-0.5 flex-shrink-0"
                       fill="none"
@@ -159,7 +159,7 @@ export default function AboutSection() {
                       />
                     </svg>
                     <div>
-                      <h3 className="text-[#FFD700] text-lg font-semibold mb-2 montserrat">
+                      <h3 className="text-[#fff3bc] text-lg font-medium mb-2 montserrat">
                         Global Service Network
                       </h3>
                     </div>
@@ -168,18 +168,18 @@ export default function AboutSection() {
               </div>
 
               {/* Buttons */}
-              <div className="flex flex-col sm:flex-row justify-center gap-10 mt-12">
+              <div className="flex flex-col sm:flex-row justify-center gap-4 mt-12">
                 <Link
                   href="/products"
-                  className="group relative px-8 py-3.5 overflow-hidden font-medium rounded-full bg-gradient-to-r from-[#FFD700] to-[#E6C200] text-black text-sm font-semibold tracking-wider"
+                  className="group relative px-8 py-4 overflow-hidden rounded-full bg-gradient-to-r from-[#FFD700] to-[#E6C200] text-black text-lg font-semibold "
                 >
-                  <span className="relative z-10">Discover Our Lenses</span>
+                  <span className="relative z-10">Discover our Lenses</span>
                   <div className="absolute inset-0 bg-gradient-to-r from-[#E6C200] to-[#FFD700] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </Link>
 
                 <Link
                   href="/Contact"
-                  className="group relative px-8 py-3.5 overflow-hidden font-medium rounded-full border-1 border-[#FFD700] text-[#FFD700] hover:text-black text-sm font-semibold tracking-wider transition-all duration-300"
+                  className="group relative px-8 py-4 overflow-hidden rounded-full border-1 border-[#FFD700] text-[#FFD700] hover:text-black text-lg font-semibold  transition-all duration-300"
                 >
                   <span className="relative z-10">Become a Dealer</span>
                   <div className="absolute inset-0 bg-[#FFD700] transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 z-0"></div>

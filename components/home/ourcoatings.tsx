@@ -177,13 +177,13 @@ const Coatings = () => {
         <div className="mb-8 md:mb-16 text-center">
           <h2
             ref={titleRef}
-            className="text-5xl md:text-8xl font-semibold text-[#FFD700]"
+            className="text-5xl md:text-8xl font-medium text-[#FFD700]"
           >
             Discover Our Coatings
           </h2>
           <p
             ref={subtitleRef}
-            className="text-xl md:text-2xl text-[#FFD700] max-w-3xl mx-auto mt-6 font-light"
+            className="text-xl md:text-xl text-[#FFD700]/80 max-w-3xl mx-auto mt-6 font-light"
           >
             Explore our premium range of lens coatings designed to enhance your
             vision experience.

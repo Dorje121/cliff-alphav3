@@ -147,19 +147,17 @@ export default function Blog() {
 
   return (
     <div ref={sectionRef} className="min-h-screen">
-     
-      
       <div className="relative pt-32 pb-20 px-9 ">
-        <div className="mx-auto text-left">
-          <h2 
+        <div className="mx-auto text-center">
+          <h2
             ref={heroTitleRef}
             className="text-4xl md:text-8xl font-medium montserrat text-[#FFD700] opacity-0 translate-y-8"
           >
             Cliff Insights and Updates
           </h2>
-          <p 
+          <p
             ref={heroSubtitleRef}
-            className="text-xl md:text-2xl text-[#FFD700] max-w-3xl leading-relaxed py-4 poppins opacity-0 translate-y-8"
+            className="text-xl md:text-xl text-center text-[#FFD700]/80 max-w-3xl mx-auto leading-relaxed py-4 poppins opacity-0 translate-y-8"
           >
             Discover the latest in lens technology, eye health, and vision
             science through our expert insights and cutting-edge research.
@@ -167,15 +165,14 @@ export default function Blog() {
         </div>
       </div>
 
-      
       <div className="w-full px-4 pb-20">
         <div className="mx-auto grid w-full max-w-[94rem] grid-cols-1 md:grid-cols-3 lg:grid-cols-[1.4fr_1.4fr_1.4fr_1fr] gap-2 md:gap-2 px-4">
           {filteredPosts
             .filter((post) => !post.featured)
-            .slice(0, 3) 
+            .slice(0, 3)
             .map((post) => (
               <div
-                className="border-2 border-yellow-500/30 relative overflow-hidden rounded-sm w-full h-full shadow-lg hover:shadow-xl transition-shadow duration-300"
+                className="border-2 border-yellow-900/30 bg-[#322b00]/50 relative overflow-hidden rounded-sm w-full h-full shadow-lg hover:shadow-xl transition-shadow duration-300"
                 key={post.id}
               >
                 <div className="relative h-52 overflow-hidden">
@@ -185,13 +182,10 @@ export default function Blog() {
                     alt={post.title}
                     className="object-cover"
                   />
-                 
                 </div>
 
-                  
-                  <div className="relative z-10 flex flex-col h-full px-6 py-8 xl:px-8 xl:py-10">
-                    
-                    <div className="flex-1">
+                <div className="relative z-10 flex flex-col h-full px-6 py-8 xl:px-8 xl:py-10">
+                  <div className="flex-1">
                     <div className="flex items-start justify-between mb-4">
                       <div className="w-full flex flex-wrap justify-between items-center poppins">
                         {/* <span className="inline-block px-4 py-2 bg-black/10 backdrop-blur-xl text-yellow-300 rounded-full text-xs font-semibold">
@@ -214,12 +208,10 @@ export default function Blog() {
                       </div>
                     </div>
 
-                    
                     <div className="space-y-6 py-6">
                       <h3 className="text-lg md:text-2xl font-medium montserrat leading-tight text-[#FFD700] transition-all duration-500 line-clamp-3">
                         {post.title}
                       </h3>
-
                     </div>
                     <div className="mt-auto pt-4 -mr-2 flex justify-end">
                       <TransitionLink
@@ -235,36 +227,38 @@ export default function Blog() {
                         />
                       </TransitionLink>
                     </div>
-                    </div>
                   </div>
-
-                
                 </div>
-              ))}
-
-          
-              <div className="border-2 border-yellow-500/30 bg-[#322b00]/50 relative overflow-hidden rounded-sm w-full max-w-[300px] h-full shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col items-center justify-center p-8 text-center">
-                <h3 className="text-2xl font-medium montserrat text-[#FFD700] mb-4">Explore More</h3>
-                <p className="text-[#FFD700]/80 mb-6 max-w-xs">
-                  Discover more articles and insights in our blog
-                </p>
-                <TransitionLink
-                  href="/Technologies"
-                  className="group/cta inline-flex items-center gap-2 px-6 py-3 bg-[#FFD700] hover:bg-[#FFD700]/90 text-black font-semibold rounded-full text-sm transition-all duration-300 "
-                >
-                  <span>View All Articles</span>
-                  <ArrowRight size={16} className="transition-transform duration-300 group-hover/cta:translate-x-1" />
-                </TransitionLink>
               </div>
+            ))}
 
-            {filteredPosts.length === 0 && (
-              <div className="text-center py-20 col-span-3">
-                <p className="text-[#FFD700] text-lg">
-                  No articles found in this category.
-                </p>
-              </div>
-            )}
+          <div className="border-2 border-yellow-500/30 bg-[#322b00]/50 relative overflow-hidden rounded-sm w-full max-w-[300px] h-full shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col items-center justify-center p-8 text-center">
+            <h3 className="text-2xl font-medium montserrat text-[#FFD700] mb-4">
+              Explore More
+            </h3>
+            <p className="text-[#FFD700]/80 mb-6 max-w-xs">
+              Discover more articles and insights in our blog
+            </p>
+            <TransitionLink
+              href="/Technologies"
+              className="group/cta inline-flex items-center gap-2 px-6 py-3 bg-[#FFD700] hover:bg-[#FFD700]/90 text-black font-semibold rounded-full text-sm transition-all duration-300 "
+            >
+              <span>View All Articles</span>
+              <ArrowRight
+                size={16}
+                className="transition-transform duration-300 group-hover/cta:translate-x-1"
+              />
+            </TransitionLink>
           </div>
+
+          {filteredPosts.length === 0 && (
+            <div className="text-center py-20 col-span-3">
+              <p className="text-[#FFD700] text-lg">
+                No articles found in this category.
+              </p>
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );
