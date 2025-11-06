@@ -5,31 +5,21 @@ import React, { useState, useEffect } from 'react';
 import SpecialityLensesComponent from '@/contexts/specialitylenses';
 
 
-
-
-
-
-  
-
 const SpecialityLenses: React.FC = () => {
- 
-
-
-
-  return (
+   return (
     <div className="min-h-screen bg-black text-white">
       <section className="relative h-[80vh] min-h-[450px] flex flex-col justify-end pb-8 items-start overflow-hidden">
               <Image
                src="/cliffcoating/changable.gif"
                alt="Premium Tinted Lenses"
                fill
-               className="object-cover rounded-2xl"
+               className="object-cover"
                priority
               />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+
                           
 
-        <div className="absolute inset-0 bg-black/60 z-[1]" />
+       
 
         <div className="relative z-10 text-center w-full px-8">
           <h1 className="montserrat montserrat  text-[#FFD700] text-4xl md:text-6xl lg:text-7xl capitalize mb-6">
@@ -46,9 +36,10 @@ const SpecialityLenses: React.FC = () => {
 
      
 
-        
+         <div className="relative pr-8 pl-8 z-10 text-center max-w-9xl mx-auto">
 
         <SpecialityLensesComponent/>
+        </div>
 
 
     </div>

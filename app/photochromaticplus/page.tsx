@@ -4,7 +4,9 @@ import Image from 'next/image'
 import { useState, useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { ChevronLeft, Link } from 'lucide-react'
+import { ChevronLeft } from 'lucide-react'
+import { motion } from 'framer-motion'
+import Link from 'next/link'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -120,20 +122,32 @@ export default function PhotochromeClient() {
       </div>
 
       {/* Hero Section */}
-      <section className="relative min-h-[80vh] flex items-center justify-center">
-        <div className="absolute inset-0">
-          <Image
-            src="/photochromatic/hero2.png"
-            alt="Photochromatic Lenses"
-            fill
-            className="object-cover"
-            priority
-          />
+       <section className="relative min-h-[80vh] flex items-center justify-center">
+        <div className="absolute inset-0 overflow-hidden">
+          <motion.div
+            animate={{
+              scale: [1, 1.1, 1],
+            }}
+            transition={{
+              duration: 20,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+            className="w-full h-full"
+          >
+            <Image
+              src="/photochromatic/hero.png"
+              alt="Photochromatic Lenses"
+              fill
+              className="object-cover"
+              priority
+            />
+          </motion.div>
           <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/30 to-transparent"></div>
           <div className="absolute inset-0 bg-black/40"></div>
         </div>
 
-        <div className="relative z-10 pt-70 text-center px-6 sm:px-8 w-full max-w-4xl">
+        <div className="relative z-10 pt-70 text-center px-6 sm:px-8 w-full max-w-5xl">
           <h1 className="text-5xl md:text-6xl montserrat text-[#FFD700] mb-6">
             Photochromatic Plus Lenses
           </h1>
@@ -215,10 +229,10 @@ export default function PhotochromeClient() {
         <div className="max-w-9xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
             {/* Left Side */}
-            <div className="pl-6 space-y-6 lg:col-span-5 sticky top-4 self-start">
+            <div className="pl-6 space-y-6 lg:col-span-5 sticky top-16 self-start">
               <div className="bg-black/80 backdrop-blur-sm p-6 rounded-lg">
-                <h3 className="text-3xl montserrat text-[#FFD700] mb-2">Choose Your Lens Style</h3>
-                <p className="text-[#FFD700] poppins text-2xl">Select a lens to see how it looks</p>
+                <h3 className="text-4xl montserrat text-[#FFD700] mb-2">Choose Your Lens Style</h3>
+                <p className="text-[#FFD700] poppins text-xl">Select a lens to see how it looks</p>
               </div>
               <div className="max-h-[calc(100vh-200px)] overflow-y-auto pr-2 py-2">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">

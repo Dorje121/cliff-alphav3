@@ -4,9 +4,9 @@ import Image from 'next/image'
 import { useState, useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import Link from 'next/link'
 import { ChevronLeft } from 'lucide-react'
 import { motion } from 'framer-motion'
+import Link from 'next/link'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -18,12 +18,23 @@ const lensOptions = [
     features: ['Neutral color balance', 'Reduces brightness', 'Minimizes eye fatigue']
   },
   {
-    name: 'Photochromic Gold',
-    leftImage: '/polarized/gold.png',
-    rightImage: '/photochromatic/golden.png',
+    name: 'Photochromic Brown',
+    leftImage: '/polarized/brown.png',
+    rightImage: '/photochromatic/brown.png',
     features: ['Enhances contrast', 'Ideal for sports', 'Reduces glare']
   },
- 
+  {
+    name: 'Photochromic Blue',
+    leftImage: '/polarized/blue.png',
+    rightImage: '/photochromatic/blue.png',
+    features: ['Reduces digital eye strain', 'Modern look', 'Enhances screen clarity']
+  },
+  {
+    name: 'Photochromic Pink',
+    leftImage: '/polarized/rose.png',
+    rightImage: '/photochromatic/pink.png',
+    features: ['Soothes the eyes', 'Enhances visual comfort', 'Stylish appearance']
+  }
 ]
 
 export default function PhotochromeClient() {
@@ -97,7 +108,7 @@ export default function PhotochromeClient() {
   `
 
   return (
-    <div className="min-h-screen bg-black">
+    <div className="min-h-screen bg-black text-gray-100">
       <style jsx global>{fadeInKeyframes}</style>
 
       <div className="max-w-[94rem] w-full mx-auto pl-8 pt-24 absolute z-40">
@@ -111,7 +122,7 @@ export default function PhotochromeClient() {
       </div>
 
       {/* Hero Section */}
-      <section className="relative min-h-[80vh] flex items-center justify-center">
+       <section className="relative min-h-[80vh] flex items-center justify-center">
         <div className="absolute inset-0 overflow-hidden">
           <motion.div
             animate={{
@@ -125,7 +136,7 @@ export default function PhotochromeClient() {
             className="w-full h-full"
           >
             <Image
-              src="/photochromatic/hero2.png"
+              src="/photochromatic/hero.png"
               alt="Photochromatic Lenses"
               fill
               className="object-cover"
@@ -136,9 +147,9 @@ export default function PhotochromeClient() {
           <div className="absolute inset-0 bg-black/40"></div>
         </div>
 
-        <div className="relative z-10 pt-70 text-center px-6 sm:px-8 w-full max-w-4xl">
+        <div className="relative z-10 pt-70 text-center px-6 sm:px-8 w-full max-w-5xl">
           <h1 className="text-5xl md:text-6xl montserrat text-[#FFD700] mb-6">
-            Photochromatic Lenses
+            Photochromatic Plus Lenses
           </h1>
           <p className="text-xl md:text-2xl poppins text-[#FFD700] leading-relaxed max-w-3xl mx-auto">
             Experience the adaptive eyewear with our advanced photochromic technology that automatically adjusts to your environment.
@@ -157,7 +168,7 @@ export default function PhotochromeClient() {
                   src="/photochromatic/hero.png"
                   alt="Photochromic Lenses in Action"
                   fill
-                  className="object-cover pl-4 pt-20 pb-4 pr-4"
+                  className="object-cover pl-4 pt-4 pb-4 pr-4"
                   priority
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent lg:bg-gradient-to-r lg:from-black/70 lg:to-transparent"></div>
@@ -166,10 +177,10 @@ export default function PhotochromeClient() {
               {/* Right Side - Content */}
               <div className="p-8 md:p-12 lg:p-16">
                 <div className="max-w-lg mx-auto">
-                  <h2 className="text-2xl md:text-3xl font-bold text-[#FFD700] mb-6">Cliff Photochromatic Lenses</h2>
+                  <h2 className="text-2xl md:text-3xl font-bold text-[#FFD700] mb-6">Cliff Photochromatic Plus Lenses</h2>
                   <p className="text-lg text-[#FFD700] mb-8 leading-relaxed">Experience the perfect blend of style, comfort, and advanced technology with our premium photochromic lenses.</p>
                   
-                  <div className="poppins text-[#FFD700] space-y-6">
+                  <div className="space-y-6">
                     {[
                       {
                         title: "Available in Cliff Zenn Single Vision Lenses",
@@ -188,7 +199,7 @@ export default function PhotochromeClient() {
                         
                       },
                        {
-                        title: "Available in Dynamix Profressive Lenses"
+                        title: "Available in Dynamix Profressive Lenses",
                         
                       }
                     ].map((feature, index) => (
@@ -198,15 +209,14 @@ export default function PhotochromeClient() {
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M5 13l4 4L19 7"></path>
                           </svg>
                         </div>
-                        <div className="text-[#FFD700] poppins">
+                        <div>
                           <h3 className="text-lg font-semibold text-[#FFD700] mb-1">{feature.title}</h3>
                      
                         </div>
                       </div>
                     ))}
                   </div>
-                    
-              
+        
                 </div>
               </div>
             </div>
@@ -219,10 +229,10 @@ export default function PhotochromeClient() {
         <div className="max-w-9xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
             {/* Left Side */}
-            <div className="pl-6 space-y-6 lg:col-span-5 sticky top-35 self-start">
+            <div className="pl-6 space-y-6 lg:col-span-5 sticky top-16 self-start">
               <div className="bg-black/80 backdrop-blur-sm p-6 rounded-lg">
-                <h3 className="text-3xl montserrat text-[#FFD700] mb-2">Choose Your Lens Style</h3>
-                <p className="text-[#FFD700] poppins text-2xl">Select a lens to see how it looks</p>
+                <h3 className="text-4xl montserrat text-[#FFD700] mb-2">Choose Your Lens Style</h3>
+                <p className="text-[#FFD700] poppins text-xl">Select a lens to see how it looks</p>
               </div>
               <div className="max-h-[calc(100vh-200px)] overflow-y-auto pr-2 py-2">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
@@ -243,7 +253,7 @@ export default function PhotochromeClient() {
                         />
                       </div>
                       <div className="mt-2 text-center">
-                        <h3 className="font-semibold text-[#FFD700] poppins">{lens.name}</h3>
+                        <h3 className="font-semibold text-[#FFD700]">{lens.name}</h3>
                       </div>
                     </div>
                   ))}
@@ -300,70 +310,8 @@ export default function PhotochromeClient() {
               </div>
             </div>
           </div>
-
-    
         </div>
       </section>
-
-    {/* 3 Cards Section */}
-   <section className="bg-black py-20">
-        <div className="grid grid-cols-1 md:grid-cols-3">
-          {/* Card 1 */}
-          <Link href="/photochromaticplus" className="block h-[60vh] w-full group overflow-hidden">
-            <div className="relative h-full w-full">
-              <Image
-                src="/product/5.jpg"
-                alt="Photochromic Technology"
-                fill
-                className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
-                priority
-              />
-              <div className="absolute inset-0 flex flex-col justify-end">
-                <div className="w-full bg-gradient-to-t from-black/90 via-black/80 to-transparent pt-20 pb-4 px-4 text-center">
-                  <h3 className="text-3xl montserrat text-[#FFD700]">Photochromatic Plus</h3>
-                </div>
-              </div>
-            </div>
-          </Link>
-
-          {/* Card 2 */}
-          <Link href="/tinted-lenses" className="block h-[60vh] w-full group overflow-hidden">
-            <div className="relative h-full w-full">
-              <Image
-                src="/product/6.jpg"
-                alt="UV Protection"
-                fill
-                className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
-                priority
-              />
-              <div className="absolute inset-0 flex flex-col justify-end">
-                <div className="w-full bg-gradient-to-t from-black/90 via-black/70 to-transparent pt-20 pb-4 px-4 text-center">
-                  <h3 className="text-3xl montserrat text-[#FFD700]">Tinted Lenses</h3>
-                </div>
-              </div>
-            </div>
-          </Link>
-
-          {/* Card 3 */}
-          <Link href="/polarized" className="block h-[60vh] w-full group overflow-hidden">
-            <div className="relative h-full w-full">
-              <Image
-                src="/product/7.jpg"
-                alt="All-Day Comfort"
-                fill
-                className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
-                priority
-              />
-              <div className="absolute inset-0 flex flex-col justify-end">
-                <div className="w-full bg-gradient-to-t from-black/90 via-black/70 to-transparent pt-20 pb-4 px-4 text-center">
-                  <h3 className="text-3xl montserrat text-[#FFD700]">Polarized</h3>
-                </div>
-              </div>
-            </div>
-          </Link>
-        </div>
-      </section>
-
     </div>
   )
 }

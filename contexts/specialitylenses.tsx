@@ -119,7 +119,7 @@ export default function SpecialityLenses() {
           {cards.map((card) => (
             <Link
               key={card.id}
-              href={card.id === "01" ? "/cliff-tinted-lenses" : "#"}
+              href={card.id === "01" ? "/speciality-lenses/cliff-tinted-lenses" : "#"}
               className="block"
             >
               <div className="bg-[#322b00]/50 min-w-[340px] md:min-w-[420px] rounded-lg lg:min-w-[440px] h-auto flex flex-col shadow-md overflow-hidden border border-yellow-900/30 hover:shadow-lg transition snap-center hover:border-cyan-500/50">
@@ -150,11 +150,7 @@ export default function SpecialityLenses() {
 
                   <div className="mt-6 flex justify-end">
                     <Link
-                      href={
-                        card.id === "01"
-                          ? "/cliff-tinted-lenses"
-                          : `/products/${card.slug}`
-                      }
+                      href={`/speciality-lenses/${card.id === '01' ? 'cliff-tinted-lenses' : card.id === '02' ? 'photochrome' : card.id === '03' ? 'photochrome-plus' : card.id === '04' ? 'blueshield' : 'polarized-lenses'}`}
                       className="inline-flex items-center text-amber-400 text-base font-medium hover:text-white transition-colors duration-300 group"
                     >
                       Learn More
