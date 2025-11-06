@@ -113,7 +113,7 @@ export default function SpecialityLenses() {
           {cards.map((card) => (
             <Link 
               key={card.id} 
-              href={card.id === '01' ? '/cliff-tinted-lenses' : '#'}
+              href={card.id === '01' ? '/cliff-tinted-lenses' : card.id === '02' ? '/photochrome' : '#'}
               className="block"
             >
               <div
