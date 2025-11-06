@@ -6,7 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Icon } from "@iconify-icon/react";
-import { ChevronLeft, ExternalLink, Check } from "lucide-react";
+import { ChevronLeft } from "lucide-react";
 import {
   ImageComparison,
   ImageComparisonImage,
@@ -38,44 +38,20 @@ const ProductPage: NextPage<PageProps> = () => {
     },
   ];
 
-  const cards = [
-    {
-      id: "01",
-      title: "TINT LENSES",
-      subtitle: "Personalized Style & Comfort",
-      image: "/lenses/tinted.png",
-      points: [
-        "Wide range of color options",
-        "Reduces glare and eye strain",
-        "Enhances contrast and visual comfort",
-      ],
-      slug: "tint-lenses",
-    },
-    {
-      id: "02",
-      title: "PHOTOCHROME",
-      subtitle: "Adaptive Light Technology",
-      image: "/bluesafe/lense.jpg",
-      points: [
-        "Automatically adjusts to changing light",
-        "Clear indoors, darkens in sunlight",
-        "100% UV protection",
-      ],
-      slug: "photochrome",
-    },
-    {
-      id: "03",
-      title: "PHOTOCHROME PLUS",
-      subtitle: "Advanced Light Adaptation",
-      image: "/bluesafe/lense.png",
-      points: [
-        "Faster transition between light and dark",
-        "Enhanced durability and performance",
-        "Ideal for all lighting conditions",
-      ],
-      slug: "photochrome-plus",
-    },
-  ];
+  // const cards = [
+  //   {
+  //     id: "01",
+  //     title: "TINT LENSES",
+  //     subtitle: "Personalized Style & Comfort",
+  //     image: "/lenses/tinted.png",
+  //     points: [
+  //       "Wide range of color options",
+  //       "Reduces glare and eye strain",
+  //       "Enhances contrast and visual comfort",
+  //     ],
+  //     slug: "tint-lenses",
+  //   },
+  // ];
 
   return (
     <div className="min-h-screen bg-black relative">
@@ -201,19 +177,42 @@ const ProductPage: NextPage<PageProps> = () => {
         </ImageComparisonSlider>
       </ImageComparison>
 
-      <div className="w-full mx-auto px-6 relative">
+      <div className="w-full mx-auto px-8 relative">
         {/* Title Section */}
         <div className="  text-center py-16">
           <h2 className="text-2xl md:text-6xl font-medium montserrat text-[#FFD700] mb-4">
-            Explore Cliff reading or <br />
-            distance glasses.
+            Drive Clear Coating
           </h2>
           <p className="text-lg md:text-xl !text-yellow-400 max-w-3xl mx-auto">
             Customized solutions for specific vision needs and lifestyles.
           </p>
         </div>
+        <div
+          className={`relative h-[80vh] min-h-[600px] w-1/2 mx-auto rounded-3xl overflow-hidden group `}
+        >
+          <div className="absolute inset-0 ">
+            <Image
+              src={"/cliffcoating/Photo-Z.jpg"}
+              alt={"Cliff Lens"}
+              fill
+              className="object-cover transition-all duration-700 group-hover:scale-105"
+              priority
+            />
+            {/* <div className="absolute inset-0 bg-[#FFD700]/20 group-hover:bg-black/10 transition-all duration-500" /> */}
+          </div>
 
-        <div className="grid md:grid-cols-3 gap-4 px-2 md:px-6 pb-4 md:pb-16">
+          {/* Bottom Gradient */}
+          {/* <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black/80 to-transparent" /> */}
+        </div>{" "}
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <Link
+            href={`/Coating/`}
+            className="category-button px-8 py-3 bg-[#FFD700] rounded-full text-zinc-800 text-lg font-medium hover:bg-yellow-700 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl min-w-[140px] text-center"
+          >
+            Okay
+          </Link>
+        </div>
+        {/* <div className="grid md:grid-cols-3 gap-4 px-2 md:px-6 pb-4 md:pb-16">
           {cards.map((card) => (
             <Link
               key={card.id}
@@ -263,7 +262,7 @@ const ProductPage: NextPage<PageProps> = () => {
               </div>
             </Link>
           ))}
-        </div>
+        </div> */}
       </div>
     </div>
   );
