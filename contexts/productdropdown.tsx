@@ -2,7 +2,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { ChevronDown } from 'lucide-react';
 import dynamic from 'next/dynamic';
-import SpecialityLenses from './specialitylenses';
+
 
 
 const DropProducts = dynamic(
@@ -135,9 +135,7 @@ const ProductDropdown = () => {
         <div className="w-full">
           <DropProducts />
         </div>
-        <div className="w-full">
-        <SpecialityLenses />
-        </div>
+        
       </div>
     </div>
   );

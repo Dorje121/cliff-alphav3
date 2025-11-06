@@ -5,6 +5,8 @@ import { useState, useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import Link from 'next/link'
+import { ChevronLeft } from 'lucide-react'
+import { motion } from 'framer-motion'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -95,12 +97,33 @@ export default function PhotochromeClient() {
   `
 
   return (
-    <div className="min-h-screen bg-black text-gray-100">
+    <div className="min-h-screen bg-black">
       <style jsx global>{fadeInKeyframes}</style>
+
+      <div className="max-w-[94rem] w-full mx-auto pl-8 pt-24 absolute z-40">
+        <Link
+          href="/products"
+          className="inline-flex items-center text-[#FFD700] hover:text-amber-300 mb-8"
+        >
+          <ChevronLeft className="w-5 h-5 mr-2" />
+          Back to Products
+        </Link>
+      </div>
 
       {/* Hero Section */}
       <section className="relative min-h-[80vh] flex items-center justify-center">
-        <div className="absolute inset-0">
+       
+        <motion.div
+                  animate={{
+                    scale: [1, 1.1, 1],
+                  }}
+                  transition={{
+                    duration: 20,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }}
+                  className="absolute inset-0 overflow-hidden"
+                >
           <Image
             src="/photochromatic/hero2.png"
             alt="Photochromatic Lenses"
@@ -110,7 +133,7 @@ export default function PhotochromeClient() {
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/30 to-transparent"></div>
           <div className="absolute inset-0 bg-black/40"></div>
-        </div>
+        </motion.div>
 
         <div className="relative z-10 pt-70 text-center px-6 sm:px-8 w-full max-w-4xl">
           <h1 className="text-5xl md:text-6xl montserrat text-[#FFD700] mb-6">

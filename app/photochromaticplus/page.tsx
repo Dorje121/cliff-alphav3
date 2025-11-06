@@ -4,6 +4,7 @@ import Image from 'next/image'
 import { useState, useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { ChevronLeft, Link } from 'lucide-react'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -108,6 +109,16 @@ export default function PhotochromeClient() {
     <div className="min-h-screen bg-black text-gray-100">
       <style jsx global>{fadeInKeyframes}</style>
 
+      <div className="max-w-[94rem] w-full mx-auto pl-8 pt-24 absolute z-40">
+        <Link
+          href="/products"
+          className="inline-flex items-center text-[#FFD700] hover:text-amber-300 mb-8"
+        >
+          <ChevronLeft className="w-5 h-5 mr-2" />
+          Back to Products
+        </Link>
+      </div>
+
       {/* Hero Section */}
       <section className="relative min-h-[80vh] flex items-center justify-center">
         <div className="absolute inset-0">
@@ -124,9 +135,9 @@ export default function PhotochromeClient() {
 
         <div className="relative z-10 pt-70 text-center px-6 sm:px-8 w-full max-w-4xl">
           <h1 className="text-5xl md:text-6xl montserrat text-[#FFD700] mb-6">
-            Photochromatic Lenses
+            Photochromatic Plus Lenses
           </h1>
-          <p className="text-xl md:text-2xl poppins text-gray-200 leading-relaxed max-w-3xl mx-auto">
+          <p className="text-xl md:text-2xl poppins text-[#FFD700] leading-relaxed max-w-3xl mx-auto">
             Experience the adaptive eyewear with our advanced photochromic technology that automatically adjusts to your environment.
           </p>
         </div>
@@ -152,8 +163,8 @@ export default function PhotochromeClient() {
               {/* Right Side - Content */}
               <div className="p-8 md:p-12 lg:p-16">
                 <div className="max-w-lg mx-auto">
-                  <h2 className="text-2xl md:text-3xl font-bold text-white mb-6">Cliff Photochromatic Lenses</h2>
-                  <p className="text-lg text-gray-300 mb-8 leading-relaxed">Experience the perfect blend of style, comfort, and advanced technology with our premium photochromic lenses.</p>
+                  <h2 className="text-2xl md:text-3xl font-bold text-[#FFD700] mb-6">Cliff Photochromatic Plus Lenses</h2>
+                  <p className="text-lg text-[#FFD700] mb-8 leading-relaxed">Experience the perfect blend of style, comfort, and advanced technology with our premium photochromic lenses.</p>
                   
                   <div className="space-y-6">
                     {[
@@ -185,16 +196,13 @@ export default function PhotochromeClient() {
                           </svg>
                         </div>
                         <div>
-                          <h3 className="text-lg font-semibold text-white mb-1">{feature.title}</h3>
+                          <h3 className="text-lg font-semibold text-[#FFD700] mb-1">{feature.title}</h3>
                      
                         </div>
                       </div>
                     ))}
                   </div>
-                  
-                  <button className="mt-10 px-8 py-3.5 bg-gradient-to-r from-[#FFD700] to-amber-500 text-black font-medium rounded-lg hover:opacity-90 transition-all transform hover:-translate-y-0.5">
-                    Explore Collection
-                  </button>
+        
                 </div>
               </div>
             </div>
@@ -210,7 +218,7 @@ export default function PhotochromeClient() {
             <div className="pl-6 space-y-6 lg:col-span-5 sticky top-4 self-start">
               <div className="bg-black/80 backdrop-blur-sm p-6 rounded-lg">
                 <h3 className="text-3xl montserrat text-[#FFD700] mb-2">Choose Your Lens Style</h3>
-                <p className="text-gray-300 poppins text-2xl">Select a lens to see how it looks</p>
+                <p className="text-[#FFD700] poppins text-2xl">Select a lens to see how it looks</p>
               </div>
               <div className="max-h-[calc(100vh-200px)] overflow-y-auto pr-2 py-2">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">

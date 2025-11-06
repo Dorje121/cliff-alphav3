@@ -16,6 +16,7 @@ import HomeProducts from "@/components/home/homeproducts";
 import HomeTechnology from "@/components/home/hometechnology";
 import AboutSection from "@/components/home/aboutus";
 
+
 const Page = () => {
   const [pageState, setPageState] = useState<"landing" | "main">("landing");
   const [showLayout, setShowLayout] = useState(true);
@@ -67,6 +68,7 @@ const Page = () => {
         <CircleAttachment />
 
         <Ourcoatings />
+    
         <HomeProducts />
 
         <HomeTechnology />
