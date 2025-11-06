@@ -1,14 +1,12 @@
 'use client'
 
-import { Swiper, SwiperSlide } from 'swiper/react'
-import { Autoplay, FreeMode } from 'swiper/modules'
-import 'swiper/css'
-import 'swiper/css/autoplay'
-import 'swiper/css/free-mode'
+import { useCallback, useEffect, useRef } from 'react'
+import useEmblaCarousel from 'embla-carousel-react'
+import Autoplay from 'embla-carousel-autoplay'
+import { EmblaCarouselType } from 'embla-carousel'
 import Image from 'next/image'
 
-
- const specs = [
+const specs = [
   {
     title: 'Prescription & Addition',
     value: 'Customized to your needs',
@@ -49,121 +47,155 @@ import Image from 'next/image'
     value: 'Personalized for you',
     image: '/cliffcoating/bluee.png',
   }
-
 ]
 
 export function SpecsCarousel() {
+  const autoplay = useRef(
+    Autoplay(
+      { delay: 2000, stopOnInteraction: false, stopOnMouseEnter: true }
+    )
+  )
+
+  const [emblaRef, emblaApi] = useEmblaCarousel(
+    {
+      loop: true,
+      align: 'start',
+      skipSnaps: true,
+      dragFree: true,
+    },
+    [autoplay.current]
+  )
+
+  // Improved infinite scroll with rewind
+  const rewind = useCallback((emblaApi: EmblaCarouselType) => {
+    if (!emblaApi) return
+
+    const engine = emblaApi.internalEngine()
+    const lastIndex = engine.slideRects.length - 1
+    
+    // When we reach the end, rewind to start for seamless infinite scroll
+    if (engine.index.get() === lastIndex) {
+      emblaApi.scrollTo(0)
+    }
+  }, [])
+
+  useEffect(() => {
+    if (!emblaApi) return
+
+    // Enhanced autoplay with smooth infinite scroll
+    const autoplayInstance = autoplay.current
+    if (autoplayInstance.play) {
+      autoplayInstance.play()
+    }
+
+    // Rewind when scroll reaches end
+    emblaApi.on('scroll', () => {
+      rewind(emblaApi)
+    })
+
+    // Handle visibility changes for better performance
+    const handleVisibilityChange = () => {
+      if (document.hidden) {
+        autoplayInstance.stop?.()
+      } else {
+        autoplayInstance.play?.()
+      }
+    }
+
+    document.addEventListener('visibilitychange', handleVisibilityChange)
+
+    return () => {
+      document.removeEventListener('visibilitychange', handleVisibilityChange)
+      autoplayInstance.stop?.()
+    }
+  }, [emblaApi, rewind])
+
   return (
-    <div className="w-full py-10 bg-black">
-      <Swiper
-        modules={[Autoplay, FreeMode]}
-        spaceBetween={16}
-        slidesPerView="auto"
-        autoplay={{
-          delay: 1,
-          disableOnInteraction: false,
-          pauseOnMouseEnter: true,
-          stopOnLastSlide: false,
-        }}
-        speed={5000}
-        loop={true}
-        freeMode={{
-          enabled: true,
-          momentum: true,
-          momentumBounce: false,
-          momentumVelocityRatio: 0.5,
-        }}
-        allowTouchMove={false}
-        grabCursor={false}
-        resistance={false}
-        resistanceRatio={0}
-        longSwipes={false}
-        followFinger={false}
-        preventInteractionOnTransition={true}
-        cssMode={false} // Disable CSS mode for better performance
-        breakpoints={{
-          320: { 
-            slidesPerView: 1.2,
-            spaceBetween: 12
-          },
-          480: { 
-            slidesPerView: 1.8,
-            spaceBetween: 14
-          },
-          640: { 
-            slidesPerView: 2.5,
-            spaceBetween: 16
-          },
-          768: { 
-            slidesPerView: 3.2,
-            spaceBetween: 16
-          },
-          1024: { 
-            slidesPerView: 4.2,
-            spaceBetween: 20
-          },
-          1280: { 
-            slidesPerView: 5.2,
-            spaceBetween: 24
-          },
-        }}
-        className="w-full !overflow-visible"
-        onSwiper={(swiper) => {
-          // Ensure autoplay starts properly
-          setTimeout(() => {
-            swiper.autoplay?.start();
-          }, 100);
-        }}
-      >
-        {specs.map((spec, index) => (
-          <SwiperSlide 
-            key={index} 
-            className="!w-auto transition-all duration-300 ease-out"
-          >
-            <div className="relative bg-black rounded-lg overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 ease-out h-full min-w-[280px]">
-              {/* Image background - using Next.js Image for optimization */}
-              <div className="w-full h-full min-h-[200px] md:min-h-[250px] relative">
-                <Image
-                  src={spec.image}
-                  alt={spec.title}
-                  fill
-                  className="object-cover transition-transform duration-700 ease-out"
-                  sizes="(max-width: 640px) 280px, (max-width: 768px) 320px, (max-width: 1024px) 360px, 400px"
-                />
-                
-                {/* Gradient overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-              </div>
+    <div className="w-full py-10 bg-black overflow-hidden">
+      <div className="embla" ref={emblaRef}>
+        <div className="embla__container">
+          {specs.map((spec, index) => (
+            <div 
+              className="embla__slide flex-shrink-0" 
+              key={`${spec.title}-${index}`}
+            >
+              <div className="relative bg-black rounded-sm overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 ease-out h-full mx-2 min-w-[300px] sm:min-w-[400px] lg:min-w-[480px]">
+                <div className="w-full h-full min-h-[240px] md:min-h-[280px] relative">
+                  <Image
+                    src={spec.image}
+                    alt={spec.title}
+                    fill
+                    priority={index < 2}
+                    loading={index < 2 ? 'eager' : 'lazy'}
+                    quality={80}
+                    className="object-cover hover:scale-105 transition-transform duration-500 ease-out"
+                    sizes="(max-width: 640px) 300px, (max-width: 768px) 400px, 480px"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
+                </div>
 
-              {/* Content overlay */}
-              <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/90 to-transparent p-6 pt-12">
-                <h3 className="text-lg font-bold text-yellow-400 mb-2 leading-tight">
-                  {spec.title}
-                </h3>
-                <p className="text-gray-200 text-sm leading-relaxed">{spec.value}</p>
-              </div>
+                <div className="absolute bottom-0 left-0 w-full p-6 md:p-7 pt-16 md:pt-20">
+                  <h3 className="text-xl md:text-2xl font-bold text-yellow-400 mb-3 leading-tight">
+                    {spec.title}
+                  </h3>
+                  <p className="text-gray-200 text-base md:text-lg leading-relaxed font-light">
+                    {spec.value}
+                  </p>
+                </div>
 
-              {/* Hover effect indicator */}
-              <div className="absolute top-4 right-4 w-2 h-2 bg-yellow-400 rounded-full opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+              </div>
             </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
+          ))}
+        </div>
+      </div>
 
-      {/* Custom styles for smoother animations */}
       <style jsx global>{`
-        .swiper-wrapper {
-          transition-timing-function: linear !important;
+        .embla {
+          overflow: hidden;
+          width: 100%;
         }
-        .swiper-slide {
-          opacity: 0.9;
-          transition: opacity 0.3s ease;
+        .embla__container {
+          display: flex;
+          gap: 0.2rem;  /* Reduced from 1rem to 0.5rem */
+          backface-visibility: hidden;
+          touch-action: pan-y;
         }
-        .swiper-slide:hover {
-          opacity: 1;
+        .embla__slide {
+          flex: 0 0 auto;
+          min-width: 0;
+          position: relative;
         }
-        .swiper-slide-active {
-          opacity: 1;
+        
+        /* Smooth scrolling animation */
+        .embla__container {
+          animation: scroll 40s linear infinite;
+        }
+        
+        .embla__container:hover {
+          animation-play-state: paused;
+        }
+        
+        @keyframes scroll {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-100%);
+          }
+        }
+        
+        /* Optimize performance */
+        .embla__slide * {
+          transform: translateZ(0);
+          backface-visibility: hidden;
+          perspective: 1000;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 640px) {
+          .embla__container {
+            gap: 0.1rem;  /* Reduced from 0.75rem to 0.375rem */
+          }
         }
       `}</style>
     </div>

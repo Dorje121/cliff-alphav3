@@ -19,7 +19,7 @@ const zennseries = () => {
       description:
         "Each lens is digitally designed to match your eyes, offering sharp, accurate vision and helping reduce eye strain during long screen hours.",
       slug: "digital-ray-path-technology",
-      image: "/homeimage/smart.png",
+      image: "/embla/digital.png",
     },
     {
       id: "02",
