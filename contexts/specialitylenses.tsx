@@ -12,7 +12,7 @@ export default function SpecialityLenses() {
       id: "01",
       title: "TINT LENSES",
       subtitle: "Personalized Style & Comfort",
-      image: "/homeimage/singlelense.png",
+      image: "/lenses/tinted.png",
       points: [
         "Wide range of color options",
         "Reduces glare and eye strain",
@@ -24,7 +24,7 @@ export default function SpecialityLenses() {
       id: "02",
       title: "PHOTOCHROME",
       subtitle: "Adaptive Light Technology",
-      image: "/bluesafe/lense.jpg",
+      image: "/lenses/photochrome.png",
       points: [
         "Automatically adjusts to changing light",
         "Clear indoors, darkens in sunlight",
@@ -122,7 +122,7 @@ export default function SpecialityLenses() {
               href={card.id === "01" ? "/speciality-lenses/cliff-tinted-lenses" : "#"}
               className="block"
             >
-              <div className="bg-[#322b00]/50 min-w-[340px] md:min-w-[420px] rounded-lg lg:min-w-[440px] h-auto flex flex-col shadow-md overflow-hidden border border-yellow-900/30 hover:shadow-lg transition snap-center hover:border-cyan-500/50">
+              <div className="bg-[#322b00]/50 min-w-[340px] md:min-w-[420px] rounded-lg lg:min-w-[440px] h-auto flex flex-col shadow-md overflow-hidden border border-yellow-900/30 hover:shadow-lg transition snap-center hover:border-yellow-400/30">
                 <div className="w-full h-[280px] relative flex-shrink-0">
                   <Image
                     src={card.image}
