@@ -13,12 +13,8 @@ import {
   ImageComparisonSlider,
 } from "@/components/comparision/Comparision";
 
-interface PageProps {
-  params: { slug: string };
-  searchParams: { [key: string]: string | string[] | undefined };
-}
 
-const ProductPage: NextPage<PageProps> = () => {
+const ProductPage = async () => {
   const features = [
     {
       icon: "solar:shield-check-bold",
