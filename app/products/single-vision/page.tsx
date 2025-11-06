@@ -209,7 +209,7 @@ const ProductPage: NextPage<PageProps> = () => {
             distance glasses.
           </h2>
           <p className="text-lg md:text-xl !text-yellow-400 max-w-3xl mx-auto">
-            Customized solutions for specific vision needs and lifestyles
+            Customized solutions for specific vision needs and lifestyles.
           </p>
         </div>
 
