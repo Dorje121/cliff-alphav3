@@ -85,23 +85,24 @@ const ProductPage: NextPage<PageProps> = async ({ params }) => {
             </div>
 
             {/* Right Side - Key Benefits */}
-            {product.technology.benefits && product.technology.benefits.length > 0 && (
-              <div className="lg:col-span-5 lg:pl-8">
-                <h3 className="text-2xl font-semibold mb-6 text-amber-400">
-                  Key Benefits
-                </h3>
-                <div className="space-y-6">
-                  {product.technology.benefits.map((benefit, index) => (
-                    <div key={index}>
-                      <h4 className="text-xl font-medium text-amber-300 mb-1">
-                        {benefit.title}
-                      </h4>
-                      <p className="text-gray-300">{benefit.description}</p>
-                    </div>
-                  ))}
+            {product.technology.benefits &&
+              product.technology.benefits.length > 0 && (
+                <div className="lg:col-span-5 lg:pl-8">
+                  <h3 className="text-2xl font-semibold mb-6 text-amber-400">
+                    Key Benefits
+                  </h3>
+                  <div className="space-y-6">
+                    {product.technology.benefits.map((benefit, index) => (
+                      <div key={index}>
+                        <h4 className="text-xl font-medium text-amber-300 mb-1">
+                          {benefit.title}
+                        </h4>
+                        <p className="text-gray-300">{benefit.description}</p>
+                      </div>
+                    ))}
+                  </div>
                 </div>
-              </div>
-            )}
+              )}
           </div>
         </div>
       )}
