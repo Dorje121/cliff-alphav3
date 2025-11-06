@@ -1,20 +1,18 @@
 "use client";
-import React, { useRef, useLayoutEffect, useEffect, useState } from "react";
+import { useRef, useEffect, useState, useLayoutEffect } from "react";
 import { gsap } from "gsap";
-import HeroSection from "@/components/Services/heropage";
 import Image from "next/image";
 import { Technology, getTechnologyBySlug } from '../technology';
-import Link from 'next/link';
-import { ChevronLeft } from 'lucide-react';
-import { useParams, notFound } from 'next/navigation';
+import { useParams } from 'next/navigation';
+import { SpecsCarousel } from "@/components/ui/SpecsCarousel";
+import HeroSection from "@/components/Services/heropage";
 import { Target, Eye, Settings, User, Glasses } from 'lucide-react';
-import { SpecsCarousel } from "@/components/ui/SpecsCarousel"
 
 const CliffTechnology = () => {
   const { slug } = useParams();
   const [technology, setTechnology] = useState<Technology | null>(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
+  const [, setLoading] = useState(true);
+  const [, setError] = useState<string | null>(null);
   const backgroundImageRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -103,7 +101,7 @@ const CliffTechnology = () => {
                 {/* Text on right - slightly smaller on md+ */}
                 <div className="w-full md:w-[35%] lg:w-[40%] xl:w-[42%] text-left">
                   <p className="text-lg md:text-xl leading-relaxed montserrat text-zinc-800 mb-8">
-                    Digital Ray-Path® is based on the realistic simulation of the optical behaviour of the lens when its placed in front of the wearer's eye. This simulation computes the oblique aberrations that have a negative impact on the lens visual performance. Oblique aberrations are reduced at every point on the lens, taking into account the rotation of the eye and the actual position of the lens.
+                    Digital Ray-Path® is based on the realistic simulation of the optical behaviour of the lens when it&apos;s placed in front of the wearer&apos;s eye. This simulation computes the oblique aberrations that have a negative impact on the lens visual performance. Oblique aberrations are reduced at every point on the lens, taking into account the rotation of the eye and the actual position of the lens.
                   </p>
                   <p className="text-lg md:text-xl leading-relaxed montserrat text-zinc-800 font-semibold">
                     Result of Digital Ray-Path®: A personalized digital lens completely optimized for each user.
@@ -122,7 +120,7 @@ const CliffTechnology = () => {
                 How Digital Ray-Path® Technology Works
               </h2>
               <p className="text-base montserrat text-gray-300">
-                Digital Ray-Path® computes the back surface of the lens through an optimization process that follows 3 different steps. The result is a fully personalized lens taking into account the wearer's prescription, physiological parameters and frame measurements.
+                Digital Ray-Path® computes the back surface of the lens through an optimization process that follows 3 different steps. The result is a fully personalized lens taking into account the wearer&apos;s prescription, physiological parameters and frame measurements.
               </p>
             </div>
 
