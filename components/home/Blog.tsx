@@ -23,6 +23,7 @@ interface BlogPost {
   category: string;
   author: string;
   views: number;
+  slug: string;
   featured?: boolean;
 }
 
@@ -37,6 +38,7 @@ const blogPosts: BlogPost[] = [
     category: "Technology",
     author: "Dr. Sarah Johnson",
     views: 1250,
+    slug: "revolutionary-lens-technology-future-vision-correction",
     featured: true,
   },
   {
@@ -49,6 +51,7 @@ const blogPosts: BlogPost[] = [
     category: "Education",
     author: "Mark Williams",
     views: 890,
+    slug: "progressive-lenses-complete-guide-better-vision",
   },
   {
     id: 3,
@@ -60,6 +63,7 @@ const blogPosts: BlogPost[] = [
     category: "Health",
     author: "Dr. Emily Chen",
     views: 756,
+    slug: "science-behind-blue-light-protection",
   },
   {
     id: 4,
@@ -71,6 +75,7 @@ const blogPosts: BlogPost[] = [
     category: "Product",
     author: "Alex Rivera",
     views: 632,
+    slug: "photochromic-lenses-adapting-every-environment",
   },
   {
     id: 5,
@@ -82,6 +87,7 @@ const blogPosts: BlogPost[] = [
     category: "Health",
     author: "Dr. Michael Brown",
     views: 1100,
+    slug: "eye-health-digital-age",
   },
   {
     id: 6,
@@ -93,6 +99,7 @@ const blogPosts: BlogPost[] = [
     category: "Sports",
     author: "Jessica Park",
     views: 445,
+    slug: "custom-lens-solutions-professional-athletes",
   },
 ];
 
@@ -208,14 +215,15 @@ export default function Blog() {
                       </div>
                     </div>
 
-                    <div className="space-y-6 py-6">
+                    <div className="space-y-6 py-4">
+                      <p className="text-sm text-[#FFD700]/80">By {post.author}</p>
                       <h3 className="text-lg md:text-2xl font-medium montserrat leading-tight text-[#FFD700] transition-all duration-500 line-clamp-3">
                         {post.title}
                       </h3>
                     </div>
                     <div className="mt-auto pt-4 -mr-2 flex justify-end">
                       <TransitionLink
-                        href={`/Technologies/${post.id}`}
+                        href={`/blogs/${post.slug}`}
                         className="group/cta inline-flex items-center gap-2 text-[#FFD700] font-medium text-sm transition-all duration-300 hover:text-[#FFD700]/80"
                       >
                         <span className="border-b border-transparent group-hover/cta:border-[#FFD700] transition-all duration-300">
@@ -240,7 +248,7 @@ export default function Blog() {
               Discover more articles and insights in our blog
             </p>
             <TransitionLink
-              href="/Technologies"
+              href="/blogs"
               className="group/cta inline-flex items-center gap-2 px-6 py-3 bg-[#FFD700] hover:bg-[#FFD700]/90 text-black font-semibold rounded-full text-sm transition-all duration-300 "
             >
               <span>View All Articles</span>
