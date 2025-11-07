@@ -72,7 +72,7 @@ const ProductPage = () => {
             className="w-full h-full"
           >
             <Image
-              src={"/homeimage/dynamix.png"}
+              src={"/dynamix/hero.png"}
               alt={"Cliff Lens"}
               fill
               className="object-cover opacity-40"
@@ -251,7 +251,7 @@ const ProductPage = () => {
         </div>
       </div>
 
-      <div className="w-screen  mx-auto mx-4 sm:-mx-6 lg:-mx-8 py-24 bg-black/10">
+      <div className=" bg-black/10 pb-28">
         {/* Title Section */}
         <div className="  text-center py-16">
           <h2 className="text-2xl md:text-5xl font-medium montserrat text-[#FFD700] mb-4">
@@ -262,7 +262,7 @@ const ProductPage = () => {
           </p>
         </div>
         <div 
-          className={`flex overflow-x-auto pb-6 hide-scrollbar mt-2 pl-10 pr-10 max-w-9xl mx-auto ${isDragging ? 'cursor-grabbing' : 'cursor-grab'}`}
+          className={`flex overflow-x-auto pb-6 hide-scrollbar mt-2 pl-6 pr-8 max-w-9xl mx-auto ${isDragging ? 'cursor-grabbing' : 'cursor-grab'}`}
           ref={containerRef}
           onMouseDown={startDrag}
           onMouseMove={onDrag}
@@ -420,8 +420,23 @@ const ProductPage = () => {
      
       </div>  
 
-       {/* FAQ Section */}
-      <div className="w-full max-w-9xl mx-auto pb-24  bg-yellow-300/10 pt-24 px-4 sm:px-6 lg:px-8">
+       
+         </div>
+      <style jsx global>{`
+        .hide-scrollbar {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+          display: none;
+        }
+        .cursor-grabbing {
+          cursor: grabbing;
+        }
+      `}</style>
+
+      {/* FAQ Section */}
+      <div className="w-full max-w-9xl mx-auto pb-30 py-24  bg-yellow-300/10 pt-24 px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-4xl md:text-5xl montserrat text-center text-yellow-300 mb-16">
             Any Queries?
@@ -489,20 +504,9 @@ const ProductPage = () => {
             </div>
           </div>
         </div>
-      </div>  
-    </div>
-      <style jsx global>{`
-        .hide-scrollbar {
-          -ms-overflow-style: none;
-          scrollbar-width: none;
-        }
-        .hide-scrollbar::-webkit-scrollbar {
-          display: none;
-        }
-        .cursor-grabbing {
-          cursor: grabbing;
-        }
-      `}</style>
+      </div> 
+
+
     </div>
   );
 }

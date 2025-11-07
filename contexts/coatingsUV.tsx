@@ -343,7 +343,7 @@ const CoatingsUV: React.FC = () => {
 
                   {/* Enhanced CTA Button */}
                   <Link
-                    href={`/coatings/${coating.slug}`}
+                    href={`#`}
                     className="uv-coating-button group/btn inline-flex items-center px-8 py-4 bg-gradient-to-r from-[#FFD700] to-amber-400 rounded-full text-black font-bold hover:from-yellow-300 hover:to-amber-300 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-yellow-400/25 mt-4"
                   >
                     <span className="relative z-10">{coating.buttonText}</span>

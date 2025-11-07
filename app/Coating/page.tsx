@@ -38,7 +38,7 @@ const List = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-black text-[#FFD700] overflow-x-hidden">
+    <div className="min-h-screen bg-black text-[#FFD700] overflow-hidden">
       {/* Enhanced Hero Section */}
       <section className="relative h-[80vh] min-h-[600px] flex items-end justify-center overflow-hidden">
         {/* Animated Background */}

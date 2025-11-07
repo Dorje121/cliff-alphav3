@@ -197,7 +197,7 @@ export default function BlueShield() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 group/cards">
           {/* Card 1 */}
           <Link 
-            href="/photochromaticplus" 
+            href="/speciality-lenses/photochrome-plus" 
             className="block h-[50vh] w-full group overflow-hidden transition-all duration-500 ease-out group-hover/cards:opacity-50 hover:!opacity-100 hover:!blur-0"
           >
             <div className="relative h-full w-full">
@@ -218,7 +218,7 @@ export default function BlueShield() {
 
           {/* Card 2 */}
           <Link 
-            href="/tinted-lenses" 
+            href="/speciality-lenses/cliff-tinted-lenses" 
             className="block h-[50vh] w-full group overflow-hidden transition-all duration-500 ease-out group-hover/cards:opacity-50 hover:!opacity-100 hover:!blur-0"
           >
             <div className="relative h-full w-full">
@@ -239,7 +239,7 @@ export default function BlueShield() {
 
           {/* Card 3 */}
           <Link 
-            href="/polarized" 
+            href="/speciality-lenses/polarized-lenses" 
             className="block h-[50vh] w-full group overflow-hidden transition-all duration-500 ease-out group-hover/cards:opacity-50 hover:!opacity-100 hover:!blur-0"
           >
             <div className="relative h-full w-full">
@@ -260,7 +260,7 @@ export default function BlueShield() {
 
           {/* Card 4 */}
           <Link 
-            href="/photochrome" 
+            href="/speciality-lenses/photochrome" 
             className="block h-[50vh] w-full group overflow-hidden transition-all duration-500 ease-out group-hover/cards:opacity-50 hover:!opacity-100 hover:!blur-0"
           >
             <div className="relative h-full w-full">

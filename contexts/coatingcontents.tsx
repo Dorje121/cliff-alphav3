@@ -33,7 +33,7 @@ interface GSAPElement extends Element {
   ): void;
 }
 
-// Coating Categories Data
+
 const categories: CoatingCategory[] = [
   {
     id: "01",
@@ -53,7 +53,7 @@ const categories: CoatingCategory[] = [
     subtitle: "Complete Digital Protection",
     description:
       "Advanced blue light filtration technology that reduces eye strain and improves sleep quality during extended screen time",
-    slug: "blue-safe-coating",
+    slug: "blue-safe",
     image: "/bluesafe/Bluesafe.jpg",
     icon: "mdi:shield-sun",
     gradient: "from-blue-400/20 to-cyan-500/10",
@@ -65,7 +65,7 @@ const categories: CoatingCategory[] = [
     subtitle: "Enhanced Visual Clarity",
     description:
       "Specially engineered lenses that provide superior optical clarity and reduce glare for safer driving in all conditions",
-    slug: "drive-clear-coating",
+    slug: "drive-clear",
     image: "/homeimage/driveclear.png",
     icon: "mdi:car-light-high",
     gradient: "from-amber-400/20 to-yellow-500/10",
@@ -77,7 +77,7 @@ const categories: CoatingCategory[] = [
     subtitle: "Premium Multi-Focal Excellence",
     description:
       "Advanced multi-focal progressive lenses with seamless transitions for crystal clear vision at all distances",
-    slug: "photo-z-coating",
+    slug: "photoZ",
     image: "/homeimage/lense6.png",
     icon: "mdi:image-filter-center-focus",
     gradient: "from-green-400/20 to-emerald-500/10",
@@ -383,7 +383,7 @@ const CoatingContents: React.FC = () => {
               {/* Enhanced CTA Button */}
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
                 <Link
-                  href="/contact"
+                  href="/Contact"
                   className="group relative px-8 py-4 bg-gradient-to-r from-[#FFD700] to-amber-400 rounded-full text-black font-bold hover:from-yellow-300 hover:to-amber-300 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-yellow-400/30 min-w-[200px] text-center"
                 >
                   <span className="relative z-10 flex items-center justify-center gap-2">

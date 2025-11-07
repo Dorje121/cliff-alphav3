@@ -26,9 +26,9 @@ const ZennSeries = () => {
       description: "Crystal clear vision with superior optical quality",
     },
     {
-      icon: "mdi:sofa",
-      title: "Comfort",
-      description: "All-day wearing comfort with lightweight design",
+      icon: "mdi:eye-check",
+      title: "Eye Comfort",
+      description: "Reduced eye strain with all-day wearing comfort",
     },
     {
       icon: "mdi:monitor-eye",
@@ -190,6 +190,79 @@ const ZennSeries = () => {
         </div>
       </div>
 
+
+
+
+
+      <section className="w-full py-16 bg-gradient-to-b from-black/80 to-black/40">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl md:text-5xl montserrat text-[#FFD700] mb-6">
+            Cliff Zen Single Vision Lenses
+          </h2>
+          <p className="text-lg md:text-xl text-yellow-300/80 max-w-4xl mx-auto mb-12">
+            Experience crystal clear vision with our premium single vision lenses, designed for ultimate comfort and visual performance.
+          </p>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-12 items-center">
+            {/* Premium Lens Card */}
+            <div className="group relative h-96 w-full rounded-2xl overflow-hidden border border-yellow-900/30 hover:border-yellow-500/50 transition-all duration-300">
+              <Image
+                src={"/homeimage/cliffsingle.png"}
+                alt="Premium+ Single Vision Lenses"
+                fill
+                className="object-cover transition-transform duration-700 group-hover:scale-110"
+              />
+            </div>
+
+            {/* Right Side Content */}
+            <div className="space-y-6">
+              <h3 className="text-2xl font-bold text-yellow-400">Experience Unmatched Clarity</h3>
+              <p className="text-yellow-100/80">
+                Our single vision lenses are engineered with advanced digital ray path technology, providing you with:
+              </p>
+              
+              <ul className="space-y-4">
+                {[
+                  "Dynamic Optics for superior visual performance",
+                  "Thinner and lighter lens design for all-day comfort",
+                  "Precise point-by-point calculation for optimal clarity",
+                  "Better aesthetics with advanced lens technology",
+                  "Digital relief for reduced eye strain"
+                ].map((feature, index) => (
+                  <li key={index} className="flex items-start">
+                    <span className="flex-shrink-0 w-1.5 h-1.5 mt-2 bg-yellow-400 rounded-full mr-3"></span>
+                    <span className="text-yellow-100/90">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+
+              {/* <div className="pt-4">
+                <Link 
+                  href="/products/single-vision" 
+                  className="inline-flex items-center text-yellow-400 hover:text-yellow-300 transition-colors group"
+                >
+                  <span className="font-medium">Explore Single Vision Lenses</span>
+                  <svg 
+                    className="w-4 h-4 ml-2 transition-transform duration-300 group-hover:translate-x-1" 
+                    fill="none" 
+                    stroke="currentColor" 
+                    viewBox="0 0 24 24" 
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path 
+                      strokeLinecap="round" 
+                      strokeLinejoin="round" 
+                      strokeWidth={2} 
+                      d="M14 5l7 7m0 0l-7 7m7-7H3" 
+                    />
+                  </svg>
+                </Link>
+              </div> */}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Single Vision Lenses Section */}
       <div className="w-full mx-auto px-8 py-10 relative">
         {/* Title Section */}
@@ -238,8 +311,79 @@ const ZennSeries = () => {
         </div>
       </div>
 
+
+       <section className="w-full py-16 bg-gradient-to-b from-black/80 to-black/40">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl md:text-5xl montserrat text-[#FFD700] mb-6">
+            Cliff ZenN Progressive Lenses
+          </h2>
+          <p className="text-lg md:text-xl text-yellow-300/80 max-w-4xl mx-auto mb-12">
+            Experience seamless vision at all distances with our advanced progressive lens technology
+          </p>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-12 items-center">
+            {/* Progressive Lens Image */}
+            <div className="group relative h-96 w-full rounded-2xl overflow-hidden border border-yellow-900/30 hover:border-yellow-500/50 transition-all duration-300">
+              <Image
+                src={"/progressive/hello.png"}
+                alt="ZenN Progressive Lenses"
+                fill
+                className="object-cover transition-transform duration-700 group-hover:scale-110"
+              />
+            
+            </div>
+
+            {/* Right Side Content */}
+            <div className="space-y-6">
+              <h3 className="text-2xl font-bold text-yellow-400">Seamless Vision Transition</h3>
+              <p className="text-yellow-100/80">
+                Our ZenN Progressive lenses offer natural vision correction with:
+              </p>
+              
+              <ul className="space-y-4">
+                {[
+                  "Smooth transition between near, intermediate, and far vision",
+                  "Wider reading and computer zones for better comfort",
+                  "Reduced peripheral distortion for natural vision",
+                  "Personalized for your unique visual needs",
+                  "Premium anti-reflective coating included"
+                ].map((feature, index) => (
+                  <li key={index} className="flex items-start">
+                    <span className="flex-shrink-0 w-1.5 h-1.5 mt-2 bg-yellow-400 rounded-full mr-3"></span>
+                    <span className="text-yellow-100/90">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+
+              {/* <div className="pt-4">
+                <Link 
+                  href="/products/progressive" 
+                  className="inline-flex items-center text-yellow-400 hover:text-yellow-300 transition-colors group"
+                >
+                  <span className="font-medium">Explore Progressive Lenses</span>
+                  <svg 
+                    className="w-4 h-4 ml-2 transition-transform duration-300 group-hover:translate-x-1" 
+                    fill="none" 
+                    stroke="currentColor" 
+                    viewBox="0 0 24 24" 
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path 
+                      strokeLinecap="round" 
+                      strokeLinejoin="round" 
+                      strokeWidth={2} 
+                      d="M14 5l7 7m0 0l-7 7m7-7H3" 
+                    />
+                  </svg>
+                </Link>
+              </div> */}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Progressive Lenses Section */}
-      <div className="w-full mx-auto px-8 py-10 relative">
+      <div className="w-full mx-auto px-8 py-10 pb-28 relative">
         {/* Title Section */}
         <div className="text-center py-16">
           <h2 className="text-2xl md:text-5xl font-medium montserrat text-[#FFD700] mb-4">
@@ -254,7 +398,7 @@ const ZennSeries = () => {
           {lensTypes.map((lens, index) => (
             <Link
               key={index}
-              href="/products/progressive"
+              href="#"
               className="group block h-full"
             >
               <div className="group relative h-[400px] rounded-2xl overflow-hidden bg-gradient-to-br from-yellow-900/20 to-black/50 border border-yellow-900/30 hover:border-yellow-800/50 transition-all duration-500">
@@ -288,6 +432,9 @@ const ZennSeries = () => {
           ))}
         </div>
       </div>
+
+     
+     
 
       {/* FAQ Section */}
       <div className="w-full max-w-9xl mx-auto pb-24 bg-yellow-300/10 pt-24 px-4 sm:px-6 lg:px-8">

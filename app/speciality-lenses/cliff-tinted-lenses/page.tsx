@@ -528,7 +528,7 @@ const CliffTintedLenses = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 group/cards">
           {/* Card 1 */}
           <Link 
-            href="/photochromatic" 
+            href="/speciality-lenses/photochrome" 
             className="block h-[50vh] w-full group overflow-hidden transition-all duration-500 ease-out group-hover/cards:opacity-50 hover:!opacity-100 hover:!blur-0"
           >
             <div className="relative h-full w-full">
@@ -549,7 +549,7 @@ const CliffTintedLenses = () => {
 
           {/* Card 2 */}
           <Link 
-            href="/photochromaticplus" 
+            href="/speciality-lenses/photochrome-plus" 
             className="block h-[50vh] w-full group overflow-hidden transition-all duration-500 ease-out group-hover/cards:opacity-50 hover:!opacity-100 hover:!blur-0"
           >
             <div className="relative h-full w-full">
@@ -570,7 +570,7 @@ const CliffTintedLenses = () => {
 
           {/* Card 3 */}
           <Link 
-            href="/polarized" 
+            href="/speciality-lenses/polarized-lenses" 
             className="block h-[50vh] w-full group overflow-hidden transition-all duration-500 ease-out group-hover/cards:opacity-50 hover:!opacity-100 hover:!blur-0"
           >
             <div className="relative h-full w-full">
@@ -591,7 +591,7 @@ const CliffTintedLenses = () => {
 
           {/* Card 4 */}
           <Link 
-            href="/blue-shield" 
+            href="/speciality-lenses/blue-shield" 
             className="block h-[50vh] w-full group overflow-hidden transition-all duration-500 ease-out group-hover/cards:opacity-50 hover:!opacity-100 hover:!blur-0"
           >
             <div className="relative h-full w-full">

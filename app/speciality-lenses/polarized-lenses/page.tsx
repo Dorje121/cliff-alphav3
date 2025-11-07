@@ -13,22 +13,16 @@ gsap.registerPlugin(ScrollTrigger)
 
 const lensOptions = [
   {
-    name: 'Polarized Gray',
-    leftImage: '/homeimage/lense1.png',
-    rightImage: '/homeimage/lense3.png',
-    features: ['100% UV Protection', 'Reduces Glare & Reflections', 'Enhanced Visual Comfort']
+    name: 'Photochromic Gray',
+    leftImage: '/polarized/gray.png',
+    rightImage: '/photochromatic/gray.png',
+    features: ['Neutral color balance', 'Reduces brightness', 'Minimizes eye fatigue']
   },
   {
-    name: 'Polarized Brown',
-    leftImage: '/homeimage/lense6.png',
-    rightImage: '/bluesafe/lense.png',
-    features: ['Superior Contrast Enhancement', 'Ideal for Driving & Sports', 'True Color Perception']
-  },
-  {
-    name: 'Polarized Green',
-    leftImage: '/lenses/lense.png',
-    rightImage: '/homeimage/singlelense.png',
-    features: ['Maximum Glare Reduction', 'Perfect for Water Activities', 'Reduces Eye Strain']
+    name: 'Photochromic Gold',
+    leftImage: '/polarized/gold.png',
+    rightImage: '/photochromatic/golden.png',
+    features: ['Enhances contrast', 'Ideal for sports', 'Reduces glare']
   }
 ]
 
@@ -36,7 +30,7 @@ export default function Polarized() {
   const [currentLens, setCurrentLens] = useState(0)
   const [isTransitioning, setIsTransitioning] = useState(false)
   const lensImages = lensOptions.map(option => option.rightImage)
-  const modalImage = '/pageimg/nobgGlass.png'
+  const modalImage = '/photochromatic/modal.png'
   const [currentImage, setCurrentImage] = useState(lensImages[0])
 
   // GSAP ref for last image
@@ -153,7 +147,7 @@ export default function Polarized() {
       </section>
 
 
-        {/* Benefits Section */}
+      {/* Benefits Section */}
       <section className="py-12 bg-black overflow-x-auto">
         <div className="max-w-9xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="w-full min-w-[1200px] sm:min-w-0">
@@ -217,108 +211,109 @@ export default function Polarized() {
         </div>
       </div>
 
-      {/* Lens Options Section */}
-      <section className="py-16 bg-black">
-        <div className="max-w-9xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-            {/* Left Side */}
-            <div className="pl-6 space-y-6 lg:col-span-5 sticky top-35 self-start">
-              <div className="bg-black/80 backdrop-blur-sm p-6 rounded-lg">
-                <h3 className="text-3xl montserrat text-[#FFD700] mb-2">Choose Your Polarized Lens</h3>
-                <p className="text-[#FFD700] poppins text-2xl">Select a lens color to see how it looks</p>
-              </div>
-              <div className="max-h-[calc(100vh-200px)] overflow-y-auto pr-2 py-2">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-                  {lensOptions.map((lens, index) => (
-                    <div
-                      key={index}
-                      className={`flex flex-col items-center cursor-pointer transition-opacity ${
-                        currentLens === index ? 'opacity-100' : 'opacity-70 hover:opacity-100'
-                      }`}
-                      onClick={() => selectLens(index)}
-                    >
-                      <div className="relative w-32 h-32">
-                        <Image
-                          src={lens.leftImage}
-                          alt={`${lens.name} Polarized Lenses`}
-                          fill
-                          className="object-contain"
-                        />
+        {/* Lens Options Section */}
+              <section className="py-16 bg-black">
+                <div className="max-w-9xl mx-auto px-4 sm:px-6 lg:px-8">
+                  <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                    {/* Left Side */}
+                    <div className="pl-6 space-y-6 lg:col-span-5 sticky top-35 self-start">
+                      <div className="bg-black/80 backdrop-blur-sm p-6 rounded-lg ">
+                        <h3 className="text-2xl md:text-3xl montserrat text-[#FFD700] mb-2">Choose Your Lens Style</h3>
+                        <p className="text-[#FFD700] poppins text-lg md:text-xl">Select a lens to see how it looks</p>
                       </div>
-                      <div className="mt-2 text-center">
-                        <h3 className="font-semibold text-[#FFD700] poppins">{lens.name}</h3>
-                        <div className="mt-2 space-y-1">
-                          {lens.features.map((feature, featureIndex) => (
-                            <p key={featureIndex} className="text-xs text-[#FFD700]/80 poppins">
-                              • {feature}
-                            </p>
+                      <div className="max-h-[calc(100vh-200px)] overflow-y-auto pr-1 py-0.5">
+                        <div className="grid grid-cols-3 sm:grid-cols-3 pl-6 gap-6">
+                          {lensOptions.map((lens, index) => (
+                            <div
+                              key={index}
+                              className={`group relative bg-black/50 backdrop-blur-sm rounded-md p-1 border transition-all duration-200 cursor-pointer ${
+                                currentLens === index 
+                                  ? 'border-yellow-400 scale-[1.01] shadow-sm shadow-yellow-500/5' 
+                                  : 'border-yellow-800/20 hover:border-yellow-500/40 hover:bg-black/60'
+                              }`}
+                              onClick={() => selectLens(index)}
+                            >
+                              <div className="relative w-full" style={{ aspectRatio: '1/1' }}>
+                                <Image
+                                  src={lens.leftImage}
+                                  alt={`${lens.name} Photochromic Lenses`}
+                                  fill
+                                  className={`object-contain transition-transform duration-200 ${
+                                    currentLens === index ? 'scale-105' : 'group-hover:scale-102'
+                                  }`}
+                                />
+                              </div>
+                              <div className="mt-1 text-center">
+                                <h3 className={`font-medium text-[10px] xs:text-xs transition-colors line-clamp-2 leading-tight ${
+                                  currentLens === index ? 'text-yellow-400' : 'text-yellow-300/90 group-hover:text-yellow-400'
+                                }`}>
+                                  {lens.name}
+                                </h3>
+                              </div>
+                            </div>
                           ))}
                         </div>
                       </div>
                     </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            {/* Right Side - Large Lens Preview */}
-            <div className="lg:col-span-7 p-4 flex items-center justify-end relative">
-              <div className="relative w-[650px] h-[650px] ml-20">
-                <div className="absolute inset-0">
-                  <Image
-                    src={modalImage}
-                    alt="Polarized Lenses Base"
-                    fill
-                    className="object-contain"
-                    priority
-                  />
-                </div>
-
-                <div className="absolute inset-0">
-                  <div className="relative w-full h-full">
-                    <div
-                      className={`absolute inset-0 transition-opacity duration-1000 ${
-                        isTransitioning ? 'opacity-0' : 'opacity-80'
-                      }`}
-                    >
-                      <Image
-                        src={currentImage}
-                        alt="Polarized Lenses Overlay"
-                        fill
-                        className="object-contain"
-                        priority
-                      />
-                    </div>
-
-                    {isTransitioning && (
-                      <div className="absolute inset-0 animate-fadeIn">
-                        <Image
-                          src={lensImages[currentLens]}
-                          alt="Polarized Lenses Overlay"
-                          fill
-                          className="object-contain opacity-80"
-                          priority
-                          onLoadingComplete={() => {
-                            setCurrentImage(lensImages[currentLens])
-                            setTimeout(() => setIsTransitioning(false), 500)
-                          }}
-                        />
+        
+                    {/* Right Side - Large Lens Preview */}
+                    <div className="lg:col-span-7 p-4 flex items-center justify-end relative">
+                      <div className="relative w-[650px] h-[650px] ml-20">
+                        <div className="absolute inset-0">
+                          <Image
+                            src={modalImage}
+                            alt="Photochromic Lenses Base"
+                            fill
+                            className="object-contain"
+                            priority
+                          />
+                        </div>
+        
+                        <div className="absolute inset-0">
+                          <div className="relative w-full h-full">
+                            <div
+                              className={`absolute inset-0 transition-opacity duration-1000 ${
+                                isTransitioning ? 'opacity-0' : 'opacity-80'
+                              }`}
+                            >
+                              <Image
+                                src={currentImage}
+                                alt="Photochromic Lenses Overlay"
+                                fill
+                                className="object-contain"
+                                priority
+                              />
+                            </div>
+        
+                            {isTransitioning && (
+                              <div className="absolute inset-0 animate-fadeIn">
+                                <Image
+                                  src={lensImages[currentLens]}
+                                  alt="Photochromic Lenses Overlay"
+                                  fill
+                                  className="object-contain opacity-80"
+                                  priority
+                                  onLoadingComplete={() => {
+                                    setCurrentImage(lensImages[currentLens])
+                                    setTimeout(() => setIsTransitioning(false), 500)
+                                  }}
+                                />
+                              </div>
+                            )}
+                          </div>
+                        </div>
                       </div>
-                    )}
-                  </div>
+                    </div>
+                  </div>    
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+              </section>
 
 
       <section className="bg-black py-20">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 group/cards">
           {/* Card 1 */}
           <Link 
-            href="/photochromaticplus" 
+            href="/speciality-lenses/photochrome-plus" 
             className="block h-[50vh] w-full group overflow-hidden transition-all duration-500 ease-out group-hover/cards:opacity-50 hover:!opacity-100 hover:!blur-20"
           >
             <div className="relative h-full w-full">
@@ -339,7 +334,7 @@ export default function Polarized() {
 
           {/* Card 2 */}
           <Link 
-            href="/tinted-lenses" 
+            href="/speciality-lenses/cliff-tinted-lenses" 
             className="block h-[50vh] w-full group overflow-hidden transition-all duration-500 ease-out group-hover/cards:opacity-50 hover:!opacity-100 hover:!blur-0"
           >
             <div className="relative h-full w-full">
@@ -360,7 +355,7 @@ export default function Polarized() {
 
           {/* Card 3 */}
           <Link 
-            href="/polarized" 
+            href="/speciality-lenses/photochrome" 
             className="block h-[50vh] w-full group overflow-hidden transition-all duration-500 ease-out group-hover/cards:opacity-50 hover:!opacity-100 hover:!blur-0"
           >
             <div className="relative h-full w-full">
@@ -381,7 +376,7 @@ export default function Polarized() {
 
           {/* Card 4 */}
           <Link 
-            href="/blue-shield" 
+            href="/speciality-lenses/blue-shield" 
             className="block h-[50vh] w-full group overflow-hidden transition-all duration-500 ease-out group-hover/cards:opacity-50 hover:!opacity-100 hover:!blur-0"
           >
             <div className="relative h-full w-full">

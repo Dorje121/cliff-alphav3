@@ -33,8 +33,8 @@ const Coatings = () => {
       subtitle: "Advanced Blue Light Protection",
       description:
         "Blue safe coating lenses provide advanced blue light protection",
-      slug: "blue-safe-coating",
-      image: "/homeimage/blue-safe2.png",
+      slug: "blue-safe",
+      image: "/bluesafetsx/bluesafe.png",
       alignment: "right",
       buttonText: "Learn more",
     },
@@ -44,7 +44,7 @@ const Coatings = () => {
       subtitle: "Premium Optical Excellence",
       description:
         "Lenses are specially designed to provide superior optical clarity",
-      slug: "drive-clear-coating",
+      slug: "drive-clear",
       image: "/homeimage/lens.png",
       alignment: "left",
       buttonText: "Learn more",
@@ -54,8 +54,8 @@ const Coatings = () => {
       title: "PHOTO Z COATING",
       subtitle: "Premium Optical Excellence",
       description: "Advanced multi-focal progressive lenses for all distances",
-      slug: "photo-z-coating",
-      image: "/homeimage/lens.png",
+      slug: "photoZ",
+      image: "/bluesafetsx/photoz.png",
       alignment: "right",
       buttonText: "Learn more",
     },
@@ -212,13 +212,13 @@ const Coatings = () => {
               </div>
 
               {/* Content Overlay */}
-              <div className="absolute inset-0 flex items-center justify-center">
+              <div className="absolute inset-0 flex items-start justify-center pt-[5%]">
                 <div className="content text-center px-8 max-w-4xl">
-                  <div className="mb-6">
-                    <h3 className="text-5xl md:text-7xl font-bold mb-4 text-zinc-900">
+                  <div className="mb-4">
+                    <h3 className="text-5xl md:text-7xl font-bold mb-4 text-[#FFD700]">
                       {category.title}
                     </h3>
-                    <p className="text-2xl md:text-3xl text-zinc-800 font-light">
+                    <p className="text-2xl md:text-3xl text-[#FFD700] font-light">
                       {category.subtitle}
                     </p>
                   </div>
@@ -230,9 +230,9 @@ const Coatings = () => {
                     >
                       {category.buttonText}
                     </Link>
-                    <button className="px-8 py-3 border border-white rounded-full text-white text-lg font-medium hover:bg-white hover:text-black transition-all duration-300 transform hover:scale-105 min-w-[140px]">
+                    {/* <button className="px-8 py-3 border border-white rounded-full text-white text-lg font-medium hover:bg-white hover:text-black transition-all duration-300 transform hover:scale-105 min-w-[140px]">
                       Buy
-                    </button>
+                    </button> */}
                   </div>
                 </div>
               </div>

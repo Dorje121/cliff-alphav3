@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { NextPage } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -282,6 +281,84 @@ const VersatileProgressivePage = () => {
           ))}
         </div>
       </div>
+
+
+          <div className="w-full mx-auto px-8 pb-28 pt-10 relative">
+            {/* Title Section */}
+            <div className="text-center py-16">
+              <h2 className="text-2xl md:text-5xl font-medium montserrat text-[#FFD700] mb-4">
+                Explore Your Options
+              </h2>
+              <p className="text-lg md:text-xl !text-yellow-400 max-w-3xl mx-auto">
+                Choose from a range of lens options to suit your lifestyle and
+                vision needs.
+              </p>
+            </div>
+
+            {/* Cards Container */}
+            <div className="flex flex-col md:flex-row justify-center items-center gap-8 mt-2 max-w-6xl mx-auto">
+              {/* Card 1 */}
+              <div className="group relative h-[380px] w-full md:w-[45%] max-w-sm rounded-2xl overflow-hidden bg-gradient-to-br from-yellow-900/20 to-black/50 border border-yellow-900/30 hover:border-yellow-800/50 transition-all duration-500">
+                <div className="relative h-full w-full">
+                  <Image
+                    src={"/cliffcoating/bluee.png"}
+                    alt="Blue Safe Lenses"
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    priority
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
+                  <div className="absolute bottom-0 left-0 right-0 p-6 text-left">
+                    <h3 className="text-2xl font-bold text-white mb-2">Blue Safe</h3>
+                    <p className="text-amber-100/80 mb-4">
+                      Protect your eyes from digital screens
+                    </p>
+                    <ul className="space-y-2 text-sm text-gray-200 mb-6">
+                      <li className="flex items-center">
+                        <span className="w-1.5 h-1.5 bg-amber-400 rounded-full mr-2"></span>
+                        Ideal for nearsightedness or farsightedness
+                      </li>
+                      <li className="flex items-center">
+                        <span className="w-1.5 h-1.5 bg-amber-400 rounded-full mr-2"></span>
+                        Available in various materials
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              {/* Card 2 */}
+              <div className="group relative h-[380px] w-full md:w-[45%] max-w-sm rounded-2xl overflow-hidden bg-gradient-to-br from-yellow-900/20 to-black/50 border border-yellow-900/30 hover:border-yellow-800/50 transition-all duration-500">
+                <div className="relative h-full w-full">
+                  <Image
+                    src={"/cliffcoating/photoZ.jpg"}
+                    alt="Photo Z Lenses"
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    priority
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
+                  <div className="absolute bottom-0 left-0 right-0 p-6 text-left">
+                    <h3 className="text-2xl font-bold text-white mb-2">Photo Z</h3>
+                    <p className="text-amber-100/80 mb-4">
+                      Protect your eyes from dust and harmful rays while maintaining your style
+                    </p>
+                    <ul className="space-y-2 text-sm text-gray-200 mb-6">
+                      <li className="flex items-center">
+                        <span className="w-1.5 h-1.5 bg-amber-400 rounded-full mr-2"></span>
+                        Reduces eye strain
+                      </li>
+                      <li className="flex items-center">
+                        <span className="w-1.5 h-1.5 bg-amber-400 rounded-full mr-2"></span>
+                        Improves sleep quality
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
 
       {/* FAQ Section */}
       <div className="w-full max-w-9xl mx-auto pb-24 bg-yellow-300/10 pt-24 px-4 sm:px-6 lg:px-8">
