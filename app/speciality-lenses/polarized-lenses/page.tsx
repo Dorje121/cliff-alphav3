@@ -1,59 +1,42 @@
 'use client'
 
 import Image from 'next/image'
-import { useState, useEffect, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
+import { Icon } from '@iconify/react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import Link from 'next/link'
 import { ChevronLeft } from 'lucide-react'
 import { motion } from 'framer-motion'
-import Link from 'next/link'
 
 gsap.registerPlugin(ScrollTrigger)
 
 const lensOptions = [
   {
-    name: 'Photochromic Gray',
-    leftImage: '/polarized/gray.png',
-    rightImage: '/photochromatic/gray.png',
-    features: ['Neutral color balance', 'Reduces brightness', 'Minimizes eye fatigue']
+    name: 'Polarized Gray',
+    leftImage: '/homeimage/lense1.png',
+    rightImage: '/homeimage/lense3.png',
+    features: ['100% UV Protection', 'Reduces Glare & Reflections', 'Enhanced Visual Comfort']
   },
   {
-    name: 'Photochromic Brown',
-    leftImage: '/polarized/brown.png',
-    rightImage: '/photochromatic/brown.png',
-    features: ['Enhances contrast', 'Ideal for sports', 'Reduces glare']
+    name: 'Polarized Brown',
+    leftImage: '/homeimage/lense6.png',
+    rightImage: '/bluesafe/lense.png',
+    features: ['Superior Contrast Enhancement', 'Ideal for Driving & Sports', 'True Color Perception']
   },
   {
-    name: 'Photochromic Blue',
-    leftImage: '/polarized/blue.png',
-    rightImage: '/photochromatic/blue.png',
-    features: ['Reduces digital eye strain', 'Modern look', 'Enhances screen clarity']
-  },
-  {
-    name: 'Photochromic Pink',
-    leftImage: '/polarized/rose.png',
-    rightImage: '/photochromatic/pink.png',
-    features: ['Soothes the eyes', 'Enhances visual comfort', 'Stylish appearance']
-  },
-  {
-    name: 'Photochromic Green',
-    leftImage: '/polarized/green.png',
-    rightImage: '/photochromatic/pink.png',
-    features: ['Natural color perception', 'Reduces eye fatigue', 'Ideal for outdoor activities']
-  },
-  {
-    name: 'Photochromic Gold',
-    leftImage: '/polarized/gold.png',
-    rightImage: '/photochromatic/brown.png',
-    features: ['Mirror finish', 'Reduces glare', 'Stylish and modern look']
+    name: 'Polarized Green',
+    leftImage: '/lenses/lense.png',
+    rightImage: '/homeimage/singlelense.png',
+    features: ['Maximum Glare Reduction', 'Perfect for Water Activities', 'Reduces Eye Strain']
   }
 ]
 
-export default function PhotochromeClient() {
+export default function Polarized() {
   const [currentLens, setCurrentLens] = useState(0)
   const [isTransitioning, setIsTransitioning] = useState(false)
   const lensImages = lensOptions.map(option => option.rightImage)
-  const modalImage = '/photochromatic/modal.png'
+  const modalImage = '/pageimg/nobgGlass.png'
   const [currentImage, setCurrentImage] = useState(lensImages[0])
 
   // GSAP ref for last image
@@ -117,15 +100,15 @@ export default function PhotochromeClient() {
     .animate-fadeIn {
       animation: fadeIn 3s ease-in-out forwards;
     }
-  `
+  `;
 
   return (
-    <div className="min-h-screen bg-black text-gray-100">
+    <div className="min-h-screen bg-black">
       <style jsx global>{fadeInKeyframes}</style>
 
       <div className="max-w-[94rem] w-full mx-auto pl-8 pt-24 absolute z-40">
         <Link
-          href="/products"
+          href="/speciality-lenses"
           className="inline-flex items-center text-[#FFD700] hover:text-amber-300 mb-8"
         >
           <ChevronLeft className="w-5 h-5 mr-2" />
@@ -134,7 +117,7 @@ export default function PhotochromeClient() {
       </div>
 
       {/* Hero Section */}
-       <section className="relative min-h-[80vh] flex items-center justify-center">
+      <section className="relative min-h-[80vh] flex items-center justify-center">
         <div className="absolute inset-0 overflow-hidden">
           <motion.div
             animate={{
@@ -148,8 +131,8 @@ export default function PhotochromeClient() {
             className="w-full h-full"
           >
             <Image
-              src="/photochromatic/hero.png"
-              alt="Photochromatic Lenses"
+              src="/polarized/polo.jpg"
+              alt="Polarized Lenses"
               fill
               className="object-cover"
               priority
@@ -159,80 +142,78 @@ export default function PhotochromeClient() {
           <div className="absolute inset-0 bg-black/40"></div>
         </div>
 
-        <div className="relative z-10 pt-70 text-center px-6 sm:px-8 w-full max-w-5xl">
+        <div className="relative z-10 pt-70 text-center px-6 sm:px-8 w-full max-w-4xl">
           <h1 className="text-5xl md:text-6xl montserrat text-[#FFD700] mb-6">
-            Photochromatic Plus Lenses
+            Polarized Lenses
           </h1>
           <p className="text-xl md:text-2xl poppins text-[#FFD700] leading-relaxed max-w-3xl mx-auto">
-            Experience the adaptive eyewear with our advanced photochromic technology that automatically adjusts to your environment.
+            Eliminate glare and enhance clarity with our premium polarized lenses. Perfect for driving, sports, and outdoor activities.
           </p>
         </div>
       </section>
 
-      {/* Features Icons Section */}
-      <div className="py-16 px-4 bg-black">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
-            <div className="group relative bg-[#FFD700]/10 backdrop-blur-sm rounded-3xl p-6 border border-yellow-800/20 hover:border-yellow-400 transition-all duration-500 hover:bg-zinc-800/70">
-              <div className="absolute inset-0 bg-gradient-to-r from-yellow-400/10 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              <div className="relative z-10">
-                <div className="w-20 h-20 mx-auto mb-4 flex items-center justify-center">
-                  <img
-                    className="w-16 h-16 object-contain object-center"
-                    src="/svgs/uvprotection.svg"
-                    alt="cliff uvprotection"
-                  />
-                </div>
-                <h4 className="text-lg font-bold text-yellow-400 mb-2">UV Protection</h4>
-                <p className="text-yellow-300/80 text-sm">Blocks harmful UV rays from the sun</p>
-              </div>
-            </div>
 
-            <div className="group relative bg-[#FFD700]/10 backdrop-blur-sm rounded-3xl p-6 border border-yellow-800/20 hover:border-yellow-400 transition-all duration-500 hover:bg-zinc-800/70">
-              <div className="absolute inset-0 bg-gradient-to-r from-yellow-400/10 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              <div className="relative z-10">
-                <div className="w-20 h-20 mx-auto mb-4 flex items-center justify-center">
-                  <img
-                    className="w-16 h-16 object-contain object-center"
-                    src="/svgs/bluelight.svg"
-                    alt="cliff bluelight"
-                  />
+        {/* Benefits Section */}
+      <section className="py-12 bg-black overflow-x-auto">
+        <div className="max-w-9xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="w-full min-w-[1200px] sm:min-w-0">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+            {[
+              {
+                title: "Glare Elimination",
+                description: "Block reflected glare from water, snow, roads, and other surfaces for comfortable vision",
+                icon: "mdi:shield-sun"
+              },
+              {
+                title: "Enhanced Contrast",
+                description: "See colors more vividly and clearly with improved contrast and reduced eye strain",
+                icon: "mdi:contrast"
+              },
+              {
+                title: "UV Protection",
+                description: "100% protection from harmful UVA and UVB rays for long-term eye health",
+                icon: "mdi:weather-sunny"
+              },
+              {
+                title: "Safer Driving",
+                description: "Reduce glare from wet roads and other vehicles for safer driving conditions",
+                icon: "mdi:car"
+              },
+              {
+                title: "Better Outdoor Experience",
+                description: "Perfect for fishing, skiing, golf, and other outdoor activities",
+                icon: "mdi:fish"
+              },
+              {
+                title: "Reduced Eye Fatigue",
+                description: "Less squinting and strain means more comfortable all-day wear",
+                icon: "mdi:eye-remove"
+              }
+            ].map((benefit, index) => (
+              <div key={index} className="bg-gradient-to-br from-[#FFD700]/10 to-transparent p-6 rounded-lg border border-[#FFD700]/20">
+                <div className="flex justify-center mb-4">
+                  <Icon icon={benefit.icon} className="w-8 h-8 text-[#FFD700]" />
                 </div>
-                <h4 className="text-lg font-bold text-yellow-400 mb-2">Reduced Glare</h4>
-                <p className="text-yellow-300/80 text-sm">Minimizes glare for comfortable vision</p>
+                <h3 className="text-xl font-bold text-[#FFD700] mb-3 montserrat">{benefit.title}</h3>
+                <p className="text-[#FFD700]/90 poppins">{benefit.description}</p>
               </div>
-            </div>
-
-            <div className="group relative bg-[#FFD700]/10 backdrop-blur-sm rounded-3xl p-6 border border-yellow-800/20 hover:border-yellow-400 transition-all duration-500 hover:bg-zinc-800/70">
-              <div className="absolute inset-0 bg-gradient-to-r from-yellow-400/10 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              <div className="relative z-10">
-                <div className="w-20 h-20 mx-auto mb-4 flex items-center justify-center">
-                  <img
-                    className="w-16 h-16 object-contain object-center"
-                    src="/style.svg"
-                    alt="style customize cliff"
-                  />
-                </div>
-                <h4 className="text-lg font-bold text-yellow-400 mb-2">Style Options</h4>
-                <p className="text-yellow-300/80 text-sm">Multiple colors and intensity levels</p>
-              </div>
-            </div>
-
-            <div className="group relative bg-[#FFD700]/10 backdrop-blur-sm rounded-3xl p-6 border border-yellow-800/20 hover:border-yellow-400 transition-all duration-500 hover:bg-zinc-800/70">
-              <div className="absolute inset-0 bg-gradient-to-r from-yellow-400/10 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              <div className="relative z-10">
-                <div className="w-20 h-20 mx-auto mb-4 flex items-center justify-center">
-                  <img
-                    className="w-16 h-16 object-contain object-center"
-                    src="/svgs/antireflective.svg"
-                    alt="cliff antireflective"
-                  />
-                </div>
-                <h4 className="text-lg font-bold text-yellow-400 mb-2">Driving Comfort</h4>
-                <p className="text-yellow-300/80 text-sm">Enhanced visibility while driving</p>
-              </div>
+            ))}
             </div>
           </div>
+        </div>
+      </section>
+
+    
+       {/* Content area divider */}
+      <div className="relative bg-yellow-300/10 py-24 px-4">
+        <div className="max-w-3xl mx-auto text-center">
+          <div className="mb-6">
+            <div className="w-1 h-16 bg-yellow-400 mx-auto"></div>
+          </div>
+
+          <h2 className="text-4xl sm:text-5xl leading-12 text-yellow-300 mb-6">
+            Designed for everyday clarity, Cliff Polarized Lenses are crafted to reduce glare and enhance contrast perfect for bright days and reflective surfaces. Experience true color, sharper vision, and all-day comfort whether you’re driving, outdoors, or simply enjoying the view. Because every detail deserves to be seen clearly.
+          </h2>
         </div>
       </div>
 
@@ -241,13 +222,13 @@ export default function PhotochromeClient() {
         <div className="max-w-9xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
             {/* Left Side */}
-            <div className="pl-6 space-y-6 lg:col-span-5 sticky top-16 self-start">
+            <div className="pl-6 space-y-6 lg:col-span-5 sticky top-35 self-start">
               <div className="bg-black/80 backdrop-blur-sm p-6 rounded-lg">
-                <h3 className="text-4xl montserrat text-[#FFD700] mb-2">Choose Your Lens Style</h3>
-                <p className="text-[#FFD700] poppins text-xl">Select a lens to see how it looks</p>
+                <h3 className="text-3xl montserrat text-[#FFD700] mb-2">Choose Your Polarized Lens</h3>
+                <p className="text-[#FFD700] poppins text-2xl">Select a lens color to see how it looks</p>
               </div>
               <div className="max-h-[calc(100vh-200px)] overflow-y-auto pr-2 py-2">
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
                   {lensOptions.map((lens, index) => (
                     <div
                       key={index}
@@ -256,16 +237,23 @@ export default function PhotochromeClient() {
                       }`}
                       onClick={() => selectLens(index)}
                     >
-                      <div className="relative w-28 h-28">
+                      <div className="relative w-32 h-32">
                         <Image
                           src={lens.leftImage}
-                          alt={`${lens.name} Photochromic Lenses`}
+                          alt={`${lens.name} Polarized Lenses`}
                           fill
                           className="object-contain"
                         />
                       </div>
                       <div className="mt-2 text-center">
-                        <h3 className="font-medium text-sm text-[#FFD700] line-clamp-2">{lens.name}</h3>
+                        <h3 className="font-semibold text-[#FFD700] poppins">{lens.name}</h3>
+                        <div className="mt-2 space-y-1">
+                          {lens.features.map((feature, featureIndex) => (
+                            <p key={featureIndex} className="text-xs text-[#FFD700]/80 poppins">
+                              • {feature}
+                            </p>
+                          ))}
+                        </div>
                       </div>
                     </div>
                   ))}
@@ -279,7 +267,7 @@ export default function PhotochromeClient() {
                 <div className="absolute inset-0">
                   <Image
                     src={modalImage}
-                    alt="Photochromic Lenses Base"
+                    alt="Polarized Lenses Base"
                     fill
                     className="object-contain"
                     priority
@@ -295,7 +283,7 @@ export default function PhotochromeClient() {
                     >
                       <Image
                         src={currentImage}
-                        alt="Photochromic Lenses Overlay"
+                        alt="Polarized Lenses Overlay"
                         fill
                         className="object-contain"
                         priority
@@ -306,7 +294,7 @@ export default function PhotochromeClient() {
                       <div className="absolute inset-0 animate-fadeIn">
                         <Image
                           src={lensImages[currentLens]}
-                          alt="Photochromic Lenses Overlay"
+                          alt="Polarized Lenses Overlay"
                           fill
                           className="object-contain opacity-80"
                           priority
@@ -326,13 +314,12 @@ export default function PhotochromeClient() {
       </section>
 
 
-
       <section className="bg-black py-20">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 group/cards">
           {/* Card 1 */}
           <Link 
-            href="/photochromatic" 
-            className="block h-[50vh] w-full group overflow-hidden transition-all duration-500 ease-out group-hover/cards:opacity-50 hover:!opacity-100 hover:!blur-0"
+            href="/photochromaticplus" 
+            className="block h-[50vh] w-full group overflow-hidden transition-all duration-500 ease-out group-hover/cards:opacity-50 hover:!opacity-100 hover:!blur-20"
           >
             <div className="relative h-full w-full">
               <Image
@@ -344,7 +331,7 @@ export default function PhotochromeClient() {
               />
               <div className="absolute inset-0 flex flex-col justify-end">
                 <div className="w-full bg-gradient-to-t from-black/100 via-black/80 to-transparent pt-36 pb-4 px-4 text-center">
-                  <h3 className="text-3xl montserrat text-[#FFD700]">Photochromatic</h3>
+                  <h3 className="text-3xl montserrat text-[#FFD700]">Photochromatic Plus</h3>
                 </div>
               </div>
             </div>
@@ -358,7 +345,7 @@ export default function PhotochromeClient() {
             <div className="relative h-full w-full">
               <Image
                 src="/product/6.jpg"
-                alt="Tinted Lenses"
+                alt="UV Protection"
                 fill
                 className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
                 priority
@@ -378,15 +365,15 @@ export default function PhotochromeClient() {
           >
             <div className="relative h-full w-full">
               <Image
-                src="/polarized/polacard.png"
-                alt="Polarized Lenses"
+                src="/product/7.jpg"
+                alt="All-Day Comfort"
                 fill
                 className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
                 priority
               />
               <div className="absolute inset-0 flex flex-col justify-end">
                 <div className="w-full bg-gradient-to-t from-black/100 via-black/50 to-transparent h-1/2 pt-34 pb-4 px-4 text-center">
-                  <h3 className="text-3xl montserrat text-[#FFD700]">Polarized</h3>
+                  <h3 className="text-3xl montserrat text-[#FFD700]">Photochromatic</h3>
                 </div>
               </div>
             </div>
@@ -400,7 +387,7 @@ export default function PhotochromeClient() {
             <div className="relative h-full w-full">
               <Image
                 src="/product/9.jpg"
-                alt="Blue Shield Lenses"
+                alt="Blue Shield"
                 fill
                 className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
                 priority

@@ -146,6 +146,74 @@ export default function PhotochromeClient() {
         </div>
       </section>
 
+
+           {/* Features Icons Section */}
+      <div className="py-16 px-4 bg-black">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+            <div className="group relative bg-[#FFD700]/10 backdrop-blur-sm rounded-3xl p-6 border border-yellow-800/20 hover:border-yellow-400 transition-all duration-500 hover:bg-zinc-800/70">
+              <div className="absolute inset-0 bg-gradient-to-r from-yellow-400/10 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="relative z-10">
+                <div className="w-20 h-20 mx-auto mb-4 flex items-center justify-center">
+                  <img
+                    className="w-16 h-16 object-contain object-center"
+                    src="/svgs/uvprotection.svg"
+                    alt="cliff uvprotection"
+                  />
+                </div>
+                <h4 className="text-lg font-bold text-yellow-400 mb-2">UV Protection</h4>
+                <p className="text-yellow-300/80 text-sm">Blocks harmful UV rays from the sun</p>
+              </div>
+            </div>
+
+            <div className="group relative bg-[#FFD700]/10 backdrop-blur-sm rounded-3xl p-6 border border-yellow-800/20 hover:border-yellow-400 transition-all duration-500 hover:bg-zinc-800/70">
+              <div className="absolute inset-0 bg-gradient-to-r from-yellow-400/10 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="relative z-10">
+                <div className="w-20 h-20 mx-auto mb-4 flex items-center justify-center">
+                  <img
+                    className="w-16 h-16 object-contain object-center"
+                    src="/svgs/bluelight.svg"
+                    alt="cliff bluelight"
+                  />
+                </div>
+                <h4 className="text-lg font-bold text-yellow-400 mb-2">Reduced Glare</h4>
+                <p className="text-yellow-300/80 text-sm">Minimizes glare for comfortable vision</p>
+              </div>
+            </div>
+
+            <div className="group relative bg-[#FFD700]/10 backdrop-blur-sm rounded-3xl p-6 border border-yellow-800/20 hover:border-yellow-400 transition-all duration-500 hover:bg-zinc-800/70">
+              <div className="absolute inset-0 bg-gradient-to-r from-yellow-400/10 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="relative z-10">
+                <div className="w-20 h-20 mx-auto mb-4 flex items-center justify-center">
+                  <img
+                    className="w-16 h-16 object-contain object-center"
+                    src="/style.svg"
+                    alt="style customize cliff"
+                  />
+                </div>
+                <h4 className="text-lg font-bold text-yellow-400 mb-2">Style Options</h4>
+                <p className="text-yellow-300/80 text-sm">Multiple colors and intensity levels</p>
+              </div>
+            </div>
+
+            <div className="group relative bg-[#FFD700]/10 backdrop-blur-sm rounded-3xl p-6 border border-yellow-800/20 hover:border-yellow-400 transition-all duration-500 hover:bg-zinc-800/70">
+              <div className="absolute inset-0 bg-gradient-to-r from-yellow-400/10 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="relative z-10">
+                <div className="w-20 h-20 mx-auto mb-4 flex items-center justify-center">
+                  <img
+                    className="w-16 h-16 object-contain object-center"
+                    src="/svgs/antireflective.svg"
+                    alt="cliff antireflective"
+                  />
+                </div>
+                <h4 className="text-lg font-bold text-yellow-400 mb-2">Driving Comfort</h4>
+                <p className="text-yellow-300/80 text-sm">Enhanced visibility while driving</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
       {/* Features Card Section */}
       <section className="py-8 bg-black">
         <div className="max-w-9xl mx-auto px-4 sm:px-6 lg:px-8 h-[50vh] min-h-[500px]">
@@ -214,36 +282,46 @@ export default function PhotochromeClient() {
         </div>
       </section>
 
+     
+
       {/* Lens Options Section */}
       <section className="py-16 bg-black">
         <div className="max-w-9xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
             {/* Left Side */}
             <div className="pl-6 space-y-6 lg:col-span-5 sticky top-35 self-start">
-              <div className="bg-black/80 backdrop-blur-sm p-6 rounded-lg">
-                <h3 className="text-3xl montserrat text-[#FFD700] mb-2">Choose Your Lens Style</h3>
-                <p className="text-[#FFD700] poppins text-2xl">Select a lens to see how it looks</p>
+              <div className="bg-black/80 backdrop-blur-sm p-6 rounded-lg ">
+                <h3 className="text-2xl md:text-3xl montserrat text-[#FFD700] mb-2">Choose Your Lens Style</h3>
+                <p className="text-[#FFD700] poppins text-lg md:text-xl">Select a lens to see how it looks</p>
               </div>
-              <div className="max-h-[calc(100vh-200px)] overflow-y-auto pr-2 py-2">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+              <div className="max-h-[calc(100vh-200px)] overflow-y-auto pr-1 py-0.5">
+                <div className="grid grid-cols-3 sm:grid-cols-3 pl-6 gap-6">
                   {lensOptions.map((lens, index) => (
                     <div
                       key={index}
-                      className={`flex flex-col items-center cursor-pointer transition-opacity ${
-                        currentLens === index ? 'opacity-100' : 'opacity-70 hover:opacity-100'
+                      className={`group relative bg-black/50 backdrop-blur-sm rounded-md p-1 border transition-all duration-200 cursor-pointer ${
+                        currentLens === index 
+                          ? 'border-yellow-400 scale-[1.01] shadow-sm shadow-yellow-500/5' 
+                          : 'border-yellow-800/20 hover:border-yellow-500/40 hover:bg-black/60'
                       }`}
                       onClick={() => selectLens(index)}
                     >
-                      <div className="relative w-32 h-32">
+                      <div className="relative w-full" style={{ aspectRatio: '1/1' }}>
                         <Image
                           src={lens.leftImage}
                           alt={`${lens.name} Photochromic Lenses`}
                           fill
-                          className="object-contain"
+                          className={`object-contain transition-transform duration-200 ${
+                            currentLens === index ? 'scale-105' : 'group-hover:scale-102'
+                          }`}
                         />
                       </div>
-                      <div className="mt-2 text-center">
-                        <h3 className="font-semibold text-[#FFD700] poppins">{lens.name}</h3>
+                      <div className="mt-1 text-center">
+                        <h3 className={`font-medium text-[10px] xs:text-xs transition-colors line-clamp-2 leading-tight ${
+                          currentLens === index ? 'text-yellow-400' : 'text-yellow-300/90 group-hover:text-yellow-400'
+                        }`}>
+                          {lens.name}
+                        </h3>
                       </div>
                     </div>
                   ))}
@@ -305,21 +383,24 @@ export default function PhotochromeClient() {
         </div>
       </section>
 
-    {/* 3 Cards Section */}
+    {/* 4 Cards Section */}
    <section className="bg-black py-20">
-        <div className="grid grid-cols-1 md:grid-cols-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 group/cards">
           {/* Card 1 */}
-          <Link href="/photochromaticplus" className="block h-[60vh] w-full group overflow-hidden">
+          <Link 
+            href="/photochromaticplus" 
+            className="block h-[50vh] w-full group overflow-hidden transition-all duration-500 ease-out group-hover/cards:opacity-50 hover:!opacity-100 hover:!blur-0"
+          >
             <div className="relative h-full w-full">
               <Image
                 src="/product/5.jpg"
-                alt="Photochromic Technology"
+                alt="Photochromic Plus Lenses"
                 fill
                 className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
                 priority
               />
               <div className="absolute inset-0 flex flex-col justify-end">
-                <div className="w-full bg-gradient-to-t from-black/90 via-black/80 to-transparent pt-20 pb-4 px-4 text-center">
+                <div className="w-full bg-gradient-to-t from-black/100 via-black/80 to-transparent pt-36 pb-4 px-4 text-center">
                   <h3 className="text-3xl montserrat text-[#FFD700]">Photochromatic Plus</h3>
                 </div>
               </div>
@@ -327,17 +408,20 @@ export default function PhotochromeClient() {
           </Link>
 
           {/* Card 2 */}
-          <Link href="/tinted-lenses" className="block h-[60vh] w-full group overflow-hidden">
+          <Link 
+            href="/tinted-lenses" 
+            className="block h-[50vh] w-full group overflow-hidden transition-all duration-500 ease-out group-hover/cards:opacity-50 hover:!opacity-100 hover:!blur-0"
+          >
             <div className="relative h-full w-full">
               <Image
                 src="/product/6.jpg"
-                alt="UV Protection"
+                alt="Tinted Lenses"
                 fill
                 className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
                 priority
               />
               <div className="absolute inset-0 flex flex-col justify-end">
-                <div className="w-full bg-gradient-to-t from-black/90 via-black/70 to-transparent pt-20 pb-4 px-4 text-center">
+                <div className="w-full bg-gradient-to-t from-black/100 via-black/50 to-transparent h-1/2 pt-34 pb-4 px-4 text-center">
                   <h3 className="text-3xl montserrat text-[#FFD700]">Tinted Lenses</h3>
                 </div>
               </div>
@@ -345,18 +429,42 @@ export default function PhotochromeClient() {
           </Link>
 
           {/* Card 3 */}
-          <Link href="/polarized" className="block h-[60vh] w-full group overflow-hidden">
+          <Link 
+            href="/polarized" 
+            className="block h-[50vh] w-full group overflow-hidden transition-all duration-500 ease-out group-hover/cards:opacity-50 hover:!opacity-100 hover:!blur-0"
+          >
             <div className="relative h-full w-full">
               <Image
-                src="/product/7.jpg"
-                alt="All-Day Comfort"
+                src="/polarized/polacard.png"
+                alt="Polarized Lenses"
                 fill
                 className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
                 priority
               />
               <div className="absolute inset-0 flex flex-col justify-end">
-                <div className="w-full bg-gradient-to-t from-black/90 via-black/70 to-transparent pt-20 pb-4 px-4 text-center">
+                <div className="w-full bg-gradient-to-t from-black/100 via-black/50 to-transparent h-1/2 pt-34 pb-4 px-4 text-center">
                   <h3 className="text-3xl montserrat text-[#FFD700]">Polarized</h3>
+                </div>
+              </div>
+            </div>
+          </Link>
+
+          {/* Card 4 */}
+          <Link 
+            href="/blue-shield" 
+            className="block h-[50vh] w-full group overflow-hidden transition-all duration-500 ease-out group-hover/cards:opacity-50 hover:!opacity-100 hover:!blur-0"
+          >
+            <div className="relative h-full w-full">
+              <Image
+                src="/product/9.jpg"
+                alt="Blue Shield Lenses"
+                fill
+                className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+                priority
+              />
+              <div className="absolute inset-0 flex flex-col justify-end">
+                <div className="w-full bg-gradient-to-t from-black/100 via-black/50 to-transparent h-1/2 pt-32 pb-4 px-4 text-center">
+                  <h3 className="text-3xl montserrat text-[#FFD700]">Blue Shield</h3>
                 </div>
               </div>
             </div>

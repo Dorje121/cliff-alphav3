@@ -42,9 +42,7 @@ const ProductDropdown = () => {
     switch(category) {
       case 'Speciality Lenses':
         // Scroll to the specialty lenses section
-        setTimeout(() => {
-          scrollToSection('specialty-lenses');
-        }, 50);
+        window.location.href = '/speciality-lenses';
         break;
       case 'Coatings':
         // Navigate to the Coatings page

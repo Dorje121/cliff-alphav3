@@ -2,6 +2,8 @@
 import Image from "next/image";
 import { useRef, useLayoutEffect, useState } from "react";
 import { gsap } from "gsap";
+import { ChevronLeft } from "lucide-react";
+import Link from "next/link";
 
 const CliffTintedLenses = () => {
   const backgroundImageRef = useRef<HTMLDivElement>(null);
@@ -319,7 +321,18 @@ const CliffTintedLenses = () => {
   return (
     <>
     <section className="relative h-[80vh] min-h-[450px] flex flex-col justify-end pb-8 items-start overflow-hidden">
-        <Image
+      {/* Back to Products Button */}
+      <div className="absolute top-20 left-6 z-20">
+        <Link 
+          href="/speciality-lenses" 
+          className="flex items-center gap-2 text-[#FFD700] hover:text-white transition-colors duration-300"
+        >
+          <ChevronLeft className="w-5 h-5" />
+          <span className="text-sm font-medium">Back to Products</span>
+        </Link>
+      </div>
+
+      <Image
          src="/cliffcoating/changable.gif"
          alt="Premium Tinted Lenses"
          fill
@@ -341,82 +354,89 @@ const CliffTintedLenses = () => {
 
 
       <div className="min-h-screen bg-black text-white">
-        {/* Animated Background */}
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute bottom-20 right-20 w-96 h-96 bg-zinc-400 rounded-full filter blur-3xl animate-pulse delay-1000"></div>
-        </div>
+
+      
 
         <div className="relative  mx-auto">
           {/* Benefits Section */}
-          <div className="mt-8 sm:my-12 lg:my-16">
-            <div className="p-4 sm:p-6 lg:p-8 backdrop-blur-sm">
-              <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-6 text-center text-white">
-                Benefits of Tinted Lenses
-              </h3>
-
-              <div className="w-1/2 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div className="text-center">
-                  <div className="text-4xl mb-4 w-20 h-20 mx-auto">
-                    <img
-                      className="w-full h-full object-contain object-center"
-                      src="/svgs/uvprotection.svg"
-                      alt="cliff uvprotection"
-                    />
+          <div className="py-16 px-4">
+            <div className="max-w-6xl mx-auto">
+  
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+                <div className="group relative bg-[#FFD700]/10 backdrop-blur-sm rounded-3xl p-6 border border-yellow-800/20 hover:border-yellow-400 transition-all duration-500 hover:bg-zinc-800/70">
+                  <div className="absolute inset-0 bg-gradient-to-r from-yellow-400/10 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <div className="relative z-10">
+                    <div className="w-20 h-20 mx-auto mb-4 flex items-center justify-center">
+                      <img
+                        className="w-16 h-16 object-contain object-center"
+                        src="/svgs/uvprotection.svg"
+                        alt="cliff uvprotection"
+                      />
+                    </div>
+                    <h4 className="text-lg font-bold text-yellow-400 mb-2">
+                      UV Protection
+                    </h4>
+                    <p className="text-yellow-300/80 text-sm">
+                      Blocks harmful UV rays from the sun
+                    </p>
                   </div>
-                  <h4 className="text-lg font-bold text-white mb-2">
-                    UV Protection
-                  </h4>
-                  <p className="text-zinc-300 text-sm">
-                    Blocks harmful UV rays from the sun
-                  </p>
                 </div>
 
-                <div className="text-center">
-                  <div className="text-4xl mb-4 w-20 h-20 mx-auto">
-                    <img
-                      className="w-full h-full object-contain object-center"
-                      src="/svgs/bluelight.svg"
-                      alt="cliff bluelight"
-                    />
+                <div className="group relative bg-[#FFD700]/10 backdrop-blur-sm rounded-3xl p-6 border border-yellow-800/20 hover:border-yellow-400 transition-all duration-500 hover:bg-zinc-800/70">
+                  <div className="absolute inset-0 bg-gradient-to-r from-yellow-400/10 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <div className="relative z-10">
+                    <div className="w-20 h-20 mx-auto mb-4 flex items-center justify-center">
+                      <img
+                        className="w-16 h-16 object-contain object-center"
+                        src="/svgs/bluelight.svg"
+                        alt="cliff bluelight"
+                      />
+                    </div>
+                    <h4 className="text-lg font-bold text-yellow-400 mb-2">
+                      Reduced Glare
+                    </h4>
+                    <p className="text-yellow-300/80 text-sm">
+                      Minimizes glare for comfortable vision
+                    </p>
                   </div>
-                  <h4 className="text-lg font-bold text-white mb-2">
-                    Reduced Glare
-                  </h4>
-                  <p className="text-zinc-300 text-sm">
-                    Minimizes glare for comfortable vision
-                  </p>
                 </div>
 
-                <div className="text-center">
-                  <div className="text-4xl mb-8 w-16 h-16 mx-auto">
-                    <img
-                      className="w-full h-full object-contain object-center"
-                      src="/style.svg"
-                      alt="style customize cliff"
-                    />
+                <div className="group relative bg-[#FFD700]/10 backdrop-blur-sm rounded-3xl p-6 border border-yellow-800/20 hover:border-yellow-400 transition-all duration-500 hover:bg-zinc-800/70">
+                  <div className="absolute inset-0 bg-gradient-to-r from-yellow-400/10 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <div className="relative z-10">
+                    <div className="w-20 h-20 mx-auto mb-4 flex items-center justify-center">
+                      <img
+                        className="w-16 h-16 object-contain object-center"
+                        src="/style.svg"
+                        alt="style customize cliff"
+                      />
+                    </div>
+                    <h4 className="text-lg font-bold text-yellow-400 mb-2">
+                      Style Options
+                    </h4>
+                    <p className="text-yellow-300/80 text-sm">
+                      Multiple colors and intensity levels
+                    </p>
                   </div>
-                  <h4 className="text-lg font-bold text-white mb-2">
-                    Style Options
-                  </h4>
-                  <p className="text-zinc-300 text-sm">
-                    Multiple colors and intensity levels
-                  </p>
                 </div>
 
-                <div className="text-center">
-                  <div className="text-4xl mb-4 w-20 h-20 mx-auto">
-                    <img
-                      className="w-full h-full object-contain object-center"
-                      src="/svgs/antireflective.svg"
-                      alt="cliff antireflective"
-                    />
+                <div className="group relative bg-[#FFD700]/10 backdrop-blur-sm rounded-3xl p-6 border border-yellow-800/20 hover:border-yellow-400 transition-all duration-500 hover:bg-zinc-800/70">
+                  <div className="absolute inset-0 bg-gradient-to-r from-yellow-400/10 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <div className="relative z-10">
+                    <div className="w-20 h-20 mx-auto mb-4 flex items-center justify-center">
+                      <img
+                        className="w-16 h-16 object-contain object-center"
+                        src="/svgs/antireflective.svg"
+                        alt="cliff antireflective"
+                      />
+                    </div>
+                    <h4 className="text-lg font-bold text-yellow-400 mb-2">
+                      Driving Comfort
+                    </h4>
+                    <p className="text-yellow-300/80 text-sm">
+                      Enhanced visibility while driving
+                    </p>
                   </div>
-                  <h4 className="text-lg font-bold text-white mb-2">
-                    Driving Comfort
-                  </h4>
-                  <p className="text-zinc-300 text-sm">
-                    Enhanced visibility while driving
-                  </p>
                 </div>
               </div>
             </div>
@@ -503,6 +523,94 @@ const CliffTintedLenses = () => {
             ))}
           </div>
         </div>
+
+         <section className="bg-black py-20">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 group/cards">
+          {/* Card 1 */}
+          <Link 
+            href="/photochromatic" 
+            className="block h-[50vh] w-full group overflow-hidden transition-all duration-500 ease-out group-hover/cards:opacity-50 hover:!opacity-100 hover:!blur-0"
+          >
+            <div className="relative h-full w-full">
+              <Image
+                src="/product/5.jpg"
+                alt="Photochromic Lenses"
+                fill
+                className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+                priority
+              />
+              <div className="absolute inset-0 flex flex-col justify-end">
+                <div className="w-full bg-gradient-to-t from-black/100 via-black/80 to-transparent pt-36 pb-4 px-4 text-center">
+                  <h3 className="text-3xl montserrat text-[#FFD700]">Photochromatic</h3>
+                </div>
+              </div>
+            </div>
+          </Link>
+
+          {/* Card 2 */}
+          <Link 
+            href="/photochromaticplus" 
+            className="block h-[50vh] w-full group overflow-hidden transition-all duration-500 ease-out group-hover/cards:opacity-50 hover:!opacity-100 hover:!blur-0"
+          >
+            <div className="relative h-full w-full">
+              <Image
+                src="/product/6.jpg"
+                alt="Photochromic Plus Lenses"
+                fill
+                className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+                priority
+              />
+              <div className="absolute inset-0 flex flex-col justify-end">
+                <div className="w-full bg-gradient-to-t from-black/100 via-black/50 to-transparent h-1/2 pt-34 pb-4 px-4 text-center">
+                  <h3 className="text-3xl montserrat text-[#FFD700]">Photochromatic Plus</h3>
+                </div>
+              </div>
+            </div>
+          </Link>
+
+          {/* Card 3 */}
+          <Link 
+            href="/polarized" 
+            className="block h-[50vh] w-full group overflow-hidden transition-all duration-500 ease-out group-hover/cards:opacity-50 hover:!opacity-100 hover:!blur-0"
+          >
+            <div className="relative h-full w-full">
+              <Image
+                src="/polarized/polacard.png"
+                alt="Polarized Lenses"
+                fill
+                className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+                priority
+              />
+              <div className="absolute inset-0 flex flex-col justify-end">
+                <div className="w-full bg-gradient-to-t from-black/100 via-black/50 to-transparent h-1/2 pt-34 pb-4 px-4 text-center">
+                  <h3 className="text-3xl montserrat text-[#FFD700]">Polarized</h3>
+                </div>
+              </div>
+            </div>
+          </Link>
+
+          {/* Card 4 */}
+          <Link 
+            href="/blue-shield" 
+            className="block h-[50vh] w-full group overflow-hidden transition-all duration-500 ease-out group-hover/cards:opacity-50 hover:!opacity-100 hover:!blur-0"
+          >
+            <div className="relative h-full w-full">
+              <Image
+                src="/product/9.jpg"
+                alt="Blue Shield Lenses"
+                fill
+                className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+                priority
+              />
+              <div className="absolute inset-0 flex flex-col justify-end">
+                <div className="w-full bg-gradient-to-t from-black/100 via-black/50 to-transparent h-1/2 pt-32 pb-4 px-4 text-center">
+                  <h3 className="text-3xl montserrat text-[#FFD700]">Blue Shield</h3>
+                </div>
+              </div>
+            </div>
+          </Link>
+        </div>
+      </section>
       </div>
 
     

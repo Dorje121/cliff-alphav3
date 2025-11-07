@@ -76,32 +76,14 @@ export default function VisionCategories() {
   };
 
   return (
-    <section className="relative w-full py-16 bg-black overflow-hidden">
-      <div className="max-w-[120rem] mx-auto px-6 relative">
-        <button
-          onClick={() => scroll("left")}
-          className="absolute -left-4 top-1/2 -translate-y-1/2 bg-black/30 backdrop-blur-md text-yellow-400 p-3 rounded-full hover:bg-black/50 z-10 cursor-pointer transition-colors"
-        >
-          <ChevronLeft size={24} className="text-yellow-400" />
-        </button>
-
-        <button
-          onClick={() => scroll("right")}
-          className="absolute -right-4 top-1/2 -translate-y-1/2 bg-black/30 backdrop-blur-md text-yellow-400 p-3 rounded-full hover:bg-black/50 z-10 cursor-pointer transition-colors"
-        >
-          <ChevronRight size={24} className="text-yellow-400" />
-        </button>
-
-        
-        <div
-          ref={scrollRef}
-          className="flex gap-4 overflow-x-auto scrollbar-hide scroll-smooth snap-x snap-mandatory"
-        >
+    <section className="w-full py-16 bg-black">
+      <div className="max-w-9xl mx-auto px-4 sm:px-6 lg:px-1">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {cards.map((card) => {
             const cardContent = (
               <>
                 {/* Image with Title Overlay */}
-                <div className="w-full h-[280px] relative flex-shrink-0">
+                <div className="w-full h-64 relative">
                   <Image
                     src={card.image}
                     alt={card.title}
@@ -111,22 +93,22 @@ export default function VisionCategories() {
                 </div>
 
                 {/* Description */}
-                <div className="px-6 pt-6 pb-6 flex-grow flex flex-col">
+                <div className="p-6 flex-grow flex flex-col">
                   <div className="mb-4">
                     <h3 className="text-xl font-bold text-white mb-1">{card.title}</h3>
                     <p className="text-amber-400 text-sm">{card.subtitle}</p>
                   </div>
-                  <ul className="space-y-2 text-gray-300 text-sm">
+                  <ul className="space-y-2 text-gray-300 text-sm mb-4">
                     {card.points.map((point, i) => (
                       <li key={i} className="flex gap-2 items-start">
-                        <Check size={16} className="text-yellow-400 mt-0.5" />
+                        <Check size={16} className="text-yellow-400 mt-0.5 flex-shrink-0" />
                         <span>{point}</span>
                       </li>
                     ))}
                   </ul>
 
                   {/* View Product Button */}
-                  <div className="mt-6 flex justify-end">
+                  <div className="mt-auto pt-4 border-t border-yellow-900/30">
                     <div className="inline-flex items-center text-amber-400 text-base font-medium hover:text-white transition-colors duration-300 group">
                       {card.slug === 'zenn-series' ? 'View Collection' : 'Learn More'}
                       <ExternalLink className="w-5 h-5 ml-2" />
@@ -150,13 +132,12 @@ export default function VisionCategories() {
               <Link 
                 href={href}
                 key={card.id}
-                className="bg-[#322b00]/50 min-w-[340px] md:min-w-[420px] rounded-lg lg:min-w-[440px] h-auto flex flex-col shadow-md overflow-hidden border border-yellow-900/30 hover:shadow-lg transition snap-center hover:border-amber-500/50"
+                className="bg-[#322b00]/50 rounded-lg flex flex-col shadow-md overflow-hidden border border-yellow-900/30 hover:shadow-lg transition-all duration-300 hover:border-amber-500/50 hover:transform hover:-translate-y-1 h-full"
               >
                 {cardContent}
               </Link>
             );
           })}
-       
         </div>
       </div>
     </section>

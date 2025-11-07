@@ -14,7 +14,7 @@ import {
 } from "@/components/comparision/Comparision";
 
 
-const ProductPage = async () => {
+const ProductPage = () => {
   const features = [
     {
       icon: "solar:shield-check-bold",
@@ -63,45 +63,40 @@ const ProductPage = async () => {
       </div>
 
       {/* Hero Section */}
-      <div className="h-[80vh] w-full mx-auto relative">
-        {/* Right Side - Hero Image */}
-        <motion.div
-          animate={{
-            scale: [1, 1.1, 1],
-          }}
-          transition={{
-            duration: 20,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-          className="absolute inset-0 overflow-hidden"
-        >
-          <Image
-            src={"/product/1.jpg"}
-            alt={"Cliff Lens"}
-            fill
-            className="object-cover opacity-40 w-full h-auto"
-            priority
-          />
-        </motion.div>
+      <div className="h-[80vh] w-full mx-auto relative overflow-hidden">
+        {/* Animated Background Image */}
+        <div className="absolute inset-0">
+          <motion.div
+            animate={{
+              scale: [1, 1.1, 1],
+            }}
+            transition={{
+              duration: 20,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+            className="w-full h-full"
+          >
+            <Image
+              src={"/product/1.jpg"}
+              alt={"Cliff Lens"}
+              fill
+              className="object-cover opacity-40"
+              priority
+            />
+          </motion.div>
+        </div>
 
-        {/* <div className="absolute inset-0 overflow-hidden">
-          <Image
-            src={"/product/1.jpg"}
-            alt={"Cliff Lens"}
-            fill
-            className="object-cover opacity-40 w-full h-auto"
-            priority
-          />
-        </div> */}
-
-        <div className="absolute flex flex-col justify-end items-center w-full h-full mx-auto pl-0 pr-8 py-8 font-poppins">
-          <h1 className="text-4xl md:text-6xl font-medium montserrat text-[#FFD700] mb-4 leading-tight">
-            Single Vision
-          </h1>
-          <p className="text-[#FFD700] text-xl  leading-relaxed max-w-3xl">
-            Sharper Vision. Smarter Design.
-          </p>
+        {/* Static Content */}
+        <div className="relative h-full w-full">
+          <div className="absolute inset-0 flex flex-col justify-end items-center mx-auto pl-0 pr-8 py-8 font-poppins">
+            <h1 className="text-4xl md:text-6xl font-medium montserrat text-[#FFD700] mb-4 leading-tight text-center">
+              Single Vision Lenses
+            </h1>
+            <p className="text-[#FFD700] text-xl leading-relaxed max-w-3xl text-center">
+              Sharper Vision. Smarter Design.
+            </p>
+          </div>
         </div>
       </div>
 
@@ -149,7 +144,7 @@ const ProductPage = async () => {
           <h2 className="text-4xl sm:text-5xl leading-12 text-yellow-300 mb-6">
             Designed for everyday clarity, Cliff Single Vision Lenses are
             optimized to your unique prescription and lifestyle. Enjoy sharper
-            focus, wider vision, and the comfort your eyes deserve — because
+            focus, wider vision, and the comfort your eyes deserve because
             every detail matters.
           </h2>
         </div>
@@ -200,14 +195,14 @@ const ProductPage = async () => {
           {/* Bottom Gradient */}
           {/* <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black/80 to-transparent" /> */}
         </div>{" "}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        {/* <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <Link
             href={`/Coating/`}
             className="category-button px-8 py-3 bg-[#FFD700] rounded-full text-zinc-800 text-lg font-medium hover:bg-yellow-700 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl min-w-[140px] text-center"
           >
             Okay
           </Link>
-        </div>
+        </div> */}
         {/* <div className="grid md:grid-cols-3 gap-4 px-2 md:px-6 pb-4 md:pb-16">
           {cards.map((card) => (
             <Link
