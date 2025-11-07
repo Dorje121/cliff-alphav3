@@ -23,7 +23,7 @@ const Coatings = () => {
       description:
         "Protect your eyes with NOX Coating, designed to filter harmful blue light",
       slug: "nox-coating",
-      image: "/homeimage/nox.jpg",
+      image: "/homeimage/nox.png",
       alignment: "left",
       buttonText: "Learn more",
     },
@@ -34,7 +34,7 @@ const Coatings = () => {
       description:
         "Blue safe coating lenses provide advanced blue light protection",
       slug: "blue-safe-coating",
-      image: "/homeimage/blue-safe2.png",
+      image: "/bluesafe/Bluesafe.jpg",
       alignment: "right",
       buttonText: "Learn more",
     },
@@ -45,7 +45,7 @@ const Coatings = () => {
       description:
         "Lenses are specially designed to provide superior optical clarity",
       slug: "drive-clear-coating",
-      image: "/homeimage/lens.png",
+      image: "/homeimage/driveclear.png",
       alignment: "left",
       buttonText: "Learn more",
     },
@@ -55,7 +55,7 @@ const Coatings = () => {
       subtitle: "Premium Optical Excellence",
       description: "Advanced multi-focal progressive lenses for all distances",
       slug: "photo-z-coating",
-      image: "/homeimage/lens.png",
+      image: "/homeimage/lense6.png",
       alignment: "right",
       buttonText: "Learn more",
     },
@@ -215,7 +215,7 @@ const Coatings = () => {
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="content text-center px-8 max-w-4xl">
                   <div className="mb-6">
-                    <h3 className="text-5xl md:text-7xl font-bold mb-4 text-zinc-900">
+                    <h3 className="text-5xl md:text-7xl font-bold mb-4 ">
                       {category.title}
                     </h3>
                     <p className="text-2xl md:text-3xl text-zinc-800 font-light">
@@ -230,9 +230,6 @@ const Coatings = () => {
                     >
                       {category.buttonText}
                     </Link>
-                    <button className="px-8 py-3 border border-white rounded-full text-white text-lg font-medium hover:bg-white hover:text-black transition-all duration-300 transform hover:scale-105 min-w-[140px]">
-                      Buy
-                    </button>
                   </div>
                 </div>
               </div>
