@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { NextPage } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -14,6 +14,33 @@ import {
 } from "@/components/comparision/Comparision";
 
 const ProductPage = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [isDragging, setIsDragging] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [scrollLeft, setScrollLeft] = useState(0);
+
+  const startDrag = (e: React.MouseEvent) => {
+    if (!containerRef.current) return;
+    setIsDragging(true);
+    setStartX(e.pageX - containerRef.current.offsetLeft);
+    setScrollLeft(containerRef.current.scrollLeft);
+    document.body.style.cursor = 'grabbing';
+    document.body.style.userSelect = 'none';
+  };
+
+  const onDrag = (e: React.MouseEvent) => {
+    if (!isDragging || !containerRef.current) return;
+    e.preventDefault();
+    const x = e.pageX - containerRef.current.offsetLeft;
+    const walk = (x - startX) * 1.5; // Scroll speed
+    containerRef.current.scrollLeft = scrollLeft - walk;
+  };
+
+  const stopDrag = () => {
+    setIsDragging(false);
+    document.body.style.cursor = '';
+    document.body.style.userSelect = '';
+  };
   
 
   return (
@@ -149,7 +176,6 @@ const ProductPage = () => {
                 </div>
               </div>
             </div>
-
           </div>
 
       {/* Content area divider */}
@@ -166,14 +192,14 @@ const ProductPage = () => {
       </div>
 
       {/* Image comparison with side content */}
-      <div className="w-full flex flex-col md:flex-row gap-8 items-center py-16 px-4">
+      <div className="w-full flex flex-col pl-10 md:flex-row gap-8 items-center py-16 px-4">
         {/* Image comparison on the left - adjusted width */}
         <div className="w-full md:w-6/12 lg:w-1/2">
           <ImageComparison className="aspect-16/9 w-full h-[70vh] md:h-[80vh]" enableHover>
-            <div className="relative w-full h-full">
+            <div className="relative  w-full h-full">
               <Image
-                src={"/homeimage/progressive.png"}
-                className="blur-sm"
+                src={"/homeimage/dynamix.png"}
+                className=""
                 alt="Standard Progressive Lens"
                 fill
                 style={{ objectPosition: 'left' }}
@@ -181,7 +207,7 @@ const ProductPage = () => {
             </div>
             <div className="relative w-full h-full">
               <Image
-                src="/homeimage/progressive.png"
+                src="/dynamix/dynamix.png"
                 alt="Cliff Dynamix Progressive Lens"
                 fill
                 style={{ objectPosition: 'right' }}
@@ -194,8 +220,8 @@ const ProductPage = () => {
         </div>
         
         {/* Content on the right - adjusted width */}
-        <div className="w-full md:w-6/12 lg:w-1/2 space-y-6 text-center md:text-left">
-          <h2 className="text-3xl md:text-4xl font-bold text-yellow-300">
+        <div className="w-full md:w-6/12 lg:w-1/2 pl-10 space-y-6 text-center md:text-left">
+          <h2 className="text-3xl md:text-4xl  montserrat text-yellow-300">
             Experience the Difference
           </h2>
           <p className="text-yellow-100/90 text-lg">
@@ -225,31 +251,123 @@ const ProductPage = () => {
         </div>
       </div>
 
-      <div className="w-full mx-auto px-8 py-10 relative">
+      <div className="w-screen  mx-auto mx-4 sm:-mx-6 lg:-mx-8 py-24 bg-black/10">
         {/* Title Section */}
         <div className="  text-center py-16">
           <h2 className="text-2xl md:text-5xl font-medium montserrat text-[#FFD700] mb-4">
-            Experience the Difference
+            Available options
           </h2>
           <p className="text-lg md:text-xl !text-yellow-400 max-w-3xl mx-auto">
-            Discover how Dynamix Progressive lenses can transform your vision experience.
+            Choose from a range of styles and colors to find the perfect fit for your lifestyle.
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-2 max-w-7xl mx-auto">
-          {/* Card 1 */}
-          <div className="group relative h-[400px] rounded-2xl overflow-hidden bg-gradient-to-br from-yellow-900/20 to-black/50 border border-yellow-900/30 hover:border-yellow-800/50 transition-all duration-500">
+        <div 
+          className={`flex overflow-x-auto pb-6 hide-scrollbar mt-2 pl-10 pr-10 max-w-9xl mx-auto ${isDragging ? 'cursor-grabbing' : 'cursor-grab'}`}
+          ref={containerRef}
+          onMouseDown={startDrag}
+          onMouseMove={onDrag}
+          onMouseUp={stopDrag}
+          onMouseLeave={stopDrag}
+        >
+          <div className="flex space-x-6 px-4">
+          {/* Clear Lenses */}
+          <div className="group relative w-96 flex-shrink-0 h-[420px] rounded-2xl overflow-hidden bg-gradient-to-br from-yellow-900/20 to-black/50 border border-transparent transition-all duration-500">
             <div className="relative h-full w-full">
               <Image
-                src={"/cliffcoating/bluee.png"}
-                alt="Single Vision Lenses"
+                src={"/bluesafe/clear.png"}
+                alt="Clear Lenses"
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
                 priority
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-6 text-left">
-                <h3 className="text-2xl font-bold text-white mb-2">Digital Comfort</h3>
-                <p className="text-amber-100/80 mb-4">Optimized for screen time and digital devices</p>
+                <h3 className="text-2xl font-bold text-white mb-2">Clear</h3>
+                <p className="text-amber-100/80 mb-4">Crystal clear vision for everyday use</p>
+                <ul className="space-y-2 text-sm text-gray-200 mb-6">
+                  <li className="flex items-center">
+                    <span className="w-1.5 h-1.5 bg-amber-400 rounded-full mr-2"></span>
+                    Maximum light transmission
+                  </li>
+                  <li className="flex items-center">
+                    <span className="w-1.5 h-1.5 bg-amber-400 rounded-full mr-2"></span>
+                    True color perception
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          {/* Photochromic */}
+          <div className="group relative w-96 flex-shrink-0 h-[420px] rounded-2xl overflow-hidden bg-gradient-to-br from-yellow-900/20 to-black/50 border border-transparent transition-all duration-500">
+            <div className="relative h-full w-full">
+              <Image
+                src={"/bluesafe/photoz.jpg"}
+                alt="Photochromic Lenses"
+                fill
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
+                priority
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-6 text-left">
+                <h3 className="text-2xl font-bold text-white mb-2">Photochromic</h3>
+                <p className="text-amber-100/80 mb-4">Adapts to changing light conditions</p>
+                <ul className="space-y-2 text-sm text-gray-200 mb-6">
+                  <li className="flex items-center">
+                    <span className="w-1.5 h-1.5 bg-amber-400 rounded-full mr-2"></span>
+                    Darkens in sunlight
+                  </li>
+                  <li className="flex items-center">
+                    <span className="w-1.5 h-1.5 bg-amber-400 rounded-full mr-2"></span>
+                    Clears indoors
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          {/* Photochromic Plus */}
+          <div className="group relative w-96 flex-shrink-0 h-[420px] rounded-2xl overflow-hidden bg-gradient-to-br from-yellow-900/20 to-black/50 border border-transparent transition-all duration-500">
+            <div className="relative h-full w-full">
+              <Image
+                src={"/bluesafe/drive.png"}
+                alt="Photochromic Plus Lenses"
+                fill
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
+                priority
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-6 text-left">
+                <h3 className="text-2xl font-bold text-white mb-2">Photochromic Plus</h3>
+                <p className="text-amber-100/80 mb-4">Enhanced light adaptation</p>
+                <ul className="space-y-2 text-sm text-gray-200 mb-6">
+                  <li className="flex items-center">
+                    <span className="w-1.5 h-1.5 bg-amber-400 rounded-full mr-2"></span>
+                    Faster transition times
+                  </li>
+                  <li className="flex items-center">
+                    <span className="w-1.5 h-1.5 bg-amber-400 rounded-full mr-2"></span>
+                    Better UV protection
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          {/* Blue Shield */}
+          <div className="group relative w-96 flex-shrink-0 h-[420px] rounded-2xl overflow-hidden bg-gradient-to-br from-yellow-900/20 to-black/50 border border-transparent transition-all duration-500">
+            <div className="relative h-full w-full">
+              <Image
+                src={"/bluesafe/blue1.png"}
+                alt="Blue Shield Lenses"
+                fill
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
+                priority
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-6 text-left">
+                <h3 className="text-2xl font-bold text-white mb-2">Blue Shield</h3>
+                <p className="text-amber-100/80 mb-4">Protection against blue light</p>
                 <ul className="space-y-2 text-sm text-gray-200 mb-6">
                   <li className="flex items-center">
                     <span className="w-1.5 h-1.5 bg-amber-400 rounded-full mr-2"></span>
@@ -257,87 +375,38 @@ const ProductPage = () => {
                   </li>
                   <li className="flex items-center">
                     <span className="w-1.5 h-1.5 bg-amber-400 rounded-full mr-2"></span>
-                    Blue light filtering technology
+                    Improves sleep quality
                   </li>
                 </ul>
-                {/* <Link 
-                  href="/products/single-vision"
-                  className="inline-flex items-center text-amber-400 hover:text-white font-medium transition-colors duration-300"
-                >
-                  Learn more
-                  <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                  </svg>
-                </Link> */}
               </div>
             </div>
           </div>
 
-          {/* Card 2 */}
-          <div className="group relative h-[400px] rounded-2xl overflow-hidden bg-gradient-to-br from-yellow-900/20 to-black/50 border border-yellow-900/30 hover:border-yellow-800/50 transition-all duration-500">
+          {/* Polarized */}
+          <div className="group relative w-96 flex-shrink-0 h-[420px] rounded-2xl overflow-hidden bg-gradient-to-br from-yellow-900/20 to-black/50 border border-transparent transition-all duration-500">
             <div className="relative h-full w-full">
               <Image
-                src={"/cliffcoating/Drive-safe.jpg"}
-                alt="Progressive Lenses"
+                src={"/bluesafe/stock-Cliff.jpg"}
+                alt="Polarized Lenses"
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
                 priority
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-6 text-left">
-                <h3 className="text-2xl font-bold text-white mb-2">Active Lifestyle</h3>
-                <p className="text-amber-100/80 mb-4">Perfect for dynamic, on-the-go individuals</p>
+                <h3 className="text-2xl font-bold text-white mb-2">Polarized</h3>
+                <p className="text-amber-100/80 mb-4">Eliminates glare and reflections</p>
                 <ul className="space-y-2 text-sm text-gray-200 mb-6">
                   <li className="flex items-center">
                     <span className="w-1.5 h-1.5 bg-amber-400 rounded-full mr-2"></span>
-                    Wider intermediate zone
+                    Reduces eye fatigue
                   </li>
                   <li className="flex items-center">
                     <span className="w-1.5 h-1.5 bg-amber-400 rounded-full mr-2"></span>
-                    Reduced peripheral distortion
+                    Enhances contrast and clarity
                   </li>
                 </ul>
-                {/* <Link 
-                  href="/products/progressive"
-                  className="inline-flex items-center text-amber-400 hover:text-white font-medium transition-colors duration-300"
-                >
-                  Learn more
-                  <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                  </svg>
-                </Link> */}
-              </div>
-            </div>
-          </div>
-
-          {/* Card 3 */}
-          <div className="group relative h-[400px] rounded-2xl overflow-hidden bg-gradient-to-br from-yellow-900/20 to-black/50 border border-yellow-900/30 hover:border-yellow-800/50 transition-all duration-500">
-            <div className="relative h-full w-full">
-              <Image
-                src={"/cliffcoating/photoZ.jpg"}
-                alt="Blue Light Protection"
-                fill
-                className="object-cover transition-transform duration-700 group-hover:scale-105"
-                priority
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
-              <div className="absolute bottom-0 left-0 right-0 p-6 text-left">
-                <h3 className="text-2xl font-bold text-white mb-2">Premium Clarity</h3>
-                <p className="text-amber-100/80 mb-4">Advanced optics for exceptional visual performance</p>
-                <ul className="space-y-2 text-sm text-gray-200 mb-6">
-                  <li className="flex items-center">
-                    <span className="w-1.5 h-1.5 bg-amber-400 rounded-full mr-2"></span>
-                    HD vision at all distances
-                  </li>
-                  <li className="flex items-center">
-                    <span className="w-1.5 h-1.5 bg-amber-400 rounded-full mr-2"></span>
-                    Anti-reflective and smudge-resistant
-                  </li>
-                </ul>
-                {/* <Link 
-                  href="/products/blue-light"
-                  className="inline-flex items-center text-amber-400 hover:text-white font-medium transition-colors duration-300"
-                >
+                {/* <Link href="#" className="inline-flex items-center text-amber-400 hover:text-white font-medium transition-colors duration-300">
                   Learn more
                   <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
@@ -422,7 +491,20 @@ const ProductPage = () => {
         </div>
       </div>  
     </div>
+      <style jsx global>{`
+        .hide-scrollbar {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+          display: none;
+        }
+        .cursor-grabbing {
+          cursor: grabbing;
+        }
+      `}</style>
+    </div>
   );
-};
+}
 
 export default ProductPage;
