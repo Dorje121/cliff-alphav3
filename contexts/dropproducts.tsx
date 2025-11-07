@@ -34,7 +34,7 @@ export default function VisionCategories() {
       id: "03",
       title: "DYNAMIX PROGRESSIVE",
       subtitle: "Premium Optical Excellence",
-      image: "/product/9.jpg",
+      image: "/homeimage/dynamix.png",
       points: [
         "Specialized lenses optimized for driving and road visibility.",
         "Reduces glare and enhances focus during long commutes.",
