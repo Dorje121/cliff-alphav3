@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { Calendar, Clock } from "lucide-react";
 import { getBlogPostBySlug } from "../blogData";
 
@@ -13,7 +14,7 @@ export default function BlogDarkLayout({ params }: { params: { slug: string } })
       <div className="min-h-screen bg-black text-white flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-2xl font-bold mb-4">Post not found</h1>
-          <a 
+          <Link 
             href="/blogs" 
             className="text-[#FFD700] hover:underline inline-flex items-center"
           >
@@ -30,7 +31,7 @@ export default function BlogDarkLayout({ params }: { params: { slug: string } })
               />
             </svg>
             Back to Blogs
-          </a>
+          </Link>
         </div>
       </div>
     );
@@ -41,7 +42,7 @@ export default function BlogDarkLayout({ params }: { params: { slug: string } })
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-2">
         {/* Sidebar */}
         <aside className="md:col-span-5 lg:col-span-4 flex flex-col gap-6 text-gray-300 sticky top-24 self-start h-[calc(100vh-8rem)] overflow-y-auto pr-8">
-          <a 
+          <Link 
             href="/blogs" 
             className="w-full pl-4 pr-4 py-3 -ml-6 bg-black/50 hover:bg-black/70 transition-colors duration-300 flex items-center text-[#FFD700] border-l-4 border-transparent hover:border-[#FFD700]"
           >
@@ -58,7 +59,7 @@ export default function BlogDarkLayout({ params }: { params: { slug: string } })
               />
             </svg>
             <span className="font-medium">Back to Blogs</span>
-          </a>
+          </Link>
           <div className="flex items-start gap-4">
             <h4 className="text-sm uppercase text-gray-500 w-24 flex-shrink-0">Published</h4>
             <div className="flex flex-col">
