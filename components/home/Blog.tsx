@@ -6,6 +6,7 @@ import { TransitionLink } from "../ui/transitionlink";
 import Image from "next/image";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { getConsistentImage } from "@/app/blogs/blogData";
 
 // Register ScrollTrigger plugin
 if (typeof window !== "undefined") {
@@ -32,7 +33,7 @@ const blogPosts: BlogPost[] = [
     id: 1,
     title: "Revolutionary Lens Technology: The Future of Vision Correction",
     content: "Full article content here...",
-    image: "/ai1.jpg",
+    image: getConsistentImage("revolutionary-lens-technology-future-vision-correction"),
     date: "2024-03-15",
     readTime: "5 min read",
     category: "Technology",
@@ -45,7 +46,7 @@ const blogPosts: BlogPost[] = [
     id: 2,
     title: "Progressive Lenses: A Complete Guide to Better Vision",
     content: "Full article content here...",
-    image: "/ai1.jpg",
+    image: getConsistentImage("progressive-lenses-complete-guide-better-vision"),
     date: "2024-03-12",
     readTime: "7 min read",
     category: "Education",
@@ -57,7 +58,7 @@ const blogPosts: BlogPost[] = [
     id: 3,
     title: "The Science Behind Blue Light Protection/How to Protect Your Eyes",
     content: "Full article content here...",
-    image: "/ai2.jpg",
+    image: getConsistentImage("science-behind-blue-light-protection"),
     date: "2024-03-10",
     readTime: "4 min read",
     category: "Health",
@@ -69,7 +70,7 @@ const blogPosts: BlogPost[] = [
     id: 4,
     title: "Photochromic Lenses: Adapting to Every Environment",
     content: "Full article content here...",
-    image: "/ai3.jpg",
+    image: getConsistentImage("photochromic-lenses-adapting-every-environment"),
     date: "2024-03-08",
     readTime: "6 min read",
     category: "Product",
@@ -81,7 +82,7 @@ const blogPosts: BlogPost[] = [
     id: 5,
     title: "Eye Health in the Digital Age",
     content: "Full article content here...",
-    image: "/eyetest.jpg",
+    image: getConsistentImage("eye-health-digital-age"),
     date: "2024-03-05",
     readTime: "8 min read",
     category: "Health",
@@ -93,7 +94,7 @@ const blogPosts: BlogPost[] = [
     id: 6,
     title: "Custom Lens Solutions for Professional Athletes",
     content: "Full article content here...",
-    image: "/ai4.jpg",
+    image: getConsistentImage("custom-lens-solutions-professional-athletes"),
     date: "2024-03-02",
     readTime: "5 min read",
     category: "Sports",
@@ -162,8 +163,7 @@ export default function Blog() {
           >
             Cliff Insights and Updates
           </h2>
-          <p
-            ref={heroSubtitleRef}
+          <p  ref={heroSubtitleRef}
             className="text-xl md:text-xl text-center text-[#FFD700]/80 max-w-3xl mx-auto leading-relaxed py-4 poppins opacity-0 translate-y-8"
           >
             Discover the latest in lens technology, eye health, and vision
@@ -182,7 +182,7 @@ export default function Blog() {
                 className="border-2 border-yellow-900/30 bg-[#322b00]/50 relative overflow-hidden rounded-sm w-full h-full shadow-lg hover:shadow-xl transition-shadow duration-300"
                 key={post.id}
               >
-                <div className="relative h-52 overflow-hidden">
+                <div className="relative h-64 overflow-hidden">
                   <Image
                     src={post.image}
                     fill
