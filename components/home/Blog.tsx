@@ -6,7 +6,51 @@ import { TransitionLink } from "../ui/transitionlink";
 import Image from "next/image";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { getConsistentImage } from "@/app/blogs/blogData";
+
+// Available images from the public folder
+const availableImages = [
+  "/ai0.jpg",
+  "/ai1.jpg",
+  "/ai2.jpg",
+  "/ai3.jpg",
+  "/ai4.jpg",
+  "/blur.jpeg",
+  "/blurr.jpg",
+  "/c1.jpeg",
+  "/c2.jpeg",
+  "/c3.jpeg",
+  "/c4.jpeg",
+  "/c5.jpeg",
+  "/c6.jpeg",
+  "/c7.jpeg",
+  "/c8.jpeg",
+  "/c9.jpeg",
+  "/benefits.jpeg",
+  "/bluesafe/Bluesafe.jpg",
+  "/bluesafe/blue.png",
+  "/bluesafe/blue1.png",
+  "/bluesafe/clear.png",
+  "/bluesafe/ctalist.jpg",
+  "/bluesafe/drive.png",
+  "/bluesafe/driveclear.png",
+  "/bluesafe/image.png",
+  "/bluesafe/lense.jpg",
+  "/bluesafe/lense.png",
+  "/bluesafe/photoz.jpg",
+  "/bluesafe/stock-Cliff.jpg",
+  "/bluesafecoatings/blue.png",
+  "/bluesafecoatings/nox.png"
+];
+
+// Function to get a consistent image based on a key (slug or author name)
+const getConsistentImage = (key: string): string => {
+  const hash = key.split('').reduce((acc, char) => {
+    return acc + char.charCodeAt(0);
+  }, 0);
+  
+  const index = Math.abs(hash) % availableImages.length;
+  return availableImages[index];
+};
 
 // Register ScrollTrigger plugin
 if (typeof window !== "undefined") {
@@ -33,7 +77,7 @@ const blogPosts: BlogPost[] = [
     id: 1,
     title: "Revolutionary Lens Technology: The Future of Vision Correction",
     content: "Full article content here...",
-    image: getConsistentImage("revolutionary-lens-technology-future-vision-correction"),
+    image: "/ai0.jpg",
     date: "2024-03-15",
     readTime: "5 min read",
     category: "Technology",
@@ -46,7 +90,7 @@ const blogPosts: BlogPost[] = [
     id: 2,
     title: "Progressive Lenses: A Complete Guide to Better Vision",
     content: "Full article content here...",
-    image: getConsistentImage("progressive-lenses-complete-guide-better-vision"),
+    image: "/ai1.jpg",
     date: "2024-03-12",
     readTime: "7 min read",
     category: "Education",
@@ -58,7 +102,7 @@ const blogPosts: BlogPost[] = [
     id: 3,
     title: "The Science Behind Blue Light Protection/How to Protect Your Eyes",
     content: "Full article content here...",
-    image: getConsistentImage("science-behind-blue-light-protection"),
+    image: "/ai2.jpg",
     date: "2024-03-10",
     readTime: "4 min read",
     category: "Health",
@@ -70,7 +114,7 @@ const blogPosts: BlogPost[] = [
     id: 4,
     title: "Photochromic Lenses: Adapting to Every Environment",
     content: "Full article content here...",
-    image: getConsistentImage("photochromic-lenses-adapting-every-environment"),
+    image: "/ai3.jpg",
     date: "2024-03-08",
     readTime: "6 min read",
     category: "Product",
@@ -82,7 +126,7 @@ const blogPosts: BlogPost[] = [
     id: 5,
     title: "Eye Health in the Digital Age",
     content: "Full article content here...",
-    image: getConsistentImage("eye-health-digital-age"),
+    image: "/ai4.jpg",
     date: "2024-03-05",
     readTime: "8 min read",
     category: "Health",
@@ -94,7 +138,7 @@ const blogPosts: BlogPost[] = [
     id: 6,
     title: "Custom Lens Solutions for Professional Athletes",
     content: "Full article content here...",
-    image: getConsistentImage("custom-lens-solutions-professional-athletes"),
+    image: "/blur.jpeg",
     date: "2024-03-02",
     readTime: "5 min read",
     category: "Sports",
@@ -223,7 +267,7 @@ export default function Blog() {
                     </div>
                     <div className="mt-auto pt-4 -mr-2 flex justify-end">
                       <TransitionLink
-                        href={`/blogs/${post.slug}`}
+                        href={`/insights/${post.slug}`}
                         className="group/cta inline-flex items-center gap-2 text-[#FFD700] font-medium text-sm transition-all duration-300 hover:text-[#FFD700]/80"
                       >
                         <span className="border-b border-transparent group-hover/cta:border-[#FFD700] transition-all duration-300">
@@ -248,7 +292,7 @@ export default function Blog() {
               Discover more articles and insights in our blog
             </p>
             <TransitionLink
-              href="/blogs"
+              href="/insights"
               className="group/cta inline-flex items-center gap-2 px-6 py-3 bg-[#FFD700] hover:bg-[#FFD700]/90 text-black font-semibold rounded-full text-sm transition-all duration-300 "
             >
               <span>View All Articles</span>
