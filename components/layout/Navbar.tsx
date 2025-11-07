@@ -303,7 +303,7 @@ export default function Navbar() {
 
             <div className=" md:-z-10 hidden lense md:flex w-1/2 justify-start items-end h-full relative">
             <Image
-              src="/handd.png"
+              src="/lenses/lensInHand2.png"
               alt="Decorative lens flare"
               height={1000}
               width={1000}
