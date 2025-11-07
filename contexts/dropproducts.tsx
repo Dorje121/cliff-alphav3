@@ -121,7 +121,7 @@ export default function VisionCategories() {
             // Determine the correct href based on the card type
             let href = '';
             if (card.slug === 'zenn-series') {
-              href = '/zennseries';
+              href = '/products/zennseries';
             } else if (card.slug === 'speciality-lenses') {
               href = '/speciality-lenses';
             } else {
