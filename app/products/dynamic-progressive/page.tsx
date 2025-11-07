@@ -1,17 +1,11 @@
 "use client";
 
-import React, { useRef, useState, useEffect } from "react";
-import { NextPage } from "next";
+import React, { useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Icon } from "@iconify-icon/react";
 import { ChevronLeft } from "lucide-react";
-import {
-  ImageComparison,
-  ImageComparisonImage,
-  ImageComparisonSlider,
-} from "@/components/comparision/Comparision";
+import { ImageComparison } from "@/components/comparision/Comparision";
 
 const ProductPage = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -103,7 +97,9 @@ const ProductPage = () => {
                   <div className="absolute inset-0 bg-gradient-to-r from-yellow-400/10 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                   <div className="relative z-10">
                     <div className="w-20 h-20 mx-auto mb-4 flex items-center justify-center">
-                      <img
+                      <Image
+                        width={64}
+                        height={64}
                         className="w-16 h-16 object-contain object-center"
                         src="/svgs/uvprotection.svg"
                         alt="cliff uvprotection"
@@ -122,7 +118,9 @@ const ProductPage = () => {
                   <div className="absolute inset-0 bg-gradient-to-r from-yellow-400/10 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                   <div className="relative z-10">
                     <div className="w-20 h-20 mx-auto mb-4 flex items-center justify-center">
-                      <img
+                      <Image
+                        width={64}
+                        height={64}
                         className="w-16 h-16 object-contain object-center"
                         src="/svgs/bluelight.svg"
                         alt="cliff bluelight"
@@ -141,7 +139,9 @@ const ProductPage = () => {
                   <div className="absolute inset-0 bg-gradient-to-r from-yellow-400/10 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                   <div className="relative z-10">
                     <div className="w-20 h-20 mx-auto mb-4 flex items-center justify-center">
-                      <img
+                      <Image
+                        width={64}
+                        height={64}
                         className="w-16 h-16 object-contain object-center"
                         src="/style.svg"
                         alt="style customize cliff"
@@ -160,7 +160,9 @@ const ProductPage = () => {
                   <div className="absolute inset-0 bg-gradient-to-r from-yellow-400/10 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                   <div className="relative z-10">
                     <div className="w-20 h-20 mx-auto mb-4 flex items-center justify-center">
-                      <img
+                      <Image
+                        width={64}
+                        height={64}
                         className="w-16 h-16 object-contain object-center"
                         src="/svgs/antireflective.svg"
                         alt="cliff antireflective"
@@ -186,7 +188,7 @@ const ProductPage = () => {
           </div>
 
           <h2 className="text-4xl sm:text-5xl leading-12 text-yellow-300 mb-6">
-            Cliff Dynamix Progressive lenses adapt to your vision needs throughout the day. Whether you're reading, working on a computer, or driving, experience seamless vision transitions and crystal-clear focus at every distance.
+            Cliff Dynamix Progressive lenses adapt to your vision needs throughout the day. Whether you&apos;re reading, working on a computer, or driving, experience seamless vision transitions and crystal-clear focus at every distance.
           </h2>
         </div>
       </div>
@@ -213,9 +215,9 @@ const ProductPage = () => {
                 style={{ objectPosition: 'right' }}
               />
             </div>
-            <ImageComparisonSlider className="w-0.5 bg-yellow-400/50 backdrop-blur-xs">
+            <div className="absolute top-0 bottom-0 left-1/2 w-0.5 bg-yellow-400/50">
               <div className="absolute top-1/2 left-1/2 size-4 -translate-x-1/2 -translate-y-1/2 rounded-full bg-yellow-400"></div>
-            </ImageComparisonSlider>
+            </div>
           </ImageComparison>
         </div>
         
@@ -453,7 +455,7 @@ const ProductPage = () => {
                   </svg>
                 </summary>
                 <div className="px-6 pb-6 pt-2 text-yellow-200/90">
-                  <p>Dynamix Progressive lenses feature our most advanced digital design with wider reading and computer zones, smoother transitions between distances, and reduced peripheral distortion. Unlike standard progressives, they're optimized for today's digital lifestyle, providing superior comfort during prolonged screen time and better adaptation to various lighting conditions.</p>
+                  <p>Dynamix Progressive lenses feature our most advanced digital design with wider reading and computer zones, smoother transitions between distances, and reduced peripheral distortion. Unlike standard progressives, they&apos;re optimized for today&apos;s digital lifestyle, providing superior comfort during prolonged screen time and better adaptation to various lighting conditions.</p>
                 </div>
               </details>
             </div>
@@ -492,13 +494,13 @@ const ProductPage = () => {
             <div className="bg-black/50 rounded-xl overflow-hidden">
               <details className="group">
                 <summary className="flex justify-between items-center p-6 cursor-pointer">
-                  <h3 className="text-xl poppins text-yellow-300">What's the difference between standard and premium progressive lenses?</h3>
+                  <h3 className="text-xl poppins text-yellow-300">What&apos;s the difference between standard and premium progressive lenses?</h3>
                   <svg className="w-6 h-6 text-yellow-400 transition-transform duration-300 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                   </svg>
                 </summary>
                 <div className="px-6 pb-6 pt-2 text-yellow-200/90">
-                  <p>While standard progressives get the job done, premium Dynamix Progressive lenses offer several advantages: wider viewing zones, smoother transitions between distances, reduced peripheral distortion, and specialized coatings. They're also digitally surfaced for your exact prescription and frame measurements, providing sharper vision and better comfort, especially for active lifestyles or those who spend significant time on digital devices.</p>
+                  <p>While standard progressives get the job done, premium Dynamix Progressive lenses offer several advantages: wider viewing zones, smoother transitions between distances, reduced peripheral distortion, and specialized coatings. They&apos;re also digitally surfaced for your exact prescription and frame measurements, providing sharper vision and better comfort, especially for active lifestyles or those who spend significant time on digital devices.</p>
                 </div>
               </details>
             </div>
