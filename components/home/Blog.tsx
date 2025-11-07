@@ -197,6 +197,34 @@ export default function Blog() {
     });
   };
 
+  // Add a check for mobile to handle initial render
+  const [isMobile, setIsMobile] = React.useState(false);
+
+  useEffect(() => {
+    // This code only runs on the client side
+    if (typeof window !== 'undefined') {
+      setIsMobile(window.innerWidth < 640); // 640px is the 'sm' breakpoint in Tailwind
+      
+      const handleResize = () => {
+        setIsMobile(window.innerWidth < 640);
+      };
+      
+      window.addEventListener('resize', handleResize);
+      return () => window.removeEventListener('resize', handleResize);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const handleResize = () => {
+        setIsMobile(window.innerWidth < 640);
+      };
+      
+      window.addEventListener('resize', handleResize);
+      return () => window.removeEventListener('resize', handleResize);
+    }
+  }, []);
+
   return (
     <div ref={sectionRef} className="min-h-screen">
       <div className="relative pt-32 pb-20 px-9 ">
