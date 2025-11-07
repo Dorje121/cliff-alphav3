@@ -128,8 +128,8 @@ const ProductPage = () => {
           <h2 className="text-4xl sm:text-5xl leading-12 text-yellow-300 mb-6">
             Designed for everyday clarity, Cliff Single Vision Lenses are
             optimized to your unique prescription and lifestyle. Enjoy sharper
-            focus, wider vision, and the comfort your eyes deserve because
-            every detail matters.
+            focus, wider vision, and the comfort your eyes deserve because every
+            detail matters.
           </h2>
         </div>
       </div>
@@ -159,7 +159,8 @@ const ProductPage = () => {
             Explore Your Options
           </h2>
           <p className="text-lg md:text-xl !text-yellow-400 max-w-3xl mx-auto">
-            Choose from a range of lens options to suit your lifestyle and vision needs.
+            Choose from a range of lens options to suit your lifestyle and
+            vision needs.
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-2 max-w-7xl mx-auto">
@@ -175,8 +176,12 @@ const ProductPage = () => {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-6 text-left">
-                <h3 className="text-2xl font-bold text-white mb-2">Blue Safe</h3>
-                <p className="text-amber-100/80 mb-4">Protect your eyes from digital screens</p>
+                <h3 className="text-2xl font-bold text-white mb-2">
+                  Blue Safe
+                </h3>
+                <p className="text-amber-100/80 mb-4">
+                  Protect your eyes from digital screens
+                </p>
                 <ul className="space-y-2 text-sm text-gray-200 mb-6">
                   <li className="flex items-center">
                     <span className="w-1.5 h-1.5 bg-amber-400 rounded-full mr-2"></span>
@@ -212,8 +217,12 @@ const ProductPage = () => {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-6 text-left">
-                <h3 className="text-2xl font-bold text-white mb-2">Drive Clear</h3>
-                <p className="text-amber-100/80 mb-4">Seamless vision at all distances in a road</p>
+                <h3 className="text-2xl font-bold text-white mb-2">
+                  Drive Clear
+                </h3>
+                <p className="text-amber-100/80 mb-4">
+                  Seamless vision at all distances in a road
+                </p>
                 <ul className="space-y-2 text-sm text-gray-200 mb-6">
                   <li className="flex items-center">
                     <span className="w-1.5 h-1.5 bg-amber-400 rounded-full mr-2"></span>
@@ -250,7 +259,10 @@ const ProductPage = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-6 text-left">
                 <h3 className="text-2xl font-bold text-white mb-2">Photo Z</h3>
-                <p className="text-amber-100/80 mb-4">Protect your eyes from dusts and hamrfull rays and maintain Your Styles</p>
+                <p className="text-amber-100/80 mb-4">
+                  Protect your eyes from dusts and hamrfull rays and maintain
+                  Your Styles
+                </p>
                 <ul className="space-y-2 text-sm text-gray-200 mb-6">
                   <li className="flex items-center">
                     <span className="w-1.5 h-1.5 bg-amber-400 rounded-full mr-2"></span>
@@ -274,29 +286,47 @@ const ProductPage = () => {
             </div>
           </div>
         </div>
+      </div>
 
-     
-      </div>  
-
-       {/* FAQ Section */}
+      {/* FAQ Section */}
       <div className="w-full max-w-9xl mx-auto pb-24  bg-yellow-300/10 pt-24 px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-4xl md:text-5xl montserrat text-center text-yellow-300 mb-16">
             Any Queries?
           </h2>
-          
+
           <div className="space-y-2">
             {/* FAQ Item 1 */}
             <div className="bg-black/50 rounded-xl overflow-hidden">
               <details className="group">
                 <summary className="flex justify-between items-center p-6 cursor-pointer">
-                  <h3 className="text-xl poppins text-yellow-300">What are single vision lenses?</h3>
-                  <svg className="w-6 h-6 text-yellow-400 transition-transform duration-300 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  <h3 className="text-xl poppins text-yellow-300">
+                    What are single vision lenses?
+                  </h3>
+                  <svg
+                    className="w-6 h-6 text-yellow-400 transition-transform duration-300 group-open:rotate-180"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M19 9l-7 7-7-7"
+                    />
                   </svg>
                 </summary>
                 <div className="px-6 pb-6 pt-2 text-yellow-200/90">
-                  <p>Single vision glasses are the most common lens type. They have only one prescription power throughout the entire lens and correct one field of vision – near or far. They're prescribed for people who are short-sighted (myopic) or long-sighted (hyperopic), and can also be used to correct astigmatism to see clearly in the distance and close up.</p>
+                  <p>
+                    Single vision glasses are the most common lens type. They
+                    have only one prescription power throughout the entire lens
+                    and correct one field of vision – near or far. They&apos;re
+                    prescribed for people who are short-sighted (myopic) or
+                    long-sighted (hyperopic), and can also be used to correct
+                    astigmatism to see clearly in the distance and close up.
+                  </p>
                 </div>
               </details>
             </div>
@@ -305,13 +335,35 @@ const ProductPage = () => {
             <div className="bg-black/50 rounded-xl overflow-hidden">
               <details className="group">
                 <summary className="flex justify-between items-center p-6 cursor-pointer">
-                  <h3 className="text-xl poppins text-yellow-300">What is the difference between single vision and progressive lenses?</h3>
-                  <svg className="w-6 h-6 text-yellow-400 transition-transform duration-300 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  <h3 className="text-xl poppins text-yellow-300">
+                    What is the difference between single vision and progressive
+                    lenses?
+                  </h3>
+                  <svg
+                    className="w-6 h-6 text-yellow-400 transition-transform duration-300 group-open:rotate-180"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M19 9l-7 7-7-7"
+                    />
                   </svg>
                 </summary>
                 <div className="px-6 pb-6 pt-2 text-yellow-200/90">
-                  <p className="mt-4 text-yellow-200/90">Progressive lenses have multiple prescriptions in one lens to correct near, intermediate and distance vision. They're a common choice for people over 45 who have trouble focusing from far away to up close due to the natural aging of their eyes. These lenses, also called varifocals, require you to look through different parts of the lens to see clearly at different distances.</p>
+                  <p className="mt-4 text-yellow-200/90">
+                    Progressive lenses have multiple prescriptions in one lens
+                    to correct near, intermediate and distance vision.
+                    They&apos;re a common choice for people over 45 who have
+                    trouble focusing from far away to up close due to the
+                    natural aging of their eyes. These lenses, also called
+                    varifocals, require you to look through different parts of
+                    the lens to see clearly at different distances.
+                  </p>
                 </div>
               </details>
             </div>
@@ -320,13 +372,32 @@ const ProductPage = () => {
             <div className="bg-black/50 rounded-xl overflow-hidden">
               <details className="group">
                 <summary className="flex justify-between items-center p-6 cursor-pointer">
-                  <h3 className="text-xl poppins text-yellow-300">Are single vision lenses prescription?</h3>
-                  <svg className="w-6 h-6 text-yellow-400 transition-transform duration-300 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  <h3 className="text-xl poppins text-yellow-300">
+                    Are single vision lenses prescription?
+                  </h3>
+                  <svg
+                    className="w-6 h-6 text-yellow-400 transition-transform duration-300 group-open:rotate-180"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M19 9l-7 7-7-7"
+                    />
                   </svg>
                 </summary>
                 <div className="px-6 pb-6 pt-2 text-yellow-200/90">
-                  <p>They are! Single vision lenses have either a plus or minus prescription. A plus indicates the need for near vision correction while a minus indicates the need for distance vision correction. In case you wanted to know: Lenses without any prescription are called Plano lenses.</p>
+                  <p>
+                    They are! Single vision lenses have either a plus or minus
+                    prescription. A plus indicates the need for near vision
+                    correction while a minus indicates the need for distance
+                    vision correction. In case you wanted to know: Lenses
+                    without any prescription are called Plano lenses.
+                  </p>
                 </div>
               </details>
             </div>
@@ -335,19 +406,39 @@ const ProductPage = () => {
             <div className="bg-black/50 rounded-xl overflow-hidden">
               <details className="group">
                 <summary className="flex justify-between items-center p-6 cursor-pointer">
-                  <h3 className="text-xl poppins text-yellow-300">Can I wear single vision lenses all the time?</h3>
-                  <svg className="w-6 h-6 text-yellow-400 transition-transform duration-300 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  <h3 className="text-xl poppins text-yellow-300">
+                    Can I wear single vision lenses all the time?
+                  </h3>
+                  <svg
+                    className="w-6 h-6 text-yellow-400 transition-transform duration-300 group-open:rotate-180"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M19 9l-7 7-7-7"
+                    />
                   </svg>
                 </summary>
                 <div className="px-6 pb-6 pt-2 text-yellow-200/90">
-                  <p>For sure! While some people choose to wear their single vision glasses only when needed – like for reading or driving – you can wear them all day. If however you notice any discomfort while wearing your single vision glasses, your optician might recommend a purpose-made second pair like ZEISS Office lenses.</p>
+                  <p>
+                    For sure! While some people choose to wear their single
+                    vision glasses only when needed – like for reading or
+                    driving – you can wear them all day. If however you notice
+                    any discomfort while wearing your single vision glasses,
+                    your optician might recommend a purpose-made second pair
+                    like ZEISS Office lenses.
+                  </p>
                 </div>
               </details>
             </div>
           </div>
         </div>
-      </div>  
+      </div>
     </div>
   );
 };
