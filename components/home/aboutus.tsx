@@ -40,55 +40,56 @@ export default function AboutSection() {
         id="aboutsection"
       >
         {/* Gradient overlays */}
-        <div className="absolute top-0 left-0 w-full h-64 z-10 pointer-events-none bg-gradient-to-b from-[#121212] to-transparent" />
-        <div className="absolute bottom-0 left-0 w-full h-64 z-10 pointer-events-none bg-gradient-to-t from-[#121212] to-transparent" />
+        <div className="absolute top-0 left-0 w-full h-32 md:h-64 z-10 pointer-events-none bg-gradient-to-b from-[#121212] to-transparent" />
+        <div className="absolute bottom-0 left-0 w-full h-32 md:h-64 z-10 pointer-events-none bg-gradient-to-t from-[#121212] to-transparent" />
 
-        {/* Desktop View */}
-        <div className="hidden md:sticky top-0 z-20 md:flex items-center justify-center overflow-hidden h-screen bg-[#121212] w-full">
+        {/* Main Content - Visible on all devices */}
+        <div className="sticky top-0 z-20 flex items-center justify-center overflow-hidden min-h-screen bg-[#121212] w-full py-12 md:py-0">
           <motion.p
-            className="absolute z-30 mb-6 text-4xl text-[#FFD700] montserrat md:text-6xl"
+            className="hidden md:block absolute z-30 mb-4 md:mb-6 text-2xl sm:text-3xl md:text-6xl text-[#FFD700] montserrat text-center px-4"
             style={{ opacity: aboutOpacity }}
           >
             About Cliff Eyewear
           </motion.p>
 
           <motion.div
-            className="relative z-40 w-full max-w-6xl px-4 sm:px-8 text-white text-center"
-            style={{ y: translateY }}
+            className="relative z-40 w-full max-w-6xl px-4 sm:px-6 md:px-8 text-white text-center mt-12 md:mt-0"
+            style={{ y: window.innerWidth < 768 ? 0 : translateY }}
           >
-            <div className="space-y-10 text-[#FFD700] font-sans w-full max-w-[90rem] mx-auto px-8">
+            <div className="space-y-6 md:space-y-10 text-[#FFD700] font-sans w-full max-w-[90rem] mx-auto px-2 sm:px-4 md:px-8">
               {/* MagicText Section */}
-              <div className="space-y-10">
+              <div className="space-y-6 md:space-y-10">
                 <div className="text-center w-full">
-                  <div className="text-2xl sm:text-3xl md:text-5xl text-[#FFD700] montserrat w-full max-w-4xl mx-auto">
+                  <div className="text-xl sm:text-2xl md:text-5xl text-[#FFD700] montserrat w-full max-w-4xl mx-auto">
                     At Cliff Eyewear
                   </div>
                   <MagicText
                     text={
-                      " Vision is more than sight it's an experience. Born from precision lens technology, we blend advanced optics with modern design to deliver lenses that protect, enhance, and empower everyday life."
+                      "Vision is more than sight it's an experience. Born from precision lens technology, we blend advanced optics with modern design to deliver lenses that protect, enhance, and empower everyday life."
                     }
-                    className="mt-4 block"
+                    className="mt-3 md:mt-4 block text-sm sm:text-base md:text-lg"
                   />
                 </div>
                 <MagicText
                   text={
                     "Designed in the USA and trusted worldwide, CLIFF lenses offer clarity, comfort, and style from digital protection to adaptive light solutions."
                   }
+                  className="text-sm sm:text-base md:text-lg"
                 />
               </div>
 
               {/* Key Points */}
-              <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-12 mb-8 w-full">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 mt-8 md:mt-12 mb-6 md:mb-8 w-full">
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.2 }}
-                  viewport={{ once: true }}
-                  className="p-6 border border-yellow-900/30 bg-[#322b00]/50 rounded-xl backdrop-blur-sm h-full"
+                  viewport={{ once: true, margin: "-50px" }}
+                  className="p-4 sm:p-5 md:p-6 border border-yellow-900/30 bg-[#322b00]/50 rounded-xl backdrop-blur-sm h-full"
                 >
-                  <div className="flex flex-col items-center gap-3">
+                  <div className="flex flex-col items-center gap-2 sm:gap-3">
                     <svg
-                      className="w-6 h-6 text-[#FFD700] mt-0.5 flex-shrink-0"
+                      className="w-5 h-5 sm:w-6 sm:h-6 text-[#FFD700] mt-0.5 flex-shrink-0"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -101,7 +102,7 @@ export default function AboutSection() {
                       />
                     </svg>
                     <div>
-                      <h3 className="text-[#fff3bc] text-lg font-medium mb-2 montserrat">
+                      <h3 className="text-[#fff3bc] text-base sm:text-lg font-medium mb-1 sm:mb-2 montserrat text-center">
                         Advance Coatings and Index Options
                       </h3>
                     </div>

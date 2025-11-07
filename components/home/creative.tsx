@@ -49,7 +49,7 @@ export default function CircleAttachment() {
   });
 
   return (
-    <div ref={mainRef} className="relative h-[50dvh] md:h-dvh ">
+    <div ref={mainRef} className="hidden md:block relative h-[50dvh] md:h-dvh">
       <div className="absolute  inset-0 z-50 bg-gradient-to-t from-black via-transparent to-transparent"></div>
       {/* Background blurred image */}
       {/* <div className="h-full w-full relative">

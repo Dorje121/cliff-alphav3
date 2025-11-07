@@ -5,7 +5,7 @@ import TextWithTexture from "@/components/textwithgoldentexture";
 
 const LandingVideo = () => {
   return (
-    <div className="relative min-h-screen flex items-end pb-8 justify-start overflow-hidden">
+    <div className="relative min-h-[90vh] md:min-h-screen flex items-end pb-8 justify-start overflow-hidden">
       {/* Video Background */}
       <video
         src="/videos/fullv.mp4"
@@ -20,25 +20,16 @@ const LandingVideo = () => {
       <div className="absolute inset-0 bg-black/10" />
 
       {/* Content Overlay */}
-      <div className="relative z-10  text-white px-4 md:px-8 w-full mx-auto">
-        <div className="flex items-center justify-between gap-8 text-[#FFD700]">
+      <div className="relative z-10 text-white px-4 md:px-8 w-full mx-auto">
+        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 md:gap-8 text-[#FFD700]">
           {/* Main Heading */}
-
-          <h1 className="text-8xl font-medium montserrat">
-            Cliff lens crafted, <br />
-            Just for you
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-medium montserrat md:leading-none">
+            <span className="block">Cliff lens crafted,</span>
+            <span className="block">Just for you</span>
           </h1>
-          {/* 
-          <TextWithTexture 
-            text="Cliff lens crafted, Just for you"
-            className="text-3xl md:text-4xl lg:text-6xl montserrat font-bold leading-tight"
-          /> */}
-          {/* <TextWithTexture
-            text="Just for you"
-            className="text-3xl md:text-4xl lg:text-6xl poppins font-bold leading-tight"
-          /> */}
+          
           {/* Subheading */}
-          <p className="text-lg pt-8 poppins py-8 max-w-2xl leading-relaxed w-1/3">
+          <p className="text-base sm:text-lg md:text-xl poppins leading-relaxed w-full md:w-1/3 mt-4 md:mt-0">
             Cliff is a precision solution to modern vision challenges, crafting
             eyewear that enhances clarity and comfort
           </p>

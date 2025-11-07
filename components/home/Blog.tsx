@@ -216,17 +216,17 @@ export default function Blog() {
         </div>
       </div>
 
-      <div className="w-full px-4 pb-20">
-        <div className="mx-auto grid w-full max-w-[94rem] grid-cols-1 md:grid-cols-3 lg:grid-cols-[1.4fr_1.4fr_1.4fr_1fr] gap-2 md:gap-2 px-4">
+      <div className="w-full px-2 sm:px-4 pb-10 sm:pb-20">
+        <div className="mx-auto grid w-full max-w-[94rem] grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-[1.4fr_1.4fr_1.4fr_1fr] gap-4 sm:gap-3 px-2 sm:px-4">
           {filteredPosts
             .filter((post) => !post.featured)
             .slice(0, 3)
             .map((post) => (
               <div
-                className="border-2 border-yellow-900/30 bg-[#322b00]/50 relative overflow-hidden rounded-sm w-full h-full shadow-lg hover:shadow-xl transition-shadow duration-300"
+                className="border-2 border-yellow-900/30 bg-[#322b00]/50 relative overflow-hidden rounded-sm w-full h-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
                 key={post.id}
               >
-                <div className="relative h-64 overflow-hidden">
+                <div className="relative h-48 sm:h-56 md:h-64 overflow-hidden">
                   <Image
                     src={post.image}
                     fill
@@ -235,7 +235,7 @@ export default function Blog() {
                   />
                 </div>
 
-                <div className="relative z-10 flex flex-col h-full px-6 py-8 xl:px-8 xl:py-10">
+                <div className="relative z-10 flex flex-col h-full px-4 sm:px-6 py-6 sm:py-8 xl:px-8 xl:py-10">
                   <div className="flex-1">
                     <div className="flex items-start justify-between mb-4">
                       <div className="w-full flex flex-wrap justify-between items-center poppins">
@@ -284,7 +284,7 @@ export default function Blog() {
               </div>
             ))}
 
-          <div className="border-2 border-yellow-500/30 bg-[#322b00]/50 relative overflow-hidden rounded-sm w-full max-w-[300px] h-full shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col items-center justify-center p-8 text-center">
+          <div className="hidden sm:flex border-2 border-yellow-500/30 bg-[#322b00]/50 relative overflow-hidden rounded-sm w-full sm:max-w-[300px] h-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex-col items-center justify-center p-6 sm:p-8 text-center">
             <h3 className="text-2xl font-medium montserrat text-[#FFD700] mb-4">
               Explore More
             </h3>

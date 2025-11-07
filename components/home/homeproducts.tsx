@@ -286,29 +286,31 @@ const Products = () => {
         <div className="max-w-[120rem] mx-auto px-6 relative">
           <button
             onClick={() => scroll("left")}
-            className="absolute -left-4 top-1/2 -translate-y-1/2 bg-black/30 backdrop-blur-md text-yellow-400 p-3 rounded-full hover:bg-black/50 z-10 cursor-pointer transition-colors"
+            className="hidden md:block absolute -left-4 top-1/2 -translate-y-1/2 bg-black/30 backdrop-blur-md text-yellow-400 p-3 rounded-full hover:bg-black/50 z-10 cursor-pointer transition-colors"
+            aria-label="Scroll left"
           >
             <ChevronLeft size={24} className="text-yellow-400" />
           </button>
 
           <button
             onClick={() => scroll("right")}
-            className="absolute -right-4 top-1/2 -translate-y-1/2 bg-black/30 backdrop-blur-md text-yellow-400 p-3 rounded-full hover:bg-black/50 z-10 cursor-pointer transition-colors"
+            className="hidden md:block absolute -right-4 top-1/2 -translate-y-1/2 bg-black/30 backdrop-blur-md text-yellow-400 p-3 rounded-full hover:bg-black/50 z-10 cursor-pointer transition-colors"
+            aria-label="Scroll right"
           >
             <ChevronRight size={24} className="text-yellow-400" />
           </button>
 
           <div
             ref={scrollRef}
-            className="flex gap-4 overflow-x-auto scrollbar-hide scroll-smooth snap-x snap-mandatory"
+            className="flex gap-4 overflow-x-auto scrollbar-hide scroll-smooth snap-x snap-mandatory pb-4"
           >
             {categories.map((card) => (
               <div
                 key={card.id}
-                className="bg-[#322b00]/50 min-w-[340px] md:min-w-[420px] rounded-lg lg:min-w-[440px] h-auto flex flex-col shadow-md overflow-hidden border border-yellow-900/30 hover:shadow-lg transition snap-center"
+                className="bg-[#322b00]/50 min-w-[300px] sm:min-w-[340px] md:min-w-[420px] rounded-lg lg:min-w-[440px] h-auto flex flex-col shadow-md overflow-hidden border border-yellow-900/30 hover:shadow-lg transition"
               >
                 {/* Image with Title Overlay */}
-                <div className="w-full h-[280px] relative flex-shrink-0">
+                <div className="w-full h-[120px] sm:h-[200px] md:h-[250px] relative flex-shrink-0">
                   <Image
                     src={card.image}
                     alt={card.title}
