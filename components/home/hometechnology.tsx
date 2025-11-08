@@ -1,3 +1,4 @@
+
 "use client";
 import React, { useRef, useEffect } from "react";
 import Image from "next/image";
@@ -12,8 +13,6 @@ if (typeof window !== "undefined") {
 }
 
 const Technology = () => {
-  const titleRef = useRef<HTMLHeadingElement>(null);
-  const subtitleRef = useRef<HTMLParagraphElement>(null);
   const services = [
     {
       id: "01",
@@ -51,6 +50,8 @@ const Technology = () => {
   ];
 
   const sectionRef = useRef<HTMLDivElement>(null);
+  const titleRef = useRef<HTMLHeadingElement>(null);
+  const subtitleRef = useRef<HTMLParagraphElement>(null);
   const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
 
   useEffect(() => {
@@ -97,11 +98,9 @@ const Technology = () => {
   };
 
   return (
-    <div
-      ref={sectionRef}
-      className="min-h-screen text-black overflow-hidden w-full"
-    >
+    <div ref={sectionRef} className="min-h-screen text-black overflow-hidden w-full">
       <div className="w-full mx-auto shrink-0 py-4 md:py-6 lg:py-8 relative px-3 md:px-6">
+        
         <div className="mb-8 md:mb-16">
           <div className="flex mb-4 md:mb-6">
             <h2
@@ -122,22 +121,21 @@ const Technology = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-14 gap-y-8 md:gap-y-0 relative px-2">
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-14 gap-y-8 md:gap-y-0 relative">
           {services.map((service, index) => (
-            <div
-              key={service.id}
+            <div 
+              key={service.id} 
               ref={(el) => addToRefs(el, index)}
-              className={`h-full ${
-                parseInt(service.id) % 2 === 0 ? "md:mt-16" : ""
-              }`}
+              className={`h-full ${parseInt(service.id) % 2 === 0 ? 'md:mt-16' : ''}`}
             >
               <Link
                 href={`/technology/${service.slug}`}
-                className="cursor-pointer block group rounded-lg md:rounded-lg bg-[#322b00]/50 border border-yellow-900/30 h-full"
+                className="cursor-pointer block group rounded-lg md:rounded-lg bg-[#322b00]"
               >
                 <div className="relative overflow-hidden h-full">
                   {/* Mobile Layout */}
-                  <div className="block md:hidden h-48 w-full relative">
+                  <div className="block md:hidden h-full w-full relative">
                     <div className="absolute inset-0 w-full h-full">
                       <div className="absolute left-0 top-0 bottom-0 w-full">
                         <Image
@@ -145,7 +143,7 @@ const Technology = () => {
                           alt={service.title}
                           fill
                           className="object-cover rounded-lg"
-                          style={{ objectPosition: "left" }}
+                          style={{ objectPosition: 'left' }}
                         />
                       </div>
                       <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent z-10" />
@@ -157,10 +155,7 @@ const Technology = () => {
                       <p className="text-zinc-300 group-hover:text-white leading-relaxed text-xs mb-2 poppins">
                         {service.description}
                       </p>
-                      <Link
-                        href={`/technology/${service.slug}`}
-                        className="inline-flex items-center text-amber-400 font-medium group-hover:text-white text-sm poppins"
-                      >
+                      <Link href={`/technology/${service.slug}`} className="inline-flex items-center text-amber-400 font-medium group-hover:text-white text-sm poppins">
                         <span className="mr-2">Learn More</span>
                         <svg
                           className="w-4 h-4"
@@ -192,7 +187,7 @@ const Technology = () => {
                         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent z-10" />
                       </div>
                     </div>
-
+                    
                     <div className="flex-1 py-3 pr-4 flex flex-col">
                       <h3 className="text-xl xl:text-2xl font-bold mb-2 montserrat text-white group-hover:text-amber-400 transition-colors">
                         {service.title}
@@ -203,11 +198,7 @@ const Technology = () => {
                       <div className="mt-auto pt-3 flex justify-end">
                         <div className="inline-flex items-center text-amber-400 text-sm font-medium group-hover:text-white transition-colors duration-300">
                           <span className="mr-1">Learn More</span>
-                          <Icon
-                            icon="mage:external-link"
-                            width="16"
-                            height="16"
-                          />
+                          <Icon icon="mage:external-link" width="16" height="16" />
                         </div>
                       </div>
                     </div>
@@ -217,12 +208,12 @@ const Technology = () => {
             </div>
           ))}
         </div>
+
       </div>
     </div>
   );
 };
 
 export default Technology;
-
 
 
