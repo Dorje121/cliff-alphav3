@@ -7,29 +7,6 @@ import Link from 'next/link';
 import { ChevronLeft, Eye, Zap, Shield, Clock, Sun, Moon } from 'lucide-react'
 
 export default function PsicoptixTechnologyPage() {
-  const features = [
-    {
-      icon: <Eye className="w-8 h-8" />,
-      title: "Enhanced Visual Acuity",
-      description: "Precision-engineered lenses that provide sharper, clearer vision with reduced distortion"
-    },
-    {
-      icon: <Zap className="w-8 h-8" />,
-      title: "Lightning Fast Adaptation",
-      description: "Instant adaptation to changing light conditions for seamless visual comfort"
-    },
-    {
-      icon: <Shield className="w-8 h-8" />,
-      title: "UV & Blue Light Protection",
-      description: "Complete protection against harmful UV rays and high-energy blue light"
-    },
-    {
-      icon: <Clock className="w-8 h-8" />,
-      title: "All-Day Comfort",
-      description: "Reduced eye strain and fatigue for extended wear in any environment"
-    }
-  ];
-
   const technologySteps = [
     {
       step: "01",
@@ -193,7 +170,7 @@ export default function PsicoptixTechnologyPage() {
                   Experience the future of vision with our cutting-edge lens technology that adapts to your visual needs in real-time, providing crystal clear vision in any lighting condition.
                 </p>
                 <p className="text-xl">
-                  Our advanced optical technology delivers enhanced contrast and clarity, ensuring every detail is sharp and defined. The innovative design reduces eye strain and fatigue, making it perfect for extended wear. With superior light management, you'll enjoy optimal vision in any environment.
+                  Our advanced optical technology delivers enhanced contrast and clarity, ensuring every detail is sharp and defined. The innovative design reduces eye strain and fatigue, making it perfect for extended wear. With superior light management, you&apos;ll enjoy optimal vision in any environment.
                 </p>
               </div>
             </div>
