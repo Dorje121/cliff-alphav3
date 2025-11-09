@@ -34,7 +34,7 @@ const Coatings = () => {
       description:
         "Blue safe coating lenses provide advanced blue light protection",
       slug: "blue-safe-coating",
-      image: "/bluesafe/Bluesafe.jpg",
+      image: "/coatingimages/blue.png",
       alignment: "right",
       buttonText: "Learn more",
     },
@@ -205,7 +205,7 @@ const Coatings = () => {
                   src={category.image}
                   alt={category.title}
                   fill
-                  className="object-cover sm:object-cover transition-all duration-700 group-hover:scale-105"
+                  className="object-contain sm:object-cover transition-all duration-700 group-hover:scale-105"
                   priority
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />

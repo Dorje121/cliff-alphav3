@@ -26,7 +26,7 @@ const TechDynamix = () => {
       title: "CDT® (Continuum Design) 8K Definition",
       description:
         "This technology uses advanced light-sensitive technology to give you sharp vision and balanced brightness in every environment.",
-      slug: "cdt-continuum-design-8k-definition",
+      slug: "continuum-design-technology",
       image: "/homeimage/8k.png",
     },
     {
@@ -34,7 +34,7 @@ const TechDynamix = () => {
       title: "Wear Fit Customization",
       description:
         "With Wear Fit Customization, each lens is shaped to match how you wear your glasses, offering clearer vision and improved safety while driving day or night.",
-      slug: "wear-fit-customization",
+      slug: "wear-fit-technology",
       image: "/homeimage/wearfit.png",
     },
     {

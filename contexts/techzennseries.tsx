@@ -42,7 +42,7 @@ const zennseries = () => {
       title: "Automatic Corridor Select & Insect Optimization",
       description:
          "Lenses intelligently adjust focus for every corridor of vision while minimizing distractions from small visual obstacles.",
-      slug: "automatic-corridor-select-insect-optimization",
+      slug: "automatic-corridor-selection-technology",
       image: "/homeimage/auto.png",
     },
    
