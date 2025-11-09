@@ -30,7 +30,7 @@ const TechnologyPage = () => {
               Cliff Technology
             </h1>
             <p className="text-xl md:text-2xl !text-yellow-400 max-w-4xl mx-auto">
-              We believe that great vision is more than just what you see it's how you experience the world. Guided by precision engineering and bold creativity, we continue to shape the future of display and optical technology.
+              We believe that great vision is more than just what you see it&apos;s how you experience the world. Guided by precision engineering and bold creativity, we continue to shape the future of display and optical technology.
             </p>
           </div>
         </div>
@@ -44,7 +44,7 @@ const TechnologyPage = () => {
           </div>
 
           <h2 className="text-4xl sm:text-5xl leading-12 text-yellow-300 mb-6">
-            At the heart of Cliff's innovation lies cutting-edge optical
+            At the heart of Cliff&apos;s innovation lies cutting-edge optical
             technology, where precision engineering meets advanced materials.
             Our proprietary lens technology delivers unparalleled clarity,
             durability, and visual performance for the modern world.
