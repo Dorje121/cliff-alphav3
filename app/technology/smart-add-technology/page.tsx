@@ -227,7 +227,7 @@ export default function SmartAddTechnologyPage() {
               <div className="space-y-6 text-[#FFD700]">
                 <p className="text-xl">
                   Smart Add Technology represents a breakthrough in optical design, specifically engineered 
-                  for today's digital world where we constantly shift between devices and viewing distances.
+                  for today&apos;s digital world where we constantly shift between devices and viewing distances.
                 </p>
                 <p className="text-xl">
                   Unlike traditional lenses with fixed power zones, Smart Add dynamically adapts to your 
@@ -271,7 +271,7 @@ export default function SmartAddTechnologyPage() {
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-[#FFD700] mb-4">Designed for Modern Living</h2>
             <p className="text-xl text-yellow-200 max-w-2xl mx-auto">
-              Smart vision solutions for today's multi-screen, multi-task lifestyle
+              Smart vision solutions for today&apos;s multi-screen, multi-task lifestyle
             </p>
           </div>
 
