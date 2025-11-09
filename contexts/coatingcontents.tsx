@@ -39,7 +39,7 @@ const categories: CoatingCategory[] = [
     description:
       "Protect your eyes with NOX Coating, designed to filter harmful blue light from digital screens while maintaining true color perception.",
     slug: "nox-coating",
-    image: "/homeimage/nox.png",
+    image: "/nox/nox1.jpg",
     icon: "mdi:monitor-eye",
     gradient: "from-purple-500/20 to-blue-600/10",
     buttonText: "Learn More",
@@ -51,7 +51,7 @@ const categories: CoatingCategory[] = [
     description:
       "Advanced blue light filtration technology that reduces eye strain and improves sleep quality during extended screen time.",
     slug: "blue-safe",
-    image: "/bluesafe/Bluesafe.jpg",
+    image: "/nox/bluesafe.jpg",
     icon: "mdi:shield-sun",
     gradient: "from-blue-400/20 to-cyan-500/10",
     buttonText: "Learn More",
@@ -63,7 +63,7 @@ const categories: CoatingCategory[] = [
     description:
       "Specially engineered lenses that provide superior optical clarity and reduce glare for safer driving in all conditions.",
     slug: "drive-clear",
-    image: "/homeimage/driveclear.png",
+    image: "/nox/driveclear1.png",
     icon: "mdi:car-light-high",
     gradient: "from-amber-400/20 to-yellow-500/10",
     buttonText: "Learn More",
@@ -75,7 +75,7 @@ const categories: CoatingCategory[] = [
     description:
       "Advanced multi-focal progressive lenses with seamless transitions for crystal clear vision at all distances.",
     slug: "photoZ",
-    image: "/homeimage/lense6.png",
+    image: "/nox/photoz2.png",
     icon: "mdi:image-filter-center-focus",
     gradient: "from-green-400/20 to-emerald-500/10",
     buttonText: "Learn More",
@@ -148,10 +148,32 @@ const CoatingContents: React.FC = () => {
       </div>
 
       <div className="relative z-10 w-full">
-        {/* Section Header */}
-        <div className="text-center mb-16 md:mb-24">
-          <div className="h-16"></div>
-        </div>
+        
+         <div className="text-center mb-20">
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.8 }}
+                    className="inline-flex items-center justify-center mb-6"
+                  >
+                   
+                  </motion.div>
+        
+                  <h2
+                    ref={titleRef}
+                    className="montserrat text-5xl md:text-7xl lg:text-8xl text-white mb-6 leading-tight"
+                  >
+                    Advanced{" "}
+                    <span className="bg-gradient-to-r from-[#FFD700] via-amber-300 to-yellow-400 bg-clip-text text-transparent">
+                      Cliff Coatings
+                    </span>
+                  </h2>
+        
+                  <p className="text-xl md:text-2xl text-[#FFD700]/80 max-w-4xl mx-auto leading-relaxed">
+                    Advanced lens coating technologies designed to enhance durability, clarity, and visual
+                    performance while providing optimal protection for your eyewear investment.
+                  </p>
+                </div>
 
         {/* Alternating Layout Cards */}
         <div className="w-full">

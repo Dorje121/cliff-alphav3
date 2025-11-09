@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { Check, ChevronLeft, ChevronRight, ExternalLink } from "lucide-react";
+import { Check, ExternalLink } from "lucide-react";
 import { useRef } from "react";
 
 export default function VisionCategories() {
@@ -12,7 +12,7 @@ export default function VisionCategories() {
       id: "01",
       title: "SINGLE VISION",
       subtitle: "Advanced Progressive Technology",
-      image: "/homeimage/cliffsingle.png",
+      image: "/single-vision/single.png",
       points: [
         "Complete blue light protection lenses for modern digital lifestyle.",
         "Provides superior clarity and comfort for daily use.",
@@ -34,18 +34,19 @@ export default function VisionCategories() {
       id: "03",
       title: "DYNAMIX PROGRESSIVE",
       subtitle: "Premium Optical Excellence",
-      image: "/homeimage/dynamix.png",
+      image: "/single-vision/dynamix.png",
+      
       points: [
         "Specialized lenses optimized for driving and road visibility.",
         "Reduces glare and enhances focus during long commutes.",
       ],
-      slug: "dynamic-progressive",
+      slug: "dynamix-progressive",
     },
     {
       id: "04",
       title: "ZENN SERIES",
       subtitle: "Premium Optical Excellence",
-      image: "/product/10.jpg",
+      image: "/homeimage/girl.webp",
       points: [
         "Multi-focal progressive lenses for seamless vision at all distances.",
         "Ideal for professionals needing all-round visual performance.",
@@ -56,7 +57,7 @@ export default function VisionCategories() {
       id: "05",
       title: "SPECIALITY LENSES",
       subtitle: "Premium Optical Excellence",
-      image: "/product/6.jpg",
+      image: "/single-vision/special.png",
       points: [
         "Designed for specific visual needs such as computer or reading use.",
         "Engineered to deliver maximum comfort and sharpness.",
@@ -132,7 +133,7 @@ export default function VisionCategories() {
               <Link 
                 href={href}
                 key={card.id}
-                className="bg-[#322b00]/50 rounded-lg flex flex-col shadow-md overflow-hidden border border-yellow-900/30 hover:shadow-lg transition-all duration-300 hover:border-amber-500/50 hover:transform hover:-translate-y-1 h-full"
+                className="bg-[#322b00]/50 rounded-lg flex flex-col shadow-md overflow-hidden border border-yellow-900/30 hover:shadow-lg transition-all duration-300 hover:border-amber-500/50 h-full"
               >
                 {cardContent}
               </Link>

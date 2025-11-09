@@ -23,7 +23,7 @@ const Coatings = () => {
       description:
         "Protect your eyes with NOX Coating, designed to filter harmful blue light",
       slug: "nox-coating",
-      image: "/homeimage/nox.png",
+      image: "/nox/nox1.jpg",
       alignment: "left",
       buttonText: "Learn more",
     },
@@ -34,7 +34,7 @@ const Coatings = () => {
       description:
         "Blue safe coating lenses provide advanced blue light protection",
       slug: "blue-safe-coating",
-      image: "/coatingimages/blue.png",
+      image: "/nox/bluesafe.jpg",
       alignment: "right",
       buttonText: "Learn more",
     },
@@ -45,7 +45,7 @@ const Coatings = () => {
       description:
         "Lenses are specially designed to provide superior optical clarity",
       slug: "drive-clear-coating",
-      image: "/homeimage/driveclear.png",
+      image: "/nox/driveclear.jpg",
       alignment: "left",
       buttonText: "Learn more",
     },
@@ -55,7 +55,7 @@ const Coatings = () => {
       subtitle: "Premium Optical Excellence",
       description: "Advanced multi-focal progressive lenses for all distances",
       slug: "photo-z-coating",
-      image: "/homeimage/lense6.png",
+      image: "/nox/photoz1.jpg",
       alignment: "right",
       buttonText: "Learn more",
     },
@@ -205,21 +205,24 @@ const Coatings = () => {
                   src={category.image}
                   alt={category.title}
                   fill
-                  className="object-contain sm:object-cover transition-all duration-700 group-hover:scale-105"
+                  className="object-cover sm:object-cover"
                   priority
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
-                <div className="absolute inset-0 bg-[#FFD700]/20 group-hover:bg-black/10 transition-all duration-500" />
+                {/* Gradient overlay for better text visibility */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+                {/* Solid overlay for consistent darkness */}
+                <div className="absolute inset-0 bg-black/40" />
               </div>
 
               {/* Content Overlay */}
-              <div className="absolute inset-0 flex items-start justify-center pt-[4%] sm:pt-[6%] md:pt-[5%] px-4 sm:px-8">
+              <div className="absolute inset-0 flex items-start justify-center pt-[4%] sm:pt-[6%] md:pt-[5%] px-4 sm:px-8 z-10">
                 <div className="content text-center w-full max-w-4xl">
                   <div className="mb-4 sm:mb-6">
-                    <h3 className="text-2xl sm:text-4xl md:text-5xl lg:text-7xl font-bold mb-2 sm:mb-4">
+                    <h3 className="text-2xl sm:text-4xl md:text-5xl lg:text-7xl  text-[#FFD700] montserrat mb-2 sm:mb-4">
                       {category.title}
                     </h3>
-                    <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-[#FFD700] font-light">
+                    <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-[#FFD700] font-light montserrat">
                       {category.subtitle}
                     </p>
                   </div>

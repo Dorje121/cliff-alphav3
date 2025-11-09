@@ -37,7 +37,7 @@ const Products = () => {
       description:
         "Complete blue light protection lenses for modern digital lifestyle and visibility",
       slug: "single-vision",
-      image: "/product/13.jpg",
+      image: "/single-vision/single.png",
       alignment: "left",
       buttonText: "Explore Series",
       points: [
@@ -69,7 +69,7 @@ const Products = () => {
       description:
         "Specialized lenses optimized for driving and enhanced road visibility",
       slug: "dynamic-progressive",
-      image: "/product/9.jpg",
+      image: "/single-vision/dynamix.png",
       alignment: "left",
       buttonText: "Learn More",
       points: [
@@ -85,7 +85,7 @@ const Products = () => {
       description:
         "Multi-focal progressive lenses for seamless vision at all distances and visibility",
       slug: "zenn-series",
-      image: "/product/10.jpg",
+      image: "/homeimage/girl.webp",
       alignment: "right",
       buttonText: "Learn More",
       points: [
@@ -101,7 +101,7 @@ const Products = () => {
       description:
         "Multi-focal progressive lenses for seamless vision at all distances and visibility",
       slug: "speciality-lenses",
-      image: "/product/6.jpg",
+      image: "/single-vision/special.png",
       alignment: "left",
       buttonText: "Explore Series",
       points: [

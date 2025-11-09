@@ -148,11 +148,6 @@ export default function PsicoptixTechnologyPage() {
                 <p className="text-yellow-200 text-lg md:text-xl">
                   Revolutionizing vision through advanced optical innovation
                 </p>
-                <div className="mt-8">
-                  <button className="bg-yellow-500 text-black px-8 py-3 rounded-lg font-semibold hover:bg-yellow-400 transition-colors">
-                    Experience Psicoptix
-                  </button>
-                </div>
               </div>
             </div>
           </div>

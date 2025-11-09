@@ -116,7 +116,7 @@ const TechDynamix = () => {
             >
               <Link
                 href={`/technology/${service.slug}`}
-                className="cursor-pointer block group rounded-lg md:rounded-lg bg-[#322b00]"
+                className="cursor-pointer block group rounded-lg md:rounded-lg bg-[#322b00]/50"
               >
                 <div className="relative overflow-hidden h-full">
                   {/* Mobile Layout */}

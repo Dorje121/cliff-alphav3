@@ -119,7 +119,7 @@ export default function ContinuumDesignTechnologyPage() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
-            src="/technology/lense.png"
+            src="/nox/continumn.jpg"
             alt="Continuum Design Technology"
             fill
             className="object-cover opacity-40"
@@ -131,7 +131,7 @@ export default function ContinuumDesignTechnologyPage() {
         <div className="relative h-full w-full">
           <div className="absolute inset-0 flex flex-col justify-end items-center mx-auto pl-0 pr-8 py-8 font-poppins">
             <h1 className="text-4xl md:text-6xl font-medium montserrat text-[#FFD700] mb-4 leading-tight text-center">
-              Continuum Design<sup>™</sup> Technology
+              CDT<sup>™</sup>(Continuum Design Technology) 8K Definition
             </h1>
             <p className="text-[#FFD700] text-xl leading-relaxed max-w-3xl text-center">
               8K resolution lens technology for seamless, uninterrupted vision across all distances
@@ -253,10 +253,10 @@ export default function ContinuumDesignTechnologyPage() {
             {/* Right Side - Image */}
             <div className="md:w-1/2 h-[500px] relative rounded-lg overflow-hidden">
               <Image
-                src="/homeimage/lense3.png"
+                src="/technology/lense.png"
                 alt="Continuum Design Technology"
                 fill
-                className="object-cover"
+                className="object-contain"
                 priority
               />
             </div>
@@ -325,49 +325,17 @@ export default function ContinuumDesignTechnologyPage() {
         </div>
       </section>
 
-      {/* Comparison Section */}
-      <section className="py-20 bg-gradient-to-t from-black to-yellow-900/10">
-        <div className="container mx-auto px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-[#FFD700] mb-4">Experience the Evolution</h2>
-            <p className="text-xl text-yellow-200 max-w-2xl mx-auto">
-              From traditional progressives to 8K seamless vision
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div className="text-center">
-              <h3 className="text-2xl font-semibold text-yellow-300 mb-4">Traditional Progressives</h3>
-              <div className="bg-yellow-500/10 border border-yellow-500/30 rounded-xl p-8">
-                <div className="text-5xl text-yellow-400 mb-4">⚡</div>
-                <p className="text-yellow-200 text-lg mb-4">Visible transition lines</p>
-                <p className="text-yellow-200 text-lg mb-4">Limited peripheral vision</p>
-                <p className="text-yellow-200 text-lg">Long adaptation period</p>
-              </div>
-            </div>
-
-            <div className="text-center">
-              <h3 className="text-2xl font-semibold text-yellow-300 mb-4">Continuum Design™ 8K</h3>
-              <div className="bg-yellow-500/20 border border-yellow-500/40 rounded-xl p-8">
-                <div className="text-5xl text-yellow-400 mb-4">🎯</div>
-                <p className="text-yellow-200 text-lg mb-4">Completely seamless</p>
-                <p className="text-yellow-200 text-lg mb-4">Wide clear zones</p>
-                <p className="text-yellow-200 text-lg">Instant adaptation</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+     
 
       {/* Full width image with overlay */}
       <section className="py-20">
         <div className="container mx-auto px-8">
           <div className="w-full h-[500px] relative rounded-xl overflow-hidden">
             <Image
-              src="/homeimage/lense6.png"
+               src="/technology/lense.png"
               alt="Continuum Design Technology"
               fill
-              className="object-cover"
+              className="object-contain"
               priority
             />
             {/* Overlay with text */}

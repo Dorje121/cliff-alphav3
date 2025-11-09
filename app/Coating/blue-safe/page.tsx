@@ -1,7 +1,9 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 import { ChevronLeft } from "lucide-react";
 import { Icon } from "@iconify/react";
+import { motion } from "framer-motion";
 
 interface Feature {
   icon: string;
@@ -79,27 +81,88 @@ export default function BlueSafePage() {
           </Link>
         </div>
       </div>
-
-      <section className="relative h-[60vh] min-h-[450px] flex flex-col justify-center items-center overflow-hidden">
-        <div
-          className="absolute inset-0 w-full h-full bg-cover bg-center z-0"
-          style={{ backgroundImage: `url(${coating.image})` }}
-        >
-          <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-black/50" />
-          <div className="absolute inset-0 bg-black/50" />
+      {/* Hero Section */}
+      <div className="h-[80vh] w-full mx-auto relative overflow-hidden">
+        {/* Animated Background Image */}
+        <div className="absolute inset-0">
+          <motion.div
+            animate={{
+              scale: [1, 1.1, 1],
+            }}
+            transition={{
+              duration: 20,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+            className="w-full h-full"
+          >
+            <Image
+              src={"/bluesafe/Bluesafe.jpg"}
+              alt={"Cliff Lens"}
+              fill
+              className="object-cover opacity-40"
+              priority
+            />
+          </motion.div>
         </div>
 
-        <div className="relative z-10 text-left w-full px-8">
-          <h1 className="montserrat font-medium text-4xl md:text-6xl lg:text-7xl !text-white capitalize mb-6">
-            {coating.title}
-          </h1>
-          <p className="text-xl md:text-2xl !text-yellow-400 max-w-4xl">
-            {coating.subtitle}
-          </p>
+        {/* Static Content */}
+        <div className="relative h-full w-full">
+          <div className="absolute inset-0 flex flex-col justify-end items-center mx-auto pl-0 pr-8 py-8 font-poppins">
+            <h1 className="text-4xl md:text-6xl font-medium montserrat text-[#FFD700] mb-4 leading-tight text-center">
+              Single Vision Lenses
+            </h1>
+            <p className="text-[#FFD700] text-xl leading-relaxed max-w-3xl text-center">
+              Sharper Vision. Smarter Design.
+            </p>
+          </div>
         </div>
-      </section>
+      </div>
 
-      <section className="relative py-20 bg-black text-white overflow-hidden">
+
+       <div className="relative bg-yellow-300/10 py-24 px-4">
+        <div className="max-w-3xl mx-auto text-center">
+          <div className="mb-6">
+            <div className="w-1 h-16 bg-yellow-400 mx-auto"></div>
+          </div>
+
+          <h2 className="text-4xl sm:text-5xl leading-12 text-yellow-300 mb-6">
+            Why let screens drain your eyes? CLIFF Blue Safe Coating’s Filters out harmful blue light so you stay focused and comfortable. 
+          </h2>
+        </div>
+      </div>
+
+
+        {/* Video Section with Side Content */}
+        <section className="py-24 bg-black">
+          <div className="container mx-auto px-10">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+              {/* Video on the left */}
+              <div className="w-full h-[600px] overflow-hidden rounded-lg">
+                <video 
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="w-full h-full object-contain"
+                >
+                  <source src="/videos/cliffvideo.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+              
+              {/* Content on the right */}
+              <div className="text-white space-y-6">
+                <h2 className="text-3xl md:text-4xl montserrat text-yellow-400">
+                  Blue safe coating lenses provide advanced blue light protection to reduce digital eye strain, minimize glare, enhance visual clarity, and keep your eyes comfortable all day. Perfect for prolonged screen use, they help protect your vision and support sharper focus.
+                </h2>
+              
+              </div>
+            </div>
+          </div>
+        </section>
+
+      {/* <section className="relative py-20 bg-black text-white overflow-hidden">
         <div className="relative z-10 grid grid-cols-1 md:grid-cols-[1.5fr_1fr] gap-12 w-full max-w-[95%] mx-auto">
           <div className="flex flex-col justify-center text-left">
             <h2 className="montserrat text-2xl md:text-4xl lg:text-5xl leading-snug">
@@ -114,7 +177,7 @@ export default function BlueSafePage() {
             </p>
           </div>
         </div>
-      </section>
+      </section> */}
 
       <section className="w-full bg-black py-20">
         <div className="max-w-[1800px] mx-auto px-4">
@@ -188,7 +251,7 @@ export default function BlueSafePage() {
             ))}
           </div>
         </div>
-      </section>
+      </section>      
     </div>
   );
 }

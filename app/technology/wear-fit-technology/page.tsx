@@ -359,25 +359,6 @@ export default function WearFitTechnologyPage() {
         </div>
       </section>
 
-      {/* Final CTA */}
-      <section className="py-20 bg-gradient-to-t from-black to-yellow-900/20">
-        <div className="container mx-auto px-8 text-center">
-          <h2 className="text-4xl font-bold text-[#FFD700] mb-6">
-            Ready to Experience Perfect Comfort?
-          </h2>
-          <p className="text-xl text-yellow-200 mb-8 max-w-2xl mx-auto">
-            Join thousands who have transformed their eyewear experience with WearFit Technology
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-yellow-500 text-black px-8 py-4 rounded-lg font-semibold hover:bg-yellow-400 transition-colors">
-              Shop WearFit Collection
-            </button>
-            <button className="border border-yellow-500 text-yellow-500 px-8 py-4 rounded-lg font-semibold hover:bg-yellow-500/10 transition-colors">
-              Find Your Perfect Fit
-            </button>
-          </div>
-        </div>
-      </section>
     </main>
   );
 }
