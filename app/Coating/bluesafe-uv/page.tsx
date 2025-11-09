@@ -227,7 +227,7 @@ export default function BlueSafePage() {
                   The Ultimate Eye Protection
                 </h2>
                 <p className="text-lg md:text-xl text-[#FFD700] leading-relaxed">
-                  Our Blue Safe UV Coating is scientifically engineered to protect your eyes from both harmful blue light emitted by digital screens and damaging UV rays from the sun. Experience unparalleled visual comfort and clarity, whether you're working, gaming, or enjoying outdoor activities.
+                  Our Blue Safe UV Coating is scientifically engineered to protect your eyes from both harmful blue light emitted by digital screens and damaging UV rays from the sun. Experience unparalleled visual comfort and clarity, whether you&apos;re working, gaming, or enjoying outdoor activities.
                 </p>
                 <div className="pt-4">
                   <ul className="space-y-3">
