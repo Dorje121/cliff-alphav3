@@ -4,7 +4,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ChevronLeft, Zap, Moon, Users, Activity, Heart, Target, Ruler, Layers, Infinity, Cpu, Scan, Smartphone, Monitor, Book, Car } from 'lucide-react'
+import { ChevronLeft, Zap, Users, Activity, Heart, Smartphone, Monitor, Book } from 'lucide-react'
 
 export default function SmartAddTechnologyPage() {
   const features = [
