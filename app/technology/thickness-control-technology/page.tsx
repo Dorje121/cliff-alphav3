@@ -158,7 +158,7 @@ export default function ThicknessControlTechnologyPage() {
         <div className="container mx-auto px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-[#FFD700] mb-4">Advanced Thinning Features</h2>
-            <p className="text-xl text-yellow-200 max-w-2xl mx-auto">
+            <p className="text-xl text-[#FFD700] max-w-2xl mx-auto">
               Experience the next generation of slim lens technology with precision thickness control
             </p>
           </div>
@@ -177,8 +177,8 @@ export default function ThicknessControlTechnologyPage() {
                     {feature.icon}
                   </div>
                 </div>
-                <h3 className="text-xl font-semibold text-yellow-300 mb-3">{feature.title}</h3>
-                <p className="text-yellow-200">{feature.description}</p>
+                <h3 className="text-xl font-semibold text-[#FFD700] mb-3">{feature.title}</h3>
+                <p className="text-[#FFD700]">{feature.description}</p>
               </motion.div>
             ))}
           </div>
@@ -186,7 +186,7 @@ export default function ThicknessControlTechnologyPage() {
       </section>
 
       {/* Prescription Benefits */}
-      <section className="py-20 bg-gradient-to-b from-black to-yellow-900/10">
+      {/* <section className="py-20 bg-gradient-to-b from-black to-yellow-900/10">
         <div className="container mx-auto px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-[#FFD700] mb-4">Benefits for Every Prescription</h2>
@@ -215,7 +215,7 @@ export default function ThicknessControlTechnologyPage() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Content Section */}
       <section className="py-20 bg-black">
@@ -242,8 +242,8 @@ export default function ThicknessControlTechnologyPage() {
                   <div key={index} className="flex items-start">
                     <div className="w-2 h-2 bg-yellow-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
                     <div>
-                      <h4 className="text-yellow-300 font-semibold">{advantage.title}</h4>
-                      <p className="text-yellow-200">{advantage.description}</p>
+                      <h4 className="text-[#FFD700] font-semibold">{advantage.title}</h4>
+                      <p className="text-[#FFD700]">{advantage.description}</p>
                     </div>
                   </div>
                 ))}
@@ -269,7 +269,7 @@ export default function ThicknessControlTechnologyPage() {
         <div className="container mx-auto px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-[#FFD700] mb-4">Perfect for All Frame Styles</h2>
-            <p className="text-xl text-yellow-200 max-w-2xl mx-auto">
+            <p className="text-xl text-[#FFD700] max-w-2xl mx-auto">
               Enhanced aesthetics and comfort across all frame types
             </p>
           </div>
@@ -283,10 +283,37 @@ export default function ThicknessControlTechnologyPage() {
                 transition={{ duration: 0.5, delay: index * 0.2 }}
                 className="bg-gradient-to-br from-yellow-500/5 to-transparent border border-yellow-500/20 rounded-xl p-6 text-center"
               >
-                <h3 className="text-2xl font-semibold text-yellow-300 mb-4">{frame.style}</h3>
-                <p className="text-yellow-200 text-lg">{frame.benefit}</p>
+                <h3 className="text-2xl font-semibold text-[#FFD700] mb-4">{frame.style}</h3>
+                <p className="text-[#FFD700] text-lg">{frame.benefit}</p>
               </motion.div>
             ))}
+          </div>
+        </div>
+      </section>
+         {/* Full width image with overlay */}
+      <section className="py-20">
+        <div className="container mx-auto px-8">
+          <div className="w-full h-[500px] relative rounded-xl overflow-hidden">
+            <Image
+              src="/homeimage/lense6.png"
+              alt="Thickness Control Technology"
+              fill
+              className="object-cover"
+              priority
+            />
+            {/* Overlay with text */}
+            <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-transparent">
+              <div className="h-full flex flex-col justify-center  max-w-2xl">
+                <span className="text-[#FFD700] text-sm uppercase tracking-widest mb-2">Cliff Eyewear™</span>
+                <h2 className="text-4xl md:text-5xl montserrat text-white mb-4">
+                  Thickness Control<sup>™</sup> Technology
+                </h2>
+                <p className="text-[#FFD700] text-lg md:text-xl montserrat">
+                  Revolutionizing lens design with ultra-thin, lightweight performance
+                </p>
+                
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -296,7 +323,7 @@ export default function ThicknessControlTechnologyPage() {
         <div className="container mx-auto px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-[#FFD700] mb-4">How Thickness Control Works</h2>
-            <p className="text-xl text-yellow-200 max-w-2xl mx-auto">
+            <p className="text-xl text-[#FFD700] max-w-2xl mx-auto">
               A sophisticated four-step process that revolutionizes lens thinning
             </p>
           </div>
@@ -312,11 +339,11 @@ export default function ThicknessControlTechnologyPage() {
               >
                 <div className="flex items-start gap-4">
                   <div className="flex-shrink-0">
-                    <span className="text-2xl font-bold text-yellow-400">{step.step}</span>
+                    <span className="text-2xl font-bold text-[#FFD700]">{step.step}</span>
                   </div>
                   <div>
-                    <h3 className="text-2xl font-semibold text-yellow-300 mb-3">{step.title}</h3>
-                    <p className="text-yellow-200 text-lg">{step.description}</p>
+                    <h3 className="text-2xl font-semibold text-[#FFD700] mb-3">{step.title}</h3>
+                    <p className="text-[#FFD700] text-lg">{step.description}</p>
                   </div>
                 </div>
               </motion.div>
@@ -359,33 +386,7 @@ export default function ThicknessControlTechnologyPage() {
         </div>
       </section> */}
 
-      {/* Full width image with overlay */}
-      <section className="py-20">
-        <div className="container mx-auto px-8">
-          <div className="w-full h-[500px] relative rounded-xl overflow-hidden">
-            <Image
-              src="/homeimage/lense6.png"
-              alt="Thickness Control Technology"
-              fill
-              className="object-cover"
-              priority
-            />
-            {/* Overlay with text */}
-            <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-transparent">
-              <div className="h-full flex flex-col justify-center pl-12 md:pl-24 max-w-2xl">
-                <span className="text-yellow-400 text-sm uppercase tracking-widest mb-2">Cliff Eyewear™</span>
-                <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-                  Thickness Control<sup>™</sup> Technology
-                </h2>
-                <p className="text-yellow-200 text-lg md:text-xl">
-                  Revolutionizing lens design with ultra-thin, lightweight performance
-                </p>
-                
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+   
 
      
     </main>

@@ -38,7 +38,7 @@ const categories: CoatingCategory[] = [
       subtitle: "Advanced Blue Light & UV Protection",
       description:
         "Comprehensive protection that blocks 100% of harmful UVA and UVB rays while filtering high-energy blue light. Maintains exceptional visual clarity and color accuracy for digital and outdoor use.",
-      slug: "cliff-blue-safe-uv",
+      slug: "bluesafe-uv",
       image: "/uv/uv.jpg",
       buttonText: "Know More",
       icon: "mdi:shield-sun",
@@ -50,7 +50,7 @@ const categories: CoatingCategory[] = [
       subtitle: "Adaptive Photochromic Defense",
       description:
         "Intelligent UV protection that automatically adapts to changing light conditions. Transitions seamlessly from clear to dark while maintaining optimal eye safety and visual comfort in any environment.",
-      slug: "cliff-phot-z-uv",
+      slug: "photo-z-uv",
       image: "/bluesafe/photoz.jpg",
       buttonText: "Know More",
       icon: "mdi:weather-sunny",
@@ -62,7 +62,7 @@ const categories: CoatingCategory[] = [
       subtitle: "Polarized Visual Clarity",
       description:
         "Premium UV protection enhanced with advanced polarization technology. Significantly reduces glare and improves visual comfort during driving, sports, and outdoor activities while maintaining true color perception.",
-      slug: "cliff-drive-clear-uv",
+      slug: "drive-clear-uv",
       image: "/uv/drive.png",
       buttonText: "Know More",
       icon: "mdi:car-light-high",
@@ -202,7 +202,7 @@ const CoatingsUV: React.FC = () => {
 
                 {/* Button */}
                 <Link
-                  href={`#`}
+                  href={`/Coating/${category.slug}`}
                   className="coating-button inline-flex items-center px-5 py-2.5 bg-gradient-to-r from-[#FFD700] to-amber-400 rounded-full text-black font-bold hover:from-yellow-300 hover:to-amber-300 transition-all duration-300 transform hover:shadow-2xl hover:shadow-yellow-400/25 max-w-[180px] w-full justify-center"
                 >
                   <span>{category.buttonText}</span>

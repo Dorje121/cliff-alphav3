@@ -7,237 +7,330 @@ export const metadata: Metadata = {
 };
 
 export default function DigitalRayPathPage() {
+  const features = [
+    {
+      icon: '🔬',
+      title: 'Precision Optics',
+      description: 'Microscopic precision in lens design for optimal light control'
+    },
+    {
+      icon: '💻',
+      title: 'Digital Surfacing',
+      description: 'Advanced digital surfacing for perfect light distribution'
+    },
+    {
+      icon: '✨',
+      title: 'HD Clarity',
+      description: 'Crisp, high-definition vision at all distances'
+    },
+    {
+      icon: '🎯',
+      title: 'Light Optimization',
+      description: 'Every ray of light precisely directed to your retina'
+    }
+  ];
+
+  const technologySteps = [
+    {
+      step: "01",
+      title: "Light Capture & Analysis",
+      description: "Advanced lens materials capture and analyze light with exceptional precision"
+    },
+    {
+      step: "02",
+      title: "Digital Path Calculation",
+      description: "Proprietary algorithms calculate optimal light paths for your vision"
+    },
+    {
+      step: "03",
+      title: "Precision Light Delivery",
+      description: "Light is precisely directed to your retina for crystal-clear vision"
+    },
+    {
+      step: "04",
+      title: "Enhanced Visual Experience",
+      description: "Experience sharper, more vibrant vision in all lighting conditions"
+    }
+  ];
+
+  const resolutionBenefits = [
+    {
+      icon: '🔍',
+      title: 'Sharper Vision',
+      description: 'Experience crystal-clear vision with enhanced detail and definition'
+    },
+    {
+      icon: '😌',
+      title: 'Reduced Eye Strain',
+      description: 'Minimizes visual fatigue during extended use'
+    },
+    {
+      icon: '🌙',
+      title: 'Better Night Vision',
+      description: 'Improved visibility in low-light conditions'
+    }
+  ];
+
+  const technicalAdvantages = [
+    {
+      title: "Advanced Light Manipulation",
+      description: "Precise control over how light travels through lenses for optimal clarity"
+    },
+    {
+      title: "Digital Precision Engineering",
+      description: "Computer-optimized light paths based on individual prescription needs"
+    },
+    {
+      title: "Enhanced Visual Performance",
+      description: "Superior contrast, color perception, and reduced visual distortion"
+    }
+  ];
+
+  const lifestyleApplications = [
+    {
+      scenario: "High-Definition Vision",
+      benefit: "Crystal-clear vision with enhanced detail and true-to-life color perception"
+    },
+    {
+      scenario: "Low-Light Performance",
+      benefit: "Improved visibility and reduced glare in challenging lighting conditions"
+    },
+    {
+      scenario: "Extended Comfort",
+      benefit: "Reduced eye strain during prolonged screen time and reading"
+    }
+  ];
+
   return (
-    <main className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+    <main className="min-h-screen bg-black relative pb-28">
       {/* Hero Section */}
-      <section className="relative py-20 overflow-hidden">
-        <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
-        <div className="container mx-auto px-4 relative">
-          <div className="max-w-4xl mx-auto text-center">
-            <span className="inline-block px-4 py-2 bg-blue-100 text-blue-600 rounded-full text-sm font-medium mb-4">
-              NEXT-GENERATION VISION TECHNOLOGY
-            </span>
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600">
+      <div className="h-[80vh] w-full mx-auto relative overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <Image
+            src="/digital-ray/ray.png"
+            alt="Digital Ray Path Technology"
+            fill
+            className="object-cover opacity-30"
+            priority
+          />
+          
+        </div>
+
+        {/* Static Content */}
+        <div className="relative h-full w-full">
+          <div className="absolute inset-0 flex flex-col justify-end items-center mx-auto pl-0 pr-8 py-8 font-poppins">
+            <h1 className="text-4xl md:text-6xl font-medium montserrat text-[#FFD700] mb-4 leading-tight text-center">
               Digital Ray Path Technology
             </h1>
-            <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-              Harnessing the power of light for crystal-clear, high-definition vision
+            <p className="text-[#FFD700] text-xl leading-relaxed max-w-3xl text-center">
+              Advanced light manipulation for unparalleled clarity and precision in vision
             </p>
-            <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-indigo-500 mx-auto mb-12 rounded-full"></div>
-          </div>
-          
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6 relative">
-              <div className="absolute -top-6 -left-6 w-32 h-32 bg-blue-100 rounded-full mix-blend-multiply filter blur-xl opacity-70"></div>
-              <div className="absolute -bottom-8 -right-8 w-40 h-40 bg-indigo-100 rounded-full mix-blend-multiply filter blur-xl opacity-70"></div>
-              <div className="relative">
-                <h2 className="text-3xl font-bold text-gray-900 mb-6">
-                  Precision Light Control
-                </h2>
-                <p className="text-lg text-gray-600 mb-6">
-                  Our Digital Ray Path Technology uses advanced algorithms to precisely control how light travels through your lenses, optimizing every ray for maximum clarity and reduced visual distortion.
-                </p>
-                <ul className="space-y-3">
-                  {[
-                    'Enhanced light transmission',
-                    'Reduced glare and halos',
-                    'Sharper contrast and clarity',
-                    'True-to-life color perception',
-                    'Reduced eye strain'
-                  ].map((feature, index) => (
-                    <li key={index} className="flex items-start">
-                      <div className="flex-shrink-0 mt-1">
-                        <div className="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center">
-                          <svg className="w-4 h-4 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                          </svg>
-                        </div>
-                      </div>
-                      <span className="ml-3 text-gray-700">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-            <div className="relative h-96 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl overflow-hidden border border-blue-100 flex items-center justify-center">
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="relative w-64 h-64">
-                  <div className="absolute inset-0 rounded-full bg-gradient-to-br from-blue-200 to-indigo-200 opacity-30 animate-pulse"></div>
-                  <div className="absolute inset-4 rounded-full bg-gradient-to-br from-blue-100 to-indigo-100"></div>
-                  <div className="absolute inset-8 rounded-full bg-white shadow-inner flex items-center justify-center">
-                    <div className="text-center p-6">
-                      <div className="text-4xl mb-2">👁️</div>
-                      <p className="text-sm text-gray-500">Digital Ray Path<br />Visualization</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
-      </section>
+      </div>
 
-      {/* Technology Features */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Advanced Light Optimization</h2>
-            <p className="text-xl text-gray-600">Our technology ensures every ray of light is perfectly directed to your retina</p>
+      {/* Quote Section */}
+      <div className="relative bg-[#FFD700]/10 py-24 px-4">
+        <div className="max-w-3xl mx-auto text-center">
+          <div className="mb-6">
+            <div className="w-1 h-16 bg-[#FFD700] mx-auto"></div>
+          </div>
+          <h2 className="text-4xl sm:text-5xl leading-12 text-[#FFD700] mb-6">
+            Digital Ray Path Technology™ revolutionizes optical performance by precisely controlling 
+            how light travels through your lenses, delivering crystal-clear, high-definition vision 
+            with enhanced contrast and reduced distortion.
+          </h2>
+        </div>
+      </div>
+
+      {/* Features Grid */}
+      <section className="py-20 bg-black">
+        <div className="container mx-auto px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-[#FFD700] mb-4">Advanced Light Optimization</h2>
+            <p className="text-xl text-[#FFD700] max-w-2xl mx-auto">
+              Our technology ensures every ray of light is perfectly directed to your retina
+            </p>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {[
-              {
-                title: 'Precision Optics',
-                description: 'Microscopic precision in lens design for optimal light control',
-                icon: '🔬',
-                color: 'from-blue-500 to-blue-600'
-              },
-              {
-                title: 'Digital Surfacing',
-                description: 'Advanced digital surfacing for perfect light distribution',
-                icon: '💻',
-                color: 'from-indigo-500 to-indigo-600'
-              },
-              {
-                title: 'HD Clarity',
-                description: 'Crisp, high-definition vision at all distances',
-                icon: '✨',
-                color: 'from-blue-400 to-indigo-500'
-              }
-            ].map((feature, index) => (
-              <div key={index} className="group relative p-8 bg-white rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
-                <div className={`absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-gradient-to-r ${feature.color} text-white flex items-center justify-center text-2xl shadow-lg`}>
-                  {feature.icon}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {features.map((feature, index) => (
+              <div
+                key={index}
+                className="bg-gradient-to-br from-yellow-500/10 to-transparent border border-yellow-500/20 rounded-xl p-6 text-center"
+              >
+                <div className="flex justify-center mb-4">
+                  <div className="p-3 bg-yellow-500/20 rounded-full text-yellow-400 text-2xl">
+                    {feature.icon}
+                  </div>
                 </div>
-                <div className="pt-8 text-center">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-3">{feature.title}</h3>
-                  <p className="text-gray-600">{feature.description}</p>
-                </div>
+                <h3 className="text-xl font-semibold text-[#FFD700] mb-3">{feature.title}</h3>
+                <p className="text-[#FFD700]">{feature.description}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* How It Works Section */}
-      <section className="py-20 bg-gradient-to-b from-white to-blue-50">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-16 text-gray-900">How Digital Ray Path Works</h2>
-          
-          <div className="max-w-5xl mx-auto">
-            <div className="relative">
-              {/* Connecting line */}
-              <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-blue-200 to-indigo-200 transform -translate-x-1/2"></div>
+      {/* Resolution Benefits */}
+      {/* <section className="py-20 bg-[#FFD700]/10">
+        <div className="container mx-auto px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-[#FFD700] mb-4">Enhanced Visual Experience</h2>
+            <p className="text-xl text-[#FFD700] max-w-2xl mx-auto">
+              Digital Ray Path Technology delivers exceptional visual performance
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+            {resolutionBenefits.map((feature, index) => (
+              <div
+                key={index}
+                className="text-center p-6"
+              >
+                <div className="flex justify-center mb-4">
+                  <div className="p-4 bg-yellow-500/20 rounded-full text-yellow-400 text-2xl">
+                    {feature.icon}
+                  </div>
+                </div>
+                <h3 className="text-xl font-semibold text-[#FFD700] mb-3">{feature.title}</h3>
+                <p className="text-[#FFD700]">{feature.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section> */}
+
+      {/* Content Section */}
+      <section className="py-20">
+        <div className="container mx-auto px-8">
+          <div className="flex flex-col md:flex-row items-center gap-12">
+            {/* Left Side - Content */}
+            <div className="md:w-1/2 space-y-6">
+              <h2 className="text-3xl font-bold text-[#FFD700]">Precision Light Control</h2>
+              <div className="space-y-6 text-[#FFD700]">
+                <p className="text-xl">
+                  Digital Ray Path Technology uses advanced algorithms to precisely control how light 
+                  travels through your lenses, optimizing every ray for maximum clarity and reduced visual distortion.
+                </p>
+                <p className="text-xl">
+                  Our innovative approach to light manipulation ensures that you experience true-to-life 
+                  color perception, enhanced contrast, and superior visual comfort in all lighting conditions.
+                </p>
+              </div>
               
-              {/* Steps */}
-              <div className="space-y-16">
-                {[
-                  {
-                    title: 'Light Capture',
-                    description: 'Advanced lens materials capture and focus light with exceptional precision',
-                    icon: '☀️',
-                    side: 'left'
-                  },
-                  {
-                    title: 'Digital Processing',
-                    description: 'Proprietary algorithms calculate the optimal light path for your vision',
-                    icon: '⚡',
-                    side: 'right'
-                  },
-                  {
-                    title: 'Precision Delivery',
-                    description: 'Light is precisely directed to your retina for crystal-clear vision',
-                    icon: '🎯',
-                    side: 'left'
-                  },
-                  {
-                    title: 'Enhanced Vision',
-                    description: 'Experience sharper, more vibrant vision in all lighting conditions',
-                    icon: '👁️',
-                    side: 'right'
-                  }
-                ].map((step, index) => (
-                  <div key={index} className={`relative flex flex-col md:flex-row ${step.side === 'left' ? 'md:flex-row' : 'md:flex-row-reverse'} items-center`}>
-                    <div className="md:flex-1 mb-6 md:mb-0">
-                      <div className={`bg-white p-6 rounded-xl shadow-sm border border-gray-100 max-w-md mx-auto md:mx-0 ${step.side === 'left' ? 'md:mr-auto' : 'md:ml-auto'}`}>
-                        <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-2xl mb-4">
-                          {step.icon}
-                        </div>
-                        <h3 className="text-xl font-semibold text-gray-900 mb-2">{step.title}</h3>
-                        <p className="text-gray-600">{step.description}</p>
-                      </div>
+              {/* Technical Advantages */}
+              <div className="space-y-4 mt-8">
+                <h3 className="text-2xl font-semibold text-[#FFD700]">Technical Innovation</h3>
+                {technicalAdvantages.map((advantage, index) => (
+                  <div key={index} className="flex items-start">
+                    <div className="w-2 h-2 bg-yellow-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                    <div>
+                      <h4 className="text-[#FFD700] font-semibold">{advantage.title}</h4>
+                      <p className="text-[#FFD700]">{advantage.description}</p>
                     </div>
-                    <div className="w-16 h-16 rounded-full bg-white border-4 border-blue-100 flex items-center justify-center text-2xl font-bold text-blue-600 z-10 mx-auto md:mx-0">
-                      {index + 1}
-                    </div>
-                    <div className="md:flex-1 hidden md:block"></div>
                   </div>
                 ))}
               </div>
             </div>
+            
+            {/* Right Side - Image */}
+            <div className="md:w-1/2 h-[500px] relative rounded-lg overflow-hidden">
+              <Image
+                src="/technology/digitalraypath.png"
+                alt="Digital Ray Path Technology"
+                fill
+                className="object-contain"
+                priority
+              />
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Benefits Section */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Experience the Difference</h2>
-            <p className="text-xl text-gray-600">Digital Ray Path Technology delivers exceptional visual performance</p>
+       {/* Full width image with overlay */}
+      <section className="py-20">
+        <div className="container mx-auto px-8">
+          <div className="w-full h-[500px] relative rounded-xl overflow-hidden">
+            <Image
+              src="/digital-ray/rayy.png"
+              alt="Digital Ray Path Technology"
+              fill
+              className="object-cover"
+              priority
+            />
+            {/* Overlay with text */}
+            <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-transparent">
+              <div className="h-full flex flex-col justify-center pl-12 md:pl-24 max-w-2xl">
+                <h2 className="text-4xl md:text-5xl font-bold text-[#FFD700] mb-4">
+                  Digital Ray Path Technology
+                </h2>
+                <p className="text-[#FFD700] text-lg md:text-xl">
+                  Advanced light manipulation for unparalleled visual clarity
+                </p>
+              </div>
+            </div>
           </div>
-          
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {[
-              {
-                title: 'Sharper Vision',
-                description: 'Experience crystal-clear vision with enhanced detail and definition',
-                icon: '🔍',
-                color: 'bg-blue-100 text-blue-600'
-              },
-              {
-                title: 'Reduced Eye Strain',
-                description: 'Minimizes visual fatigue during extended use',
-                icon: '😌',
-                color: 'bg-indigo-100 text-indigo-600'
-              },
-              {
-                title: 'Better Night Vision',
-                description: 'Improved visibility in low-light conditions',
-                icon: '🌙',
-                color: 'bg-blue-50 text-blue-500'
-              }
-            ].map((benefit, index) => (
-              <div key={index} className="group p-8 bg-white rounded-xl border border-gray-100 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-                <div className={`w-16 h-16 rounded-2xl ${benefit.color} flex items-center justify-center text-2xl mb-6 mx-auto transition-transform group-hover:scale-110`}>
-                  {benefit.icon}
+        </div>
+      </section>
+
+      {/* Lifestyle Applications */}
+      {/* <section className="py-20 bg-black">
+        <div className="container mx-auto px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-[#FFD700] mb-4">Perfect Visual Performance</h2>
+            <p className="text-xl text-[#FFD700] max-w-2xl mx-auto">
+              Enhanced vision quality for every aspect of your life
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {lifestyleApplications.map((application, index) => (
+              <div
+                key={index}
+                className="bg-gradient-to-br from-[#FFD700]/5 to-transparent border border-[#FFD700]/20 rounded-xl p-6 text-center"
+              >
+                <h3 className="text-2xl font-semibold text-[#FFD700] mb-4">{application.scenario}</h3>
+                <p className="text-[#FFD700] text-lg">{application.benefit}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section> */}
+
+      {/* Technology Process */}
+      <section className="py-20 bg-black">
+        <div className="container mx-auto px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-[#FFD700] mb-4">How Digital Ray Path Works</h2>
+            <p className="text-xl text-[#FFD700] max-w-2xl mx-auto">
+              Advanced light manipulation through sophisticated four-step process
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {technologySteps.map((step, index) => (
+              <div
+                key={index}
+                className="bg-black/50 border border-[#FFD700]/30 rounded-xl p-8"
+              >
+                <div className="flex items-start gap-4">
+                  <div className="flex-shrink-0">
+                    <span className="text-2xl font-bold text-[#FFD700]">{step.step}</span>
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-semibold text-[#FFD700] mb-3">{step.title}</h3>
+                    <p className="text-[#FFD700] text-lg">{step.description}</p>
+                  </div>
                 </div>
-                <h3 className="text-xl font-semibold text-center text-gray-900 mb-3">{benefit.title}</h3>
-                <p className="text-gray-600 text-center">{benefit.description}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-r from-blue-600 to-indigo-600 text-white">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-4">Ready for Sharper Vision?</h2>
-          <p className="text-xl mb-8 max-w-2xl mx-auto opacity-90">
-            Discover how Digital Ray Path Technology can transform your vision experience.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors">
-              Book an Eye Exam
-            </button>
-            <button className="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white/10 transition-colors">
-              Learn More
-            </button>
-          </div>
-        </div>
-      </section>
+     
     </main>
   );
 }

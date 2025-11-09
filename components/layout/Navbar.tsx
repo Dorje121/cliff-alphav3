@@ -214,7 +214,7 @@ export default function Navbar() {
           <Link
             href="/"
             onClick={handleGoHome}
-            className="relative flex items-center h-10"
+            className="relative flex items-center h-10 navbar-logo"
           >
             <div className="w-20 h-5 flex items-center">
               <svg

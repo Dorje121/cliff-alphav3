@@ -75,7 +75,7 @@ export default function PsicoptixTechnologyPage() {
           <div className="mb-6">
             <div className="w-1 h-16 bg-yellow-400 mx-auto"></div>
           </div>
-          <h2 className="text-4xl sm:text-5xl leading-12 text-yellow-300 mb-6">
+          <h2 className="text-4xl sm:text-5xl leading-12 text-[#FFD700] mb-6">
             Psicoptix Technology™ Innovation that merges advanced optics and visual neuroscience to design lenses that not only
             correct vision but also optimize how the brain interprets images, providing a more precise, natural, and adaptive visual
             experience.
@@ -88,7 +88,7 @@ export default function PsicoptixTechnologyPage() {
         <div className="container mx-auto px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-[#FFD700] mb-4">Optimized for Every Environment</h2>
-            <p className="text-xl text-yellow-200 max-w-2xl mx-auto">
+            <p className="text-xl text-[#FFD700] max-w-2xl mx-auto">
               Exceptional performance across all lighting conditions
             </p>
           </div>
@@ -96,30 +96,30 @@ export default function PsicoptixTechnologyPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center p-6">
               <div className="flex justify-center mb-4">
-                <Sun className="w-12 h-12 text-yellow-400" />
+                <Sun className="w-12 h-12 text-[#FFD700]" />
               </div>
-              <h3 className="text-xl font-semibold text-yellow-300 mb-3">Bright Daylight</h3>
-              <p className="text-yellow-200">
+              <h3 className="text-xl font-semibold text-[#FFD700] mb-3">Bright Daylight</h3>
+              <p className="text-[#FFD700]">
                 Advanced glare reduction and UV protection for optimal comfort in direct sunlight
               </p>
             </div>
 
             <div className="text-center p-6">
               <div className="flex justify-center mb-4">
-                <Eye className="w-12 h-12 text-yellow-400" />
+                <Eye className="w-12 h-12 text-[#FFD700]" />
               </div>
-              <h3 className="text-xl font-semibold text-yellow-300 mb-3">Indoor Lighting</h3>
-              <p className="text-yellow-200">
+              <h3 className="text-xl font-semibold text-[#FFD700] mb-3">Indoor Lighting</h3>
+              <p className="text-[#FFD700]">
                 Perfect balance of contrast and clarity for artificial lighting environments
               </p>
             </div>
 
             <div className="text-center p-6">
               <div className="flex justify-center mb-4">
-                <Moon className="w-12 h-12 text-yellow-400" />
+                <Moon className="w-12 h-12 text-[#FFD700]" />
               </div>
-              <h3 className="text-xl font-semibold text-yellow-300 mb-3">Low Light</h3>
-              <p className="text-yellow-200">
+              <h3 className="text-xl font-semibold text-[#FFD700] mb-3">Low Light</h3>
+              <p className="text-[#FFD700]">
                 Enhanced light transmission and reduced halo effects for night vision
               </p>
             </div>
@@ -141,11 +141,11 @@ export default function PsicoptixTechnologyPage() {
             {/* Overlay with text */}
             <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-transparent">
               <div className="h-full flex flex-col justify-center pl-12 md:pl-24 max-w-2xl">
-                <span className="text-yellow-400 text-sm uppercase tracking-widest mb-2">Cliff Eyewear™</span>
+                <span className="text-[#FFD700] text-sm uppercase tracking-widest mb-2">Cliff Eyewear™</span>
                 <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
                   Psicoptix<sup>™</sup> Technology
                 </h2>
-                <p className="text-yellow-200 text-lg md:text-xl">
+                <p className="text-[#FFD700] text-lg md:text-xl">
                   Revolutionizing vision through advanced optical innovation
                 </p>
               </div>
@@ -189,7 +189,7 @@ export default function PsicoptixTechnologyPage() {
         <div className="container mx-auto px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-[#FFD700] mb-4">How Psicoptix Works</h2>
-            <p className="text-xl text-yellow-200 max-w-2xl mx-auto">
+            <p className="text-xl text-[#FFD700] max-w-2xl mx-auto">
               A sophisticated four-step process that revolutionizes how you see the world
             </p>
           </div>
@@ -205,11 +205,11 @@ export default function PsicoptixTechnologyPage() {
               >
                 <div className="flex items-start gap-4">
                   <div className="flex-shrink-0">
-                    <span className="text-2xl font-bold text-yellow-400">{step.step}</span>
+                    <span className="text-2xl font-bold text-[#FFD700]">{step.step}</span>
                   </div>
                   <div>
-                    <h3 className="text-2xl font-semibold text-yellow-300 mb-3">{step.title}</h3>
-                    <p className="text-yellow-200 text-lg">{step.description}</p>
+                    <h3 className="text-2xl font-semibold text-[#FFD700] mb-3">{step.title}</h3>
+                    <p className="text-[#FFD700] text-lg">{step.description}</p>
                   </div>
                 </div>
               </motion.div>

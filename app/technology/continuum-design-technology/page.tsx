@@ -144,9 +144,9 @@ export default function ContinuumDesignTechnologyPage() {
       <div className="relative bg-yellow-300/10 py-24 px-4">
         <div className="max-w-3xl mx-auto text-center">
           <div className="mb-6">
-            <div className="w-1 h-16 bg-yellow-400 mx-auto"></div>
+            <div className="w-1 h-16 bg-[#FFD700] mx-auto"></div>
           </div>
-          <h2 className="text-4xl sm:text-5xl leading-12 text-yellow-300 mb-6">
+          <h2 className="text-4xl sm:text-5xl leading-12 text-[#FFD700] mb-6">
             Continuum Design Technology™ with 8K precision represents the ultimate evolution in progressive lenses, 
             delivering seamless visual transitions that feel as natural as perfect unaided vision.
           </h2>
@@ -158,7 +158,7 @@ export default function ContinuumDesignTechnologyPage() {
         <div className="container mx-auto px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-[#FFD700] mb-4">8K Precision Features</h2>
-            <p className="text-xl text-yellow-200 max-w-2xl mx-auto">
+            <p className="text-xl text-[#FFD700] max-w-2xl mx-auto">
               Experience the next generation of seamless vision with ultra-high resolution optics
             </p>
           </div>
@@ -173,14 +173,43 @@ export default function ContinuumDesignTechnologyPage() {
                 className="bg-gradient-to-br from-yellow-500/10 to-transparent border border-yellow-500/20 rounded-xl p-6 text-center"
               >
                 <div className="flex justify-center mb-4">
-                  <div className="p-3 bg-yellow-500/20 rounded-full text-yellow-400">
+                  <div className="p-3 bg-yellow-500/20 rounded-full text-[#FFD700]">
                     {feature.icon}
                   </div>
                 </div>
-                <h3 className="text-xl font-semibold text-yellow-300 mb-3">{feature.title}</h3>
-                <p className="text-yellow-200">{feature.description}</p>
+                <h3 className="text-xl font-semibold text-[#FFD700] mb-3">{feature.title}</h3>
+                <p className="text-[#FFD700]">{feature.description}</p>
               </motion.div>
             ))}
+          </div>
+        </div>
+      </section>
+
+
+       {/* Full width image with overlay */}
+      <section className="py-20">
+        <div className="container mx-auto px-8">
+          <div className="w-full h-[500px] relative rounded-xl overflow-hidden">
+            <Image
+               src="/technology/lense.png"
+              alt="Continuum Design Technology"
+              fill
+              className="object-contain"
+              priority
+            />
+            {/* Overlay with text */}
+            <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-transparent">
+              <div className="h-full flex flex-col justify-center pl-12 md:pl-24 max-w-2xl">
+                
+                <h2 className="text-4xl md:text-5xl montserrat text-white mb-4">
+                  Continuum Design<sup>™</sup> Technology
+                </h2>
+                <p className="text-[#FFD700] text-lg md:text-xl">
+                  Revolutionizing progressive vision with 8K seamless precision
+                </p>
+              
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -190,7 +219,7 @@ export default function ContinuumDesignTechnologyPage() {
         <div className="container mx-auto px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-[#FFD700] mb-4">The 8K Difference</h2>
-            <p className="text-xl text-yellow-200 max-w-2xl mx-auto">
+            <p className="text-xl text-[#FFD700] max-w-2xl mx-auto">
               Ultra-high precision optics for unparalleled visual clarity
             </p>
           </div>
@@ -205,12 +234,12 @@ export default function ContinuumDesignTechnologyPage() {
                 className="text-center p-6"
               >
                 <div className="flex justify-center mb-4">
-                  <div className="p-4 bg-yellow-500/20 rounded-full text-yellow-400">
+                  <div className="p-4 bg-yellow-500/20 rounded-full text-[#FFD700]">
                     {feature.icon}
                   </div>
                 </div>
-                <h3 className="text-xl font-semibold text-yellow-300 mb-3">{feature.title}</h3>
-                <p className="text-yellow-200">{feature.description}</p>
+                <h3 className="text-xl font-semibold text-[#FFD700] mb-3">{feature.title}</h3>
+                <p className="text-[#FFD700]">{feature.description}</p>
               </motion.div>
             ))}
           </div>
@@ -237,13 +266,13 @@ export default function ContinuumDesignTechnologyPage() {
               
               {/* Technical Advantages */}
               <div className="space-y-4 mt-8">
-                <h3 className="text-2xl font-semibold text-yellow-300">Technical Innovation</h3>
+                <h3 className="text-2xl font-semibold text-[#FFD700]">Technical Innovation</h3>
                 {technicalAdvantages.map((advantage, index) => (
                   <div key={index} className="flex items-start">
                     <div className="w-2 h-2 bg-yellow-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
                     <div>
-                      <h4 className="text-yellow-300 font-semibold">{advantage.title}</h4>
-                      <p className="text-yellow-200">{advantage.description}</p>
+                      <h4 className="text-[#FFD700] font-semibold">{advantage.title}</h4>
+                      <p className="text-[#FFD700]">{advantage.description}</p>
                     </div>
                   </div>
                 ))}
@@ -265,7 +294,7 @@ export default function ContinuumDesignTechnologyPage() {
       </section>
 
       {/* Lifestyle Applications */}
-      <section className="py-20 bg-black">
+      {/* <section className="py-20 bg-black">
         <div className="container mx-auto px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-[#FFD700] mb-4">Perfect for Every Scenario</h2>
@@ -289,14 +318,14 @@ export default function ContinuumDesignTechnologyPage() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Technology Process */}
       <section className="py-20 bg-black">
         <div className="container mx-auto px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-[#FFD700] mb-4">How Continuum Design Works</h2>
-            <p className="text-xl text-yellow-200 max-w-2xl mx-auto">
+            <h2 className="text-4xl montserrat text-[#FFD700] mb-4">How Continuum Design Works</h2>
+            <p className="text-xl montserrat text-[#FFD700] max-w-2xl mx-auto">
               A sophisticated four-step process that revolutionizes progressive vision
             </p>
           </div>
@@ -312,11 +341,11 @@ export default function ContinuumDesignTechnologyPage() {
               >
                 <div className="flex items-start gap-4">
                   <div className="flex-shrink-0">
-                    <span className="text-2xl font-bold text-yellow-400">{step.step}</span>
+                    <span className="text-2xl font-bold text-[#FFD700]">{step.step}</span>
                   </div>
                   <div>
-                    <h3 className="text-2xl font-semibold text-yellow-300 mb-3">{step.title}</h3>
-                    <p className="text-yellow-200 text-lg">{step.description}</p>
+                    <h3 className="text-2xl font-semibold text-[#FFD700] mb-3">{step.title}</h3>
+                    <p className="text-[#FFD700] text-lg">{step.description}</p>
                   </div>
                 </div>
               </motion.div>
@@ -327,33 +356,7 @@ export default function ContinuumDesignTechnologyPage() {
 
      
 
-      {/* Full width image with overlay */}
-      <section className="py-20">
-        <div className="container mx-auto px-8">
-          <div className="w-full h-[500px] relative rounded-xl overflow-hidden">
-            <Image
-               src="/technology/lense.png"
-              alt="Continuum Design Technology"
-              fill
-              className="object-contain"
-              priority
-            />
-            {/* Overlay with text */}
-            <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-transparent">
-              <div className="h-full flex flex-col justify-center pl-12 md:pl-24 max-w-2xl">
-                
-                <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-                  Continuum Design<sup>™</sup> Technology
-                </h2>
-                <p className="text-yellow-200 text-lg md:text-xl">
-                  Revolutionizing progressive vision with 8K seamless precision
-                </p>
-              
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+     
 
     </main>
   );

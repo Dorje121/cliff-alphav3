@@ -4,100 +4,100 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ChevronLeft, Zap, Users, Activity, Heart, Smartphone, Monitor, Book } from 'lucide-react'
+import { ChevronLeft, Navigation, Crosshair, Map, GitMerge, Maximize, Minimize, Route, Box, Target, Cpu, Scan } from 'lucide-react'
 
-export default function SmartAddTechnologyPage() {
+export default function AutomaticCorridorSelectionPage() {
   const features = [
     {
-      icon: <Zap className="w-8 h-8" />,
-      title: "Dynamic Power Adjustment",
-      description: "Intelligently adjusts lens power based on viewing distance for optimal clarity"
+      icon: <Navigation className="w-8 h-8" />,
+      title: "Automatic Corridor Mapping",
+      description: "Intelligent algorithms automatically determine optimal vision corridor based on your prescription and frame choice"
     },
     {
-      icon: <Monitor className="w-8 h-8" />,
-      title: "Digital Optimization",
-      description: "Specifically designed for computer work and digital device usage"
+      icon: <Crosshair className="w-8 h-8" />,
+      title: "Precision Inset Optimization",
+      description: "Advanced inset calculation for maximum usable vision area and minimal distortion"
     },
     {
-      icon: <Activity className="w-8 h-8" />,
-      title: "Smooth Transitions",
-      description: "Seamless shift between near and intermediate vision without visible lines"
+      icon: <Map className="w-8 h-8" />,
+      title: "Dynamic Zone Allocation",
+      description: "Smart distribution of near, intermediate, and distance zones based on your visual behavior"
     },
     {
-      icon: <Heart className="w-8 h-8" />,
-      title: "Reduced Eye Strain",
-      description: "Minimizes visual fatigue during extended screen time and reading"
+      icon: <GitMerge className="w-8 h-8" />,
+      title: "Seamless Transition Paths",
+      description: "Optimized transition corridors that match your natural eye movement patterns"
     }
   ];
 
   const technologySteps = [
     {
       step: "01",
-      title: "Vision Analysis",
-      description: "Comprehensive assessment of your visual behavior and digital lifestyle needs"
+      title: "Frame & Prescription Analysis",
+      description: "Comprehensive assessment of frame dimensions, prescription complexity, and visual requirements"
     },
     {
       step: "02",
-      title: "Smart Power Mapping",
-      description: "Intelligent algorithms create optimized power zones for near and intermediate vision"
+      title: "Corridor Path Calculation",
+      description: "AI algorithms determine optimal vision corridor based on multiple parameters and usage patterns"
     },
     {
       step: "03",
-      title: "Seamless Integration",
-      description: "Smooth blending of vision zones for natural, effortless focus changes"
+      title: "Inset Optimization",
+      description: "Precision calculation of near zone inset for maximum comfort and minimal head movement"
     },
     {
       step: "04",
-      title: "Digital Lifestyle Calibration",
-      description: "Fine-tuned for modern device usage patterns and screen distances"
+      title: "Zone Balancing",
+      description: "Intelligent distribution of vision zones to match your specific lifestyle and visual tasks"
     }
   ];
 
   const resolutionBenefits = [
     {
-      icon: <Smartphone className="w-8 h-8" />,
-      title: "Digital Device Comfort",
-      description: "Perfect clarity for smartphones, tablets, and computer screens"
+      icon: <Maximize className="w-8 h-8" />,
+      title: "Maximum Usable Area",
+      description: "Optimized corridor and inset provide the largest possible clear vision zones"
     },
     {
-      icon: <Book className="w-8 h-8" />,
-      title: "Reading Enhancement",
-      description: "Crystal-clear vision for books, documents, and close-up work"
+      icon: <Minimize className="w-8 h-8" />,
+      title: "Minimal Distortion",
+      description: "Advanced algorithms eliminate peripheral distortion and swim effect"
     },
     {
-      icon: <Users className="w-8 h-8" />,
-      title: "Social Interaction",
-      description: "Natural vision for conversations and social settings"
+      icon: <Route className="w-8 h-8" />,
+      title: "Natural Eye Path",
+      description: "Corridors designed to match your natural eye movement patterns"
     }
   ];
 
   const technicalAdvantages = [
     {
-      title: "Intelligent Power Distribution",
-      description: "Smart algorithms optimize lens power based on your specific visual tasks"
+      title: "AI-Powered Corridor Calculation",
+      description: "Machine learning algorithms analyze thousands of successful fittings to determine optimal corridor paths"
     },
     {
-      title: "Adaptive Vision Zones",
-      description: "Dynamic zones that adjust to your natural viewing distances and habits"
+      title: "Real-time Inset Adjustment",
+      description: "Dynamic inset optimization based on frame dimensions and wearer's visual requirements"
     },
     {
-      title: "Digital Lifestyle Focus",
-      description: "Specifically engineered for modern multi-screen environments"
+      title: "Multi-Parameter Synchronization",
+      description: "Simultaneous optimization of corridor, inset, and zone allocation for perfect harmony"
     }
   ];
 
   const lifestyleApplications = [
     {
-      scenario: "Office & Computer Work",
-      benefit: "Seamless transition between multiple screens, documents, and keyboard"
+      scenario: "Complex Prescriptions",
+      benefit: "Automatic optimization for high prescriptions, astigmatism, and multifocal requirements"
     },
     {
-      scenario: "Digital Reading",
-      benefit: "Comfortable viewing of tablets, e-readers, and smartphones without strain"
+      scenario: "Modern Frame Styles",
+      benefit: "Perfect adaptation to wide, narrow, round, and geometric frame shapes"
     },
     {
-      scenario: "Creative & Technical Work",
-      benefit: "Clear vision for detailed tasks, instruments, and close-up precision work"
+      scenario: "Active Lifestyles",
+      benefit: "Optimized for dynamic visual needs and rapid focus changes"
     }
   ];
 
@@ -120,7 +120,7 @@ export default function SmartAddTechnologyPage() {
         <div className="absolute inset-0">
           <Image
             src="/nox/continumn.jpg"
-            alt="Smart Add Technology"
+            alt="Automatic Corridor Selection & Inset Optimization"
             fill
             className="object-cover opacity-40"
             priority
@@ -131,10 +131,10 @@ export default function SmartAddTechnologyPage() {
         <div className="relative h-full w-full">
           <div className="absolute inset-0 flex flex-col justify-end items-center mx-auto pl-0 pr-8 py-8 font-poppins">
             <h1 className="text-4xl md:text-6xl font-medium montserrat text-[#FFD700] mb-4 leading-tight text-center">
-              Smart Add Technology
+              Automatic Corridor Selection & Inset Optimization
             </h1>
             <p className="text-[#FFD700] text-xl leading-relaxed max-w-3xl text-center">
-              Intelligent vision enhancement for seamless near and intermediate distance clarity
+              AI-powered vision path optimization for maximum clarity and comfort in every frame
             </p>
           </div>
         </div>
@@ -147,8 +147,9 @@ export default function SmartAddTechnologyPage() {
             <div className="w-1 h-16 bg-yellow-400 mx-auto"></div>
           </div>
           <h2 className="text-4xl sm:text-5xl leading-12 text-yellow-300 mb-6">
-            Smart Add Technology™ revolutionizes intermediate vision with intelligent power adaptation, 
-            delivering crystal-clear focus for digital devices and close-up tasks without compromising natural vision.
+            Automatic Corridor Selection & Inset Optimization™ uses advanced AI algorithms to create 
+            perfectly personalized vision paths, eliminating compromise and delivering unprecedented 
+            visual performance in any frame style.
           </h2>
         </div>
       </div>
@@ -157,9 +158,9 @@ export default function SmartAddTechnologyPage() {
       <section className="py-20 bg-black">
         <div className="container mx-auto px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-[#FFD700] mb-4">Smart Vision Enhancement</h2>
+            <h2 className="text-4xl font-bold text-[#FFD700] mb-4">Intelligent Vision Path Optimization</h2>
             <p className="text-xl text-yellow-200 max-w-2xl mx-auto">
-              Intelligent technology designed for modern digital lifestyles
+              Advanced algorithms that transform how progressive lenses are designed and fitted
             </p>
           </div>
           
@@ -189,9 +190,9 @@ export default function SmartAddTechnologyPage() {
       <section className="py-20 bg-gradient-to-b from-black to-yellow-900/10">
         <div className="container mx-auto px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-[#FFD700] mb-4">Perfect for Digital Life</h2>
+            <h2 className="text-4xl font-bold text-[#FFD700] mb-4">The Optimization Advantage</h2>
             <p className="text-xl text-yellow-200 max-w-2xl mx-auto">
-              Optimized vision for the devices and activities that define modern living
+              Experience vision path engineering at its finest
             </p>
           </div>
 
@@ -223,16 +224,17 @@ export default function SmartAddTechnologyPage() {
           <div className="flex flex-col md:flex-row items-center gap-12">
             {/* Left Side - Content */}
             <div className="md:w-1/2 space-y-6">
-              <h2 className="text-3xl font-bold text-[#FFD700]">Intelligent Vision Enhancement</h2>
+              <h2 className="text-3xl font-bold text-[#FFD700]">AI-Powered Vision Path Engineering</h2>
               <div className="space-y-6 text-[#FFD700]">
                 <p className="text-xl">
-                  Smart Add Technology represents a breakthrough in optical design, specifically engineered 
-                  for today&apos;s digital world where we constantly shift between devices and viewing distances.
+                  Automatic Corridor Selection & Inset Optimization represents a quantum leap in progressive lens design, 
+                  using artificial intelligence to analyze thousands of successful fittings and create perfectly optimized 
+                  vision paths for every individual.
                 </p>
                 <p className="text-xl">
-                  Unlike traditional lenses with fixed power zones, Smart Add dynamically adapts to your 
-                  visual needs, providing optimal clarity for computer work, reading, and intermediate tasks 
-                  without the compromises of conventional progressive lenses.
+                  Our advanced algorithms consider frame dimensions, prescription complexity, visual behavior patterns, 
+                  and lifestyle requirements to deliver corridors and insets that provide maximum usable vision area 
+                  with minimal distortion.
                 </p>
               </div>
               
@@ -255,7 +257,7 @@ export default function SmartAddTechnologyPage() {
             <div className="md:w-1/2 h-[500px] relative rounded-lg overflow-hidden">
               <Image
                 src="/technology/lense.png"
-                alt="Smart Add Technology"
+                alt="Automatic Corridor Selection & Inset Optimization"
                 fill
                 className="object-contain"
                 priority
@@ -269,9 +271,9 @@ export default function SmartAddTechnologyPage() {
       <section className="py-20 bg-black">
         <div className="container mx-auto px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-[#FFD700] mb-4">Designed for Modern Living</h2>
+            <h2 className="text-4xl font-bold text-[#FFD700] mb-4">Perfect for Every Scenario</h2>
             <p className="text-xl text-yellow-200 max-w-2xl mx-auto">
-              Smart vision solutions for today&apos;s multi-screen, multi-task lifestyle
+              Intelligent optimization adapted to your specific needs
             </p>
           </div>
 
@@ -296,9 +298,9 @@ export default function SmartAddTechnologyPage() {
       <section className="py-20 bg-black">
         <div className="container mx-auto px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-[#FFD700] mb-4">How Smart Add Technology Works</h2>
+            <h2 className="text-4xl font-bold text-[#FFD700] mb-4">How Automatic Optimization Works</h2>
             <p className="text-xl text-yellow-200 max-w-2xl mx-auto">
-              A sophisticated approach to personalized vision enhancement
+              Four-step intelligent optimization for perfect vision paths
             </p>
           </div>
 
@@ -332,7 +334,7 @@ export default function SmartAddTechnologyPage() {
           <div className="w-full h-[500px] relative rounded-xl overflow-hidden">
             <Image
                src="/technology/lense.png"
-              alt="Smart Add Technology"
+              alt="Automatic Corridor Selection & Inset Optimization"
               fill
               className="object-contain"
               priority
@@ -341,19 +343,16 @@ export default function SmartAddTechnologyPage() {
             <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-transparent">
               <div className="h-full flex flex-col justify-center pl-12 md:pl-24 max-w-2xl">
                 <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-                  Smart Add Technology
+                  Automatic Optimization
                 </h2>
                 <p className="text-yellow-200 text-lg md:text-xl">
-                  Intelligent vision enhancement for the digital age
+                  AI-powered vision paths for unprecedented clarity and comfort
                 </p>
               </div>
             </div>
           </div>
         </div>
       </section>
-
-     
-
     </main>
   );
 }

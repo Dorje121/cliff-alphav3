@@ -5,7 +5,7 @@ import "./globals.css";
 import SmoothScroller from "@/components/lenis/SmoothScroller";
 import { Suspense } from "react";
 import LayoutContent from "@/components/LayoutContent";
-// import PreloaderWrapper from "@/components/PreloaderWrapper";
+import Preloader from "@/components/Preloader";
 
 const montserrat = localFont({
   src: "../public/Montserrat.ttf",
@@ -44,7 +44,7 @@ export default function RootLayout({
           overflowY: "auto"
         }}
       >
-        {/* <PreloaderWrapper />     */}
+        <Preloader />
    
           <Suspense fallback={<div>Loading...</div>}>
             <SmoothScroller />

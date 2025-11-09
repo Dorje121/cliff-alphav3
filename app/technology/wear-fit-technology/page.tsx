@@ -143,7 +143,7 @@ export default function WearFitTechnologyPage() {
         <div className="container mx-auto px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-[#FFD700] mb-4">Advanced Comfort Features</h2>
-            <p className="text-xl text-yellow-200 max-w-2xl mx-auto">
+            <p className="text-xl text-[#FFD700] max-w-2xl mx-auto">
               Experience the next generation of eyewear comfort with technology designed for modern lifestyles
             </p>
           </div>
@@ -162,40 +162,8 @@ export default function WearFitTechnologyPage() {
                     {feature.icon}
                   </div>
                 </div>
-                <h3 className="text-xl font-semibold text-yellow-300 mb-3">{feature.title}</h3>
-                <p className="text-yellow-200">{feature.description}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Comfort Features Section */}
-      <section className="py-20 bg-gradient-to-b from-black to-yellow-900/10">
-        <div className="container mx-auto px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-[#FFD700] mb-4">Unmatched Comfort Experience</h2>
-            <p className="text-xl text-yellow-200 max-w-2xl mx-auto">
-              Designed to eliminate common eyewear discomforts
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            {comfortFeatures.map((feature, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: index * 0.2 }}
-                className="text-center p-6"
-              >
-                <div className="flex justify-center mb-4">
-                  <div className="p-4 bg-yellow-500/20 rounded-full text-yellow-400">
-                    {feature.icon}
-                  </div>
-                </div>
-                <h3 className="text-xl font-semibold text-yellow-300 mb-3">{feature.title}</h3>
-                <p className="text-yellow-200">{feature.description}</p>
+                <h3 className="text-xl font-semibold text-[#FFD700] mb-3">{feature.title}</h3>
+                <p className="text-[#FFD700]">{feature.description}</p>
               </motion.div>
             ))}
           </div>
@@ -222,12 +190,12 @@ export default function WearFitTechnologyPage() {
               
               {/* Material Benefits */}
               <div className="space-y-4 mt-8">
-                <h3 className="text-2xl font-semibold text-yellow-300">Advanced Materials</h3>
+                <h3 className="text-2xl font-semibold text-[#FFD700]">Advanced Materials</h3>
                 {materialBenefits.map((benefit, index) => (
                   <div key={index} className="flex items-start">
                     <div className="w-2 h-2 bg-yellow-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
                     <div>
-                      <h4 className="text-yellow-300 font-semibold">{benefit.title}</h4>
+                      <h4 className="text-[#FFD700] font-semibold">{benefit.title}</h4>
                       <p className="text-yellow-200">{benefit.description}</p>
                     </div>
                   </div>
@@ -248,6 +216,10 @@ export default function WearFitTechnologyPage() {
           </div>
         </div>
       </section>
+
+
+      
+    
 
       {/* Technology Process */}
       <section className="py-20 bg-black">
@@ -273,12 +245,46 @@ export default function WearFitTechnologyPage() {
                     <span className="text-2xl font-bold text-yellow-400">{step.step}</span>
                   </div>
                   <div>
-                    <h3 className="text-2xl font-semibold text-yellow-300 mb-3">{step.title}</h3>
-                    <p className="text-yellow-200 text-lg">{step.description}</p>
+                    <h3 className="text-2xl font-semibold text-[#FFD700] mb-3">{step.title}</h3>
+                    <p className="text-[#FFD700] text-lg">{step.description}</p>
                   </div>
                 </div>
               </motion.div>
             ))}
+          </div>
+        </div>
+      </section>
+
+
+
+        {/* Full width image with overlay */}
+      <section className="py-20">
+        <div className="container mx-auto px-8">
+          <div className="w-full h-[500px] relative rounded-xl overflow-hidden">
+            <Image
+              src="/wearfit/wear.png"
+              alt="WearFit Technology"
+              fill
+              className="object-cover"
+              priority
+            />
+            {/* Overlay with text */}
+            <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-transparent">
+              <div className="h-full flex flex-col justify-center pl-12 md:pl-24 max-w-2xl">
+                <span className="text-yellow-400 text-sm uppercase tracking-widest mb-2">Cliff Eyewear™</span>
+                <h2 className="text-4xl md:text-5xl montserrat font-bold text-white mb-4">
+                  WearFit<sup>™</sup> Technology
+                </h2>
+                <p className="text-[#FFD700] text-lg md:text-xl montserrat">
+                  Revolutionizing eyewear comfort through advanced ergonomic design
+                </p>
+                <div className="mt-8">
+                  <button className="bg-yellow-500 text-black px-8 py-3 rounded-full poppins hover:bg-yellow-400 transition-colors">
+                    Experience WearFit
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -296,30 +302,30 @@ export default function WearFitTechnologyPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center p-6">
               <div className="flex justify-center mb-4">
-                <Activity className="w-12 h-12 text-yellow-400" />
+                <Activity className="w-12 h-12 text-[#FFD700]" />
               </div>
-              <h3 className="text-xl font-semibold text-yellow-300 mb-3">Active Lifestyle</h3>
-              <p className="text-yellow-200">
+              <h3 className="text-xl font-semibold text-[#FFD700] mb-3">Active Lifestyle</h3>
+              <p className="text-[#FFD700]">
                 Secure fit technology keeps glasses in place during sports and physical activities
               </p>
             </div>
 
             <div className="text-center p-6">
               <div className="flex justify-center mb-4">
-                <Clock className="w-12 h-12 text-yellow-400" />
+                <Clock className="w-12 h-12 text-[#FFD700]" />
               </div>
-              <h3 className="text-xl font-semibold text-yellow-300 mb-3">Professional Use</h3>
-              <p className="text-yellow-200">
+              <h3 className="text-xl font-semibold text-[#FFD700] mb-3">Professional Use</h3>
+              <p className="text-[#FFD700]">
                 All-day comfort for work environments, eliminating distraction and discomfort
               </p>
             </div>
 
             <div className="text-center p-6">
               <div className="flex justify-center mb-4">
-                <Users className="w-12 h-12 text-yellow-400" />
+                <Users className="w-12 h-12 text-[#FFD700]" />
               </div>
-              <h3 className="text-xl font-semibold text-yellow-300 mb-3">Daily Wear</h3>
-              <p className="text-yellow-200">
+              <h3 className="text-xl font-semibold text-[#FFD700] mb-3">Daily Wear</h3>
+              <p className="text-[#FFD700]">
                 Lightweight design perfect for everyday use, from morning to night
               </p>
             </div>
@@ -327,37 +333,6 @@ export default function WearFitTechnologyPage() {
         </div>
       </section>
 
-      {/* Full width image with overlay */}
-      <section className="py-20">
-        <div className="container mx-auto px-8">
-          <div className="w-full h-[500px] relative rounded-xl overflow-hidden">
-            <Image
-              src="/wearfit/wear.png"
-              alt="WearFit Technology"
-              fill
-              className="object-cover"
-              priority
-            />
-            {/* Overlay with text */}
-            <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-transparent">
-              <div className="h-full flex flex-col justify-center pl-12 md:pl-24 max-w-2xl">
-                <span className="text-yellow-400 text-sm uppercase tracking-widest mb-2">Cliff Eyewear™</span>
-                <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-                  WearFit<sup>™</sup> Technology
-                </h2>
-                <p className="text-yellow-200 text-lg md:text-xl">
-                  Revolutionizing eyewear comfort through advanced ergonomic design
-                </p>
-                <div className="mt-8">
-                  <button className="bg-yellow-500 text-black px-8 py-3 rounded-lg font-semibold hover:bg-yellow-400 transition-colors">
-                    Experience WearFit
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
     </main>
   );
