@@ -2,7 +2,6 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "./layout/Navbar";
 import Footer from "./layout/Footer";
-import SmoothCursor from "./ui/smoothcursor";
 import CustomCursor from "./CustomCursor";
 
 
