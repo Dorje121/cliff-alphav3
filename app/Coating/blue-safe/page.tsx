@@ -75,7 +75,7 @@ export default function BlueSafePage() {
        
       {/* Hero Section */}
       <div className="h-[80vh] w-full mx-auto relative overflow-hidden">
-        {/* Animated Background Image */}
+      
         <div className="absolute inset-0">
           <motion.div
             animate={{
