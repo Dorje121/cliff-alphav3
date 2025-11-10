@@ -98,17 +98,7 @@ export default function DriveSafeUVPage() {
           </motion.div>
         </div>
 
-        {/* Breadcrumb */}
-              <div className="z-50 bg-black/80 backdrop-blur-sm py-3 border-b border-yellow-500/20">
-                <Breadcrumb 
-                  items={[
-                    { label: 'Home', href: '/' },
-                    { label: 'Coating', href: '/Coating' },
-                    { label: 'Drive Safe UV Coating' }
-                  ]}
-                  className="max-w-9xl mx-auto px-6 sm:px-6 lg:px-10"
-                />
-              </div>
+       
 
         {/* Static Content */}
         <div className="relative h-full w-full">
@@ -122,6 +112,18 @@ export default function DriveSafeUVPage() {
           </div>
         </div>
       </div>
+
+       {/* Breadcrumb */}
+              <div className="z-50 bg-black/80 backdrop-blur-sm py-3 border-b border-yellow-500/20">
+                <Breadcrumb 
+                  items={[
+                    { label: 'Home', href: '/' },
+                    { label: 'Coating', href: '/Coating' },
+                    { label: 'Drive Safe UV Coating' }
+                  ]}
+                  className="max-w-9xl mx-auto px-6 sm:px-6 lg:px-10"
+                />
+              </div>
 
       {/* Quote Section */}
       <div className="relative bg-yellow-300/10 py-24 px-4">
