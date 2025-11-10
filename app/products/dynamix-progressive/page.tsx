@@ -4,7 +4,6 @@ import React, { useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ChevronLeft } from "lucide-react";
 import { ImageComparison, ImageComparisonImage, ImageComparisonSlider } from "@/components/comparision/Comparision";
 import Breadcrumb from "@/components/Breadcrumb";
 
@@ -14,7 +13,7 @@ const product = {
   image: "/homeimage/progressive.jpg",
   video: "/videos/progressive.webm",
   description:
-    "Cliff Dynamix Progressive Lenses offer a premium solution for presbyopia, providing clear vision at all distances with a smooth, natural transition. Our advanced lens technology ensures maximum comfort and visual acuity whether you're reading, working on a computer, or driving.",
+    "Cliff Dynamix Progressive Lenses offer a premium solution for presbyopia, providing clear vision at all distances with a smooth, natural transition. Our advanced lens technology ensures maximum comfort and visual acuity whether you&apos;re reading, working on a computer, or driving.",
   technology: {
     title: "Advanced Technology",
     description:

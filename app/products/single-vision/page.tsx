@@ -1,12 +1,10 @@
 "use client";
 
 import React from "react";
-import { NextPage } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Icon } from "@iconify-icon/react";
-import { ChevronLeft } from "lucide-react";
 import {
   ImageComparison,
   ImageComparisonImage,
@@ -171,7 +169,7 @@ const ProductPage = () => {
           </div>
           <p className="text-lg md:text-xl !text-[#FFD700] max-w-3xl mx-auto">
             Cliff Single Vision lenses deliver uniform clarity from edge to edge, reducing distortion and eye strain.
-With advanced surface refinement and ultra-thin materials, youl'l enjoy a lighter, sleeker fit that looks as good as it feels.
+With advanced surface refinement and ultra-thin materials, you&apos;ll enjoy a lighter, sleeker fit that looks as good as it feels.
           </p>
         </div>
       </div>
