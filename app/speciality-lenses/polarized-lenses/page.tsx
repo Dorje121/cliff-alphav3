@@ -13,14 +13,20 @@ gsap.registerPlugin(ScrollTrigger)
 
 const lensOptions = [
   {
-    name: 'Photochromic Gray',
-    leftImage: '/polarized/gray.png',
+    name: 'Night',
+    leftImage: '/polarized/liggt.png',
     rightImage: '/photochromatic/gray.png',
     features: ['Neutral color balance', 'Reduces brightness', 'Minimizes eye fatigue']
   },
   {
-    name: 'Photochromic Gold',
-    leftImage: '/polarized/gold.png',
+    name: 'Claudy',
+    leftImage: '/polarized/fulldark.png',
+    rightImage: '/photochromatic/golden.png',
+    features: ['Enhances contrast', 'Ideal for sports', 'Reduces glare']
+  },
+   {
+    name: 'Sun',
+    leftImage: '/polarized/dark.png',
     rightImage: '/photochromatic/golden.png',
     features: ['Enhances contrast', 'Ideal for sports', 'Reduces glare']
   }
@@ -125,7 +131,7 @@ export default function Polarized() {
             className="w-full h-full"
           >
             <Image
-              src="/polarized/polo.jpg"
+              src="/polarized/home.png"
               alt="Polarized Lenses"
               fill
               className="object-cover"
@@ -305,6 +311,74 @@ export default function Polarized() {
                       </div>
                     </div>
                   </div>    
+                </div>
+              </section>
+
+
+
+              <section className="w-full flex justify-center px-9">
+                <div className="w-full max-w-9xl h-[60vh] relative overflow-hidden rounded-2xl group">
+                  <div className="absolute inset-0 bg-black/30 z-10"></div>
+                  <div className="absolute inset-0 z-20 flex items-center">
+                    <div className="container mx-auto px-6">
+                      <div className="max-w-xl ml-auto text-right">
+                      <h2 className="text-4xl md:text-6xl montserrat tracking-tight text-[#FFD700] mb-6 leading-tight">
+                        Conquer every horizon with Cliff Polarized.
+                      </h2>
+                      <p className="text-lg md:text-xl poppins text-[#FFD700] font-light">
+                        Built for adventure. Ready for anything.
+                      </p>
+                    </div>
+
+                    </div>
+                  </div>
+                  <Image
+                    src="/polarized/polarized.png"
+                    alt="Polarized Lenses"
+                    fill
+                    className="object-cover"  
+                    priority
+                  />
+                </div>
+              </section>
+
+
+
+              <section className="py-20 bg-black">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                  <div className="text-center mb-16">
+                    <h2 className="text-4xl montserrat text-[#FFD700] mb-4">Why Choose Polarized Lenses?</h2>
+                    
+                  </div>
+                  
+                  <div className="grid md:grid-cols-3 gap-8">
+                    {/* Benefit 1 */}
+                    <div className="text-center p-6 rounded-lg hover:shadow-lg transition-shadow">
+                      <div className="w-16 h-16 bg-[#FFD700]/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <Icon icon="mdi:glasses" className="text-3xl text-[#FFD700]" />
+                      </div>
+                      <h3 className="text-xl montserrat text-[#FFD700] font-semibold mb-2">Glare Reduction</h3>
+                      <p className="text-[#FFD700]">Eliminate harsh glare from reflective surfaces like water, snow, and roads for safer, more comfortable vision.</p>
+                    </div>
+                    
+                    {/* Benefit 2 */}
+                    <div className="text-center p-6 rounded-lg hover:shadow-lg transition-shadow">
+                      <div className="w-16 h-16 bg-[#FFD700]/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <Icon icon="mdi:eye-outline" className="text-3xl text-[#FFD700]" />
+                      </div>
+                      <h3 className="text-xl montserrat text-[#FFD700] font-semibold mb-2">Enhanced Clarity</h3>
+                      <p className="text-[#FFD700]">Experience true colors and improved contrast for better depth perception and visual comfort.</p>
+                    </div>
+                    
+                    {/* Benefit 3 */}
+                    <div className="text-center p-6 rounded-lg hover:shadow-lg transition-shadow">
+                      <div className="w-16 h-16 bg-[#FFD700]/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <Icon icon="mdi:shield-sun" className="text-3xl text-[#FFD700]" />
+                      </div>
+                      <h3 className="text-xl montserrat text-[#FFD700] font-semibold mb-2">UV Protection</h3>
+                      <p className="text-[#FFD700]">100% protection from harmful UVA and UVB rays to keep your eyes safe in all conditions.</p>
+                    </div>
+                  </div>
                 </div>
               </section>
 

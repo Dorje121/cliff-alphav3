@@ -61,7 +61,7 @@ export default function SpecialityLenses() {
       id: "05",
       title: "POLARIZED LENSES",
       subtitle: "Superior Glare Reduction",
-      image: "/polarized/polacard.png",
+      image: "/polarized/polo.png",
       points: [
         "Eliminates harsh glare from reflective surfaces",
         "Enhances color and contrast",

@@ -12,6 +12,7 @@ import {
   ImageComparisonImage,
   ImageComparisonSlider,
 } from "@/components/comparision/Comparision";
+import Breadcrumb from "@/components/Breadcrumb";
 
 const ProductPage = () => {
   const features = [
@@ -34,58 +35,64 @@ const ProductPage = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-black relative pb-28">
+    <div className="min-h-screen bg-black relative pb-28 flex flex-col">
       {/* Back Button */}
-      <div className="max-w-[94rem] w-full mx-auto pl-8 pt-24 absolute z-40">
-        <Link
-          href="/products"
-          className="inline-flex items-center text-[#FFD700] hover:text-amber-300 mb-8"
-        >
-          <ChevronLeft className="w-5 h-5 mr-2" />
-          Back to Products
-        </Link>
-      </div>
-
       {/* Hero Section */}
-      <div className="h-[80vh] w-full mx-auto relative overflow-hidden">
-        {/* Animated Background Image */}
-        <div className="absolute inset-0">
-          <motion.div
-            animate={{
-              scale: [1, 1.1, 1],
-            }}
-            transition={{
-              duration: 20,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-            className="w-full h-full"
-          >
-            <Image
-              src={"/product/1.jpg"}
-              alt={"Cliff Lens"}
-              fill
-              className="object-cover opacity-40"
-              priority
-            />
-          </motion.div>
-        </div>
+      <div className="flex-none">
+        <div className="h-[80vh] w-full mx-auto relative overflow-visible">
+          {/* Animated Background Image */}
+          <div className="absolute inset-0">
+            <motion.div
+              animate={{
+                scale: [1, 1.1, 1],
+              }}
+              transition={{
+                duration: 20,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+              className="w-full h-full"
+            >
+              <Image
+                src={"/product/1.jpg"}
+                alt={"Cliff Lens"}
+                fill
+                className="object-cover opacity-40"
+                priority
+              />
+            </motion.div>
+          </div>
 
-        {/* Static Content */}
-        <div className="relative h-full w-full">
-          <div className="absolute inset-0 flex flex-col justify-end items-center mx-auto pl-0 pr-8 py-8 font-poppins">
-            <h1 className="text-4xl md:text-6xl font-medium montserrat text-[#FFD700] mb-4 leading-tight text-center">
-              Single Vision Lenses
-            </h1>
-            <p className="text-[#FFD700] text-xl leading-relaxed max-w-3xl text-center">
-              Sharper Vision. Smarter Design.
-            </p>
+          {/* Static Content */}
+          <div className="relative h-full w-full">
+            <div className="absolute inset-0 flex flex-col justify-end items-center mx-auto pl-0 pr-8 py-8 font-poppins">
+              <h1 className="text-4xl md:text-6xl font-medium montserrat text-[#FFD700] mb-4 leading-tight text-center">
+                Single Vision Lenses
+              </h1>
+              <p className="text-[#FFD700] text-xl leading-relaxed max-w-3xl text-center">
+                Sharper Vision. Smarter Design.
+              </p>
+            </div>
           </div>
         </div>
       </div>
+      
+      {/* Breadcrumb - Sticky */}
+      <div className="sticky top-30 z-50 bg-black/90 backdrop-blur-sm py-3 border-b border-yellow-500/20">
+        <Breadcrumb 
+          items={[
+            { label: 'Home', href: '/' },
+            { label: 'Products', href: '/products' },
+            { label: 'Single Vision' }
+          ]}
+          className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+        />
+      </div>
 
-      {/* Technology and Benefits Section */}
-      <div className="py-16 px-4">
+      {/* Main Content */}
+      <div className="flex-grow ">
+        {/* Technology and Benefits Section */}
+        <div className="py-16 px-4">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
             {features.map((feature, index) => (
@@ -422,6 +429,7 @@ const ProductPage = () => {
                 </div>
               </details>
             </div>
+          </div>
           </div>
         </div>
       </div>
