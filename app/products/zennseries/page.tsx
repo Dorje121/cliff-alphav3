@@ -1,12 +1,10 @@
 "use client";
 
 import React from "react";
-import { NextPage } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Icon } from "@iconify-icon/react";
-import { ChevronLeft } from "lucide-react";
 import Breadcrumb from "@/components/Breadcrumb";
 
 // Fixed images for each lens type
@@ -469,7 +467,7 @@ const ZennSeries = () => {
           </summary>
           <div className="px-6 pb-6 pt-2 text-[#FFD700]">
             <p>
-              Zen Series lenses are crafted with advanced blue light filtering technology and anti-reflective coatings that reduce eye strain and fatigue. They're designed for the digital age, offering superior clarity and comfort during extended screen time while protecting your eyes from harmful blue light emissions.
+              Zen Series lenses are crafted with advanced blue light filtering technology and anti-reflective coatings that reduce eye strain and fatigue. They&apos;re designed for the digital age, offering superior clarity and comfort during extended screen time while protecting your eyes from harmful blue light emissions.
             </p>
           </div>
         </details>
@@ -559,7 +557,7 @@ const ZennSeries = () => {
           </summary>
           <div className="px-6 pb-6 pt-2 text-[#FFD700]">
             <p>
-              Yes, Zen Series lenses are available in a wide range of prescriptions, including single vision, reading, and progressive lenses. Whether you're nearsighted, farsighted, or have astigmatism, we can customize your Zen Series lenses to match your exact prescription needs while maintaining all the advanced features of the Zen Series technology.
+              Yes, Zen Series lenses are available in a wide range of prescriptions, including single vision, reading, and progressive lenses. Whether you&apos;re nearsighted, farsighted, or have astigmatism, we can customize your Zen Series lenses to match your exact prescription needs while maintaining all the advanced features of the Zen Series technology.
             </p>
           </div>
         </details>
