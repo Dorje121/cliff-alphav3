@@ -392,25 +392,33 @@ export default function PhotochromeClient() {
         </div>
       </section>
 
-    {/* 4 Cards Section */}
-   <section className="bg-black py-20">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 group/cards">
+        <section className="bg-black py-20">
+
+         <div className="text-center mb-16">
+                    <h2 className="text-4xl montserrat text-[#FFD700] mb-4">Explore More Lense  Categories</h2>
+                    
+          </div>
+
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-7xl mx-auto px-4 group/cards py-8">
           {/* Card 1 */}
           <Link 
-            href="/speciality-lenses/photochrome-plus" 
-            className="block h-[50vh] w-full group overflow-hidden transition-all duration-500 ease-out group-hover/cards:opacity-50 hover:!opacity-100 hover:!blur-0"
+           
+             href="/products/speciality-lenses/photochrome-plus" 
+            className="block h-[35vh] w-full group overflow-hidden transition-all duration-500 ease-out group-hover/cards:opacity-50 hover:!opacity-100 hover:!blur-20"
           >
             <div className="relative h-full w-full">
               <Image
                 src="/product/5.jpg"
-                alt="Photochromic Plus Lenses"
+                alt="Photochromic Technology"
                 fill
                 className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
                 priority
               />
-              <div className="absolute inset-0 flex flex-col justify-end">
-                <div className="w-full bg-gradient-to-t from-black/100 via-black/80 to-transparent pt-36 pb-4 px-4 text-center">
-                  <h3 className="text-3xl montserrat text-[#FFD700]">Photochromatic Plus</h3>
+             
+                <div className="absolute inset-0 flex items-center">
+                <div className="h-full flex items-center pl-6">
+                  <h3 className="text-2xl md:text-3xl montserrat text-[#FFD700] text-left">Photochromatic Plus</h3>
                 </div>
               </div>
             </div>
@@ -418,20 +426,20 @@ export default function PhotochromeClient() {
 
           {/* Card 2 */}
           <Link 
-            href="/speciality-lenses/cliff-tinted-lenses" 
-            className="block h-[50vh] w-full group overflow-hidden transition-all duration-500 ease-out group-hover/cards:opacity-50 hover:!opacity-100 hover:!blur-0"
+            href="/products/speciality-lenses/cliff-tinted-lenses" 
+            className="block h-[35vh] w-full group overflow-hidden transition-all duration-500 ease-out group-hover/cards:opacity-50 hover:!opacity-100 hover:!blur-0"
           >
             <div className="relative h-full w-full">
               <Image
                 src="/product/6.jpg"
-                alt="Tinted Lenses"
+                alt="UV Protection"
                 fill
                 className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
                 priority
               />
-              <div className="absolute inset-0 flex flex-col justify-end">
-                <div className="w-full bg-gradient-to-t from-black/100 via-black/50 to-transparent h-1/2 pt-34 pb-4 px-4 text-center">
-                  <h3 className="text-3xl montserrat text-[#FFD700]">Tinted Lenses</h3>
+              <div className="absolute inset-0 flex items-center">
+                <div className="h-full flex items-center pl-6">
+                  <h3 className="text-2xl md:text-3xl montserrat text-[#FFD700] text-left">Tinted Lenses</h3>
                 </div>
               </div>
             </div>
@@ -439,20 +447,20 @@ export default function PhotochromeClient() {
 
           {/* Card 3 */}
           <Link 
-            href="/speciality-lenses/polarized-lenses" 
-            className="block h-[50vh] w-full group overflow-hidden transition-all duration-500 ease-out group-hover/cards:opacity-50 hover:!opacity-100 hover:!blur-0"
+            href="/products/speciality-lenses/polarized-lenses" 
+            className="block h-[35vh] w-full group overflow-hidden transition-all duration-500 ease-out group-hover/cards:opacity-50 hover:!opacity-100 hover:!blur-0"
           >
             <div className="relative h-full w-full">
               <Image
-                src="/polarized/polacard.png"
-                alt="Polarized Lenses"
+                src="/product/7.jpg"
+                alt="All-Day Comfort"
                 fill
                 className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
                 priority
               />
-              <div className="absolute inset-0 flex flex-col justify-end">
-                <div className="w-full bg-gradient-to-t from-black/100 via-black/50 to-transparent h-1/2 pt-34 pb-4 px-4 text-center">
-                  <h3 className="text-3xl montserrat text-[#FFD700]">Polarized</h3>
+              <div className="absolute inset-0 flex items-center">
+                <div className="h-full flex items-center pl-6">
+                  <h3 className="text-2xl md:text-3xl montserrat text-[#FFD700] text-left">Polarized Lenses</h3>
                 </div>
               </div>
             </div>
@@ -460,20 +468,20 @@ export default function PhotochromeClient() {
 
           {/* Card 4 */}
           <Link 
-            href="/speciality-lenses/blue-shield" 
-            className="block h-[50vh] w-full group overflow-hidden transition-all duration-500 ease-out group-hover/cards:opacity-50 hover:!opacity-100 hover:!blur-0"
+            href="/products/speciality-lenses/blue-shield" 
+            className="block h-[35vh] w-full group overflow-hidden transition-all duration-500 ease-out group-hover/cards:opacity-50 hover:!opacity-100 hover:!blur-0"
           >
             <div className="relative h-full w-full">
               <Image
                 src="/product/9.jpg"
-                alt="Blue Shield Lenses"
+                alt="Blue Shield"
                 fill
                 className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
                 priority
               />
-              <div className="absolute inset-0 flex flex-col justify-end">
-                <div className="w-full bg-gradient-to-t from-black/100 via-black/50 to-transparent h-1/2 pt-32 pb-4 px-4 text-center">
-                  <h3 className="text-3xl montserrat text-[#FFD700]">Blue Shield</h3>
+              <div className="absolute inset-0 flex items-center">
+                <div className="h-full flex items-center pl-6">
+                  <h3 className="text-2xl md:text-3xl montserrat text-[#FFD700] text-left">Blue Shield</h3>
                 </div>
               </div>
             </div>

@@ -8,6 +8,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import Link from 'next/link'
 import { ChevronLeft } from 'lucide-react'
 import { motion } from 'framer-motion'
+import Breadcrumb from '@/components/Breadcrumb'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -106,15 +107,7 @@ export default function Polarized() {
     <div className="min-h-screen bg-black">
       <style jsx global>{fadeInKeyframes}</style>
 
-      <div className="max-w-[94rem] w-full mx-auto pl-8 pt-24 absolute z-40">
-        <Link
-          href="/speciality-lenses"
-          className="inline-flex items-center text-[#FFD700] hover:text-amber-300 mb-8"
-        >
-          <ChevronLeft className="w-5 h-5 mr-2" />
-          Back to Products
-        </Link>
-      </div>
+      
 
       {/* Hero Section */}
       <section className="relative min-h-[80vh] flex items-center justify-center">
@@ -151,6 +144,21 @@ export default function Polarized() {
           </p>
         </div>
       </section>
+
+
+
+          {/* Breadcrumb */}
+                 <div className="z-50 bg-black/80 backdrop-blur-sm py-3 border-b border-yellow-500/20">
+                   <Breadcrumb 
+                     items={[
+                       { label: 'Home', href: '/' },
+                       { label: 'Products', href: '/products' },
+                       { label: 'Speciality Lenses', href: '/products/speciality-lenses' },
+                       { label: 'Polarized Lenses' }
+                     ]}
+                     className="max-w-9xl mx-auto px-6 sm:px-6 lg:px-10"
+                   />
+                 </div>
 
 
       {/* Benefits Section */}
@@ -324,27 +332,21 @@ export default function Polarized() {
                   
                   <div className="absolute inset-0 z-20 flex items-center">
                     <div className="container mx-auto px-6 w-full">
-                      {/* Left side content */}
-                      <div className="max-w-xl">
-                        {/* <h2 className="text-4xl md:text-6xl montserrat tracking-tight text-[#FFD700] mb-6 leading-tight">
-                          Experience the Cliff Polarized difference
-                        </h2> */}
-                        <p className="text-lg md:text-xl poppins text-[#FFD700] font-light max-w-md mb-6">
-                          Superior clarity and protection for your eyes in any condition
-                        </p>
-                        <div className="relative w-full h-48 md:h-64 rounded-lg overflow-hidden mt-6">
-                          <Image
-                            src="/polarized/pola.png"
-                            alt="Polarized Lenses Preview"
-                            fill
-                            className="object-contain"
-                            priority
-                          />
-                          <div className="absolute inset-0 bg-black/30"></div>
+                      <div className="flex flex-col md:flex-row items-center">
+                        {/* Image on the left */}
+                        <div className="w-full md:w-1/2 mb-8 md:mb-0 md:pr-8">
+                          <div className="relative w-full aspect-video rounded-lg overflow-hidden">
+                            <Image
+                              src="/polarized/pola1.png"
+                              alt="Polarized Lenses Preview"
+                              fill
+                              className="object-contain"
+                              priority
+                            />
+                          
+                          </div>
                         </div>
                       </div>
-                      
-                      
                     </div>
                   </div>
                   
@@ -398,11 +400,18 @@ export default function Polarized() {
 
 
       <section className="bg-black py-20">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 group/cards">
+
+         <div className="text-center mb-16">
+                    <h2 className="text-4xl montserrat text-[#FFD700] mb-4">Explore More Lense  Categories</h2>
+                    
+          </div>
+
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-7xl mx-auto px-4 group/cards py-8">
           {/* Card 1 */}
           <Link 
-            href="/speciality-lenses/photochrome-plus" 
-            className="block h-[50vh] w-full group overflow-hidden transition-all duration-500 ease-out group-hover/cards:opacity-50 hover:!opacity-100 hover:!blur-20"
+            href="/products/speciality-lenses/photochrome-plus" 
+            className="block h-[35vh] w-full group overflow-hidden transition-all duration-500 ease-out group-hover/cards:opacity-50 hover:!opacity-100 hover:!blur-20"
           >
             <div className="relative h-full w-full">
               <Image
@@ -412,9 +421,10 @@ export default function Polarized() {
                 className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
                 priority
               />
-              <div className="absolute inset-0 flex flex-col justify-end">
-                <div className="w-full bg-gradient-to-t from-black/100 via-black/80 to-transparent pt-36 pb-4 px-4 text-center">
-                  <h3 className="text-3xl montserrat text-[#FFD700]">Photochromatic Plus</h3>
+             
+                <div className="absolute inset-0 flex items-center">
+                <div className="h-full flex items-center pl-6">
+                  <h3 className="text-2xl md:text-3xl montserrat text-[#FFD700] text-left">Photochromatic Plus</h3>
                 </div>
               </div>
             </div>
@@ -422,8 +432,8 @@ export default function Polarized() {
 
           {/* Card 2 */}
           <Link 
-            href="/speciality-lenses/cliff-tinted-lenses" 
-            className="block h-[50vh] w-full group overflow-hidden transition-all duration-500 ease-out group-hover/cards:opacity-50 hover:!opacity-100 hover:!blur-0"
+            href="/products/speciality-lenses/cliff-tinted-lenses" 
+            className="block h-[35vh] w-full group overflow-hidden transition-all duration-500 ease-out group-hover/cards:opacity-50 hover:!opacity-100 hover:!blur-0"
           >
             <div className="relative h-full w-full">
               <Image
@@ -433,9 +443,9 @@ export default function Polarized() {
                 className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
                 priority
               />
-              <div className="absolute inset-0 flex flex-col justify-end">
-                <div className="w-full bg-gradient-to-t from-black/100 via-black/50 to-transparent h-1/2 pt-34 pb-4 px-4 text-center">
-                  <h3 className="text-3xl montserrat text-[#FFD700]">Tinted Lenses</h3>
+              <div className="absolute inset-0 flex items-center">
+                <div className="h-full flex items-center pl-6">
+                  <h3 className="text-2xl md:text-3xl montserrat text-[#FFD700] text-left">Tinted Lenses</h3>
                 </div>
               </div>
             </div>
@@ -443,8 +453,8 @@ export default function Polarized() {
 
           {/* Card 3 */}
           <Link 
-            href="/speciality-lenses/photochrome" 
-            className="block h-[50vh] w-full group overflow-hidden transition-all duration-500 ease-out group-hover/cards:opacity-50 hover:!opacity-100 hover:!blur-0"
+            href="/products/speciality-lenses/photochrome" 
+            className="block h-[35vh] w-full group overflow-hidden transition-all duration-500 ease-out group-hover/cards:opacity-50 hover:!opacity-100 hover:!blur-0"
           >
             <div className="relative h-full w-full">
               <Image
@@ -454,9 +464,9 @@ export default function Polarized() {
                 className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
                 priority
               />
-              <div className="absolute inset-0 flex flex-col justify-end">
-                <div className="w-full bg-gradient-to-t from-black/100 via-black/50 to-transparent h-1/2 pt-34 pb-4 px-4 text-center">
-                  <h3 className="text-3xl montserrat text-[#FFD700]">Photochromatic</h3>
+              <div className="absolute inset-0 flex items-center">
+                <div className="h-full flex items-center pl-6">
+                  <h3 className="text-2xl md:text-3xl montserrat text-[#FFD700] text-left">Photochromatic</h3>
                 </div>
               </div>
             </div>
@@ -464,8 +474,8 @@ export default function Polarized() {
 
           {/* Card 4 */}
           <Link 
-            href="/speciality-lenses/blue-shield" 
-            className="block h-[50vh] w-full group overflow-hidden transition-all duration-500 ease-out group-hover/cards:opacity-50 hover:!opacity-100 hover:!blur-0"
+            href="/products/speciality-lenses/blue-shield" 
+            className="block h-[35vh] w-full group overflow-hidden transition-all duration-500 ease-out group-hover/cards:opacity-50 hover:!opacity-100 hover:!blur-0"
           >
             <div className="relative h-full w-full">
               <Image
@@ -475,9 +485,9 @@ export default function Polarized() {
                 className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
                 priority
               />
-              <div className="absolute inset-0 flex flex-col justify-end">
-                <div className="w-full bg-gradient-to-t from-black/100 via-black/50 to-transparent h-1/2 pt-32 pb-4 px-4 text-center">
-                  <h3 className="text-3xl montserrat text-[#FFD700]">Blue Shield</h3>
+              <div className="absolute inset-0 flex items-center">
+                <div className="h-full flex items-center pl-6">
+                  <h3 className="text-2xl md:text-3xl montserrat text-[#FFD700] text-left">Blue Shield</h3>
                 </div>
               </div>
             </div>

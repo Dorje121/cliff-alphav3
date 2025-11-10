@@ -4,6 +4,7 @@ import Link from "next/link";
 import { ChevronLeft } from "lucide-react";
 import { Icon } from "@iconify/react";
 import { motion } from "framer-motion";
+import Breadcrumb from "@/components/Breadcrumb";
 
 interface Feature {
   icon: string;
@@ -70,17 +71,8 @@ const features: Feature[] = [
 export default function BlueSafePage() {
   return (
     <div className="min-h-screen bg-black text-[#FFD700] overflow-x-hidden">
-      <div className="fixed top-0 left-0 right-0 z-50">
-        <div className="max-w-[94rem] w-full mx-auto px-4 pt-18">
-          <Link
-            href="/Coating"
-            className="inline-flex items-center text-amber-400 hover:text-amber-300 transition-colors bg-transparent"
-          >
-            <ChevronLeft className="w-5 h-5 mr-2" />
-            Back to Coatings
-          </Link>
-        </div>
-      </div>
+      
+       
       {/* Hero Section */}
       <div className="h-[80vh] w-full mx-auto relative overflow-hidden">
         {/* Animated Background Image */}
@@ -120,6 +112,24 @@ export default function BlueSafePage() {
       </div>
 
 
+
+      {/* Breadcrumb */}
+            <div className="z-50 bg-black/80 backdrop-blur-sm py-3 border-b border-yellow-500/20">
+              <Breadcrumb 
+                items={[
+                  { label: 'Home', href: '/' },
+                  { label: 'Coating', href: '/Coating' },
+                  { label: 'Blue Safe Coating' }
+                ]}
+                className="max-w-9xl mx-auto px-6 sm:px-6 lg:px-10"
+              />
+            </div>
+
+
+
+      
+
+
        <div className="relative bg-yellow-300/10 py-24 px-4">
         <div className="max-w-3xl mx-auto text-center">
           <div className="mb-6">
@@ -131,6 +141,10 @@ export default function BlueSafePage() {
           </h2>
         </div>
       </div>
+
+
+
+
 
 
         {/* Video Section with Side Content */}
@@ -161,6 +175,8 @@ export default function BlueSafePage() {
             </div>
           </div>
         </section>
+
+     
 
       {/* <section className="relative py-20 bg-black text-white overflow-hidden">
         <div className="relative z-10 grid grid-cols-1 md:grid-cols-[1.5fr_1fr] gap-12 w-full max-w-[95%] mx-auto">
@@ -251,7 +267,101 @@ export default function BlueSafePage() {
             ))}
           </div>
         </div>
-      </section>      
+      </section>   
+
+         {/* Explore More Lenses Section */}
+      <section className="bg-black py-20">
+         <div className="text-center mb-16">
+          <h2 className="text-4xl montserrat text-[#FFD700] mb-4">Explore More Lense  Coatings</h2>          
+          </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-7xl mx-auto px-4 group/cards py-8">
+          {/* Card 1 */}
+          <Link 
+           
+             href="/Coating/blue-safe" 
+            className="block h-[35vh] w-full group overflow-hidden transition-all duration-500 ease-out group-hover/cards:opacity-50 hover:!opacity-100 hover:!blur-20"
+          >
+            <div className="relative h-full w-full">
+              <Image
+                src="/product/5.jpg"
+                alt="Photochromic Technology"
+                fill
+                className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+                priority
+              />
+             
+                <div className="absolute inset-0 flex items-center">
+                <div className="h-full flex items-center pl-6">
+                  <h3 className="text-2xl md:text-3xl montserrat text-[#FFD700] text-left">NOX Coating</h3>
+                </div>
+              </div>
+            </div>
+          </Link>
+
+          {/* Card 2 */}
+          <Link 
+            href="/Coating/nox-coating" 
+            className="block h-[35vh] w-full group overflow-hidden transition-all duration-500 ease-out group-hover/cards:opacity-50 hover:!opacity-100 hover:!blur-0"
+          >
+            <div className="relative h-full w-full">
+              <Image
+                src="/product/6.jpg"
+                alt="UV Protection"
+                fill
+                className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+                priority
+              />
+              <div className="absolute inset-0 flex items-center">
+                <div className="h-full flex items-center pl-6">
+                  <h3 className="text-2xl md:text-3xl montserrat text-[#FFD700] text-left">Photo Z Coating</h3>
+                </div>
+              </div>
+            </div>
+          </Link>
+
+          {/* Card 3 */}
+          <Link 
+            href="/Coating/photo-z-uv" 
+            className="block h-[35vh] w-full group overflow-hidden transition-all duration-500 ease-out group-hover/cards:opacity-50 hover:!opacity-100 hover:!blur-0"
+          >
+            <div className="relative h-full w-full">
+              <Image
+                src="/product/7.jpg"
+                alt="All-Day Comfort"
+                fill
+                className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+                priority
+              />
+              <div className="absolute inset-0 flex items-center">
+                <div className="h-full flex items-center pl-6">
+                  <h3 className="text-2xl md:text-3xl montserrat text-[#FFD700] text-left">Photo Z UV Coating</h3>
+                </div>
+              </div>
+            </div>
+          </Link>
+
+          {/* Card 4 */}
+          <Link 
+            href="/Coating/drive-clear" 
+            className="block h-[35vh] w-full group overflow-hidden transition-all duration-500 ease-out group-hover/cards:opacity-50 hover:!opacity-100 hover:!blur-0"
+          >
+            <div className="relative h-full w-full">
+              <Image
+                src="/product/9.jpg"
+                alt="Blue Shield"
+                fill
+                className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+                priority
+              />
+              <div className="absolute inset-0 flex items-center">
+                <div className="h-full flex items-center pl-6">
+                  <h3 className="text-2xl md:text-3xl montserrat text-[#FFD700] text-left">Drive Clear Coating</h3>
+                </div>
+              </div>
+            </div>
+          </Link>
+        </div>
+      </section>   
     </div>
   );
 }

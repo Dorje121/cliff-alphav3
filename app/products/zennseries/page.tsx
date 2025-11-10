@@ -87,17 +87,6 @@ const ZennSeries = () => {
 
   return (
     <div className="min-h-screen bg-black relative pb-28">
-      {/* Back Button */}
-      {/* <div className="max-w-[94rem] w-full mx-auto pl-8 pt-24 absolute z-40">
-        <Link
-          href="/products"
-          className="inline-flex items-center text-[#FFD700] hover:text-amber-300 mb-8"
-        >
-          <ChevronLeft className="w-5 h-5 mr-2" />
-          Back to Products
-        </Link>
-      </div> */}
-
       {/* Hero Section */}
       <div className="h-[80vh] w-full mx-auto relative overflow-hidden">
         {/* Animated Background Image */}
@@ -114,7 +103,7 @@ const ZennSeries = () => {
             className="w-full h-full"
           >
             <Image
-              src="/lenses/zenn.png"
+              src="/zenn/hero.png"
               alt="Cliff Zen Series"
               fill
               className="object-cover opacity-40"
@@ -447,156 +436,137 @@ const ZennSeries = () => {
       </div>
 
      
-     
 
-      {/* FAQ Section */}
-      <div className="w-full max-w-9xl mx-auto pb-24 bg-yellow-300/10 pt-24 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="text-4xl md:text-5xl montserrat text-center text-yellow-300 mb-16">
-            Any Queries?
-          </h2>
+     {/* FAQ Section */}
+<div className="w-full max-w-9xl mx-auto pb-24 bg-yellow-300/10 pt-24 px-4 sm:px-6 lg:px-8">
+  <div className="max-w-5xl mx-auto">
+    <h2 className="text-4xl md:text-5xl montserrat text-center text-yellow-300 mb-16">
+      Any Queries? About Zen Series Lenses
+    </h2>
 
-          <div className="space-y-2">
-            {/* FAQ Item 1 */}
-            <div className="bg-black/50 rounded-xl overflow-hidden">
-              <details className="group">
-                <summary className="flex justify-between items-center p-6 cursor-pointer">
-                  <h3 className="text-xl poppins text-yellow-300">
-                    What makes Zen Series different from other lenses?
-                  </h3>
-                  <svg
-                    className="w-6 h-6 text-yellow-400 transition-transform duration-300 group-open:rotate-180"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M19 9l-7 7-7-7"
-                    />
-                  </svg>
-                </summary>
-                <div className="px-6 pb-6 pt-2 text-yellow-200/90">
-                  <p>
-                    Cliff Zen Series combines advanced digital surfacing
-                    technology with premium materials to deliver exceptional
-                    visual clarity, all-day comfort, and superior durability.
-                    Each lens is optimized for modern digital lifestyles with
-                    enhanced blue light protection and reduced eye strain.
-                  </p>
-                </div>
-              </details>
-            </div>
-
-            {/* FAQ Item 2 */}
-            <div className="bg-black/50 rounded-xl overflow-hidden">
-              <details className="group">
-                <summary className="flex justify-between items-center p-6 cursor-pointer">
-                  <h3 className="text-xl poppins text-yellow-300">
-                    Are Zen Series lenses suitable for digital device usage?
-                  </h3>
-                  <svg
-                    className="w-6 h-6 text-yellow-400 transition-transform duration-300 group-open:rotate-180"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M19 9l-7 7-7-7"
-                    />
-                  </svg>
-                </summary>
-                <div className="px-6 pb-6 pt-2 text-yellow-200/90">
-                  <p className="mt-4 text-yellow-200/90">
-                    Absolutely! Zen Series lenses are specifically designed for
-                    today&apos;s digital world. They feature advanced blue light
-                    filtering technology, reduced glare protection, and
-                    optimized optical zones that make them perfect for extended
-                    computer, tablet, and smartphone usage.
-                  </p>
-                </div>
-              </details>
-            </div>
-
-            {/* FAQ Item 3 */}
-            <div className="bg-black/50 rounded-xl overflow-hidden">
-              <details className="group">
-                <summary className="flex justify-between items-center p-6 cursor-pointer">
-                  <h3 className="text-xl poppins text-yellow-300">
-                    How long do Zen Series lenses last?
-                  </h3>
-                  <svg
-                    className="w-6 h-6 text-yellow-400 transition-transform duration-300 group-open:rotate-180"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M19 9l-7 7-7-7"
-                    />
-                  </svg>
-                </summary>
-                <div className="px-6 pb-6 pt-2 text-yellow-200/90">
-                  <p>
-                    With proper care, Cliff Zen Series lenses are designed to
-                    maintain their optical clarity and performance for years.
-                    The scratch-resistant coating and durable materials ensure
-                    long-lasting quality. We recommend regular cleaning with
-                    appropriate lens solutions and storage in protective cases
-                    when not in use.
-                  </p>
-                </div>
-              </details>
-            </div>
-
-            {/* FAQ Item 4 */}
-            <div className="bg-black/50 rounded-xl overflow-hidden">
-              <details className="group">
-                <summary className="flex justify-between items-center p-6 cursor-pointer">
-                  <h3 className="text-xl poppins text-yellow-300">
-                    Can I get Zen Series lenses with my prescription?
-                  </h3>
-                  <svg
-                    className="w-6 h-6 text-yellow-400 transition-transform duration-300 group-open:rotate-180"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M19 9l-7 7-7-7"
-                    />
-                  </svg>
-                </summary>
-                <div className="px-6 pb-6 pt-2 text-yellow-200/90">
-                  <p>
-                    Yes! Cliff Zen Series lenses are available in both single
-                    vision and progressive designs to accommodate virtually all
-                    prescriptions. Our advanced digital surfacing technology
-                    ensures precise customization to your specific visual needs,
-                    whether you require correction for nearsightedness,
-                    farsightedness, astigmatism, or presbyopia.
-                  </p>
-                </div>
-              </details>
-            </div>
+    <div className="space-y-0 rounded-xl overflow-hidden">
+      {/* FAQ Item 1 */}
+      <div className="border-t border-b border-yellow-500/30 hover:border-yellow-500/50 border-l-0 border-r-0 border-[1px] transition-colors duration-200">
+        <details className="group">
+          <summary className="flex justify-between items-center p-6 cursor-pointer">
+            <h3 className="text-xl poppins text-yellow-300">
+              What makes Zen Series lenses different from regular lenses?
+            </h3>
+            <svg
+              className="w-6 h-6 text-yellow-400 transition-transform duration-300 group-open:rotate-180"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M19 9l-7 7-7-7"
+              />
+            </svg>
+          </summary>
+          <div className="px-6 pb-6 pt-2 text-[#FFD700]">
+            <p>
+              Zen Series lenses are crafted with advanced blue light filtering technology and anti-reflective coatings that reduce eye strain and fatigue. They're designed for the digital age, offering superior clarity and comfort during extended screen time while protecting your eyes from harmful blue light emissions.
+            </p>
           </div>
-        </div>
+        </details>
       </div>
+
+      {/* FAQ Item 2 */}
+      <div className="border-t-0 border-b border-yellow-500/30 hover:border-yellow-500/50 border-l-0 border-r-0 border-[1px] transition-colors duration-200">
+        <details className="group">
+          <summary className="flex justify-between items-center p-6 cursor-pointer">
+            <h3 className="text-xl poppins text-yellow-300">
+              Are Zen Series lenses suitable for all-day wear?
+            </h3>
+            <svg
+              className="w-6 h-6 text-yellow-400 transition-transform duration-300 group-open:rotate-180"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M19 9l-7 7-7-7"
+              />
+            </svg>
+          </summary>
+          <div className="px-6 pb-6 pt-2 text-[#FFD700]">
+            <p>
+              Absolutely! Zen Series lenses are designed for all-day comfort. Their lightweight design and advanced coatings reduce eye strain, making them perfect for people who spend long hours in front of digital screens. The anti-glare properties also make them ideal for both indoor and outdoor use.
+            </p>
+          </div>
+        </details>
+      </div>
+
+      {/* FAQ Item 3 */}
+      <div className="border-t-0 border-b border-yellow-500/30 hover:border-yellow-500/50 border-l-0 border-r-0 border-[1px] transition-colors duration-200">
+        <details className="group">
+          <summary className="flex justify-between items-center p-6 cursor-pointer">
+            <h3 className="text-xl poppins text-yellow-300">
+              Do Zen Series lenses block blue light?
+            </h3>
+            <svg
+              className="w-6 h-6 text-yellow-400 transition-transform duration-300 group-open:rotate-180"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M19 9l-7 7-7-7"
+              />
+            </svg>
+          </summary>
+          <div className="px-6 pb-6 pt-2 text-[#FFD700]">
+            <p>
+              Yes, Zen Series lenses feature advanced blue light filtering technology that blocks up to 40% of harmful blue-violet light from digital screens and artificial lighting. This helps reduce digital eye strain, improve sleep quality, and protect your eyes from potential long-term damage caused by prolonged screen exposure.
+            </p>
+          </div>
+        </details>
+      </div>
+
+      {/* FAQ Item 4 */}
+      <div className="border-t-0 border-b border-yellow-500/30 hover:border-yellow-500/50 border-l-0 border-r-0 border-[1px] transition-colors duration-200">
+        <details className="group">
+          <summary className="flex justify-between items-center p-6 cursor-pointer">
+            <h3 className="text-xl poppins text-yellow-300">
+              Can I get Zen Series lenses with my prescription?
+            </h3>
+            <svg
+              className="w-6 h-6 text-yellow-400 transition-transform duration-300 group-open:rotate-180"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M19 9l-7 7-7-7"
+              />
+            </svg>
+          </summary>
+          <div className="px-6 pb-6 pt-2 text-[#FFD700]">
+            <p>
+              Yes, Zen Series lenses are available in a wide range of prescriptions, including single vision, reading, and progressive lenses. Whether you're nearsighted, farsighted, or have astigmatism, we can customize your Zen Series lenses to match your exact prescription needs while maintaining all the advanced features of the Zen Series technology.
+            </p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </div>
+</div>
     </div>
   );
 };

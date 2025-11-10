@@ -155,7 +155,7 @@ const Technology = () => {
                       <p className="text-zinc-300 group-hover:text-white leading-relaxed text-xs mb-2 poppins">
                         {service.description}
                       </p>
-                      <Link href={`/technology/${service.slug}`} className="inline-flex items-center text-amber-400 font-medium group-hover:text-white text-sm poppins">
+                      <div className="inline-flex items-center text-amber-400 font-medium group-hover:text-white text-sm poppins">
                         <span className="mr-2">Learn More</span>
                         <svg
                           className="w-4 h-4"
@@ -170,7 +170,7 @@ const Technology = () => {
                             d="M17 8l4 4m0 0l-4 4m4-4H3"
                           />
                         </svg>
-                      </Link>
+                      </div>
                     </div>
                   </div>
 

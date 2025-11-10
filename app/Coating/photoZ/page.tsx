@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ChevronLeft } from "lucide-react";
 import { Icon } from "@iconify/react";
+import Breadcrumb from "@/components/Breadcrumb";
 
 interface Feature {
   icon: string;
@@ -78,7 +79,7 @@ const features = [
 export default function PhotoZPage() {
   return (
     <div className="min-h-screen bg-black text-[#FFD700] overflow-x-hidden">
-      <div className="fixed top-0 left-0 right-0 z-50">
+      {/* <div className="fixed top-0 left-0 right-0 z-50">
         <div className="max-w-[94rem] w-full mx-auto px-4 pt-18">
           <Link
             href="/Coating"
@@ -88,7 +89,7 @@ export default function PhotoZPage() {
             Back to Coatings
           </Link>
         </div>
-      </div>
+      </div> */}
 
       <section className="relative h-[60vh] min-h-[450px] flex flex-col justify-center items-center overflow-hidden">
         <div
@@ -108,6 +109,18 @@ export default function PhotoZPage() {
           </p>
         </div>
       </section>
+
+      {/* Breadcrumb */}
+            <div className="z-50 bg-black/80 backdrop-blur-sm py-3 border-b border-yellow-500/20">
+              <Breadcrumb 
+                items={[
+                  { label: 'Home', href: '/' },
+                  { label: 'Coating', href: '/Coating' },
+                  { label: 'Photo Z Coating' }
+                ]}
+                className="max-w-9xl mx-auto px-6 sm:px-6 lg:px-10"
+              />
+            </div>
 
       <section className="relative py-20 bg-black text-white overflow-hidden">
         <div className="relative z-10 grid grid-cols-1 md:grid-cols-[1.5fr_1fr] gap-12 w-full max-w-[95%] mx-auto">
@@ -132,7 +145,7 @@ export default function PhotoZPage() {
             <div className="relative w-full h-[400px] md:h-[400px] lg:h-[500px] flex items-center justify-center bg-black p-4 rounded-lg">
               <div className="relative w-full h-full max-w-[95%] max-h-[80%]">
                 <Image
-                  src={coating.featureImage}
+                  src="/homeimage/cliff.png"
                   alt={`${coating.title} Feature`}
                   fill
                   className="object-cover"
@@ -197,6 +210,101 @@ export default function PhotoZPage() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+
+         {/* Explore More Lenses Section */}
+      <section className="bg-black py-20">
+         <div className="text-center mb-16">
+          <h2 className="text-4xl montserrat text-[#FFD700] mb-4">Explore More Lense  Coatings</h2>          
+          </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-7xl mx-auto px-4 group/cards py-8">
+          {/* Card 1 */}
+          <Link 
+           
+             href="/Coating/blue-safe" 
+            className="block h-[35vh] w-full group overflow-hidden transition-all duration-500 ease-out group-hover/cards:opacity-50 hover:!opacity-100 hover:!blur-20"
+          >
+            <div className="relative h-full w-full">
+              <Image
+                src="/bluesafe/blue1.png"
+                alt="Bluesafe Coating"
+                fill
+                className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+                priority
+              />
+             
+                <div className="absolute inset-0 flex items-center">
+                <div className="h-full flex items-center pl-6">
+                  <h3 className="text-2xl md:text-3xl montserrat text-[#FFD700] text-left">Bluesafe Coating</h3>
+                </div>
+              </div>
+            </div>
+          </Link>
+
+          {/* Card 2 */}
+          <Link 
+            href="/Coating/nox-coating" 
+            className="block h-[35vh] w-full group overflow-hidden transition-all duration-500 ease-out group-hover/cards:opacity-50 hover:!opacity-100 hover:!blur-0"
+          >
+            <div className="relative h-full w-full">
+              <Image
+                src="/bluesafecoatings/nox.png"
+                alt="NOX Coating"
+                fill
+                className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+                priority
+              />
+              <div className="absolute inset-0 flex items-center">
+                <div className="h-full flex items-center pl-6">
+                  <h3 className="text-2xl md:text-3xl montserrat text-[#FFD700] text-left">NOX Coating</h3>
+                </div>
+              </div>
+            </div>
+          </Link>
+
+          {/* Card 3 */}
+          <Link 
+            href="/Coating/photo-z-uv" 
+            className="block h-[35vh] w-full group overflow-hidden transition-all duration-500 ease-out group-hover/cards:opacity-50 hover:!opacity-100 hover:!blur-0"
+          >
+            <div className="relative h-full w-full">
+              <Image
+                src="/bluesafe/photoz.jpg"
+                alt="Photo Z UV Coating"
+                fill
+                className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+                priority
+              />
+              <div className="absolute inset-0 flex items-center">
+                <div className="h-full flex items-center pl-6">
+                  <h3 className="text-2xl md:text-3xl montserrat text-[#FFD700] text-left">Photo Z UV Coating</h3>
+                </div>
+              </div>
+            </div>
+          </Link>
+
+          {/* Card 4 */}
+          <Link 
+            href="/Coating/drive-clear" 
+            className="block h-[35vh] w-full group overflow-hidden transition-all duration-500 ease-out group-hover/cards:opacity-50 hover:!opacity-100 hover:!blur-0"
+          >
+            <div className="relative h-full w-full">
+              <Image
+                src="/bluesafe/drive.png"
+                alt="Drive Clear Coating"
+                fill
+                className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+                priority
+              />
+              <div className="absolute inset-0 flex items-center">
+                <div className="h-full flex items-center pl-6">
+                  <h3 className="text-2xl md:text-3xl montserrat text-[#FFD700] text-left">Drive Clear Coating</h3>
+                </div>
+              </div>
+            </div>
+          </Link>
         </div>
       </section>
     </div>

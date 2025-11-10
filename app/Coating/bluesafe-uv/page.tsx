@@ -4,6 +4,7 @@ import Link from "next/link";
 import { ChevronLeft } from "lucide-react";
 import { Icon } from "@iconify/react";
 import { motion } from "framer-motion";
+import Breadcrumb from "@/components/Breadcrumb";
 
 interface Feature {
   icon: string;
@@ -83,17 +84,7 @@ const features: Feature[] = [
 export default function BlueSafePage() {
   return (
     <div className="min-h-screen bg-black text-[#FFD700] overflow-x-hidden">
-      <div className="fixed top-0 left-0 right-0 z-50">
-        <div className="max-w-[94rem] w-full mx-auto px-4 pt-18">
-          <Link
-            href="/Coating"
-            className="inline-flex items-center text-amber-400 hover:text-amber-300 transition-colors bg-transparent"
-          >
-            <ChevronLeft className="w-5 h-5 mr-2" />
-            Back to Coatings
-          </Link>
-        </div>
-      </div>
+      
       {/* Hero Section */}
       <div className="h-[80vh] w-full mx-auto relative overflow-hidden">
         {/* Animated Background Image */}
@@ -156,6 +147,18 @@ export default function BlueSafePage() {
           </div>
         </div>
       </div>
+
+      {/* Breadcrumb */}
+            <div className="z-50 bg-black/80 backdrop-blur-sm py-3 border-b border-yellow-500/20">
+              <Breadcrumb 
+                items={[
+                  { label: 'Home', href: '/' },
+                  { label: 'Coating', href: '/Coating' },
+                  { label: 'Blue Safe UV Coating' }
+                ]}
+                className="max-w-9xl mx-auto px-6 sm:px-6 lg:px-10"
+              />
+            </div>
 
       {/* Features Overview */}
       <section className="py-16 bg-[#FFD700]/10">

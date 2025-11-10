@@ -2,6 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { ChevronLeft } from "lucide-react";
 import { Icon } from "@iconify/react";
+import Breadcrumb from "@/components/Breadcrumb";
+import { motion } from "framer-motion";
 
 interface Feature {
   icon: string;
@@ -10,7 +12,7 @@ interface Feature {
 }
 
 const coating = {
-  id: "03", 
+  id: "03",
   title: "NOX COATING",
   subtitle: "Premium Optical Excellence",
   description: "Lenses are specially designed to provide superior optical clarity and enhanced visibility for safe driving in all conditions. These lenses reduce glare from headlights and streetlights, improve contrast and depth perception, and offer all-day visual comfort.",
@@ -33,37 +35,37 @@ const coating = {
 };
 
 const features: Feature[] = [
-  { 
+  {
     icon: "/svgs/antireflective.svg",
     label: "Anti-Reflection",
     description: "Reduces distracting reflections for safer driving"
   },
-  { 
+  {
     icon: "/svgs/uvprotection.svg",
     label: "UV Protection",
     description: "Blocks 100% of harmful UV rays"
   },
-  { 
+  {
     icon: "/svgs/scratchresistance.svg",
     label: "Scratch Resistant",
     description: "Durable coating resists daily wear and tear"
   },
-  { 
+  {
     icon: "/svgs/clearvision.svg",
     label: "Clear Vision",
     description: "Enhanced visual clarity in all conditions"
   },
-  { 
+  {
     icon: "/svgs/bluelight.svg",
     label: "Blue Light Protection",
     description: "Reduces eye strain from screens and headlights"
   },
-  { 
+  {
     icon: "/svgs/easytoclean.svg",
     label: "Hydrophobic",
     description: "Repels water and resists smudges"
   },
-  { 
+  {
     icon: "/svgs/glareprotection.svg",
     label: "Glare Protection",
     description: "Minimizes harsh reflections for better visibility"
@@ -73,36 +75,113 @@ const features: Feature[] = [
 export default function NoxCoatingPage() {
   return (
     <div className="min-h-screen bg-black text-[#FFD700] overflow-x-hidden">
-      <div className="fixed top-0 left-0 right-0 z-50">
-        <div className="max-w-[94rem] w-full mx-auto px-4 pt-18">
-          <Link
-            href="/Coating"
-            className="inline-flex items-center text-amber-400 hover:text-amber-300 transition-colors bg-transparent"
+
+      {/* Hero Section */}
+      <div className="h-[80vh] w-full mx-auto relative overflow-hidden">
+        {/* Animated Background Image */}
+        <div className="absolute inset-0">
+          <div
+            className="w-full h-full"
           >
-            <ChevronLeft className="w-5 h-5 mr-2" />
-            Back to Coatings
-          </Link>
+            <Image
+              src={"/homeimage/nox.jpg"}
+              alt={"Cliff Lens"}
+              fill
+              className="object-cover opacity-40"
+              priority
+            />
+          </div>
+        </div>
+
+        {/* Static Content */}
+        <div className="relative h-full w-full">
+          <div className="absolute inset-0 flex flex-col justify-end items-center mx-auto pl-0 pr-8 py-8 font-poppins">
+            <h1 className="text-4xl md:text-6xl font-medium montserrat text-[#FFD700] mb-4 leading-tight text-center">
+              {coating.title}
+            </h1>
+            <p className="text-[#FFD700] text-xl leading-relaxed max-w-3xl text-center">
+              {coating.subtitle}
+            </p>
+          </div>
         </div>
       </div>
 
-      <section className="relative h-[60vh] min-h-[450px] flex flex-col justify-center items-center overflow-hidden">
-        <div
-          className="absolute inset-0 w-full h-full bg-cover bg-center z-0"
-          style={{ backgroundImage: `url(${coating.image})` }}
-        >
-          <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-black/50" />
-          <div className="absolute inset-0 bg-black/50" />
-        </div>
+       {/* Breadcrumb */}
+      <div className="z-50 bg-black/80 backdrop-blur-sm py-3 border-b border-yellow-500/20">
+        <Breadcrumb
+          items={[
+            { label: 'Home', href: '/' },
+            { label: 'Coating', href: '/Coating' },
+            { label: 'Nox Coating' }
+          ]}
+          className="max-w-9xl mx-auto px-6 sm:px-6 lg:px-10"
+        />
+      </div>
 
-        <div className="relative z-10 text-left w-full px-8">
-          <h1 className="montserrat font-medium text-4xl md:text-6xl lg:text-7xl !text-white capitalize mb-6">
-            {coating.title}
-          </h1>
-          <p className="text-xl md:text-2xl !text-yellow-400 max-w-4xl">
-            {coating.subtitle}
-          </p>
+      {/* Features Section */}
+      <div className="py-12 bg-black">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
+            {/* UV Protection */}
+            <div className="flex flex-col items-center p-4">
+              <div className="w-32 h-32 md:w-40 md:h-40 mb-4 flex items-center justify-center">
+                <img 
+                  src="/svgs/uvprotection.svg" 
+                  alt="UV Protection" 
+                  className="w-full h-full object-contain"
+                />
+              </div>
+              <h3 className="text-[#FFD700] text-center text-lg md:text-xl font-medium">
+                UV Protection
+              </h3>
+            </div>
+
+            {/* Scratch Resistance */}
+            <div className="flex flex-col items-center p-4">
+              <div className="w-32 h-32 md:w-40 md:h-40 mb-4 flex items-center justify-center">
+                <img 
+                  src="/svgs/scratchresistance.svg" 
+                  alt="Scratch Resistance" 
+                  className="w-full h-full object-contain"
+                />
+              </div>
+              <h3 className="text-[#FFD700] text-center text-lg md:text-xl font-medium">
+                Scratch Resistance
+              </h3>
+            </div>
+
+            {/* Clear Vision */}
+            <div className="flex flex-col items-center p-4">
+              <div className="w-32 h-32 md:w-40 md:h-40 mb-4 flex items-center justify-center">
+                <img 
+                  src="/svgs/clearvision.svg" 
+                  alt="Clear Vision" 
+                  className="w-full h-full object-contain"
+                />
+              </div>
+              <h3 className="text-[#FFD700] text-center text-lg md:text-xl font-medium">
+                Clear Vision
+              </h3>
+            </div>
+
+            {/* Super Slippery Coating */}
+            <div className="flex flex-col items-center p-4">
+              <div className="w-32 h-32 md:w-40 md:h-40 mb-4 flex items-center justify-center">
+                <img 
+                  src="/svgs/superslippery.svg" 
+                  alt="Super Slippery Coating" 
+                  className="w-full h-full object-contain"
+                />
+              </div>
+              <h3 className="text-[#FFD700] text-center text-lg md:text-xl font-medium">
+                Super Slippery Coating
+              </h3>
+            </div>
+          </div>
         </div>
-      </section>
+      </div>
+
+     
 
       <section className="relative py-20 bg-black text-white overflow-hidden">
         <div className="relative z-10 grid grid-cols-1 md:grid-cols-[1.5fr_1fr] gap-12 w-full max-w-[95%] mx-auto">
@@ -159,41 +238,101 @@ export default function NoxCoatingPage() {
         </div>
       </section>
 
-      <section className="w-full bg-black py-12">
-        <div className="max-w-[1800px] mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl poppins text-white text-center mb-12">
-            {coating.title} Features
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 px-2 sm:px-4 py-8">
-            {features.map((feature, index) => (
-              <div
-                key={`feature-card-${index}`}
-                className="flex flex-col h-full text-center bg-gradient-to-b from-zinc-900/50 to-zinc-900/10 p-6 rounded-xl border border-zinc-800 hover:border-yellow-500/30 transition-all duration-300"
-              >
-                <div className="w-20 h-20 sm:w-24 sm:h-24 mx-auto mb-4 flex-shrink-0 flex items-center justify-center text-yellow-400">
-                  {feature.icon.startsWith("/") ? (
-                    <Image
-                      src={feature.icon}
-                      alt={feature.label}
-                      width={96}
-                      height={96}
-                      className="w-full h-full object-contain"
-                    />
-                  ) : (
-                    <Icon icon={feature.icon} className="w-full h-full" />
-                  )}
-                </div>
-                <h3 className="font-semibold text-sm sm:text-md mb-2 uppercase">
-                  {feature.label}
-                </h3>
-                <p className="text-xs sm:text-sm text-gray-400 mt-auto">
-                  {feature.description}
-                </p>
-              </div>
-            ))}
+        {/* Explore More Lenses Section */}
+      <section className="bg-black py-20">
+         <div className="text-center mb-16">
+          <h2 className="text-4xl montserrat text-[#FFD700] mb-4">Explore More Lense  Coatings</h2>          
           </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-7xl mx-auto px-4 group/cards py-8">
+          {/* Card 1 */}
+          <Link 
+           
+             href="/Coating/blue-safe" 
+            className="block h-[35vh] w-full group overflow-hidden transition-all duration-500 ease-out group-hover/cards:opacity-50 hover:!opacity-100 hover:!blur-20"
+          >
+            <div className="relative h-full w-full">
+              <Image
+                src="/product/5.jpg"
+                alt="Photochromic Technology"
+                fill
+                className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+                priority
+              />
+             
+                <div className="absolute inset-0 flex items-center">
+                <div className="h-full flex items-center pl-6">
+                  <h3 className="text-2xl md:text-3xl montserrat text-[#FFD700] text-left">Bluesafe Coating</h3>
+                </div>
+              </div>
+            </div>
+          </Link>
+
+          {/* Card 2 */}
+          <Link 
+            href="/Coating/photoZ" 
+            className="block h-[35vh] w-full group overflow-hidden transition-all duration-500 ease-out group-hover/cards:opacity-50 hover:!opacity-100 hover:!blur-0"
+          >
+            <div className="relative h-full w-full">
+              <Image
+                src="/product/6.jpg"
+                alt="UV Protection"
+                fill
+                className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+                priority
+              />
+              <div className="absolute inset-0 flex items-center">
+                <div className="h-full flex items-center pl-6">
+                  <h3 className="text-2xl md:text-3xl montserrat text-[#FFD700] text-left">Photo Z Coating</h3>
+                </div>
+              </div>
+            </div>
+          </Link>
+
+          {/* Card 3 */}
+          <Link 
+            href="/Coating/photo-z-uv" 
+            className="block h-[35vh] w-full group overflow-hidden transition-all duration-500 ease-out group-hover/cards:opacity-50 hover:!opacity-100 hover:!blur-0"
+          >
+            <div className="relative h-full w-full">
+              <Image
+                src="/product/7.jpg"
+                alt="All-Day Comfort"
+                fill
+                className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+                priority
+              />
+              <div className="absolute inset-0 flex items-center">
+                <div className="h-full flex items-center pl-6">
+                  <h3 className="text-2xl md:text-3xl montserrat text-[#FFD700] text-left">Photo Z UV Coating</h3>
+                </div>
+              </div>
+            </div>
+          </Link>
+
+          {/* Card 4 */}
+          <Link 
+            href="/Coating/drive-clear" 
+            className="block h-[35vh] w-full group overflow-hidden transition-all duration-500 ease-out group-hover/cards:opacity-50 hover:!opacity-100 hover:!blur-0"
+          >
+            <div className="relative h-full w-full">
+              <Image
+                src="/product/9.jpg"
+                alt="Blue Shield"
+                fill
+                className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+                priority
+              />
+              <div className="absolute inset-0 flex items-center">
+                <div className="h-full flex items-center pl-6">
+                  <h3 className="text-2xl md:text-3xl montserrat text-[#FFD700] text-left">Drive Clear Coating</h3>
+                </div>
+              </div>
+            </div>
+          </Link>
         </div>
       </section>
+
+      
     </div>
   );
 }

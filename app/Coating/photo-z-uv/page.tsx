@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ChevronLeft } from "lucide-react";
 import { Icon } from "@iconify/react";
+import Breadcrumb from "@/components/Breadcrumb";
 
 interface Feature {
   icon: string;
@@ -78,7 +79,7 @@ const features: Feature[] = [
 export default function PhotozUvPage() {
   return (
     <div className="min-h-screen bg-black text-[#FFD700] overflow-x-hidden">
-      <div className="fixed top-0 left-0 right-0 z-50">
+      {/* <div className="fixed top-0 left-0 right-0 z-50">
         <div className="max-w-[94rem] w-full mx-auto px-4 pt-18">
           <Link
             href="/Coating"
@@ -88,7 +89,7 @@ export default function PhotozUvPage() {
             Back to Coatings
           </Link>
         </div>
-      </div>
+      </div> */}
 
       <section className="relative h-[60vh] min-h-[450px] flex flex-col justify-center items-center overflow-hidden">
         <div className="absolute inset-0 w-full h-full z-0">
@@ -112,6 +113,18 @@ export default function PhotozUvPage() {
           </p>
         </div>
       </section>
+
+      {/* Breadcrumb */}
+            <div className="z-50 bg-black/80 backdrop-blur-sm py-3 border-b border-yellow-500/20">
+              <Breadcrumb 
+                items={[
+                  { label: 'Home', href: '/' },
+                  { label: 'Coating', href: '/Coating' },
+                  { label: 'Photoz UV Coating' }
+                ]}
+                className="max-w-9xl mx-auto px-6 sm:px-6 lg:px-10"
+              />
+            </div>
 
       <section className="relative py-20 bg-black text-white overflow-hidden">
         <div className="relative z-10 grid grid-cols-1 md:grid-cols-[1.5fr_1fr] gap-12 w-full max-w-[95%] mx-auto">
