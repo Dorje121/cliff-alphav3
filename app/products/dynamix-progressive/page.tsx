@@ -482,7 +482,7 @@ const ProductPage = () => {
                 </summary>
                 <div className="px-6 pb-6 pt-2 text-[#FFD700]">
                   <p>
-                    Absolutely! Cliff Dynamix Progressive lenses are excellent for computer work and digital device use. They feature an optimized intermediate zone that reduces eye strain during prolonged screen time. The lenses minimize the need to tilt your head to find the right focus point, providing comfortable vision whether you're working on a computer, tablet, or smartphone. For extended computer use, we can also customize the lens design to prioritize your intermediate vision needs.
+                    Absolutely! Cliff Dynamix Progressive lenses are excellent for computer work and digital device use. They feature an optimized intermediate zone that reduces eye strain during prolonged screen time. The lenses minimize the need to tilt your head to find the right focus point, providing comfortable vision whether you&apos;re working on a computer, tablet, or smartphone. For extended computer use, we can also customize the lens design to prioritize your intermediate vision needs.
                   </p>
                 </div>
               </details>
