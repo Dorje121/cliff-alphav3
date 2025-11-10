@@ -8,6 +8,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import Link from 'next/link'
 import { ChevronLeft } from 'lucide-react'
 import { motion } from 'framer-motion'
+import Breadcrumb from "@/components/Breadcrumb";
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -106,7 +107,7 @@ export default function BlueShield() {
     <div className="min-h-screen bg-black">
       <style jsx global>{fadeInKeyframes}</style>
 
-      <div className="max-w-[94rem] w-full mx-auto pl-8 pt-24 absolute z-40">
+      {/* <div className="max-w-[94rem] w-full mx-auto pl-8 pt-24 absolute z-40">
         <Link
           href="/products"
           className="inline-flex items-center text-[#FFD700] hover:text-amber-300 mb-8"
@@ -114,7 +115,7 @@ export default function BlueShield() {
           <ChevronLeft className="w-5 h-5 mr-2" />
           Back to Products
         </Link>
-      </div>
+      </div> */}
 
       {/* Hero Section */}
       <section className="relative min-h-[80vh] flex items-center justify-center">
@@ -151,6 +152,19 @@ export default function BlueShield() {
           </p>
         </div>
       </section>
+
+      {/* Breadcrumb */}
+      <div className="z-50 bg-black/80 backdrop-blur-sm py-3 border-b border-yellow-500/20">
+        <Breadcrumb 
+          items={[
+            { label: 'Home', href: '/' },
+            { label: 'Products', href: '/products' },
+            { label: 'Speciality Lenses', href: '/products/speciality-lenses' },
+            { label: 'Blue Shield' }
+          ]}
+          className="max-w-9xl mx-auto px-6 sm:px-6 lg:px-10"
+        />
+      </div>
 
       {/* Enhanced Technology Overview Section */}
       <section className="py-20 bg-black">

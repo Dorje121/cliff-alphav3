@@ -4,6 +4,7 @@ import { useRef, useLayoutEffect, useState } from "react";
 import { gsap } from "gsap";
 import { ChevronLeft } from "lucide-react";
 import Link from "next/link";
+import Breadcrumb from "@/components/Breadcrumb";
 
 const CliffTintedLenses = () => {
   const backgroundImageRef = useRef<HTMLDivElement>(null);
@@ -322,7 +323,7 @@ const CliffTintedLenses = () => {
     <>
     <section className="relative h-[80vh] min-h-[450px] flex flex-col justify-end pb-8 items-start overflow-hidden">
       {/* Back to Products Button */}
-      <div className="absolute top-20 left-6 z-20">
+      {/* <div className="absolute top-20 left-6 z-20">
         <Link 
           href="/speciality-lenses" 
           className="flex items-center gap-2 text-[#FFD700] hover:text-white transition-colors duration-300"
@@ -330,7 +331,7 @@ const CliffTintedLenses = () => {
           <ChevronLeft className="w-5 h-5" />
           <span className="text-sm font-medium">Back to Products</span>
         </Link>
-      </div>
+      </div> */}
 
       <Image
          src="/cliffcoating/changable.gif"
@@ -351,6 +352,20 @@ const CliffTintedLenses = () => {
         <div className="absolute inset-0 bg-black/60 z-[1]" />
                     
     </section>
+
+
+     {/* Breadcrumb */}
+    <div className="z-50 bg-black/80 backdrop-blur-sm py-3 border-b border-yellow-500/20">
+      <Breadcrumb 
+        items={[
+          { label: 'Home', href: '/' },
+          { label: 'Products', href: '/products' },
+          { label: 'Speciality Lenses', href: '/products/speciality-lenses' },
+          { label: 'Cliff Tinted Lenses' }
+        ]}
+        className="max-w-9xl mx-auto px-6 sm:px-6 lg:px-10"
+      />
+    </div>
 
 
       <div className="min-h-screen bg-black text-white">
@@ -611,9 +626,7 @@ const CliffTintedLenses = () => {
           </Link>
         </div>
       </section>
-      </div>
-
-    
+      </div>    
     </>
   );
 };

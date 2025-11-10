@@ -5,6 +5,7 @@ import React, { useState, useEffect } from 'react';
 import SpecialityLensesComponent from '@/contexts/specialitylenses';
 import { Preview } from '@/components/demo';
 import { Icon } from "@iconify-icon/react";
+import Breadcrumb from '@/components/Breadcrumb';
 
 
 const SpecialityLenses: React.FC = () => {
@@ -54,6 +55,21 @@ const SpecialityLenses: React.FC = () => {
         <div className="absolute inset-0 bg-black/60 z-[1]" />
         
       </section>
+
+            {/* Breadcrumb */}
+          <div className="z-50 bg-black/80 backdrop-blur-sm py-3 border-b border-yellow-500/20">
+            <Breadcrumb 
+              items={[
+                { label: 'Home', href: '/' },
+                { label: 'Products', href: '/products' },
+                { label: 'Cliff Speciality Lenses' }
+              ]}
+              className="max-w-9xl mx-auto px-6 sm:px-6 lg:px-10"
+            />
+          </div>
+
+
+    
 
       <div className="py-16 px-4">
         <div className="max-w-6xl mx-auto">

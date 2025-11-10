@@ -314,35 +314,49 @@ export default function Polarized() {
                 </div>
               </section>
 
-
-
-              <section className="w-full flex justify-center px-9">
-                <div className="w-full max-w-9xl h-[60vh] relative overflow-hidden rounded-2xl group">
-                  <div className="absolute inset-0 bg-black/30 z-10"></div>
+              <section className="w-full flex justify-center relative">
+                <div className="w-full max-w-9xl h-[90vh] relative overflow-hidden group">
+                  {/* Left side overlay */}
+                  <div className="absolute left-0 top-0 bottom-0 w-1/2 bg-gradient-to-r from-black/80 to-transparent z-10"></div>
+                  
+                  {/* Right side overlay */}
+                  <div className="absolute right-0 top-0 bottom-0 w-1/2 bg-gradient-to-l from-black/80 to-transparent z-10"></div>
+                  
                   <div className="absolute inset-0 z-20 flex items-center">
-                    <div className="container mx-auto px-6">
-                      <div className="max-w-xl ml-auto text-right">
-                      <h2 className="text-4xl md:text-6xl montserrat tracking-tight text-[#FFD700] mb-6 leading-tight">
-                        Conquer every horizon with Cliff Polarized.
-                      </h2>
-                      <p className="text-lg md:text-xl poppins text-[#FFD700] font-light">
-                        Built for adventure. Ready for anything.
-                      </p>
-                    </div>
-
+                    <div className="container mx-auto px-6 w-full">
+                      {/* Left side content */}
+                      <div className="max-w-xl">
+                        {/* <h2 className="text-4xl md:text-6xl montserrat tracking-tight text-[#FFD700] mb-6 leading-tight">
+                          Experience the Cliff Polarized difference
+                        </h2> */}
+                        <p className="text-lg md:text-xl poppins text-[#FFD700] font-light max-w-md mb-6">
+                          Superior clarity and protection for your eyes in any condition
+                        </p>
+                        <div className="relative w-full h-48 md:h-64 rounded-lg overflow-hidden mt-6">
+                          <Image
+                            src="/polarized/pola.png"
+                            alt="Polarized Lenses Preview"
+                            fill
+                            className="object-contain"
+                            priority
+                          />
+                          <div className="absolute inset-0 bg-black/30"></div>
+                        </div>
+                      </div>
+                      
+                      
                     </div>
                   </div>
+                  
                   <Image
-                    src="/polarized/polarized.png"
+                    src="/polarized/pola.png"
                     alt="Polarized Lenses"
                     fill
-                    className="object-cover"  
+                    className="object-cover"
                     priority
                   />
                 </div>
               </section>
-
-
 
               <section className="py-20 bg-black">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

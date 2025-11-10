@@ -102,11 +102,11 @@ export default function SpecialityLenses() {
             // Determine the correct link based on card ID
             const getLink = () => {
               switch(card.id) {
-                case '01': return '/speciality-lenses/cliff-tinted-lenses';
-                case '02': return '/speciality-lenses/photochrome';
-                case '03': return '/speciality-lenses/photochrome-plus';
-                case '04': return '/speciality-lenses/blue-shield';
-                case '05': return '/speciality-lenses/polarized-lenses';
+                case '01': return '/products/speciality-lenses/cliff-tinted-lenses';
+                case '02': return '/products/speciality-lenses/photochrome';
+                case '03': return '/products/speciality-lenses/photochrome-plus';
+                case '04': return '/products/speciality-lenses/blue-shield';
+                case '05': return '/products/speciality-lenses/polarized-lenses';
                 default: return '#';
               }
             };

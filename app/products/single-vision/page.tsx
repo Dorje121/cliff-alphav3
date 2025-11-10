@@ -78,14 +78,14 @@ const ProductPage = () => {
       </div>
       
       {/* Breadcrumb - Sticky */}
-      <div className="sticky top-30 z-50 bg-black/90 backdrop-blur-sm py-3 border-b border-yellow-500/20">
+      <div className=" z-50 bg-black/80 backdrop-blur-sm py-3 border-b border-yellow-500/20">
         <Breadcrumb 
           items={[
             { label: 'Home', href: '/' },
             { label: 'Products', href: '/products' },
             { label: 'Single Vision' }
           ]}
-          className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+          className="max-w-9xl  mx-auto px-6 sm:px-6 lg:px-10"
         />
       </div>
 
